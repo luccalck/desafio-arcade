@@ -4,12 +4,12 @@ import type { Level, Command } from '../../src/core/types';
 import data from '../../src/content/levels.json';
 const first = data.levels[0] as Level;
 const cmd = (kind: 'advance' | 'left' | 'right'): Command => ({ kind });
-const open: Level = { ...first, grid: ['....','....','....','....'], start: {x:1,y:2,direction:'east'}, goal:{x:3,y:0}, maxBlocks:20 };
+const open: Level = { ...first, objects:[],requiredPackets:0,requiresCircuit:false, grid: ['....','....','....','....'], start: {x:1,y:2,direction:'east'}, goal:{x:3,y:0}, maxBlocks:20 };
 describe('interpretação e execução', () => {
   it('conta ações básicas', () => expect(countBlocks([cmd('advance'),cmd('left')])).toBe(2));
   it('conta repetição e seu corpo', () => expect(countBlocks([{kind:'repeat',times:4,body:['advance','left']}])).toBe(3));
   it('rejeita programa vazio', () => expect(() => compile(first, [])).toThrow(/adicione/i));
-  it('rejeita excesso de blocos', () => expect(() => compile(first, Array.from({length:9},()=>cmd('left')))).toThrow(/blocos/i));
+  it('rejeita excesso de blocos', () => expect(() => compile(first, Array.from({length:first.maxBlocks+1},()=>cmd('left')))).toThrow(/blocos/i));
   it('rejeita comando desconhecido', () => expect(() => compile(first, [{kind:'fly'} as unknown as Command])).toThrow(/comando/i));
   it('rejeita repetição em fase sem esse recurso', () => expect(() => compile(first, [{kind:'repeat',times:2,body:['advance']}])).toThrow(/repetição/i));
   it('rejeita quantidade não inteira', () => expect(() => compile({...first,allowRepeat:true}, [{kind:'repeat',times:2.5,body:['advance']}])).toThrow(/2 a 4/i));

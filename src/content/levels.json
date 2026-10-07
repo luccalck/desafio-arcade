@@ -1,35 +1,372 @@
 {
   "levels": [
     {
-      "id": "primeira-entrega", "title": "Primeira entrega", "concept": "Sequência",
-      "objective": "Leve o robô até o módulo. Avançar move uma casa; virar muda apenas a direção.",
-      "hint": "Avance três casas para leste, vire à esquerda e avance duas casas para norte.",
-      "lesson": "A ordem muda o resultado: primeiro percorremos a linha, depois viramos para alcançar o módulo.",
-      "grid": ["#####", "###.#", "###.#", "....#"],
-      "start": { "x": 0, "y": 3, "direction": "east" }, "goal": { "x": 3, "y": 1 },
-      "maxBlocks": 8, "maxSteps": 16, "allowRepeat": false, "initialProgram": [],
-      "solution": [{"kind":"advance"},{"kind":"advance"},{"kind":"advance"},{"kind":"left"},{"kind":"advance"},{"kind":"advance"}]
+      "id": "recuperar-dados",
+      "title": "Recuperar os dados",
+      "concept": "Sequência e variáveis",
+      "objective": "Colete os 2 pacotes nos terminais azuis e leve o robô ao servidor.",
+      "briefing": "Um sistema perdeu seus dados. Cada terminal guarda um pacote. Chegue até ele e use Coletar. A variável pacotes mostra o que seu programa já recuperou.",
+      "hints": [
+        "Avançar segue a direção do robô. Virar muda essa direção sem sair da casa.",
+        "Passe por cada terminal azul e adicione Coletar quando o robô estiver sobre ele.",
+        "Há um terminal antes da curva e outro no caminho vertical. O servidor precisa dos dois pacotes."
+      ],
+      "lesson": "Você criou uma sequência e alterou uma variável: cada coleta aumentou pacotes em 1. Chegar ao servidor só conclui a missão com pacotes = 2.",
+      "grid": [
+        "#######",
+        "####..#",
+        "####.##",
+        ".....##"
+      ],
+      "start": {
+        "x": 0,
+        "y": 3,
+        "direction": "east"
+      },
+      "goal": {
+        "x": 5,
+        "y": 1
+      },
+      "maxBlocks": 14,
+      "maxSteps": 24,
+      "allowRepeat": false,
+      "allowedActions": [
+        "advance",
+        "left",
+        "right",
+        "collect"
+      ],
+      "requiredPackets": 2,
+      "requiresCircuit": false,
+      "objects": [
+        {
+          "kind": "terminal",
+          "id": "dados-1",
+          "x": 1,
+          "y": 3
+        },
+        {
+          "kind": "terminal",
+          "id": "dados-2",
+          "x": 4,
+          "y": 2
+        }
+      ],
+      "initialProgram": [],
+      "solution": [
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "collect"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "left"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "collect"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "right"
+        },
+        {
+          "kind": "advance"
+        }
+      ],
+      "hint": "Avançar segue a direção do robô. Virar muda essa direção sem sair da casa."
     },
     {
-      "id": "rota-interrompida", "title": "Rota interrompida", "concept": "Depuração",
-      "objective": "O programa inicial tem um erro. Execute, observe onde parou e corrija a rota até o módulo.",
-      "hint": "Depois do primeiro avanço, vire para norte. Siga até a linha central, atravesse para leste e suba até o módulo.",
-      "lesson": "Depurar é observar a execução e corrigir a causa. O segundo avanço encontrou uma parede porque faltou uma curva.",
-      "grid": ["####.", "####.", "#....", "#.###", "..###"],
-      "start": { "x": 0, "y": 4, "direction": "east" }, "goal": { "x": 4, "y": 0 },
-      "maxBlocks": 14, "maxSteps": 25, "allowRepeat": false,
-      "initialProgram": [{"kind":"advance"},{"kind":"advance"}],
-      "solution": [{"kind":"advance"},{"kind":"left"},{"kind":"advance"},{"kind":"advance"},{"kind":"right"},{"kind":"advance"},{"kind":"advance"},{"kind":"advance"},{"kind":"left"},{"kind":"advance"},{"kind":"advance"}]
+      "id": "corrigir-firmware",
+      "title": "Corrigir o firmware",
+      "concept": "Depuração",
+      "objective": "Encontre o erro do programa, recupere 1 pacote e alcance o servidor.",
+      "briefing": "O firmware já tem dois comandos. Um deles aponta para uma parede. Use Um passo para localizar a instrução, troque seu comando e complete a recuperação do pacote.",
+      "hints": [
+        "Execute Um passo e observe a linha destacada, a direção e a mensagem do robô.",
+        "A segunda instrução precisa mudar a direção, pois a casa à frente é uma parede.",
+        "O terminal está no corredor central. Coletar exige estar na mesma casa que ele."
+      ],
+      "lesson": "Depurar é acompanhar o estado e corrigir a causa da falha. O programa inicial precisava de uma curva, não de outro avanço. O trace mostra qual instrução executou.",
+      "grid": [
+        "####..",
+        "####.#",
+        "#....#",
+        "#.####",
+        "..####"
+      ],
+      "start": {
+        "x": 0,
+        "y": 4,
+        "direction": "east"
+      },
+      "goal": {
+        "x": 5,
+        "y": 0
+      },
+      "maxBlocks": 18,
+      "maxSteps": 32,
+      "allowRepeat": false,
+      "allowedActions": [
+        "advance",
+        "left",
+        "right",
+        "collect"
+      ],
+      "requiredPackets": 1,
+      "requiresCircuit": false,
+      "objects": [
+        {
+          "kind": "terminal",
+          "id": "firmware-1",
+          "x": 3,
+          "y": 2
+        }
+      ],
+      "initialProgram": [
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "advance"
+        }
+      ],
+      "solution": [
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "left"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "right"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "collect"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "left"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "right"
+        },
+        {
+          "kind": "advance"
+        }
+      ],
+      "hint": "Execute Um passo e observe a linha destacada, a direção e a mensagem do robô."
     },
     {
-      "id": "padrao-de-rota", "title": "Padrão de rota", "concept": "Repetição",
-      "objective": "O trajeto repete o mesmo padrão. Use um bloco repetir para fazer a entrega com até cinco blocos.",
-      "hint": "Repita quatro vezes: avançar, virar à esquerda, avançar, virar à direita. O bloco repetir também conta como um bloco.",
-      "lesson": "Repetição representa um padrão sem reescrever todos os comandos. Um grupo de quatro ações resolve a escada inteira.",
-      "grid": ["####.", "###..", "##..#", "#..##", "..###"],
-      "start": { "x": 0, "y": 4, "direction": "east" }, "goal": { "x": 4, "y": 0 },
-      "maxBlocks": 5, "maxSteps": 24, "allowRepeat": true, "initialProgram": [],
-      "solution": [{"kind":"repeat","times":4,"body":["advance","left","advance","right"]}]
+      "id": "destravar-circuito",
+      "title": "Destravar o circuito",
+      "concept": "Lógica AND",
+      "objective": "Ligue os sinais A e B para abrir a porta AND e chegar ao servidor.",
+      "briefing": "A porta usa lógica booleana: A AND B. Um único sinal ligado não basta. Vá a cada interruptor e use Ativar. Veja 0 virar 1 e a saída mudar de falso para verdadeiro.",
+      "hints": [
+        "A porta AND exige os dois sinais em 1. Um interruptor sozinho mantém a saída em 0.",
+        "Ativar só funciona quando o robô está na casa do interruptor A ou B.",
+        "O interruptor B está acima do corredor da porta. Volte ao corredor depois de ligá-lo."
+      ],
+      "lesson": "AND é uma condição que só é verdadeira com A = 1 e B = 1. A mudança dos sinais abriu uma passagem real no mapa; não bastou responder uma pergunta.",
+      "grid": [
+        "#######",
+        "#######",
+        "....###",
+        "......."
+      ],
+      "start": {
+        "x": 0,
+        "y": 3,
+        "direction": "east"
+      },
+      "goal": {
+        "x": 6,
+        "y": 3
+      },
+      "maxBlocks": 18,
+      "maxSteps": 32,
+      "allowRepeat": false,
+      "allowedActions": [
+        "advance",
+        "left",
+        "right",
+        "activate"
+      ],
+      "requiredPackets": 0,
+      "requiresCircuit": true,
+      "objects": [
+        {
+          "kind": "switch",
+          "id": "controle-a",
+          "signal": "A",
+          "x": 1,
+          "y": 3
+        },
+        {
+          "kind": "switch",
+          "id": "controle-b",
+          "signal": "B",
+          "x": 3,
+          "y": 2
+        },
+        {
+          "kind": "gate",
+          "id": "porta-and",
+          "x": 4,
+          "y": 3
+        }
+      ],
+      "initialProgram": [],
+      "solution": [
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "activate"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "left"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "activate"
+        },
+        {
+          "kind": "right"
+        },
+        {
+          "kind": "right"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "left"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "advance"
+        },
+        {
+          "kind": "advance"
+        }
+      ],
+      "hint": "A porta AND exige os dois sinais em 1. Um interruptor sozinho mantém a saída em 0."
+    },
+    {
+      "id": "automatizar-inspecao",
+      "title": "Automatizar a inspeção",
+      "concept": "Repetição",
+      "objective": "Atenda os 3 terminais com até 4 blocos usando Repetir.",
+      "briefing": "Os terminais estão separados pela mesma distância. Encontre o padrão de movimento e coleta. Um bloco Repetir executa o grupo várias vezes sem escrever tudo de novo.",
+      "hints": [
+        "Conte a distância entre os terminais: o mesmo grupo pode atender todos eles.",
+        "O grupo precisa combinar deslocamento e coleta. Sem Coletar, pacotes não aumenta.",
+        "O número de repetições corresponde aos três terminais. O bloco e cada ação do grupo contam no limite."
+      ],
+      "lesson": "Você representou um algoritmo repetitivo: 3 iterações do grupo Avançar, Avançar, Coletar executaram 9 ações usando 4 blocos. A variável pacotes mudou a cada iteração.",
+      "grid": [
+        "########",
+        ".......#"
+      ],
+      "start": {
+        "x": 0,
+        "y": 1,
+        "direction": "east"
+      },
+      "goal": {
+        "x": 6,
+        "y": 1
+      },
+      "maxBlocks": 4,
+      "maxSteps": 16,
+      "allowRepeat": true,
+      "allowedActions": [
+        "advance",
+        "left",
+        "right",
+        "collect"
+      ],
+      "requiredPackets": 3,
+      "requiresCircuit": false,
+      "objects": [
+        {
+          "kind": "terminal",
+          "id": "inspecao-1",
+          "x": 2,
+          "y": 1
+        },
+        {
+          "kind": "terminal",
+          "id": "inspecao-2",
+          "x": 4,
+          "y": 1
+        },
+        {
+          "kind": "terminal",
+          "id": "inspecao-3",
+          "x": 6,
+          "y": 1
+        }
+      ],
+      "initialProgram": [],
+      "solution": [
+        {
+          "kind": "repeat",
+          "times": 3,
+          "body": [
+            "advance",
+            "advance",
+            "collect"
+          ]
+        }
+      ],
+      "hint": "Conte a distância entre os terminais: o mesmo grupo pode atender todos eles."
     }
   ]
 }
