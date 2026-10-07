@@ -1,128 +1,130 @@
-import data from '../content/levels.json';
-import {tutorial,tutorialSteps} from '../content/tutorial';
-import type {Level,Command,Primitive,RunState} from '../core/types';
-import {countBlocks,startRun,stepRun} from '../core/engine';
-import {completeMission,loadProgress,saveProgress,resetProgress,type StoragePort} from '../core/progress';
-import {board,variables} from './board';
-import {editor} from './program';
-import {header,home,briefing,training,result,complete,resetDialog} from './views';
-import {escape} from './shared';
+import data from '../content/missions.json';
+import type {Action,Block,Expr,LabState,Mission,Predicate,Scenario} from '../core/lab-types';
+import {startLab,stepLab} from '../core/lab-engine';
+import {loadProgress,saveProgress,resetProgress,completeMission} from '../core/progress';
+import type {StoragePort} from '../core/progress';
+import {loadPreferences,savePreferences} from '../core/preferences';
+import {blockAt,listAt,makeIf} from './lab-editor';
+import {campaign,complete,header,home,lesson,modal,result,workspace} from './views';
+import type {Campaign,Overlay,Stage} from './views';
 declare const __VERSION__:{version:string;sha:string};
-const levels=data.levels as Level[],ids=levels.map(l=>l.id);
-const root=document.querySelector<HTMLDivElement>('#app')!;
-let storage:StoragePort|undefined;
-try{storage=localStorage;}catch{/* file:// ou política do navegador pode impedir armazenamento. */}
-let completed=loadProgress(storage,ids),saved=Boolean(storage);
-let screen:'menu'|'tutorial'|'briefing'|'game'|'result'|'complete'='menu';
-let index=0,program:Command[]=[],state:RunState|undefined;
-let automatic=false,timer:ReturnType<typeof setTimeout>|undefined;
-let draft:Primitive[]=[],times=3,repeatOpen=false,hintCount=0,earned=0,promptReset=false;
-let feedback='Adicione comandos e clique em Executar ou Um passo.';
-let trainingState=startRun(tutorial,tutorial.solution);
-const level=()=>levels[index];
-const cancel=()=>{clearTimeout(timer);automatic=false;};
-const campaign=()=>({completed,saved,version:__VERSION__});
-function enter(i:number){
- cancel();index=i;program=structuredClone(level().initialProgram);state=undefined;draft=[];times=3;repeatOpen=false;hintCount=0;
- feedback=program.length?'Este programa tem um erro. Use Um passo para descobrir onde.':'Adicione comandos e observe como a sequência muda o sistema.';
- screen='game';render(true);
+const missions=data.missions as Mission[],ids=missions.map(m=>m.id);
+const app=document.querySelector<HTMLDivElement>('#app')!;
+let storage:StoragePort|undefined;try{storage=window.localStorage;}catch{/* Fallback local de sessão. */}
+let legacy=false;try{legacy=!!storage?.getItem('rota-do-codigo:campaign:v1');}catch{/* Não acessar outros dados. */}
+const c:Campaign={completed:loadProgress(storage,ids),saved:!!storage,legacy,version:__VERSION__};
+let preferences=loadPreferences(storage);
+let view:'home'|'missions'|'lesson'|'workspace'|'result'|'complete'='home',overlay:Overlay=null,modalBack:Overlay=null;
+let missionIndex=0,stage:Stage='demo',program:Block[]=[],caseIndex=0,runs:(LabState|undefined)[]=[],results:('pending'|'won'|'failed')[]=[];
+let busy=false,batchActive=false,pausedAuto=false,review=false,hintCount=0,error='',earned=0,timer:ReturnType<typeof setInterval>|undefined;
+const mission=()=>missions[missionIndex];
+const cases=():Scenario[]=>stage==='demo'?[mission().demo.scenario]:stage==='practice'?mission().practice:mission().scenarios;
+const reduced=()=>preferences.reduced||window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function stop(){if(timer)clearInterval(timer);timer=undefined;busy=false;}
+function resetAttempt(){stop();caseIndex=0;runs=cases().map(()=>undefined);results=cases().map(()=>'pending');batchActive=false;error='';earned=0;}
+function focusTop(){app.focus();window.scrollTo({top:0,behavior:'instant'});}
+function render(focusId?:string){
+ const active=focusId??(document.activeElement instanceof HTMLElement?document.activeElement.id:'');
+ document.documentElement.classList.toggle('reduced-motion',reduced());document.documentElement.classList.toggle('large-text',preferences.largeText);
+ const state=runs[caseIndex];
+ const body=view==='home'?home(missions,c):view==='missions'?campaign(missions,c):view==='lesson'?lesson(mission(),missionIndex,review):view==='workspace'?workspace(mission(),missionIndex,stage,program,cases(),caseIndex,state,results,busy,hintCount,error):view==='complete'?complete(missions,c):result(mission(),stage,state!,cases(),results,earned);
+ app.innerHTML=header(missions,c,view==='workspace')+body+`<footer class="game-footer"><span>PEQUENOS PROGRAMAS. GRANDES IDEIAS.</span><span>TECLADO / TOQUE / OFFLINE</span></footer>`+modal(overlay,preferences);
+ const dialog=app.querySelector<HTMLDialogElement>('#game-modal');if(dialog&&!dialog.open)dialog.showModal();
+ if(active){const target=document.getElementById(active);if(target&&(!dialog||dialog.contains(target)))target.focus({preventScroll:true});}
+ if(dialog)dialog.addEventListener('cancel',e=>{e.preventDefault();closeModal();});
 }
-function showBrief(i:number){cancel();index=i;screen='briefing';render(true);}
-function showTraining(){cancel();trainingState=startRun(tutorial,tutorial.solution);screen='tutorial';render(true);}
-function game():string{
- const l=level();
- return `<main class="game-layout"><div class="mission"><div><p class="eyebrow">MISSÃO 0${index+1} / 04 <span>${escape(l.concept)}</span></p><h1>${escape(l.title)}</h1><p class="mission-objective"><b>OBJETIVO</b> ${escape(l.objective)}</p></div><button id="hint" class="hint-button" data-action="hint" ${automatic?'disabled':''}>? ${hintCount?'Próxima dica':'Preciso de uma dica'} <small>${hintCount}/${l.hints.length}</small></button></div>
-  ${hintCount?`<aside class="hint-box"><span>DICA ${hintCount}</span><p>${escape(l.hints[hintCount-1])}</p></aside>`:''}
-  <section class="map-section" aria-label="Mapa e estado do sistema">${variables(l,state)}${board(l,state)}
-   <div class="feedback ${state?.reason?'failure':''}" data-testid="feedback" role="status" aria-live="polite" aria-atomic="true"><span class="feedback-icon">${automatic?'▶':'⌁'}</span><span>${escape(state?.message??feedback)}</span></div>
-   <div class="map-footer"><span>↑ Avançar segue o robô · ↶/↷ Virar não anda</span><button id="reset-mission" data-action="reset" ${automatic?'disabled':''}>Recomeçar missão</button></div></section>
-  ${editor(l,program,automatic,state,draft,times,repeatOpen)}
-  <div class="mobile-playbar" aria-label="Controles rápidos da missão"><span>${countBlocks(program)} / ${l.maxBlocks}<small>BLOCOS</small></span>${automatic?'<button id="mobile-stop" data-action="stop">■ Parar</button>': '<button id="mobile-run" class="primary" data-action="run" aria-label="Executar programa">▶ Executar</button>'}<button id="mobile-step" data-action="step" aria-label="Executar um passo" ${automatic?'disabled':''}>Um passo</button></div></main>`;
-}
-function render(moveFocus=false){
- const focused=document.activeElement?.id;
- root.innerHTML=header(campaign())+(screen==='menu'?home(levels,campaign()):screen==='tutorial'?training(trainingState):screen==='briefing'?briefing(level(),index):screen==='game'?game():screen==='result'&&state?result(level(),index,state,earned):complete(levels,campaign()))+
-  `<footer class="site-footer"><span>PEQUENOS COMANDOS. SISTEMAS RECUPERADOS.</span><span>Teclado ou toque · sem conta · offline</span></footer>`+(promptReset?resetDialog():'');
- if(promptReset){root.querySelector<HTMLDialogElement>('dialog')?.showModal();document.getElementById('reset-cancel')?.focus();return;}
- if(moveFocus){const main=root.querySelector<HTMLElement>('main');main?.setAttribute('tabindex','-1');main?.focus({preventScroll:true});window.scrollTo(0,0);}
- else if(focused){const target=document.getElementById(focused) as HTMLButtonElement|null;
-  if(target&&!target.disabled)target.focus({preventScroll:true});
-  else document.getElementById(automatic?'stop':'run')?.focus({preventScroll:true});
+function begin(index:number){if(!missions[index]||index>c.completed.length)return;stop();overlay=null;missionIndex=index;review=false;hintCount=0;view='lesson';render();focusTop();}
+function setStage(next:Stage){stage=next;program=structuredClone(next==='demo'?mission().demo.program:next==='practice'?mission().initialPractice:[]);resetAttempt();hintCount=0;review=false;view='workspace';overlay=null;render();focusTop();}
+function navigate(next:typeof view){stop();overlay=null;view=next;render();focusTop();}
+function finish(){
+ stop();batchActive=false;
+ if(stage==='demo'){render();return;}
+ if(results.every(r=>r==='won')&&stage==='challenge'){
+  const before=c.completed.length;c.completed=completeMission(c.completed,mission().id,ids);earned=c.completed.length>before?mission().reward:0;c.saved=saveProgress(storage,c.completed);
  }
+ view='result';render();focusTop();
 }
-function begin():boolean{
- try{state=startRun(level(),program);feedback=state.message;return true;}
- catch(error){feedback=error instanceof Error?error.message:String(error);state=undefined;render();return false;}
+function advance(){
+ try{
+  if(!batchActive){caseIndex=0;runs=cases().map(()=>undefined);results=cases().map(()=>'pending');batchActive=true;}
+  if(runs[caseIndex]?.status==='won'){caseIndex++;}
+  const s=cases()[caseIndex];if(!runs[caseIndex])runs[caseIndex]=startLab(mission(),s,program);
+  runs[caseIndex]=stepLab(mission(),s,runs[caseIndex]!);
+  const state=runs[caseIndex]!;
+  if(state.status!=='running')results[caseIndex]=state.status;
+  if(state.status==='failed'||(state.status==='won'&&caseIndex===cases().length-1))finish();else render();
+ }catch(e){stop();batchActive=false;error=e instanceof Error?e.message:String(e);render();}
 }
-function tick(){
- if(!state)return;
- state=stepRun(level(),state);
- if(state.status!=='running'){
-  cancel();earned=0;
-  if(state.status==='won'){
-   const before=completed.length;completed=completeMission(completed,level().id,ids);earned=(completed.length-before)*100;
-   saved=saveProgress(storage,completed);
-  }
-  screen='result';render(true);return;
+function revealSystem(){if(window.innerWidth<=800)app.querySelector('.simulator')?.scrollIntoView({behavior:reduced()?'instant':'smooth',block:'start'});}
+function auto(){if(stage==='demo'&&runs[0]?.status==='won')return;stop();busy=true;advance();if(busy)timer=setInterval(advance,reduced()?65:420);revealSystem();}
+function pause(){pausedAuto=busy;stop();overlay='pause';render();}
+function resume(){overlay=null;modalBack=null;render('top-menu');if(pausedAuto){pausedAuto=false;busy=true;timer=setInterval(advance,reduced()?65:420);render();}}
+function closeModal(){if(overlay==='pause'){resume();return;}overlay=modalBack;modalBack=null;render(overlay?'resume':'options');}
+function editProgram(mutate:()=>void,focusId?:string){stop();mutate();resetAttempt();render(focusId);}
+function selectedBlock(path:string){return blockAt(program,path);}
+app.addEventListener('click',event=>{
+ const target=(event.target as HTMLElement).closest<HTMLButtonElement>('button[data-action]');if(!target||target.disabled)return;
+ const action=target.dataset.action!,path=target.dataset.path??'',parent=target.dataset.parent??'';
+ switch(action){
+ case 'home':navigate('home');break;
+ case 'missions':navigate('missions');break;
+ case 'new':if(c.completed.length){modalBack=null;overlay='new';render();}else begin(0);break;
+ case 'continue':if(c.completed.length===6)navigate('complete');else begin(c.completed.length);break;
+ case 'select':begin(Number(target.dataset.index));break;
+ case 'demo':setStage('demo');break;
+ case 'practice':setStage('practice');break;
+ case 'challenge':setStage('challenge');break;
+ case 'next':if(missionIndex===5)navigate('complete');else begin(missionIndex+1);break;
+ case 'add':editProgram(()=>listAt(program,parent).push({kind:'action',action:target.dataset.kind as Action}),target.id);break;
+ case 'add-if':editProgram(()=>listAt(program,parent).push(makeIf(mission(),!parent&&program.some(b=>b.kind==='foreach'))),target.id);break;
+ case 'add-loop':editProgram(()=>program.push({kind:'foreach',body:[]}),target.id);break;
+ case 'remove':{
+  const parts=path.split('.'),index=Number(parts.pop());editProgram(()=>listAt(program,parts.join('.')).splice(index,1),`add-${mission().actions[0]}`);break;
  }
- render();
- if(automatic)timer=setTimeout(tick,matchMedia('(prefers-reduced-motion: reduce)').matches?90:500);
-}
-function append(command:Command){
- const candidate=[...program,command];
- if(countBlocks(candidate)>level().maxBlocks)feedback=`Limite de ${level().maxBlocks} blocos. Remova um comando${level().allowRepeat?' ou represente o padrão com Repetir':''}.`;
- else{program=candidate;feedback='Bloco adicionado. Seu programa será executado nessa ordem.';}
- state=undefined;render();
-}
-function revealMap(){
- if(screen==='game'&&matchMedia('(max-width:800px)').matches)root.querySelector('.variables')?.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
-}
-root.addEventListener('change',event=>{
- const target=event.target as HTMLSelectElement;
- if(automatic)return;
- if(target.id==='repeat-times'){times=Number(target.value);return;}
- if(target.dataset.commandIndex!==undefined){
-  const i=Number(target.dataset.commandIndex),kind=target.value as Primitive;
-  if(program[i]&&level().allowedActions.includes(kind)){program[i]={kind};state=undefined;feedback=`Comando ${i+1} alterado. Execute para verificar a correção.`;render();}
+ case 'move':{
+  const parts=path.split('.'),index=Number(parts.pop()),direction=Number(target.dataset.direction);editProgram(()=>{const list=listAt(program,parts.join('.')),other=index+direction;if(other>=0&&other<list.length)[list[index],list[other]]=[list[other],list[index]];});break;
+ }
+ case 'clear':editProgram(()=>{program=[];},`add-${mission().actions[0]}`);break;
+ case 'run':auto();break;
+ case 'step':advance();revealSystem();break;
+ case 'stop':stop();render('run-program');break;
+ case 'case':caseIndex=Number(target.dataset.index);batchActive=false;render();break;
+ case 'hint':hintCount=Math.min(3,hintCount+1);render('hint');break;
+ case 'pause':pause();break;
+ case 'resume':resume();break;
+ case 'restart':setStage(stage);break;
+ case 'review-lesson':stop();overlay=null;review=true;view='lesson';render();focusTop();break;
+ case 'return-work':review=false;view='workspace';render();focusTop();break;
+ case 'edit':resetAttempt();view='workspace';render();focusTop();break;
+ case 'options':modalBack=overlay==='pause'?'pause':null;overlay='options';render();break;
+ case 'help':modalBack=null;overlay='help';render();break;
+ case 'close-modal':closeModal();break;
+ case 'reset-prompt':modalBack='options';overlay='reset';render();break;
+ case 'confirm-reset':{
+  const isNew=overlay==='new';resetProgress(storage);c.completed=[];stop();overlay=null;modalBack=null;if(isNew)begin(0);else navigate('home');break;
+ }
  }
 });
-root.addEventListener('cancel',()=>{promptReset=false;render();document.getElementById('reset-progress')?.focus();},true);
-root.addEventListener('click',event=>{
- const button=(event.target as HTMLElement).closest<HTMLElement>('[data-action]');if(!button)return;
- if((button as HTMLButtonElement).disabled)return;
- event.preventDefault();const action=button.dataset.action;
- if(action==='menu'){cancel();screen='menu';render(true);return;}
- if(action==='play'){if(completed.length===4){screen='complete';render(true);}else if(!completed.length)showTraining();else showBrief(completed.length);return;}
- if(action==='select'){const i=Number(button.dataset.index);if(i>completed.length||i<0||i>=levels.length)return;if(!i&&!completed.length)showTraining();else showBrief(i);return;}
- if(action==='tutorial'){showTraining();return;}
- if(action==='train-action'){
-  if(button.dataset.kind!==tutorialSteps[trainingState.cursor]?.kind)return;
-  trainingState=stepRun(tutorial,trainingState);render();
-  document.getElementById(trainingState.cursor===4?'training-next':`train-${tutorialSteps[trainingState.cursor].kind}`)?.focus({preventScroll:true});return;
+app.addEventListener('change',event=>{
+ const target=event.target as HTMLSelectElement|HTMLInputElement;
+ if(target.dataset.change==='setting'){
+  preferences={...preferences,[target.dataset.key!]: (target as HTMLInputElement).checked};savePreferences(storage,preferences);render(target.id);return;
  }
- if(action==='training-next'){showBrief(0);return;}
- if(action==='begin-mission'){enter(index);return;}
- if(action==='reset-prompt'){promptReset=true;render();return;}
- if(action==='reset-cancel'){promptReset=false;render();document.getElementById('reset-progress')?.focus();return;}
- if(action==='reset-confirm'){resetProgress(storage);completed=[];promptReset=false;screen='menu';render(true);return;}
- if(action==='next'){if(index===levels.length-1){screen='complete';render(true);}else showBrief(index+1);return;}
- if(automatic&&action!=='stop')return;
- if(action==='stop'){cancel();state=undefined;feedback='Execução interrompida. Edite e execute novamente desde o início.';render();return;}
- if(action==='reset'){enter(index);return;}
- if(action==='edit'){screen='game';state=undefined;feedback='Programa preservado. Troque, adicione ou reordene os comandos.';render(true);return;}
- if(action==='hint'){hintCount=Math.min(hintCount+1,level().hints.length);render();return;}
- if(action==='run'){if(begin()){automatic=true;render();document.getElementById(matchMedia('(max-width:800px)').matches?'mobile-stop':'stop')?.focus({preventScroll:true});revealMap();timer=setTimeout(tick,180);}return;}
- if(action==='step'){if(state?.status==='running'||begin()){tick();revealMap();}return;}
- if(action==='add'){append({kind:button.dataset.kind as Primitive});return;}
- if(action==='toggle-repeat'){repeatOpen=!repeatOpen;render();return;}
- if(action==='draft'){if(draft.length<8)draft.push(button.dataset.kind as Primitive);else feedback='O grupo aceita até oito ações.';render();return;}
- if(action==='draft-clear'){draft=[];render();return;}
- if(action==='repeat-add'){if(draft.length)append({kind:'repeat',times,body:[...draft]});return;}
- if(action==='clear'){program=[];state=undefined;feedback='Programa limpo. Monte uma nova solução.';render();return;}
- const i=Number(button.dataset.index);if(!Number.isInteger(i)||!program[i])return;
- if(action==='remove')program.splice(i,1);
- if(action==='up'&&i>0)[program[i-1],program[i]]=[program[i],program[i-1]];
- if(action==='down'&&i<program.length-1)[program[i+1],program[i]]=[program[i],program[i+1]];
- state=undefined;render();document.getElementById(`add-${level().allowedActions[0]}`)?.focus({preventScroll:true});
+ if(target.dataset.change==='append'){
+  if(target.value)editProgram(()=>listAt(program,target.dataset.parent!).push({kind:'action',action:target.value as Action}),target.id);return;
+ }
+ const b=selectedBlock(target.dataset.path??'');if(b?.kind!=='if')return;
+ editProgram(()=>{
+  const e=b.condition;const part=target.dataset.part!;
+  if(target.dataset.change==='operator'){
+   if(target.value!=='and'&&target.value!=='or')return;
+   const group=mission().mode==='boolean'&&part==='inner'&&e.kind!=='predicate'?e.left:e;if(group.kind!=='predicate')group.kind=target.value;
+  }else{
+   const leaf:Expr={kind:'predicate',name:target.value as Predicate};
+   if(e.kind==='predicate')b.condition=leaf;
+   else if(part==='c')e.right=leaf;
+   else{const group=mission().mode==='boolean'?e.left:e;if(group.kind!=='predicate'){if(part==='a')group.left=leaf;else group.right=leaf;}}
+  }
+ },target.id);
 });
 render();

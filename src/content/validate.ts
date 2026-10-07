@@ -1,37 +1,29 @@
 import Ajv from 'ajv';
 import schema from './schema.json';
-import { compile, runProgram } from '../core/engine';
-import type { Level, Position } from '../core/types';
-const ajv = new Ajv({ allErrors: true, strict: true });
-const validate = ajv.compile(schema);
-export function validateContent(content: unknown): Level[] {
-  if (!validate(content)) throw new Error(`Conteúdo inválido no esquema: ${ajv.errorsText(validate.errors)}`);
-  const levels=(content as {levels:Level[]}).levels;
-  const ids=new Set<string>();
-  for (const level of levels) {
-    if (ids.has(level.id)) throw new Error(`ID duplicado: ${level.id}`);
-    ids.add(level.id);
-    const width=level.grid[0].length;
-    if (level.grid.some((row)=>row.length!==width)) throw new Error(`${level.id}: mapa deve ser retangular.`);
-    const floor=(position:Position)=>level.grid[position.y]?.[position.x] === '.';
-    if (!floor(level.start)) throw new Error(`${level.id}: início precisa estar em uma célula livre.`);
-    if (!floor(level.goal)) throw new Error(`${level.id}: destino precisa estar em uma célula livre.`);
-    if (level.start.x===level.goal.x && level.start.y===level.goal.y) throw new Error(`${level.id}: início e destino precisam ser diferentes.`);
-    const objectIds=new Set<string>(),positions=new Set<string>();
-    for(const object of level.objects){
-      if(!floor(object))throw new Error(`${level.id}: objeto precisa estar em piso livre.`);
-      const key=`${object.x},${object.y}`;
-      if(objectIds.has(object.id)||positions.has(key))throw new Error(`${level.id}: objeto duplicado por ID ou posição.`);
-      objectIds.add(object.id);positions.add(key);
-    }
-    const terminals=level.objects.filter(o=>o.kind==='terminal').length;
-    if(level.requiredPackets!==terminals)throw new Error(`${level.id}: quantidade de pacotes deve corresponder aos terminais.`);
-    const gates=level.objects.some(o=>o.kind==='gate');
-    const signals=level.objects.filter(o=>o.kind==='switch').map(o=>o.kind==='switch'?o.signal:'');
-    if(level.requiresCircuit!==gates || (gates&&(!signals.includes('A')||!signals.includes('B'))))throw new Error(`${level.id}: circuito exige porta e interruptores A/B.`);
-    if(!level.allowedActions.includes('advance') || (terminals&&!level.allowedActions.includes('collect')) || (gates&&!level.allowedActions.includes('activate')))throw new Error(`${level.id}: ações disponíveis não atendem os objetos.`);
-    if (level.initialProgram.length) compile(level,level.initialProgram);
-    if (runProgram(level,level.solution).status!=='won') throw new Error(`${level.id}: solução editorial não conclui o mapa.`);
+import type {Mission,Mode} from '../core/lab-types';
+import {runLab,validateProgram} from '../core/lab-engine';
+const check=new Ajv({allErrors:true,strict:true}).compile(schema);
+const modes:Mode[]=['sequence','variables','conditions','boolean','loop','final'];
+export function validateContent(input:unknown):Mission[]{
+ if(!check(input))throw new Error(`JSON inválido: ${check.errors?.map(e=>`${e.instancePath} ${e.message}`).join('; ')}`);
+ const missions=(input as {missions:Mission[]}).missions;
+ if(new Set(missions.map(m=>m.id)).size!==6)throw new Error('IDs de missão duplicados.');
+ missions.forEach((m,i)=>{
+  if(m.mode!==modes[i]||m.reward!==(i===5?200:100))throw new Error('Ordem/recompensas da campanha incoerentes.');
+  if(new Set(m.scenarios.map(s=>s.id)).size!==m.scenarios.length)throw new Error('IDs de cenário duplicados.');
+  if(m.mode==='final'&&m.scenarios.length!==3)throw new Error('Final precisa de três cenários.');
+  if(m.hasLoop!==['loop','final'].includes(m.mode))throw new Error('Repetição incoerente com a missão.');
+  if(m.initialPractice.length)validateProgram(m,m.initialPractice);
+  for(const s of [...m.scenarios,...m.practice,m.demo.scenario]){
+   if(new Set(s.packets.map(p=>p.id)).size!==s.packets.length)throw new Error('IDs de pacote duplicados.');
+   if(m.mode==='conditions'&&s.packets.length!==1)throw new Error('Condições usam um pacote por cenário.');
+   if(m.hasLoop&&!s.packets.length)throw new Error('Lote precisa de pelo menos um pacote.');
+   const expected=s.packets.filter(p=>p.valid&&(m.mode!=='final'||p.permission)).length;
+   if(s.targetCount!==expected)throw new Error('Meta/contador não corresponde aos dados do cenário.');
+   if(m.mode==='variables'&&s.targetEnergy!==s.energy+s.charge-2*s.cost)throw new Error('Valores de energia incoerentes.');
+   if(runLab(m,s,m.solution).status!=='won')throw new Error(`Solução inválida de ${m.id} no cenário ${s.id}.`);
   }
-  return levels;
+  if(runLab(m,m.demo.scenario,m.demo.program).status!=='won')throw new Error('Exemplo não resolve seu cenário.');
+ });
+ return missions;
 }

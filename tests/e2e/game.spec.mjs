@@ -1,100 +1,67 @@
 import {test,expect} from '@playwright/test';
 import {pathToFileURL} from 'node:url';
 import {resolve} from 'node:path';
-import {start,addRoute,stepRoute,finishFirst,next,solve,levels} from './helpers.mjs';
+import {enterChallenge,finishFirst,fillProgram,execute,lessonToChallenge,missions} from './helpers.mjs';
 
-test('tutorial: ação guiada muda posição, dados e direção antes da missão',async({page})=>{
- await page.goto('./');await page.screenshot({path:'reports/screens/campanha-desktop.png',fullPage:true});
- await page.getByRole('button',{name:'▶ Jogar',exact:true}).click();
- await expect(page.locator('#train-collect')).toBeDisabled();await page.locator('#train-advance').click();
- await expect(page.getByTestId('position')).toContainText('coluna 2, linha 3');
- await page.locator('#train-collect').click();await expect(page.getByTestId('packets')).toHaveText('1 / 1');
- await page.locator('#train-left').click();await expect(page.getByTestId('position')).toContainText('norte');
- await page.locator('#train-advance').click();await expect(page.getByRole('heading',{name:'Pronto para programar!'})).toBeVisible();
- await expect(page.getByTestId('xp')).toHaveText('0 XP');
- await page.locator('#training-next').click();await page.getByRole('button',{name:/Iniciar missão/}).click();
- await expect(page.getByTestId('block-count')).toHaveText('0 / 14 blocos');
- await page.screenshot({path:'reports/screens/missao-dados-desktop.png',fullPage:true});
+test('menus: ajuda, opções e mapa de seis setores são utilizáveis',async({page})=>{
+ await page.goto('./');await page.screenshot({path:'reports/screens/menu-logica-desktop.png',fullPage:true});await expect(page.locator('#continue-game')).toBeDisabled();
+ await page.locator('#how-to').click();await expect(page.getByRole('dialog',{name:'Como jogar'})).toBeVisible();await page.getByRole('button',{name:'Entendi',exact:true}).click();
+ await page.locator('#options').click();await page.locator('#setting-large').check();await page.locator('#setting-reduced').check();expect(await page.locator('html').getAttribute('class')).toContain('large-text');await page.getByRole('button',{name:'Voltar',exact:true}).click();
+ await page.reload();await page.locator('#options').click();await expect(page.locator('#setting-large')).toBeChecked();await page.keyboard.press('Escape');await page.locator('#missions-menu').click();await expect(page.locator('.sector')).toHaveCount(6);await expect(page.getByRole('button',{name:/Desafio final:/})).toBeDisabled();
 });
-test('dados: chegar sem coletar permite corrigir e recomeçar',async({page})=>{
- await start(page);await addRoute(page,levels[0].solution.filter(c=>c.kind!=='collect').map(c=>c.kind));await stepRoute(page,9);
- await expect(page.getByTestId('feedback')).toContainText('faltam objetivos');await expect(page.getByTestId('xp')).toHaveText('0 XP');
- await page.getByRole('button',{name:'Editar e tentar novamente'}).click();await page.getByRole('button',{name:'Limpar',exact:true}).click();await finishFirst(page);
- await expect(page.getByTestId('xp')).toHaveText('100 XP');
- await page.getByRole('button',{name:'Recomeçar missão',exact:true}).click();
- await expect(page.getByTestId('packets')).toHaveText('0 / 2');await expect(page.getByTestId('block-count')).toHaveText('0 / 14 blocos');
+test('sequência: aula, exemplo, prática sem XP, desafio e correção',async({page})=>{
+ await page.emulateMedia({reducedMotion:'reduce'});await page.goto('./');await page.locator('#new-game').click();await expect(page.locator('.lesson-cards article')).toHaveCount(3);await page.screenshot({path:'reports/screens/aula-sequencia.png',fullPage:true});
+ await page.locator('#lesson-next').click();await expect(page.locator('#start-practice')).toBeDisabled();await page.locator('#step-program').click();await expect(page.getByTestId('feedback')).toContainText('Central ligada');await page.locator('#run-program').click();await expect(page.locator('#start-practice')).toBeEnabled();await page.locator('#start-practice').click();
+ await page.locator('#add-read').click();await page.locator('#add-report').click();await execute(page,'practice');await expect(page.getByTestId('xp')).toHaveText('0 XP');await page.locator('#result-next').click();await expect(page.getByTestId('block-count')).toHaveText('0 / 16 blocos');
+ await page.locator('#add-read').click();await page.locator('#run-program').click();await expect(page.getByRole('heading',{name:'Vamos revisar a lógica.'})).toBeVisible();await expect(page.getByTestId('feedback')).toContainText('sensor');await page.locator('#edit-program').click();await finishFirst(page);await expect(page.getByTestId('xp')).toHaveText('100 XP');
 });
-test('firmware: linha defeituosa é observável e pode ser substituída',async({page})=>{
- await start(page);await finishFirst(page);await next(page);await stepRoute(page,2);
- await expect(page.getByTestId('feedback')).toContainText('Comando 2');await expect(page.getByTestId('feedback')).toContainText('parede');
- await page.getByRole('button',{name:'Editar e tentar novamente'}).click();
- await page.getByLabel('Alterar comando 2',{exact:true}).selectOption('left');
- await addRoute(page,levels[1].solution.slice(2).map(c=>c.kind));await stepRoute(page,14);
- await expect(page.getByRole('heading',{name:'Sistema recuperado!',exact:true})).toBeVisible();
+test('variáveis: acompanha mudança e o mesmo programa resolve entradas diferentes',async({page})=>{
+ await enterChallenge(page,1);await fillProgram(page,missions[1].solution);await page.locator('#step-program').click();await expect(page.getByTestId('energy')).toHaveText('5');await expect(page.getByTestId('feedback')).toContainText('+3');await page.screenshot({path:'reports/screens/variaveis-desktop.png',fullPage:true});
+ await page.locator('#run-program').click();await expect(page.getByRole('heading',{name:'Sistema recuperado!',exact:true})).toBeVisible();await expect(page.locator('.result-cases .won')).toHaveCount(2);
 });
-test('circuito: AND só abre a passagem depois de ativar A e B',async({page})=>{
- await start(page);await finishFirst(page);await next(page);await solve(page,1);await next(page);
- await addRoute(page,['advance','advance','advance','advance']);await stepRoute(page,4);
- await expect(page.getByTestId('feedback')).toContainText('porta fechada');
- await page.getByRole('button',{name:'Editar e tentar novamente'}).click();await page.getByRole('button',{name:'Limpar',exact:true}).click();
- await addRoute(page,levels[2].solution.map(c=>c.kind));await stepRoute(page,2);
- await expect(page.getByTestId('signal-a')).toHaveText('1');await expect(page.getByTestId('signal-b')).toHaveText('0');await expect(page.getByTestId('and-output')).toHaveText('0');
- await stepRoute(page,5);await expect(page.getByTestId('and-output')).toHaveText('1');
- await page.screenshot({path:'reports/screens/circuito-and-desktop.png',fullPage:true});
- await stepRoute(page,7);await expect(page.getByRole('heading',{name:'Sistema recuperado!',exact:true})).toBeVisible();
+test('campanha: condições, E/OU, lotes e final em três cenários chegam a 700XP',async({page})=>{
+ await enterChallenge(page);await finishFirst(page);
+ for(let i=1;i<6;i++){
+  await page.locator('#result-next').click();await lessonToChallenge(page,i);
+  if(i===2){const bad=structuredClone(missions[i].solution);bad[0].else=[{kind:'action',action:'send'}];await fillProgram(page,bad);await page.locator('#run-program').click();await expect(page.getByRole('heading',{name:'Vamos revisar a lógica.'})).toBeVisible();await expect(page.getByTestId('feedback')).toContainText('revisão');await page.locator('#edit-program').click();}
+  if(i===3){const bad=structuredClone(missions[i].solution);bad[0].condition.left.kind='or';await fillProgram(page,bad);await page.locator('#run-program').click();await expect(page.getByRole('heading',{name:'Vamos revisar a lógica.'})).toBeVisible();await page.locator('#edit-program').click();await page.locator('[id="join-0-inner"]').selectOption('and');await page.screenshot({path:'reports/screens/logica-e-ou-desktop.png',fullPage:true});}
+  else await fillProgram(page,missions[i].solution);
+  if(i===4)await page.screenshot({path:'reports/screens/repeticao-desktop.png',fullPage:true});
+  if(i===5)await page.screenshot({path:'reports/screens/nucleo-final-desktop.png',fullPage:true});
+  await execute(page);if(i===5)await expect(page.locator('.result-cases .won')).toHaveCount(3);
+ }
+ await expect(page.getByTestId('xp')).toHaveText('700 XP');await page.locator('#result-next').click();await expect(page.getByRole('heading',{name:/Suas regras/})).toBeVisible();await expect(page.locator('.medal-shelf>div')).toHaveCount(6);
 });
-test('campanha: repetição com coleta conclui as quatro missões e 400 XP',async({page})=>{
- await start(page);await finishFirst(page);
- for(const i of [1,2,3]){await next(page);await solve(page,i);}
- await expect(page.getByTestId('packets')).toHaveText('3 / 3');await expect(page.getByTestId('xp')).toHaveText('400 XP');
- await page.getByRole('button',{name:/Concluir campanha/}).click();
- await expect(page.getByRole('heading',{name:/Seu código/})).toBeVisible();await expect(page.locator('.medal-shelf>div')).toHaveCount(4);
+test('progresso: reload, replay sem XP extra e reset só da chave própria',async({page})=>{
+ await enterChallenge(page);await finishFirst(page);await page.reload();await expect(page.getByTestId('xp')).toHaveText('100 XP');await expect(page.locator('#continue-game')).toBeEnabled();
+ await page.locator('#missions-menu').click();await page.getByRole('button',{name:/Missão 1:/}).click();await lessonToChallenge(page,0);await finishFirst(page);await expect(page.getByTestId('xp')).toHaveText('100 XP');
+ await page.getByRole('button',{name:'Mapa de missões',exact:true}).click();await page.getByRole('button',{name:'Menu principal',exact:true}).click();await page.evaluate(()=>localStorage.setItem('outro-projeto','preservar'));await page.locator('#options').click();await page.locator('#reset-progress').click();await page.locator('#reset-confirm').click();await expect(page.getByTestId('xp')).toHaveText('0 XP');expect(await page.evaluate(()=>localStorage.getItem('outro-projeto'))).toBe('preservar');
 });
-test('progresso: reload preserva desbloqueio, replay não duplica XP e reset só apaga jogo',async({page})=>{
- await start(page);await finishFirst(page);await page.reload();
- await expect(page.getByTestId('xp')).toHaveText('100 XP');await expect(page.getByRole('button',{name:/Missão 2:/})).toBeEnabled();await expect(page.getByRole('button',{name:/Missão 3:/})).toBeDisabled();
- await page.getByRole('button',{name:/Missão 1:/}).click();await page.getByRole('button',{name:/Iniciar missão/}).click();await finishFirst(page);
- await expect(page.getByTestId('xp')).toHaveText('100 XP');await expect(page.getByText('MISSÃO REVISITADA',{exact:true})).toBeVisible();
- await page.getByRole('button',{name:'Campanha',exact:true}).click();
- await page.evaluate(()=>localStorage.setItem('outro-projeto','preservar'));
- await page.locator('#reset-progress').click();await page.locator('#reset-confirm').click();
- await expect(page.getByTestId('xp')).toHaveText('0 XP');expect(await page.evaluate(()=>localStorage.getItem('outro-projeto'))).toBe('preservar');
- await expect(page.getByRole('button',{name:/Missão 2:/})).toBeDisabled();
+test('teclado: remover último bloco preserva foco no editor (regressão #1)',async({page})=>{
+ await enterChallenge(page);await page.locator('#add-power').focus();await page.keyboard.press('Enter');await page.locator('#remove-0').focus();await page.keyboard.press('Enter');await expect(page.locator('#add-power')).toBeFocused();
 });
-test('teclado: remover último comando preserva foco no editor',async({page})=>{
- await start(page);await page.locator('#add-advance').focus();await page.keyboard.press('Enter');
- await page.getByRole('button',{name:'Remover comando 1',exact:true}).focus();await page.keyboard.press('Enter');
- await expect(page.locator('#add-advance')).toBeFocused();
+test('pausa: execução para e pode ser retomada',async({page})=>{
+ await page.goto('./');await page.locator('#new-game').click();await page.locator('#lesson-next').click();await page.locator('#run-program').click();await page.locator('#top-menu').click();await expect(page.getByRole('dialog',{name:'Menu de pausa'})).toBeVisible();const before=await page.getByTestId('feedback').innerText();await page.waitForTimeout(650);expect(await page.getByTestId('feedback').innerText()).toBe(before);await page.locator('#resume').click();await expect(page.locator('#start-practice')).toBeEnabled({timeout:10000});
 });
-test('teclado: montar grupo repetir preserva foco entre inserções',async({page})=>{
- await start(page);await finishFirst(page);for(const i of [1,2]){await next(page);await solve(page,i);}await next(page);
- await page.locator('#toggle-repeat').click();await page.locator('#draft-advance').focus();await page.keyboard.press('Enter');
- await expect(page.locator('#draft-advance')).toBeFocused();await page.keyboard.press('Enter');
- await expect(page.locator('.draft>span')).toHaveCount(2);
+test('rever explicação preserva programa em edição',async({page})=>{
+ await enterChallenge(page);await page.locator('#add-power').click();await page.locator('#add-sensor').click();await page.locator('#review-lesson').click();await expect(page.locator('.lesson-cards')).toBeVisible();await page.locator('#lesson-next').click();await expect(page.getByTestId('block-count')).toHaveText('2 / 16 blocos');
 });
-test('mobile: campanha e missão sem overflow, controles e resultado alcançáveis',async({page})=>{
- await page.setViewportSize({width:390,height:844});await page.goto('./');
- expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
- await page.screenshot({path:'reports/screens/campanha-mobile.png',fullPage:true});await start(page);
- expect(await page.evaluate(()=>document.documentElement.scrollWidth<=window.innerWidth)).toBe(true);
- await page.screenshot({path:'reports/screens/missao-dados-mobile.png',fullPage:true});
- await addRoute(page,levels[0].solution.map(c=>c.kind));
- await expect(page.locator('#mobile-run')).toBeVisible();await page.locator('#mobile-run').click();
- await expect(page.getByRole('heading',{name:'Sistema recuperado!',exact:true})).toBeVisible();
- await page.screenshot({path:'reports/screens/vitoria-mobile.png',fullPage:true});
+test('mobile: menus, aula e grupos condicionais sem overflow; campanha real',async({page})=>{
+ await page.setViewportSize({width:390,height:844});await page.emulateMedia({reducedMotion:'reduce'});await page.goto('./');await page.screenshot({path:'reports/screens/menu-logica-mobile.png',fullPage:true});expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await page.locator('#new-game').click();
+ for(let i=0;i<6;i++){
+  await lessonToChallenge(page,i);await fillProgram(page,missions[i].solution);expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);
+  if(i===2)await page.screenshot({path:'reports/screens/condicoes-mobile.png',fullPage:true});if(i===5)await page.screenshot({path:'reports/screens/final-mobile.png',fullPage:true});
+  await page.locator('#mobile-run').click();await expect(page.getByRole('heading',{name:'Sistema recuperado!',exact:true})).toBeVisible();if(i<5)await page.locator('#result-next').click();
+ }
+ await expect(page.getByTestId('xp')).toHaveText('700 XP');
 });
-test('offline: file:// recupera dados com rede desativada',async({browser})=>{
- test.skip(Boolean(process.env.BASE_URL),'Arquivo é teste da build local; HML usa regressão HTTP.');
- const context=await browser.newContext({offline:true,reducedMotion:'reduce'});
- try{
-  const page=await context.newPage(),external=[];page.on('request',r=>{if(/^https?:/.test(r.url()))external.push(r.url());});
-  await page.goto(pathToFileURL(resolve('dist/index.html')).href);
-  await page.getByRole('button',{name:'▶ Jogar',exact:true}).click();await page.getByRole('button',{name:'Já conheço: ir à missão',exact:true}).click();await page.getByRole('button',{name:/Iniciar missão/}).click();await finishFirst(page);expect(external).toEqual([]);
- }finally{await context.close();}
+test('offline: file:// sem rede executa aprendizagem e desafio',async({browser})=>{
+ test.skip(Boolean(process.env.BASE_URL),'HML usa HTTP; arquivo verifica build local.');const context=await browser.newContext({offline:true,reducedMotion:'reduce'});
+ try{const page=await context.newPage(),external=[];page.on('request',r=>{if(/^https?:/.test(r.url()))external.push(r.url());});await page.goto(pathToFileURL(resolve('dist/index.html')).href);await page.locator('#new-game').click();await lessonToChallenge(page,0);await finishFirst(page);expect(external).toEqual([]);}finally{await context.close();}
 });
-test('armazenamento bloqueado: partida e XP continuam na sessão',async({page})=>{
- await page.addInitScript(()=>Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Bloqueado para este teste','SecurityError');}}));
- await start(page);await finishFirst(page);await expect(page.getByTestId('xp')).toHaveText('100 XP');
- await page.getByRole('button',{name:'Campanha',exact:true}).click();
- await expect(page.getByText('O progresso fica nesta sessão.',{exact:false})).toBeVisible();
+test('armazenamento bloqueado mantém jogo e XP na sessão',async({page})=>{
+ await page.addInitScript(()=>Object.defineProperty(window,'localStorage',{get(){throw new DOMException('Bloqueado para teste','SecurityError');}}));await enterChallenge(page);await finishFirst(page);await page.getByRole('button',{name:'Mapa de missões',exact:true}).click();await page.getByRole('button',{name:'Menu principal',exact:true}).click();await expect(page.getByText('Progresso apenas nesta sessão',{exact:true})).toBeVisible();await expect(page.getByTestId('xp')).toHaveText('100 XP');
+});
+test('campanha antiga é preservada sem desbloquear conceitos novos',async({page})=>{
+ await page.addInitScript(()=>localStorage.setItem('rota-do-codigo:campaign:v1',JSON.stringify({version:1,completed:['dados','firmware','circuito','automacao']})));await page.goto('./');await expect(page.getByText(/Nova campanha de lógica/)).toBeVisible();await expect(page.getByTestId('xp')).toHaveText('0 XP');expect(await page.evaluate(()=>localStorage.getItem('rota-do-codigo:campaign:v1'))).toContain('automacao');
 });

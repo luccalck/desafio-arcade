@@ -1,329 +1,635 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "additionalProperties": false,
-  "required": [
-    "levels"
-  ],
-  "properties": {
-    "levels": {
-      "type": "array",
-      "minItems": 1,
-      "maxItems": 20,
-      "items": {
-        "$ref": "#/definitions/level"
-      }
-    }
-  },
-  "definitions": {
-    "position": {
-      "type": "object",
-      "additionalProperties": false,
-      "required": [
-        "x",
-        "y"
-      ],
-      "properties": {
-        "x": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 7
-        },
-        "y": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 7
-        }
-      }
-    },
-    "command": {
+  "$defs": {
+    "expr": {
       "oneOf": [
         {
           "type": "object",
           "additionalProperties": false,
-          "required": [
-            "kind"
-          ],
           "properties": {
             "kind": {
+              "const": "predicate"
+            },
+            "name": {
               "enum": [
-                "advance",
-                "left",
-                "right",
-                "collect",
-                "activate"
+                "valid",
+                "permission",
+                "credentials",
+                "enoughEnergy",
+                "maintenance",
+                "countMet",
+                "lotDone"
               ]
             }
-          }
+          },
+          "required": [
+            "kind",
+            "name"
+          ]
         },
         {
           "type": "object",
           "additionalProperties": false,
-          "required": [
-            "kind",
-            "times",
-            "body"
-          ],
           "properties": {
             "kind": {
-              "const": "repeat"
+              "enum": [
+                "and",
+                "or"
+              ]
             },
-            "times": {
-              "type": "integer",
-              "minimum": 2,
-              "maximum": 4
+            "left": {
+              "$ref": "#/$defs/expr"
+            },
+            "right": {
+              "$ref": "#/$defs/expr"
+            }
+          },
+          "required": [
+            "kind",
+            "left",
+            "right"
+          ]
+        }
+      ]
+    },
+    "block": {
+      "oneOf": [
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "action"
+            },
+            "action": {
+              "enum": [
+                "power",
+                "sensor",
+                "read",
+                "report",
+                "charge",
+                "process",
+                "resetCount",
+                "count",
+                "send",
+                "review",
+                "allow",
+                "deny",
+                "release",
+                "hold"
+              ]
+            }
+          },
+          "required": [
+            "kind",
+            "action"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "if"
+            },
+            "condition": {
+              "$ref": "#/$defs/expr"
+            },
+            "then": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 8,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "kind": {
+                    "const": "action"
+                  },
+                  "action": {
+                    "enum": [
+                      "power",
+                      "sensor",
+                      "read",
+                      "report",
+                      "charge",
+                      "process",
+                      "resetCount",
+                      "count",
+                      "send",
+                      "review",
+                      "allow",
+                      "deny",
+                      "release",
+                      "hold"
+                    ]
+                  }
+                },
+                "required": [
+                  "kind",
+                  "action"
+                ]
+              }
+            },
+            "else": {
+              "type": "array",
+              "minItems": 1,
+              "maxItems": 8,
+              "items": {
+                "type": "object",
+                "additionalProperties": false,
+                "properties": {
+                  "kind": {
+                    "const": "action"
+                  },
+                  "action": {
+                    "enum": [
+                      "power",
+                      "sensor",
+                      "read",
+                      "report",
+                      "charge",
+                      "process",
+                      "resetCount",
+                      "count",
+                      "send",
+                      "review",
+                      "allow",
+                      "deny",
+                      "release",
+                      "hold"
+                    ]
+                  }
+                },
+                "required": [
+                  "kind",
+                  "action"
+                ]
+              }
+            }
+          },
+          "required": [
+            "kind",
+            "condition",
+            "then",
+            "else"
+          ]
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "kind": {
+              "const": "foreach"
             },
             "body": {
               "type": "array",
               "minItems": 1,
               "maxItems": 8,
               "items": {
-                "enum": [
-                  "advance",
-                  "left",
-                  "right",
-                  "collect",
-                  "activate"
+                "oneOf": [
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "kind": {
+                        "const": "action"
+                      },
+                      "action": {
+                        "enum": [
+                          "power",
+                          "sensor",
+                          "read",
+                          "report",
+                          "charge",
+                          "process",
+                          "resetCount",
+                          "count",
+                          "send",
+                          "review",
+                          "allow",
+                          "deny",
+                          "release",
+                          "hold"
+                        ]
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "action"
+                    ]
+                  },
+                  {
+                    "type": "object",
+                    "additionalProperties": false,
+                    "properties": {
+                      "kind": {
+                        "const": "if"
+                      },
+                      "condition": {
+                        "$ref": "#/$defs/expr"
+                      },
+                      "then": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 8,
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "kind": {
+                              "const": "action"
+                            },
+                            "action": {
+                              "enum": [
+                                "power",
+                                "sensor",
+                                "read",
+                                "report",
+                                "charge",
+                                "process",
+                                "resetCount",
+                                "count",
+                                "send",
+                                "review",
+                                "allow",
+                                "deny",
+                                "release",
+                                "hold"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "action"
+                          ]
+                        }
+                      },
+                      "else": {
+                        "type": "array",
+                        "minItems": 1,
+                        "maxItems": 8,
+                        "items": {
+                          "type": "object",
+                          "additionalProperties": false,
+                          "properties": {
+                            "kind": {
+                              "const": "action"
+                            },
+                            "action": {
+                              "enum": [
+                                "power",
+                                "sensor",
+                                "read",
+                                "report",
+                                "charge",
+                                "process",
+                                "resetCount",
+                                "count",
+                                "send",
+                                "review",
+                                "allow",
+                                "deny",
+                                "release",
+                                "hold"
+                              ]
+                            }
+                          },
+                          "required": [
+                            "kind",
+                            "action"
+                          ]
+                        }
+                      }
+                    },
+                    "required": [
+                      "kind",
+                      "condition",
+                      "then",
+                      "else"
+                    ]
+                  }
                 ]
               }
             }
-          }
-        }
-      ]
-    },
-    "object": {
-      "oneOf": [
-        {
-          "type": "object",
-          "additionalProperties": false,
+          },
           "required": [
-            "id",
-            "x",
-            "y",
-            "kind"
-          ],
-          "properties": {
-            "id": {
-              "type": "string",
-              "pattern": "^[a-z][a-z0-9-]+$"
-            },
-            "x": {
-              "type": "integer",
-              "minimum": 0,
-              "maximum": 7
-            },
-            "y": {
-              "type": "integer",
-              "minimum": 0,
-              "maximum": 7
-            },
-            "kind": {
-              "enum": [
-                "terminal",
-                "gate"
-              ]
-            }
-          }
-        },
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "id",
-            "x",
-            "y",
             "kind",
-            "signal"
-          ],
-          "properties": {
-            "id": {
-              "type": "string",
-              "pattern": "^[a-z][a-z0-9-]+$"
-            },
-            "x": {
-              "type": "integer",
-              "minimum": 0,
-              "maximum": 7
-            },
-            "y": {
-              "type": "integer",
-              "minimum": 0,
-              "maximum": 7
-            },
-            "kind": {
-              "const": "switch"
-            },
-            "signal": {
-              "enum": [
-                "A",
-                "B"
-              ]
-            }
-          }
+            "body"
+          ]
         }
       ]
     },
-    "level": {
+    "scenario": {
       "type": "object",
       "additionalProperties": false,
-      "required": [
-        "id",
-        "title",
-        "concept",
-        "objective",
-        "briefing",
-        "hints",
-        "lesson",
-        "grid",
-        "start",
-        "goal",
-        "maxBlocks",
-        "maxSteps",
-        "allowRepeat",
-        "allowedActions",
-        "requiredPackets",
-        "requiresCircuit",
-        "objects",
-        "initialProgram",
-        "solution",
-        "hint"
-      ],
       "properties": {
         "id": {
           "type": "string",
-          "pattern": "^[a-z][a-z0-9-]+$"
+          "pattern": "^[a-zA-Z0-9-]+$",
+          "maxLength": 48
         },
-        "title": {
+        "label": {
           "type": "string",
-          "minLength": 3,
-          "maxLength": 80
+          "minLength": 1,
+          "maxLength": 650
         },
-        "concept": {
-          "type": "string",
-          "minLength": 3
+        "energy": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 20
         },
-        "objective": {
-          "type": "string",
-          "minLength": 10
+        "charge": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 20
         },
-        "briefing": {
-          "type": "string",
-          "minLength": 10
+        "cost": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 10
         },
-        "hint": {
-          "type": "string",
-          "minLength": 10
+        "targetEnergy": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 20
         },
-        "lesson": {
-          "type": "string",
-          "minLength": 10
-        },
-        "hints": {
+        "packets": {
           "type": "array",
-          "minItems": 2,
-          "maxItems": 4,
-          "items": {
-            "type": "string",
-            "minLength": 10
-          }
-        },
-        "grid": {
-          "type": "array",
-          "minItems": 2,
           "maxItems": 8,
           "items": {
-            "type": "string",
-            "pattern": "^[.#]{2,8}$"
-          }
-        },
-        "start": {
-          "type": "object",
-          "additionalProperties": false,
-          "required": [
-            "x",
-            "y",
-            "direction"
-          ],
-          "properties": {
-            "x": {
-              "type": "integer",
-              "minimum": 0,
-              "maximum": 7
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "id": {
+                "type": "string",
+                "pattern": "^[a-zA-Z0-9-]+$",
+                "maxLength": 48
+              },
+              "valid": {
+                "type": "boolean"
+              },
+              "permission": {
+                "type": "boolean"
+              }
             },
-            "y": {
-              "type": "integer",
-              "minimum": 0,
-              "maximum": 7
-            },
-            "direction": {
-              "enum": [
-                "north",
-                "east",
-                "south",
-                "west"
-              ]
-            }
-          }
-        },
-        "goal": {
-          "$ref": "#/definitions/position"
-        },
-        "maxBlocks": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 40
-        },
-        "maxSteps": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 128
-        },
-        "allowRepeat": {
-          "type": "boolean"
-        },
-        "allowedActions": {
-          "type": "array",
-          "minItems": 1,
-          "uniqueItems": true,
-          "items": {
-            "enum": [
-              "advance",
-              "left",
-              "right",
-              "collect",
-              "activate"
+            "required": [
+              "id",
+              "valid",
+              "permission"
             ]
           }
         },
-        "requiredPackets": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 16
-        },
-        "requiresCircuit": {
+        "credentials": {
           "type": "boolean"
         },
-        "objects": {
-          "type": "array",
-          "maxItems": 16,
-          "items": {
-            "$ref": "#/definitions/object"
-          }
+        "maintenance": {
+          "type": "boolean"
         },
-        "initialProgram": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/command"
-          }
-        },
-        "solution": {
-          "type": "array",
-          "minItems": 1,
-          "items": {
-            "$ref": "#/definitions/command"
-          }
+        "targetCount": {
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 8
         }
+      },
+      "required": [
+        "id",
+        "label",
+        "energy",
+        "charge",
+        "cost",
+        "targetEnergy",
+        "packets",
+        "credentials",
+        "maintenance",
+        "targetCount"
+      ]
+    }
+  },
+  "type": "object",
+  "additionalProperties": false,
+  "properties": {
+    "missions": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^[a-zA-Z0-9-]+$",
+            "maxLength": 48
+          },
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 650
+          },
+          "concept": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 650
+          },
+          "icon": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 650
+          },
+          "reward": {
+            "enum": [
+              100,
+              200
+            ]
+          },
+          "mode": {
+            "enum": [
+              "sequence",
+              "variables",
+              "conditions",
+              "boolean",
+              "loop",
+              "final"
+            ]
+          },
+          "goal": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 650
+          },
+          "brief": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 650
+          },
+          "lessons": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "title": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 650
+                },
+                "text": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 650
+                }
+              },
+              "required": [
+                "title",
+                "text"
+              ]
+            }
+          },
+          "hints": {
+            "type": "array",
+            "minItems": 3,
+            "maxItems": 3,
+            "items": {
+              "type": "string",
+              "minLength": 1,
+              "maxLength": 650
+            }
+          },
+          "actions": {
+            "type": "array",
+            "minItems": 1,
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "power",
+                "sensor",
+                "read",
+                "report",
+                "charge",
+                "process",
+                "resetCount",
+                "count",
+                "send",
+                "review",
+                "allow",
+                "deny",
+                "release",
+                "hold"
+              ]
+            }
+          },
+          "predicates": {
+            "type": "array",
+            "uniqueItems": true,
+            "items": {
+              "enum": [
+                "valid",
+                "permission",
+                "credentials",
+                "enoughEnergy",
+                "maintenance",
+                "countMet",
+                "lotDone"
+              ]
+            }
+          },
+          "hasIf": {
+            "type": "boolean"
+          },
+          "hasLoop": {
+            "type": "boolean"
+          },
+          "hasGroup": {
+            "type": "boolean"
+          },
+          "maxBlocks": {
+            "type": "integer",
+            "minimum": 4,
+            "maximum": 20
+          },
+          "solution": {
+            "type": "array",
+            "maxItems": 20,
+            "items": {
+              "$ref": "#/$defs/block"
+            },
+            "minItems": 1
+          },
+          "initialPractice": {
+            "type": "array",
+            "maxItems": 20,
+            "items": {
+              "$ref": "#/$defs/block"
+            }
+          },
+          "demo": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+              "scenario": {
+                "$ref": "#/$defs/scenario"
+              },
+              "program": {
+                "type": "array",
+                "maxItems": 20,
+                "items": {
+                  "$ref": "#/$defs/block"
+                },
+                "minItems": 1
+              }
+            },
+            "required": [
+              "scenario",
+              "program"
+            ]
+          },
+          "practice": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 8,
+            "items": {
+              "$ref": "#/$defs/scenario"
+            }
+          },
+          "scenarios": {
+            "type": "array",
+            "minItems": 1,
+            "maxItems": 8,
+            "items": {
+              "$ref": "#/$defs/scenario"
+            }
+          }
+        },
+        "required": [
+          "id",
+          "title",
+          "concept",
+          "icon",
+          "reward",
+          "mode",
+          "goal",
+          "brief",
+          "lessons",
+          "hints",
+          "actions",
+          "predicates",
+          "hasIf",
+          "hasLoop",
+          "hasGroup",
+          "maxBlocks",
+          "solution",
+          "initialPractice",
+          "demo",
+          "practice",
+          "scenarios"
+        ]
       }
     }
-  }
+  },
+  "required": [
+    "missions"
+  ]
 }
