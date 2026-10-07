@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object", "additionalProperties": false, "required": ["levels"],
+  "properties": { "levels": { "type": "array", "minItems": 1, "maxItems": 20, "items": { "$ref": "#/definitions/level" } } },
+  "definitions": {
+    "position": {"type":"object","additionalProperties":false,"required":["x","y"],"properties":{"x":{"type":"integer","minimum":0},"y":{"type":"integer","minimum":0}}},
+    "command": { "oneOf": [
+      {"type":"object","additionalProperties":false,"required":["kind"],"properties":{"kind":{"enum":["advance","left","right"]}}},
+      {"type":"object","additionalProperties":false,"required":["kind","times","body"],"properties":{"kind":{"const":"repeat"},"times":{"type":"integer","minimum":2,"maximum":4},"body":{"type":"array","minItems":1,"maxItems":8,"items":{"enum":["advance","left","right"]}}}}
+    ]},
+    "level": {
+      "type":"object","additionalProperties":false,
+      "required":["id","title","concept","objective","hint","lesson","grid","start","goal","maxBlocks","maxSteps","allowRepeat","initialProgram","solution"],
+      "properties": {
+        "id":{"type":"string","pattern":"^[a-z][a-z0-9-]+$"},
+        "title":{"type":"string","minLength":3,"maxLength":80},"concept":{"type":"string","minLength":3},
+        "objective":{"type":"string","minLength":10},"hint":{"type":"string","minLength":10},"lesson":{"type":"string","minLength":10},
+        "grid":{"type":"array","minItems":2,"maxItems":8,"items":{"type":"string","pattern":"^[.#]{2,8}$"}},
+        "start":{"type":"object","additionalProperties":false,"required":["x","y","direction"],"properties":{"x":{"type":"integer","minimum":0},"y":{"type":"integer","minimum":0},"direction":{"enum":["north","east","south","west"]}}},
+        "goal":{"$ref":"#/definitions/position"},"maxBlocks":{"type":"integer","minimum":1,"maximum":40},"maxSteps":{"type":"integer","minimum":1,"maximum":128},
+        "allowRepeat":{"type":"boolean"},"initialProgram":{"type":"array","items":{"$ref":"#/definitions/command"}},"solution":{"type":"array","minItems":1,"items":{"$ref":"#/definitions/command"}}
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+import { build } from 'esbuild';
+import { readFile, mkdir, writeFile, copyFile } from 'node:fs/promises';
+import { execFileSync } from 'node:child_process';
+const pkg=JSON.parse(await readFile('package.json','utf8'));
+const sha=process.env.GITHUB_SHA || execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
+const tag=process.env.GITHUB_REF_TYPE==='tag'?process.env.GITHUB_REF_NAME:undefined;
+if(tag && tag!==`v${pkg.version}`)throw new Error(`Tag ${tag} diverge da versão ${pkg.version}.`);
+const version={version:pkg.version,sha,build:process.env.BUILD_DATE||new Date().toISOString()};
+await mkdir('dist',{recursive:true});
+await build({entryPoints:['src/scenes/app.ts'],bundle:true,format:'iife',platform:'browser',target:'es2022',outfile:'dist/game.js',minify:true,legalComments:'eof',define:{__VERSION__:JSON.stringify({version:version.version,sha:version.sha})}});
+await copyFile('index.html','dist/index.html');
+await copyFile('src/style.css','dist/style.css');
+await copyFile('LICENSE','dist/LICENSE.txt');
+await copyFile('THIRD_PARTY.md','dist/THIRD_PARTY.txt');
+await writeFile('dist/version.json',JSON.stringify(version,null,2)+'\n');
+await writeFile('dist/LEIA-ME.txt',`ROTA DO CÓDIGO — v${version.version}\nCommit: ${sha}\n\nEXECUÇÃO OFFLINE\n1. Descompacte build.zip em uma pasta local.\n2. Abra index.html no navegador (Chrome, Edge ou Firefox).\n3. Todo conteúdo, estilo e código necessário está nesta pasta. Não é preciso instalar engine, Node ou baixar arquivos.\n\nCOMO JOGAR\nAdicione comandos, execute ou avance um passo. Virar muda a direção sem mover. Corrija a tentativa após uma falha. Na terceira fase, monte um grupo repetir.\n\nO jogo não coleta dados pessoais e não usa serviços remotos na partida.\nRepositório: https://github.com/luccalck/desafio-arcade\n`);
+console.log(`Build estática v${version.version}, SHA ${sha.slice(0,7)} → dist/`);

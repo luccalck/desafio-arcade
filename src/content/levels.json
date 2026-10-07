@@ -1,0 +1,35 @@
+{
+  "levels": [
+    {
+      "id": "primeira-entrega", "title": "Primeira entrega", "concept": "Sequência",
+      "objective": "Leve o robô até o módulo. Avançar move uma casa; virar muda apenas a direção.",
+      "hint": "Avance três casas para leste, vire à esquerda e avance duas casas para norte.",
+      "lesson": "A ordem muda o resultado: primeiro percorremos a linha, depois viramos para alcançar o módulo.",
+      "grid": ["#####", "###.#", "###.#", "....#"],
+      "start": { "x": 0, "y": 3, "direction": "east" }, "goal": { "x": 3, "y": 1 },
+      "maxBlocks": 8, "maxSteps": 16, "allowRepeat": false, "initialProgram": [],
+      "solution": [{"kind":"advance"},{"kind":"advance"},{"kind":"advance"},{"kind":"left"},{"kind":"advance"},{"kind":"advance"}]
+    },
+    {
+      "id": "rota-interrompida", "title": "Rota interrompida", "concept": "Depuração",
+      "objective": "O programa inicial tem um erro. Execute, observe onde parou e corrija a rota até o módulo.",
+      "hint": "Depois do primeiro avanço, vire para norte. Siga até a linha central, atravesse para leste e suba até o módulo.",
+      "lesson": "Depurar é observar a execução e corrigir a causa. O segundo avanço encontrou uma parede porque faltou uma curva.",
+      "grid": ["####.", "####.", "#....", "#.###", "..###"],
+      "start": { "x": 0, "y": 4, "direction": "east" }, "goal": { "x": 4, "y": 0 },
+      "maxBlocks": 14, "maxSteps": 25, "allowRepeat": false,
+      "initialProgram": [{"kind":"advance"},{"kind":"advance"}],
+      "solution": [{"kind":"advance"},{"kind":"left"},{"kind":"advance"},{"kind":"advance"},{"kind":"right"},{"kind":"advance"},{"kind":"advance"},{"kind":"advance"},{"kind":"left"},{"kind":"advance"},{"kind":"advance"}]
+    },
+    {
+      "id": "padrao-de-rota", "title": "Padrão de rota", "concept": "Repetição",
+      "objective": "O trajeto repete o mesmo padrão. Use um bloco repetir para fazer a entrega com até cinco blocos.",
+      "hint": "Repita quatro vezes: avançar, virar à esquerda, avançar, virar à direita. O bloco repetir também conta como um bloco.",
+      "lesson": "Repetição representa um padrão sem reescrever todos os comandos. Um grupo de quatro ações resolve a escada inteira.",
+      "grid": ["####.", "###..", "##..#", "#..##", "..###"],
+      "start": { "x": 0, "y": 4, "direction": "east" }, "goal": { "x": 4, "y": 0 },
+      "maxBlocks": 5, "maxSteps": 24, "allowRepeat": true, "initialProgram": [],
+      "solution": [{"kind":"repeat","times":4,"body":["advance","left","advance","right"]}]
+    }
+  ]
+}

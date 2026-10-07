@@ -1,0 +1,144 @@
+name: Esteira
+on:
+  push:
+    branches: [main, 'feature/**', 'fix/**', 'docs/**', 'chore/**']
+    tags: ['v*']
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+env:
+  PLAYWRIGHT_CHANNEL: chrome
+jobs:
+  qualidade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run test:ci
+      - run: npm run content:check
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: qualidade-${{ github.sha }}
+          path: reports/
+          if-no-files-found: error
+  seguranca:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - name: Gitleaks CLI verificado
+        shell: bash
+        run: |
+          mkdir -p reports "$RUNNER_TEMP/gitleaks"
+          cd "$RUNNER_TEMP/gitleaks"
+          curl --fail --silent --show-error --location -O https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz
+          curl --fail --silent --show-error --location -O https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_checksums.txt
+          grep ' gitleaks_8.30.1_linux_x64.tar.gz$' gitleaks_8.30.1_checksums.txt | sha256sum --check
+          tar -xzf gitleaks_8.30.1_linux_x64.tar.gz
+          cd "$GITHUB_WORKSPACE"
+          "$RUNNER_TEMP/gitleaks/gitleaks" git --redact --config .gitleaks.toml --report-format json --report-path reports/gitleaks.json
+      - name: Audit bloqueia vulnerabilidade crítica de produção
+        run: npm audit --omit=dev --audit-level=critical --json > reports/npm-audit.json
+      - name: SBOM CycloneDX
+        run: npm sbom --sbom-format cyclonedx > reports/sbom.cdx.json
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: always()
+        with:
+          name: seguranca-${{ github.sha }}
+          path: reports/
+          if-no-files-found: error
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - run: npm run reproducibility
+      - run: npm run gdd:pdf
+      - name: Verificação do PDF
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y poppler-utils
+          mkdir -p reports
+          pdfinfo artifacts/GDD.pdf | tee reports/pdfinfo.txt
+          pdftotext artifacts/GDD.pdf reports/gdd-texto.txt
+          test -s reports/gdd-texto.txt
+      - run: npm run package
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        with:
+          name: build-${{ github.sha }}
+          path: |
+            artifacts/build.zip
+            artifacts/build.zip.sha256
+            artifacts/GDD.pdf
+            dist/version.json
+          if-no-files-found: error
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: always()
+        with:
+          name: construcao-${{ github.sha }}
+          path: reports/
+          if-no-files-found: error
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: always()
+        with:
+          name: e2e-${{ github.sha }}
+          path: |
+            reports/
+            test-results/
+          if-no-files-found: error
+  ci:
+    runs-on: ubuntu-latest
+    needs: [qualidade, seguranca, build, e2e]
+    if: always()
+    timeout-minutes: 2
+    steps:
+      - name: Aceite agregado obrigatório
+        env:
+          RESULTS: ${{ toJSON(needs) }}
+        run: |
+          node -e 'const n=JSON.parse(process.env.RESULTS);for(const [job,value] of Object.entries(n)){console.log(job,value.result);if(value.result!=="success")process.exitCode=1;}'
+# R04/R05: jobs deploy-hml -> deploy-prd entram em lote posterior aos aceites de G0/G2.
+# Não publicar branch candidata nem aprovar produção automaticamente.

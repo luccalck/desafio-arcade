@@ -1,0 +1,37 @@
+{
+  "name": "rota-do-codigo",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=24 <25"
+  },
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "lint": "eslint . && tsc --noEmit",
+    "test": "vitest run",
+    "test:ci": "vitest run --coverage",
+    "content:check": "tsx scripts/check-content.ts",
+    "build": "npm run content:check && node scripts/build.mjs",
+    "test:e2e": "playwright test",
+    "gdd:pdf": "node scripts/gdd-pdf.mjs",
+    "package": "node scripts/package.mjs",
+    "reproducibility": "node scripts/reproducibility.mjs",
+    "sbom": "npm sbom --sbom-format cyclonedx"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@playwright/test": "1.63.0",
+    "@vitest/coverage-v8": "5.0.3",
+    "ajv": "8.20.0",
+    "esbuild": "0.28.2",
+    "eslint": "10.12.0",
+    "fflate": "0.8.3",
+    "globals": "17.13.0",
+    "markdown-it": "15.0.2",
+    "tsx": "4.23.15",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.71.1",
+    "vitest": "5.0.3"
+  }
+}
