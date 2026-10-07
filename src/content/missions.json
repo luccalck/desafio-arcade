@@ -1,1226 +1,2001 @@
 {
   "missions": [
     {
-      "hasIf": false,
-      "hasLoop": false,
-      "hasGroup": false,
-      "maxBlocks": 16,
-      "reward": 100,
-      "id": "lab-sequence",
-      "title": "Ligar a central",
-      "concept": "Sequência",
-      "icon": "01",
-      "mode": "sequence",
-      "goal": "Ligue a central, prepare o sensor e envie uma leitura.",
-      "brief": "O laboratório perdeu a comunicação. Faça seus equipamentos trabalharem na ordem certa.",
-      "actions": [
-        "power",
-        "sensor",
-        "read",
-        "report"
+      "id": "bench-path",
+      "title": "Reconectar a central",
+      "concept": "Fluxo",
+      "mode": "connection",
+      "goal": "Leve os três sinais ao receptor.",
+      "help": "Escolha uma ponte, encaixe e conecte a saída ao próximo ponto. A parede bloqueia cabos; cada cabo alcança três casas.",
+      "available": [
+        "relay"
       ],
       "predicates": [],
-      "lessons": [
+      "budget": 4,
+      "maxSpan": 3,
+      "blocked": [
         {
-          "title": "Um programa é uma receita",
-          "text": "Uma receita tem passos. No computador, a ordem também muda o resultado."
+          "x": 3,
+          "y": 1
         },
         {
-          "title": "Um passo depende do anterior",
-          "text": "Antes de ler, o sensor precisa estar pronto. Antes de preparar o sensor, a central precisa estar ligada."
+          "x": 3,
+          "y": 2
         },
         {
-          "title": "Observe a causa",
-          "text": "Executar por passo mostra o que mudou. Se algo falhar, procure o que ainda não estava pronto."
+          "x": 3,
+          "y": 3
         }
       ],
-      "hints": [
-        "Leia as dependências em cada bloco. O que precisa acontecer primeiro?",
-        "A central fornece energia ao sensor. O sensor precisa estar ativo para ler.",
-        "Enviar usa uma leitura já obtida; o programa deve deixar uma leitura pronta."
-      ],
-      "solution": [
-        {
-          "kind": "action",
-          "action": "power"
-        },
-        {
-          "kind": "action",
-          "action": "sensor"
-        },
-        {
-          "kind": "action",
-          "action": "read"
-        },
-        {
-          "kind": "action",
-          "action": "report"
-        }
-      ],
-      "initialPractice": [
-        {
-          "kind": "action",
-          "action": "power"
-        },
-        {
-          "kind": "action",
-          "action": "sensor"
-        }
-      ],
-      "demo": {
-        "scenario": {
-          "id": "demo",
-          "label": "Exemplo: sensor da oficina",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 0
-        },
-        "program": [
-          {
-            "kind": "action",
-            "action": "power"
-          },
-          {
-            "kind": "action",
-            "action": "sensor"
-          },
-          {
-            "kind": "action",
-            "action": "read"
-          },
-          {
-            "kind": "action",
-            "action": "report"
-          }
-        ]
-      },
-      "practice": [
-        {
-          "id": "treino",
-          "label": "Sensor da bancada",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 0
-        }
-      ],
-      "scenarios": [
-        {
-          "id": "central",
-          "label": "Sensor do núcleo",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 0
-        }
-      ]
-    },
-    {
-      "hasIf": false,
-      "hasLoop": false,
-      "hasGroup": false,
-      "maxBlocks": 16,
       "reward": 100,
-      "id": "lab-variables",
-      "title": "Memória do sistema",
-      "concept": "Variáveis",
-      "icon": "02",
-      "mode": "variables",
-      "goal": "Faça duas operações e termine com energia = 1. Uma carga está disponível.",
-      "brief": "A energia é uma variável: um valor que muda. Planeje uma carga e duas operações sem gastar o que não tem.",
-      "actions": [
-        "charge",
-        "process"
-      ],
-      "predicates": [],
-      "lessons": [
+      "fixed": [
         {
-          "title": "Uma gaveta com nome",
-          "text": "Uma variável guarda um valor. A gaveta energia pode começar com 3 e mudar ao longo do programa."
+          "id": "in",
+          "kind": "source",
+          "x": 0,
+          "y": 2,
+          "rotation": 0,
+          "config": {}
         },
         {
-          "title": "O valor muda",
-          "text": "Carregar acrescenta energia. Processar usa energia. Exemplo: 3 + 2 − 2 − 2 = 1."
-        },
-        {
-          "title": "Planeje usando as entradas",
-          "text": "O desafio muda os valores iniciais e a carga. Leia cada cenário: seu programa precisa servir para todos."
+          "id": "ok",
+          "kind": "sink",
+          "x": 6,
+          "y": 2,
+          "rotation": 0,
+          "config": {}
         }
       ],
-      "hints": [
-        "Veja energia inicial, valor da carga e custo em cada cenário.",
-        "É permitido carregar uma vez. Uma operação exige energia suficiente naquele momento.",
-        "Teste a ordem em que a menor energia inicial ainda consegue executar duas operações."
-      ],
-      "solution": [
+      "cases": [
         {
-          "kind": "action",
-          "action": "charge"
-        },
-        {
-          "kind": "action",
-          "action": "process"
-        },
-        {
-          "kind": "action",
-          "action": "process"
-        }
-      ],
-      "initialPractice": [
-        {
-          "kind": "action",
-          "action": "charge"
-        }
-      ],
-      "demo": {
-        "scenario": {
-          "id": "demo",
-          "label": "Exemplo: operar, carregar, operar",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 0
-        },
-        "program": [
-          {
-            "kind": "action",
-            "action": "process"
-          },
-          {
-            "kind": "action",
-            "action": "charge"
-          },
-          {
-            "kind": "action",
-            "action": "process"
-          }
-        ]
-      },
-      "practice": [
-        {
-          "id": "treino",
-          "label": "Treino: energia 3, carga +2",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 0
-        }
-      ],
-      "scenarios": [
-        {
-          "id": "energia2",
-          "label": "Energia 2 · carga +3",
-          "energy": 2,
-          "charge": 3,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 0
-        },
-        {
-          "id": "energia1",
-          "label": "Energia 1 · carga +4",
-          "energy": 1,
-          "charge": 4,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 0
-        }
-      ]
-    },
-    {
-      "hasIf": true,
-      "hasLoop": false,
-      "hasGroup": false,
-      "maxBlocks": 16,
-      "reward": 100,
-      "id": "lab-conditions",
-      "title": "Separar dados",
-      "concept": "SE / SENÃO",
-      "icon": "03",
-      "mode": "conditions",
-      "goal": "Envie o pacote íntegro. Separe o corrompido para revisão.",
-      "brief": "Chegaram dados de dois tipos. Programe uma escolha que funcione para cada tipo de pacote.",
-      "actions": [
-        "send",
-        "review"
-      ],
-      "predicates": [
-        "valid"
-      ],
-      "lessons": [
-        {
-          "title": "Uma escolha no programa",
-          "text": "SE uma condição for verdadeira, faça uma ação. SENÃO, faça outra. Como levar um guarda-chuva se estiver chovendo."
-        },
-        {
-          "title": "Verdadeiro ou falso",
-          "text": "Pacote íntegro? É uma pergunta com duas respostas. Não é uma nota: é uma condição."
-        },
-        {
-          "title": "Os dois caminhos importam",
-          "text": "Teste também quando a condição é falsa. Um programa precisa cuidar do outro caso, não apenas do caso que deu certo."
-        }
-      ],
-      "hints": [
-        "Crie um bloco SE / SENÃO. A pergunta é: pacote íntegro?",
-        "O ramo ENTÃO é usado quando a pergunta é verdadeira. SENÃO é usado quando é falsa.",
-        "Enviar dados corrompidos é erro. Separe esses dados para revisão."
-      ],
-      "solution": [
-        {
-          "kind": "if",
-          "condition": {
-            "kind": "predicate",
-            "name": "valid"
-          },
-          "then": [
+          "id": "sinais",
+          "label": "3 sinais",
+          "packets": [
             {
-              "kind": "action",
-              "action": "send"
+              "id": "P1",
+              "value": 1,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "P2",
+              "value": 2,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "P3",
+              "value": 3,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
             }
           ],
-          "else": [
+          "expected": [
             {
-              "kind": "action",
-              "action": "review"
+              "id": "P1",
+              "sink": "ok",
+              "value": 1
+            },
+            {
+              "id": "P2",
+              "sink": "ok",
+              "value": 2
+            },
+            {
+              "id": "P3",
+              "sink": "ok",
+              "value": 3
+            }
+          ],
+          "target": 3
+        }
+      ],
+      "solutions": [
+        {
+          "nodes": [
+            {
+              "id": "in",
+              "kind": "source",
+              "x": 0,
+              "y": 2,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "ok",
+              "kind": "sink",
+              "x": 6,
+              "y": 2,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "a",
+              "kind": "relay",
+              "x": 2,
+              "y": 2,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "b",
+              "kind": "relay",
+              "x": 2,
+              "y": 0,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "c",
+              "kind": "relay",
+              "x": 5,
+              "y": 0,
+              "rotation": 0,
+              "config": {}
+            }
+          ],
+          "edges": [
+            {
+              "from": "in",
+              "port": "out",
+              "to": "a"
+            },
+            {
+              "from": "a",
+              "port": "out",
+              "to": "b"
+            },
+            {
+              "from": "b",
+              "port": "out",
+              "to": "c"
+            },
+            {
+              "from": "c",
+              "port": "out",
+              "to": "ok"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            {
+              "id": "in",
+              "kind": "source",
+              "x": 0,
+              "y": 2,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "ok",
+              "kind": "sink",
+              "x": 6,
+              "y": 2,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "a",
+              "kind": "relay",
+              "x": 2,
+              "y": 2,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "b",
+              "kind": "relay",
+              "x": 2,
+              "y": 4,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "c",
+              "kind": "relay",
+              "x": 5,
+              "y": 4,
+              "rotation": 0,
+              "config": {}
+            }
+          ],
+          "edges": [
+            {
+              "from": "in",
+              "port": "out",
+              "to": "a"
+            },
+            {
+              "from": "a",
+              "port": "out",
+              "to": "b"
+            },
+            {
+              "from": "b",
+              "port": "out",
+              "to": "c"
+            },
+            {
+              "from": "c",
+              "port": "out",
+              "to": "ok"
             }
           ]
         }
       ],
-      "initialPractice": [],
-      "demo": {
-        "scenario": {
-          "id": "demo",
-          "label": "Exemplo: pacote da oficina",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [
-            {
-              "id": "OF-01",
-              "valid": true,
-              "permission": true
-            }
-          ],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 1
-        },
-        "program": [
-          {
-            "kind": "if",
-            "condition": {
-              "kind": "predicate",
-              "name": "valid"
-            },
-            "then": [
-              {
-                "kind": "action",
-                "action": "send"
-              }
-            ],
-            "else": [
-              {
-                "kind": "action",
-                "action": "review"
-              }
-            ]
-          }
+      "parameters": {
+        "add": [
+          1,
+          2
+        ],
+        "multiply": [
+          2
         ]
-      },
-      "practice": [
-        {
-          "id": "treino",
-          "label": "Pacote íntegro do treino",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [
-            {
-              "id": "TR-01",
-              "valid": true,
-              "permission": true
-            }
-          ],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 1
-        }
-      ],
-      "scenarios": [
-        {
-          "id": "integro",
-          "label": "Pacote íntegro",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [
-            {
-              "id": "D-01",
-              "valid": true,
-              "permission": true
-            }
-          ],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 1
-        },
-        {
-          "id": "corrompido",
-          "label": "Pacote corrompido",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [
-            {
-              "id": "D-02",
-              "valid": false,
-              "permission": true
-            }
-          ],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 0
-        }
-      ]
+      }
     },
     {
-      "hasIf": true,
-      "hasLoop": false,
-      "hasGroup": true,
-      "maxBlocks": 16,
+      "id": "bench-values",
+      "title": "Calibrar sinais",
+      "concept": "Valores",
+      "mode": "transform",
+      "goal": "Faça os sinais chegarem aos valores indicados.",
+      "help": "Os números mudam ao atravessar as peças. Procure uma regra que funcione para todas as entradas.",
+      "available": [
+        "add",
+        "multiply",
+        "relay"
+      ],
+      "predicates": [],
+      "budget": 2,
+      "maxSpan": 12,
+      "blocked": [],
       "reward": 100,
-      "id": "lab-boolean",
-      "title": "Autorizar o acesso",
+      "fixed": [
+        {
+          "id": "in",
+          "kind": "source",
+          "x": 0,
+          "y": 2,
+          "rotation": 0,
+          "config": {}
+        },
+        {
+          "id": "ok",
+          "kind": "sink",
+          "x": 6,
+          "y": 1,
+          "rotation": 0,
+          "config": {}
+        },
+        {
+          "id": "reject",
+          "kind": "sink",
+          "x": 6,
+          "y": 3,
+          "rotation": 0,
+          "config": {}
+        }
+      ],
+      "cases": [
+        {
+          "id": "numeros",
+          "label": "1 → 4 · 3 → 6 · 5 → 8",
+          "packets": [
+            {
+              "id": "V1",
+              "value": 1,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "V2",
+              "value": 3,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "V3",
+              "value": 5,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            }
+          ],
+          "expected": [
+            {
+              "id": "V1",
+              "sink": "ok",
+              "value": 4
+            },
+            {
+              "id": "V2",
+              "sink": "ok",
+              "value": 6
+            },
+            {
+              "id": "V3",
+              "sink": "ok",
+              "value": 8
+            }
+          ],
+          "target": 3
+        },
+        {
+          "id": "novos",
+          "label": "2 → 5 · 4 → 7",
+          "packets": [
+            {
+              "id": "N1",
+              "value": 2,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "N2",
+              "value": 4,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            }
+          ],
+          "expected": [
+            {
+              "id": "N1",
+              "sink": "ok",
+              "value": 5
+            },
+            {
+              "id": "N2",
+              "sink": "ok",
+              "value": 7
+            }
+          ],
+          "target": 2
+        }
+      ],
+      "solutions": [
+        {
+          "nodes": [
+            {
+              "id": "in",
+              "kind": "source",
+              "x": 0,
+              "y": 2,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "ok",
+              "kind": "sink",
+              "x": 6,
+              "y": 1,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "reject",
+              "kind": "sink",
+              "x": 6,
+              "y": 3,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "a",
+              "kind": "add",
+              "x": 2,
+              "y": 2,
+              "rotation": 0,
+              "config": {
+                "value": 1
+              }
+            },
+            {
+              "id": "b",
+              "kind": "add",
+              "x": 4,
+              "y": 2,
+              "rotation": 0,
+              "config": {
+                "value": 2
+              }
+            }
+          ],
+          "edges": [
+            {
+              "from": "in",
+              "port": "out",
+              "to": "a"
+            },
+            {
+              "from": "a",
+              "port": "out",
+              "to": "b"
+            },
+            {
+              "from": "b",
+              "port": "out",
+              "to": "ok"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            {
+              "id": "in",
+              "kind": "source",
+              "x": 0,
+              "y": 2,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "ok",
+              "kind": "sink",
+              "x": 6,
+              "y": 1,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "reject",
+              "kind": "sink",
+              "x": 6,
+              "y": 3,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "a",
+              "kind": "add",
+              "x": 2,
+              "y": 2,
+              "rotation": 0,
+              "config": {
+                "value": 2
+              }
+            },
+            {
+              "id": "b",
+              "kind": "add",
+              "x": 4,
+              "y": 2,
+              "rotation": 0,
+              "config": {
+                "value": 1
+              }
+            }
+          ],
+          "edges": [
+            {
+              "from": "in",
+              "port": "out",
+              "to": "a"
+            },
+            {
+              "from": "a",
+              "port": "out",
+              "to": "b"
+            },
+            {
+              "from": "b",
+              "port": "out",
+              "to": "ok"
+            }
+          ]
+        }
+      ],
+      "parameters": {
+        "add": [
+          1,
+          2
+        ],
+        "multiply": [
+          2
+        ]
+      }
+    },
+    {
+      "id": "bench-filter",
+      "title": "Separar dados",
+      "concept": "Decisão",
+      "mode": "filter",
+      "goal": "Íntegros para o servidor. Corrompidos para revisão.",
+      "help": "✓ significa íntegro; ×, corrompido. O sensor escolhe SIM ou NÃO. Ligue cada caminho a seu destino.",
+      "available": [
+        "filter",
+        "relay"
+      ],
+      "predicates": [
+        "valid",
+        "permission"
+      ],
+      "budget": 3,
+      "maxSpan": 12,
+      "blocked": [],
+      "reward": 100,
+      "fixed": [
+        {
+          "id": "in",
+          "kind": "source",
+          "x": 0,
+          "y": 2,
+          "rotation": 0,
+          "config": {}
+        },
+        {
+          "id": "ok",
+          "kind": "sink",
+          "x": 6,
+          "y": 1,
+          "rotation": 0,
+          "config": {}
+        },
+        {
+          "id": "reject",
+          "kind": "sink",
+          "x": 6,
+          "y": 3,
+          "rotation": 0,
+          "config": {}
+        }
+      ],
+      "cases": [
+        {
+          "id": "mistos",
+          "label": "4 pacotes",
+          "packets": [
+            {
+              "id": "D1",
+              "value": 2,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "D2",
+              "value": 4,
+              "valid": false,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "D3",
+              "value": 6,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "D4",
+              "value": 1,
+              "valid": false,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            }
+          ],
+          "expected": [
+            {
+              "id": "D1",
+              "sink": "ok",
+              "value": 2
+            },
+            {
+              "id": "D2",
+              "sink": "reject",
+              "value": 4
+            },
+            {
+              "id": "D3",
+              "sink": "ok",
+              "value": 6
+            },
+            {
+              "id": "D4",
+              "sink": "reject",
+              "value": 1
+            }
+          ],
+          "target": 2
+        },
+        {
+          "id": "inversos",
+          "label": "3 pacotes",
+          "packets": [
+            {
+              "id": "D5",
+              "value": 9,
+              "valid": false,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "D6",
+              "value": 3,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "D7",
+              "value": 8,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            }
+          ],
+          "expected": [
+            {
+              "id": "D5",
+              "sink": "reject",
+              "value": 9
+            },
+            {
+              "id": "D6",
+              "sink": "ok",
+              "value": 3
+            },
+            {
+              "id": "D7",
+              "sink": "ok",
+              "value": 8
+            }
+          ],
+          "target": 2
+        }
+      ],
+      "solutions": [
+        {
+          "nodes": [
+            {
+              "id": "in",
+              "kind": "source",
+              "x": 0,
+              "y": 2,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "ok",
+              "kind": "sink",
+              "x": 6,
+              "y": 1,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "reject",
+              "kind": "sink",
+              "x": 6,
+              "y": 3,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "a",
+              "kind": "filter",
+              "x": 3,
+              "y": 2,
+              "rotation": 0,
+              "config": {
+                "a": "valid",
+                "b": "valid",
+                "op": "single",
+                "c": "valid",
+                "outer": "or",
+                "third": false,
+                "invert": false
+              }
+            }
+          ],
+          "edges": [
+            {
+              "from": "in",
+              "port": "out",
+              "to": "a"
+            },
+            {
+              "from": "a",
+              "port": "yes",
+              "to": "ok"
+            },
+            {
+              "from": "a",
+              "port": "no",
+              "to": "reject"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            {
+              "id": "in",
+              "kind": "source",
+              "x": 0,
+              "y": 2,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "ok",
+              "kind": "sink",
+              "x": 6,
+              "y": 1,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "reject",
+              "kind": "sink",
+              "x": 6,
+              "y": 3,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "a",
+              "kind": "filter",
+              "x": 3,
+              "y": 1,
+              "rotation": 0,
+              "config": {
+                "a": "valid",
+                "b": "valid",
+                "op": "single",
+                "c": "valid",
+                "outer": "or",
+                "third": false,
+                "invert": true
+              }
+            }
+          ],
+          "edges": [
+            {
+              "from": "in",
+              "port": "out",
+              "to": "a"
+            },
+            {
+              "from": "a",
+              "port": "yes",
+              "to": "reject"
+            },
+            {
+              "from": "a",
+              "port": "no",
+              "to": "ok"
+            }
+          ]
+        }
+      ],
+      "parameters": {
+        "add": [
+          1,
+          2
+        ],
+        "multiply": [
+          2
+        ]
+      }
+    },
+    {
+      "id": "bench-access",
+      "title": "Controlar acesso",
       "concept": "E / OU",
-      "icon": "04",
       "mode": "boolean",
-      "goal": "Autorize com credencial válida E energia ≥ 3, OU com manutenção autorizada.",
-      "brief": "Uma condição sozinha pode não bastar. Agrupe as regras e teste quem deve ter acesso ao núcleo.",
-      "actions": [
-        "allow",
-        "deny"
+      "goal": "Credencial + energia, ou manutenção: acesso liberado.",
+      "help": "E exige os dois sinais; OU aceita uma alternativa. Combine os sensores e teste cada cartão.",
+      "available": [
+        "filter",
+        "relay"
       ],
       "predicates": [
         "credentials",
-        "enoughEnergy",
+        "energy",
         "maintenance"
       ],
-      "lessons": [
+      "budget": 3,
+      "maxSpan": 12,
+      "blocked": [],
+      "reward": 100,
+      "fixed": [
         {
-          "title": "E precisa das duas",
-          "text": "Para sair de bicicleta com segurança: capacete E freios funcionando. Se faltar um, a condição é falsa."
+          "id": "in",
+          "kind": "source",
+          "x": 0,
+          "y": 2,
+          "rotation": 0,
+          "config": {}
         },
         {
-          "title": "OU aceita uma alternativa",
-          "text": "Você entra com um ingresso OU um convite. Qualquer uma das alternativas pode ser suficiente."
+          "id": "ok",
+          "kind": "sink",
+          "x": 6,
+          "y": 1,
+          "rotation": 0,
+          "config": {}
         },
         {
-          "title": "Agrupe para ficar claro",
-          "text": "Aqui: (credencial válida E energia suficiente) OU manutenção autorizada. Os parênteses dizem o que é combinado primeiro."
+          "id": "reject",
+          "kind": "sink",
+          "x": 6,
+          "y": 3,
+          "rotation": 0,
+          "config": {}
         }
       ],
-      "hints": [
-        "Use os parênteses do editor para agrupar a regra normal de acesso.",
-        "Credencial sozinha ou energia sozinha não autorizam. Teste esses cenários.",
-        "Manutenção autorizada é uma alternativa à regra normal: observe o conector de fora."
-      ],
-      "solution": [
+      "cases": [
         {
-          "kind": "if",
-          "condition": {
-            "kind": "or",
-            "left": {
-              "kind": "and",
-              "left": {
-                "kind": "predicate",
-                "name": "credentials"
-              },
-              "right": {
-                "kind": "predicate",
-                "name": "enoughEnergy"
-              }
-            },
-            "right": {
-              "kind": "predicate",
-              "name": "maintenance"
-            }
-          },
-          "then": [
+          "id": "acessos",
+          "label": "8 combinações",
+          "packets": [
             {
-              "kind": "action",
-              "action": "allow"
+              "id": "A1",
+              "value": 1,
+              "valid": true,
+              "permission": true,
+              "credentials": false,
+              "energy": false,
+              "maintenance": false
+            },
+            {
+              "id": "A2",
+              "value": 2,
+              "valid": true,
+              "permission": true,
+              "credentials": false,
+              "energy": false,
+              "maintenance": true
+            },
+            {
+              "id": "A3",
+              "value": 3,
+              "valid": true,
+              "permission": true,
+              "credentials": false,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "A4",
+              "value": 4,
+              "valid": true,
+              "permission": true,
+              "credentials": false,
+              "energy": true,
+              "maintenance": true
+            },
+            {
+              "id": "A5",
+              "value": 5,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": false,
+              "maintenance": false
+            },
+            {
+              "id": "A6",
+              "value": 6,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": false,
+              "maintenance": true
+            },
+            {
+              "id": "A7",
+              "value": 7,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "A8",
+              "value": 8,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": true
             }
           ],
-          "else": [
+          "expected": [
             {
-              "kind": "action",
-              "action": "deny"
+              "id": "A1",
+              "sink": "reject",
+              "value": 1
+            },
+            {
+              "id": "A2",
+              "sink": "ok",
+              "value": 2
+            },
+            {
+              "id": "A3",
+              "sink": "reject",
+              "value": 3
+            },
+            {
+              "id": "A4",
+              "sink": "ok",
+              "value": 4
+            },
+            {
+              "id": "A5",
+              "sink": "reject",
+              "value": 5
+            },
+            {
+              "id": "A6",
+              "sink": "ok",
+              "value": 6
+            },
+            {
+              "id": "A7",
+              "sink": "ok",
+              "value": 7
+            },
+            {
+              "id": "A8",
+              "sink": "ok",
+              "value": 8
+            }
+          ],
+          "target": 5
+        }
+      ],
+      "solutions": [
+        {
+          "nodes": [
+            {
+              "id": "in",
+              "kind": "source",
+              "x": 0,
+              "y": 2,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "ok",
+              "kind": "sink",
+              "x": 6,
+              "y": 1,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "reject",
+              "kind": "sink",
+              "x": 6,
+              "y": 3,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "a",
+              "kind": "filter",
+              "x": 3,
+              "y": 2,
+              "rotation": 0,
+              "config": {
+                "a": "credentials",
+                "b": "energy",
+                "op": "and",
+                "c": "maintenance",
+                "outer": "or",
+                "third": true,
+                "invert": false
+              }
+            }
+          ],
+          "edges": [
+            {
+              "from": "in",
+              "port": "out",
+              "to": "a"
+            },
+            {
+              "from": "a",
+              "port": "yes",
+              "to": "ok"
+            },
+            {
+              "from": "a",
+              "port": "no",
+              "to": "reject"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            {
+              "id": "in",
+              "kind": "source",
+              "x": 0,
+              "y": 2,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "ok",
+              "kind": "sink",
+              "x": 6,
+              "y": 1,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "reject",
+              "kind": "sink",
+              "x": 6,
+              "y": 3,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "a",
+              "kind": "filter",
+              "x": 2,
+              "y": 1,
+              "rotation": 0,
+              "config": {
+                "a": "maintenance",
+                "b": "maintenance",
+                "op": "single",
+                "c": "maintenance",
+                "outer": "or",
+                "third": false,
+                "invert": false
+              }
+            },
+            {
+              "id": "b",
+              "kind": "filter",
+              "x": 4,
+              "y": 3,
+              "rotation": 0,
+              "config": {
+                "a": "credentials",
+                "b": "energy",
+                "op": "and",
+                "c": "credentials",
+                "outer": "or",
+                "third": false,
+                "invert": false
+              }
+            }
+          ],
+          "edges": [
+            {
+              "from": "in",
+              "port": "out",
+              "to": "a"
+            },
+            {
+              "from": "a",
+              "port": "yes",
+              "to": "ok"
+            },
+            {
+              "from": "a",
+              "port": "no",
+              "to": "b"
+            },
+            {
+              "from": "b",
+              "port": "yes",
+              "to": "ok"
+            },
+            {
+              "from": "b",
+              "port": "no",
+              "to": "reject"
             }
           ]
         }
       ],
-      "initialPractice": [
-        {
-          "kind": "if",
-          "condition": {
-            "kind": "or",
-            "left": {
-              "kind": "or",
-              "left": {
-                "kind": "predicate",
-                "name": "credentials"
-              },
-              "right": {
-                "kind": "predicate",
-                "name": "enoughEnergy"
-              }
-            },
-            "right": {
-              "kind": "predicate",
-              "name": "maintenance"
-            }
-          },
-          "then": [
-            {
-              "kind": "action",
-              "action": "allow"
-            }
-          ],
-          "else": [
-            {
-              "kind": "action",
-              "action": "deny"
-            }
-          ]
-        }
-      ],
-      "demo": {
-        "scenario": {
-          "id": "demo",
-          "label": "Exemplo: regra normal com E",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [],
-          "credentials": true,
-          "maintenance": false,
-          "targetCount": 0
-        },
-        "program": [
-          {
-            "kind": "if",
-            "condition": {
-              "kind": "and",
-              "left": {
-                "kind": "predicate",
-                "name": "credentials"
-              },
-              "right": {
-                "kind": "predicate",
-                "name": "enoughEnergy"
-              }
-            },
-            "then": [
-              {
-                "kind": "action",
-                "action": "allow"
-              }
-            ],
-            "else": [
-              {
-                "kind": "action",
-                "action": "deny"
-              }
-            ]
-          }
+      "parameters": {
+        "add": [
+          1,
+          2
+        ],
+        "multiply": [
+          2
         ]
-      },
-      "practice": [
-        {
-          "id": "treinoA",
-          "label": "Tem credencial, falta energia",
-          "energy": 1,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [],
-          "credentials": true,
-          "maintenance": false,
-          "targetCount": 0
-        },
-        {
-          "id": "treinoB",
-          "label": "Tem credencial e energia",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [],
-          "credentials": true,
-          "maintenance": false,
-          "targetCount": 0
-        }
-      ],
-      "scenarios": [
-        {
-          "id": "nenhum",
-          "label": "Sem credencial ou manutenção",
-          "energy": 1,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 0
-        },
-        {
-          "id": "credencial",
-          "label": "Só credencial",
-          "energy": 1,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [],
-          "credentials": true,
-          "maintenance": false,
-          "targetCount": 0
-        },
-        {
-          "id": "energia",
-          "label": "Só energia",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 0
-        },
-        {
-          "id": "ambos",
-          "label": "Credencial e energia",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [],
-          "credentials": true,
-          "maintenance": false,
-          "targetCount": 0
-        },
-        {
-          "id": "manutencao",
-          "label": "Manutenção autorizada",
-          "energy": 0,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [],
-          "credentials": false,
-          "maintenance": true,
-          "targetCount": 0
-        },
-        {
-          "id": "credencialmanutencao",
-          "label": "Manutenção com credencial",
-          "energy": 0,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [],
-          "credentials": true,
-          "maintenance": true,
-          "targetCount": 0
-        }
-      ]
+      }
     },
     {
-      "hasIf": true,
-      "hasLoop": true,
-      "hasGroup": false,
-      "maxBlocks": 16,
-      "reward": 100,
-      "id": "lab-loop",
-      "title": "Processar um lote",
-      "concept": "PARA CADA",
-      "icon": "05",
-      "mode": "loop",
-      "goal": "Classifique cada pacote e conte apenas os enviados. Faça o mesmo programa funcionar em lotes de 3 e 5.",
-      "brief": "O trabalho se repete, mas a quantidade muda. Descreva o trabalho de um item e deixe o programa visitar o lote.",
-      "actions": [
-        "resetCount",
-        "send",
-        "review",
-        "count"
+      "id": "bench-memory",
+      "title": "Gerenciar o buffer",
+      "concept": "Memória / lote",
+      "mode": "buffer",
+      "goal": "Guarde os íntegros. Libere quando o lote terminar.",
+      "help": "O buffer guarda e conta. Quando todos os pacotes são processados, ele libera o lote automaticamente.",
+      "available": [
+        "filter",
+        "buffer",
+        "relay"
       ],
       "predicates": [
         "valid"
       ],
-      "lessons": [
+      "budget": 3,
+      "maxSpan": 12,
+      "blocked": [],
+      "reward": 100,
+      "fixed": [
         {
-          "title": "Um trabalho que se repete",
-          "text": "PARA CADA visita um item de uma coleção por vez. Como verificar cada produto de uma cesta."
+          "id": "in",
+          "kind": "source",
+          "x": 0,
+          "y": 2,
+          "rotation": 0,
+          "config": {}
         },
         {
-          "title": "A regra fica dentro do grupo",
-          "text": "Dentro de PARA CADA: SE o pacote é íntegro, envie e conte; SENÃO, separe. Não é preciso copiar a regra por pacote."
+          "id": "ok",
+          "kind": "sink",
+          "x": 6,
+          "y": 1,
+          "rotation": 0,
+          "config": {}
         },
         {
-          "title": "Contador também é variável",
-          "text": "Comece enviados = 0. Acrescente 1 depois de cada envio. Separar um pacote não aumenta enviados."
+          "id": "reject",
+          "kind": "sink",
+          "x": 6,
+          "y": 3,
+          "rotation": 0,
+          "config": {}
         }
       ],
-      "hints": [
-        "Inicialize o contador antes do grupo PARA CADA.",
-        "Dentro do grupo, use a mesma escolha que aprendeu em Separar dados.",
-        "Aumente enviados somente depois de enviar. O lote maior usa o mesmo grupo."
-      ],
-      "solution": [
+      "cases": [
         {
-          "kind": "action",
-          "action": "resetCount"
+          "id": "lote-a",
+          "label": "2 íntegros / 4",
+          "packets": [
+            {
+              "id": "B1",
+              "value": 1,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "B2",
+              "value": 2,
+              "valid": false,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "B3",
+              "value": 3,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "B4",
+              "value": 4,
+              "valid": false,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            }
+          ],
+          "expected": [
+            {
+              "id": "B1",
+              "sink": "ok",
+              "value": 1
+            },
+            {
+              "id": "B2",
+              "sink": "reject",
+              "value": 2
+            },
+            {
+              "id": "B3",
+              "sink": "ok",
+              "value": 3
+            },
+            {
+              "id": "B4",
+              "sink": "reject",
+              "value": 4
+            }
+          ],
+          "target": 2
         },
         {
-          "kind": "foreach",
-          "body": [
+          "id": "lote-b",
+          "label": "3 íntegros / 5",
+          "packets": [
             {
-              "kind": "if",
-              "condition": {
-                "kind": "predicate",
-                "name": "valid"
-              },
-              "then": [
-                {
-                  "kind": "action",
-                  "action": "send"
-                },
-                {
-                  "kind": "action",
-                  "action": "count"
-                }
-              ],
-              "else": [
-                {
-                  "kind": "action",
-                  "action": "review"
-                }
-              ]
+              "id": "B5",
+              "value": 2,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "B6",
+              "value": 5,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "B7",
+              "value": 7,
+              "valid": false,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "B8",
+              "value": 8,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "B9",
+              "value": 3,
+              "valid": false,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            }
+          ],
+          "expected": [
+            {
+              "id": "B5",
+              "sink": "ok",
+              "value": 2
+            },
+            {
+              "id": "B6",
+              "sink": "ok",
+              "value": 5
+            },
+            {
+              "id": "B7",
+              "sink": "reject",
+              "value": 7
+            },
+            {
+              "id": "B8",
+              "sink": "ok",
+              "value": 8
+            },
+            {
+              "id": "B9",
+              "sink": "reject",
+              "value": 3
+            }
+          ],
+          "target": 3
+        },
+        {
+          "id": "lote-zero",
+          "label": "0 íntegros / 2",
+          "packets": [
+            {
+              "id": "B10",
+              "value": 4,
+              "valid": false,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "B11",
+              "value": 6,
+              "valid": false,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            }
+          ],
+          "expected": [
+            {
+              "id": "B10",
+              "sink": "reject",
+              "value": 4
+            },
+            {
+              "id": "B11",
+              "sink": "reject",
+              "value": 6
+            }
+          ],
+          "target": 0
+        }
+      ],
+      "solutions": [
+        {
+          "nodes": [
+            {
+              "id": "in",
+              "kind": "source",
+              "x": 0,
+              "y": 2,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "ok",
+              "kind": "sink",
+              "x": 6,
+              "y": 1,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "reject",
+              "kind": "sink",
+              "x": 6,
+              "y": 3,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "a",
+              "kind": "filter",
+              "x": 2,
+              "y": 2,
+              "rotation": 0,
+              "config": {
+                "a": "valid",
+                "b": "valid",
+                "op": "single",
+                "c": "valid",
+                "outer": "or",
+                "third": false,
+                "invert": false
+              }
+            },
+            {
+              "id": "b",
+              "kind": "buffer",
+              "x": 4,
+              "y": 1,
+              "rotation": 0,
+              "config": {}
+            }
+          ],
+          "edges": [
+            {
+              "from": "in",
+              "port": "out",
+              "to": "a"
+            },
+            {
+              "from": "a",
+              "port": "yes",
+              "to": "b"
+            },
+            {
+              "from": "a",
+              "port": "no",
+              "to": "reject"
+            },
+            {
+              "from": "b",
+              "port": "out",
+              "to": "ok"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            {
+              "id": "in",
+              "kind": "source",
+              "x": 0,
+              "y": 2,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "ok",
+              "kind": "sink",
+              "x": 6,
+              "y": 1,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "reject",
+              "kind": "sink",
+              "x": 6,
+              "y": 3,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "a",
+              "kind": "filter",
+              "x": 2,
+              "y": 2,
+              "rotation": 0,
+              "config": {
+                "a": "valid",
+                "b": "valid",
+                "op": "single",
+                "c": "valid",
+                "outer": "or",
+                "third": false,
+                "invert": true
+              }
+            },
+            {
+              "id": "b",
+              "kind": "buffer",
+              "x": 4,
+              "y": 1,
+              "rotation": 0,
+              "config": {}
+            }
+          ],
+          "edges": [
+            {
+              "from": "in",
+              "port": "out",
+              "to": "a"
+            },
+            {
+              "from": "a",
+              "port": "no",
+              "to": "b"
+            },
+            {
+              "from": "a",
+              "port": "yes",
+              "to": "reject"
+            },
+            {
+              "from": "b",
+              "port": "out",
+              "to": "ok"
             }
           ]
         }
       ],
-      "initialPractice": [
-        {
-          "kind": "action",
-          "action": "resetCount"
-        }
-      ],
-      "demo": {
-        "scenario": {
-          "id": "demo",
-          "label": "Exemplo: um lote só de íntegros",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [
-            {
-              "id": "EX-1",
-              "valid": true,
-              "permission": true
-            },
-            {
-              "id": "EX-2",
-              "valid": true,
-              "permission": true
-            }
-          ],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 2
-        },
-        "program": [
-          {
-            "kind": "action",
-            "action": "resetCount"
-          },
-          {
-            "kind": "foreach",
-            "body": [
-              {
-                "kind": "action",
-                "action": "send"
-              },
-              {
-                "kind": "action",
-                "action": "count"
-              }
-            ]
-          }
+      "parameters": {
+        "add": [
+          1,
+          2
+        ],
+        "multiply": [
+          2
         ]
-      },
-      "practice": [
-        {
-          "id": "treino",
-          "label": "Treino: dois pacotes",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [
-            {
-              "id": "TR-1",
-              "valid": true,
-              "permission": true
-            },
-            {
-              "id": "TR-2",
-              "valid": false,
-              "permission": true
-            }
-          ],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 1
-        }
-      ],
-      "scenarios": [
-        {
-          "id": "lote3",
-          "label": "Lote de 3",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [
-            {
-              "id": "L3-1",
-              "valid": true,
-              "permission": true
-            },
-            {
-              "id": "L3-2",
-              "valid": false,
-              "permission": true
-            },
-            {
-              "id": "L3-3",
-              "valid": true,
-              "permission": true
-            }
-          ],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 2
-        },
-        {
-          "id": "lote5",
-          "label": "Lote de 5",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [
-            {
-              "id": "L5-1",
-              "valid": false,
-              "permission": true
-            },
-            {
-              "id": "L5-2",
-              "valid": true,
-              "permission": true
-            },
-            {
-              "id": "L5-3",
-              "valid": true,
-              "permission": true
-            },
-            {
-              "id": "L5-4",
-              "valid": false,
-              "permission": true
-            },
-            {
-              "id": "L5-5",
-              "valid": true,
-              "permission": true
-            }
-          ],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 3
-        }
-      ]
+      }
     },
     {
-      "hasIf": true,
-      "hasLoop": true,
-      "hasGroup": true,
-      "maxBlocks": 20,
-      "reward": 200,
-      "id": "lab-final",
+      "id": "bench-core",
       "title": "Recuperar o núcleo",
       "concept": "Desafio final",
-      "icon": "★",
       "mode": "final",
-      "goal": "Ligue a central. Envie apenas dados íntegros E autorizados, conte os enviados e libere o relatório com meta atingida E lote concluído.",
-      "brief": "Você já conhece todas as ferramentas. Integre o sistema para recuperar o núcleo em três situações diferentes.",
-      "actions": [
-        "power",
-        "resetCount",
-        "send",
-        "review",
-        "count",
-        "release",
-        "hold"
+      "goal": "Íntegros e autorizados: +3, memória e envio em lote.",
+      "help": "Separe os inválidos, transforme só os aprovados e guarde-os antes do envio. O mesmo circuito deve funcionar em três lotes.",
+      "available": [
+        "filter",
+        "add",
+        "multiply",
+        "buffer",
+        "relay"
       ],
       "predicates": [
         "valid",
         "permission",
         "countMet",
-        "lotDone"
+        "batchDone"
       ],
-      "lessons": [
+      "budget": 6,
+      "maxSpan": 12,
+      "blocked": [],
+      "reward": 200,
+      "fixed": [
         {
-          "title": "Combine o que já sabe",
-          "text": "Inicialize a central e a variável enviados. A ordem continua importando."
+          "id": "in",
+          "kind": "source",
+          "x": 0,
+          "y": 2,
+          "rotation": 0,
+          "config": {}
         },
         {
-          "title": "Uma regra para o lote",
-          "text": "PARA CADA pacote, envie somente se ele é íntegro E tem permissão. Conte os enviados; separe os demais."
+          "id": "ok",
+          "kind": "sink",
+          "x": 6,
+          "y": 1,
+          "rotation": 0,
+          "config": {}
         },
         {
-          "title": "Uma regra para terminar",
-          "text": "Depois do lote: SE enviados é igual à meta E o lote terminou, libere o relatório. SENÃO, mantenha bloqueado. A meta pode ser zero: nenhuma entrada válida também é um caso importante."
+          "id": "reject",
+          "kind": "sink",
+          "x": 6,
+          "y": 3,
+          "rotation": 0,
+          "config": {}
         }
       ],
-      "hints": [
-        "Antes do lote, o sistema precisa estar ligado e o contador inicializado.",
-        "Classifique com duas condições: integridade e permissão. Conte somente envios.",
-        "Depois de PARA CADA, teste meta atingida E lote concluído. Zero também pode atingir a meta."
-      ],
-      "solution": [
+      "cases": [
         {
-          "kind": "action",
-          "action": "power"
-        },
-        {
-          "kind": "action",
-          "action": "resetCount"
-        },
-        {
-          "kind": "foreach",
-          "body": [
-            {
-              "kind": "if",
-              "condition": {
-                "kind": "and",
-                "left": {
-                  "kind": "predicate",
-                  "name": "valid"
-                },
-                "right": {
-                  "kind": "predicate",
-                  "name": "permission"
-                }
-              },
-              "then": [
-                {
-                  "kind": "action",
-                  "action": "send"
-                },
-                {
-                  "kind": "action",
-                  "action": "count"
-                }
-              ],
-              "else": [
-                {
-                  "kind": "action",
-                  "action": "review"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "kind": "if",
-          "condition": {
-            "kind": "and",
-            "left": {
-              "kind": "predicate",
-              "name": "countMet"
-            },
-            "right": {
-              "kind": "predicate",
-              "name": "lotDone"
-            }
-          },
-          "then": [
-            {
-              "kind": "action",
-              "action": "release"
-            }
-          ],
-          "else": [
-            {
-              "kind": "action",
-              "action": "hold"
-            }
-          ]
-        }
-      ],
-      "initialPractice": [
-        {
-          "kind": "action",
-          "action": "power"
-        },
-        {
-          "kind": "action",
-          "action": "resetCount"
-        }
-      ],
-      "demo": {
-        "scenario": {
-          "id": "demo",
-          "label": "Exemplo: todos têm permissão",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
+          "id": "nucleo-a",
+          "label": "Meta 1",
           "packets": [
             {
-              "id": "EX-1",
+              "id": "F1",
+              "value": 1,
               "valid": true,
-              "permission": true
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
             },
             {
-              "id": "EX-2",
+              "id": "F2",
+              "value": 3,
               "valid": false,
-              "permission": true
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "F3",
+              "value": 5,
+              "valid": true,
+              "permission": false,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
             }
           ],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 1
+          "expected": [
+            {
+              "id": "F1",
+              "sink": "ok",
+              "value": 4
+            },
+            {
+              "id": "F2",
+              "sink": "reject",
+              "value": 3
+            },
+            {
+              "id": "F3",
+              "sink": "reject",
+              "value": 5
+            }
+          ],
+          "target": 1
         },
-        "program": [
-          {
-            "kind": "action",
-            "action": "power"
-          },
-          {
-            "kind": "action",
-            "action": "resetCount"
-          },
-          {
-            "kind": "foreach",
-            "body": [
-              {
-                "kind": "if",
-                "condition": {
-                  "kind": "predicate",
-                  "name": "valid"
-                },
-                "then": [
-                  {
-                    "kind": "action",
-                    "action": "send"
-                  },
-                  {
-                    "kind": "action",
-                    "action": "count"
-                  }
-                ],
-                "else": [
-                  {
-                    "kind": "action",
-                    "action": "review"
-                  }
-                ]
-              }
-            ]
-          },
-          {
-            "kind": "if",
-            "condition": {
-              "kind": "and",
-              "left": {
-                "kind": "predicate",
-                "name": "countMet"
-              },
-              "right": {
-                "kind": "predicate",
-                "name": "lotDone"
+        {
+          "id": "nucleo-b",
+          "label": "Meta 3",
+          "packets": [
+            {
+              "id": "F4",
+              "value": 2,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "F5",
+              "value": 4,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "F6",
+              "value": 6,
+              "valid": true,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "F7",
+              "value": 8,
+              "valid": false,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "F8",
+              "value": 1,
+              "valid": true,
+              "permission": false,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            }
+          ],
+          "expected": [
+            {
+              "id": "F4",
+              "sink": "ok",
+              "value": 5
+            },
+            {
+              "id": "F5",
+              "sink": "ok",
+              "value": 7
+            },
+            {
+              "id": "F6",
+              "sink": "ok",
+              "value": 9
+            },
+            {
+              "id": "F7",
+              "sink": "reject",
+              "value": 8
+            },
+            {
+              "id": "F8",
+              "sink": "reject",
+              "value": 1
+            }
+          ],
+          "target": 3
+        },
+        {
+          "id": "nucleo-zero",
+          "label": "Meta 0",
+          "packets": [
+            {
+              "id": "F9",
+              "value": 3,
+              "valid": false,
+              "permission": true,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            },
+            {
+              "id": "F10",
+              "value": 5,
+              "valid": true,
+              "permission": false,
+              "credentials": true,
+              "energy": true,
+              "maintenance": false
+            }
+          ],
+          "expected": [
+            {
+              "id": "F9",
+              "sink": "reject",
+              "value": 3
+            },
+            {
+              "id": "F10",
+              "sink": "reject",
+              "value": 5
+            }
+          ],
+          "target": 0
+        }
+      ],
+      "solutions": [
+        {
+          "nodes": [
+            {
+              "id": "in",
+              "kind": "source",
+              "x": 0,
+              "y": 2,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "ok",
+              "kind": "sink",
+              "x": 6,
+              "y": 1,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "reject",
+              "kind": "sink",
+              "x": 6,
+              "y": 3,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "a",
+              "kind": "filter",
+              "x": 1,
+              "y": 2,
+              "rotation": 0,
+              "config": {
+                "a": "valid",
+                "b": "permission",
+                "op": "and",
+                "c": "valid",
+                "outer": "or",
+                "third": false,
+                "invert": false
               }
             },
-            "then": [
-              {
-                "kind": "action",
-                "action": "release"
+            {
+              "id": "b",
+              "kind": "add",
+              "x": 3,
+              "y": 1,
+              "rotation": 0,
+              "config": {
+                "value": 1
               }
-            ],
-            "else": [
-              {
-                "kind": "action",
-                "action": "hold"
+            },
+            {
+              "id": "c",
+              "kind": "add",
+              "x": 4,
+              "y": 1,
+              "rotation": 0,
+              "config": {
+                "value": 2
               }
-            ]
-          }
+            },
+            {
+              "id": "d",
+              "kind": "buffer",
+              "x": 5,
+              "y": 1,
+              "rotation": 0,
+              "config": {}
+            }
+          ],
+          "edges": [
+            {
+              "from": "in",
+              "port": "out",
+              "to": "a"
+            },
+            {
+              "from": "a",
+              "port": "yes",
+              "to": "b"
+            },
+            {
+              "from": "a",
+              "port": "no",
+              "to": "reject"
+            },
+            {
+              "from": "b",
+              "port": "out",
+              "to": "c"
+            },
+            {
+              "from": "c",
+              "port": "out",
+              "to": "d"
+            },
+            {
+              "from": "d",
+              "port": "out",
+              "to": "ok"
+            }
+          ]
+        },
+        {
+          "nodes": [
+            {
+              "id": "in",
+              "kind": "source",
+              "x": 0,
+              "y": 2,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "ok",
+              "kind": "sink",
+              "x": 6,
+              "y": 1,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "reject",
+              "kind": "sink",
+              "x": 6,
+              "y": 3,
+              "rotation": 0,
+              "config": {}
+            },
+            {
+              "id": "a",
+              "kind": "filter",
+              "x": 1,
+              "y": 2,
+              "rotation": 0,
+              "config": {
+                "a": "valid",
+                "b": "valid",
+                "op": "single",
+                "c": "valid",
+                "outer": "or",
+                "third": false,
+                "invert": false
+              }
+            },
+            {
+              "id": "e",
+              "kind": "filter",
+              "x": 2,
+              "y": 2,
+              "rotation": 0,
+              "config": {
+                "a": "permission",
+                "b": "permission",
+                "op": "single",
+                "c": "permission",
+                "outer": "or",
+                "third": false,
+                "invert": false
+              }
+            },
+            {
+              "id": "b",
+              "kind": "add",
+              "x": 3,
+              "y": 0,
+              "rotation": 0,
+              "config": {
+                "value": 2
+              }
+            },
+            {
+              "id": "c",
+              "kind": "add",
+              "x": 4,
+              "y": 0,
+              "rotation": 0,
+              "config": {
+                "value": 1
+              }
+            },
+            {
+              "id": "d",
+              "kind": "buffer",
+              "x": 5,
+              "y": 1,
+              "rotation": 0,
+              "config": {}
+            }
+          ],
+          "edges": [
+            {
+              "from": "in",
+              "port": "out",
+              "to": "a"
+            },
+            {
+              "from": "a",
+              "port": "yes",
+              "to": "e"
+            },
+            {
+              "from": "a",
+              "port": "no",
+              "to": "reject"
+            },
+            {
+              "from": "e",
+              "port": "yes",
+              "to": "b"
+            },
+            {
+              "from": "e",
+              "port": "no",
+              "to": "reject"
+            },
+            {
+              "from": "b",
+              "port": "out",
+              "to": "c"
+            },
+            {
+              "from": "c",
+              "port": "out",
+              "to": "d"
+            },
+            {
+              "from": "d",
+              "port": "out",
+              "to": "ok"
+            }
+          ]
+        }
+      ],
+      "parameters": {
+        "add": [
+          1,
+          2
+        ],
+        "multiply": [
+          2
         ]
-      },
-      "practice": [
-        {
-          "id": "treino",
-          "label": "Treino integrado",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [
-            {
-              "id": "TR-1",
-              "valid": true,
-              "permission": true
-            },
-            {
-              "id": "TR-2",
-              "valid": true,
-              "permission": false
-            }
-          ],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 1
-        }
-      ],
-      "scenarios": [
-        {
-          "id": "nucleo3",
-          "label": "Núcleo A · meta 1",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [
-            {
-              "id": "N1",
-              "valid": true,
-              "permission": true
-            },
-            {
-              "id": "N2",
-              "valid": false,
-              "permission": true
-            },
-            {
-              "id": "N3",
-              "valid": true,
-              "permission": false
-            }
-          ],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 1
-        },
-        {
-          "id": "nucleo5",
-          "label": "Núcleo B · meta 3",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [
-            {
-              "id": "B1",
-              "valid": true,
-              "permission": true
-            },
-            {
-              "id": "B2",
-              "valid": false,
-              "permission": true
-            },
-            {
-              "id": "B3",
-              "valid": true,
-              "permission": true
-            },
-            {
-              "id": "B4",
-              "valid": true,
-              "permission": false
-            },
-            {
-              "id": "B5",
-              "valid": true,
-              "permission": true
-            }
-          ],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 3
-        },
-        {
-          "id": "nucleo0",
-          "label": "Núcleo C · meta 0",
-          "energy": 3,
-          "charge": 2,
-          "cost": 2,
-          "targetEnergy": 1,
-          "packets": [
-            {
-              "id": "C1",
-              "valid": false,
-              "permission": true
-            },
-            {
-              "id": "C2",
-              "valid": true,
-              "permission": false
-            }
-          ],
-          "credentials": false,
-          "maintenance": false,
-          "targetCount": 0
-        }
-      ]
+      }
     }
   ]
 }

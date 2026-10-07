@@ -1,130 +1,113 @@
 import data from '../content/missions.json';
-import type {Action,Block,Expr,LabState,Mission,Predicate,Scenario} from '../core/lab-types';
-import {startLab,stepLab} from '../core/lab-engine';
-import {loadProgress,saveProgress,resetProgress,completeMission} from '../core/progress';
+import type {Config,CircuitState,Kind,Layout,Mission,Node} from '../core/circuit-types';
+import {startCircuit,stepCircuit} from '../core/circuit-engine';
+import {defaultConfig,validateLayout} from '../core/circuit-layout';
+import {completeMission,loadProgress,resetProgress,saveProgress} from '../core/progress';
 import type {StoragePort} from '../core/progress';
 import {loadPreferences,savePreferences} from '../core/preferences';
-import {blockAt,listAt,makeIf} from './lab-editor';
-import {campaign,complete,header,home,lesson,modal,result,workspace} from './views';
-import type {Campaign,Overlay,Stage} from './views';
+import {campaign,header,home,modal,result,workspace} from './views';
+import type {Campaign,Overlay} from './views';
 declare const __VERSION__:{version:string;sha:string};
-const missions=data.missions as Mission[],ids=missions.map(m=>m.id);
-const app=document.querySelector<HTMLDivElement>('#app')!;
-let storage:StoragePort|undefined;try{storage=window.localStorage;}catch{/* Fallback local de sessão. */}
-let legacy=false;try{legacy=!!storage?.getItem('rota-do-codigo:campaign:v1');}catch{/* Não acessar outros dados. */}
+const missions=data.missions as Mission[],ids=missions.map(m=>m.id),app=document.querySelector<HTMLElement>('#app')!;
+let storage:StoragePort|undefined;try{storage=window.localStorage;}catch{/* Sessão em memória. */}
+let legacy=false;try{legacy=!!(storage?.getItem('rota-do-codigo:lab:v2')||storage?.getItem('rota-do-codigo:campaign:v1'));}catch{/* Preservar dados anteriores. */}
 const c:Campaign={completed:loadProgress(storage,ids),saved:!!storage,legacy,version:__VERSION__};
-let preferences=loadPreferences(storage);
-let view:'home'|'missions'|'lesson'|'workspace'|'result'|'complete'='home',overlay:Overlay=null,modalBack:Overlay=null;
-let missionIndex=0,stage:Stage='demo',program:Block[]=[],caseIndex=0,runs:(LabState|undefined)[]=[],results:('pending'|'won'|'failed')[]=[];
-let busy=false,batchActive=false,pausedAuto=false,review=false,hintCount=0,error='',earned=0,timer:ReturnType<typeof setInterval>|undefined;
-const mission=()=>missions[missionIndex];
-const cases=():Scenario[]=>stage==='demo'?[mission().demo.scenario]:stage==='practice'?mission().practice:mission().scenarios;
-const reduced=()=>preferences.reduced||window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-function stop(){if(timer)clearInterval(timer);timer=undefined;busy=false;}
-function resetAttempt(){stop();caseIndex=0;runs=cases().map(()=>undefined);results=cases().map(()=>'pending');batchActive=false;error='';earned=0;}
-function focusTop(){app.focus();window.scrollTo({top:0,behavior:'instant'});}
+let preferences=loadPreferences(storage),view:'home'|'missions'|'bench'|'result'='home',overlay:Overlay=null,parentOverlay:Overlay=null;
+let index=0,layout:Layout={nodes:structuredClone(missions[0].fixed),edges:[]},selected='',armed:Kind|null=null,link:{from:string;port:string}|null=null,moving=false,serial=0;
+let history:Layout[]=[],caseIndex=0,runs:(CircuitState|undefined)[]=[],results:string[]=[],paused=false,message='',earned=0,timer:ReturnType<typeof setInterval>|undefined,overlayResume=false;
+const drafts=new Map<number,Layout>();
+const mission=()=>missions[index],state=()=>runs[caseIndex],reduced=()=>preferences.reduced||window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function stop(){if(timer)clearInterval(timer);timer=undefined;}
+function hold(){if(timer){stop();paused=true;}}
 function render(focusId?:string){
  const active=focusId??(document.activeElement instanceof HTMLElement?document.activeElement.id:'');
  document.documentElement.classList.toggle('reduced-motion',reduced());document.documentElement.classList.toggle('large-text',preferences.largeText);
- const state=runs[caseIndex];
- const body=view==='home'?home(missions,c):view==='missions'?campaign(missions,c):view==='lesson'?lesson(mission(),missionIndex,review):view==='workspace'?workspace(mission(),missionIndex,stage,program,cases(),caseIndex,state,results,busy,hintCount,error):view==='complete'?complete(missions,c):result(mission(),stage,state!,cases(),results,earned);
- app.innerHTML=header(missions,c,view==='workspace')+body+`<footer class="game-footer"><span>PEQUENOS PROGRAMAS. GRANDES IDEIAS.</span><span>TECLADO / TOQUE / OFFLINE</span></footer>`+modal(overlay,preferences);
- const dialog=app.querySelector<HTMLDialogElement>('#game-modal');if(dialog&&!dialog.open)dialog.showModal();
- if(active){const target=document.getElementById(active);if(target&&(!dialog||dialog.contains(target)))target.focus({preventScroll:true});}
- if(dialog)dialog.addEventListener('cancel',e=>{e.preventDefault();closeModal();});
+ const body=view==='home'?home(missions,c):view==='missions'?campaign(missions,c):view==='result'?result(mission(),earned,index===5,layout.nodes.length-mission().fixed.length):workspace(mission(),index,layout,mission().cases[caseIndex],state(),selected,armed,link?.port??'',moving,message,results,caseIndex,paused);
+ app.innerHTML=header(c,view==='bench')+body+modal(overlay,mission(),layout,selected,preferences,state(),caseIndex,results);
+ const dialog=app.querySelector<HTMLDialogElement>('dialog');if(dialog){dialog.showModal();dialog.addEventListener('cancel',e=>{e.preventDefault();close();});}
+ const target=active?document.getElementById(active):null;if(target&&(!dialog||dialog.contains(target)))target.focus({preventScroll:true});
 }
-function begin(index:number){if(!missions[index]||index>c.completed.length)return;stop();overlay=null;missionIndex=index;review=false;hintCount=0;view='lesson';render();focusTop();}
-function setStage(next:Stage){stage=next;program=structuredClone(next==='demo'?mission().demo.program:next==='practice'?mission().initialPractice:[]);resetAttempt();hintCount=0;review=false;view='workspace';overlay=null;render();focusTop();}
-function navigate(next:typeof view){stop();overlay=null;view=next;render();focusTop();}
-function finish(){
- stop();batchActive=false;
- if(stage==='demo'){render();return;}
- if(results.every(r=>r==='won')&&stage==='challenge'){
-  const before=c.completed.length;c.completed=completeMission(c.completed,mission().id,ids);earned=c.completed.length>before?mission().reward:0;c.saved=saveProgress(storage,c.completed);
- }
- view='result';render();focusTop();
+function clearRuns(){stop();runs=mission().cases.map(()=>undefined);results=mission().cases.map(()=>'pending');caseIndex=0;paused=false;earned=0;}
+function begin(i:number){if(!missions[i]||i>c.completed.length)return;stop();index=i;layout=structuredClone(drafts.get(i)??{nodes:mission().fixed,edges:[]});selected='';armed=null;link=null;moving=false;history=[];clearRuns();view='bench';overlay=null;message='Escolha uma peça ou selecione a entrada para conectar.';render();app.focus();window.scrollTo({top:0,behavior:'instant'});}
+function navigate(next:'home'|'missions'){hold();drafts.set(index,structuredClone(layout));overlay=null;view=next;render();app.focus();window.scrollTo({top:0,behavior:'instant'});}
+function open(type:Overlay){parentOverlay=overlay==='pause'?'pause':null;overlayResume=!!timer;hold();overlay=type;render();}
+function close(){const next=parentOverlay;overlay=next;parentOverlay=null;render();if(!overlay&&overlayResume&&state()?.status==='running'){overlayResume=false;paused=false;startTimer();}}
+function change(next:Layout,focus?:string):boolean{
+ const problem=validateLayout(mission(),next);if(problem){hold();message=problem;runs[caseIndex]=undefined;render(focus);return false;}
+ history.push(structuredClone(layout));if(history.length>50)history.shift();layout=next;drafts.set(index,structuredClone(layout));clearRuns();message='';render(focus);return true;
 }
-function advance(){
- try{
-  if(!batchActive){caseIndex=0;runs=cases().map(()=>undefined);results=cases().map(()=>'pending');batchActive=true;}
-  if(runs[caseIndex]?.status==='won'){caseIndex++;}
-  const s=cases()[caseIndex];if(!runs[caseIndex])runs[caseIndex]=startLab(mission(),s,program);
-  runs[caseIndex]=stepLab(mission(),s,runs[caseIndex]!);
-  const state=runs[caseIndex]!;
-  if(state.status!=='running')results[caseIndex]=state.status;
-  if(state.status==='failed'||(state.status==='won'&&caseIndex===cases().length-1))finish();else render();
- }catch(e){stop();batchActive=false;error=e instanceof Error?e.message:String(e);render();}
+function updateNode(fn:(n:Node)=>void){const next=structuredClone(layout),n=next.nodes.find(n=>n.id===selected);if(n){fn(n);change(next);}}
+function place(kind:Kind,x:number,y:number){if(!mission().available.includes(kind))return;const next=structuredClone(layout),id=`p${++serial}`;next.nodes.push({id,kind,x,y,rotation:0,config:defaultConfig(mission(),kind)});if(change(next,`slot-${x}-${y}`)){selected=id;armed=null;message='Peça encaixada. Conecte sua saída.';render(`slot-${x}-${y}`);}}
+function slot(x:number,y:number){
+ const n=layout.nodes.find(n=>n.x===x&&n.y===y);
+ if(link&&n){const next=structuredClone(layout);next.edges=next.edges.filter(e=>e.from!==link!.from||e.port!==link!.port);next.edges.push({...link,to:n.id});if(change(next,`slot-${x}-${y}`)){link=null;selected=n.id;message=n.kind==='sink'?'Cabo conectado.':'Cabo conectado. Escolha a próxima saída.';render(`slot-${x}-${y}`);}return;}
+ if(moving&&!n){const next=structuredClone(layout),node=next.nodes.find(p=>p.id===selected)!;node.x=x;node.y=y;if(change(next,`slot-${x}-${y}`)){moving=false;render(`slot-${x}-${y}`);}return;}
+ if(armed&&!n){place(armed,x,y);return;}
+ hold();selected=n?.id??'';armed=null;moving=false;link=null;message='';render(`slot-${x}-${y}`);
 }
-function revealSystem(){if(window.innerWidth<=800)app.querySelector('.simulator')?.scrollIntoView({behavior:reduced()?'instant':'smooth',block:'start'});}
-function auto(){if(stage==='demo'&&runs[0]?.status==='won')return;stop();busy=true;advance();if(busy)timer=setInterval(advance,reduced()?65:420);revealSystem();}
-function pause(){pausedAuto=busy;stop();overlay='pause';render();}
-function resume(){overlay=null;modalBack=null;render('top-menu');if(pausedAuto){pausedAuto=false;busy=true;timer=setInterval(advance,reduced()?65:420);render();}}
-function closeModal(){if(overlay==='pause'){resume();return;}overlay=modalBack;modalBack=null;render(overlay?'resume':'options');}
-function editProgram(mutate:()=>void,focusId?:string){stop();mutate();resetAttempt();render(focusId);}
-function selectedBlock(path:string){return blockAt(program,path);}
-app.addEventListener('click',event=>{
- const target=(event.target as HTMLElement).closest<HTMLButtonElement>('button[data-action]');if(!target||target.disabled)return;
- const action=target.dataset.action!,path=target.dataset.path??'',parent=target.dataset.parent??'';
- switch(action){
- case 'home':navigate('home');break;
- case 'missions':navigate('missions');break;
- case 'new':if(c.completed.length){modalBack=null;overlay='new';render();}else begin(0);break;
- case 'continue':if(c.completed.length===6)navigate('complete');else begin(c.completed.length);break;
- case 'select':begin(Number(target.dataset.index));break;
- case 'demo':setStage('demo');break;
- case 'practice':setStage('practice');break;
- case 'challenge':setStage('challenge');break;
- case 'next':if(missionIndex===5)navigate('complete');else begin(missionIndex+1);break;
- case 'add':editProgram(()=>listAt(program,parent).push({kind:'action',action:target.dataset.kind as Action}),target.id);break;
- case 'add-if':editProgram(()=>listAt(program,parent).push(makeIf(mission(),!parent&&program.some(b=>b.kind==='foreach'))),target.id);break;
- case 'add-loop':editProgram(()=>program.push({kind:'foreach',body:[]}),target.id);break;
- case 'remove':{
-  const parts=path.split('.'),index=Number(parts.pop());editProgram(()=>listAt(program,parts.join('.')).splice(index,1),`add-${mission().actions[0]}`);break;
+function remove(){const n=layout.nodes.find(n=>n.id===selected);if(!n||mission().fixed.some(f=>f.id===selected))return;const next=structuredClone(layout);next.nodes=next.nodes.filter(p=>p.id!==selected);next.edges=next.edges.filter(e=>e.from!==selected&&e.to!==selected);selected='';link=null;moving=false;change(next,`slot-${n.x}-${n.y}`);}
+function tick(){
+ const previous=state();if(!previous)return;
+ runs[caseIndex]=stepCircuit(mission(),mission().cases[caseIndex],layout,previous);
+ const s=state()!;
+ if(s.status==='failed'){stop();paused=false;message='';selected=s.fault;render();return;}
+ if(s.status==='won'){
+  results[caseIndex]='won';if(caseIndex+1<mission().cases.length){caseIndex++;runs[caseIndex]=startCircuit(mission(),mission().cases[caseIndex],layout);}
+  else{stop();paused=false;const before=c.completed.length;c.completed=completeMission(c.completed,mission().id,ids);earned=c.completed.length>before?mission().reward:0;c.saved=saveProgress(storage,c.completed);drafts.set(index,structuredClone(layout));view='result';selected='';render();app.focus();window.scrollTo({top:0,behavior:'instant'});return;}
  }
- case 'move':{
-  const parts=path.split('.'),index=Number(parts.pop()),direction=Number(target.dataset.direction);editProgram(()=>{const list=listAt(program,parts.join('.')),other=index+direction;if(other>=0&&other<list.length)[list[index],list[other]]=[list[other],list[index]];});break;
- }
- case 'clear':editProgram(()=>{program=[];},`add-${mission().actions[0]}`);break;
- case 'run':auto();break;
- case 'step':advance();revealSystem();break;
- case 'stop':stop();render('run-program');break;
- case 'case':caseIndex=Number(target.dataset.index);batchActive=false;render();break;
- case 'hint':hintCount=Math.min(3,hintCount+1);render('hint');break;
- case 'pause':pause();break;
- case 'resume':resume();break;
- case 'restart':setStage(stage);break;
- case 'review-lesson':stop();overlay=null;review=true;view='lesson';render();focusTop();break;
- case 'return-work':review=false;view='workspace';render();focusTop();break;
- case 'edit':resetAttempt();view='workspace';render();focusTop();break;
- case 'options':modalBack=overlay==='pause'?'pause':null;overlay='options';render();break;
- case 'help':modalBack=null;overlay='help';render();break;
- case 'close-modal':closeModal();break;
- case 'reset-prompt':modalBack='options';overlay='reset';render();break;
- case 'confirm-reset':{
-  const isNew=overlay==='new';resetProgress(storage);c.completed=[];stop();overlay=null;modalBack=null;if(isNew)begin(0);else navigate('home');break;
- }
- }
+ render();
+}
+function startTimer(){stop();timer=setInterval(tick,reduced()?25:180);render('run-circuit');}
+function run(){
+ if(timer){hold();render('run-circuit');return;}
+ if(paused&&state()?.status==='running'){paused=false;message='';startTimer();return;}
+ clearRuns();selected='';link=null;armed=null;moving=false;message='';runs[0]=startCircuit(mission(),mission().cases[0],layout);
+ if(state()?.status==='failed'){render('run-circuit');return;}startTimer();
+}
+function action(button:HTMLElement){
+ const name=button.dataset.action;
+ if(name==='slot'){slot(Number(button.dataset.x),Number(button.dataset.y));return;}
+ if(name==='home'){navigate('home');return;}if(name==='missions'){navigate('missions');return;}
+ if(name==='new'){if(c.completed.length)open('new');else begin(0);return;}
+ if(name==='continue'){begin(Math.min(c.completed.length,5));return;}
+ if(name==='select'){begin(Number(button.dataset.index));return;}
+ if(name==='pick'){hold();selected='';moving=false;link=null;armed=button.dataset.kind as Kind;message='';render(button.id);return;}
+ if(name==='deselect'){selected='';armed=null;link=null;moving=false;message='';render('piece-'+mission().available[0]);return;}
+ if(name==='connect'){hold();link={from:selected,port:button.dataset.port!};armed=null;moving=false;message='';render(button.id);return;}
+ if(name==='disconnect'){const next=structuredClone(layout);next.edges=next.edges.filter(e=>e.from!==selected);change(next);return;}
+ if(name==='move'){hold();moving=true;link=null;armed=null;message='';render(button.id);return;}
+ if(name==='rotate'){updateNode(n=>{n.rotation=(n.rotation+1)%4;});return;}
+ if(name==='remove'){remove();return;}
+ if(name==='undo'){const previous=history.pop();if(previous){layout=previous;drafts.set(index,structuredClone(layout));selected='';link=null;armed=null;moving=false;clearRuns();message='Montagem anterior restaurada.';render('undo');}return;}
+ if(name==='configure'){open('configure');return;}
+ if(name==='value'){updateNode(n=>{n.config.value=Number(button.dataset.value);});return;}
+ if(name==='run'){run();return;}
+ if(name==='pause'||name==='options'||name==='help'||name==='cases'||name==='log'){open(name);return;}
+ if(name==='case'){hold();caseIndex=Number(button.dataset.index);close();return;}
+ if(name==='close-modal'){close();return;}
+ if(name==='resume'){overlay=null;parentOverlay=null;overlayResume=false;render();if(paused&&state()?.status==='running'){paused=false;startTimer();}return;}
+ if(name==='restart'){layout={nodes:structuredClone(mission().fixed),edges:[]};drafts.delete(index);history=[];selected='';armed=null;link=null;moving=false;clearRuns();overlay=null;message='Bancada reiniciada.';render();return;}
+ if(name==='reset-prompt'){open('reset');return;}
+ if(name==='confirm-reset'){resetProgress(storage);c.completed=[];drafts.clear();c.saved=!!storage;if(overlay==='new')begin(0);else navigate('home');return;}
+ if(name==='next'){if(index===5)navigate('missions');else begin(index+1);return;}
+ if(name==='edit'){view='bench';clearRuns();message='Experimente outra solução.';render();return;}
+}
+app.addEventListener('click',e=>{const button=(e.target as HTMLElement).closest<HTMLElement>('[data-action]');if(button)action(button);});
+app.addEventListener('change',e=>{
+ const field=e.target as HTMLInputElement|HTMLSelectElement;
+ if(field.dataset.change==='setting'){const key=field.dataset.key as 'reduced'|'largeText';preferences={...preferences,[key]:(field as HTMLInputElement).checked};savePreferences(storage,preferences);render(field.id);}
+ if(field.dataset.change==='config'){const key=field.dataset.key as keyof Config,value=field instanceof HTMLInputElement?field.checked:field.value;updateNode(n=>{n.config={...n.config,[key]:value};});render(field.id);}
 });
-app.addEventListener('change',event=>{
- const target=event.target as HTMLSelectElement|HTMLInputElement;
- if(target.dataset.change==='setting'){
-  preferences={...preferences,[target.dataset.key!]: (target as HTMLInputElement).checked};savePreferences(storage,preferences);render(target.id);return;
- }
- if(target.dataset.change==='append'){
-  if(target.value)editProgram(()=>listAt(program,target.dataset.parent!).push({kind:'action',action:target.value as Action}),target.id);return;
- }
- const b=selectedBlock(target.dataset.path??'');if(b?.kind!=='if')return;
- editProgram(()=>{
-  const e=b.condition;const part=target.dataset.part!;
-  if(target.dataset.change==='operator'){
-   if(target.value!=='and'&&target.value!=='or')return;
-   const group=mission().mode==='boolean'&&part==='inner'&&e.kind!=='predicate'?e.left:e;if(group.kind!=='predicate')group.kind=target.value;
-  }else{
-   const leaf:Expr={kind:'predicate',name:target.value as Predicate};
-   if(e.kind==='predicate')b.condition=leaf;
-   else if(part==='c')e.right=leaf;
-   else{const group=mission().mode==='boolean'?e.left:e;if(group.kind!=='predicate'){if(part==='a')group.left=leaf;else group.right=leaf;}}
-  }
- },target.id);
+app.addEventListener('dragstart',e=>{const element=(e.target as HTMLElement).closest<HTMLElement>('[draggable="true"]');if(!element||!e.dataTransfer)return;hold();const payload=element.dataset.port?{from:element.dataset.from,port:element.dataset.port}:element.dataset.kind?{kind:element.dataset.kind}:{id:element.dataset.node};e.dataTransfer.setData('application/x-rdc',JSON.stringify(payload));e.dataTransfer.effectAllowed='move';});
+app.addEventListener('dragover',e=>{if((e.target as HTMLElement).closest('.slot:not(:disabled)'))e.preventDefault();});
+app.addEventListener('drop',e=>{
+ const target=(e.target as HTMLElement).closest<HTMLElement>('.slot:not(:disabled)');if(!target||!e.dataTransfer)return;e.preventDefault();
+ try{const payload=JSON.parse(e.dataTransfer.getData('application/x-rdc')),x=Number(target.dataset.x),y=Number(target.dataset.y);if(typeof payload.from==='string'&&typeof payload.port==='string'&&layout.nodes.some(n=>n.id===payload.from)){link={from:payload.from,port:payload.port};slot(x,y);}else if(target.dataset.node)return;else if(typeof payload.kind==='string'&&mission().available.includes(payload.kind))place(payload.kind,x,y);else if(typeof payload.id==='string'&&layout.nodes.some(n=>n.id===payload.id&&!mission().fixed.some(f=>f.id===n.id))){selected=payload.id;moving=true;slot(x,y);}}catch{/* Conteúdo de arraste desconhecido não altera a bancada. */}
+});
+app.addEventListener('keydown',e=>{
+ const target=e.target as HTMLElement;
+ if(target.id.startsWith('slot-')&&['ArrowUp','ArrowDown','ArrowLeft','ArrowRight'].includes(e.key)){e.preventDefault();let x=Number(target.dataset.x),y=Number(target.dataset.y);x+=e.key==='ArrowRight'?1:e.key==='ArrowLeft'?-1:0;y+=e.key==='ArrowDown'?1:e.key==='ArrowUp'?-1:0;const next=document.getElementById(`slot-${x}-${y}`) as HTMLButtonElement|null;if(next&&!next.disabled)next.focus();}
+ if(e.key==='Delete'&&target.classList.contains('slot')){e.preventDefault();remove();}
+ if(e.key==='Escape'&&!overlay){selected='';armed=null;link=null;moving=false;message='';render();}
 });
 render();

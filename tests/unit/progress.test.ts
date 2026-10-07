@@ -8,8 +8,8 @@ describe('campanha local',()=>{
  it('missão desconhecida não completa',()=>expect(completeMission([],'outra',ids)).toEqual([]));
  it('campanha completa contém seis marcos',()=>expect(ids.reduce((p,id)=>completeMission(p,id,ids),[] as string[])).toEqual(ids));
  it('não modifica lista anterior',()=>{const before=['dados'];completeMission(before,'firmware',ids);expect(before).toEqual(['dados']);});
- it('JSON válido restaura prefixo da campanha',()=>expect(parseProgress(JSON.stringify({version:2,completed:['dados','firmware']}),ids)).toEqual(['dados','firmware']));
- it.each(['{invalid','null','{}',JSON.stringify({version:1,completed:ids}),JSON.stringify({version:2,completed:['circuito']}),JSON.stringify({version:2,completed:['dados','dados']}),JSON.stringify({version:2,completed:['dados','outra']})])('dados inválidos têm fallback: %s',raw=>expect(parseProgress(raw,ids)).toEqual([]));
+ it('JSON válido restaura prefixo da campanha',()=>expect(parseProgress(JSON.stringify({version:3,completed:['dados','firmware']}),ids)).toEqual(['dados','firmware']));
+ it.each(['{invalid','null','{}',JSON.stringify({version:1,completed:ids}),JSON.stringify({version:3,completed:['circuito']}),JSON.stringify({version:3,completed:['dados','dados']}),JSON.stringify({version:3,completed:['dados','outra']})])('dados inválidos têm fallback: %s',raw=>expect(parseProgress(raw,ids)).toEqual([]));
  it('sem armazenamento carrega vazio',()=>expect(loadProgress(undefined,ids)).toEqual([]));
  it('erro de leitura não quebra a partida',()=>expect(loadProgress({getItem(){throw Error('indisponível');},setItem(){},removeItem(){}},ids)).toEqual([]));
  it('erro de escrita mantém fallback',()=>expect(saveProgress({getItem(){return null;},setItem(){throw Error('quota');},removeItem(){}},['dados'])).toBe(false));
