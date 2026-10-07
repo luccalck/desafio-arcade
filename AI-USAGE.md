@@ -15,3 +15,9 @@ Revisão necessária antes do merge: fatos educativos, comportamento, direitos d
 ## Evolução aprovada - 07/10/2026
 
 Codex auxiliou a proposta aprovada de quatro desafios concretos, testes de contratos antes do core, coleta/AND/repetição, tutorial, editor, campanha/XP/progresso local e interface responsiva. Foram executados testes automatizados e capturas reais via Playwright/Chrome, inspecionados desktop/celular e atualizado o GDD/PDF/mapas. Os testes não representam playtest humano. O solicitante aprovou a mecânica; revisão por outro integrante continua pendente no PR #2. Nenhuma nova ferramenta de IA em runtime, raster, Opal, AI Studio ou Stitch foi usada.
+
+## Laboratório de lógica — 07/10/2026
+
+Codex auxiliou a proposta integralmente aprovada de cinco missões e desafio final, plano, contratos e intérprete puro por blocos, conteúdo educativo e cenários, menus, editor, simuladores, preferências, persistência e testes. Foram retiradas as fontes ativas de rotas, preservadas no Git, e adaptada a regressão do bug real de foco #1. Nenhum integrante/revisor foi simulado. Exemplos, prática e desafios passaram em testes locais; isso não mede aprendizagem humana.
+
+GDD de doze seções atualizado, seis mapas de sistemas/wireframes/diagramas SVG gerados por código e capturas reais de navegador local. PDF gerado automaticamente e inspecionado por página. IA também revisou os scripts e corrigiu referência antiga no verificador de reprodutibilidade. Uso de IA em autoria/desenvolvimento/documentação é explícito; nenhuma IA em runtime ou nova ferramenta de imagem, Opal, AI Studio ou Stitch. Revisão humana de código/conteúdo/licenças antes do merge e participação real dos quatro continuam pendentes.

@@ -13,3 +13,4 @@ tmp/
 *.key
 submissao/
 .publish/
+.contexto/

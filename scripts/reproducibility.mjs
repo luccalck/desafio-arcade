@@ -10,7 +10,7 @@ async function snapshot(){
  }
  return result;
 }
-for(const file of ['src/content/levels.json','src/content/schema.json'])JSON.parse(await readFile(file,'utf8'));
+for(const file of ['src/content/missions.json','src/content/schema.json'])JSON.parse(await readFile(file,'utf8'));
 execFileSync(process.execPath,['node_modules/tsx/dist/cli.mjs','scripts/check-content.ts'],{stdio:'inherit'});
 execFileSync(process.execPath,['scripts/build.mjs'],{stdio:'inherit',env:{...process.env,BUILD_DATE:'2026-01-01T00:00:00Z'}});
 const first=await snapshot();

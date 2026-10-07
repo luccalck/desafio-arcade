@@ -2,6 +2,7 @@ import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve} from 'node:path';
 import MarkdownIt from 'markdown-it';
 import {chromium} from 'playwright';
+await import('./docs-assets.mjs');
 const pkg=JSON.parse(await readFile('package.json','utf8'));
 const source=await readFile('docs/gdd.md','utf8');
 const high=source.split('## 2. High concept\n\n')[1]?.split('\n\n')[0];
