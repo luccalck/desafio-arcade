@@ -1,129 +1,140 @@
-# Rota do Código — Game Design Document
+# Rota do Código - Game Design Document
 
-Versão de projeto: **{{VERSION}}**. Data: **07/10/2026**. Conceito A aprovado pelo responsável nesta data. Documento da versão candidata, ainda sem release publicada.
+Versão de projeto: **{{VERSION}}**. Data: **07/10/2026**. Conceito A e evolução das quatro missões aprovados pelo responsável nesta data. Documento da versão candidata; não há release publicada.
 
-| Identificação | Valor verdadeiro nesta etapa |
+| Identificação | Valor nesta etapa |
 |---|---|
-| Jogo | Rota do Código |
-| Atividade | Desafio Arcade — Integração e Entrega Contínua / DevOps |
-| Squad e quatro integrantes (nome, RA, papel) | Identificação será fornecida pelo responsável; registro de equipe ainda incompleto |
+| Jogo / atividade | Rota do Código / Desafio Arcade - Integração e Entrega Contínua, DevOps |
+| Squad e quatro integrantes, nomes, RAs e papéis | Identificação será fornecida pelo responsável; ainda incompleta |
 | Repositório | https://github.com/luccalck/desafio-arcade |
-| Build pública de produção / homologação | Ainda não publicada; não confundir preview local com produção |
-| Vídeo | Ainda não gravado; deverá usar gameplay real da produção |
-| Plataforma | WEB responsiva; mesma aplicação em computador e celular |
+| Produção / homologação / vídeo | Ainda não publicados ou gravados |
+| Plataforma | WEB responsiva, mesma aplicação no computador e celular |
 
-Este GDD descreve a versão candidata implementada em branch e o desenho da esteira. Os aceites de colaboração, revisão, publicação e avaliação educativa não são comprovados pela existência do documento. A identificação pendente impede considerar INT-02 concluído. CPF e assinaturas não integram a versão pública; eventual documento privado será confirmado com o professor.
+Este GDD descreve a branch candidata e o desenho da esteira. Aprovação de conceito não é revisão de PR por outro integrante. Identificação pendente impede fechar INT-02. CPF e assinaturas não integram a versão pública; eventual versão privada será confirmada com o professor. Capturas locais não são evidências de produção ou de playtest humano.
 
 ## 1. Premissa e problema endereçado
 
-O jogo trata a dificuldade de relacionar instruções a seu resultado e localizar a causa de uma falha, no início do aprendizado de programação. O público são estudantes iniciantes em tecnologia, com leitura básica em português e sem conhecimento prévio necessário de código. O acesso acontece por navegador e pela build offline, sem cadastro ou engine instalada pelo jogador.
+Estudantes iniciantes em tecnologia frequentemente precisam conectar instruções abstratas ao resultado e localizar a causa de uma falha. O jogo propõe praticar sequência, variáveis, depuração, lógica booleana e repetição por mudanças observáveis em um robô e nos objetos do cenário. Público: iniciantes com leitura básica em português, sem conhecimento prévio de código. Acesso pelo navegador ou build offline, sem cadastro.
 
-A gamificação transforma um algoritmo em um percurso observável: montar comandos, executar, inspecionar e ajustar. Os erros permitem nova tentativa, sem perda de vidas ou limite de tempo. A conclusão de fases libera novos desafios e explica o conceito aplicado. Essa é uma hipótese de abordagem educativa; não houve estudo ou playtest humano que permita afirmar eficácia, diversão ou ganho medido.
+A gamificação organiza objetivos pequenos em uma campanha: executar, observar, corrigir, recuperar o sistema e ganhar uma medalha. As tentativas são ilimitadas, sem vidas ou cronômetro. XP e desbloqueios representam conclusão, não uma medição de conhecimento. A aprendizagem é uma hipótese de projeto: ainda não houve estudo ou playtest humano para comprovar eficácia ou diversão.
 
 ## 2. High concept
 
-Rota do Código é um puzzle educativo web em que o jogador programa um pequeno robô para atravessar uma oficina e entregar um módulo de energia. Em mapas curtos, monta comandos, executa passo a passo e observa a instrução responsável por cada movimento. Ao encontrar um obstáculo ou terminar longe do destino, recebe uma explicação concreta e pode depurar a sequência. Três desafios introduzem ordem de execução, correção de erros e repetição, com controles por teclado e toque, sem conta e com build offline. O diferencial é aprender pela relação visível entre programa, trajetória e resultado.
+Rota do Código é um puzzle educativo web em que o jogador programa um robô para recuperar um laboratório digital. Após um treino guiado, quatro missões pedem coletar pacotes de dados, corrigir um firmware defeituoso, ativar dois interruptores de uma porta AND e automatizar uma inspeção usando repetição. Cada comando altera posição, dados ou sinais de forma visível; o jogador executa por passo, encontra a causa das falhas e edita o programa. Objetivos completos liberam missões e medalhas, até 400 XP. A experiência usa teclado e toque e funciona offline, sem conta. O diferencial educativo é a relação entre instrução, estado do sistema e resultado, aplicada em desafios tecnológicos concretos.
 
 ## 3. Gênero e plataforma
 
-Puzzle educativo de programação por turnos, destinado obrigatoriamente à **WEB**, com interface responsiva. Não há versão nativa, APK ou executável de engine para o jogador.
+Puzzle educativo de programação por turnos, obrigatoriamente **WEB**, estático e responsivo. Não há aplicativo nativo, APK ou instalação de engine para jogar.
 
-TypeScript, HTML/CSS e vetores SVG originais; sem engine de jogo ou React. O esbuild empacota um script clássico IIFE e incorpora conteúdo local. Vitest testa as regras, Ajv valida JSON e Playwright testa o navegador. Node 24 e lockfile são ferramentas de desenvolvimento/CI, não requisitos para abrir a build offline. A escolha evita dependências de física ou renderização desnecessárias para um tabuleiro discreto e mantém controles HTML acessíveis.
+TypeScript, HTML/CSS e SVG originais, sem engine ou React. A grade discreta dispensa física, e controles HTML favorecem teclado e toque. Esbuild gera script clássico IIFE com conteúdo incorporado. Ajv valida JSON, Vitest testa core e integração, Playwright testa navegador. Node 24/lockfile são ferramentas de construção e CI; o jogador abre index.html após descompactar a build. Nenhum backend, fonte CDN ou IA em runtime é exigido.
 
 ## 4. Mecânicas-core
 
-O jogador adiciona, remove e reordena ações. **Avançar** move uma célula na direção atual; **virar à esquerda/direita** gira 90 graus sem mover. A orientação inicial é leste. `Executar` anima comandos; `Um passo` executa uma ação básica por vez, inclusive dentro de repetição. `Parar` interrompe e retorna à edição; nova execução começa no início do mapa. Não há interpretação de código arbitrário.
+O jogador adiciona, substitui, remove e reordena comandos. **Avançar** move uma casa na direção atual. **Esquerda/direita** giram 90 graus sem mover. **Coletar** acrescenta o pacote de um terminal à variável pacotes; coletar novamente no mesmo terminal não duplica dados. **Ativar** liga A ou B sobre seu interruptor. A porta abre somente com A AND B = 1. Coletar/ativar fora do objeto pertinente falha com diagnóstico.
 
-Loop: objetivo → programa → execução/traço → resultado educativo → correção ou progressão. O comando em execução é destacado e as mensagens descrevem ação, direção e falha. Uma tentativa vence ao atingir o módulo; a execução termina imediatamente. Falha se o robô tenta atravessar parede ou borda, termina comandos fora do destino ou alcança o limite de passos. Após a falha, o programa é preservado para edição. Reiniciar a fase restaura posição, contador e programa inicial.
+Loop: briefing/objetivo → montar programa → executar ou avançar um passo → observar trajetória, dados, sinais e comando → corrigir ou concluir. Dicas progressivas explicam estratégia sem entregar a solução inteira. Execução bloqueia edição; Parar permite editar, e nova tentativa reinicia posição, dados e sinais. O programa é preservado após falha; Recomeçar missão restaura o programa inicial.
 
-| Fase | Conteúdo / desafio | Limites e aprendizado |
+Vitória exige chegar ao servidor com todos os pacotes requeridos e, na missão de lógica, A e B ativos. Chegar antes de completar objetivos não vence; o programa pode continuar se houver comandos. Parede, borda, porta fechada, interação inválida, programa esgotado ou limite de passos encerram a tentativa. Feedback indica causa e instrução.
+
+| Missão | Desafio e aprendizado | Limites |
 |---|---|---|
-| 1 — Primeira entrega | Corredor com curva; programa inicialmente vazio | 8 blocos / 16 passos; sequência e orientação |
-| 2 — Rota interrompida | Duas ações iniciais, cuja segunda avança contra parede; corrigir rota | 14 blocos / 25 passos; diagnóstico pelo traço e depuração |
-| 3 — Padrão de rota | Caminho em escada; representar padrão repetido | 5 blocos / 24 passos; repetir um grupo quatro vezes |
+| 1 - Recuperar os dados | Sequência e variável pacotes: coletar em dois terminais antes da base | 14 blocos / 24 passos |
+| 2 - Corrigir o firmware | Segunda linha inicial avança contra parede; substituir, completar rota e coletar um pacote | 18 blocos / 32 passos |
+| 3 - Destravar o circuito | Ativar A e B em locais diferentes; observar tabela/saída AND e atravessar porta | 18 blocos / 32 passos |
+| 4 - Automatizar a inspeção | Três terminais igualmente espaçados, representados por repetir 3 [avançar, avançar, coletar] | 4 blocos / 16 passos |
 
-Repetição aparece na fase 3: de 2 a 4 vezes, com corpo de 1 a 8 ações básicas e sem grupos aninhados. A contagem considera um bloco para `repetir` e cada ação de seu corpo, independentemente das iterações. O grupo da solução usa 5 blocos e expande para 16 ações; a entrega termina na ação 15, antes da última curva.
+Repetição aparece na missão 4: 2 a 4 iterações, corpo de 1 a 8 ações, sem aninhamento. Um bloco representa o grupo, além dos blocos do corpo. A solução usa quatro blocos e nove passos. O treino separado usa avançar, coletar, esquerda, avançar e não concede XP.
 
-Recompensas são progressão e explicação do conceito. Não há pontuação, ranking, monetização ou telemetria de partidas. O erro preparado da fase 2 é parte do conteúdo educativo, não o bug real de software exigido em INT-04.
+Cada primeira conclusão concede 100 XP e medalha DADOS, DEBUG, LÓGICA ou AUTOMAÇÃO, até 400 XP, liberando a próxima missão. Replay não aumenta XP. Progresso local aceita apenas uma sequência válida dos IDs conhecidos; armazenamento bloqueado usa memória da sessão. Reset confirmado remove somente a chave do jogo. Não há ranking, monetização ou telemetria. O defeito preparado do firmware é conteúdo educativo; o bug real de software #1 é documentado separadamente.
 
 ## 5. Enredo e personagens
 
-Um robô de entrega percorre uma oficina abstrata para alcançar um módulo de energia. O robô é uma criação vetorial original; não tem nome, biografia, diálogos ou avatar de terceiros. A narrativa é curta para manter a atenção na relação entre comandos e trajetória. Não há combate, adversários, storyboard narrativo ou sistema de personagens adicional nesta versão.
+Um robô recupera serviços de um laboratório digital abstrato: dados, firmware, circuito e inspeção. É uma criação vetorial original, sem personagem licenciado, biografia ou diálogos. A narrativa apoia objetivos curtos e não pretende simular a arquitetura física de uma rede real. Combate, adversários e storyboard narrativo adicional não se aplicam a esta versão.
 
-![Conceito visual original](images/concept.svg)
+![Concept art original](images/concept.svg)
 
 ## 6. Fluxo do jogo
 
-![Diagrama de estados](images/fluxo.svg)
+![Estados e navegação](images/fluxo.svg)
 
-O menu apresenta objetivo e controles. A partida reúne objetivo, mapa, editor, feedback e ajuda. Execução bloqueia edição; `Parar` libera uma nova tentativa. Vitória/falha leva à tela de fim da tentativa com mapa final e registro. Vitória permite avançar; falha permite editar. O terceiro sucesso abre o fim da campanha e o reinício retorna à primeira fase. Retornar ao menu interrompe qualquer execução pendente.
+Menu/campanha → treino opcional → briefing → edição/execução → resultado. O treino apresenta quatro ações guiadas antes da missão independente. Falha → editar; vitória → próxima missão, replay ou campanha. Após a quarta vitória, há encerramento com quatro medalhas. Missões futuras ficam bloqueadas; concluídas podem ser revisitadas. Campanha e Parar interrompem a execução pendente. Reset é uma ação separada com confirmação e cancelamento.
 
 ## 7. Level design
 
-Mapas completos abaixo correspondem ao JSON versionado. Escuro representa parede, claro caminho livre, R o início e M o módulo. Cada movimento usa coordenadas inteiras. A interface fala em coluna/linha a partir de 1; o JSON usa índices a partir de 0. Não existem objetos coletáveis, recursos consumíveis ou plataformas físicas adicionais.
+Mapas são gerados do JSON versionado: escuro indica parede, verde piso, R início, T terminal, A/B interruptores e G porta. Servidor tem borda amarela; na missão 4 coincide com o terceiro terminal. Coordenadas abaixo usam o JSON, começando em 0; as imagens e o texto da interface usam coluna/linha a partir de 1. O robô começa voltado para leste. Não há recurso consumível ou mapa aleatório.
 
-![Mapa da fase 1](images/mapa-1.svg)
+![Mapa da missão 1](images/mapa-1.svg)
 
-Fase 1: início (0,3), leste; destino (3,1). Solução editorial: avançar três vezes, esquerda, avançar duas vezes. Caminho em L, com dica explícita para introduzir os controles.
+Missão 1: início (0,3), servidor (5,1), terminais (1,3) e (4,2). O trajeto exige uma coleta antes da curva e outra antes da base. Solução editorial: avançar, coletar, avançar três vezes, esquerda, avançar, coletar, avançar, direita, avançar. Onze ações.
 
-![Mapa da fase 2](images/mapa-2.svg)
+![Mapa da missão 2](images/mapa-2.svg)
 
-Fase 2: início (0,4), leste; destino (4,0). Solução: avançar, esquerda, avançar duas vezes, direita, avançar três vezes, esquerda, avançar duas vezes. O programa inicial avança duas vezes: a segunda ação encontra parede. O jogador deve usar o feedback para corrigir a curva ausente.
+Missão 2: início (0,4), servidor (5,0), terminal (3,2). Programa inicial [avançar, avançar] falha na segunda linha. Solução: avançar, esquerda, avançar duas vezes, direita, avançar duas vezes, coletar, avançar, esquerda, avançar duas vezes, direita, avançar. Quatorze ações. Substituição de linha favorece depuração em vez de apagar tudo.
 
-![Mapa da fase 3](images/mapa-3.svg)
+![Mapa da missão 3](images/mapa-3.svg)
 
-Fase 3: início (0,4), leste; destino (4,0). Escada com quatro trechos iguais. Solução: repetir quatro vezes [avançar, esquerda, avançar, direita]. O limite de cinco blocos estimula representar o padrão em vez de escrever toda a sequência.
+Missão 3: início (0,3), servidor (6,3), A (1,3), B (3,2), porta (4,3). Não basta caminhar sobre os interruptores: Ativar altera o sinal. Solução: avançar, ativar, avançar duas vezes, esquerda, avançar, ativar, direita duas vezes, avançar, esquerda, avançar três vezes. Quatorze ações. O desvio obriga observar a relação entre duas entradas e saída AND.
 
-O validador exige mapa retangular, posições livres/diferentes, IDs únicos, programas dentro dos limites e solução editorial que realmente vence. Conteúdo inválido interrompe a build.
+![Mapa da missão 4](images/mapa-4.svg)
 
-## 8. Interface do usuário — UI/UX
+Missão 4: início (0,1), servidor (6,1), terminais (2,1), (4,1), (6,1). Repetir 3 [avançar, avançar, coletar] coleta todos e vence no nono passo. O limite de quatro blocos torna necessária a representação do padrão. O terminal na base só é recuperado por Coletar, não pela chegada.
 
-![Wireframes de projeto: menu, HUD e fim](images/wireframes.svg)
+O validador exige retângulo, posições válidas, IDs/posições únicos, objetos no piso, número de pacotes coerente, porta com ambos os interruptores e ações disponíveis correspondentes. Executa todas as soluções editoriais e respeita budgets. JSON ou solução inválida interrompe a build. Essas soluções são contratos de teste; não são exibidas completas como dica ao jogador.
 
-O visual usa oficina de eletrônica: bancada em papel claro, mapa escuro, robô amarelo e ação principal laranja. Menu explica as três etapas de uso. HUD mostra programa, blocos, passos, posição e direção. O fim explica a vitória ou causa da falha e oferece a próxima ação. Wireframes são imagens de projeto, não evidências de execução.
+## 8. Interface do usuário - UI/UX
 
-Todas as ações têm controles HTML por teclado/toque, sem arrastar obrigatório. Há link de salto, foco visível, mensagens de estado, orientação textual, legendas de mapa e movimento reduzido. Cor e áudio não são o único meio de feedback. A ordem de leitura mantém objetivo antes do mapa/editor. No celular, os painéis são empilhados. O teste de teclado cobre restauração do foco ao remover comandos; os testes de viewport e offline verificam uma parte dessas condições, sem constituir certificação de acessibilidade.
+![Wireframes de projeto](images/wireframes.svg)
 
-Telas do Stitch ainda não foram utilizadas; não declarar o diferencial avançado dessa ferramenta atendido. O playtest de três minutos por colega de outra turma e sua revisão continuam pendentes em P05.
+Laboratório digital em azul escuro, ciano para dados/conexões e amarelo para ação, robô e base. Campanha mostra quatro cartões, miniaturas do mapa, medalhas e XP. Briefing informa missão, conceito e objetivo antes de iniciar. HUD mostra pacotes, passos, direção e, na fase lógica, A/B/AND. Editor oferece comandos com efeito descrito, edição por seleção e montagem do grupo repetir. Resultado preserva mapa/traço, explica falha ou conceito e oferece próxima ação.
+
+![Campanha executada no navegador local](images/campanha-real.png)
+
+![Missão de dados executada no navegador local](images/missao-real.png)
+
+Capturas reais de 07/10/2026, Playwright/Chrome local, fonte 97d22d2. Não representam produção, teste humano ou imagem desenhada para simular execução. Wireframes e concept art são identificados como projeto, não capturas.
+
+Todas as ações têm controles HTML por teclado e toque, sem arrastar obrigatório. Foco visível/restaurado após edição, link de salto, mensagens de estado, orientação textual, legendas, ícones com texto e movimento reduzido. Cor e áudio não são o único feedback. Celular usa painéis empilhados, barra de execução fixa e revela mapa ao executar. E2E verifica viewport 390x844 sem overflow, execução pela barra, navegação/foco e armazenamento bloqueado; não é certificação de acessibilidade nem teste de todos os dispositivos.
+
+Stitch não foi utilizado. Playtest de três minutos por colega de outra turma, avaliação de clareza e revisão humana permanecem pendentes em P05.
 
 ## 9. Áudio e música
 
-A versão candidata não utiliza áudio, música ou efeito sonoro. Não há downloads ou ativos de som. Instruções e feedback são visuais/textuais. Áudio opcional só será acrescentado com origem, licença, controle de volume e alternativa textual registrados por PR.
+Esta versão não utiliza áudio, música ou efeito sonoro, e não contém ativos de som. Instruções e feedback são visuais/textuais. Áudio opcional futuro exige origem, licença, volume e alternativa textual registrados por PR.
 
 ## 10. Arte e referências visuais
 
-Concept art, robô, mapas, wireframes e diagramas foram criados em SVG para este projeto com assistência do Codex. A interface usa fontes existentes no sistema, sem distribuir arquivos de fontes nem carregá-los de CDN. Símbolos simples de direção são caracteres de interface; o robô não imita personagem ou marca externa. As imagens/logotipos do modelo Word não foram incorporados ao produto.
+Robô, circuitos, mapas, wireframes, concept art e diagramas são SVG/CSS criados para o projeto com assistência do Codex. Capturas PNG vêm da aplicação real. Fontes do sistema, sem arquivos de fontes ou CDN. Não foram reutilizados personagens, marcas ou imagens do modelo Word.
 
-Referências técnicas consultadas: [esbuild — formato IIFE](https://esbuild.github.io/api/#format), [Vitest](https://vitest.dev/guide/), [Playwright — assertions](https://playwright.dev/docs/test-assertions), [GitHub — ambientes](https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments) e [GitHub — origem do Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site). Documentação informa escolhas técnicas; suas imagens/textos não são copiados para o jogo. Origem e licenças dos componentes distribuídos ou usados na construção estão em THIRD_PARTY e no SBOM.
+Referências técnicas: [esbuild IIFE](https://esbuild.github.io/api/#format), [Vitest](https://vitest.dev/guide/), [Playwright assertions](https://playwright.dev/docs/test-assertions), [ambientes GitHub](https://docs.github.com/en/actions/how-tos/deploy/configure-and-manage-deployments/manage-environments) e [GitHub Pages](https://docs.github.com/en/pages/getting-started-with-github-pages/configuring-a-publishing-source-for-your-github-pages-site). Informam escolhas técnicas; não fornecem arte copiada ao produto. Licenças/versões estão em THIRD_PARTY, lockfile e SBOM.
 
 ## 11. IA e componentes de terceiros
 
 | Ferramenta / componente | Uso | Licença / condição |
 |---|---|---|
-| Codex | Requisitos, concepção aprovada, código, conteúdo, testes, SVGs e documentação | Uso assistido registrado em AI-USAGE; revisão humana do lote pendente antes do merge |
-| TypeScript / esbuild | Checagem e empacotamento | Apache-2.0 / MIT, conforme inventário |
-| Ajv / Vitest / Playwright | Validação, regras e navegador | MIT / MIT / Apache-2.0 |
-| Markdown-it / fflate | GDD e ZIP automatizados | MIT / MIT |
-| ESLint / typescript-eslint / tsx | Lint e validação no desenvolvimento | MIT, conforme inventário e dependências transitivas |
+| Codex | Leitura, concepção aprovada, código, conteúdo, testes, SVG e documentos | AI-USAGE; revisão por outro humano pendente antes do merge |
+| TypeScript / esbuild | Tipos e build | Apache-2.0 / MIT |
+| Ajv / Vitest / Playwright | Schema, regras e navegador | MIT / MIT / Apache-2.0 |
+| Markdown-it / fflate | GDD e ZIP | MIT / MIT |
+| ESLint / typescript-eslint / tsx | Lint e validação | MIT, conforme inventário |
 
-As versões exatas, autores, URLs e dependências transitivas estão no lockfile, THIRD_PARTY e SBOM. Nenhum material Opal/AI Studio foi utilizado; essa condição não dispensa esquema e revisão dos textos assistidos pelo Codex. Não há backend remoto, API de IA em runtime, imagem terceirizada, dado pessoal de jogador ou serviço pago necessário.
+Autores, versões e transitivas no lockfile, THIRD_PARTY e SBOM. Não houve Opal, AI Studio, Stitch ou gerador raster. Isso não dispensa revisão dos textos assistidos. Não há API IA durante partida, backend remoto, ativo terceirizado de arte, cadastro ou serviço pago necessário.
 
-Declaração de direitos/originalidade: o projeto foi concebido para este trabalho com assistência de IA explicitada; os materiais próprios e as licenças de terceiros são identificados. A revisão e confirmação coletiva do squad sobre os direitos ainda não estão registradas. Não declarar um aceite inexistente dos termos do concurso, nem assinatura ou revisão humana fictícia. A versão pública da UC não representa inscrição no concurso.
+Declaração de originalidade/direitos: projeto concebido para este trabalho, com assistência de IA explicitada e licenças identificadas. Confirmação coletiva de direitos e revisão pelo squad ainda não registradas. Não há assinaturas, revisão fictícia ou aceite de termos do concurso. A entrega da UC não constitui inscrição no concurso opcional.
 
 ## 12. Ideias adicionais e próximos passos
 
-Na branch candidata: três fases, editor de ações/repetição, execução automática/por passo, feedback, fim/reinício, conteúdo validado e build estática. Validações locais são registradas no acompanhamento; não equivalem a release em produção.
+Implementado na branch candidata: treino, quatro missões tecnológicas, objetos, variável pacotes, porta AND, editor, repetição, campanha/medalhas/XP, persistência com fallback, feedback/traço e site estático offline. Testes e capturas locais constam em docs/evidencias/evolucao-missoes.md. Não há estudo educativo ou release.
 
-Prioridades restantes: revisões reais, colaboração dos quatro, CI verde de clone limpo, HML/PRD, ambientes protegidos, rollback/sondas/DORA reais, playtest, vídeo legendado, triagem e relatório técnico. Mais fases, condicionais, áudio e personalização são ideias futuras, sem compromisso de implementação nesta entrega. Mudança de mecânica exige atualização do GDD por PR.
+Restam revisão real e colaboração dos quatro, HML/PRD, recuperação/sondas/DORA medidos, playtest, vídeo humano legendado, triagem e relatório técnico. CI já existe e seus resultados reais são registrados por execução. Condicionais programáveis, novas fases, áudio e personalização são roadmap futuro, não compromissos desta build. Mudança de mecânica exige GDD atualizado por PR.
 
 ## Esteira
 
-![Diagrama da esteira proposta](images/esteira.svg)
+![Arquitetura da esteira](images/esteira.svg)
 
-Repositório: https://github.com/luccalck/desafio-arcade . GitHub Flow e Conventional Commits. PR requer outra pessoa e CI verde; IA é revisada antes do merge. CI verifica lint, regras/conteúdo, E2E local, segurança, SBOM e build/GDD/ZIP. O mesmo ZIP deve ser usado na HML e PRD.
+Repositório: https://github.com/luccalck/desafio-arcade . GitHub Flow/Conventional Commits; PR requer outra pessoa e check ci verde. CI push/PR verifica lint, unidade/integração/conteúdo, E2E, Gitleaks, audit, SBOM, reprodutibilidade, PDF, ZIP/hash e artefatos. IA será revisada antes do merge. CI implementada não comprova implantação.
 
-Arquitetura de implantação: `gh-pages` escrito apenas pela pipeline, `/hml/`, `/releases/<sha>/` imutáveis e carregador/rollout. Estratégia azul-verde: testar nova pasta, aprovar produção, trocar `estavel`, executar smoke e recuperar o ponteiro em caso de falha. Sessão preserva a versão enquanto válida; rollback retira seleção inválida. Histórico registra responsável e motivo. Rollback < 5 minutos incluindo Pages deve ser medido, não presumido.
+Arquitetura planejada: gh-pages escrito apenas pela pipeline, /hml/, /releases/<sha>/ imutáveis, carregador/rollout e mesmo ZIP de HML a PRD. Estratégia azul-verde: validar nova pasta, registrar aprovação em producao, promover estavel, fazer smoke e recuperar ponteiro se falhar. Sessão conserva versão enquanto válida; rollback retira seleção inválida. Histórico registra responsável/motivo. Recuperação abaixo de cinco minutos incluindo Pages exige ensaio medido.
 
-Monitorar HTTP/latência/versão de HML e PRD a cada 15 minutos; dados em `observabilidade`, alertas como Issues e painel `/status/`. DORA real segue a definição do enunciado e comparação de lead time com 11 dias. O cron pode atrasar; o ensaio usa detecção ativa por smoke/workflow.
+Sondas HTTP/latência/versão HML/PRD a cada 15 minutos, CSV em observabilidade, Issues JogoForaDoAr/LatenciaAlta e /status/. DORA real conforme enunciado, comparação com lead time de 11 dias e melhoria medida. Cron pode atrasar; ensaio usa smoke/workflow ativo. Esses componentes e dados ainda estão pendentes.
 
-Na tag final, a pipeline deve gerar GDD.pdf, LINK_DO_JOGO.txt, build.zip com LEIA-ME, vídeo humano e MANIFESTO.sha256, seguido de triagem real. O vídeo é uma entrada gravada de produção antes do fechamento; o relatório recebe os resultados finais de release/triagem depois. A release, GDD e metadados precisam coincidir em versão/data, com links reais e identificação preenchida. Nenhum desses aceites externos é declarado cumprido neste documento candidato.
+Na tag final, pipeline deve produzir submissao/GDD.pdf, LINK_DO_JOGO.txt, build.zip com LEIA-ME, pitch.mp4 humano e MANIFESTO.sha256, com triagem real. Vídeo de produção é entrada anterior ao fechamento; relatório recebe depois evidências da release/triagem. Versão/data devem coincidir com release real e links/identificação completos. Nenhum desses aceites externos é declarado concluído nesta candidata.

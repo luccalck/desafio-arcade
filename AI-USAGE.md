@@ -11,3 +11,7 @@ Instrução principal: desenvolver jogo WEB educativo conforme os originais do p
 Nenhuma IA em runtime. Nenhum uso de Opal, AI Studio, Stitch ou gerador de imagens raster até este registro. Não houve teste com usuário humano, coleta de consentimento, revisão de colega, vídeo ou medição educativa realizada pela IA.
 
 Revisão necessária antes do merge: fatos educativos, comportamento, direitos de ativos, dependências, segurança e documentação. Registrar autor/revisor reais e link do PR após a revisão. IA não substitui integrantes, aprovação requerida de outro autor ou banca.
+
+## Evolução aprovada - 07/10/2026
+
+Codex auxiliou a proposta aprovada de quatro desafios concretos, testes de contratos antes do core, coleta/AND/repetição, tutorial, editor, campanha/XP/progresso local e interface responsiva. Foram executados testes automatizados e capturas reais via Playwright/Chrome, inspecionados desktop/celular e atualizado o GDD/PDF/mapas. Os testes não representam playtest humano. O solicitante aprovou a mecânica; revisão por outro integrante continua pendente no PR #2. Nenhuma nova ferramenta de IA em runtime, raster, Opal, AI Studio ou Stitch foi usada.
