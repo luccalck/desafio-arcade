@@ -1,0 +1,14 @@
+import {it,expect} from 'vitest';
+import data from '../../src/content/missions.json';
+import type {Mission} from '../../src/core/arcade-engine';
+import {SOURCES_KEY,starterSources,loadSources,saveSources,resetSources} from '../../src/core/workshop-save';
+const missions=data.missions as Mission[];
+it('fallback sem armazenamento contém os starters reais',()=>expect(loadSources(undefined,missions)).toEqual(starterSources(missions)));
+it('fontes válidas são restauradas',()=>{const sources=starterSources(missions);sources.controlar=missions[0].reference;expect(loadSources({getItem:()=>JSON.stringify({version:4,sources}),setItem(){},removeItem(){}},missions)).toEqual(sources);});
+it.each(['{invalid','null',JSON.stringify({version:3,sources:{}}),JSON.stringify({version:4,sources:{controlar:5}})])('fonte inválida preserva fallback: %s',raw=>expect(loadSources({getItem:()=>raw,setItem(){},removeItem(){}},missions)).toEqual(starterSources(missions)));
+it('fonte extensa não entra no editor',()=>expect(loadSources({getItem:()=>JSON.stringify({version:4,sources:{controlar:'a'.repeat(6001)}}),setItem(){},removeItem(){}},missions).controlar).toBe(missions[0].starter));
+it('falha de leitura preserva sessão',()=>expect(loadSources({getItem(){throw Error('quota');},setItem(){},removeItem(){}},missions)).toEqual(starterSources(missions)));
+it('escrita usa somente a chave da oficina',()=>{let key='',raw='';expect(saveSources({getItem:()=>null,setItem(k,v){key=k;raw=v;},removeItem(){}},starterSources(missions))).toBe(true);expect(key).toBe(SOURCES_KEY);expect(JSON.parse(raw).version).toBe(4);});
+it('erro de escrita é indicado',()=>expect(saveSources({getItem:()=>null,setItem(){throw Error('quota');},removeItem(){}},starterSources(missions))).toBe(false));
+it('sem armazenamento escrita é falsa',()=>expect(saveSources(undefined,starterSources(missions))).toBe(false));
+it('reset somente de fontes novas e falha segura',()=>{const removed:string[]=[];resetSources({getItem:()=>null,setItem(){},removeItem(k){removed.push(k);}});expect(removed).toEqual([SOURCES_KEY]);expect(()=>resetSources(undefined)).not.toThrow();expect(()=>resetSources({getItem:()=>null,setItem(){},removeItem(){throw Error('quota');}})).not.toThrow();});

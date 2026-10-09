@@ -1,0 +1,11 @@
+import {it,expect} from 'vitest';
+import {parsePreferences,loadPreferences,savePreferences,SETTINGS_KEY} from '../../src/core/preferences';
+it('padrões sem dados',()=>expect(parsePreferences(null)).toEqual({reduced:false,largeText:false}));
+it('JSON quebrado retorna padrão',()=>expect(parsePreferences('{')).toEqual({reduced:false,largeText:false}));
+it('valida tipos sem coerção',()=>expect(parsePreferences('{"version":1,"reduced":"false","largeText":1}').reduced).toBe(false));
+it('preferência explícita é carregada',()=>expect(parsePreferences('{"version":1,"reduced":true,"largeText":true}')).toEqual({reduced:true,largeText:true}));
+it('versão desconhecida não é assumida',()=>expect(parsePreferences('{"version":4,"reduced":true,"largeText":true}').reduced).toBe(false));
+it('leitura bloqueada não quebra menus',()=>expect(loadPreferences({getItem(){throw Error();},setItem(){},removeItem(){}}).largeText).toBe(false));
+it('gravação bloqueada retorna false',()=>expect(savePreferences({getItem(){return null;},setItem(){throw Error();},removeItem(){}},{reduced:true,largeText:true})).toBe(false));
+it('sem storage não promete salvar',()=>expect(savePreferences(undefined,{reduced:false,largeText:false})).toBe(false));
+it('grava apenas chave própria',()=>{const map=new Map();const s={getItem:(k:string)=>map.get(k)??null,setItem:(k:string,v:string)=>{map.set(k,v);},removeItem:(k:string)=>{map.delete(k);}};expect(savePreferences(s,{reduced:true,largeText:false})).toBe(true);expect(map.size).toBe(1);expect(map.has(SETTINGS_KEY)).toBe(true);expect(loadPreferences(s).reduced).toBe(true);});

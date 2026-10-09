@@ -1,0 +1,28 @@
+import {describe,it,expect} from 'vitest';
+import {createGame,stepGame,evaluateCases} from '../../src/core/arcade-engine';
+import type {Rules,GameState} from '../../src/core/arcade-engine';
+import {compileCode} from '../../src/core/code-runtime';
+import data from '../../src/content/missions.json';
+const rules=Object.fromEntries(data.missions.slice(0,5).map(m=>[m.functionName,compileCode(m.reference,m.functionName)])) as Rules;
+const tick=(s:GameState)=>stepGame(s,{left:false,right:false},rules);
+const item=(type:'cristal'|'estrela'|'pedra',id=99)=>({id,x:240,y:270,type});
+describe('minijogo real',()=>{
+ it('começa com três vidas e uma onda real',()=>{const s=createGame(rules);expect(s.status).toBe('playing');expect(s.items).toHaveLength(3);expect(s.wave).toBe(1);});
+ it('esquerda move quatro pixels',()=>expect(stepGame(createGame(rules),{left:true,right:false},rules).x).toBe(236));
+ it('direita move quatro pixels',()=>expect(stepGame(createGame(rules),{left:false,right:true},rules).x).toBe(244));
+ it('sem tecla permanece',()=>expect(tick(createGame(rules)).x).toBe(240));
+ it('não ultrapassa limite do campo',()=>{const s=createGame(rules);s.x=459;expect(stepGame(s,{left:false,right:true},rules).x).toBe(460);s.x=21;expect(stepGame(s,{left:true,right:false},rules).x).toBe(20);});
+ it.each([['cristal',10],['estrela',25]] as const)('coletar %s acrescenta %s', (type,score)=>{const s=createGame(rules);s.items=[item(type)];const next=tick(s);expect(next.score).toBe(score);expect(next.items).toHaveLength(0);expect(next.flash).toBe('collect');});
+ it('pedra remove uma vida uma única vez',()=>{const s=createGame(rules);s.items=[item('pedra')];expect(tick(tick(s)).lives).toBe(2);});
+ it('objeto distante não colide',()=>{const s=createGame(rules);s.items=[{...item('pedra'),x:40}];expect(tick(s).lives).toBe(3);});
+ it('última vida encerra partida',()=>{const s=createGame(rules);s.lives=1;s.items=[item('pedra')];expect(tick(s).status).toBe('lost');});
+ it('cem pontos vencem',()=>{const s=createGame(rules);s.score=90;s.items=[item('cristal')];expect(tick(s).status).toBe('won');});
+ it('não modifica entrada do motor',()=>{const s=createGame(rules),before=JSON.stringify(s);tick(s);expect(JSON.stringify(s)).toBe(before);});
+ it('final é idempotente',()=>{const s=createGame(rules);s.status='won';expect(tick(s)).toEqual(s);});
+ it('objetos que saem são descartados',()=>{const s=createGame(rules);s.items=[{...item('cristal'),y:351}];expect(tick(s).items).toHaveLength(0);});
+ it('nova onda usa função do jogador',()=>{const s=createGame(rules);s.tick=149;s.items=[];const next=tick(s);expect(next.wave).toBe(2);expect(next.items.map(i=>i.x)).toEqual([40,120,200]);});
+ it('erro na onda não trava criação',()=>expect(createGame({...rules,criarOnda:()=>[40,40,40]}).status).toBe('error'));
+ it.each([['controlar',():number=>5],['mover',():number=>Infinity],['colidir',():number=>1],['pontuar',():number=>-1]] as const)('contrato inválido %s interrompe', (name,rule)=>{const s=createGame(rules);s.items=[item('cristal')];expect(stepGame(s,{left:false,right:false},{...rules,[name]:rule}).status).toBe('error');});
+ it('runtime com erro fica visível',()=>expect(stepGame(createGame(rules),{left:false,right:false},{...rules,mover:()=>{throw Error('erro de linha');}}).error).toBe('erro de linha'));
+ it('casos registram erro e saída real',()=>{expect(evaluateCases(()=>2,[{label:'caso',input:{},expected:1}])[0]).toMatchObject({actual:2,ok:false});expect(evaluateCases(()=>{throw Error('falha');},[{label:'caso',input:{},expected:1}])[0].error).toBe('falha');});
+});

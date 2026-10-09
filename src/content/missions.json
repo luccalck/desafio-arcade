@@ -1,0 +1,278 @@
+{
+  "missions": [
+    {
+      "id": "workshop-controls",
+      "title": "A nave obedece?",
+      "concept": "Eventos e decisões",
+      "goal": "Corrija os controles invertidos da nave.",
+      "functionName": "controlar",
+      "help": "entrada.esquerda e entrada.direita dizem quais teclas estão pressionadas. -1 move para esquerda; 1, para direita; 0 mantém parada. if significa “se”. Se ambas estiverem pressionadas, a direita tem prioridade.",
+      "starter": "function controlar(entrada) {\n  let direcao = 0;\n  if (entrada.esquerda) {\n    direcao = 1;\n  }\n  if (entrada.direita) {\n    direcao = -1;\n  }\n  return direcao;\n}",
+      "reference": "function controlar(entrada) {\n  let direcao = 0;\n  if (entrada.esquerda) {\n    direcao = -1;\n  }\n  if (entrada.direita) {\n    direcao = 1;\n  }\n  return direcao;\n}",
+      "cases": [
+        {
+          "label": "Sem tecla",
+          "input": {
+            "esquerda": false,
+            "direita": false
+          },
+          "expected": 0
+        },
+        {
+          "label": "Esquerda",
+          "input": {
+            "esquerda": true,
+            "direita": false
+          },
+          "expected": -1
+        },
+        {
+          "label": "Direita",
+          "input": {
+            "esquerda": false,
+            "direita": true
+          },
+          "expected": 1
+        },
+        {
+          "label": "As duas teclas",
+          "input": {
+            "esquerda": true,
+            "direita": true
+          },
+          "expected": 1
+        }
+      ],
+      "reward": 100
+    },
+    {
+      "id": "workshop-move",
+      "title": "Movimento sob controle",
+      "concept": "Variáveis e operações",
+      "goal": "Use direção e velocidade para calcular a nova posição.",
+      "functionName": "mover",
+      "help": "posicao é onde a nave está. direcao vale -1, 0 ou 1. velocidade é a distância por atualização. Multiplicar direção pela velocidade dá um deslocamento com sentido; some esse deslocamento à posição. return devolve o resultado.",
+      "starter": "function mover(entrada) {\n  return entrada.posicao + entrada.direcao + entrada.velocidade;\n}",
+      "reference": "function mover(entrada) {\n  return entrada.posicao + entrada.direcao * entrada.velocidade;\n}",
+      "cases": [
+        {
+          "label": "Direita devagar",
+          "input": {
+            "posicao": 100,
+            "direcao": 1,
+            "velocidade": 3
+          },
+          "expected": 103
+        },
+        {
+          "label": "Esquerda",
+          "input": {
+            "posicao": 100,
+            "direcao": -1,
+            "velocidade": 3
+          },
+          "expected": 97
+        },
+        {
+          "label": "Parada",
+          "input": {
+            "posicao": 100,
+            "direcao": 0,
+            "velocidade": 3
+          },
+          "expected": 100
+        },
+        {
+          "label": "Direita rápida",
+          "input": {
+            "posicao": 200,
+            "direcao": 1,
+            "velocidade": 8
+          },
+          "expected": 208
+        },
+        {
+          "label": "Esquerda rápida",
+          "input": {
+            "posicao": 20,
+            "direcao": -1,
+            "velocidade": 8
+          },
+          "expected": 12
+        }
+      ],
+      "reward": 100
+    },
+    {
+      "id": "workshop-collision",
+      "title": "Colisão de verdade",
+      "concept": "Condições e limites",
+      "goal": "Conte uma colisão somente quando os objetos se encostarem.",
+      "functionName": "colidir",
+      "help": "distancia mede a separação entre nave e objeto. raio é a distância máxima para encostar. <= significa “menor ou igual”; uma comparação devolve true (sim) ou false (não). Teste também a distância exatamente no limite.",
+      "starter": "function colidir(entrada) {\n  return entrada.distancia > entrada.raio;\n}",
+      "reference": "function colidir(entrada) {\n  return entrada.distancia <= entrada.raio;\n}",
+      "cases": [
+        {
+          "label": "Longe",
+          "input": {
+            "distancia": 100,
+            "raio": 23
+          },
+          "expected": false
+        },
+        {
+          "label": "Perto",
+          "input": {
+            "distancia": 5,
+            "raio": 23
+          },
+          "expected": true
+        },
+        {
+          "label": "No limite",
+          "input": {
+            "distancia": 23,
+            "raio": 23
+          },
+          "expected": true
+        },
+        {
+          "label": "Logo depois do limite",
+          "input": {
+            "distancia": 23.1,
+            "raio": 23
+          },
+          "expected": false
+        },
+        {
+          "label": "Mesmo centro",
+          "input": {
+            "distancia": 0,
+            "raio": 23
+          },
+          "expected": true
+        }
+      ],
+      "reward": 100
+    },
+    {
+      "id": "workshop-score",
+      "title": "Cada coleta conta",
+      "concept": "Estado e pontuação",
+      "goal": "Some 10 por cristal e 25 por estrela, preservando os pontos.",
+      "functionName": "pontuar",
+      "help": "Comece com entrada.pontos, a pontuação que já existe. entrada.tipo informa o objeto. === compara exatamente; += acrescenta ao valor atual. Cristal vale 10 e estrela 25; outro tipo não muda pontos.",
+      "starter": "function pontuar(entrada) {\n  let pontos = 0;\n  if (entrada.tipo === \"cristal\") {\n    pontos += 1;\n  }\n  if (entrada.tipo === \"estrela\") {\n    pontos += 25;\n  }\n  return pontos;\n}",
+      "reference": "function pontuar(entrada) {\n  let pontos = entrada.pontos;\n  if (entrada.tipo === \"cristal\") {\n    pontos += 10;\n  }\n  if (entrada.tipo === \"estrela\") {\n    pontos += 25;\n  }\n  return pontos;\n}",
+      "cases": [
+        {
+          "label": "Primeiro cristal",
+          "input": {
+            "pontos": 0,
+            "tipo": "cristal"
+          },
+          "expected": 10
+        },
+        {
+          "label": "Cristal após estrela",
+          "input": {
+            "pontos": 25,
+            "tipo": "cristal"
+          },
+          "expected": 35
+        },
+        {
+          "label": "Estrela após cristal",
+          "input": {
+            "pontos": 10,
+            "tipo": "estrela"
+          },
+          "expected": 35
+        },
+        {
+          "label": "Outro objeto",
+          "input": {
+            "pontos": 35,
+            "tipo": "pedra"
+          },
+          "expected": 35
+        },
+        {
+          "label": "Pontuação maior",
+          "input": {
+            "pontos": 90,
+            "tipo": "estrela"
+          },
+          "expected": 115
+        }
+      ],
+      "reward": 100
+    },
+    {
+      "id": "workshop-waves",
+      "title": "Uma onda, vários objetos",
+      "concept": "Repetição e listas",
+      "goal": "Crie a quantidade pedida nas posições 40, 120, 200…",
+      "functionName": "criarOnda",
+      "help": "[] cria uma lista. for repete: let i=0 começa o contador; a condição decide se continua; i++ aumenta um. push acrescenta uma posição. O primeiro objeto fica em 40, depois 120, 200, 280 e 360. Quantidade zero deve criar lista vazia.",
+      "starter": "function criarOnda(entrada) {\n  let posicoes = [];\n  for (let i = 0; i <= entrada.quantidade; i++) {\n    posicoes.push(40 + i * 80);\n  }\n  return posicoes;\n}",
+      "reference": "function criarOnda(entrada) {\n  let posicoes = [];\n  for (let i = 0; i < entrada.quantidade; i++) {\n    posicoes.push(40 + i * 80);\n  }\n  return posicoes;\n}",
+      "cases": [
+        {
+          "label": "Nenhum objeto",
+          "input": {
+            "quantidade": 0
+          },
+          "expected": []
+        },
+        {
+          "label": "Um objeto",
+          "input": {
+            "quantidade": 1
+          },
+          "expected": [
+            40
+          ]
+        },
+        {
+          "label": "Três objetos",
+          "input": {
+            "quantidade": 3
+          },
+          "expected": [
+            40,
+            120,
+            200
+          ]
+        },
+        {
+          "label": "Cinco objetos",
+          "input": {
+            "quantidade": 5
+          },
+          "expected": [
+            40,
+            120,
+            200,
+            280,
+            360
+          ]
+        }
+      ],
+      "reward": 100
+    },
+    {
+      "id": "workshop-final",
+      "title": "Seu jogo em órbita",
+      "concept": "Projeto integrado",
+      "goal": "Colete 100 pontos e evite as pedras usando suas cinco funções.",
+      "functionName": "final",
+      "help": "Revise as funções nas abas e teste o projeto. Cristais valem 10, estrelas 25 e pedras tiram uma vida. Use esquerda/direita ou os botões de toque. Ao vencer com regras validadas, você pode baixar seu jogo como HTML offline.",
+      "starter": "",
+      "reference": "",
+      "cases": [],
+      "reward": 200
+    }
+  ]
+}
