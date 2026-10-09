@@ -1,10 +1,10 @@
-export const PROGRESS_KEY='rota-do-codigo:bench:v3';
+export const PROGRESS_KEY='rota-do-codigo:workshop:v4';
 export interface StoragePort {getItem(key:string):string|null;setItem(key:string,value:string):void;removeItem(key:string):void}
 export function parseProgress(raw:string|null,ids:string[]):string[]{
   if(!raw)return [];
   try{
     const value=JSON.parse(raw);
-    if(!value||value.version!==3||!Array.isArray(value.completed)||value.completed.length>ids.length)return [];
+    if(!value||value.version!==4||!Array.isArray(value.completed)||value.completed.length>ids.length)return [];
     if(value.completed.some((id:unknown,i:number)=>id!==ids[i]))return [];
     return [...value.completed];
   }catch{return [];}
@@ -18,7 +18,7 @@ export function loadProgress(storage:StoragePort|undefined,ids:string[]):string[
 }
 export function saveProgress(storage:StoragePort|undefined,completed:string[]):boolean{
   if(!storage)return false;
-  try{storage.setItem(PROGRESS_KEY,JSON.stringify({version:3,completed}));return true;}catch{return false;}
+  try{storage.setItem(PROGRESS_KEY,JSON.stringify({version:4,completed}));return true;}catch{return false;}
 }
 export function resetProgress(storage:StoragePort|undefined):void{
   try{storage?.removeItem(PROGRESS_KEY);}catch{/* A sessão pode continuar em memória. */}

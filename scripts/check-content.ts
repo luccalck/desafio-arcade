@@ -1,10 +1,4 @@
-import { readFileSync } from 'node:fs';
-import { validateContent } from '../src/content/validate';
-const path=process.argv[2] ?? 'src/content/missions.json';
-try {
-  const levels=validateContent(JSON.parse(readFileSync(path,'utf8')));
-  console.log(`Conteúdo válido: ${levels.length} missões; duas montagens por missão resolvem todos os cenários.`);
-} catch (error) {
-  console.error(error instanceof Error ? error.message : String(error));
-  process.exitCode=1;
-}
+import source from '../src/content/missions.json';
+import {validateContent} from '../src/content/validate';
+const missions=validateContent(source);
+console.log(`Conteúdo válido: ${missions.length} missões; cinco referências passam e starters têm falhas observáveis.`);

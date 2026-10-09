@@ -1,2001 +1,278 @@
 {
   "missions": [
     {
-      "id": "bench-path",
-      "title": "Reconectar a central",
-      "concept": "Fluxo",
-      "mode": "connection",
-      "goal": "Leve os três sinais ao receptor.",
-      "help": "Escolha uma ponte, encaixe e conecte a saída ao próximo ponto. A parede bloqueia cabos; cada cabo alcança três casas.",
-      "available": [
-        "relay"
-      ],
-      "predicates": [],
-      "budget": 4,
-      "maxSpan": 3,
-      "blocked": [
-        {
-          "x": 3,
-          "y": 1
-        },
-        {
-          "x": 3,
-          "y": 2
-        },
-        {
-          "x": 3,
-          "y": 3
-        }
-      ],
-      "reward": 100,
-      "fixed": [
-        {
-          "id": "in",
-          "kind": "source",
-          "x": 0,
-          "y": 2,
-          "rotation": 0,
-          "config": {}
-        },
-        {
-          "id": "ok",
-          "kind": "sink",
-          "x": 6,
-          "y": 2,
-          "rotation": 0,
-          "config": {}
-        }
-      ],
+      "id": "workshop-controls",
+      "title": "A nave obedece?",
+      "concept": "Eventos e decisões",
+      "goal": "Corrija os controles invertidos da nave.",
+      "functionName": "controlar",
+      "help": "entrada.esquerda e entrada.direita dizem quais teclas estão pressionadas. -1 move para esquerda; 1, para direita; 0 mantém parada. if significa “se”. Se ambas estiverem pressionadas, a direita tem prioridade.",
+      "starter": "function controlar(entrada) {\n  let direcao = 0;\n  if (entrada.esquerda) {\n    direcao = 1;\n  }\n  if (entrada.direita) {\n    direcao = -1;\n  }\n  return direcao;\n}",
+      "reference": "function controlar(entrada) {\n  let direcao = 0;\n  if (entrada.esquerda) {\n    direcao = -1;\n  }\n  if (entrada.direita) {\n    direcao = 1;\n  }\n  return direcao;\n}",
       "cases": [
         {
-          "id": "sinais",
-          "label": "3 sinais",
-          "packets": [
-            {
-              "id": "P1",
-              "value": 1,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "P2",
-              "value": 2,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "P3",
-              "value": 3,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            }
-          ],
-          "expected": [
-            {
-              "id": "P1",
-              "sink": "ok",
-              "value": 1
-            },
-            {
-              "id": "P2",
-              "sink": "ok",
-              "value": 2
-            },
-            {
-              "id": "P3",
-              "sink": "ok",
-              "value": 3
-            }
-          ],
-          "target": 3
-        }
-      ],
-      "solutions": [
-        {
-          "nodes": [
-            {
-              "id": "in",
-              "kind": "source",
-              "x": 0,
-              "y": 2,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "ok",
-              "kind": "sink",
-              "x": 6,
-              "y": 2,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "a",
-              "kind": "relay",
-              "x": 2,
-              "y": 2,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "b",
-              "kind": "relay",
-              "x": 2,
-              "y": 0,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "c",
-              "kind": "relay",
-              "x": 5,
-              "y": 0,
-              "rotation": 0,
-              "config": {}
-            }
-          ],
-          "edges": [
-            {
-              "from": "in",
-              "port": "out",
-              "to": "a"
-            },
-            {
-              "from": "a",
-              "port": "out",
-              "to": "b"
-            },
-            {
-              "from": "b",
-              "port": "out",
-              "to": "c"
-            },
-            {
-              "from": "c",
-              "port": "out",
-              "to": "ok"
-            }
-          ]
+          "label": "Sem tecla",
+          "input": {
+            "esquerda": false,
+            "direita": false
+          },
+          "expected": 0
         },
         {
-          "nodes": [
-            {
-              "id": "in",
-              "kind": "source",
-              "x": 0,
-              "y": 2,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "ok",
-              "kind": "sink",
-              "x": 6,
-              "y": 2,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "a",
-              "kind": "relay",
-              "x": 2,
-              "y": 2,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "b",
-              "kind": "relay",
-              "x": 2,
-              "y": 4,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "c",
-              "kind": "relay",
-              "x": 5,
-              "y": 4,
-              "rotation": 0,
-              "config": {}
-            }
-          ],
-          "edges": [
-            {
-              "from": "in",
-              "port": "out",
-              "to": "a"
-            },
-            {
-              "from": "a",
-              "port": "out",
-              "to": "b"
-            },
-            {
-              "from": "b",
-              "port": "out",
-              "to": "c"
-            },
-            {
-              "from": "c",
-              "port": "out",
-              "to": "ok"
-            }
-          ]
+          "label": "Esquerda",
+          "input": {
+            "esquerda": true,
+            "direita": false
+          },
+          "expected": -1
+        },
+        {
+          "label": "Direita",
+          "input": {
+            "esquerda": false,
+            "direita": true
+          },
+          "expected": 1
+        },
+        {
+          "label": "As duas teclas",
+          "input": {
+            "esquerda": true,
+            "direita": true
+          },
+          "expected": 1
         }
       ],
-      "parameters": {
-        "add": [
-          1,
-          2
-        ],
-        "multiply": [
-          2
-        ]
-      }
+      "reward": 100
     },
     {
-      "id": "bench-values",
-      "title": "Calibrar sinais",
-      "concept": "Valores",
-      "mode": "transform",
-      "goal": "Faça os sinais chegarem aos valores indicados.",
-      "help": "Os números mudam ao atravessar as peças. Procure uma regra que funcione para todas as entradas.",
-      "available": [
-        "add",
-        "multiply",
-        "relay"
-      ],
-      "predicates": [],
-      "budget": 2,
-      "maxSpan": 12,
-      "blocked": [],
-      "reward": 100,
-      "fixed": [
-        {
-          "id": "in",
-          "kind": "source",
-          "x": 0,
-          "y": 2,
-          "rotation": 0,
-          "config": {}
-        },
-        {
-          "id": "ok",
-          "kind": "sink",
-          "x": 6,
-          "y": 1,
-          "rotation": 0,
-          "config": {}
-        },
-        {
-          "id": "reject",
-          "kind": "sink",
-          "x": 6,
-          "y": 3,
-          "rotation": 0,
-          "config": {}
-        }
-      ],
+      "id": "workshop-move",
+      "title": "Movimento sob controle",
+      "concept": "Variáveis e operações",
+      "goal": "Use direção e velocidade para calcular a nova posição.",
+      "functionName": "mover",
+      "help": "posicao é onde a nave está. direcao vale -1, 0 ou 1. velocidade é a distância por atualização. Multiplicar direção pela velocidade dá um deslocamento com sentido; some esse deslocamento à posição. return devolve o resultado.",
+      "starter": "function mover(entrada) {\n  return entrada.posicao + entrada.direcao + entrada.velocidade;\n}",
+      "reference": "function mover(entrada) {\n  return entrada.posicao + entrada.direcao * entrada.velocidade;\n}",
       "cases": [
         {
-          "id": "numeros",
-          "label": "1 → 4 · 3 → 6 · 5 → 8",
-          "packets": [
-            {
-              "id": "V1",
-              "value": 1,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "V2",
-              "value": 3,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "V3",
-              "value": 5,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            }
-          ],
-          "expected": [
-            {
-              "id": "V1",
-              "sink": "ok",
-              "value": 4
-            },
-            {
-              "id": "V2",
-              "sink": "ok",
-              "value": 6
-            },
-            {
-              "id": "V3",
-              "sink": "ok",
-              "value": 8
-            }
-          ],
-          "target": 3
+          "label": "Direita devagar",
+          "input": {
+            "posicao": 100,
+            "direcao": 1,
+            "velocidade": 3
+          },
+          "expected": 103
         },
         {
-          "id": "novos",
-          "label": "2 → 5 · 4 → 7",
-          "packets": [
-            {
-              "id": "N1",
-              "value": 2,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "N2",
-              "value": 4,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            }
-          ],
-          "expected": [
-            {
-              "id": "N1",
-              "sink": "ok",
-              "value": 5
-            },
-            {
-              "id": "N2",
-              "sink": "ok",
-              "value": 7
-            }
-          ],
-          "target": 2
-        }
-      ],
-      "solutions": [
-        {
-          "nodes": [
-            {
-              "id": "in",
-              "kind": "source",
-              "x": 0,
-              "y": 2,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "ok",
-              "kind": "sink",
-              "x": 6,
-              "y": 1,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "reject",
-              "kind": "sink",
-              "x": 6,
-              "y": 3,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "a",
-              "kind": "add",
-              "x": 2,
-              "y": 2,
-              "rotation": 0,
-              "config": {
-                "value": 1
-              }
-            },
-            {
-              "id": "b",
-              "kind": "add",
-              "x": 4,
-              "y": 2,
-              "rotation": 0,
-              "config": {
-                "value": 2
-              }
-            }
-          ],
-          "edges": [
-            {
-              "from": "in",
-              "port": "out",
-              "to": "a"
-            },
-            {
-              "from": "a",
-              "port": "out",
-              "to": "b"
-            },
-            {
-              "from": "b",
-              "port": "out",
-              "to": "ok"
-            }
-          ]
+          "label": "Esquerda",
+          "input": {
+            "posicao": 100,
+            "direcao": -1,
+            "velocidade": 3
+          },
+          "expected": 97
         },
         {
-          "nodes": [
-            {
-              "id": "in",
-              "kind": "source",
-              "x": 0,
-              "y": 2,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "ok",
-              "kind": "sink",
-              "x": 6,
-              "y": 1,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "reject",
-              "kind": "sink",
-              "x": 6,
-              "y": 3,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "a",
-              "kind": "add",
-              "x": 2,
-              "y": 2,
-              "rotation": 0,
-              "config": {
-                "value": 2
-              }
-            },
-            {
-              "id": "b",
-              "kind": "add",
-              "x": 4,
-              "y": 2,
-              "rotation": 0,
-              "config": {
-                "value": 1
-              }
-            }
-          ],
-          "edges": [
-            {
-              "from": "in",
-              "port": "out",
-              "to": "a"
-            },
-            {
-              "from": "a",
-              "port": "out",
-              "to": "b"
-            },
-            {
-              "from": "b",
-              "port": "out",
-              "to": "ok"
-            }
-          ]
+          "label": "Parada",
+          "input": {
+            "posicao": 100,
+            "direcao": 0,
+            "velocidade": 3
+          },
+          "expected": 100
+        },
+        {
+          "label": "Direita rápida",
+          "input": {
+            "posicao": 200,
+            "direcao": 1,
+            "velocidade": 8
+          },
+          "expected": 208
+        },
+        {
+          "label": "Esquerda rápida",
+          "input": {
+            "posicao": 20,
+            "direcao": -1,
+            "velocidade": 8
+          },
+          "expected": 12
         }
       ],
-      "parameters": {
-        "add": [
-          1,
-          2
-        ],
-        "multiply": [
-          2
-        ]
-      }
+      "reward": 100
     },
     {
-      "id": "bench-filter",
-      "title": "Separar dados",
-      "concept": "Decisão",
-      "mode": "filter",
-      "goal": "Íntegros para o servidor. Corrompidos para revisão.",
-      "help": "✓ significa íntegro; ×, corrompido. O sensor escolhe SIM ou NÃO. Ligue cada caminho a seu destino.",
-      "available": [
-        "filter",
-        "relay"
-      ],
-      "predicates": [
-        "valid",
-        "permission"
-      ],
-      "budget": 3,
-      "maxSpan": 12,
-      "blocked": [],
-      "reward": 100,
-      "fixed": [
-        {
-          "id": "in",
-          "kind": "source",
-          "x": 0,
-          "y": 2,
-          "rotation": 0,
-          "config": {}
-        },
-        {
-          "id": "ok",
-          "kind": "sink",
-          "x": 6,
-          "y": 1,
-          "rotation": 0,
-          "config": {}
-        },
-        {
-          "id": "reject",
-          "kind": "sink",
-          "x": 6,
-          "y": 3,
-          "rotation": 0,
-          "config": {}
-        }
-      ],
+      "id": "workshop-collision",
+      "title": "Colisão de verdade",
+      "concept": "Condições e limites",
+      "goal": "Conte uma colisão somente quando os objetos se encostarem.",
+      "functionName": "colidir",
+      "help": "distancia mede a separação entre nave e objeto. raio é a distância máxima para encostar. <= significa “menor ou igual”; uma comparação devolve true (sim) ou false (não). Teste também a distância exatamente no limite.",
+      "starter": "function colidir(entrada) {\n  return entrada.distancia > entrada.raio;\n}",
+      "reference": "function colidir(entrada) {\n  return entrada.distancia <= entrada.raio;\n}",
       "cases": [
         {
-          "id": "mistos",
-          "label": "4 pacotes",
-          "packets": [
-            {
-              "id": "D1",
-              "value": 2,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "D2",
-              "value": 4,
-              "valid": false,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "D3",
-              "value": 6,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "D4",
-              "value": 1,
-              "valid": false,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            }
-          ],
-          "expected": [
-            {
-              "id": "D1",
-              "sink": "ok",
-              "value": 2
-            },
-            {
-              "id": "D2",
-              "sink": "reject",
-              "value": 4
-            },
-            {
-              "id": "D3",
-              "sink": "ok",
-              "value": 6
-            },
-            {
-              "id": "D4",
-              "sink": "reject",
-              "value": 1
-            }
-          ],
-          "target": 2
+          "label": "Longe",
+          "input": {
+            "distancia": 100,
+            "raio": 23
+          },
+          "expected": false
         },
         {
-          "id": "inversos",
-          "label": "3 pacotes",
-          "packets": [
-            {
-              "id": "D5",
-              "value": 9,
-              "valid": false,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "D6",
-              "value": 3,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "D7",
-              "value": 8,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            }
-          ],
-          "expected": [
-            {
-              "id": "D5",
-              "sink": "reject",
-              "value": 9
-            },
-            {
-              "id": "D6",
-              "sink": "ok",
-              "value": 3
-            },
-            {
-              "id": "D7",
-              "sink": "ok",
-              "value": 8
-            }
-          ],
-          "target": 2
-        }
-      ],
-      "solutions": [
-        {
-          "nodes": [
-            {
-              "id": "in",
-              "kind": "source",
-              "x": 0,
-              "y": 2,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "ok",
-              "kind": "sink",
-              "x": 6,
-              "y": 1,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "reject",
-              "kind": "sink",
-              "x": 6,
-              "y": 3,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "a",
-              "kind": "filter",
-              "x": 3,
-              "y": 2,
-              "rotation": 0,
-              "config": {
-                "a": "valid",
-                "b": "valid",
-                "op": "single",
-                "c": "valid",
-                "outer": "or",
-                "third": false,
-                "invert": false
-              }
-            }
-          ],
-          "edges": [
-            {
-              "from": "in",
-              "port": "out",
-              "to": "a"
-            },
-            {
-              "from": "a",
-              "port": "yes",
-              "to": "ok"
-            },
-            {
-              "from": "a",
-              "port": "no",
-              "to": "reject"
-            }
-          ]
+          "label": "Perto",
+          "input": {
+            "distancia": 5,
+            "raio": 23
+          },
+          "expected": true
         },
         {
-          "nodes": [
-            {
-              "id": "in",
-              "kind": "source",
-              "x": 0,
-              "y": 2,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "ok",
-              "kind": "sink",
-              "x": 6,
-              "y": 1,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "reject",
-              "kind": "sink",
-              "x": 6,
-              "y": 3,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "a",
-              "kind": "filter",
-              "x": 3,
-              "y": 1,
-              "rotation": 0,
-              "config": {
-                "a": "valid",
-                "b": "valid",
-                "op": "single",
-                "c": "valid",
-                "outer": "or",
-                "third": false,
-                "invert": true
-              }
-            }
-          ],
-          "edges": [
-            {
-              "from": "in",
-              "port": "out",
-              "to": "a"
-            },
-            {
-              "from": "a",
-              "port": "yes",
-              "to": "reject"
-            },
-            {
-              "from": "a",
-              "port": "no",
-              "to": "ok"
-            }
-          ]
+          "label": "No limite",
+          "input": {
+            "distancia": 23,
+            "raio": 23
+          },
+          "expected": true
+        },
+        {
+          "label": "Logo depois do limite",
+          "input": {
+            "distancia": 23.1,
+            "raio": 23
+          },
+          "expected": false
+        },
+        {
+          "label": "Mesmo centro",
+          "input": {
+            "distancia": 0,
+            "raio": 23
+          },
+          "expected": true
         }
       ],
-      "parameters": {
-        "add": [
-          1,
-          2
-        ],
-        "multiply": [
-          2
-        ]
-      }
+      "reward": 100
     },
     {
-      "id": "bench-access",
-      "title": "Controlar acesso",
-      "concept": "E / OU",
-      "mode": "boolean",
-      "goal": "Credencial + energia, ou manutenção: acesso liberado.",
-      "help": "E exige os dois sinais; OU aceita uma alternativa. Combine os sensores e teste cada cartão.",
-      "available": [
-        "filter",
-        "relay"
-      ],
-      "predicates": [
-        "credentials",
-        "energy",
-        "maintenance"
-      ],
-      "budget": 3,
-      "maxSpan": 12,
-      "blocked": [],
-      "reward": 100,
-      "fixed": [
-        {
-          "id": "in",
-          "kind": "source",
-          "x": 0,
-          "y": 2,
-          "rotation": 0,
-          "config": {}
-        },
-        {
-          "id": "ok",
-          "kind": "sink",
-          "x": 6,
-          "y": 1,
-          "rotation": 0,
-          "config": {}
-        },
-        {
-          "id": "reject",
-          "kind": "sink",
-          "x": 6,
-          "y": 3,
-          "rotation": 0,
-          "config": {}
-        }
-      ],
+      "id": "workshop-score",
+      "title": "Cada coleta conta",
+      "concept": "Estado e pontuação",
+      "goal": "Some 10 por cristal e 25 por estrela, preservando os pontos.",
+      "functionName": "pontuar",
+      "help": "Comece com entrada.pontos, a pontuação que já existe. entrada.tipo informa o objeto. === compara exatamente; += acrescenta ao valor atual. Cristal vale 10 e estrela 25; outro tipo não muda pontos.",
+      "starter": "function pontuar(entrada) {\n  let pontos = 0;\n  if (entrada.tipo === \"cristal\") {\n    pontos += 1;\n  }\n  if (entrada.tipo === \"estrela\") {\n    pontos += 25;\n  }\n  return pontos;\n}",
+      "reference": "function pontuar(entrada) {\n  let pontos = entrada.pontos;\n  if (entrada.tipo === \"cristal\") {\n    pontos += 10;\n  }\n  if (entrada.tipo === \"estrela\") {\n    pontos += 25;\n  }\n  return pontos;\n}",
       "cases": [
         {
-          "id": "acessos",
-          "label": "8 combinações",
-          "packets": [
-            {
-              "id": "A1",
-              "value": 1,
-              "valid": true,
-              "permission": true,
-              "credentials": false,
-              "energy": false,
-              "maintenance": false
-            },
-            {
-              "id": "A2",
-              "value": 2,
-              "valid": true,
-              "permission": true,
-              "credentials": false,
-              "energy": false,
-              "maintenance": true
-            },
-            {
-              "id": "A3",
-              "value": 3,
-              "valid": true,
-              "permission": true,
-              "credentials": false,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "A4",
-              "value": 4,
-              "valid": true,
-              "permission": true,
-              "credentials": false,
-              "energy": true,
-              "maintenance": true
-            },
-            {
-              "id": "A5",
-              "value": 5,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": false,
-              "maintenance": false
-            },
-            {
-              "id": "A6",
-              "value": 6,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": false,
-              "maintenance": true
-            },
-            {
-              "id": "A7",
-              "value": 7,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "A8",
-              "value": 8,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": true
-            }
-          ],
-          "expected": [
-            {
-              "id": "A1",
-              "sink": "reject",
-              "value": 1
-            },
-            {
-              "id": "A2",
-              "sink": "ok",
-              "value": 2
-            },
-            {
-              "id": "A3",
-              "sink": "reject",
-              "value": 3
-            },
-            {
-              "id": "A4",
-              "sink": "ok",
-              "value": 4
-            },
-            {
-              "id": "A5",
-              "sink": "reject",
-              "value": 5
-            },
-            {
-              "id": "A6",
-              "sink": "ok",
-              "value": 6
-            },
-            {
-              "id": "A7",
-              "sink": "ok",
-              "value": 7
-            },
-            {
-              "id": "A8",
-              "sink": "ok",
-              "value": 8
-            }
-          ],
-          "target": 5
-        }
-      ],
-      "solutions": [
-        {
-          "nodes": [
-            {
-              "id": "in",
-              "kind": "source",
-              "x": 0,
-              "y": 2,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "ok",
-              "kind": "sink",
-              "x": 6,
-              "y": 1,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "reject",
-              "kind": "sink",
-              "x": 6,
-              "y": 3,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "a",
-              "kind": "filter",
-              "x": 3,
-              "y": 2,
-              "rotation": 0,
-              "config": {
-                "a": "credentials",
-                "b": "energy",
-                "op": "and",
-                "c": "maintenance",
-                "outer": "or",
-                "third": true,
-                "invert": false
-              }
-            }
-          ],
-          "edges": [
-            {
-              "from": "in",
-              "port": "out",
-              "to": "a"
-            },
-            {
-              "from": "a",
-              "port": "yes",
-              "to": "ok"
-            },
-            {
-              "from": "a",
-              "port": "no",
-              "to": "reject"
-            }
-          ]
+          "label": "Primeiro cristal",
+          "input": {
+            "pontos": 0,
+            "tipo": "cristal"
+          },
+          "expected": 10
         },
         {
-          "nodes": [
-            {
-              "id": "in",
-              "kind": "source",
-              "x": 0,
-              "y": 2,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "ok",
-              "kind": "sink",
-              "x": 6,
-              "y": 1,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "reject",
-              "kind": "sink",
-              "x": 6,
-              "y": 3,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "a",
-              "kind": "filter",
-              "x": 2,
-              "y": 1,
-              "rotation": 0,
-              "config": {
-                "a": "maintenance",
-                "b": "maintenance",
-                "op": "single",
-                "c": "maintenance",
-                "outer": "or",
-                "third": false,
-                "invert": false
-              }
-            },
-            {
-              "id": "b",
-              "kind": "filter",
-              "x": 4,
-              "y": 3,
-              "rotation": 0,
-              "config": {
-                "a": "credentials",
-                "b": "energy",
-                "op": "and",
-                "c": "credentials",
-                "outer": "or",
-                "third": false,
-                "invert": false
-              }
-            }
-          ],
-          "edges": [
-            {
-              "from": "in",
-              "port": "out",
-              "to": "a"
-            },
-            {
-              "from": "a",
-              "port": "yes",
-              "to": "ok"
-            },
-            {
-              "from": "a",
-              "port": "no",
-              "to": "b"
-            },
-            {
-              "from": "b",
-              "port": "yes",
-              "to": "ok"
-            },
-            {
-              "from": "b",
-              "port": "no",
-              "to": "reject"
-            }
-          ]
+          "label": "Cristal após estrela",
+          "input": {
+            "pontos": 25,
+            "tipo": "cristal"
+          },
+          "expected": 35
+        },
+        {
+          "label": "Estrela após cristal",
+          "input": {
+            "pontos": 10,
+            "tipo": "estrela"
+          },
+          "expected": 35
+        },
+        {
+          "label": "Outro objeto",
+          "input": {
+            "pontos": 35,
+            "tipo": "pedra"
+          },
+          "expected": 35
+        },
+        {
+          "label": "Pontuação maior",
+          "input": {
+            "pontos": 90,
+            "tipo": "estrela"
+          },
+          "expected": 115
         }
       ],
-      "parameters": {
-        "add": [
-          1,
-          2
-        ],
-        "multiply": [
-          2
-        ]
-      }
+      "reward": 100
     },
     {
-      "id": "bench-memory",
-      "title": "Gerenciar o buffer",
-      "concept": "Memória / lote",
-      "mode": "buffer",
-      "goal": "Guarde os íntegros. Libere quando o lote terminar.",
-      "help": "O buffer guarda e conta. Quando todos os pacotes são processados, ele libera o lote automaticamente.",
-      "available": [
-        "filter",
-        "buffer",
-        "relay"
-      ],
-      "predicates": [
-        "valid"
-      ],
-      "budget": 3,
-      "maxSpan": 12,
-      "blocked": [],
-      "reward": 100,
-      "fixed": [
-        {
-          "id": "in",
-          "kind": "source",
-          "x": 0,
-          "y": 2,
-          "rotation": 0,
-          "config": {}
-        },
-        {
-          "id": "ok",
-          "kind": "sink",
-          "x": 6,
-          "y": 1,
-          "rotation": 0,
-          "config": {}
-        },
-        {
-          "id": "reject",
-          "kind": "sink",
-          "x": 6,
-          "y": 3,
-          "rotation": 0,
-          "config": {}
-        }
-      ],
+      "id": "workshop-waves",
+      "title": "Uma onda, vários objetos",
+      "concept": "Repetição e listas",
+      "goal": "Crie a quantidade pedida nas posições 40, 120, 200…",
+      "functionName": "criarOnda",
+      "help": "[] cria uma lista. for repete: let i=0 começa o contador; a condição decide se continua; i++ aumenta um. push acrescenta uma posição. O primeiro objeto fica em 40, depois 120, 200, 280 e 360. Quantidade zero deve criar lista vazia.",
+      "starter": "function criarOnda(entrada) {\n  let posicoes = [];\n  for (let i = 0; i <= entrada.quantidade; i++) {\n    posicoes.push(40 + i * 80);\n  }\n  return posicoes;\n}",
+      "reference": "function criarOnda(entrada) {\n  let posicoes = [];\n  for (let i = 0; i < entrada.quantidade; i++) {\n    posicoes.push(40 + i * 80);\n  }\n  return posicoes;\n}",
       "cases": [
         {
-          "id": "lote-a",
-          "label": "2 íntegros / 4",
-          "packets": [
-            {
-              "id": "B1",
-              "value": 1,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "B2",
-              "value": 2,
-              "valid": false,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "B3",
-              "value": 3,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "B4",
-              "value": 4,
-              "valid": false,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            }
-          ],
-          "expected": [
-            {
-              "id": "B1",
-              "sink": "ok",
-              "value": 1
-            },
-            {
-              "id": "B2",
-              "sink": "reject",
-              "value": 2
-            },
-            {
-              "id": "B3",
-              "sink": "ok",
-              "value": 3
-            },
-            {
-              "id": "B4",
-              "sink": "reject",
-              "value": 4
-            }
-          ],
-          "target": 2
+          "label": "Nenhum objeto",
+          "input": {
+            "quantidade": 0
+          },
+          "expected": []
         },
         {
-          "id": "lote-b",
-          "label": "3 íntegros / 5",
-          "packets": [
-            {
-              "id": "B5",
-              "value": 2,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "B6",
-              "value": 5,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "B7",
-              "value": 7,
-              "valid": false,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "B8",
-              "value": 8,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "B9",
-              "value": 3,
-              "valid": false,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            }
-          ],
+          "label": "Um objeto",
+          "input": {
+            "quantidade": 1
+          },
           "expected": [
-            {
-              "id": "B5",
-              "sink": "ok",
-              "value": 2
-            },
-            {
-              "id": "B6",
-              "sink": "ok",
-              "value": 5
-            },
-            {
-              "id": "B7",
-              "sink": "reject",
-              "value": 7
-            },
-            {
-              "id": "B8",
-              "sink": "ok",
-              "value": 8
-            },
-            {
-              "id": "B9",
-              "sink": "reject",
-              "value": 3
-            }
-          ],
-          "target": 3
-        },
-        {
-          "id": "lote-zero",
-          "label": "0 íntegros / 2",
-          "packets": [
-            {
-              "id": "B10",
-              "value": 4,
-              "valid": false,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "B11",
-              "value": 6,
-              "valid": false,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            }
-          ],
-          "expected": [
-            {
-              "id": "B10",
-              "sink": "reject",
-              "value": 4
-            },
-            {
-              "id": "B11",
-              "sink": "reject",
-              "value": 6
-            }
-          ],
-          "target": 0
-        }
-      ],
-      "solutions": [
-        {
-          "nodes": [
-            {
-              "id": "in",
-              "kind": "source",
-              "x": 0,
-              "y": 2,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "ok",
-              "kind": "sink",
-              "x": 6,
-              "y": 1,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "reject",
-              "kind": "sink",
-              "x": 6,
-              "y": 3,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "a",
-              "kind": "filter",
-              "x": 2,
-              "y": 2,
-              "rotation": 0,
-              "config": {
-                "a": "valid",
-                "b": "valid",
-                "op": "single",
-                "c": "valid",
-                "outer": "or",
-                "third": false,
-                "invert": false
-              }
-            },
-            {
-              "id": "b",
-              "kind": "buffer",
-              "x": 4,
-              "y": 1,
-              "rotation": 0,
-              "config": {}
-            }
-          ],
-          "edges": [
-            {
-              "from": "in",
-              "port": "out",
-              "to": "a"
-            },
-            {
-              "from": "a",
-              "port": "yes",
-              "to": "b"
-            },
-            {
-              "from": "a",
-              "port": "no",
-              "to": "reject"
-            },
-            {
-              "from": "b",
-              "port": "out",
-              "to": "ok"
-            }
+            40
           ]
         },
         {
-          "nodes": [
-            {
-              "id": "in",
-              "kind": "source",
-              "x": 0,
-              "y": 2,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "ok",
-              "kind": "sink",
-              "x": 6,
-              "y": 1,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "reject",
-              "kind": "sink",
-              "x": 6,
-              "y": 3,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "a",
-              "kind": "filter",
-              "x": 2,
-              "y": 2,
-              "rotation": 0,
-              "config": {
-                "a": "valid",
-                "b": "valid",
-                "op": "single",
-                "c": "valid",
-                "outer": "or",
-                "third": false,
-                "invert": true
-              }
-            },
-            {
-              "id": "b",
-              "kind": "buffer",
-              "x": 4,
-              "y": 1,
-              "rotation": 0,
-              "config": {}
-            }
-          ],
-          "edges": [
-            {
-              "from": "in",
-              "port": "out",
-              "to": "a"
-            },
-            {
-              "from": "a",
-              "port": "no",
-              "to": "b"
-            },
-            {
-              "from": "a",
-              "port": "yes",
-              "to": "reject"
-            },
-            {
-              "from": "b",
-              "port": "out",
-              "to": "ok"
-            }
+          "label": "Três objetos",
+          "input": {
+            "quantidade": 3
+          },
+          "expected": [
+            40,
+            120,
+            200
+          ]
+        },
+        {
+          "label": "Cinco objetos",
+          "input": {
+            "quantidade": 5
+          },
+          "expected": [
+            40,
+            120,
+            200,
+            280,
+            360
           ]
         }
       ],
-      "parameters": {
-        "add": [
-          1,
-          2
-        ],
-        "multiply": [
-          2
-        ]
-      }
+      "reward": 100
     },
     {
-      "id": "bench-core",
-      "title": "Recuperar o núcleo",
-      "concept": "Desafio final",
-      "mode": "final",
-      "goal": "Íntegros e autorizados: +3, memória e envio em lote.",
-      "help": "Separe os inválidos, transforme só os aprovados e guarde-os antes do envio. O mesmo circuito deve funcionar em três lotes.",
-      "available": [
-        "filter",
-        "add",
-        "multiply",
-        "buffer",
-        "relay"
-      ],
-      "predicates": [
-        "valid",
-        "permission",
-        "countMet",
-        "batchDone"
-      ],
-      "budget": 6,
-      "maxSpan": 12,
-      "blocked": [],
-      "reward": 200,
-      "fixed": [
-        {
-          "id": "in",
-          "kind": "source",
-          "x": 0,
-          "y": 2,
-          "rotation": 0,
-          "config": {}
-        },
-        {
-          "id": "ok",
-          "kind": "sink",
-          "x": 6,
-          "y": 1,
-          "rotation": 0,
-          "config": {}
-        },
-        {
-          "id": "reject",
-          "kind": "sink",
-          "x": 6,
-          "y": 3,
-          "rotation": 0,
-          "config": {}
-        }
-      ],
-      "cases": [
-        {
-          "id": "nucleo-a",
-          "label": "Meta 1",
-          "packets": [
-            {
-              "id": "F1",
-              "value": 1,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "F2",
-              "value": 3,
-              "valid": false,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "F3",
-              "value": 5,
-              "valid": true,
-              "permission": false,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            }
-          ],
-          "expected": [
-            {
-              "id": "F1",
-              "sink": "ok",
-              "value": 4
-            },
-            {
-              "id": "F2",
-              "sink": "reject",
-              "value": 3
-            },
-            {
-              "id": "F3",
-              "sink": "reject",
-              "value": 5
-            }
-          ],
-          "target": 1
-        },
-        {
-          "id": "nucleo-b",
-          "label": "Meta 3",
-          "packets": [
-            {
-              "id": "F4",
-              "value": 2,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "F5",
-              "value": 4,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "F6",
-              "value": 6,
-              "valid": true,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "F7",
-              "value": 8,
-              "valid": false,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "F8",
-              "value": 1,
-              "valid": true,
-              "permission": false,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            }
-          ],
-          "expected": [
-            {
-              "id": "F4",
-              "sink": "ok",
-              "value": 5
-            },
-            {
-              "id": "F5",
-              "sink": "ok",
-              "value": 7
-            },
-            {
-              "id": "F6",
-              "sink": "ok",
-              "value": 9
-            },
-            {
-              "id": "F7",
-              "sink": "reject",
-              "value": 8
-            },
-            {
-              "id": "F8",
-              "sink": "reject",
-              "value": 1
-            }
-          ],
-          "target": 3
-        },
-        {
-          "id": "nucleo-zero",
-          "label": "Meta 0",
-          "packets": [
-            {
-              "id": "F9",
-              "value": 3,
-              "valid": false,
-              "permission": true,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            },
-            {
-              "id": "F10",
-              "value": 5,
-              "valid": true,
-              "permission": false,
-              "credentials": true,
-              "energy": true,
-              "maintenance": false
-            }
-          ],
-          "expected": [
-            {
-              "id": "F9",
-              "sink": "reject",
-              "value": 3
-            },
-            {
-              "id": "F10",
-              "sink": "reject",
-              "value": 5
-            }
-          ],
-          "target": 0
-        }
-      ],
-      "solutions": [
-        {
-          "nodes": [
-            {
-              "id": "in",
-              "kind": "source",
-              "x": 0,
-              "y": 2,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "ok",
-              "kind": "sink",
-              "x": 6,
-              "y": 1,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "reject",
-              "kind": "sink",
-              "x": 6,
-              "y": 3,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "a",
-              "kind": "filter",
-              "x": 1,
-              "y": 2,
-              "rotation": 0,
-              "config": {
-                "a": "valid",
-                "b": "permission",
-                "op": "and",
-                "c": "valid",
-                "outer": "or",
-                "third": false,
-                "invert": false
-              }
-            },
-            {
-              "id": "b",
-              "kind": "add",
-              "x": 3,
-              "y": 1,
-              "rotation": 0,
-              "config": {
-                "value": 1
-              }
-            },
-            {
-              "id": "c",
-              "kind": "add",
-              "x": 4,
-              "y": 1,
-              "rotation": 0,
-              "config": {
-                "value": 2
-              }
-            },
-            {
-              "id": "d",
-              "kind": "buffer",
-              "x": 5,
-              "y": 1,
-              "rotation": 0,
-              "config": {}
-            }
-          ],
-          "edges": [
-            {
-              "from": "in",
-              "port": "out",
-              "to": "a"
-            },
-            {
-              "from": "a",
-              "port": "yes",
-              "to": "b"
-            },
-            {
-              "from": "a",
-              "port": "no",
-              "to": "reject"
-            },
-            {
-              "from": "b",
-              "port": "out",
-              "to": "c"
-            },
-            {
-              "from": "c",
-              "port": "out",
-              "to": "d"
-            },
-            {
-              "from": "d",
-              "port": "out",
-              "to": "ok"
-            }
-          ]
-        },
-        {
-          "nodes": [
-            {
-              "id": "in",
-              "kind": "source",
-              "x": 0,
-              "y": 2,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "ok",
-              "kind": "sink",
-              "x": 6,
-              "y": 1,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "reject",
-              "kind": "sink",
-              "x": 6,
-              "y": 3,
-              "rotation": 0,
-              "config": {}
-            },
-            {
-              "id": "a",
-              "kind": "filter",
-              "x": 1,
-              "y": 2,
-              "rotation": 0,
-              "config": {
-                "a": "valid",
-                "b": "valid",
-                "op": "single",
-                "c": "valid",
-                "outer": "or",
-                "third": false,
-                "invert": false
-              }
-            },
-            {
-              "id": "e",
-              "kind": "filter",
-              "x": 2,
-              "y": 2,
-              "rotation": 0,
-              "config": {
-                "a": "permission",
-                "b": "permission",
-                "op": "single",
-                "c": "permission",
-                "outer": "or",
-                "third": false,
-                "invert": false
-              }
-            },
-            {
-              "id": "b",
-              "kind": "add",
-              "x": 3,
-              "y": 0,
-              "rotation": 0,
-              "config": {
-                "value": 2
-              }
-            },
-            {
-              "id": "c",
-              "kind": "add",
-              "x": 4,
-              "y": 0,
-              "rotation": 0,
-              "config": {
-                "value": 1
-              }
-            },
-            {
-              "id": "d",
-              "kind": "buffer",
-              "x": 5,
-              "y": 1,
-              "rotation": 0,
-              "config": {}
-            }
-          ],
-          "edges": [
-            {
-              "from": "in",
-              "port": "out",
-              "to": "a"
-            },
-            {
-              "from": "a",
-              "port": "yes",
-              "to": "e"
-            },
-            {
-              "from": "a",
-              "port": "no",
-              "to": "reject"
-            },
-            {
-              "from": "e",
-              "port": "yes",
-              "to": "b"
-            },
-            {
-              "from": "e",
-              "port": "no",
-              "to": "reject"
-            },
-            {
-              "from": "b",
-              "port": "out",
-              "to": "c"
-            },
-            {
-              "from": "c",
-              "port": "out",
-              "to": "d"
-            },
-            {
-              "from": "d",
-              "port": "out",
-              "to": "ok"
-            }
-          ]
-        }
-      ],
-      "parameters": {
-        "add": [
-          1,
-          2
-        ],
-        "multiply": [
-          2
-        ]
-      }
+      "id": "workshop-final",
+      "title": "Seu jogo em órbita",
+      "concept": "Projeto integrado",
+      "goal": "Colete 100 pontos e evite as pedras usando suas cinco funções.",
+      "functionName": "final",
+      "help": "Revise as funções nas abas e teste o projeto. Cristais valem 10, estrelas 25 e pedras tiram uma vida. Use esquerda/direita ou os botões de toque. Ao vencer com regras validadas, você pode baixar seu jogo como HTML offline.",
+      "starter": "",
+      "reference": "",
+      "cases": [],
+      "reward": 200
     }
   ]
 }

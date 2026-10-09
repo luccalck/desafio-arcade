@@ -2,482 +2,382 @@
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "object",
   "additionalProperties": false,
-  "properties": {
-    "missions": {
-      "type": "array",
-      "items": {
-        "$ref": "#/$defs/mission"
-      },
-      "minItems": 6,
-      "maxItems": 6
-    }
-  },
   "required": [
     "missions"
   ],
-  "$defs": {
-    "config": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "value": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 3
-        },
-        "a": {
-          "enum": [
-            "valid",
-            "permission",
-            "credentials",
-            "energy",
-            "maintenance",
-            "countMet",
-            "batchDone"
-          ]
-        },
-        "b": {
-          "enum": [
-            "valid",
-            "permission",
-            "credentials",
-            "energy",
-            "maintenance",
-            "countMet",
-            "batchDone"
-          ]
-        },
-        "op": {
-          "enum": [
-            "single",
-            "and",
-            "or"
-          ]
-        },
-        "c": {
-          "enum": [
-            "valid",
-            "permission",
-            "credentials",
-            "energy",
-            "maintenance",
-            "countMet",
-            "batchDone"
-          ]
-        },
-        "outer": {
-          "enum": [
-            "and",
-            "or"
-          ]
-        },
-        "third": {
-          "type": "boolean"
-        },
-        "invert": {
-          "type": "boolean"
-        }
-      },
-      "required": []
-    },
-    "node": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "id": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 120
-        },
-        "kind": {
-          "enum": [
-            "source",
-            "sink",
-            "relay",
-            "add",
-            "multiply",
-            "filter",
-            "buffer"
-          ]
-        },
-        "x": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 6
-        },
-        "y": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 4
-        },
-        "rotation": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 3
-        },
-        "config": {
-          "$ref": "#/$defs/config"
-        }
-      },
-      "required": [
-        "id",
-        "kind",
-        "x",
-        "y",
-        "rotation",
-        "config"
-      ]
-    },
-    "edge": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "from": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 120
-        },
-        "port": {
-          "enum": [
-            "out",
-            "yes",
-            "no"
-          ]
-        },
-        "to": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 120
-        }
-      },
-      "required": [
-        "from",
-        "port",
-        "to"
-      ]
-    },
-    "layout": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "nodes": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/node"
+  "properties": {
+    "missions": {
+      "type": "array",
+      "minItems": 6,
+      "maxItems": 6,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": [
+          "id",
+          "title",
+          "concept",
+          "goal",
+          "help",
+          "functionName",
+          "starter",
+          "reference",
+          "cases",
+          "reward"
+        ],
+        "properties": {
+          "id": {
+            "type": "string",
+            "pattern": "^workshop-[a-z]+$"
           },
-          "minItems": 2,
-          "maxItems": 10
-        },
-        "edges": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/edge"
+          "title": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
           },
-          "minItems": 0,
-          "maxItems": 20
-        }
-      },
-      "required": [
-        "nodes",
-        "edges"
-      ]
-    },
-    "packet": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "id": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 120
-        },
-        "value": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 99
-        },
-        "valid": {
-          "type": "boolean"
-        },
-        "permission": {
-          "type": "boolean"
-        },
-        "credentials": {
-          "type": "boolean"
-        },
-        "energy": {
-          "type": "boolean"
-        },
-        "maintenance": {
-          "type": "boolean"
-        }
-      },
-      "required": [
-        "id",
-        "value",
-        "valid",
-        "permission",
-        "credentials",
-        "energy",
-        "maintenance"
-      ]
-    },
-    "output": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "id": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 120
-        },
-        "sink": {
-          "enum": [
-            "ok",
-            "reject"
-          ]
-        },
-        "value": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 999
-        }
-      },
-      "required": [
-        "id",
-        "sink",
-        "value"
-      ]
-    },
-    "case": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "id": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 120
-        },
-        "label": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 120
-        },
-        "packets": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/packet"
+          "concept": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 80
           },
-          "minItems": 1,
-          "maxItems": 10
-        },
-        "expected": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/output"
+          "goal": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 160
           },
-          "minItems": 1,
-          "maxItems": 10
-        },
-        "target": {
-          "type": "integer",
-          "minimum": 0,
-          "maximum": 10
-        }
-      },
-      "required": [
-        "id",
-        "label",
-        "packets",
-        "expected",
-        "target"
-      ]
-    },
-    "mission": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "id": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 120
-        },
-        "title": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 120
-        },
-        "concept": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 120
-        },
-        "mode": {
-          "enum": [
-            "connection",
-            "transform",
-            "filter",
-            "boolean",
-            "buffer",
-            "final"
-          ]
-        },
-        "goal": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 120
-        },
-        "help": {
-          "type": "string",
-          "minLength": 1,
-          "maxLength": 300
-        },
-        "available": {
-          "type": "array",
-          "items": {
+          "help": {
+            "type": "string",
+            "minLength": 1,
+            "maxLength": 1000
+          },
+          "functionName": {
             "enum": [
-              "relay",
-              "add",
-              "multiply",
-              "filter",
-              "buffer"
+              "controlar",
+              "mover",
+              "colidir",
+              "pontuar",
+              "criarOnda",
+              "final"
             ]
           },
-          "minItems": 1,
-          "maxItems": 5
-        },
-        "predicates": {
-          "type": "array",
-          "items": {
+          "starter": {
+            "type": "string",
+            "maxLength": 6000
+          },
+          "reference": {
+            "type": "string",
+            "maxLength": 6000
+          },
+          "reward": {
+            "type": "integer",
             "enum": [
-              "valid",
-              "permission",
-              "credentials",
-              "energy",
-              "maintenance",
-              "countMet",
-              "batchDone"
+              100,
+              200
             ]
           },
-          "minItems": 0,
-          "maxItems": 7
-        },
-        "budget": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 6
-        },
-        "maxSpan": {
-          "type": "integer",
-          "minimum": 1,
-          "maximum": 12
-        },
-        "blocked": {
-          "type": "array",
-          "items": {
-            "type": "object",
-            "additionalProperties": false,
-            "properties": {
-              "x": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 6
-              },
-              "y": {
-                "type": "integer",
-                "minimum": 0,
-                "maximum": 4
+          "cases": {
+            "type": "array",
+            "maxItems": 20,
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": [
+                "label",
+                "input",
+                "expected"
+              ],
+              "properties": {
+                "label": {
+                  "type": "string",
+                  "minLength": 1,
+                  "maxLength": 80
+                },
+                "input": {
+                  "type": "object",
+                  "additionalProperties": false,
+                  "properties": {
+                    "esquerda": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": -10000,
+                          "maximum": 10000
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "string",
+                          "maxLength": 120
+                        },
+                        {
+                          "type": "array",
+                          "maxItems": 64,
+                          "items": {
+                            "type": "number",
+                            "minimum": -10000,
+                            "maximum": 10000
+                          }
+                        }
+                      ]
+                    },
+                    "direita": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": -10000,
+                          "maximum": 10000
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "string",
+                          "maxLength": 120
+                        },
+                        {
+                          "type": "array",
+                          "maxItems": 64,
+                          "items": {
+                            "type": "number",
+                            "minimum": -10000,
+                            "maximum": 10000
+                          }
+                        }
+                      ]
+                    },
+                    "posicao": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": -10000,
+                          "maximum": 10000
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "string",
+                          "maxLength": 120
+                        },
+                        {
+                          "type": "array",
+                          "maxItems": 64,
+                          "items": {
+                            "type": "number",
+                            "minimum": -10000,
+                            "maximum": 10000
+                          }
+                        }
+                      ]
+                    },
+                    "direcao": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": -10000,
+                          "maximum": 10000
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "string",
+                          "maxLength": 120
+                        },
+                        {
+                          "type": "array",
+                          "maxItems": 64,
+                          "items": {
+                            "type": "number",
+                            "minimum": -10000,
+                            "maximum": 10000
+                          }
+                        }
+                      ]
+                    },
+                    "velocidade": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": -10000,
+                          "maximum": 10000
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "string",
+                          "maxLength": 120
+                        },
+                        {
+                          "type": "array",
+                          "maxItems": 64,
+                          "items": {
+                            "type": "number",
+                            "minimum": -10000,
+                            "maximum": 10000
+                          }
+                        }
+                      ]
+                    },
+                    "distancia": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": -10000,
+                          "maximum": 10000
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "string",
+                          "maxLength": 120
+                        },
+                        {
+                          "type": "array",
+                          "maxItems": 64,
+                          "items": {
+                            "type": "number",
+                            "minimum": -10000,
+                            "maximum": 10000
+                          }
+                        }
+                      ]
+                    },
+                    "raio": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": -10000,
+                          "maximum": 10000
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "string",
+                          "maxLength": 120
+                        },
+                        {
+                          "type": "array",
+                          "maxItems": 64,
+                          "items": {
+                            "type": "number",
+                            "minimum": -10000,
+                            "maximum": 10000
+                          }
+                        }
+                      ]
+                    },
+                    "pontos": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": -10000,
+                          "maximum": 10000
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "string",
+                          "maxLength": 120
+                        },
+                        {
+                          "type": "array",
+                          "maxItems": 64,
+                          "items": {
+                            "type": "number",
+                            "minimum": -10000,
+                            "maximum": 10000
+                          }
+                        }
+                      ]
+                    },
+                    "tipo": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": -10000,
+                          "maximum": 10000
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "string",
+                          "maxLength": 120
+                        },
+                        {
+                          "type": "array",
+                          "maxItems": 64,
+                          "items": {
+                            "type": "number",
+                            "minimum": -10000,
+                            "maximum": 10000
+                          }
+                        }
+                      ]
+                    },
+                    "quantidade": {
+                      "oneOf": [
+                        {
+                          "type": "number",
+                          "minimum": -10000,
+                          "maximum": 10000
+                        },
+                        {
+                          "type": "boolean"
+                        },
+                        {
+                          "type": "string",
+                          "maxLength": 120
+                        },
+                        {
+                          "type": "array",
+                          "maxItems": 64,
+                          "items": {
+                            "type": "number",
+                            "minimum": -10000,
+                            "maximum": 10000
+                          }
+                        }
+                      ]
+                    }
+                  }
+                },
+                "expected": {
+                  "oneOf": [
+                    {
+                      "type": "number",
+                      "minimum": -10000,
+                      "maximum": 10000
+                    },
+                    {
+                      "type": "boolean"
+                    },
+                    {
+                      "type": "string",
+                      "maxLength": 120
+                    },
+                    {
+                      "type": "array",
+                      "maxItems": 64,
+                      "items": {
+                        "type": "number",
+                        "minimum": -10000,
+                        "maximum": 10000
+                      }
+                    }
+                  ]
+                }
               }
-            },
-            "required": [
-              "x",
-              "y"
-            ]
-          },
-          "minItems": 0,
-          "maxItems": 12
-        },
-        "reward": {
-          "enum": [
-            100,
-            200
-          ]
-        },
-        "fixed": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/node"
-          },
-          "minItems": 2,
-          "maxItems": 3
-        },
-        "cases": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/case"
-          },
-          "minItems": 1,
-          "maxItems": 3
-        },
-        "solutions": {
-          "type": "array",
-          "items": {
-            "$ref": "#/$defs/layout"
-          },
-          "minItems": 2,
-          "maxItems": 2
-        },
-        "parameters": {
-          "type": "object",
-          "required": [
-            "add",
-            "multiply"
-          ],
-          "properties": {
-            "add": {
-              "type": "array",
-              "uniqueItems": true,
-              "items": {
-                "enum": [
-                  1,
-                  2
-                ]
-              },
-              "maxItems": 2,
-              "minItems": 1
-            },
-            "multiply": {
-              "type": "array",
-              "items": {
-                "enum": [
-                  2
-                ]
-              },
-              "maxItems": 1,
-              "minItems": 1
             }
-          },
-          "additionalProperties": false
+          }
         }
-      },
-      "required": [
-        "id",
-        "title",
-        "concept",
-        "mode",
-        "goal",
-        "help",
-        "available",
-        "predicates",
-        "budget",
-        "maxSpan",
-        "blocked",
-        "reward",
-        "fixed",
-        "cases",
-        "solutions",
-        "parameters"
-      ]
+      }
     }
   }
 }

@@ -1,27 +1,16 @@
-import {readFileSync} from 'node:fs';
-import {expect} from '@playwright/test';
+import {test,expect} from '@playwright/test';
+import {readFileSync,mkdirSync} from 'node:fs';
 export const missions=JSON.parse(readFileSync('src/content/missions.json','utf8')).missions;
-export const PROGRESS_KEY='rota-do-codigo:bench:v3';
-export const cell=(page,n)=>page.locator(`#slot-${n.x}-${n.y}`);
-export async function choosePiece(page,kind){if(await page.locator('#close-inspector').count())await page.locator('#close-inspector').click();await page.locator(`#piece-${kind}`).click();}
-export async function configure(page,n){
- if(!['add','multiply','filter'].includes(n.kind))return;
- await cell(page,n).click();await page.locator('#configure-piece').click();
- if(n.kind!=='filter')await page.getByRole('button',{name:`Valor ${n.config.value}`,exact:true}).click();
- else{
-  const c=n.config;await page.locator('#config-a').selectOption(c.a);await page.locator('#config-op').selectOption(c.op);
-  if(c.op!=='single')await page.locator('#config-b').selectOption(c.b);
-  await page.locator('#config-third').setChecked(c.third);
-  if(c.third){await page.locator('#config-outer').selectOption(c.outer);await page.locator('#config-c').selectOption(c.c);}
-  await page.locator('#config-invert').setChecked(c.invert);
- }
- await page.locator('#close-dialog').click();
+export async function enter(page){await page.goto('./');await page.locator('#new-game').click();await expect(page.locator('#code-editor')).toBeVisible();}
+export async function solve(page,index){await page.locator('#code-editor').fill(missions[index].reference);await page.locator('#test-rules').click();await expect(page.locator('#test-summary')).toContainText('Tudo certo');}
+export async function finalProject(page){await enter(page);for(let i=0;i<5;i++){await solve(page,i);await page.locator('#next-mission').click();}await page.locator('#test-rules').click();await expect(page.locator('#test-summary')).toContainText('23/23');}
+export async function pilot(page,touch=false){
+ await page.locator('#play-game').click();let held='';
+ const set=async side=>{if(side===held)return;if(held){if(touch)await page.mouse.up();else await page.keyboard.up(held==='left'?'ArrowLeft':'ArrowRight');}held=side;if(side){if(touch){const b=await page.locator(`#move-${side}`).boundingBox();await page.mouse.move(b.x+b.width/2,b.y+b.height/2);await page.mouse.down();}else await page.keyboard.down(side==='left'?'ArrowLeft':'ArrowRight');}};
+ for(let n=0;n<600;n++){const status=await page.locator('#game-stage').getAttribute('data-status');if(status!=='playing'){await set('');expect(status).toBe('won');await expect(page.locator('#download-game')).toBeVisible();return;}
+  const targets=await page.locator('[data-item]').evaluateAll(items=>items.map(e=>({type:e.getAttribute('data-type'),x:Number(e.getAttribute('data-x')),y:Number(e.getAttribute('data-y'))})).filter(i=>i.type!=='pedra'&&i.y<292));
+  targets.sort((a,b)=>(b.type==='estrela'?1000:0)+b.y-((a.type==='estrela'?1000:0)+a.y));const ship=Number(await page.locator('#ship').getAttribute('data-x')),target=targets[0];await set(!target||Math.abs(target.x-ship)<8?'':target.x<ship?'left':'right');await page.waitForTimeout(80);
+ }await set('');throw Error('Pilotagem não venceu no tempo esperado.');
 }
-export async function fillLayout(page,index,variant=0){
- const m=missions[index],l=m.solutions[variant];
- for(const n of l.nodes.filter(n=>!m.fixed.some(f=>f.id===n.id))){await choosePiece(page,n.kind);await cell(page,n).click();await configure(page,n);}
- for(const e of l.edges){const from=l.nodes.find(n=>n.id===e.from),to=l.nodes.find(n=>n.id===e.to);await cell(page,from).click();await page.locator(`#connect-${e.port}`).click();await cell(page,to).click();}
- if(await page.locator('#close-inspector').count())await page.locator('#close-inspector').click();
-}
-export async function execute(page){await page.locator('#run-circuit').click();await expect(page.locator('#result-next')).toBeVisible({timeout:20000});}
-export async function enter(page,index=0){await page.emulateMedia({reducedMotion:'reduce'});await page.goto('./');await page.locator('#new-game').click();for(let i=0;i<index;i++){await fillLayout(page,i);await execute(page);await page.locator('#result-next').click();}}
+export async function shot(page,name){mkdirSync('reports/screens',{recursive:true});await page.screenshot({path:`reports/screens/${name}.png`,fullPage:true});}
+export {test,expect};
