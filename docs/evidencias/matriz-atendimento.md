@@ -6,7 +6,7 @@ Candidata0.5.0, Oficina de Jogos. Implementado identifica arquivo existente; val
 |---|---|---|
 | 01 | Repo público, branch/PRdraft#2, main protegida com ci+uma aprovação, Conventional Commits | SQUAD, quatro colaboradores/contribuição em≥3INT, dez PRs revisados por outro autor, tags anotadas |
 | 02 | GDD12seções/Esteira, mapas/wireframes/arte/capturas reais, PDF0.5.0 gerado e12páginas inspecionadas/pdfinfo | Identificação completa, revisão coletiva, links reais HML/PRD/vídeo e coerência com release inexistente; Stitch não usado |
-| 03 | Actions push/PR/tags, ubuntu-latest/lockfile/cache/jobs/permissões read/checkci/artefatos; novas execuções serão conferidas | deploy-hml/deploy-prd, aprovação humana e push→HML≤15min ainda não executados |
+| 03 | Actions push/PR/tags, ubuntu-latest/lockfile/cache/jobs/permissões read/checkci/artefatos; push e PR da oficina passaram (ci-oficina-jogos.md) | deploy-hml/deploy-prd, aprovação humana e push→HML≤15min ainda não executados |
 | 04 | 127unidades+18integrações passaram; suite13E2E e subconjuntos finais identificados; core separado, instruções97,93%; JSON inválido bloqueia build; bugs reais/regressões | Regressão HML/smoke PRD/revisão humana pendentes. Opal/AI Studio ausentes, golden dessas ferramentas não aplicável |
 | 05 | Gitleaks bloqueante hook/CI, audit produção0vulnerabilidades, SBOM/licença/terceiros/IA | Revisão de código/direitos/IA por outro humano antes do merge; Dependabot após configuração entrar em main |
 | 06 | Build reproduzível/offline file:// testada, version.json, ZIP76b7797 com23.985bytes e checksum; HTML do aprendiz offline testado | Release por tag anotada ausente; validar offline no artefato promovido e reconciliar GDD com release |
@@ -23,4 +23,5 @@ Cinco funções JavaScript e minijogo final/exportação implementados, mas dive
 
 ## Checkpoints
 
-Primeiro aceite incompleto: **G0**, dados/participação/acessos humanos e horário da aula. G1: concepção aprovada/contratos preparados, falta compreensão/revisão dos quatro. G2: base local candidata e CI, sem fechamento coletivo. CI da oficina será registrada no acompanhamento após execução do commit final. G3–G8 não liberados. Preparação autorizada não equivale a aceite; seguir C01/C02, P01–P07, D01–D07, R01–R07, S01–S06.
+Primeiro aceite incompleto: **G0**, dados/participação/acessos humanos e horário da aula. G1: concepção aprovada/contratos preparados, falta compreensão/revisão dos quatro. G2: base local candidata e CI, sem fechamento coletivo. CI da oficina conferida em ci-oficina-jogos.md; execução final também registrada no acompanhamento local. G3–G8 não liberados. Preparação autorizada não equivale a aceite; seguir C01/C02, P01–P07, D01–D07, R01–R07, S01–S06.
+

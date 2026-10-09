@@ -77,9 +77,10 @@ await expect(page.locator('#test-summary')).toContainText('Tudo certo');
 Files: docs/gdd/design/backlog/evidencias/matriz/images,README/AI-USAGE, scripts/docs-assets.mjs.
 
 - [x] GDDtodas12seções/Esteira/identificação/versão/data/referências, mapasimagensdas5funções+final/wireframes/capturasreais. Registrar0.4histórico/0.5candidata/semprodução; PDFskillmarkeredit uma vez antes deautoria, gdd:pdf/pdfinfo/renderALL/inspeção. Não confundir13pGDDcomrelatório<=12p.
-- [ ] `npm run reproducibility/package`; auditprodução crítico/SBOM/hookGitleaks. ZIP<25MB/hash/versionverificados. Commit/pushmesmafeature/PRdraft; reescrevertítulo/body aoescopofinal, CIúltimocommitverde e artifactsbaixados/conferidos. Nãomergerevisão própria/publicarprodução/tagsemaceites.
-- [ ] RegistroACOMPANHAMENTO_LOCAL porcodes/INT/paths/commands/tests/evidence/pending/proximo. G0pessoas/horário continua; G3–G8/HML/PRD/rollback/sondas/DORA/vídeo/finalpackagetriagem pendentes. Nãotratarnovo redesign como10PRs humanos.
+- [x] `npm run reproducibility/package`; auditprodução crítico/SBOM/hookGitleaks. ZIP<25MB/hash/versionverificados. Commit/pushmesmafeature/PRdraft; reescrevertítulo/body aoescopofinal, CIúltimocommitverde e artifactsbaixados/conferidos. Nãomergerevisão própria/publicarprodução/tagsemaceites.
+- [x] RegistroACOMPANHAMENTO_LOCAL porcodes/INT/paths/commands/tests/evidence/pending/proximo. G0pessoas/horário continua; G3–G8/HML/PRD/rollback/sondas/DORA/vídeo/finalpackagetriagem pendentes. Nãotratarnovo redesign como10PRs humanos.
 
 
-Execução local verificada na fonte76b7797; documentação/PDF inspecionados em09/10. Comparação nativa implementada em code-native.test.mjs (sem nova dependência de tipos Node). Guardas exportadas contam iterações de laço; interpretador conta passos. Últimos dois itens aguardam conferência da CI/artefatos e registro administrativo, não nova aprovação de conceito.
+Execução local verificada na fonte76b7797; documentação/PDF inspecionados em09/10. Comparação nativa implementada em code-native.test.mjs (sem nova dependência de tipos Node). Guardas exportadas contam iterações de laço; interpretador conta passos. Últimos itens concluídos com a CI da fonte9a5a53c (docs/evidencias/ci-oficina-jogos.md) e registro em ACOMPANHAMENTO_LOCAL. Encerramento técnico desta evolução; aceites humanos e checkpoints pendentes permanecem explicitados.
+
 

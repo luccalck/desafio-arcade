@@ -31,3 +31,6 @@ Fonte76b7797, Chrome154/Playwright local em09/10: reports/screens/oficina-primei
 ## Limites e próximo checkpoint
 
 Primeiro checkpoint sem aceite completo: G0, por identificação/participação/acessos dos quatro e horário real da aula, dados adiados pelo responsável. G1/G2 têm preparação autorizada, não substituem compreensão/revisão humana. G3–G8 não liberados; nenhum INT integralmente fechado. HML/PRD, tag/release, recuperação medida, sondas/DORA, vídeo, pacote final/triagem e banca não executados. Aprendizagem/diversão/acessibilidade completa não medidas. Commits deste redesign não são dez PRs revisados por outros autores.
+
+[CI da oficina e artefatos conferidos](ci-oficina-jogos.md): fonte9a5a53c, push e PR passaram; 145testes/13E2E, cobertura97,93%, ZIP/hash/versão/PDF verificados. Não representa HML/PRD ou revisão humana.
+
