@@ -1,16 +1,16 @@
-# Rota do Código - Desafio Arcade
+# Rota do Código — Desafio Arcade
 
-Puzzle educativo **WEB**: recupere um laboratório montando máquinas de dados numa bancada visual. Cinco missões trabalham conexões, transformação de valores, decisões, E/OU e memória; um desafio final combina os conceitos em três lotes. Coloque peças, conecte portas, ligue e observe os dados para corrigir a montagem. Ajuda, configuração e registro ficam sob demanda. Menus, medalhas e até 700 XP, sem duplicação no replay. Site estático responsivo e offline, sem backend ou conta de jogador. Bancada aprovada em 07/10/2026.
+**Oficina de Jogos WEB:** corrija cinco funções JavaScript para construir o minijogo Órbita. Controles, movimento, colisão, pontuação e ondas mostram o efeito das regras. Teste entradas diferentes, pilote e ajuste seu código; ajuda/casos sob demanda. Final: cinco funções passam nos testes e vencem uma partida para exportar seu jogo como HTML independente e editável. Cinco missões/final, menus e até 700 XP, site estático responsivo/offline, sem backend ou conta.
 
-Avaliação de Integração e Entrega Contínua / DevOps. [GDD completo](docs/gdd.md), [decisões](docs/design.md), [backlog](docs/backlog.md), [squad pendente](SQUAD.md), [IA](AI-USAGE.md) e [licenças](THIRD_PARTY.md).
+Alternativa A aprovada em 09/10/2026. [GDD completo](docs/gdd.md), [decisões](docs/design.md), [plano atual](docs/superpowers/plans/2026-10-09-oficina-jogos.md), [backlog](docs/backlog.md), [squad pendente](SQUAD.md), [IA](AI-USAGE.md) e [licenças](THIRD_PARTY.md).
 
 ## Estado verificável
 
-Candidata 0.4.0 em branch; main contém somente bootstrap até revisão por outro autor. CI produz jogo, PDF, relatórios, SBOM, ZIP e checksum. HML, PRD, rollback, sondas/DORA, vídeo e pacote final dependem das próximas etapas e execuções. 87 testes de unidade e 14 de integração passaram localmente; cobertura de instruções de src/core: 99,17%. Suite com 15 E2E, incluindo campanha/celular/offline. [Evidências e limites da validação](docs/evidencias/bancada-visual.md). Ainda não há URL pública de jogo validada.
+Candidata 0.5.0 no [PR draft #2](https://github.com/luccalck/desafio-arcade/pull/2); main no bootstrap até revisão por outro autor. 127 unidades/18 integrações passaram localmente; cobertura de instruções de src/core 97,93%. Suite com 13 E2E: edição, campanha teclado/toque, final, exportação offline. [Evidências/limites](docs/evidencias/oficina-jogos.md). CI gera jogo/PDF/relatórios/SBOM/ZIP/checksum. HML/PRD/recuperação/sondas/DORA/vídeo/pacote final pendentes. Sem URL pública de jogo validada.
 
 ## Desenvolvimento
 
-Node 24 e npm; Chrome para navegador/PDF; Poppler/pdfinfo para validar PDF. Se npm falhar com spawn cmd.exe EACCES no PowerShell deste ambiente, executar `$env:npm_config_script_shell = (Get-Command pwsh).Source`. Isso não é requisito de Linux/CI nem do jogador.
+Node 24/npm, Chrome para navegador/PDF, Poppler/pdfinfo. Em PowerShell deste ambiente, spawn cmd.exe EACCES é resolvido com `$env:npm_config_script_shell = (Get-Command pwsh).Source`; não é requisito do jogador/Linux.
 
 ```text
 npm ci
@@ -20,18 +20,18 @@ npm run build
 npm run dev
 ```
 
-Preview: http://127.0.0.1:4173 . `npm run test:e2e` verifica montagem por controles reais, campanha, correção, celular, teclado e arquivo offline. `npm run gdd:pdf` gera artifacts/GDD.pdf; `pdfinfo artifacts/GDD.pdf` valida estrutura. `npm run package` gera ZIP/SHA-256. `npm run reproducibility` compara builds normalizando somente data em version.json. `npm run sbom` produz CycloneDX no stdout.
+Preview: http://127.0.0.1:4173 . `npm run test:e2e` verifica controles reais/file:// sem rede. `npm run gdd:pdf` gera artifacts/GDD.pdf; validar com pdfinfo. `npm run package` gera ZIP/SHA-256; `npm run reproducibility` compara builds normalizando somente data em version.json; `npm run sbom` produz CycloneDX no stdout.
 
 ## Controles e offline
 
-Arraste uma peça ou selecione na bandeja e escolha um encaixe. Para conectar, selecione a peça, escolha saída no inspetor e depois o destino; também pode arrastar a porta. Configuração, mover, girar, remover e soltar cabos aparecem na seleção. Girar altera orientação visual, preservando regra/conexões. Ligar testa todos os lotes. Setas navegam encaixes, Enter seleciona, Delete remove e Escape cancela. Ajuda e registro são opcionais. Montagens ficam na sessão; vitórias e preferências persistem quando há armazenamento disponível.
+Edite função, Testar regra compara resultados, Jogar mostra efeito. Setas/A-D pilotam fora do editor; celular tem botões de direção. Editar pausa/invalida regra aplicada; Testar/Jogar aplica novamente. Pausa conserva, Jogar reinicia. Ajuda/casos explicam sem preencher solução. Código/vitórias persistem quando armazenamento está disponível; opções de texto/movimento.
 
-Descompactar build.zip e abrir index.html no navegador. LEIA-ME.txt acompanha a build. Nenhuma instalação de Node ou engine para o jogador. E2E usa file:// com rede desativada; produção deve usar o mesmo ZIP, sem recompilar entre HML e PRD.
+Descompactar build.zip e abrir index.html. LEIA-ME.txt acompanha build; nenhuma instalação de Node/engine para jogar. Após vencer final, Baixar meu jogo entrega meu-jogo.html com cinco funções/player/estilos/MIT completos, sem rede. Editor aceita subconjunto JavaScript documentado no GDD. Projeto do aprendiz é distinto do pacote acadêmico. Produção deve usar mesmo ZIP da HML sem recompilar.
 
 ## Arquitetura e colaboração
 
-src/core: regras puras sem DOM. src/content: JSON/schema/validador que executa duas soluções por missão em todos os lotes. src/scenes: HTML/SVG. tests: unidade, integração e E2E. scripts: construção, documentos/empacotamento. Conteúdo inválido interrompe build.
+src/core: parser/intérprete AST/regras/motor puros sem DOM/eval/Function. src/content: JSON/schema/contratos; referência passa, fonte inicial falha, conteúdo inválido bloqueia build. src/scenes: editor/HTML/SVG/player compartilhado com exportação. tests: unidade/integração/E2E. scripts: construção/documentos/empacotamento. Sem dependência nova.
 
-GitHub Flow: branch curta → PR → revisão de outro integrante → check ci → main. Conventional Commits; tags anotadas SemVer/SHA/data coerentes após aceites. Não editar gh-pages manualmente. Hook em SECURITY.md.
+GitHub Flow: branch → PR → revisão de outro integrante → ci → main. Conventional Commits; tags anotadas/coerência SemVer/SHA/data após aceites. Não editar gh-pages manualmente. Hook em SECURITY.md. Bootstrap não conta como PR revisado/colaboração. Dez PRs e contribuição dos quatro exigem pessoas reais.
 
-Bootstrap direto em main não conta como PR revisado ou colaboração. Squad, dez PRs revisados e contribuição nos integráveis dependem de pessoas reais. C01/C02, P01–P07, D01–D07, R01–R07, S01–S06 e G0–G8 continuam nos roteiros do contexto. [Plano atual](docs/superpowers/plans/2026-10-07-bancada-visual.md). Campanhas anteriores preservadas no Git; uma única campanha ativa na fonte.
+C01/C02, P01–P07, D01–D07, R01–R07, S01–S06 e G0–G8 nos roteiros do contexto. G0 é primeiro aceite incompleto; preparação de G1/G2 não encerra gates humanos. Uma campanha ativa; histórico preservado.
