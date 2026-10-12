@@ -1,0 +1,2 @@
+import {defineConfig} from '@playwright/test';
+export default defineConfig({testDir:'tests/deploy',workers:1,retries:1,timeout:120000,reporter:[['list'],['junit',{outputFile:'reports/pages-smoke.xml'}]],use:{baseURL:process.env.PAGES_URL,browserName:'chromium',channel:process.env.PLAYWRIGHT_CHANNEL||'chrome',viewport:{width:1280,height:900},trace:'retain-on-failure',screenshot:'only-on-failure'}});

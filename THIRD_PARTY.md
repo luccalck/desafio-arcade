@@ -22,3 +22,5 @@ A build incorpora somente código próprio e JSON local. As bibliotecas abaixo s
 Metadados npm conferidos nos package.json instalados em 07/10/2026. Licenças completas das ferramentas acompanham suas distribuições/node_modules. Chrome é ferramenta de teste/renderização, não integra build.zip. GitHub Actions/Pages são serviços da plataforma, sem dependência remota para jogar offline.
 
 Documentação técnica foi consultada; imagens/logotipos do modelo do professor não foram incorporados. Nenhum aceite de termos do concurso foi feito em nome da equipe.
+
+Python 3 (CPython) é ferramenta de validação local/CI de fixtures editoriais, sob Python Software Foundation License; não é distribuído no site ou ZIP. Documentação/licença: https://docs.python.org/3/license.html . O jogador não precisa instalar Python para jogar; o arquivo .py exportado contém funções originais do projeto sob MIT. Não há nova dependência npm ou runtime CPython incorporado.

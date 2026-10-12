@@ -1,0 +1,69 @@
+<testsuites id="" name="" tests="3" failures="0" skipped="0" errors="1" time="124.651508">
+<testsuite name="smoke.spec.mjs" timestamp="2026-10-12T23:31:06.038Z" hostname="" tests="1" failures="0" skipped="0" time="2.396" errors="0">
+<testcase name="primeira missão: problema real, Python e correção" classname="smoke.spec.mjs" time="2.396">
+</testcase>
+</testsuite>
+<testsuite name="workshop.spec.mjs" timestamp="2026-10-12T23:31:06.038Z" hostname="" tests="2" failures="0" skipped="0" time="135.096" errors="1">
+<testcase name="campanha final: pilotagem real, 700XP e HTML exportado offline" classname="workshop.spec.mjs" time="121.491">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\workshop-campanha-final-pi-45081-XP-e-HTML-exportado-offline\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\workshop-campanha-final-pi-45081-XP-e-HTML-exportado-offline\error-context.md]]
+
+[[ATTACHMENT|..\test-results\workshop-campanha-final-pi-45081-XP-e-HTML-exportado-offline\trace.zip]]
+]]>
+</system-out>
+<error message="Test timeout of 120000ms exceeded." type="Error">
+<![CDATA[  workshop.spec.mjs:11:1 › campanha final: pilotagem real, 700XP e HTML exportado offline ──────────
+
+    Test timeout of 120000ms exceeded.
+
+    Error: page.waitForEvent: Test timeout of 120000ms exceeded.
+    =========================== logs ===========================
+    waiting for event "download"
+    ============================================================
+
+       9 | test('ajuda opcional, foco após restaurar código e preferências',async({page})=>{await enter(page);await page.locator('#help').click();await expect(page.locator('dialog')).toContainText('if significa');await page.getByRole('button',{name:'Fechar',exact:true}).click();await expect(page.locator('#help')).toBeFocused();await page.locator('#reset-code').click();await page.getByRole('button',{name:'Restaurar função',exact:true}).click();await expect(page.locator('#code-editor')).toBeFocused();await page.locator('.brand').click();await page.locator('#options').click();await page.locator('#large-text').check();await page.locator('#reduced-motion').check();await page.getByRole('button',{name:'Fechar',exact:true}).click();await expect(page.locator('html')).toHaveClass(/large-text/);await shot(page,'oficina-menu-desktop');await page.reload();await expect(page.locator('html')).toHaveClass(/reduced-motion/);});
+      10 | test('código e vitórias persistem; replay não duplica XP; reset próprio',async({page})=>{await page.addInitScript(()=>localStorage.setItem('outro-projeto','preservar'));await enter(page);await solve(page,0);await expect(page.locator('#xp-count')).toHaveText('100 XP');await page.reload();await page.locator('#missions-menu').click();await page.locator('[data-action=select][data-index="0"]').click();await expect(page.locator('#code-editor')).toHaveValue(missions[0].reference);await page.locator('#test-rules').click();await expect(page.locator('#xp-count')).toHaveText('100 XP');await page.locator('.brand').click();await page.locator('#options').click();await page.getByRole('button',{name:'Reiniciar oficina',exact:true}).click();await page.getByRole('button',{name:'Reiniciar',exact:true}).click();await expect(page.locator('#xp-count')).toHaveText('0 XP');expect(await page.evaluate(()=>localStorage.getItem('outro-projeto'))).toBe('preservar');});
+    > 11 | test('campanha final: pilotagem real, 700XP e HTML exportado offline',async({page,context})=>{await finalProject(page);await shot(page,'oficina-final-desktop');await pilot(page);await expect(page.locator('#xp-count')).toHaveText('700 XP');await shot(page,'oficina-vitoria-desktop');const pythonEvent=page.waitForEvent('download');await page.locator('#download-python').click();const pythonDownload=await pythonEvent;await pythonDownload.saveAs(resolve('reports/meu-jogo-testado.py'));expect(readFileSync('reports/meu-jogo-testado.py','utf8')).toContain('def controlar(entrada):');expect(readFileSync('reports/meu-jogo-testado.py','utf8')).toContain('Permission is hereby granted');const downloadEvent=page.waitForEvent('download');await page.locator('#download-game').click();const download=await downloadEvent,file=resolve('reports/meu-jogo-testado.html');await download.saveAs(file);expect(readFileSync(file,'utf8')).toContain('Permission is hereby granted');const offline=await context.newPage(),external=[];offline.on('request',r=>{if(/^https?:/.test(r.url()))external.push(r.url());});await context.setOffline(true);await offline.goto(pathToFileURL(file).href);await offline.locator('#play').click();await offline.keyboard.down('ArrowRight');await expect.poll(async()=>Number(await offline.locator('#ship').getAttribute('data-x'))).toBeGreaterThan(280);await offline.keyboard.up('ArrowRight');expect(external).toEqual([]);await shot(offline,'oficina-export-offline');});
+         |                                                                                                                                                                                                                                                                                                                  ^
+      12 | test('mobile390x844: campanha por toque e vitória real sem overflow',async({page})=>{await page.setViewportSize({width:390,height:844});await finalProject(page);await shot(page,'oficina-final-mobile');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await pilot(page,true);await expect(page.locator('#xp-count')).toHaveText('700 XP');await shot(page,'oficina-vitoria-mobile');});
+      13 | test('arquivo do projeto principal offline: editar e testar sem rede',async({page})=>{const external=[];page.on('request',r=>{if(/^https?:/.test(r.url()))external.push(r.url());});await page.context().setOffline(true);await page.goto(pathToFileURL(resolve('dist/index.html')).href);await page.locator('#new-game').click();await solve(page,0);await page.locator('#play-game').click();await expect.poll(async()=>Number(await page.locator('#game-stage').getAttribute('data-tick'))).toBeGreaterThan(1);expect(external).toEqual([]);});
+      14 | test('storage indisponível mantém fontes e campanha na sessão',async({page})=>{await page.addInitScript(()=>Object.defineProperty(window,'localStorage',{get(){throw Error('indisponível');}}));await enter(page);await solve(page,0);await page.locator('.brand').click();await expect(page.locator('.home')).toContainText('somente nesta sessão');await page.locator('#missions-menu').click();await page.locator('[data-action=select][data-index="0"]').click();await expect(page.locator('#code-editor')).toHaveValue(missions[0].reference);});
+        at C:\dev\studies\senai\semester-2\devops\desafio-arcade\jogo-arcade\tests\e2e\workshop.spec.mjs:11:306
+
+    Error: locator.click: Test timeout of 120000ms exceeded.
+    Call log:
+      - waiting for locator('#download-python')
+
+
+       9 | test('ajuda opcional, foco após restaurar código e preferências',async({page})=>{await enter(page);await page.locator('#help').click();await expect(page.locator('dialog')).toContainText('if significa');await page.getByRole('button',{name:'Fechar',exact:true}).click();await expect(page.locator('#help')).toBeFocused();await page.locator('#reset-code').click();await page.getByRole('button',{name:'Restaurar função',exact:true}).click();await expect(page.locator('#code-editor')).toBeFocused();await page.locator('.brand').click();await page.locator('#options').click();await page.locator('#large-text').check();await page.locator('#reduced-motion').check();await page.getByRole('button',{name:'Fechar',exact:true}).click();await expect(page.locator('html')).toHaveClass(/large-text/);await shot(page,'oficina-menu-desktop');await page.reload();await expect(page.locator('html')).toHaveClass(/reduced-motion/);});
+      10 | test('código e vitórias persistem; replay não duplica XP; reset próprio',async({page})=>{await page.addInitScript(()=>localStorage.setItem('outro-projeto','preservar'));await enter(page);await solve(page,0);await expect(page.locator('#xp-count')).toHaveText('100 XP');await page.reload();await page.locator('#missions-menu').click();await page.locator('[data-action=select][data-index="0"]').click();await expect(page.locator('#code-editor')).toHaveValue(missions[0].reference);await page.locator('#test-rules').click();await expect(page.locator('#xp-count')).toHaveText('100 XP');await page.locator('.brand').click();await page.locator('#options').click();await page.getByRole('button',{name:'Reiniciar oficina',exact:true}).click();await page.getByRole('button',{name:'Reiniciar',exact:true}).click();await expect(page.locator('#xp-count')).toHaveText('0 XP');expect(await page.evaluate(()=>localStorage.getItem('outro-projeto'))).toBe('preservar');});
+    > 11 | test('campanha final: pilotagem real, 700XP e HTML exportado offline',async({page,context})=>{await finalProject(page);await shot(page,'oficina-final-desktop');await pilot(page);await expect(page.locator('#xp-count')).toHaveText('700 XP');await shot(page,'oficina-vitoria-desktop');const pythonEvent=page.waitForEvent('download');await page.locator('#download-python').click();const pythonDownload=await pythonEvent;await pythonDownload.saveAs(resolve('reports/meu-jogo-testado.py'));expect(readFileSync('reports/meu-jogo-testado.py','utf8')).toContain('def controlar(entrada):');expect(readFileSync('reports/meu-jogo-testado.py','utf8')).toContain('Permission is hereby granted');const downloadEvent=page.waitForEvent('download');await page.locator('#download-game').click();const download=await downloadEvent,file=resolve('reports/meu-jogo-testado.html');await download.saveAs(file);expect(readFileSync(file,'utf8')).toContain('Permission is hereby granted');const offline=await context.newPage(),external=[];offline.on('request',r=>{if(/^https?:/.test(r.url()))external.push(r.url());});await context.setOffline(true);await offline.goto(pathToFileURL(file).href);await offline.locator('#play').click();await offline.keyboard.down('ArrowRight');await expect.poll(async()=>Number(await offline.locator('#ship').getAttribute('data-x'))).toBeGreaterThan(280);await offline.keyboard.up('ArrowRight');expect(external).toEqual([]);await shot(offline,'oficina-export-offline');});
+         |                                                                                                                                                                                                                                                                                                                                                                                  ^
+      12 | test('mobile390x844: campanha por toque e vitória real sem overflow',async({page})=>{await page.setViewportSize({width:390,height:844});await finalProject(page);await shot(page,'oficina-final-mobile');expect(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth)).toBe(true);await pilot(page,true);await expect(page.locator('#xp-count')).toHaveText('700 XP');await shot(page,'oficina-vitoria-mobile');});
+      13 | test('arquivo do projeto principal offline: editar e testar sem rede',async({page})=>{const external=[];page.on('request',r=>{if(/^https?:/.test(r.url()))external.push(r.url());});await page.context().setOffline(true);await page.goto(pathToFileURL(resolve('dist/index.html')).href);await page.locator('#new-game').click();await solve(page,0);await page.locator('#play-game').click();await expect.poll(async()=>Number(await page.locator('#game-stage').getAttribute('data-tick'))).toBeGreaterThan(1);expect(external).toEqual([]);});
+      14 | test('storage indisponível mantém fontes e campanha na sessão',async({page})=>{await page.addInitScript(()=>Object.defineProperty(window,'localStorage',{get(){throw Error('indisponível');}}));await enter(page);await solve(page,0);await page.locator('.brand').click();await expect(page.locator('.home')).toContainText('somente nesta sessão');await page.locator('#missions-menu').click();await page.locator('[data-action=select][data-index="0"]').click();await expect(page.locator('#code-editor')).toHaveValue(missions[0].reference);});
+        at C:\dev\studies\senai\semester-2\devops\desafio-arcade\jogo-arcade\tests\e2e\workshop.spec.mjs:11:370
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\test-results\workshop-campanha-final-pi-45081-XP-e-HTML-exportado-offline\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\test-results\workshop-campanha-final-pi-45081-XP-e-HTML-exportado-offline\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\test-results\workshop-campanha-final-pi-45081-XP-e-HTML-exportado-offline\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\test-results\workshop-campanha-final-pi-45081-XP-e-HTML-exportado-offline\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</error>
+</testcase>
+<testcase name="mobile390x844: campanha por toque e vitória real sem overflow" classname="workshop.spec.mjs" time="13.605">
+</testcase>
+</testsuite>
+</testsuites>

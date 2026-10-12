@@ -140,5 +140,79 @@ jobs:
           RESULTS: ${{ toJSON(needs) }}
         run: |
           node -e 'const n=JSON.parse(process.env.RESULTS);for(const [job,value] of Object.entries(n)){console.log(job,value.result);if(value.result!=="success")process.exitCode=1;}'
-# R04/R05: jobs deploy-hml -> deploy-prd entram em lote posterior aos aceites de G0/G2.
-# Não publicar branch candidata nem aprovar produção automaticamente.
+  publicar-preview:
+    needs: [ci, build]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/feature/primeiro-ciclo' && vars.PAGES_PREVIEW_ENABLED == 'true' && needs.ci.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: pages-preview
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@634f93cb2916e3fdff6788551b99b062d0335ce0 # v5
+        with:
+          name: build-${{ github.sha }}
+          path: artifacts-ci
+      - name: Recuperar árvore publicada
+        shell: bash
+        run: |
+          repo_url="https://github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote "$repo_url" refs/heads/gh-pages | grep -q refs/heads/gh-pages; then
+            git clone --branch gh-pages --single-branch "$repo_url" pages-tree
+          else
+            git init -b gh-pages pages-tree
+            git -C pages-tree remote add origin "$repo_url"
+          fi
+      - name: Conferir ZIP e preservar releases imutáveis
+        run: node scripts/prepare-pages.mjs --zip artifacts-ci/artifacts/build.zip --checksum artifacts-ci/artifacts/build.zip.sha256 --sha "$GITHUB_SHA" --existing pages-tree --output pages-site
+      - name: Atualizar gh-pages somente pela pipeline
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          cp -a pages-site/. pages-tree/
+          git -C pages-tree config user.name 'github-actions[bot]'
+          git -C pages-tree config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C pages-tree add .
+          if ! git -C pages-tree diff --cached --quiet; then
+            git -C pages-tree commit -m "deploy: preview ${GITHUB_SHA}"
+            git -C pages-tree -c 'credential.helper=!f() { echo username=x-access-token; echo password="$GH_TOKEN"; }; f' push origin gh-pages
+          fi
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+      - uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b # v4
+        with:
+          path: pages-site
+      - name: Publicar o mesmo artefato no Pages
+        id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4
+      - name: Regressão HML e smoke do preview público
+        env:
+          PAGES_URL: ${{ steps.deployment.outputs.page_url }}
+          EXPECTED_SHA: ${{ github.sha }}
+        run: npx playwright test --config playwright.public.config.mjs
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9
+        if: always()
+        with:
+          name: preview-${{ github.sha }}
+          path: |
+            reports/pages-smoke.xml
+            reports/screens/pages-*.png
+            test-results/
+          if-no-files-found: warn
+# Preview expressamente solicitado em12/10/2026. Não substitui revisão de outro autor,
+# aprovação em producao, rollout/rollback medidos ou aceites finais G0–G8.

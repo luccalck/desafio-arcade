@@ -6,9 +6,9 @@ Não contar itens como PRs feitos nem atribuir contribuições a pessoas desconh
 |---|---|---|---|
 | C01/C02, R01 | 01 | Identificação, colaboradores, revisão e compreensão pelos quatro | Todos / Plataforma |
 | P01, D01 | 02,04 | Conceito aprovado; GDD/contratos preparados; revisar coletivamente | Produto / Desenvolvimento |
-| P02–P04, D02–D04 | 02,04,06 | Oficina: cinco funções JavaScript/final, core/UI/build/menus/exportação; verificar testes e experiência na revisão | Produto / Desenvolvimento |
+| P02–P04, D02–D04 | 02,04,06 | Oficina: cinco funções Python/final, core/UI/build/menus/exportação; verificar testes e experiência na revisão | Produto / Desenvolvimento |
 | R02/R03, S01/S02 | 03,05,06 | CI, scanners, PDF, ZIP, reprodutibilidade | Plataforma / SRE |
-| D05, R04 | 03,04,07 | HML automática e regressão sobre o mesmo artefato | Desenvolvimento / Plataforma |
+| D05, R04 | 03,04,07 | Preview Pages/HML implementado; conferir execução/smoke sobre mesmo ZIP; produção formal pendente | Desenvolvimento / Plataforma |
 | R05, S03 | 07,08 | Aprovação, azul-verde, sessão e recuperação medida <5min incluindo Pages | Plataforma / SRE |
 | P05, D06 | 04,10 | Playtest humano, melhorias e revisão educativa; bugs reais de foco e regra antiga documentados | Produto / Desenvolvimento |
 | S04/S05 | 08 | Sondas, alertas/fechamento, painel e quatro DORA reais | SRE |
