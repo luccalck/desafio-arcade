@@ -8,7 +8,7 @@ import {loadSources,saveSources,resetSources,starterSources} from '../core/works
 import {loadPreferences,savePreferences} from '../core/preferences';
 import {mountPlayer,PLAYER_CSS} from './arcade-player';
 import type {Player} from './arcade-player';
-import {header,home,campaign,workspace,caseTable,xp} from './views';
+import {header,home,campaign,workspace,caseTable,xp,projectReward} from './views';
 import {createProjectHTML,createPythonSource} from './export';
 import {escape} from './shared';
 declare const __VERSION__:{version:string;sha:string};
@@ -28,7 +28,7 @@ function updateProgress(){const target=document.getElementById('xp-count');if(ta
 function complete(){completed=completeMission(completed,m().id,ids);saved=saveProgress(storage,completed);updateProgress();}
 function setupPlayer(){player?.dispose();player=undefined;const host=document.getElementById('player-host');if(!host)return;try{player=mountPlayer(host,rules(),s=>{
  const output=document.getElementById('run-message');if(output)output.textContent=s.status==='error'?s.error:s.status==='lost'?'A partida acabou. Você pode jogar novamente.':index===5?'Você chegou aos 100 pontos!':'Sua regra está em ação. Testar regra verifica também outras situações.';
- if(index===5&&s.status==='won'&&tested&&validated===fingerprint()){finalWon=true;summary="Projeto concluído: situações corretas e partida vencida.";document.getElementById('test-summary')!.textContent=summary;complete();const box=document.createElement('div');box.className='project-won';box.innerHTML='<strong>Seu jogo funciona!</strong><button id="download-game" class="primary" data-action="download">↓ Baixar meu jogo</button><small>HTML offline, com suas funções JavaScript.</small>';host.parentElement!.querySelector('.project-won')?.remove();host.parentElement!.append(box);}
+ if(index===5&&s.status==='won'&&tested&&validated===fingerprint()){finalWon=true;summary="Projeto concluído: situações corretas e partida vencida.";document.getElementById('test-summary')!.textContent=summary;complete();const box=document.createElement('div');box.innerHTML=projectReward();host.parentElement!.querySelector('.project-won')?.remove();host.parentElement!.append(box.firstElementChild!);}
  },reduced);const pauseControl=host.querySelector<HTMLButtonElement>('#pause-game');if(pauseControl)pauseControl.disabled=index===5&&!tested;}catch(e){host.innerHTML=`<div class="code-problem"><strong>Revise o código</strong><p>${escape(e instanceof Error?e.message:'Regra inválida.')}</p></div>`;}}
 function render(focus?:string){player?.dispose();player=undefined;applyPreferences();app.innerHTML=header(completed,__VERSION__)+(view==='home'?home(completed,legacy,saved):view==='missions'?campaign(missions,completed):workspace(missions,index,tab,sources,tested,finalWon,summary));if(view==='workshop')setupPlayer();if(focus)document.getElementById(focus)?.focus({preventScroll:true});}
 function begin(i:number){if(i<0||i>Math.min(completed.length,5))return;index=i;tab=Math.min(i,4);view='workshop';tested=false;validated='';finalWon=false;results=[];summary='';render('code-editor');window.scrollTo({top:0,behavior:'instant'});}
