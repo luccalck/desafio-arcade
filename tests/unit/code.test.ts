@@ -1,33 +1,32 @@
 import {describe,it,expect} from 'vitest';
-
 import {compileCode} from '../../src/core/code-runtime';
-
-
-import data from '../../src/content/missions.json';
-const run=(body:string,input={})=>compileCode(`function regra(entrada) { ${body} }`,'regra')(input);
-describe('JavaScript do modo iniciante',()=>{
- it.each([[10,-1,3,7],[10,0,3,10],[20,1,4,24]])('movimento %s/%s/%s', (posicao,direcao,velocidade,result)=>{const input={posicao,direcao,velocidade};expect(compileCode(data.missions[1].reference,'mover')(input)).toBe(result);expect(input.posicao).toBe(posicao);});
- it.each([['2+3*4',14],['(2+3)*4',20],['10-4-2',4],['-3+ +2',-1],['10%3',1],['8/2',4],['3>=3',true],['3>4',false],['3<4',true],['3!==4',true],['3===3',true],['!false',true],['0 || 5',5],['2 && 7',7],['false && ausente',false],['true || ausente',true]])('expressão %s', (expr,result)=>expect(run(`return ${expr};`)).toBe(result));
- it('comentários e string escapada não viram código',()=>expect(run(`/* teste */ // linha\n return 'cristal\\n\\u0041';`)).toBe('cristal\nA'));
- it('else if e escopos',()=>expect(run('let x=1; if(false){x=9;} else if(true){let x=3; x+=2;} else{x=0;} return x;')).toBe(1));
- it('atribuições numéricas',()=>expect(run('let x=8; x-=1; x*=2; x/=7; x++; x--; return x;')).toBe(2));
- it('lista vazia e zero iterações',()=>expect(run('let a=[]; for(let i=0;i<0;i++){a.push(i);} return a;')).toEqual([]));
- it('const lista permite push',()=>expect(run('const a=[]; a.push(3); return a;')).toEqual([3]));
- it('return encerra laço e bloco',()=>expect(run('for(let i=0;i<8;i++){ if(i===2){return i;} } return -1;')).toBe(2));
- it('lista de entrada não é modificada externamente',()=>{const input={lista:[1]};expect(compileCode('function regra(entrada){let a=entrada.lista;a.push(2);return a;}','regra')(input)).toEqual([1,2]);expect(input.lista).toEqual([1]);});
- it.each(['let x=1; let x=2; return x;','return ausente;','return entrada.inexistente;','const x=1; x=2; return x;','let a=1; a.push(2); return a;','return 1/0;','return "2"+3;','let a=[]; a.push("texto"); return a;','let a=1;'])('diagnóstico de regra %s',body=>expect(()=>run(body)).toThrow(/Linha/));
- it.each(['fetch("x");return 1;','return entrada.constructor;','let __steps=0;return 1;','let class=1;return class;','return globalThis.x;','while(true){} return 0;','return entrada["pontos"];','return Math.random();','entrada.pontos=9;return 9;','for(const i=0;i<2;i++){return i;} return 0;'])('API/sintaxe fora do subconjunto %s',body=>expect(()=>run(body)).toThrow());
- it('função extra não é executada',()=>expect(()=>compileCode('function regra(entrada){return 0;} function extra(entrada){return 1;}','regra')).toThrow(/somente/));
- it('nome da função fica preservado',()=>expect(()=>compileCode('function outra(entrada){return 1;}','regra')).toThrow(/nome/));
- it('sintaxe aponta a linha real',()=>expect(()=>compileCode('function regra(entrada){\n return 1\n}','regra')).toThrow(/Linha 3/));
- it('símbolo inválido é localizado',()=>expect(()=>run('return @;')).toThrow(/Símbolo/));
- it('bloco não fechado',()=>expect(()=>compileCode('function regra(entrada){return 1;','regra')).toThrow(/Feche/));
- it('escape desconhecido',()=>expect(()=>run("return '\\q';")).toThrow(/Escape/));
- it('número infinito',()=>expect(()=>run('return 1e999;')).toThrow(/finito/));
- it('limite de texto',()=>expect(()=>compileCode(' '.repeat(6001),'regra')).toThrow(/6000/));
- it('limite de grupos',()=>expect(()=>run('return '+'('.repeat(25)+'1'+')'.repeat(25)+';')).toThrow(/grupos/));
- it('limite de AST',()=>expect(()=>run('return '+Array(180).fill('1').join('+')+';')).toThrow(/300/));
- it('laço sem progresso para com diagnóstico',()=>expect(()=>run('let x=0;for(let i=0;i<100;i--){x+=1;} return x;')).toThrow(/64/));
- it('limite da lista',()=>expect(()=>run('let a=[];for(let i=0;i<64;i++){a.push(i);a.push(i);}return a;')).toThrow(/64/));
- it('limite de operações em laços aninhados',()=>expect(()=>run('let x=0;for(let i=0;i<60;i++){for(let j=0;j<60;j++){x+=1;}}return x;')).toThrow(/2000/));
+const run=(body:string,input={})=>compileCode(`def regra(entrada):\n${body.split('\n').map(l=>'    '+l).join('\n')}`,'regra')(input);
+describe('Python educativo executável',()=>{
+ it('função recebe dicionário e preserva entrada',()=>{const input={posicao:100,direcao:-1,velocidade:3};expect(compileCode('def mover(entrada):\n    return entrada["posicao"] + entrada["direcao"] * entrada["velocidade"]','mover')(input)).toBe(97);expect(input.posicao).toBe(100);});
+ it.each([['2+3*4',14],['(2+3)*4',20],['10-4-2',4],['-3+ +2',-1],['-10%3',2],['10%-3',-2],['-7//2',-4],['8/2',4],['3>=3',true],['3>4',false],['3<4',true],['3!=4',true],['3==3',true],['not False',true],['not 1 == 2',true],['0 or 5',5],['2 and 7',7],['False and ausente',false],['True or ausente',true],['[] or 5',5],['[1] and 7',7],['[1,2] == [1,2]',true],['True == 1',true],['0 < 2 <= 3',true],['3 < 2 < ausente',false]])('semântica %s',(expr,result)=>expect(run(`return ${expr}`)).toEqual(result));
+ it('comentários e strings escapadas',()=>expect(run('# comentário\nreturn "cristal\\n\\u0041" # fim')).toBe('cristal\nA'));
+ it('if/elif e escopo de função',()=>expect(run('x = 1\nif False:\n    x = 9\nelif True:\n    x = 3\n    x += 2\nelse:\n    x = 0\nreturn x')).toBe(5));
+ it('atribuição de valor existente e conta acumulada',()=>expect(run('x = 8\nx -= 1\nx *= 2\nx /= 7\nreturn x')).toBe(2));
+ it('range zero não cria objetos',()=>expect(run('a = []\nfor i in range(0):\n    a.append(i)\nreturn a')).toEqual([]));
+ it('range start/stop/step negativo',()=>expect(run('a = []\nfor i in range(5, 0, -2):\n    a.append(i)\nreturn a')).toEqual([5,3,1]));
+ it('range avalia limite uma vez; contador alterado não muda sequência',()=>expect(run('a = []\nn = 3\nfor i in range(n):\n    a.append(i)\n    n = 0\n    i = 99\nreturn a')).toEqual([0,1,2]));
+ it('return encerra laço',()=>expect(run('for i in range(8):\n    if i == 2:\n        return i\nreturn -1')).toBe(2));
+ it('lista de entrada não modifica objeto do chamador',()=>{const input={lista:[1]};expect(run('a = entrada["lista"]\na.append(2)\nreturn a',input)).toEqual([1,2]);expect(input.lista).toEqual([1]);});
+ it.each(['return ausente','return entrada["ausente"]','a = 1\na.append(2)\nreturn a','return 1/0','return 1//0','return 1%0','return "2"+3','a = []\na.append("texto")\nreturn a','for i in range(3,0,0):\n    return i\nreturn 0','for i in range(2.5):\n    return i\nreturn 0','x = 1'])('diagnóstico %s',body=>expect(()=>run(body)).toThrow(/Linha/));
+ it.each(['import os\nreturn 1','return entrada.constructor','__steps = 0\nreturn 1','return globalThis.x','while True:\n    return 0','return Math.random()','entrada["pontos"] = 9\nreturn 9','fetch("x")\nreturn 1','return range(5)','return 1 + not False','return -not True','return 3 == not False','return 01','return entrada["__proto__"]'])('fora do subset %s',body=>expect(()=>run(body)).toThrow());
+ it('rejeita JavaScript',()=>expect(()=>compileCode('function regra(entrada){return 1;}','regra')).toThrow(/Linha/));
+ it('nome preservado',()=>expect(()=>compileCode('def outra(entrada):\n    return 1','regra')).toThrow(/nome/));
+ it('rejeita função adicional',()=>expect(()=>compileCode('def regra(entrada):\n    return 1\ndef extra(entrada):\n    return 2','regra')).toThrow(/somente/));
+ it('diagnóstico aponta linha real',()=>expect(()=>compileCode('def regra(entrada):\n    return @','regra')).toThrow(/Linha 2/));
+ it('bloco precisa de indentação',()=>expect(()=>compileCode('def regra(entrada):\nreturn 1','regra')).toThrow(/indentação/));
+ it('dedent inválido é localizado',()=>expect(()=>compileCode('def regra(entrada):\n    if True:\n        return 1\n      return 2','regra')).toThrow(/indentação/));
+ it('tab informa alternativa de espaços',()=>expect(()=>compileCode('def regra(entrada):\n\treturn 1','regra')).toThrow(/espaços/));
+ it('escape desconhecido',()=>expect(()=>run("return '\\q'")).toThrow(/Escape/));
+ it('número infinito',()=>expect(()=>run('return 1e999')).toThrow(/finito/));
+ it('limite de fonte',()=>expect(()=>compileCode(' '.repeat(6001),'regra')).toThrow(/6000/));
+ it('limite de grupos',()=>expect(()=>run('return '+'('.repeat(25)+'1'+')'.repeat(25))).toThrow(/grupos/));
+ it('limite AST',()=>expect(()=>run('return '+Array(180).fill('1').join('+'))).toThrow(/300/));
+ it('limite de laço',()=>expect(()=>run('for i in range(100):\n    x = i\nreturn 0')).toThrow(/64/));
+ it('limite de lista',()=>expect(()=>run('a = []\nfor i in range(64):\n    a.append(i)\n    a.append(i)\nreturn a')).toThrow(/64/));
+ it('limite de operações aninhadas',()=>expect(()=>run('x = 0\nfor i in range(60):\n    for j in range(60):\n        x += 1\nreturn x')).toThrow(/2000/));
 });

@@ -6,9 +6,9 @@
       "concept": "Eventos e decisões",
       "goal": "Corrija os controles invertidos da nave.",
       "functionName": "controlar",
-      "help": "entrada.esquerda e entrada.direita dizem quais teclas estão pressionadas. -1 move para esquerda; 1, para direita; 0 mantém parada. if significa “se”. Se ambas estiverem pressionadas, a direita tem prioridade.",
-      "starter": "function controlar(entrada) {\n  let direcao = 0;\n  if (entrada.esquerda) {\n    direcao = 1;\n  }\n  if (entrada.direita) {\n    direcao = -1;\n  }\n  return direcao;\n}",
-      "reference": "function controlar(entrada) {\n  let direcao = 0;\n  if (entrada.esquerda) {\n    direcao = -1;\n  }\n  if (entrada.direita) {\n    direcao = 1;\n  }\n  return direcao;\n}",
+      "help": "entrada[\"esquerda\"] e entrada[\"direita\"] dizem quais teclas estão pressionadas. -1 move para esquerda; 1, para direita; 0 mantém parada. if significa “se”. Defina uma direção, teste cada tecla e devolva com return. Se ambas estiverem pressionadas, a direita tem prioridade. Blocos usam indentação.",
+      "starter": "def controlar(entrada):\n    direcao = 0\n    if entrada[\"esquerda\"]:\n        direcao = 1\n    if entrada[\"direita\"]:\n        direcao = -1\n    return direcao",
+      "reference": "def controlar(entrada):\n    direcao = 0\n    if entrada[\"esquerda\"]:\n        direcao = -1\n    if entrada[\"direita\"]:\n        direcao = 1\n    return direcao",
       "cases": [
         {
           "label": "Sem tecla",
@@ -51,9 +51,9 @@
       "concept": "Variáveis e operações",
       "goal": "Use direção e velocidade para calcular a nova posição.",
       "functionName": "mover",
-      "help": "posicao é onde a nave está. direcao vale -1, 0 ou 1. velocidade é a distância por atualização. Multiplicar direção pela velocidade dá um deslocamento com sentido; some esse deslocamento à posição. return devolve o resultado.",
-      "starter": "function mover(entrada) {\n  return entrada.posicao + entrada.direcao + entrada.velocidade;\n}",
-      "reference": "function mover(entrada) {\n  return entrada.posicao + entrada.direcao * entrada.velocidade;\n}",
+      "help": "posicao é onde a nave está. direcao vale -1, 0 ou 1. velocidade é a distância por atualização. Multiplique direção pela velocidade e some à posição. entrada[\"campo\"] lê um valor do dicionário. return devolve o resultado.",
+      "starter": "def mover(entrada):\n    return entrada[\"posicao\"] + entrada[\"direcao\"] + entrada[\"velocidade\"]",
+      "reference": "def mover(entrada):\n    return entrada[\"posicao\"] + entrada[\"direcao\"] * entrada[\"velocidade\"]",
       "cases": [
         {
           "label": "Direita devagar",
@@ -109,9 +109,9 @@
       "concept": "Condições e limites",
       "goal": "Conte uma colisão somente quando os objetos se encostarem.",
       "functionName": "colidir",
-      "help": "distancia mede a separação entre nave e objeto. raio é a distância máxima para encostar. <= significa “menor ou igual”; uma comparação devolve true (sim) ou false (não). Teste também a distância exatamente no limite.",
-      "starter": "function colidir(entrada) {\n  return entrada.distancia > entrada.raio;\n}",
-      "reference": "function colidir(entrada) {\n  return entrada.distancia <= entrada.raio;\n}",
+      "help": "distancia mede a separação entre nave e objeto; raio é o limite. Colete quando a distância for menor ou igual ao raio. <= inclui a fronteira. Python usa True e False para verdadeiro e falso.",
+      "starter": "def colidir(entrada):\n    return entrada[\"distancia\"] > entrada[\"raio\"]",
+      "reference": "def colidir(entrada):\n    return entrada[\"distancia\"] <= entrada[\"raio\"]",
       "cases": [
         {
           "label": "Longe",
@@ -162,9 +162,9 @@
       "concept": "Estado e pontuação",
       "goal": "Some 10 por cristal e 25 por estrela, preservando os pontos.",
       "functionName": "pontuar",
-      "help": "Comece com entrada.pontos, a pontuação que já existe. entrada.tipo informa o objeto. === compara exatamente; += acrescenta ao valor atual. Cristal vale 10 e estrela 25; outro tipo não muda pontos.",
-      "starter": "function pontuar(entrada) {\n  let pontos = 0;\n  if (entrada.tipo === \"cristal\") {\n    pontos += 1;\n  }\n  if (entrada.tipo === \"estrela\") {\n    pontos += 25;\n  }\n  return pontos;\n}",
-      "reference": "function pontuar(entrada) {\n  let pontos = entrada.pontos;\n  if (entrada.tipo === \"cristal\") {\n    pontos += 10;\n  }\n  if (entrada.tipo === \"estrela\") {\n    pontos += 25;\n  }\n  return pontos;\n}",
+      "help": "Comece com entrada[\"pontos\"], o total acumulado. entrada[\"tipo\"] informa o objeto. == compara valores; += acrescenta ao total. Cristal vale 10, estrela 25; outros conservam os pontos. if cria um bloco indentado.",
+      "starter": "def pontuar(entrada):\n    pontos = 0\n    if entrada[\"tipo\"] == \"cristal\":\n        pontos += 1\n    if entrada[\"tipo\"] == \"estrela\":\n        pontos += 25\n    return pontos",
+      "reference": "def pontuar(entrada):\n    pontos = entrada[\"pontos\"]\n    if entrada[\"tipo\"] == \"cristal\":\n        pontos += 10\n    if entrada[\"tipo\"] == \"estrela\":\n        pontos += 25\n    return pontos",
       "cases": [
         {
           "label": "Primeiro cristal",
@@ -215,9 +215,9 @@
       "concept": "Repetição e listas",
       "goal": "Crie a quantidade pedida nas posições 40, 120, 200…",
       "functionName": "criarOnda",
-      "help": "[] cria uma lista. for repete: let i=0 começa o contador; a condição decide se continua; i++ aumenta um. push acrescenta uma posição. O primeiro objeto fica em 40, depois 120, 200, 280 e 360. Quantidade zero deve criar lista vazia.",
-      "starter": "function criarOnda(entrada) {\n  let posicoes = [];\n  for (let i = 0; i <= entrada.quantidade; i++) {\n    posicoes.push(40 + i * 80);\n  }\n  return posicoes;\n}",
-      "reference": "function criarOnda(entrada) {\n  let posicoes = [];\n  for (let i = 0; i < entrada.quantidade; i++) {\n    posicoes.push(40 + i * 80);\n  }\n  return posicoes;\n}",
+      "help": "posicoes é uma lista. for i in range(n) repete com i de zero até n-1. append acrescenta um item. A primeira posição é 40; cada próxima soma 80. Quantidade zero precisa produzir lista vazia. Evite um objeto extra.",
+      "starter": "def criarOnda(entrada):\n    posicoes = []\n    for i in range(entrada[\"quantidade\"] + 1):\n        posicoes.append(40 + i * 80)\n    return posicoes",
+      "reference": "def criarOnda(entrada):\n    posicoes = []\n    for i in range(entrada[\"quantidade\"]):\n        posicoes.append(40 + i * 80)\n    return posicoes",
       "cases": [
         {
           "label": "Nenhum objeto",
@@ -268,7 +268,7 @@
       "concept": "Projeto integrado",
       "goal": "Colete 100 pontos e evite as pedras usando suas cinco funções.",
       "functionName": "final",
-      "help": "Revise as funções nas abas e teste o projeto. Cristais valem 10, estrelas 25 e pedras tiram uma vida. Use esquerda/direita ou os botões de toque. Ao vencer com regras validadas, você pode baixar seu jogo como HTML offline.",
+      "help": "Seu projeto reúne as cinco funções Python que você escreveu. Teste as 23 situações, pilote a nave e alcance 100 pontos com três vidas. Depois baixe o jogo HTML e suas funções em .py. O HTML usa o mesmo interpretador educativo de Python no navegador.",
       "starter": "",
       "reference": "",
       "cases": [],

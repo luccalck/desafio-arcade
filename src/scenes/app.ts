@@ -9,7 +9,7 @@ import {loadPreferences,savePreferences} from '../core/preferences';
 import {mountPlayer,PLAYER_CSS} from './arcade-player';
 import type {Player} from './arcade-player';
 import {header,home,campaign,workspace,caseTable,xp} from './views';
-import {createProjectHTML} from './export';
+import {createProjectHTML,createPythonSource} from './export';
 import {escape} from './shared';
 declare const __VERSION__:{version:string;sha:string};
 declare const __PLAYER_BUNDLE__:string;
@@ -18,7 +18,7 @@ const missions=data.missions as Mission[],ids=missions.map(m=>m.id),app=document
 const playerStyle=document.createElement('style');playerStyle.textContent=PLAYER_CSS;document.head.append(playerStyle);
 let storage:StoragePort|undefined;try{storage=window.localStorage;}catch{/* Sessão em memória. */}
 let completed=loadProgress(storage,ids),sources=loadSources(storage,missions),preferences=loadPreferences(storage),saved=!!storage,legacy=false;
-try{legacy=!!(storage?.getItem('rota-do-codigo:bench:v3')||storage?.getItem('rota-do-codigo:lab:v2')||storage?.getItem('rota-do-codigo:campaign:v1'));}catch{/* Dados antigos preservados. */}
+try{legacy=!!(storage?.getItem('rota-do-codigo:workshop:v4')||storage?.getItem('rota-do-codigo:bench:v3')||storage?.getItem('rota-do-codigo:lab:v2')||storage?.getItem('rota-do-codigo:campaign:v1'));}catch{/* Dados antigos preservados. */}
 let view:'home'|'missions'|'workshop'='home',index=0,tab=0,player:Player|undefined,results:CaseResult[]=[],tested=false,finalWon=false,summary='',validated='',opener='',resumeDialog=false;
 const m=()=>missions[index],editing=()=>missions[tab],reduced=()=>preferences.reduced||matchMedia('(prefers-reduced-motion: reduce)').matches;
 function applyPreferences(){document.documentElement.classList.toggle('large-text',preferences.largeText);document.documentElement.classList.toggle('reduced-motion',reduced());}
@@ -42,7 +42,7 @@ function test(){player?.pause();results=[];tested=false;finalWon=false;validated
   if(tested){validated=fingerprint();if(index<5)complete();else summary+=' Agora vença a partida para concluir seu projeto.';}
  }catch(e){summary=e instanceof Error?e.message:'Erro na regra.';}
  render('test-rules');}
-function help(){const target=editing();dialog(`<span class="eyebrow">ENTENDER / ${escape(target.concept)}</span><h2>${escape(target.title)}</h2><p>${escape(target.help)}</p><div class="syntax-guide"><p><code>let</code> cria variável · <code>if</code> pergunta “se”</p><p><code>return</code> devolve o resultado · <code>for</code> repete</p></div><details><summary>O que o editor aceita?</summary><p>Modo iniciante de JavaScript: a função desta missão, variáveis, números, comparações, if/else, listas/push e for. Sem bibliotecas ou APIs externas. Use ponto e vírgula ao terminar instruções. Um erro é uma oportunidade de testar outra hipótese.</p></details>`);}
+function help(){const target=editing();dialog(`<span class="eyebrow">ENTENDER / ${escape(target.concept)}</span><h2>${escape(target.title)}</h2><p>${escape(target.help)}</p><div class="syntax-guide"><p><code>def</code> define função · <code>if</code> pergunta “se”</p><p><code>return</code> devolve o resultado · <code>for</code> repete</p></div><details><summary>O que o editor aceita?</summary><p>Modo iniciante de Python: a função desta missão, variáveis, números, comparações, if/elif/else, listas/append e for em range. Sem bibliotecas ou APIs externas. Use dois-pontos nos blocos e indentação com espaços. Tab indenta; Escape sai do editor. Um erro é uma oportunidade de testar outra hipótese.</p></details>`);}
 function action(button:HTMLElement){switch(button.dataset.action){
  case 'home':navigate('home');break;case 'missions':navigate('missions');break;
  case 'new':if(completed.length)dialog('<h2>Recomeçar a oficina?</h2><p>Isso reinicia somente as missões e funções desta oficina.</p><button class="primary" data-action="confirm-new">Recomeçar</button>');else begin(0);break;
@@ -61,6 +61,7 @@ function action(button:HTMLElement){switch(button.dataset.action){
  case 'reset-prompt':closeDialog();dialog('<h2>Reiniciar oficina?</h2><p>Somente o progresso e código desta oficina serão removidos.</p><button class="primary" data-action="confirm-reset">Reiniciar</button>');break;
  case 'confirm-reset':closeDialog();reset();navigate('home');break;
  case 'close':closeDialog();break;
+ case 'download-python':if(finalWon&&tested&&validated===fingerprint()){const text=createPythonSource(sources,missions,__LICENSE_TEXT__),url=URL.createObjectURL(new Blob([text],{type:'text/plain;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='meu-jogo.py';a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);}break;
  case 'download':if(finalWon&&tested&&validated===fingerprint()){try{const html=createProjectHTML(sources,missions,__PLAYER_BUNDLE__,__LICENSE_TEXT__),url=URL.createObjectURL(new Blob([html],{type:'text/html;charset=utf-8'})),a=document.createElement('a');a.href=url;a.download='meu-jogo.html';a.click();setTimeout(()=>URL.revokeObjectURL(url),2000);}catch(e){document.getElementById('run-message')!.textContent=String(e);}}break;
  }}
 app.addEventListener('click',e=>{const button=(e.target as HTMLElement).closest<HTMLElement>('[data-action]');if(button)action(button);});
@@ -69,3 +70,5 @@ app.addEventListener('change',e=>{const field=e.target as HTMLInputElement;if(fi
 render();
 
 app.addEventListener('scroll',e=>{const field=e.target as HTMLElement;if(field.id==='code-editor')document.getElementById('code-gutter')!.scrollTop=field.scrollTop;},true);
+
+app.addEventListener('keydown',e=>{if((e.target as HTMLElement).id!=='code-editor')return;const field=e.target as HTMLTextAreaElement;if(e.key==='Escape'){e.preventDefault();document.getElementById('test-rules')?.focus();return;}if(e.ctrlKey||e.metaKey||e.altKey)return;if(e.key==='Tab'&&!e.shiftKey){e.preventDefault();field.setRangeText('    ',field.selectionStart,field.selectionEnd,'end');}else if(e.key==='Enter'){e.preventDefault();const before=field.value.slice(0,field.selectionStart).split('\n').at(-1)!,indent=before.match(/^ */)![0]+(before.trimEnd().endsWith(':')?'    ':'');field.setRangeText('\n'+indent,field.selectionStart,field.selectionEnd,'end');}else return;field.dispatchEvent(new Event('input',{bubbles:true}));});

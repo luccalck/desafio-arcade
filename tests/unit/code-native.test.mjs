@@ -1,13 +1,14 @@
 import {it,expect} from 'vitest';
 import vm from 'node:vm';
 import {readFileSync} from 'node:fs';
-import {compileCode} from '../../src/core/code-runtime';
+import {execFileSync} from 'node:child_process';
+import {compileCode,executeCode} from '../../src/core/code-runtime';
 import {parseCode} from '../../src/core/code-parser';
 import {printCode} from '../../src/core/code-print';
 const data=JSON.parse(readFileSync('src/content/missions.json','utf8'));
-for(const mission of data.missions.slice(0,5))it(`semântica JavaScript nativa/editorial e exportada: ${mission.functionName}`,()=>{
- const interpreted=compileCode(mission.reference,mission.functionName),canonical=printCode(parseCode(mission.reference,mission.functionName));
- for(const c of mission.cases){const original=vm.runInNewContext(`(${mission.reference})(${JSON.stringify(c.input)})`,{}, {timeout:100}),exported=vm.runInNewContext(`(${canonical})(${JSON.stringify(c.input)})`,{}, {timeout:100});expect(JSON.stringify(interpreted(c.input))).toBe(JSON.stringify(original));expect(JSON.stringify(exported)).toBe(JSON.stringify(original));}
-});
-it('emissão não transporta comentários ou fechamento de script',()=>{const text=printCode(parseCode('function regra(entrada){ /* </script> */ return "</script>"; }','regra'));expect(text).not.toContain('</script>');expect(vm.runInNewContext(`(${text})({})`,{},{timeout:100})).toBe('</script>');});
-it('for exportado tem guarda de segurança',()=>{const text=printCode(parseCode('function regra(entrada){for(let i=0;i<100;i--){let x=i;}return 1;}','regra'));expect(()=>vm.runInNewContext(`(${text})({})`,{},{timeout:100})).toThrow(/Limite/);});
+const native=(source,input)=>JSON.parse(execFileSync(process.env.PYTHON_BIN|| (process.platform==='win32'?'python':'python3'),['-I','-c','import json,sys\nf=json.load(sys.stdin)\nscope={"__builtins__":{"range":range}}\nexec(f["source"],scope)\nprint(json.dumps(scope[f["name"]](f["input"])))'],{input:JSON.stringify({source,input,name:source.match(/def (\w+)/)[1]}),encoding:'utf8',timeout:2000}));
+const exported=(source,name,input)=>vm.runInNewContext(`(${printCode(parseCode(source,name))})(${JSON.stringify(input)})`,{window:{__RUN_PYTHON__:executeCode}},{timeout:100});
+for(const m of data.missions.slice(0,5))it(`CPython/editorial/browser/export: ${m.functionName}`,()=>{const interpreted=compileCode(m.reference,m.functionName);for(const c of m.cases){const actual=native(m.reference,c.input);expect(interpreted(c.input)).toEqual(actual);expect(exported(m.reference,m.functionName,c.input)).toEqual(actual);}});
+it.each(['return -10 % 3','return -7 // 2','return [] or 7','return not 1 == 2','return [1,2] == [1,2]','return 0 < 2 <= 3','x = 1\nif True:\n    x = 3\nreturn x','a = []\nn = 3\nfor i in range(n):\n    a.append(i)\n    n = 0\n    i = 99\nreturn a','a = []\nfor i in range(5,0,-2):\n    a.append(i)\nreturn a'])('semântica CPython confiável %s',body=>{const source='def regra(entrada):\n'+body.split('\n').map(l=>'    '+l).join('\n'),actual=native(source,{});expect(compileCode(source,'regra')({})).toEqual(actual);expect(exported(source,'regra',{})).toEqual(actual);});
+it('comentário/source não entra no script do export',()=>{const text=printCode(parseCode('def regra(entrada):\n    # </script>\n    return "</script>"','regra'));expect(text).not.toContain('</script>');expect(exported('def regra(entrada):\n    return "</script>"','regra',{})).toBe('</script>');});
+it('export usa os mesmos limites de execução',()=>expect(()=>exported('def regra(entrada):\n    for i in range(100):\n        x = i\n    return 1','regra',{})).toThrow(/64/));

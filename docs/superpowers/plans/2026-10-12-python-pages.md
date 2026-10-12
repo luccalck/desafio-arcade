@@ -4,7 +4,7 @@
 
 **Goal:** Converter a oficina aprovada para Python e publicar preview real no GitHub Pages, com commits do autor configurado e main protegida.
 
-**Architecture:** Parser Python→AST, runtime limitado e exportação AST→JS compartilham motor puro; fontes.py são exportadas separadamente. Actions publica artefato verificado da CI em gh-pages/Pages, sem merge ou rebuild.
+**Architecture:** Parser Python→AST, runtime limitado e exportação AST + interpretador compartilhado compartilham motor puro; fontes.py são exportadas separadamente. Actions publica artefato verificado da CI em gh-pages/Pages, sem merge ou rebuild.
 
 **Tech Stack:** TypeScript/HTML/CSS/SVG/esbuild/Ajv/Vitest/Playwright existentes; Python3 como oracle de fixtures confiáveis nos testes; GitHubActions/Pages.
 
@@ -21,7 +21,7 @@ expect(compileCode('def mover(entrada):\n    return entrada["posicao"] + entrada
 ```
 
 - [ ] Lexer indent/dedent/newline/comments/literais/operators; ASTrange{name,start,stop,step,body}. Parser uma defnome(entrada); suite com indent; instruções assignment/return/ifelifelse/forrange/append; entrada["campo"] apenas. Expressões comparação encadeada avaliada sem duplicar operando, not com precedênciaPython/andor, listas/aritmética.
-- [ ] Runtime função com bindings mutáveis/escopoPython; avaliação range uma vez/stepzeroerro/inteiros/cap64, budget2000; truthness/equality/Pythonmodulo/divisão porzero; saída copiada. Print JS fiel ao subset, nomes validados/literais escapados/listas/loops guardados. Não eval da fonte do jogador.
+- [ ] Runtime função com bindings mutáveis/escopoPython; avaliação range uma vez/stepzeroerro/inteiros/cap64, budget2000; truthness/equality/Pythonmodulo/divisão porzero; saída copiada. Print emite ponte JS para a AST JSON escapada; export-player inclui executeCode compartilhado, com os mesmos limites e sem duplicar semântica. Não eval da fonte do jogador.
 - [ ] Fixtures confiáveis executadas por processo Python timeout2000ms e comparação com AST e JS serializado. npm test -- tests/unit/code.test.ts tests/unit/code-native.test.mjs; lint após integração. Python instalado local e python3 no Actions, sem dependência do jogador.
 
 ## 2. P02/P03/P04/D02/D03 — conteúdo/UI/export (INT02/04/06)
@@ -48,3 +48,5 @@ Files: docs/gdd.md/design/backlog/matriz/evidencias/images,README/AI-USAGE/deplo
 - [ ] Atualizar12seçõesGDD+Esteira: Python subset, `.py` eHTMLexplain, preview real apósdeploy, data12/10semretroagir. PDFskillmarker uma vez antes deedição; npm run gdd:pdf/pdfinfo/pdftoppm; inspecionartodas latestpages. Gerar mapas/wireframesPython, capturasreais.
 - [ ] npm run reproducibility/package; npm audit --omit=dev --audit-level=critical; SBOM/Gitleaks; ZIP/hash/checksum/source. Commit conventionalautorluccalck/pushmesmoPR; CI/Pagesfinalverdes eartifactsconferidos. AtualizarPRbodyescopofinal; mainsemmerge/revisãohumana requerida.
 - [ ] SalvarACOMPANHAMENTO_LOCAL códigos/INT/paths/commands/results/evidence/commits/URLs/nextG0. Registro separa implemented/executado/humanopendente/nãoatendido, não declarar fechamentoINTs/nota/colaboração/DORA/pacotefinal. Deixarpreviewlocalativo.
+
+Decisão refinada na implementação: exportação compartilha executeCode e AST com a oficina, em vez de manter um segundo runtime em JS emitido. Pontes JS chamam o mesmo interpretador Python limitado. Isso conserva exatamente budgets/semântica entre navegador e HTML offline, reduzindo divergência. Comparação com CPython cobre referências e fixtures confiáveis; .py separado contém fontes Python reais.
