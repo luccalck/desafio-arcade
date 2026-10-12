@@ -39,16 +39,18 @@ Files: .github/workflows/esteira.yml; scripts/prepare-pages.mjs; tests/integrati
 
 - [x] Preparação pura recebeZIP/checksum e diretório gh-pages; validaSHA/path/versão/arquivos e mantémreleasesimutáveis; cria/hml/rootloader relativo basepath offline não necessárioloader(sósite). Teste não permitirreleaseexistentediferente ou traversal; somentebuildzip existente, sem npm build nojob.
 - [x] Job apósci no push autorizadofeature e variableenabled, download-artifactpinned, gh-pages sópeloActions. UploadPages/deployPagespinned, permissionsmínimasporjob, concurrencyPages, environmentpreview. PRnãoimplanta. Smoke depoisdeployment→HTTP/version e abrir/JogarPython viaPlaywright noURLpublicado. Relatório real onfailure/always.
-- [ ] Configurar Pages workflow viaAPI autorizada/enablevariable; não mudar proteção main/review_policy. CI/push real devepublicar artifact0.6.0 e verificar URL, captures eversão; troubleshooting segurosefalhar, semfalsosresultados.
+- [x] Configurar Pages workflow viaAPI autorizada/enablevariable; não mudar proteção main/review_policy. CI/push real devepublicar artifact0.6.0 e verificar URL, captures eversão; troubleshooting segurosefalhar, semfalsosresultados.
 
 ## 4. P04/R03/D06 — docs/PDF/evidências (INT02/04/05/06)
 
 Files: docs/gdd.md/design/backlog/matriz/evidencias/images,README/AI-USAGE/deploy-preview, acompanhamento local.
 
 - [x] Atualizar12seçõesGDD+Esteira: Python subset, `.py` eHTMLexplain, preview real apósdeploy, data12/10semretroagir. PDFskillmarker uma vez antes deedição; npm run gdd:pdf/pdfinfo/pdftoppm; inspecionartodas latestpages. Gerar mapas/wireframesPython, capturasreais.
-- [ ] npm run reproducibility/package; npm audit --omit=dev --audit-level=critical; SBOM/Gitleaks; ZIP/hash/checksum/source. Commit conventionalautorluccalck/pushmesmoPR; CI/Pagesfinalverdes eartifactsconferidos. AtualizarPRbodyescopofinal; mainsemmerge/revisãohumana requerida.
-- [ ] SalvarACOMPANHAMENTO_LOCAL códigos/INT/paths/commands/results/evidence/commits/URLs/nextG0. Registro separa implemented/executado/humanopendente/nãoatendido, não declarar fechamentoINTs/nota/colaboração/DORA/pacotefinal. Deixarpreviewlocalativo.
+- [x] npm run reproducibility/package; npm audit --omit=dev --audit-level=critical; SBOM/Gitleaks; ZIP/hash/checksum/source. Commit conventionalautorluccalck/pushmesmoPR; CI/Pagesfinalverdes eartifactsconferidos. AtualizarPRbodyescopofinal; mainsemmerge/revisãohumana requerida.
+- [x] SalvarACOMPANHAMENTO_LOCAL códigos/INT/paths/commands/results/evidence/commits/URLs/nextG0. Registro separa implemented/executado/humanopendente/nãoatendido, não declarar fechamentoINTs/nota/colaboração/DORA/pacotefinal. Deixarpreviewlocalativo.
 
 Decisão refinada na implementação: exportação compartilha executeCode e AST com a oficina, em vez de manter um segundo runtime em JS emitido. Pontes JS chamam o mesmo interpretador Python limitado. Isso conserva exatamente budgets/semântica entre navegador e HTML offline, reduzindo divergência. Comparação com CPython cobre referências e fixtures confiáveis; .py separado contém fontes Python reais.
 
 Validação local:178 testes (152unidades/26integrações), core97,90%; três E2E finais na fonte5ebdc64 passaram16,2s, incluindo download.py. Dois testes de Pages passaram contra site preparado localmente, não URLpública. PDF final0.6.0/12p/361562bytes/highconcept782, todas páginas renderizadas e inspecionadas. Publicação/CI/registro final aguardam execução real.
+
+Encerramento técnico conferido na execução86390e0: docs/evidencias/ci-python-pages.md. Todos os passos deste plano cumpridos; produção formal/gateshumanos não fazem parte desse aceite técnico. Commit posterior de registro também deve ter CI/Pages conferidos no acompanhamento, sem loop administrativo.

@@ -6,7 +6,7 @@ Alternativa A aprovada em 09/10/2026; Python e Pages solicitados em12/10/2026. [
 
 ## Estado verificável
 
-Candidata 0.6.0 no [PR draft #2](https://github.com/luccalck/desafio-arcade/pull/2); main no bootstrap até revisão por outro autor. 152 unidades/26 integrações passaram localmente; cobertura de instruções de src/core 97,90%. Suite com 15 E2E: edição, campanha teclado/toque, final, exportação offline. [Evidências/limites](docs/evidencias/python-pages.md). CI gera jogo/PDF/relatórios/SBOM/ZIP/checksum. Pipeline de preview no Pages implementada; execução e smoke devem confirmar URL pública. Produção formal/recuperação/sondas/DORA/vídeo/pacote final pendentes. [Publicação e limites](docs/deploy-preview.md).
+Candidata 0.6.0 no [PR draft #2](https://github.com/luccalck/desafio-arcade/pull/2); main no bootstrap até revisão por outro autor. 152 unidades/26 integrações passaram localmente; cobertura de instruções de src/core 97,90%. Suite com 15 E2E: edição, campanha teclado/toque, final, exportação offline. [Evidências/limites](docs/evidencias/python-pages.md). CI gera jogo/PDF/relatórios/SBOM/ZIP/checksum. [Jogar no GitHub Pages](https://luccalck.github.io/desafio-arcade/) — preview validado por pipeline e smoke. [CI e publicação conferidas](docs/evidencias/ci-python-pages.md). Produção formal/recuperação/sondas/DORA/vídeo/pacote final pendentes. [Publicação e limites](docs/deploy-preview.md).
 
 ## Desenvolvimento
 

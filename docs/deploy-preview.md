@@ -1,6 +1,6 @@
 # Publicação do preview no GitHub Pages
 
-URL configurada: https://luccalck.github.io/desafio-arcade/ . Site criado em12/10/2026 por solicitação explícita do responsável. Resultado e evidências de implantação são os do job publicar-preview na [Esteira](https://github.com/luccalck/desafio-arcade/actions/workflows/esteira.yml), não inferidos desta configuração. Preview público é diferente de produção formal aprovada para a rubrica.
+URL publicada e validada pela execução86390e0 (ci-python-pages.md): https://luccalck.github.io/desafio-arcade/ . Site criado em12/10/2026 por solicitação explícita do responsável. Resultado e evidências de implantação são os do job publicar-preview na [Esteira](https://github.com/luccalck/desafio-arcade/actions/workflows/esteira.yml), não inferidos desta configuração. Preview público é diferente de produção formal aprovada para a rubrica.
 
 ## Caminho do artefato
 

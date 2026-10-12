@@ -17,3 +17,5 @@ Comandos: npm run lint/test:ci/content:check/build/test:e2e/package/gdd:pdf; pyt
 Python aceito é subconjunto educativo, não runtime CPython completo: def(entrada), leitura de campos de dicionário, números/operações, comparações, True/False/not/and/or, atribuições, if/elif/else, listas numéricas/append e for emrange1–3args. Guardas e subset documentados no GDD. Sem imports, chamadas livres, globais, arquivos/rede/while. ExportHTML compartilha AST/runtime; arquivo.py separado é Python válido, não recompila automaticamente HTML.
 
 Pages configurado em workflow, HTTPS, variableenabled e branchpermitida de preview; repositório jáexistia/não duplicado. Só pipeline escrevegh-pages; main protegida/PRdraft/review_required. [Operação e limites](../deploy-preview.md). Resultado real de CI/Pages/smoke, URL e checksums finais são os do run e acompanhamento local. Nenhum INT integralmente fechado; G0/humanos e G3–G8 além do preview continuam pendentes.
+
+[Execução real CI/Pages e checksums conferidos](ci-python-pages.md): source86390e0,178testes/15E2E/2smokespúblicos, PDF/ZIP/metadados ebytesdosite verificados. Nenhum merge/revisãohumana/aceitefinal simulado.

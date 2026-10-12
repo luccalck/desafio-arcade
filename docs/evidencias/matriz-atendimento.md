@@ -6,11 +6,11 @@ Candidata0.6.0, Oficina de Jogos com Python e preview Pages. “Implementado” 
 |---|---|---|
 | 01 | Repo público existente, commits autorluccalck, branch/PRdraft#2, main protegida/ci/uma aprovação | Squad/quatro/contribuição em≥3INT/dez PRs revisados por outro autor/tags anotadas |
 | 02 | GDD12seções/Esteira, Python e arte/capturas reais, PDF0.6.0/pdfinfo/inspeção visual | Identificação/revisão coletiva/links de vídeo/release/data final pendentes; Stitch ausente |
-| 03 | Actions push/PR, ubuntu-latest/lockfile/CI/cache/artefatos; job publicar-preview consome mesmo ZIP→Pages→smoke | Conferir execução nova e publicar-preview; produção formal/aprovação e push→HML medido por execução pendentes |
-| 04 | 152unidades+26integrações passaram, core97,90%; suite15E2E/subconjuntos identificados; CPython em fixtures; bugs reais/regressões | Playtest/revisão humana; regressão URLHML/smoke preview exigem jobreal; smokePRD formal pendente. Opal/AIStudio ausentes |
+| 03 | Actions push/PR, ubuntu-latest/lockfile/CI/cache/artefatos; job publicar-preview consome mesmo ZIP→Pages→smoke | PreviewCI/Pages/smoke validado em ci-python-pages.md; produção formal/aprovação e demais medições pendentes |
+| 04 | 152unidades+26integrações passaram, core97,90%; suite15E2E/subconjuntos identificados; CPython em fixtures; bugs reais/regressões | Playtest/revisão humana; regressão URLHML/smoke preview passaram no jobreal; smokePRD formal pendente. Opal/AIStudio ausentes |
 | 05 | Gitleaks bloqueante/audit produção/SBOM/licenças/IA; sem novos pacotes | Revisão código/direitos/IA por outro autor antes do merge; Dependabot após configmain |
 | 06 | Offline principal/HTML exportado e funções.py, ZIP26.122bytes fonte5ebdc64/checksum/version, reprod verificável | Release/tag final ausentes; pacote final/versão coerente depois de release; buildsCI com metadados próprios |
-| 07 | Preparação Pages/HML/releases imutáveis/loader/rollout/sessão, gh-pages sópela pipeline, testes locais de integridade | ExecuçãoPages requerida antes de declarar deploy; produção formal/approval/estratégia avançada/smoke/rollbackmanual+automático/recuperação<5min pendentes |
+| 07 | Preparação Pages/HML/releases imutáveis/loader/rollout/sessão, gh-pages sópela pipeline, testes locais de integridade | Pages/HML/release/root validados; produção formal/approval/estratégia avançada/smoke/rollbackmanual+automático/recuperação<5min pendentes |
 | 08 | Requisitos/arquitetura registrados | Sondas/CSV/alertas/status/DORA/melhoria/lead time sem execução |
 | 09 | ZIP/checksum automatizados | Pacote submissao/manifesto/vídeo/triagem real na tag final pendentes |
 | 10 | Conceito, documentação e bugs reais | Pitch real/legendas≤90s, produção, relatório≤12páginas, printsrelease/retrospectiva/contribuição/banca dos quatro |
