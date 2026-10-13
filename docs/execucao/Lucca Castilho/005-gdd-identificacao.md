@@ -8,7 +8,7 @@
 
 - [x] GDD/backlog e identificação disponível atualizados pela própria conta; RAs seguem pendentes.
 - [x] GDD/PDF/texto/tabelas/páginas validados e evidências arquivadas.
-- [ ] Commit/push pela identidade GitHub do responsável.
+- [x] Commit/push pela identidade própria luccalck:214736a/PR#7.
 - [ ] PR revisado por outro autor e CI verde.
 - [x] SQ-06 atualizado; GDD-13/aceites finais mantidos abertos.
 

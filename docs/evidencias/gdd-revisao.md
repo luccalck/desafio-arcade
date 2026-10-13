@@ -34,3 +34,9 @@ OriginaisHTML/DOCXpreservados e comparados aoGDD; todos os campos/modelo/tabelas
 RAs/GDD-13identificação completa; confirmação coletiva/revisão e coerênciafinal de versão/data/links apósrelease verdadeira. Remetidos à seção005 do [registro único](../execucao/05-pendencias-por-passo.md) e tarefas finais pertinentes, sem bloquear preparação técnica independente. Ficha final/TXT não gerados.
 
 Por autorização persistente de Lucca, a página inicialGitHub será apontada à candidata005 após push/CIverde. Isso atualiza rastreamento, sem merge/deploy ou suspensão deproteção; main volta a ser padrão apósintegração revisada. [GDD](../gdd.md) e [backlog](../gestao/backlog.md).
+
+## Publicação da revisão
+
+Commit próprio `214736a5aef2a693eedb690b2d39f414f2c02041`; [PR#7](https://github.com/luccalck/desafio-arcade/pull/7) draft sobre feature/passo-004-dependabot-privacidade. [CI38346858370](https://github.com/luccalck/desafio-arcade/actions/runs/38346858370) SUCCESS, checks técnicos verdes e preview ignorado por branch. Sem merge/revisão humana/deploy. A CI gera e arquiva o PDF da fonte; atualizações documentais posteriores acionam nova execução a conferir pelo HEAD.
+
+A autorização de rastreamento mantém a candidata mais recente como default após validação, preservando proteção/main e bases dos PRs. Isso não prova execução de releasefinal ou aprovação coletiva.
