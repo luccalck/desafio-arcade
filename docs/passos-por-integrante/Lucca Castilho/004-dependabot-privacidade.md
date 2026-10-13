@@ -1,8 +1,8 @@
-# Passo 017 — Preparar roteiro do vídeo e concordância de imagem
+# Passo 004 — Completar segurança inicial e privacidade
 
-**Responsável proposto:** Lucca Castilho · Produto e Game Design. **Revisor proposto:** Davi Paes (conta real a confirmar).
-**INT:** INT-10/05/02. **Roteiros preservados:** P06/P04. **Checkpoint:** G6 preparação.
-**Dependências de execução:** 005, 008, 013. Estes números são entradas; preparação independente pode avançar sem fingir aceite final. Histórico de gates é G0→G8.
+**Responsável:** Lucca Castilho · bloco 1. **Papel oficial proposto:** Produto e Game Design. **Revisor proposto:** Davi Paes (conta real a confirmar).
+**INT:** INT-05/08/03. **Roteiros preservados:** S01/S02. **Checkpoint:** G0/G2.
+**Dependências de execução:** 001, 003. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
 - [ ] Validações executadas e evidências arquivadas.
@@ -10,9 +10,15 @@
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
 
+## Regra da execução por blocos
+
+Este passo pertence ao bloco **001–010 de Lucca Castilho**. Execute seus dez passos em ordem, respeitando as entradas anteriores; não espere implementação de outro integrante para um número dentro deste bloco. Ao concluir 010, faça a passagem descrita em `04-passagem-de-bloco.md`.
+
+Revisão por outro autor, dados/acessos, consentimentos, playtest e banca continuam sendo ações humanas obrigatórias. O colega pode revisar já no primeiro bloco, antes de começar seus próprios dez passos. Finalizar este passo significa concluir seu escopo e entregar provas/contratos; não é assinalar checks de release, vídeo ou banca futuros. O próximo responsável executa a validação posterior, sem exigir que você volte a desenvolver seus passos.
+
 ## Prompt profissional — copiar este conteúdo para a IA
 
-Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Lucca Castilho**, responsável por este passo. Execute **somente o passo 017: Preparar roteiro do vídeo e concordância de imagem** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
+Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Lucca Castilho**, responsável por este passo. Execute **somente o passo 004: Completar segurança inicial e privacidade** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
 
 ### Contexto e fontes obrigatórias
 
@@ -20,24 +26,24 @@ O projeto é Rota do Código/Desafio Arcade, oficina Python de cinco missões e 
 
 Repositório: https://github.com/luccalck/desafio-arcade . Fonte local de referência: `C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade`; em outro computador, localizar o clone real com `git rev-parse --show-toplevel`, não criar cópia concorrente. A branch completa estava em feature/primeiro-ciclo/PR#2; main era bootstrap. Inspecione estado atual/remotes antes de escolher base e preservar main protegida.
 
-Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro P06/P04 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
+Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro S01/S02 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
 
 Confirme instruções aplicáveis do ambiente/AGENTS.md. Dados de RAs, contas dos outros integrantes, nome do squad e aceites humanos ainda precisam confirmação; não inventar. Os arquivos deste plano foram preparados pela IA para Lucca, não contam como contribuição de Davi/Miguel/Lucas.
 
 ### Resultado específico e execução
 
-1. Escreva roteiro profissional <=90s com proposta educativa, conceito, diferencial e gameplay a gravar de produção. Divida tempos de fala com os quatro sem escrever resultados ainda não medidos.
-2. Planeje capturas reais de UI/produção, trechos de edição Python/efeito no minijogo e conclusão/exportação. Não desenhar interface simulando execução.
-3. Prepare legendas acessíveis e inventário de áudio/imagens; ausência de música é opção válida declarada.
-4. Obtenha concordância real de quem tem imagem/voz no vídeo antes da publicação. Evidência de consentimento pode ficar privada; não divulgar assinatura/CPF.
-5. Planeje vídeo como entrada humana do pacote ANTES da tag final, e relatório como documento que recebe prova de release/triagem DEPOIS dela.
+1. Verifique execução de Dependabot updates e estado de alerts. Existe YAML, mas a API anterior informou alerts disabled/escopo insuficiente; investigue uma vez, peça autenticação ao usuário se indispensável, não imprima tokens.
+2. Revise scanner Gitleaks, hook e política de vulnerabilidade: produção crítica bloqueia build; exposição real exige revogação. Use somente fixture sintética claramente falsa se testar scanner; nunca credencial real.
+3. Documente ausência de telemetria no README e confirme no código/rede que não se solicita dado pessoal. Se propuser telemetria, limitar a anônima/agregada, finalidade pública e validação humana antes de adicionar.
+4. Trate ranking/Godot/conteúdo Opal como condicionais sem implementá-los sem necessidade. Verifique a segurança dos futuros jobs sem ampliar permissões por conveniência.
+5. Equipe confirma política, direito de uso e notificações básicas; G0 só é aceito com equipe/acessos/políticas comprovados.
 
 Arquivos/configurações a inspecionar/criar/alterar **relativos ao clone real**, com escopo limitado:
 
-- `docs/pitch-roteiro.md`
-- `docs/pitch-legendas.srt`
-- `THIRD_PARTY.md`
-- `docs/evidencias/video-direitos.md`
+- `.github/dependabot.yml`
+- `SECURITY.md`
+- `README.md`
+- `docs/evidencias/seguranca-inicial.md`
 
 Se houver equivalente já funcional, reutilize e documente o caminho efetivo. Não substituir o projeto por scaffold novo. Quem altera workflow compartilhado coordena com Plataforma; não sobrescrever mudança de outra pessoa. Dados de monitoramento ficam em observabilidade, site em gh-pages, fonte em main/branches de PR; quatro pastas deste plano contêm somente prompts, não quatro jogos.
 
@@ -45,11 +51,14 @@ Se houver equivalente já funcional, reutilize e documente o caminho efetivo. N�
 
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
-- [ ] **I10-01** — Roteiro do pitch explica proposta de gamificação.
-- [ ] **I10-02** — Roteiro explica conceito e diferencial.
-- [ ] **I10-05** — Registrar direitos de trilha e imagens em THIRD_PARTY.md, ou declarar ausência de trilha quando aplicável.
-- [ ] **I10-07** — Obter concordância real de quem aparece/tem imagem ou voz publicada no vídeo.
-- [ ] **DIR-13** — Concordância real de quem aparecer no vídeo (I10-07).
+- [ ] **SQ-09** — SRE assume observabilidade, alertas, DORA, segurança, licenças e triagem.
+- [ ] **I05-06** — Dependabot efetivamente ativado e verificável no repositório. YAML existe; execução ainda não comprovada e alertas API informaram disabled.
+- [ ] **I08-33** — CONDICIONAL: contagem anônima de partidas/fases, se adotada; sem identificar jogador, finalidade documentada.
+- [ ] **DIR-09** — CONTÍNUO/FINAL: reconferir ausência de coleta pessoal na build entregue, incluindo serviços/telemetria adicionados.
+- [ ] **DIR-10** — CONDICIONAL ranking: só apelido escolhido na hora e guardado no navegador. Jogo atual não tem ranking.
+- [ ] **DIR-11** — CONDICIONAL telemetria: somente anônima e agregada, com coleta/finalidade explicadas no README.
+- [ ] **DIR-12** — Documentar explicitamente no README a ausência de telemetria atual; GDD já declara ausência.
+- [ ] **G0** — Preparação: equipe registrada, acessos funcionando, estratégia Git e proteção preparadas. **Primeiro aceite incompleto.**
 
 ### Rubrica, integridade e aceites
 
@@ -59,8 +68,8 @@ Eliminatórios: plágio/ativo sem licença zera squad; produção manual zera IN
 
 Validações específicas e resultados esperados:
 
-- Cronometrar leitura/roteiro; confirmar proposta/conceito/diferencial/capturas previstas/legendas/licenças.
-- Vídeo ainda não gravado não é pitch.mp4 entregue; consentimento exige ação humana.
+- npm audit --omit=dev --audit-level=critical; npm sbom --sbom-format cyclonedx; executar scanner instalado com --redact.
+- Dependabot ativo comprovado por configuração/execução acessível ou limitação pendente. README registra dados/telemetria corretamente.
 
 Para alteração de código, crie primeiro regressão significativa quando houver comportamento novo/bug verificável, execute a falha e corrija; para documentação, confira conteúdo/link/evidência sem inventar testes. Não executar teste espelhado da implementação nem repetir suites sem necessidade. CI obrigatória deve passar. No PowerShell local, configure `$env:npm_config_script_shell = (Get-Command pwsh).Source` se houver EACCES de cmd. Na CI Linux use comandos nativos do runner.
 
@@ -76,10 +85,10 @@ git config --get user.email
 gh api user --jq .login
 ```
 
-Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-017-roteiro-pitch`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
+Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-004-dependabot-privacidade`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
 
 ```sh
-git switch -c feature/passo-017-roteiro-pitch
+git switch -c feature/passo-004-dependabot-privacidade
 git diff --check
 ```
 
@@ -88,17 +97,17 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: preparar roteiro do vídeo e concordância de imagem
+git commit -m "fix: completar segurança inicial e privacidade
 "
 git push -u origin HEAD
-gh pr create --base main --draft --title "Passo 017: Preparar roteiro do vídeo e concordância de imagem" --body-file .contexto/pr-passo-017.md
+gh pr create --base main --draft --title "Passo 004: Completar segurança inicial e privacidade" --body-file .contexto/pr-passo-004.md
 ```
 
 Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Davi Paes** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
 
 ### Evidências, pessoas e resposta final
 
-Gravação e consentimentos são humanos. Não criar arquivo mp4 fictício nem imitar voz de integrante.
+Revisão de outro integrante antes do merge. Não simular identidade ou aceite.
 
 Atualize `docs/checklist-avaliacao.md` só com provas: data real, SHA/tag/run/URL, arquivos, comandos e resultado. Atualize AI-USAGE com ferramenta/finalidade/prompt resumido/resultado/revisão/PR verdadeiro. Registre status no `03-controle-execucao.md` e índice de evidências, sem dizer que todo INT foi aceito quando apenas parte foi concluída.
 

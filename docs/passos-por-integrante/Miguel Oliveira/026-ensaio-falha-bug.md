@@ -1,8 +1,8 @@
-# Passo 015 — Automatizar GitHub Releases por tag e anexos
+# Passo 026 — Ensaiar falha controlada, recuperação e regressões
 
-**Responsável proposto:** Miguel Oliveira · Plataforma e Release. **Revisor proposto:** Lucas Souza (conta real a confirmar).
-**INT:** INT-06/01/07. **Roteiros preservados:** R05/R02. **Checkpoint:** G2 preparação/G4/G7 execução.
-**Dependências de execução:** 007, 010, 011. Estes números são entradas; preparação independente pode avançar sem fingir aceite final. Histórico de gates é G0→G8.
+**Responsável:** Miguel Oliveira · bloco 3. **Papel oficial proposto:** Plataforma e Release. **Revisor proposto:** Lucas Souza (conta real a confirmar).
+**INT:** INT-07/04/08. **Roteiros preservados:** D06/D07/R06/S05. **Checkpoint:** G5.
+**Dependências de execução:** 020, 021, 022, 023, 024. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
 - [ ] Validações executadas e evidências arquivadas.
@@ -10,9 +10,15 @@
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
 
+## Regra da execução por blocos
+
+Este passo pertence ao bloco **021–030 de Miguel Oliveira**. Este bloco só inicia após a passagem do passo 020. Execute seus dez passos em ordem, respeitando as entradas anteriores; não espere implementação de outro integrante para um número dentro deste bloco. Ao concluir 030, faça a passagem descrita em `04-passagem-de-bloco.md`.
+
+Revisão por outro autor, dados/acessos, consentimentos, playtest e banca continuam sendo ações humanas obrigatórias. O colega pode revisar já no primeiro bloco, antes de começar seus próprios dez passos. Finalizar este passo significa concluir seu escopo e entregar provas/contratos; não é assinalar checks de release, vídeo ou banca futuros. O próximo responsável executa a validação posterior, sem exigir que você volte a desenvolver seus passos.
+
 ## Prompt profissional — copiar este conteúdo para a IA
 
-Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Miguel Oliveira**, responsável por este passo. Execute **somente o passo 015: Automatizar GitHub Releases por tag e anexos** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
+Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Miguel Oliveira**, responsável por este passo. Execute **somente o passo 026: Ensaiar falha controlada, recuperação e regressões** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
 
 ### Contexto e fontes obrigatórias
 
@@ -20,23 +26,24 @@ O projeto é Rota do Código/Desafio Arcade, oficina Python de cinco missões e 
 
 Repositório: https://github.com/luccalck/desafio-arcade . Fonte local de referência: `C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade`; em outro computador, localizar o clone real com `git rev-parse --show-toplevel`, não criar cópia concorrente. A branch completa estava em feature/primeiro-ciclo/PR#2; main era bootstrap. Inspecione estado atual/remotes antes de escolher base e preservar main protegida.
 
-Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro R05/R02 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
+Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro D06/D07/R06/S05 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
 
 Confirme instruções aplicáveis do ambiente/AGENTS.md. Dados de RAs, contas dos outros integrantes, nome do squad e aceites humanos ainda precisam confirmação; não inventar. Os arquivos deste plano foram preparados pela IA para Lucca, não contam como contribuição de Davi/Miguel/Lucas.
 
 ### Resultado específico e execução
 
-1. Implemente trigger tags vX.Y.Z e release com build.zip/checksum/SBOM/GDD.pdf e notas revisadas. Não criar segunda build entre HML e PRD; confira tag/SemVer/SHA/data e origem do artefato aprovado.
-2. Tag deve ser anotada e apontar commit aprovado. A v0.1.0 histórica está ausente: documente realidade e consulte regularização humana, não retroagir data. V1.0.0 só será criada no passo35.
-3. Publique releases imutáveis por SHA, recusando sobrescrita com bytes divergentes. GitHub Release e pasta Pages são objetos diferentes: ambos precisam evidência.
-4. Documente notas de versão claras e revisão humana inclusive se geradas com IA; mantenha anexos verificáveis.
+1. Combine janela/controlador/versão anterior saudável com squad. Produza versão defeituosa controlada pela pipeline, mantendo estável disponível até teste planejado; não editar produção à mão.
+2. Dispare falha autorizada, preserve detecção real por smoke/alerta, timestamps dos workflows/Issues e recuperação. Não incluir tempos falsos ou cortar propagação Pages.
+3. Comprove rollback automático e manual conforme plano, URL sem queda, versão antiga saudável e alerta autocerrado; mede <5 minutos inteiro.
+4. Documente bug real existente com falha anterior/teste correspondente/correção; defeito injetado do ensaio não substitui automaticamente bug de produto.
+5. Se tempo ultrapassar meta, investigar e corrigir por PR, repetir somente quando mudança justificar; não ocultar tentativa anterior.
 
 Arquivos/configurações a inspecionar/criar/alterar **relativos ao clone real**, com escopo limitado:
 
-- `.github/workflows/esteira.yml`
-- `scripts/release.mjs`
-- `docs/notas-versao.md`
-- `docs/evidencias/releases.md`
+- `docs/evidencias/ensaio-recuperacao.md`
+- `docs/evidencias/bug-regressao.md`
+- `tests/e2e/`
+- `Issue real de ensaio`
 
 Se houver equivalente já funcional, reutilize e documente o caminho efetivo. Não substituir o projeto por scaffold novo. Quem altera workflow compartilhado coordena com Plataforma; não sobrescrever mudança de outra pessoa. Dados de monitoramento ficam em observabilidade, site em gh-pages, fonte em main/branches de PR; quatro pastas deste plano contêm somente prompts, não quatro jogos.
 
@@ -44,16 +51,13 @@ Se houver equivalente já funcional, reutilize e documente o caminho efetivo. N�
 
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
-- [ ] **I01-10** — Tag SemVer anotada v0.1.0 da prévia: comprovar a situação real, sem criar data/evidência retroativa.
-- [ ] **I05-09** — SBOM anexado a cada GitHub Release. Nenhuma release existe.
-- [ ] **I06-07** — Cada tag vX.Y.Z dispara criação de GitHub Release.
-- [ ] **I06-08** — Cada release anexa build.zip.
-- [ ] **I06-09** — Cada release anexa checksum.
-- [ ] **I06-10** — Cada release anexa SBOM.
-- [ ] **I06-11** — Cada release anexa GDD.pdf.
-- [ ] **I06-12** — Cada release possui notas de versão revisadas; se geradas por IA, registrar uso/revisão.
-- [ ] **I06-18** — AVANÇADO: reunir reprodutibilidade comprovada, notas revisadas e SBOM/GDD anexados na mesma release.
-- [ ] **I07-06** — Releases formais de produção imutáveis, com teste/evidência dessa propriedade.
+- [ ] **I07-20** — Ensaio com versão defeituosa proposital, controlado e rastreável.
+- [ ] **I07-21** — Detecção da falha por alerta ou smoke, com evidência real.
+- [ ] **I07-22** — Cronometrar recuperação <5 minutos, incluindo propagação Pages.
+- [ ] **I07-23** — Demonstrar rollback sem a URL sair do ar.
+- [ ] **I07-25** — AVANÇADO: comprovar rollback automático e recuperação <5 minutos na banca, sem indisponibilidade (I07-16/22/23/24).
+- [ ] **I08-31** — AVANÇADO: alerta realmente disparado e tratado, com histórico e recuperação.
+- [ ] **CR-03** — Conferir atividades previstas para 06–08/10: INT-04/05/07/08 funcionando, ensaio cronometrado, gravação e triagem aprovada.
 
 ### Rubrica, integridade e aceites
 
@@ -63,8 +67,8 @@ Eliminatórios: plágio/ativo sem licença zera squad; produção manual zera IN
 
 Validações específicas e resultados esperados:
 
-- Teste contrato tag/SemVer/arquivos/hash e repetição idempotente sem substituir assets por arquivo diferente.
-- gh release view da tag real e SHA256 dos anexos; preparação não comprova release executada.
+- Logs/Issues/Pages/smoke e cronômetro real ou timestamps verificáveis mostram sequência completa.
+- npm run test:ci/test:e2e; nenhum bug bloqueante na candidata após recuperação.
 
 Para alteração de código, crie primeiro regressão significativa quando houver comportamento novo/bug verificável, execute a falha e corrija; para documentação, confira conteúdo/link/evidência sem inventar testes. Não executar teste espelhado da implementação nem repetir suites sem necessidade. CI obrigatória deve passar. No PowerShell local, configure `$env:npm_config_script_shell = (Get-Command pwsh).Source` se houver EACCES de cmd. Na CI Linux use comandos nativos do runner.
 
@@ -80,10 +84,10 @@ git config --get user.email
 gh api user --jq .login
 ```
 
-Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-015-releases-tags`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
+Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-026-ensaio-falha-bug`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
 
 ```sh
-git switch -c feature/passo-015-releases-tags
+git switch -c feature/passo-026-ensaio-falha-bug
 git diff --check
 ```
 
@@ -92,17 +96,17 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "ci: automatizar github releases por tag e anexos
+git commit -m "test: ensaiar falha controlada, recuperação e regressões
 "
 git push -u origin HEAD
-gh pr create --base main --draft --title "Passo 015: Automatizar GitHub Releases por tag e anexos" --body-file .contexto/pr-passo-015.md
+gh pr create --base main --draft --title "Passo 026: Ensaiar falha controlada, recuperação e regressões" --body-file .contexto/pr-passo-026.md
 ```
 
 Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Lucas Souza** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
 
 ### Evidências, pessoas e resposta final
 
-Revisão de outro integrante antes do merge. Não simular identidade ou aceite.
+Ensaio operacional precisa ser combinado com humanos; banca exige demonstração real posterior, não somente este ensaio.
 
 Atualize `docs/checklist-avaliacao.md` só com provas: data real, SHA/tag/run/URL, arquivos, comandos e resultado. Atualize AI-USAGE com ferramenta/finalidade/prompt resumido/resultado/revisão/PR verdadeiro. Registre status no `03-controle-execucao.md` e índice de evidências, sem dizer que todo INT foi aceito quando apenas parte foi concluída.
 

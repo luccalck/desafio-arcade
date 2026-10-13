@@ -1,8 +1,8 @@
 # Passo 037 — Consolidar relatório, ficha e apresentação
 
-**Responsável proposto:** Lucca Castilho · Produto e Game Design. **Revisor proposto:** Davi Paes (conta real a confirmar).
+**Responsável:** Lucas Souza · bloco 4. **Papel oficial proposto:** SRE e Segurança. **Revisor proposto:** Lucca Castilho (conta real a confirmar).
 **INT:** INT-10/09/01. **Roteiros preservados:** P07/S06. **Checkpoint:** G8 preparação.
-**Dependências de execução:** 033, 035, 036. Estes números são entradas; preparação independente pode avançar sem fingir aceite final. Histórico de gates é G0→G8.
+**Dependências de execução:** 033, 035, 036. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
 - [ ] Validações executadas e evidências arquivadas.
@@ -10,9 +10,15 @@
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
 
+## Regra da execução por blocos
+
+Este passo pertence ao bloco **031–040 de Lucas Souza**. Este bloco só inicia após a passagem do passo 030. Execute seus dez passos em ordem, respeitando as entradas anteriores; não espere implementação de outro integrante para um número dentro deste bloco. Ao concluir 040, faça a passagem descrita em `04-passagem-de-bloco.md`.
+
+Revisão por outro autor, dados/acessos, consentimentos, playtest e banca continuam sendo ações humanas obrigatórias. O colega pode revisar já no primeiro bloco, antes de começar seus próprios dez passos. Finalizar este passo significa concluir seu escopo e entregar provas/contratos; não é assinalar checks de release, vídeo ou banca futuros. O próximo responsável executa a validação posterior, sem exigir que você volte a desenvolver seus passos.
+
 ## Prompt profissional — copiar este conteúdo para a IA
 
-Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Lucca Castilho**, responsável por este passo. Execute **somente o passo 037: Consolidar relatório, ficha e apresentação** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
+Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Lucas Souza**, responsável por este passo. Execute **somente o passo 037: Consolidar relatório, ficha e apresentação** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
 
 ### Contexto e fontes obrigatórias
 
@@ -30,7 +36,7 @@ Confirme instruções aplicáveis do ambiente/AGENTS.md. Dados de RAs, contas do
 2. Abra o HTML original pelo Live Server sem alterá-lo. Preencha dados reais e URLs verificadas: squad, quatro nomes/RAs/papéis, repositório, produção, CI, status, vídeo, relatório e HML. Drive apenas se inscritos.
 3. Por solicitação do responsável, preencher notas A/B com 10 como estimativa do squad. Isso não é nota oficial ou comprovação de F1; não marcar entrega/declaracao só para liberar o botão.
 4. Confira dez INT completos e as quatro declarações verdadeiras, inclusive registro/estabilidade histórica do squad e triagem da v1.0.0. Se não puder atestar declaração, solicitar orientação do professor sem falsificá-la.
-5. Gere TXT apenas após validadores verdadeiros. Leia data, nomes, links, notas e declarações. Prepare dez minutos de fala dividida, cinco de demonstração e cinco de perguntas; a participação de Lucca ocorrerá na banca real.
+5. Gere TXT apenas após validadores verdadeiros. Leia data, nomes, links, notas e declarações. Prepare dez minutos de fala dividida, cinco de demonstração e cinco de perguntas; a participação dos quatro ocorrerá na banca real.
 
 Arquivos/configurações a inspecionar/criar/alterar **relativos ao clone real**, com escopo limitado:
 
@@ -83,6 +89,10 @@ Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução
 - [ ] **FIC-37** — Abrir TXT e conferir data real de geração, squad/repo/integrantes/links/INT/notas/declarações, sem dado inventado.
 - [ ] **FIC-38** — Anexar TXT ao AVA com pacote e relatório, confirmar envio/acesso.
 
+- [ ] **GDD-14** — Versão/data coerentes com release, links finais reais e acessíveis.
+
+- [ ] **GDD-16** — Revisão humana de texto, tabelas, declarações, mapas e legibilidade da versão final do PDF.
+
 ### Rubrica, integridade e aceites
 
 Busque a faixa avançada de cada INT relacionado: mínimos + aceites + critério avançado. Nota oficial não é garantida. Fórmula `(0,7×A + 0,3×B)×F`; A pesos INT01–10 = 10/8/15/12/10/10/12/10/8/5; B originalidade25/execução25/jogabilidade30/apresentação20. Para F1 cada pessoa precisa commits e PRs aprovados em >=3 INT diferentes e participar da banca. Revisão não substitui autoria; mínimo squad >=10 PRs reais revisados por outro autor. Não criar commits vazios, dividir artificialmente trabalho nem simular colegas.
@@ -98,7 +108,7 @@ Para alteração de código, crie primeiro regressão significativa quando houve
 
 ### Commit obrigatório pelo GitHub do usuário responsável
 
-**Faça commit pelo GitHub do usuário Lucca Castilho, usando a própria conta autenticada e a identidade Git real desse usuário.** Não faça commit em nome de luccalck se a pessoa atual for outra, não use conta de colega e não invente e-mail/username. Verifique antes de gravar:
+**Faça commit pelo GitHub do usuário Lucas Souza, usando a própria conta autenticada e a identidade Git real desse usuário.** Não faça commit em nome de luccalck se a pessoa atual for outra, não use conta de colega e não invente e-mail/username. Verifique antes de gravar:
 
 ```sh
 git status --short
@@ -126,7 +136,7 @@ git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 037: Consolidar relatório, ficha e apresentação" --body-file .contexto/pr-passo-037.md
 ```
 
-Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Davi Paes** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
+Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Lucca Castilho** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
 
 ### Evidências, pessoas e resposta final
 

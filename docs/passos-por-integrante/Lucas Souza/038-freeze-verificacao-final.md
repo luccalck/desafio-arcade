@@ -1,8 +1,8 @@
-# Passo 013 — Validar aprendizagem, conteúdo e condicionais de IA
+# Passo 038 — Conferir URLs finais e congelamento de código
 
-**Responsável proposto:** Lucca Castilho · Produto e Game Design. **Revisor proposto:** Davi Paes (conta real a confirmar).
-**INT:** INT-04/02/10. **Roteiros preservados:** P05/D02. **Checkpoint:** G3 preparação/G5 validação.
-**Dependências de execução:** 005, 006, 009. Estes números são entradas; preparação independente pode avançar sem fingir aceite final. Histórico de gates é G0→G8.
+**Responsável:** Lucas Souza · bloco 4. **Papel oficial proposto:** SRE e Segurança. **Revisor proposto:** Lucca Castilho (conta real a confirmar).
+**INT:** INT-04/06/07/01. **Roteiros preservados:** D07. **Checkpoint:** G7/G8.
+**Dependências de execução:** 035, 036, 037. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
 - [ ] Validações executadas e evidências arquivadas.
@@ -10,9 +10,15 @@
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
 
+## Regra da execução por blocos
+
+Este passo pertence ao bloco **031–040 de Lucas Souza**. Este bloco só inicia após a passagem do passo 030. Execute seus dez passos em ordem, respeitando as entradas anteriores; não espere implementação de outro integrante para um número dentro deste bloco. Ao concluir 040, faça a passagem descrita em `04-passagem-de-bloco.md`.
+
+Revisão por outro autor, dados/acessos, consentimentos, playtest e banca continuam sendo ações humanas obrigatórias. O colega pode revisar já no primeiro bloco, antes de começar seus próprios dez passos. Finalizar este passo significa concluir seu escopo e entregar provas/contratos; não é assinalar checks de release, vídeo ou banca futuros. O próximo responsável executa a validação posterior, sem exigir que você volte a desenvolver seus passos.
+
 ## Prompt profissional — copiar este conteúdo para a IA
 
-Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Lucca Castilho**, responsável por este passo. Execute **somente o passo 013: Validar aprendizagem, conteúdo e condicionais de IA** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
+Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Lucas Souza**, responsável por este passo. Execute **somente o passo 038: Conferir URLs finais e congelamento de código** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
 
 ### Contexto e fontes obrigatórias
 
@@ -20,24 +26,24 @@ O projeto é Rota do Código/Desafio Arcade, oficina Python de cinco missões e 
 
 Repositório: https://github.com/luccalck/desafio-arcade . Fonte local de referência: `C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade`; em outro computador, localizar o clone real com `git rev-parse --show-toplevel`, não criar cópia concorrente. A branch completa estava em feature/primeiro-ciclo/PR#2; main era bootstrap. Inspecione estado atual/remotes antes de escolher base e preservar main protegida.
 
-Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro P05/D02 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
+Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro D07 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
 
 Confirme instruções aplicáveis do ambiente/AGENTS.md. Dados de RAs, contas dos outros integrantes, nome do squad e aceites humanos ainda precisam confirmação; não inventar. Os arquivos deste plano foram preparados pela IA para Lucca, não contam como contribuição de Davi/Miguel/Lucas.
 
 ### Resultado específico e execução
 
-1. Revise os desafios de eventos/operações/condições/estado/repetição do Python: objetivo direto, exemplos coerentes, testes que aceitam soluções válidas alternativas e efeito visível. Preserve conceito aprovado; mudança de mecânica exige aprovação e GDD por PR.
-2. Crie casos educativos adicionais significativos onde houver lacuna real, teste fonte Python/AST/exportação e conteúdo inválido. Não aumentar quantidade por testes espelhados ou commits vazios.
-3. Defina protocolo de playtest sem explicação de três minutos, indicadores observáveis de compreensão/diversão/aprendizagem, sem declarar resultados antes da sessão humana.
-4. Se conteúdo Opal/AI Studio existir, implementar eval/golden.jsonl e validação antes de build; se ausente, registrar não aplicabilidade, não ativar ferramenta desnecessária.
-5. Prepare explicação do diferencial além de quiz com pontos para banca; valide com participante real no passo21.
+1. Confira produção, HML, status, releases e downloads externamente. Execute smoke/offline final, abra vídeo/relatórios e compare versão, SHA e checksum.
+2. Após v1.0.0 só correções fix: por PR revisado e pipeline completa. Não adicionar features, mover tag ou alterar gh-pages à mão. Se hotfix for necessário, validar tratamento da nova versão com professor e preservar histórico.
+3. Prepare conferência antes/durante/depois da banca: URL online, versão defeituosa retirada, anterior saudável, alertas fechados automaticamente e logs conservados.
+4. Confira autoria real dos quatro: Lucca na base/produto/testes, Davi na esteira/ambientes/sondas, Miguel na recuperação/DORA/playtest/vídeo e Lucas no pacote/relatório/release/triagem. Prepare as quatro falas sem atribuir trabalho fictício.
+5. Reabra checks afetados quando mudar componente; não adicionar teste espelhado ou aprovação fictícia.
 
 Arquivos/configurações a inspecionar/criar/alterar **relativos ao clone real**, com escopo limitado:
 
-- `src/content/`
-- `tests/integration/content.test.ts`
-- `docs/evidencias/aprendizagem-conteudo.md`
-- `docs/gdd.md`
+- `docs/evidencias/smoke-final.md`
+- `README.md`
+- `docs/operacao-rollback.md`
+- `Issues/PRs reais se correção necessária`
 
 Se houver equivalente já funcional, reutilize e documente o caminho efetivo. Não substituir o projeto por scaffold novo. Quem altera workflow compartilhado coordena com Plataforma; não sobrescrever mudança de outra pessoa. Dados de monitoramento ficam em observabilidade, site em gh-pages, fonte em main/branches de PR; quatro pastas deste plano contêm somente prompts, não quatro jogos.
 
@@ -45,10 +51,10 @@ Se houver equivalente já funcional, reutilize e documente o caminho efetivo. N�
 
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
-- [ ] **I04-14** — CONDICIONAL Opal/AI Studio: se usados para conteúdo, eval/golden.jsonl valida formato antes de entrar no jogo. Não usados atualmente; não criar evidência fictícia de golden eval.
-- [ ] **KIT-29** — CONDICIONAL: golden.jsonl se houver conteúdo Opal/AI Studio, conforme requisito específico I04-14; não impor eval a todo código produzido com IA.
-- [ ] **B-01** — Inovação/originalidade (25% de B): demonstrar aprendizagem por mecânica tecnológica além de quiz com pontos.
-- [ ] **B-02** — Inovação/originalidade: diferencial explicado e observável na experiência.
+- [ ] **SQ-11** — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 2.
+- [ ] **SQ-15** — Participação do integrante 2 na banca, com domínio de sua contribuição.
+- [ ] **CR-09** — Após v1.0.0, congelar funcionalidades: somente correções fix: via PR e pipeline completa.
+- [ ] **CR-10** — CONTÍNUO: nunca alterar produção/gh-pages manualmente após congelamento.
 
 ### Rubrica, integridade e aceites
 
@@ -58,14 +64,14 @@ Eliminatórios: plágio/ativo sem licença zera squad; produção manual zera IN
 
 Validações específicas e resultados esperados:
 
-- npm run content:check; npm run test:ci; casos inválidos bloqueiam build; subset Python e aprendizagem por missão estão coerentes.
-- Rubrica B inovação não é garantida por testes; evidência de aprendizagem humana aguarda passo21.
+- Execute os comandos pertinentes dos arquivos deste passo e inspecione seu resultado real, preservando SHA/run/URL/data e falhas. Comandos e caminhos existentes constam do contexto do prompt.
+- Aceite somente com prova dos checks listados, revisão de outro autor e CI verde; ação humana ausente permanece pendente. Não declarar resultados a partir de planejamento.
 
 Para alteração de código, crie primeiro regressão significativa quando houver comportamento novo/bug verificável, execute a falha e corrija; para documentação, confira conteúdo/link/evidência sem inventar testes. Não executar teste espelhado da implementação nem repetir suites sem necessidade. CI obrigatória deve passar. No PowerShell local, configure `$env:npm_config_script_shell = (Get-Command pwsh).Source` se houver EACCES de cmd. Na CI Linux use comandos nativos do runner.
 
 ### Commit obrigatório pelo GitHub do usuário responsável
 
-**Faça commit pelo GitHub do usuário Lucca Castilho, usando a própria conta autenticada e a identidade Git real desse usuário.** Não faça commit em nome de luccalck se a pessoa atual for outra, não use conta de colega e não invente e-mail/username. Verifique antes de gravar:
+**Faça commit pelo GitHub do usuário Lucas Souza, usando a própria conta autenticada e a identidade Git real desse usuário.** Não faça commit em nome de luccalck se a pessoa atual for outra, não use conta de colega e não invente e-mail/username. Verifique antes de gravar:
 
 ```sh
 git status --short
@@ -75,10 +81,10 @@ git config --get user.email
 gh api user --jq .login
 ```
 
-Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-013-aprendizagem-conteudo`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
+Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-038-freeze-verificacao-final`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
 
 ```sh
-git switch -c feature/passo-013-aprendizagem-conteudo
+git switch -c feature/passo-038-freeze-verificacao-final
 git diff --check
 ```
 
@@ -87,13 +93,13 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "test: validar aprendizagem, conteúdo e condicionais de ia
+git commit -m "test: conferir urls finais e congelamento de código
 "
 git push -u origin HEAD
-gh pr create --base main --draft --title "Passo 013: Validar aprendizagem, conteúdo e condicionais de IA" --body-file .contexto/pr-passo-013.md
+gh pr create --base main --draft --title "Passo 038: Conferir URLs finais e congelamento de código" --body-file .contexto/pr-passo-038.md
 ```
 
-Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Davi Paes** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
+Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Lucca Castilho** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
 
 ### Evidências, pessoas e resposta final
 

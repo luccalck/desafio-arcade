@@ -1,8 +1,8 @@
 # Passo 019 — Entregar produção com aprovação e azul-verde
 
-**Responsável proposto:** Miguel Oliveira · Plataforma e Release. **Revisor proposto:** Lucas Souza (conta real a confirmar).
+**Responsável:** Davi Paes · bloco 2. **Papel oficial proposto:** Desenvolvimento e Qualidade. **Revisor proposto:** Miguel Oliveira (conta real a confirmar).
 **INT:** INT-03/07/06. **Roteiros preservados:** R05. **Checkpoint:** G4.
-**Dependências de execução:** 011, 012, 014, 015, 016, 018. Estes números são entradas; preparação independente pode avançar sem fingir aceite final. Histórico de gates é G0→G8.
+**Dependências de execução:** 011, 012, 014, 015, 016, 018. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
 - [ ] Validações executadas e evidências arquivadas.
@@ -10,9 +10,15 @@
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
 
+## Regra da execução por blocos
+
+Este passo pertence ao bloco **011–020 de Davi Paes**. Este bloco só inicia após a passagem do passo 010. Execute seus dez passos em ordem, respeitando as entradas anteriores; não espere implementação de outro integrante para um número dentro deste bloco. Ao concluir 020, faça a passagem descrita em `04-passagem-de-bloco.md`.
+
+Revisão por outro autor, dados/acessos, consentimentos, playtest e banca continuam sendo ações humanas obrigatórias. O colega pode revisar já no primeiro bloco, antes de começar seus próprios dez passos. Finalizar este passo significa concluir seu escopo e entregar provas/contratos; não é assinalar checks de release, vídeo ou banca futuros. O próximo responsável executa a validação posterior, sem exigir que você volte a desenvolver seus passos.
+
 ## Prompt profissional — copiar este conteúdo para a IA
 
-Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Miguel Oliveira**, responsável por este passo. Execute **somente o passo 019: Entregar produção com aprovação e azul-verde** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
+Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Davi Paes**, responsável por este passo. Execute **somente o passo 019: Entregar produção com aprovação e azul-verde** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
 
 ### Contexto e fontes obrigatórias
 
@@ -41,6 +47,8 @@ Arquivos/configurações a inspecionar/criar/alterar **relativos ao clone real**
 - `docs/evidencias/producao.md`
 
 Se houver equivalente já funcional, reutilize e documente o caminho efetivo. Não substituir o projeto por scaffold novo. Quem altera workflow compartilhado coordena com Plataforma; não sobrescrever mudança de outra pessoa. Dados de monitoramento ficam em observabilidade, site em gh-pages, fonte em main/branches de PR; quatro pastas deste plano contêm somente prompts, não quatro jogos.
+
+Antes da primeira promoção real, conecte rollback automático ao smoke no workflow, usando a operação de restauração já implementada no passo018. Smoke falhando restaura anterior, retira canário, espera propagação e verifica a versão recuperada. Não colocar PRD sem esse mecanismo. O passo022 de Miguel aprofunda testes e robustez; o passo026 comprova a recuperação real.
 
 ### Checks pendentes atribuídos a este passo
 
@@ -78,7 +86,7 @@ Para alteração de código, crie primeiro regressão significativa quando houve
 
 ### Commit obrigatório pelo GitHub do usuário responsável
 
-**Faça commit pelo GitHub do usuário Miguel Oliveira, usando a própria conta autenticada e a identidade Git real desse usuário.** Não faça commit em nome de luccalck se a pessoa atual for outra, não use conta de colega e não invente e-mail/username. Verifique antes de gravar:
+**Faça commit pelo GitHub do usuário Davi Paes, usando a própria conta autenticada e a identidade Git real desse usuário.** Não faça commit em nome de luccalck se a pessoa atual for outra, não use conta de colega e não invente e-mail/username. Verifique antes de gravar:
 
 ```sh
 git status --short
@@ -106,7 +114,7 @@ git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 019: Entregar produção com aprovação e azul-verde" --body-file .contexto/pr-passo-019.md
 ```
 
-Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Lucas Souza** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
+Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Miguel Oliveira** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
 
 ### Evidências, pessoas e resposta final
 

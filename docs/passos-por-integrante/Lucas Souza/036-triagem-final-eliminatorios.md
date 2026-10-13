@@ -1,14 +1,20 @@
 # Passo 036 — Executar triagem final e auditoria eliminatória
 
-**Responsável proposto:** Lucas Souza · SRE e Segurança. **Revisor proposto:** Lucca Castilho (conta real a confirmar).
+**Responsável:** Lucas Souza · bloco 4. **Papel oficial proposto:** SRE e Segurança. **Revisor proposto:** Lucca Castilho (conta real a confirmar).
 **INT:** INT-09/05/07/03. **Roteiros preservados:** S04/S06. **Checkpoint:** G7.
-**Dependências de execução:** 035. Estes números são entradas; preparação independente pode avançar sem fingir aceite final. Histórico de gates é G0→G8.
+**Dependências de execução:** 035. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
 - [ ] Validações executadas e evidências arquivadas.
 - [ ] Commit/push pela identidade GitHub do responsável.
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
+
+## Regra da execução por blocos
+
+Este passo pertence ao bloco **031–040 de Lucas Souza**. Este bloco só inicia após a passagem do passo 030. Execute seus dez passos em ordem, respeitando as entradas anteriores; não espere implementação de outro integrante para um número dentro deste bloco. Ao concluir 040, faça a passagem descrita em `04-passagem-de-bloco.md`.
+
+Revisão por outro autor, dados/acessos, consentimentos, playtest e banca continuam sendo ações humanas obrigatórias. O colega pode revisar já no primeiro bloco, antes de começar seus próprios dez passos. Finalizar este passo significa concluir seu escopo e entregar provas/contratos; não é assinalar checks de release, vídeo ou banca futuros. O próximo responsável executa a validação posterior, sem exigir que você volte a desenvolver seus passos.
 
 ## Prompt profissional — copiar este conteúdo para a IA
 
@@ -56,6 +62,8 @@ Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução
 - [ ] **EL-04** — Pipeline funciona desde clone limpo: falha nessa condição zera INT-03.
 - [ ] **EL-05** — Regra do enunciado original: integrável entregue após o início da aula de 09/10, sem justificativa aceita, recebe nota zero nesse integrável. Conferir condições aplicáveis sem afirmar cumprimento cronológico sem evidência.
 - [ ] **G7** — Fechamento: release final executada, hashes conferidos, triagem aprovada na tag.
+
+- [ ] **I03-13** — CONTÍNUO: revisar permissões/secrets/variables após adicionar deploys, sondas e triagem.
 
 ### Rubrica, integridade e aceites
 

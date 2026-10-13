@@ -1,8 +1,8 @@
-# Passo 031 — Automatizar pacote com vídeo como entrada humana
+# Passo 030 — Implementar triagem automatizada e testes negativos
 
-**Responsável proposto:** Miguel Oliveira · Plataforma e Release. **Revisor proposto:** Lucas Souza (conta real a confirmar).
-**INT:** INT-09/06/03. **Roteiros preservados:** R07. **Checkpoint:** G6/G7.
-**Dependências de execução:** 015, 027, 029, 030. Estes números são entradas; preparação independente pode avançar sem fingir aceite final. Histórico de gates é G0→G8.
+**Responsável:** Miguel Oliveira · bloco 3. **Papel oficial proposto:** Plataforma e Release. **Revisor proposto:** Lucas Souza (conta real a confirmar).
+**INT:** INT-09/04. **Roteiros preservados:** D04/D07/S04. **Checkpoint:** G2 preparação/G6/G7 execução.
+**Dependências de execução:** 010, 017, 029. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
 - [ ] Validações executadas e evidências arquivadas.
@@ -10,9 +10,15 @@
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
 
+## Regra da execução por blocos
+
+Este passo pertence ao bloco **021–030 de Miguel Oliveira**. Este bloco só inicia após a passagem do passo 020. Execute seus dez passos em ordem, respeitando as entradas anteriores; não espere implementação de outro integrante para um número dentro deste bloco. Ao concluir 030, faça a passagem descrita em `04-passagem-de-bloco.md`.
+
+Revisão por outro autor, dados/acessos, consentimentos, playtest e banca continuam sendo ações humanas obrigatórias. O colega pode revisar já no primeiro bloco, antes de começar seus próprios dez passos. Finalizar este passo significa concluir seu escopo e entregar provas/contratos; não é assinalar checks de release, vídeo ou banca futuros. O próximo responsável executa a validação posterior, sem exigir que você volte a desenvolver seus passos.
+
 ## Prompt profissional — copiar este conteúdo para a IA
 
-Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Miguel Oliveira**, responsável por este passo. Execute **somente o passo 031: Automatizar pacote com vídeo como entrada humana** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
+Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Miguel Oliveira**, responsável por este passo. Execute **somente o passo 030: Implementar triagem automatizada e testes negativos** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
 
 ### Contexto e fontes obrigatórias
 
@@ -20,24 +26,24 @@ O projeto é Rota do Código/Desafio Arcade, oficina Python de cinco missões e 
 
 Repositório: https://github.com/luccalck/desafio-arcade . Fonte local de referência: `C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade`; em outro computador, localizar o clone real com `git rev-parse --show-toplevel`, não criar cópia concorrente. A branch completa estava em feature/primeiro-ciclo/PR#2; main era bootstrap. Inspecione estado atual/remotes antes de escolher base e preservar main protegida.
 
-Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro R07 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
+Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro D04/D07/S04 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
 
 Confirme instruções aplicáveis do ambiente/AGENTS.md. Dados de RAs, contas dos outros integrantes, nome do squad e aceites humanos ainda precisam confirmação; não inventar. Os arquivos deste plano foram preparados pela IA para Lucca, não contam como contribuição de Davi/Miguel/Lucas.
 
 ### Resultado específico e execução
 
-1. Automatize submissao/GDD.pdf, LINK_DO_JOGO.txt, build.zip com LEIA-ME, pitch.mp4 e MANIFESTO.sha256. Use artefato aceito por HML/PRD e vídeo humano29, sem compactar projeto manualmente nem reconstruir em deploy.
-2. Implemente entrada-video por workflow_dispatch com referência a asset privado/autorizado do GitHub ou artifact/run real, validando origem/digest/duração. Não criar placeholder mp4. Minimize permissions/actions:read/contents conforme necessidade e não expor token.
-3. Resolva ciclo: código/build/GDD aprovados → produção candidata → vídeo real → vídeo/artifact disponível → tag final → pacote/triagem; relatório final recebe evidência depois. Se preparar workflows muda SHA, execute formalmente a candidata resultante antes da tag e reconfira vídeo se comportamento/version mudou.
-4. Inclua manifesto SHA256 por arquivo e archive pacote/logs com version/source/run/URL. GitHub Release final deve anexar ZIP/checksum/SBOM/GDD; pacote pode ser asset adicional.
-5. Depois35, compare pacote, release e produção sem alterar artefato imutável.
+1. Implemente triagem real: URL200+smoke, pdfinfo+quatro seções GDD, ffprobe<=90s, ZIP descompactável/index/LEIA-ME, quatro integrantes válidos e data contra PRAZO configurado verdadeiro.
+2. Use bash no runner como adaptador para módulo testável quando útil. Corrija contagem de cabeçalho/máscara RA e truncamento de segundos dos exemplos. Não aceitar falso nome/RA só porque string tem comprimento.
+3. Gere/verifique manifesto dos quatro arquivos exigidos e bloqueie qualquer falha; TRIAGEM APROVADA somente se tudo passa.
+4. Escreva testes negativos significativos para PDF/ZIP corrompido, vídeo90.1, URLnão200, smoke falhando, squad incompleto, prazo vencido e hash divergente. Fixtures não são evidência de entrega.
+5. Execute candidata com entradas reais quando disponíveis; final na tag v1.0.0 será passo36. Horário19h é exemplo; valor de PRAZO requer dado real autorizado, sem registrar informação privada.
 
 Arquivos/configurações a inspecionar/criar/alterar **relativos ao clone real**, com escopo limitado:
 
-- `.github/workflows/esteira.yml`
-- `.github/workflows/entrada-video.yml`
-- `scripts/submissao.mjs`
-- `docs/pacote-submissao.md`
+- `scripts/triagem.sh`
+- `scripts/triagem.mjs`
+- `tests/integration/triagem.test.mjs`
+- `docs/evidencias/triagem-contratos.md`
 
 Se houver equivalente já funcional, reutilize e documente o caminho efetivo. Não substituir o projeto por scaffold novo. Quem altera workflow compartilhado coordena com Plataforma; não sobrescrever mudança de outra pessoa. Dados de monitoramento ficam em observabilidade, site em gh-pages, fonte em main/branches de PR; quatro pastas deste plano contêm somente prompts, não quatro jogos.
 
@@ -45,14 +51,21 @@ Se houver equivalente já funcional, reutilize e documente o caminho efetivo. N�
 
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
-- [ ] **OBJ-09** — Submeter os três materiais obrigatórios válidos: GDD, build jogável e vídeo, por pacote automatizado.
-- [ ] **I09-01** — Pipeline gera pasta submissao, sem montar pacote final manualmente.
-- [ ] **I09-02** — submissao/GDD.pdf gerado pela pipeline e válido.
-- [ ] **I09-03** — submissao/LINK_DO_JOGO.txt aponta à URL pública da produção formal.
-- [ ] **I09-04** — submissao/build.zip contém o site dist da mesma release promovida.
-- [ ] **I09-06** — submissao/pitch.mp4 é entrada humana real validada, não gameplay simulado.
-- [ ] **I09-07** — submissao/MANIFESTO.sha256 contém hash de cada arquivo do pacote, inclusive GDD, link, ZIP e vídeo.
-- [ ] **I09-08** — Implementar scripts/triagem.sh/job equivalente justificado, integrado à pipeline.
+- [ ] **OBJ-10** — Conferir que arquivos abrem e links funcionam: triagem sem tolerância para material corrompido/indisponível.
+- [ ] **I09-09** — Triagem confere HTTP 200 da URL pública.
+- [ ] **I09-10** — Triagem executa smoke Playwright na URL pública.
+- [ ] **I09-11** — Triagem confere PDF abre por pdfinfo.
+- [ ] **I09-12** — Triagem confere presença das quatro seções mínimas obrigatórias do GDD.
+- [ ] **I09-13** — Triagem mede vídeo com ffprobe e bloqueia duração >90 s.
+- [ ] **I09-14** — Triagem descompacta build.zip e confere index.html.
+- [ ] **I09-15** — Triagem valida exatamente quatro integrantes reais em SQUAD.md; não contar cabeçalhos como integrantes.
+- [ ] **I09-16** — Triagem valida data atual contra prazo corretamente configurado, sem assumir horário 19:00 do exemplo.
+- [ ] **I09-17** — Triagem gera/confere manifesto SHA-256 e falha se os arquivos/hash não corresponderem.
+- [ ] **I09-18** — Falha em qualquer checagem reprova o job e impede entrega considerada aprovada.
+- [ ] **KIT-21** — Ajustar validação SQUAD ao formato real; corrigir contagem de cabeçalho do exemplo (I09-15).
+- [ ] **KIT-22** — Completar validação das seções do PDF que o exemplo triagem não implementa (I09-12).
+- [ ] **KIT-23** — Medir duração real, sem truncar segundos para aceitar vídeo acima de 90 s (I09-13).
+- [ ] **KIT-24** — Prazo configurado de forma verdadeira; 19:00 é exemplo, não horário confirmado (I09-16).
 
 ### Rubrica, integridade e aceites
 
@@ -62,8 +75,8 @@ Eliminatórios: plágio/ativo sem licença zera squad; produção manual zera IN
 
 Validações específicas e resultados esperados:
 
-- npm ci/build já feitos na etapa CI; neste empacotamento baixar/checksum/gdd/video/manifesto e rodar triagem; não npm run build no deploy.
-- Workflow com entradas reais gera estrutura exata e arquivos reproduzíveis/abríveis; vídeo ainda ausente bloqueia pacote, não gera sucesso parcial.
+- node --test tests/integration/triagem.test.mjs ou suíte equivalente integrada npm run test:ci; bash scripts/triagem.sh submissao no runner.
+- Todas as falhas retornam não zero e relatório aponta causa sem segredo; não manipular relógio para passar.
 
 Para alteração de código, crie primeiro regressão significativa quando houver comportamento novo/bug verificável, execute a falha e corrija; para documentação, confira conteúdo/link/evidência sem inventar testes. Não executar teste espelhado da implementação nem repetir suites sem necessidade. CI obrigatória deve passar. No PowerShell local, configure `$env:npm_config_script_shell = (Get-Command pwsh).Source` se houver EACCES de cmd. Na CI Linux use comandos nativos do runner.
 
@@ -79,10 +92,10 @@ git config --get user.email
 gh api user --jq .login
 ```
 
-Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-031-pacote-pipeline`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
+Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-030-triagem-validadores`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
 
 ```sh
-git switch -c feature/passo-031-pacote-pipeline
+git switch -c feature/passo-030-triagem-validadores
 git diff --check
 ```
 
@@ -91,10 +104,10 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "ci: automatizar pacote com vídeo como entrada humana
+git commit -m "test: implementar triagem automatizada e testes negativos
 "
 git push -u origin HEAD
-gh pr create --base main --draft --title "Passo 031: Automatizar pacote com vídeo como entrada humana" --body-file .contexto/pr-passo-031.md
+gh pr create --base main --draft --title "Passo 030: Implementar triagem automatizada e testes negativos" --body-file .contexto/pr-passo-030.md
 ```
 
 Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Lucas Souza** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.

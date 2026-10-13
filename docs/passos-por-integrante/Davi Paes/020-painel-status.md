@@ -1,8 +1,8 @@
-# Passo 012 — Implementar sondas e histórico de observabilidade
+# Passo 020 — Publicar painel de disponibilidade e DORA
 
-**Responsável proposto:** Lucas Souza · SRE e Segurança. **Revisor proposto:** Lucca Castilho (conta real a confirmar).
-**INT:** INT-08/03. **Roteiros preservados:** S03. **Checkpoint:** G2 preparação/G4 execução.
-**Dependências de execução:** 004, 007, 011. Estes números são entradas; preparação independente pode avançar sem fingir aceite final. Histórico de gates é G0→G8.
+**Responsável:** Davi Paes · bloco 2. **Papel oficial proposto:** Desenvolvimento e Qualidade. **Revisor proposto:** Miguel Oliveira (conta real a confirmar).
+**INT:** INT-08/03. **Roteiros preservados:** S03. **Checkpoint:** G4.
+**Dependências de execução:** 012, 016, 019. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
 - [ ] Validações executadas e evidências arquivadas.
@@ -10,9 +10,15 @@
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
 
+## Regra da execução por blocos
+
+Este passo pertence ao bloco **011–020 de Davi Paes**. Este bloco só inicia após a passagem do passo 010. Execute seus dez passos em ordem, respeitando as entradas anteriores; não espere implementação de outro integrante para um número dentro deste bloco. Ao concluir 020, faça a passagem descrita em `04-passagem-de-bloco.md`.
+
+Revisão por outro autor, dados/acessos, consentimentos, playtest e banca continuam sendo ações humanas obrigatórias. O colega pode revisar já no primeiro bloco, antes de começar seus próprios dez passos. Finalizar este passo significa concluir seu escopo e entregar provas/contratos; não é assinalar checks de release, vídeo ou banca futuros. O próximo responsável executa a validação posterior, sem exigir que você volte a desenvolver seus passos.
+
 ## Prompt profissional — copiar este conteúdo para a IA
 
-Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Lucas Souza**, responsável por este passo. Execute **somente o passo 012: Implementar sondas e histórico de observabilidade** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
+Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Davi Paes**, responsável por este passo. Execute **somente o passo 020: Publicar painel de disponibilidade e DORA** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
 
 ### Contexto e fontes obrigatórias
 
@@ -26,36 +32,35 @@ Confirme instruções aplicáveis do ambiente/AGENTS.md. Dados de RAs, contas do
 
 ### Resultado específico e execução
 
-1. Crie monitor.yml schedule */15 * * * * e workflow_dispatch, permissions mínimas. Sonde HML e PRD: HTTP/tempo/versão real, seguindo carregador até release ativa quando necessário.
-2. Crie observabilidade com CSV e cabeçalho data,alvo,codigo,tempo,versao; commit apenas dados nessa branch, sem acionar publicação Pages a cada sonda.
-3. Defina resultado de rede/timeout/desconhecido explicitamente, não transformar erro em HTTP200/latência zero/uptime100. Use fixtures sintéticas somente em testes, claramente separadas de dados reais.
-4. Integre contrato de resultados ao alerta do passo16 e painel20. Agendamento pode atrasar: documente limitação no relatório e guarde horários reais.
-5. Preparar antes de PRD, ativar em G4; não depender da tag final para começar dados.
+1. Crie /status/ no Pages com disponibilidade, latência, versão produção, percentual/estado rollout e quatro DORA. Use CSV/dados reais da observabilidade e API/artefatos autorizados; nenhum backend pago/token no navegador.
+2. Mostre período, última coleta, atraso/ausência de amostras e estado desconhecido. Não usar uptime100/latência0/DORA0 como placeholders; métrica indisponível deve ser explícita.
+3. Atualize painel sem fazer cada sonda disparar deploy do jogo. Explique como dados da branch são consumidos por página estática sem exposição de segredo.
+4. Valide legibilidade/acessibilidade/teclado/celular; mantenha foco em observabilidade, não informações pessoais.
+5. Publicar URL real e inserir na ficha apenas depois de HTTP200/renderização; G4 só fecha com PRD/aprovação/monitoramento ativo.
 
 Arquivos/configurações a inspecionar/criar/alterar **relativos ao clone real**, com escopo limitado:
 
-- `.github/workflows/monitor.yml`
-- `scripts/sondar.mjs`
-- `status/sondas.csv na branch observabilidade`
-- `tests/integration/monitor.test.mjs`
+- `pages/status/index.html`
+- `scripts/status.mjs`
+- `tests/integration/status.test.mjs`
+- `docs/evidencias/painel-status.md`
 
 Se houver equivalente já funcional, reutilize e documente o caminho efetivo. Não substituir o projeto por scaffold novo. Quem altera workflow compartilhado coordena com Plataforma; não sobrescrever mudança de outra pessoa. Dados de monitoramento ficam em observabilidade, site em gh-pages, fonte em main/branches de PR; quatro pastas deste plano contêm somente prompts, não quatro jogos.
+
+O painel deve funcionar já neste bloco. Para DORA que ainda não tem dados/script do passo024, mostre indisponível e a causa, sem números fictícios. Entregue o contrato de leitura; Miguel liga os dados reais no passo024, sem precisar de implementação adicional de Davi.
 
 ### Checks pendentes atribuídos a este passo
 
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
-- [ ] **I08-01** — monitor.yml versionado com schedule a cada quinze minutos.
-- [ ] **I08-02** — Sondar produção formal.
-- [ ] **I08-03** — Sondar homologação formal.
-- [ ] **I08-04** — Registrar código HTTP de cada alvo.
-- [ ] **I08-05** — Registrar tempo de resposta de cada alvo.
-- [ ] **I08-06** — Registrar versão servida obtida de version.json.
-- [ ] **I08-07** — Acumular resultados em status/sondas.csv, com data/alvo/código/tempo e versão registrada.
-- [ ] **I08-08** — Dados na branch observabilidade; cada sonda não dispara publicação Pages.
-- [ ] **KIT-06** — monitor.yml funcional (I08-01).
-- [ ] **KIT-25** — Criar observabilidade/status/sondas.csv e cabeçalho data,alvo,codigo,tempo, registrando também versão (I08).
-- [ ] **KIT-27** — Completar versão sondada, ausente no esqueleto do monitor (I08-06).
+- [ ] **I08-16** — Publicar painel /status/ no Pages.
+- [ ] **I08-17** — Painel mostra disponibilidade.
+- [ ] **I08-18** — Painel mostra latência.
+- [ ] **I08-19** — Painel mostra versão em produção.
+- [ ] **I08-20** — Painel mostra percentual do canário/estado aplicável da estratégia.
+- [ ] **KIT-07** — Painel pages/status/index.html ou equivalente publicado (I08-16 a I08-21).
+- [ ] **FIC-10** — Link do painel /status/ — obrigatório.
+- [ ] **G4** — Produção controlada: mesma build, aprovação registrada, monitoramento ativo e versão verificável.
 
 ### Rubrica, integridade e aceites
 
@@ -65,14 +70,14 @@ Eliminatórios: plágio/ativo sem licença zera squad; produção manual zera IN
 
 Validações específicas e resultados esperados:
 
-- Teste HTTP200/não200/timeout/versão inválida e CSV válido; execute workflow_dispatch real nas URLs existentes.
-- CSV contém amostras verificáveis, branch não dispara deploy; PRD não configurada permanece pendente.
+- Teste CSV vazio/malformado, dados atrasados, falha/normalização e métricas ausentes; npx playwright test do painel real.
+- HTTP /status/ e screenshot mostram dados com origem/horário verificáveis, sem painel fictício.
 
 Para alteração de código, crie primeiro regressão significativa quando houver comportamento novo/bug verificável, execute a falha e corrija; para documentação, confira conteúdo/link/evidência sem inventar testes. Não executar teste espelhado da implementação nem repetir suites sem necessidade. CI obrigatória deve passar. No PowerShell local, configure `$env:npm_config_script_shell = (Get-Command pwsh).Source` se houver EACCES de cmd. Na CI Linux use comandos nativos do runner.
 
 ### Commit obrigatório pelo GitHub do usuário responsável
 
-**Faça commit pelo GitHub do usuário Lucas Souza, usando a própria conta autenticada e a identidade Git real desse usuário.** Não faça commit em nome de luccalck se a pessoa atual for outra, não use conta de colega e não invente e-mail/username. Verifique antes de gravar:
+**Faça commit pelo GitHub do usuário Davi Paes, usando a própria conta autenticada e a identidade Git real desse usuário.** Não faça commit em nome de luccalck se a pessoa atual for outra, não use conta de colega e não invente e-mail/username. Verifique antes de gravar:
 
 ```sh
 git status --short
@@ -82,10 +87,10 @@ git config --get user.email
 gh api user --jq .login
 ```
 
-Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-012-sondas-monitor`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
+Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-020-painel-status`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
 
 ```sh
-git switch -c feature/passo-012-sondas-monitor
+git switch -c feature/passo-020-painel-status
 git diff --check
 ```
 
@@ -94,13 +99,13 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "feat: implementar sondas e histórico de observabilidade
+git commit -m "feat: publicar painel de disponibilidade e dora
 "
 git push -u origin HEAD
-gh pr create --base main --draft --title "Passo 012: Implementar sondas e histórico de observabilidade" --body-file .contexto/pr-passo-012.md
+gh pr create --base main --draft --title "Passo 020: Publicar painel de disponibilidade e DORA" --body-file .contexto/pr-passo-020.md
 ```
 
-Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Lucca Castilho** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
+Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Miguel Oliveira** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
 
 ### Evidências, pessoas e resposta final
 

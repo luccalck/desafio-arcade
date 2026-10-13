@@ -10,13 +10,14 @@ docs/passos-por-integrante/
 ├── 01-estrutura-repositorio.md
 ├── 02-mapa-checks.md
 ├── 03-controle-execucao.md
-├── Lucca Castilho/        # 001, 005, 009, 013, 017, 021, 025, 029, 033, 037
-├── Davi Paes/             # 002, 006, 010, 014, 018, 022, 026, 030, 034, 038
-├── Miguel Oliveira/       # 003, 007, 011, 015, 019, 023, 027, 031, 035, 039
-└── Lucas Souza/           # 004, 008, 012, 016, 020, 024, 028, 032, 036, 040
+├── 04-passagem-de-bloco.md
+├── Lucca Castilho/  # 001–010
+├── Davi Paes/  # 011–020
+├── Miguel Oliveira/  # 021–030
+└── Lucas Souza/  # 031–040
 ```
 
-Cada pasta contém exatamente dez MDs de passos. O índice dá título/link/dependência para todos os números. O mapa cobre cada um dos 313 checks inicialmente abertos. Os 99 checks já executados têm evidência no checklist; reconferir os afetados por mudanças. Equilibrar quantidade de prompts não atribui participação automaticamente.
+Cada pasta contém exatamente dez MDs de passos. O índice dá título/link/dependência para todos os números. Lucca faz001–010, depois Davi011–020, Miguel021–030 e Lucas031–040; colegas revisam desde o início. O mapa cobre cada um dos 313 checks inicialmente abertos. Os 99 checks já executados têm evidência no checklist; reconferir os afetados por mudanças. Equilibrar quantidade de prompts não atribui participação automaticamente.
 
 ## Fonte a manter no repositório
 

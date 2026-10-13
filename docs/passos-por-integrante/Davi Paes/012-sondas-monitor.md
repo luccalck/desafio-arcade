@@ -1,8 +1,8 @@
-# Passo 034 — Executar estabilidade e revisão da candidata
+# Passo 012 — Implementar sondas e histórico de observabilidade
 
-**Responsável proposto:** Davi Paes · Desenvolvimento e Qualidade. **Revisor proposto:** Miguel Oliveira (conta real a confirmar).
-**INT:** INT-04/06/07. **Roteiros preservados:** D07. **Checkpoint:** G6/G7 preparação.
-**Dependências de execução:** 025, 026, 027, 029, 030, 031, 032, 033. Estes números são entradas; preparação independente pode avançar sem fingir aceite final. Histórico de gates é G0→G8.
+**Responsável:** Davi Paes · bloco 2. **Papel oficial proposto:** Desenvolvimento e Qualidade. **Revisor proposto:** Miguel Oliveira (conta real a confirmar).
+**INT:** INT-08/03. **Roteiros preservados:** S03. **Checkpoint:** G2 preparação/G4 execução.
+**Dependências de execução:** 004, 007, 011. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
 - [ ] Validações executadas e evidências arquivadas.
@@ -10,9 +10,15 @@
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
 
+## Regra da execução por blocos
+
+Este passo pertence ao bloco **011–020 de Davi Paes**. Este bloco só inicia após a passagem do passo 010. Execute seus dez passos em ordem, respeitando as entradas anteriores; não espere implementação de outro integrante para um número dentro deste bloco. Ao concluir 020, faça a passagem descrita em `04-passagem-de-bloco.md`.
+
+Revisão por outro autor, dados/acessos, consentimentos, playtest e banca continuam sendo ações humanas obrigatórias. O colega pode revisar já no primeiro bloco, antes de começar seus próprios dez passos. Finalizar este passo significa concluir seu escopo e entregar provas/contratos; não é assinalar checks de release, vídeo ou banca futuros. O próximo responsável executa a validação posterior, sem exigir que você volte a desenvolver seus passos.
+
 ## Prompt profissional — copiar este conteúdo para a IA
 
-Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Davi Paes**, responsável por este passo. Execute **somente o passo 034: Executar estabilidade e revisão da candidata** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
+Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Davi Paes**, responsável por este passo. Execute **somente o passo 012: Implementar sondas e histórico de observabilidade** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
 
 ### Contexto e fontes obrigatórias
 
@@ -20,23 +26,24 @@ O projeto é Rota do Código/Desafio Arcade, oficina Python de cinco missões e 
 
 Repositório: https://github.com/luccalck/desafio-arcade . Fonte local de referência: `C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade`; em outro computador, localizar o clone real com `git rev-parse --show-toplevel`, não criar cópia concorrente. A branch completa estava em feature/primeiro-ciclo/PR#2; main era bootstrap. Inspecione estado atual/remotes antes de escolher base e preservar main protegida.
 
-Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro D07 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
+Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro S03 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
 
 Confirme instruções aplicáveis do ambiente/AGENTS.md. Dados de RAs, contas dos outros integrantes, nome do squad e aceites humanos ainda precisam confirmação; não inventar. Os arquivos deste plano foram preparados pela IA para Lucca, não contam como contribuição de Davi/Miguel/Lucas.
 
 ### Resultado específico e execução
 
-1. Reexecute checks justificados da candidata atual: regras, conteúdo, integração, E2E, HML formal, smoke PRD, offline, versão e integridade. Teste de outro SHA só serve se a mudança não afetar o comportamento, com justificativa.
-2. Confira UI intuitiva, acessibilidade, toque, teclado, aprendizagem aprovada e ausência de bugs bloqueantes. Não ampliar funcionalidades durante estabilização.
-3. Confirme PDF, ZIP, relatórios, SBOM, scanners e entrada de vídeo verdadeiros. Não liberar tag com falha oculta ou dados pessoais.
-4. Confronte checklist e rubrica com evidência, reabra checks afetados e entregue aceite técnico à Plataforma. Isso não substitui os aceites humanos dos outros.
-5. Se houver falha, registre e corrija por PR com teste significativo. Não produzir commits vazios ou testes para inflar contador.
+1. Crie monitor.yml schedule */15 * * * * e workflow_dispatch, permissions mínimas. Sonde HML e PRD: HTTP/tempo/versão real, seguindo carregador até release ativa quando necessário.
+2. Crie observabilidade com CSV e cabeçalho data,alvo,codigo,tempo,versao; commit apenas dados nessa branch, sem acionar publicação Pages a cada sonda.
+3. Defina resultado de rede/timeout/desconhecido explicitamente, não transformar erro em HTTP200/latência zero/uptime100. Use fixtures sintéticas somente em testes, claramente separadas de dados reais.
+4. Integre contrato de resultados ao alerta do passo16 e painel20. Agendamento pode atrasar: documente limitação no relatório e guarde horários reais.
+5. Preparar antes de PRD, ativar em G4; não depender da tag final para começar dados.
 
 Arquivos/configurações a inspecionar/criar/alterar **relativos ao clone real**, com escopo limitado:
 
-- `docs/evidencias/aceite-candidata.md`
-- `tests/e2e/`
-- `docs/checklist-avaliacao.md`
+- `.github/workflows/monitor.yml`
+- `scripts/sondar.mjs`
+- `status/sondas.csv na branch observabilidade`
+- `tests/integration/monitor.test.mjs`
 
 Se houver equivalente já funcional, reutilize e documente o caminho efetivo. Não substituir o projeto por scaffold novo. Quem altera workflow compartilhado coordena com Plataforma; não sobrescrever mudança de outra pessoa. Dados de monitoramento ficam em observabilidade, site em gh-pages, fonte em main/branches de PR; quatro pastas deste plano contêm somente prompts, não quatro jogos.
 
@@ -44,8 +51,17 @@ Se houver equivalente já funcional, reutilize e documente o caminho efetivo. N�
 
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
-- [ ] **I04-17** — CONTÍNUO/FINAL: manter pirâmide e gates verdes na candidata/tag de entrega, sem bugs bloqueantes escondidos.
-- [ ] **B-10** — Jogabilidade: não há bugs bloqueantes na build demonstrada.
+- [ ] **I08-01** — monitor.yml versionado com schedule a cada quinze minutos.
+- [ ] **I08-02** — Sondar produção formal.
+- [ ] **I08-03** — Sondar homologação formal.
+- [ ] **I08-04** — Registrar código HTTP de cada alvo.
+- [ ] **I08-05** — Registrar tempo de resposta de cada alvo.
+- [ ] **I08-06** — Registrar versão servida obtida de version.json.
+- [ ] **I08-07** — Acumular resultados em status/sondas.csv, com data/alvo/código/tempo e versão registrada.
+- [ ] **I08-08** — Dados na branch observabilidade; cada sonda não dispara publicação Pages.
+- [ ] **KIT-06** — monitor.yml funcional (I08-01).
+- [ ] **KIT-25** — Criar observabilidade/status/sondas.csv e cabeçalho data,alvo,codigo,tempo, registrando também versão (I08).
+- [ ] **KIT-27** — Completar versão sondada, ausente no esqueleto do monitor (I08-06).
 
 ### Rubrica, integridade e aceites
 
@@ -55,8 +71,8 @@ Eliminatórios: plágio/ativo sem licença zera squad; produção manual zera IN
 
 Validações específicas e resultados esperados:
 
-- Execute os comandos pertinentes dos arquivos deste passo e inspecione seu resultado real, preservando SHA/run/URL/data e falhas. Comandos e caminhos existentes constam do contexto do prompt.
-- Aceite somente com prova dos checks listados, revisão de outro autor e CI verde; ação humana ausente permanece pendente. Não declarar resultados a partir de planejamento.
+- Teste HTTP200/não200/timeout/versão inválida e CSV válido; execute workflow_dispatch real nas URLs existentes.
+- CSV contém amostras verificáveis, branch não dispara deploy; PRD não configurada permanece pendente.
 
 Para alteração de código, crie primeiro regressão significativa quando houver comportamento novo/bug verificável, execute a falha e corrija; para documentação, confira conteúdo/link/evidência sem inventar testes. Não executar teste espelhado da implementação nem repetir suites sem necessidade. CI obrigatória deve passar. No PowerShell local, configure `$env:npm_config_script_shell = (Get-Command pwsh).Source` se houver EACCES de cmd. Na CI Linux use comandos nativos do runner.
 
@@ -72,10 +88,10 @@ git config --get user.email
 gh api user --jq .login
 ```
 
-Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-034-aceite-candidata`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
+Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-012-sondas-monitor`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
 
 ```sh
-git switch -c feature/passo-034-aceite-candidata
+git switch -c feature/passo-012-sondas-monitor
 git diff --check
 ```
 
@@ -84,10 +100,10 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "test: executar estabilidade e revisão da candidata
+git commit -m "feat: implementar sondas e histórico de observabilidade
 "
 git push -u origin HEAD
-gh pr create --base main --draft --title "Passo 034: Executar estabilidade e revisão da candidata" --body-file .contexto/pr-passo-034.md
+gh pr create --base main --draft --title "Passo 012: Implementar sondas e histórico de observabilidade" --body-file .contexto/pr-passo-012.md
 ```
 
 Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Miguel Oliveira** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.

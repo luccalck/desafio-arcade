@@ -1,8 +1,8 @@
-# Passo 004 — Completar segurança inicial e privacidade
+# Passo 039 — Confirmar entrega e demonstrar esteira na banca
 
-**Responsável proposto:** Lucas Souza · SRE e Segurança. **Revisor proposto:** Lucca Castilho (conta real a confirmar).
-**INT:** INT-05/08/03. **Roteiros preservados:** S01/S02. **Checkpoint:** G0/G2.
-**Dependências de execução:** 001, 003. Estes números são entradas; preparação independente pode avançar sem fingir aceite final. Histórico de gates é G0→G8.
+**Responsável:** Lucas Souza · bloco 4. **Papel oficial proposto:** SRE e Segurança. **Revisor proposto:** Lucca Castilho (conta real a confirmar).
+**INT:** INT-09/10/01/07. **Roteiros preservados:** R07/P07/S06. **Checkpoint:** G8.
+**Dependências de execução:** 035, 036, 037, 038. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
 - [ ] Validações executadas e evidências arquivadas.
@@ -10,9 +10,15 @@
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
 
+## Regra da execução por blocos
+
+Este passo pertence ao bloco **031–040 de Lucas Souza**. Este bloco só inicia após a passagem do passo 030. Execute seus dez passos em ordem, respeitando as entradas anteriores; não espere implementação de outro integrante para um número dentro deste bloco. Ao concluir 040, faça a passagem descrita em `04-passagem-de-bloco.md`.
+
+Revisão por outro autor, dados/acessos, consentimentos, playtest e banca continuam sendo ações humanas obrigatórias. O colega pode revisar já no primeiro bloco, antes de começar seus próprios dez passos. Finalizar este passo significa concluir seu escopo e entregar provas/contratos; não é assinalar checks de release, vídeo ou banca futuros. O próximo responsável executa a validação posterior, sem exigir que você volte a desenvolver seus passos.
+
 ## Prompt profissional — copiar este conteúdo para a IA
 
-Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Lucas Souza**, responsável por este passo. Execute **somente o passo 004: Completar segurança inicial e privacidade** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
+Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Lucas Souza**, responsável por este passo. Execute **somente o passo 039: Confirmar entrega e demonstrar esteira na banca** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
 
 ### Contexto e fontes obrigatórias
 
@@ -20,24 +26,24 @@ O projeto é Rota do Código/Desafio Arcade, oficina Python de cinco missões e 
 
 Repositório: https://github.com/luccalck/desafio-arcade . Fonte local de referência: `C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade`; em outro computador, localizar o clone real com `git rev-parse --show-toplevel`, não criar cópia concorrente. A branch completa estava em feature/primeiro-ciclo/PR#2; main era bootstrap. Inspecione estado atual/remotes antes de escolher base e preservar main protegida.
 
-Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro S01/S02 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
+Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro R07/P07/S06 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
 
 Confirme instruções aplicáveis do ambiente/AGENTS.md. Dados de RAs, contas dos outros integrantes, nome do squad e aceites humanos ainda precisam confirmação; não inventar. Os arquivos deste plano foram preparados pela IA para Lucca, não contam como contribuição de Davi/Miguel/Lucas.
 
 ### Resultado específico e execução
 
-1. Verifique execução de Dependabot updates e estado de alerts. Existe YAML, mas a API anterior informou alerts disabled/escopo insuficiente; investigue uma vez, peça autenticação ao usuário se indispensável, não imprima tokens.
-2. Revise scanner Gitleaks, hook e política de vulnerabilidade: produção crítica bloqueia build; exposição real exige revogação. Use somente fixture sintética claramente falsa se testar scanner; nunca credencial real.
-3. Documente ausência de telemetria no README e confirme no código/rede que não se solicita dado pessoal. Se propuser telemetria, limitar a anônima/agregada, finalidade pública e validação humana antes de adicionar.
-4. Trate ranking/Godot/conteúdo Opal como condicionais sem implementá-los sem necessidade. Verifique a segurança dos futuros jobs sem ampliar permissões por conveniência.
-5. Equipe confirma política, direito de uso e notificações básicas; G0 só é aceito com equipe/acessos/políticas comprovados.
+1. Baixe artefatos da pipeline, relatório e ficha aprovados. Não montar ZIP manualmente. Confirme acesso do professor ao repositório, releases, CI, produção, HML, status, vídeo e documentos.
+2. Oriente o responsável humano a anexar pacote, relatório e TXT no AVA e guardar recibo/acesso dos arquivos. Não declarar envio sem recibo; upload precisa de autorização no contexto que o executa.
+3. Na banca, os quatro mostram commit/PR/CI, aprovação, produção, falha controlada, alerta e rollback em menos de cinco minutos incluindo Pages, sem queda da URL.
+4. Dividir fala de dez minutos, demonstração de cinco e perguntas de cinco. Os quatro precisam participar e dominar o trabalho real de seus blocos. Lucas coordena esta entrega; ensaio não é banca realizada.
+5. Após demonstração, confirmar serviço/versão/alertas normais e preservar histórico; fator individual é conferido pelo professor.
 
 Arquivos/configurações a inspecionar/criar/alterar **relativos ao clone real**, com escopo limitado:
 
-- `.github/dependabot.yml`
-- `SECURITY.md`
-- `README.md`
-- `docs/evidencias/seguranca-inicial.md`
+- `Pacote automatizado submissao`
+- `RelatorioTecnico.pdf`
+- `Ficha TXT`
+- `docs/evidencias/entrega-banca.md`
 
 Se houver equivalente já funcional, reutilize e documente o caminho efetivo. Não substituir o projeto por scaffold novo. Quem altera workflow compartilhado coordena com Plataforma; não sobrescrever mudança de outra pessoa. Dados de monitoramento ficam em observabilidade, site em gh-pages, fonte em main/branches de PR; quatro pastas deste plano contêm somente prompts, não quatro jogos.
 
@@ -45,15 +51,16 @@ Se houver equivalente já funcional, reutilize e documente o caminho efetivo. N�
 
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
-- [ ] **SQ-09** — SRE assume observabilidade, alertas, DORA, segurança, licenças e triagem.
-- [ ] **I03-13** — CONTÍNUO: revisar permissões/secrets/variables após adicionar deploys, sondas e triagem.
-- [ ] **I05-06** — Dependabot efetivamente ativado e verificável no repositório. YAML existe; execução ainda não comprovada e alertas API informaram disabled.
-- [ ] **I08-33** — CONDICIONAL: contagem anônima de partidas/fases, se adotada; sem identificar jogador, finalidade documentada.
-- [ ] **DIR-09** — CONTÍNUO/FINAL: reconferir ausência de coleta pessoal na build entregue, incluindo serviços/telemetria adicionados.
-- [ ] **DIR-10** — CONDICIONAL ranking: só apelido escolhido na hora e guardado no navegador. Jogo atual não tem ranking.
-- [ ] **DIR-11** — CONDICIONAL telemetria: somente anônima e agregada, com coleta/finalidade explicadas no README.
-- [ ] **DIR-12** — Documentar explicitamente no README a ausência de telemetria atual; GDD já declara ausência.
-- [ ] **G0** — Preparação: equipe registrada, acessos funcionando, estratégia Git e proteção preparadas. **Primeiro aceite incompleto.**
+- [ ] **SQ-12** — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 3.
+- [ ] **SQ-16** — Participação do integrante 3 na banca, com domínio de sua contribuição.
+- [ ] **I07-24** — Executar a demonstração cronometrada pedida pelo professor na banca.
+- [ ] **CR-04** — Conferir marco de entrega: tag v1.0.0, pacote, relatório técnico e ficha TXT enviados ao AVA; horário do início da aula não é inferido do script.
+- [ ] **CR-05** — Confirmar recibo/acesso dos anexos no AVA e URLs para o professor, sem declarar envio que não ocorreu.
+- [ ] **CR-07** — Ensaiar demonstração ao vivo de cinco minutos com falha injetada e rollback.
+- [ ] **B-03** — Viabilidade técnica/execução (25%): demonstrar commit → produção ao vivo.
+- [ ] **B-04** — Viabilidade técnica/execução: demonstrar falha injetada → alerta → rollback, com continuidade.
+- [ ] **B-05** — Viabilidade técnica/execução: justificar manutenção e evolução da solução.
+- [ ] **G8** — Entrega/banca: pacote/relatório/TXT enviados, acesso confirmado e demonstração ensaiada.
 
 ### Rubrica, integridade e aceites
 
@@ -63,8 +70,8 @@ Eliminatórios: plágio/ativo sem licença zera squad; produção manual zera IN
 
 Validações específicas e resultados esperados:
 
-- npm audit --omit=dev --audit-level=critical; npm sbom --sbom-format cyclonedx; executar scanner instalado com --redact.
-- Dependabot ativo comprovado por configuração/execução acessível ou limitação pendente. README registra dados/telemetria corretamente.
+- Execute os comandos pertinentes dos arquivos deste passo e inspecione seu resultado real, preservando SHA/run/URL/data e falhas. Comandos e caminhos existentes constam do contexto do prompt.
+- Aceite somente com prova dos checks listados, revisão de outro autor e CI verde; ação humana ausente permanece pendente. Não declarar resultados a partir de planejamento.
 
 Para alteração de código, crie primeiro regressão significativa quando houver comportamento novo/bug verificável, execute a falha e corrija; para documentação, confira conteúdo/link/evidência sem inventar testes. Não executar teste espelhado da implementação nem repetir suites sem necessidade. CI obrigatória deve passar. No PowerShell local, configure `$env:npm_config_script_shell = (Get-Command pwsh).Source` se houver EACCES de cmd. Na CI Linux use comandos nativos do runner.
 
@@ -80,10 +87,10 @@ git config --get user.email
 gh api user --jq .login
 ```
 
-Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-004-dependabot-privacidade`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
+Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-039-entrega-acessos-demo`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
 
 ```sh
-git switch -c feature/passo-004-dependabot-privacidade
+git switch -c feature/passo-039-entrega-acessos-demo
 git diff --check
 ```
 
@@ -92,17 +99,17 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "fix: completar segurança inicial e privacidade
+git commit -m "docs: confirmar entrega e demonstrar esteira na banca
 "
 git push -u origin HEAD
-gh pr create --base main --draft --title "Passo 004: Completar segurança inicial e privacidade" --body-file .contexto/pr-passo-004.md
+gh pr create --base main --draft --title "Passo 039: Confirmar entrega e demonstrar esteira na banca" --body-file .contexto/pr-passo-039.md
 ```
 
 Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Lucca Castilho** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
 
 ### Evidências, pessoas e resposta final
 
-Revisão de outro integrante antes do merge. Não simular identidade ou aceite.
+Entrega AVA e banca dependem de pessoa real ou serviço autorizado no contexto. Não simular apresentação, recibo, envio ou nota.
 
 Atualize `docs/checklist-avaliacao.md` só com provas: data real, SHA/tag/run/URL, arquivos, comandos e resultado. Atualize AI-USAGE com ferramenta/finalidade/prompt resumido/resultado/revisão/PR verdadeiro. Registre status no `03-controle-execucao.md` e índice de evidências, sem dizer que todo INT foi aceito quando apenas parte foi concluída.
 

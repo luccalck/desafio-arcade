@@ -1,8 +1,8 @@
-# Passo 025 — Revisar GDD vivo e PDF da candidata final
+# Passo 035 — Criar tag final e executar release formal
 
-**Responsável proposto:** Lucca Castilho · Produto e Game Design. **Revisor proposto:** Davi Paes (conta real a confirmar).
-**INT:** INT-02/10/06. **Roteiros preservados:** P02/P07. **Checkpoint:** G5/G6.
-**Dependências de execução:** 005, 009, 021, 024. Estes números são entradas; preparação independente pode avançar sem fingir aceite final. Histórico de gates é G0→G8.
+**Responsável:** Lucas Souza · bloco 4. **Papel oficial proposto:** SRE e Segurança. **Revisor proposto:** Lucca Castilho (conta real a confirmar).
+**INT:** INT-01/03/06/07/09. **Roteiros preservados:** R05/R07. **Checkpoint:** G7.
+**Dependências de execução:** 031, 032, 033, 034. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
 - [ ] Validações executadas e evidências arquivadas.
@@ -10,9 +10,15 @@
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
 
+## Regra da execução por blocos
+
+Este passo pertence ao bloco **031–040 de Lucas Souza**. Este bloco só inicia após a passagem do passo 030. Execute seus dez passos em ordem, respeitando as entradas anteriores; não espere implementação de outro integrante para um número dentro deste bloco. Ao concluir 040, faça a passagem descrita em `04-passagem-de-bloco.md`.
+
+Revisão por outro autor, dados/acessos, consentimentos, playtest e banca continuam sendo ações humanas obrigatórias. O colega pode revisar já no primeiro bloco, antes de começar seus próprios dez passos. Finalizar este passo significa concluir seu escopo e entregar provas/contratos; não é assinalar checks de release, vídeo ou banca futuros. O próximo responsável executa a validação posterior, sem exigir que você volte a desenvolver seus passos.
+
 ## Prompt profissional — copiar este conteúdo para a IA
 
-Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Lucca Castilho**, responsável por este passo. Execute **somente o passo 025: Revisar GDD vivo e PDF da candidata final** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
+Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Lucas Souza**, responsável por este passo. Execute **somente o passo 035: Criar tag final e executar release formal** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
 
 ### Contexto e fontes obrigatórias
 
@@ -20,24 +26,24 @@ O projeto é Rota do Código/Desafio Arcade, oficina Python de cinco missões e 
 
 Repositório: https://github.com/luccalck/desafio-arcade . Fonte local de referência: `C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade`; em outro computador, localizar o clone real com `git rev-parse --show-toplevel`, não criar cópia concorrente. A branch completa estava em feature/primeiro-ciclo/PR#2; main era bootstrap. Inspecione estado atual/remotes antes de escolher base e preservar main protegida.
 
-Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro P02/P07 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
+Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro R05/R07 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
 
 Confirme instruções aplicáveis do ambiente/AGENTS.md. Dados de RAs, contas dos outros integrantes, nome do squad e aceites humanos ainda precisam confirmação; não inventar. Os arquivos deste plano foram preparados pela IA para Lucca, não contam como contribuição de Davi/Miguel/Lucas.
 
 ### Resultado específico e execução
 
-1. Confronte doze seções/tabelas/declarações do modelo e mínimo HTML com implementação atual, telas Stitch reais, fluxos/mapas e IA/direitos. Identificação real precisa estar completa.
-2. Garanta atualização por PR em cada mudança de mecânica, com revisão de outro integrante. Arquive PDF automático e valide pdfinfo/legibilidade página a página.
-3. Use versão SemVer/data geradas/coerentes com a candidata e futura tag, sem retroagir. Links vídeo/release/produção só entram quando disponíveis; manter pendência até prova.
-4. Confirme high concept <=1000 caracteres e roadmap claramente futuro. Não usar GDD como relatório técnico.
-5. Prepare GDD final para release; depois do passo35 reconfira tag/metadata e reabra checks se divergir.
+1. Após PRs revisados, CI e aceites humanos, selecione commit main aprovado e confirme SemVer 1.0.0, GDD, data e vídeo. Crie tag anotada com data real; não mover tags públicas nem retroagir.
+2. Acompanhe pipeline da tag: CI, HML/E2E, aprovação producao, PRD azul-verde, smoke e pacote. Deve ser o mesmo artefato entre HML e PRD.
+3. Reviewer humano aprova. Preserve links de checks, commit, tag, deployment, release, notas, anexos, hash e URLs. Restaurar main como padrão se ainda não ocorreu no passo 003.
+4. Confira GitHub Release com ZIP, checksum, SBOM, GDD e notas revisadas; pacote abaixo de 25 MB/offline e URLs produção/HML/status disponíveis.
+5. Não declarar triagem final antes do passo 036 ou envio AVA antes do passo 039. Preserve tentativas com falha.
 
 Arquivos/configurações a inspecionar/criar/alterar **relativos ao clone real**, com escopo limitado:
 
-- `docs/gdd.md`
-- `scripts/gdd-pdf.mjs`
-- `docs/evidencias/gdd-final.md`
-- `docs/images/`
+- `Tag anotada v1.0.0`
+- `GitHub Release v1.0.0`
+- `docs/evidencias/release-final.md`
+- `README.md`
 
 Se houver equivalente já funcional, reutilize e documente o caminho efetivo. Não substituir o projeto por scaffold novo. Quem altera workflow compartilhado coordena com Plataforma; não sobrescrever mudança de outra pessoa. Dados de monitoramento ficam em observabilidade, site em gh-pages, fonte em main/branches de PR; quatro pastas deste plano contêm somente prompts, não quatro jogos.
 
@@ -45,11 +51,17 @@ Se houver equivalente já funcional, reutilize e documente o caminho efetivo. N�
 
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
-- [ ] **I02-09** — GDD efetivamente revisado e aprovado por PR por outro integrante.
+- [ ] **I01-11** — Tag SemVer anotada v1.0.0 da entrega, criada sobre versão aprovada.
+
 - [ ] **I02-13** — Versão e data do GDD coerentes com a tag de release final. Não existe tag final.
-- [ ] **I02-14** — AVANÇADO: GDD vivo, atualizado por PR revisado a cada mudança de mecânica.
-- [ ] **GDD-14** — Versão/data coerentes com release, links finais reais e acessíveis.
-- [ ] **GDD-16** — Revisão humana de texto, tabelas, declarações, mapas e legibilidade da versão final do PDF.
+
+- [ ] **I03-09** — Clone limpo reproduz esteira formal completa, sem passos ocultos/configuração local indispensável. CI atual clona e testa; deploy formal ausente.
+
+- [ ] **I06-15** — Hash do ZIP promovido à produção formal bate com o da GitHub Release.
+
+- [ ] **I06-17** — CONTÍNUO/FINAL: conferir offline, tamanho, versão, SHA, data e integridade da release final.
+
+- [ ] **I06-18** — AVANÇADO: reunir reprodutibilidade comprovada, notas revisadas e SBOM/GDD anexados na mesma release.
 
 ### Rubrica, integridade e aceites
 
@@ -59,14 +71,14 @@ Eliminatórios: plágio/ativo sem licença zera squad; produção manual zera IN
 
 Validações específicas e resultados esperados:
 
-- npm run gdd:pdf; pdfinfo artifacts/GDD.pdf; inspeção visual e extração de texto versão/seções.
-- PR humano aprovado; PDFs/links e metadata final conferidos após release35.
+- Somente no commit aprovado: git tag -a v1.0.0 -m "Entrega Desafio Arcade v1.0.0"; git push origin v1.0.0; acompanhar gh run view e gh release view v1.0.0.
+- Compare hash HML/PRD/release e links. Nunca executar npm run build no deploy para criar outro artefato.
 
 Para alteração de código, crie primeiro regressão significativa quando houver comportamento novo/bug verificável, execute a falha e corrija; para documentação, confira conteúdo/link/evidência sem inventar testes. Não executar teste espelhado da implementação nem repetir suites sem necessidade. CI obrigatória deve passar. No PowerShell local, configure `$env:npm_config_script_shell = (Get-Command pwsh).Source` se houver EACCES de cmd. Na CI Linux use comandos nativos do runner.
 
 ### Commit obrigatório pelo GitHub do usuário responsável
 
-**Faça commit pelo GitHub do usuário Lucca Castilho, usando a própria conta autenticada e a identidade Git real desse usuário.** Não faça commit em nome de luccalck se a pessoa atual for outra, não use conta de colega e não invente e-mail/username. Verifique antes de gravar:
+**Faça commit pelo GitHub do usuário Lucas Souza, usando a própria conta autenticada e a identidade Git real desse usuário.** Não faça commit em nome de luccalck se a pessoa atual for outra, não use conta de colega e não invente e-mail/username. Verifique antes de gravar:
 
 ```sh
 git status --short
@@ -76,10 +88,10 @@ git config --get user.email
 gh api user --jq .login
 ```
 
-Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-025-gdd-vivo-pdf`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
+Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-035-tag-final-release`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
 
 ```sh
-git switch -c feature/passo-025-gdd-vivo-pdf
+git switch -c feature/passo-035-tag-final-release
 git diff --check
 ```
 
@@ -88,17 +100,17 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: revisar gdd vivo e pdf da candidata final
+git commit -m "ci: criar tag final e executar release formal
 "
 git push -u origin HEAD
-gh pr create --base main --draft --title "Passo 025: Revisar GDD vivo e PDF da candidata final" --body-file .contexto/pr-passo-025.md
+gh pr create --base main --draft --title "Passo 035: Criar tag final e executar release formal" --body-file .contexto/pr-passo-035.md
 ```
 
-Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Davi Paes** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
+Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Lucca Castilho** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
 
 ### Evidências, pessoas e resposta final
 
-Revisão de outro integrante antes do merge. Não simular identidade ou aceite.
+Tag exige aceite real dos quatro e aprovação do environment pelo reviewer humano. Sem isso, preparar e manter pendente.
 
 Atualize `docs/checklist-avaliacao.md` só com provas: data real, SHA/tag/run/URL, arquivos, comandos e resultado. Atualize AI-USAGE com ferramenta/finalidade/prompt resumido/resultado/revisão/PR verdadeiro. Registre status no `03-controle-execucao.md` e índice de evidências, sem dizer que todo INT foi aceito quando apenas parte foi concluída.
 

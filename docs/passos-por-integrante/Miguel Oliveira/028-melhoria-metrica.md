@@ -1,8 +1,8 @@
-# Passo 021 — Realizar playtest e registrar aprendizagem real
+# Passo 028 — Implementar e medir melhoria orientada por DORA
 
-**Responsável proposto:** Lucca Castilho · Produto e Game Design. **Revisor proposto:** Davi Paes (conta real a confirmar).
-**INT:** INT-04/10/02. **Roteiros preservados:** P05/D06. **Checkpoint:** G5.
-**Dependências de execução:** 013, 019, 020. Estes números são entradas; preparação independente pode avançar sem fingir aceite final. Histórico de gates é G0→G8.
+**Responsável:** Miguel Oliveira · bloco 3. **Papel oficial proposto:** Plataforma e Release. **Revisor proposto:** Lucas Souza (conta real a confirmar).
+**INT:** INT-08/03/09. **Roteiros preservados:** S05/S06. **Checkpoint:** G5/G6.
+**Dependências de execução:** 024, 026, 027. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
 - [ ] Validações executadas e evidências arquivadas.
@@ -10,9 +10,15 @@
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
 
+## Regra da execução por blocos
+
+Este passo pertence ao bloco **021–030 de Miguel Oliveira**. Este bloco só inicia após a passagem do passo 020. Execute seus dez passos em ordem, respeitando as entradas anteriores; não espere implementação de outro integrante para um número dentro deste bloco. Ao concluir 030, faça a passagem descrita em `04-passagem-de-bloco.md`.
+
+Revisão por outro autor, dados/acessos, consentimentos, playtest e banca continuam sendo ações humanas obrigatórias. O colega pode revisar já no primeiro bloco, antes de começar seus próprios dez passos. Finalizar este passo significa concluir seu escopo e entregar provas/contratos; não é assinalar checks de release, vídeo ou banca futuros. O próximo responsável executa a validação posterior, sem exigir que você volte a desenvolver seus passos.
+
 ## Prompt profissional — copiar este conteúdo para a IA
 
-Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Lucca Castilho**, responsável por este passo. Execute **somente o passo 021: Realizar playtest e registrar aprendizagem real** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
+Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Miguel Oliveira**, responsável por este passo. Execute **somente o passo 028: Implementar e medir melhoria orientada por DORA** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
 
 ### Contexto e fontes obrigatórias
 
@@ -20,24 +26,23 @@ O projeto é Rota do Código/Desafio Arcade, oficina Python de cinco missões e 
 
 Repositório: https://github.com/luccalck/desafio-arcade . Fonte local de referência: `C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade`; em outro computador, localizar o clone real com `git rev-parse --show-toplevel`, não criar cópia concorrente. A branch completa estava em feature/primeiro-ciclo/PR#2; main era bootstrap. Inspecione estado atual/remotes antes de escolher base e preservar main protegida.
 
-Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro P05/D06 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
+Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro S05/S06 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
 
 Confirme instruções aplicáveis do ambiente/AGENTS.md. Dados de RAs, contas dos outros integrantes, nome do squad e aceites humanos ainda precisam confirmação; não inventar. Os arquivos deste plano foram preparados pela IA para Lucca, não contam como contribuição de Davi/Miguel/Lucas.
 
 ### Resultado específico e execução
 
-1. Convide colega de outra turma a jogar três minutos sem explicação. A pessoa real precisa fazer o teste; IA prepara protocolo, não responde no lugar dela.
-2. Observe compreensão, diversão e aprendizagem, objetivo/controles/feedback e bugs bloqueantes; registre fatos anônimos, data/build/URL e limites da amostra, não estatística inventada.
-3. Priorize melhorias observadas sem ampliar escopo desnecessariamente; se mudar mecânica, obter concepção/atualizar GDD por PR. Defeito real recebe Issue/teste/correção verificáveis.
-4. Conecte achados ao diferencial para B25/30 e retrospectiva, mantendo interpretações separadas de observação.
-5. Confira coerência dos casos educativos com motor Python e habilidade transferível, sem prometer aprendizagem medida por XP.
+1. Escolha gargalo real observado em DORA/ensaio, defina hipótese e intervenção pequena mensurável: tempo HML/propagação/recuperação, por exemplo. Não assumir melhoria antes de medir.
+2. Faça alteração substantiva no componente responsável, com testes e revisão do dono para evitar conflito. Não criar commits de fachada só para terceiro INT.
+3. Reexecute esteira/sonda e calcule métricas após a mudança, comparando períodos/limites da amostra. Preserve resultados sem melhoria também.
+4. Atualize painel e retrospectiva com antes/depois/decisão/efeito e links das execuções; não expor segredo nem forçar outage para inflar métrica.
+5. Confirme G5 somente após recuperação real/Issues/bug/playtest e dados verificáveis.
 
 Arquivos/configurações a inspecionar/criar/alterar **relativos ao clone real**, com escopo limitado:
 
-- `docs/evidencias/playtest.md`
-- `docs/backlog.md`
-- `docs/gdd.md`
-- `tests/e2e/workshop.spec.mjs quando correção real`
+- `docs/evidencias/melhoria-dora.md`
+- `scripts/dora.mjs`
+- `workflow ou script efetivamente identificado pelos dados`
 
 Se houver equivalente já funcional, reutilize e documente o caminho efetivo. Não substituir o projeto por scaffold novo. Quem altera workflow compartilhado coordena com Plataforma; não sobrescrever mudança de outra pessoa. Dados de monitoramento ficam em observabilidade, site em gh-pages, fonte em main/branches de PR; quatro pastas deste plano contêm somente prompts, não quatro jogos.
 
@@ -45,10 +50,11 @@ Se houver equivalente já funcional, reutilize e documente o caminho efetivo. N�
 
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
-- [ ] **B-06** — Jogabilidade (30%): colega de outra turma joga por três minutos sem explicação.
-- [ ] **B-07** — Jogabilidade: observar/registrar compreensão real, sem inventar respostas.
-- [ ] **B-08** — Jogabilidade: observar/registrar diversão real.
-- [ ] **B-09** — Jogabilidade: observar/registrar aprendizagem real.
+- [ ] **ARQ-09** — Alertas/métricas retornam ao backlog e orientam mudança real pela esteira.
+- [ ] **I08-28** — Tomar decisão de melhoria a partir dos dados reais.
+- [ ] **I08-29** — Medir/documentar efeito da melhoria, sem fabricar ganho ou quantidade mínima de execuções.
+- [ ] **I08-32** — AVANÇADO: melhoria orientada por métrica com resultado verificável.
+- [ ] **G5** — Recuperação/dados: rollback comprovado, Issues tratadas, DORA real, bug/regressão e playtest documentados.
 
 ### Rubrica, integridade e aceites
 
@@ -58,14 +64,14 @@ Eliminatórios: plágio/ativo sem licença zera squad; produção manual zera IN
 
 Validações específicas e resultados esperados:
 
-- Sessão humana comprovada por registro autorizado sem nome/dado pessoal do jogador, duração real e build identificada.
-- Se correção existir: falha reproduzida antes, teste passa depois; sem inventar bug.
+- Executar teste específico do componente modificado, CI e scripts/dora.mjs real com origem/janela.
+- Resultado medido e limitação da comparação descritos; ausência de efeito não vira ganho fictício.
 
 Para alteração de código, crie primeiro regressão significativa quando houver comportamento novo/bug verificável, execute a falha e corrija; para documentação, confira conteúdo/link/evidência sem inventar testes. Não executar teste espelhado da implementação nem repetir suites sem necessidade. CI obrigatória deve passar. No PowerShell local, configure `$env:npm_config_script_shell = (Get-Command pwsh).Source` se houver EACCES de cmd. Na CI Linux use comandos nativos do runner.
 
 ### Commit obrigatório pelo GitHub do usuário responsável
 
-**Faça commit pelo GitHub do usuário Lucca Castilho, usando a própria conta autenticada e a identidade Git real desse usuário.** Não faça commit em nome de luccalck se a pessoa atual for outra, não use conta de colega e não invente e-mail/username. Verifique antes de gravar:
+**Faça commit pelo GitHub do usuário Miguel Oliveira, usando a própria conta autenticada e a identidade Git real desse usuário.** Não faça commit em nome de luccalck se a pessoa atual for outra, não use conta de colega e não invente e-mail/username. Verifique antes de gravar:
 
 ```sh
 git status --short
@@ -75,10 +81,10 @@ git config --get user.email
 gh api user --jq .login
 ```
 
-Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-021-playtest-real`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
+Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-028-melhoria-metrica`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
 
 ```sh
-git switch -c feature/passo-021-playtest-real
+git switch -c feature/passo-028-melhoria-metrica
 git diff --check
 ```
 
@@ -87,17 +93,17 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: realizar playtest e registrar aprendizagem real
+git commit -m "fix: implementar e medir melhoria orientada por dora
 "
 git push -u origin HEAD
-gh pr create --base main --draft --title "Passo 021: Realizar playtest e registrar aprendizagem real" --body-file .contexto/pr-passo-021.md
+gh pr create --base main --draft --title "Passo 028: Implementar e medir melhoria orientada por DORA" --body-file .contexto/pr-passo-028.md
 ```
 
-Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Davi Paes** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
+Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Lucas Souza** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
 
 ### Evidências, pessoas e resposta final
 
-Playtest e resposta do participante são ações humanas; se ninguém estiver disponível, deixar a tarefa pendente com protocolo pronto.
+Revisão de outro integrante antes do merge. Não simular identidade ou aceite.
 
 Atualize `docs/checklist-avaliacao.md` só com provas: data real, SHA/tag/run/URL, arquivos, comandos e resultado. Atualize AI-USAGE com ferramenta/finalidade/prompt resumido/resultado/revisão/PR verdadeiro. Registre status no `03-controle-execucao.md` e índice de evidências, sem dizer que todo INT foi aceito quando apenas parte foi concluída.
 

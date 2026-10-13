@@ -4,7 +4,7 @@ Um jogo educativo WEB para aprender programação construindo as regras de um mi
 
 **[Jogar no navegador](https://luccalck.github.io/desafio-arcade/)** · **[GDD completo](docs/gdd.md)** · **[Checklist completo de pendências](docs/checklist-avaliacao.md)** · **[Auditoria do enunciado](docs/auditoria-avaliacao.md)**
 
-**[40 passos e prompts por integrante](docs/passos-por-integrante/00-indice-geral.md)** — dez arquivos para cada pessoa, com dependências, checks, validações, commit pela própria conta e revisão cruzada. [Estrutura exata do repositório e entregáveis](docs/passos-por-integrante/01-estrutura-repositorio.md).
+**[40 passos e prompts em blocos](docs/passos-por-integrante/00-indice-geral.md)** — Lucca executa 001–010, depois Davi 011–020, Miguel 021–030 e Lucas 031–040. Dez arquivos por pessoa, com dependências anteriores, checks, validações, commit pela própria conta e revisão cruzada desde o início. [Passagem de bloco](docs/passos-por-integrante/04-passagem-de-bloco.md) e [estrutura exata do repositório e entregáveis](docs/passos-por-integrante/01-estrutura-repositorio.md).
 
 O jogo é estático, responsivo e funciona offline. O jogador não precisa instalar Node, Python ou uma engine. O editor executa um subconjunto educativo de Python documentado no GDD, sem backend ou conta.
 

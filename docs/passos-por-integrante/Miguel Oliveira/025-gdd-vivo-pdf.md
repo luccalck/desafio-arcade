@@ -1,8 +1,8 @@
-# Passo 039 — Confirmar entrega e demonstrar esteira na banca
+# Passo 025 — Revisar GDD vivo e PDF da candidata final
 
-**Responsável proposto:** Miguel Oliveira · Plataforma e Release. **Revisor proposto:** Lucas Souza (conta real a confirmar).
-**INT:** INT-09/10/01/07. **Roteiros preservados:** R07/P07/S06. **Checkpoint:** G8.
-**Dependências de execução:** 035, 036, 037, 038. Estes números são entradas; preparação independente pode avançar sem fingir aceite final. Histórico de gates é G0→G8.
+**Responsável:** Miguel Oliveira · bloco 3. **Papel oficial proposto:** Plataforma e Release. **Revisor proposto:** Lucas Souza (conta real a confirmar).
+**INT:** INT-02/10/06. **Roteiros preservados:** P02/P07. **Checkpoint:** G5/G6.
+**Dependências de execução:** 005, 009, 021, 024. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
 - [ ] Validações executadas e evidências arquivadas.
@@ -10,9 +10,15 @@
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
 
+## Regra da execução por blocos
+
+Este passo pertence ao bloco **021–030 de Miguel Oliveira**. Este bloco só inicia após a passagem do passo 020. Execute seus dez passos em ordem, respeitando as entradas anteriores; não espere implementação de outro integrante para um número dentro deste bloco. Ao concluir 030, faça a passagem descrita em `04-passagem-de-bloco.md`.
+
+Revisão por outro autor, dados/acessos, consentimentos, playtest e banca continuam sendo ações humanas obrigatórias. O colega pode revisar já no primeiro bloco, antes de começar seus próprios dez passos. Finalizar este passo significa concluir seu escopo e entregar provas/contratos; não é assinalar checks de release, vídeo ou banca futuros. O próximo responsável executa a validação posterior, sem exigir que você volte a desenvolver seus passos.
+
 ## Prompt profissional — copiar este conteúdo para a IA
 
-Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Miguel Oliveira**, responsável por este passo. Execute **somente o passo 039: Confirmar entrega e demonstrar esteira na banca** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
+Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Miguel Oliveira**, responsável por este passo. Execute **somente o passo 025: Revisar GDD vivo e PDF da candidata final** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
 
 ### Contexto e fontes obrigatórias
 
@@ -20,24 +26,24 @@ O projeto é Rota do Código/Desafio Arcade, oficina Python de cinco missões e 
 
 Repositório: https://github.com/luccalck/desafio-arcade . Fonte local de referência: `C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade`; em outro computador, localizar o clone real com `git rev-parse --show-toplevel`, não criar cópia concorrente. A branch completa estava em feature/primeiro-ciclo/PR#2; main era bootstrap. Inspecione estado atual/remotes antes de escolher base e preservar main protegida.
 
-Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro R07/P07/S06 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
+Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro P02/P07 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
 
 Confirme instruções aplicáveis do ambiente/AGENTS.md. Dados de RAs, contas dos outros integrantes, nome do squad e aceites humanos ainda precisam confirmação; não inventar. Os arquivos deste plano foram preparados pela IA para Lucca, não contam como contribuição de Davi/Miguel/Lucas.
 
 ### Resultado específico e execução
 
-1. Baixe artefatos da pipeline, relatório e ficha aprovados. Não montar ZIP manualmente. Confirme acesso do professor ao repositório, releases, CI, produção, HML, status, vídeo e documentos.
-2. Oriente o responsável humano a anexar pacote, relatório e TXT no AVA e guardar recibo/acesso dos arquivos. Não declarar envio sem recibo; upload precisa de autorização no contexto que o executa.
-3. Na banca, os quatro mostram commit/PR/CI, aprovação, produção, falha controlada, alerta e rollback em menos de cinco minutos incluindo Pages, sem queda da URL.
-4. Dividir fala de dez minutos, demonstração de cinco e perguntas de cinco. Miguel precisa participar e dominar seu trabalho em INT-01/03/06/07. Ensaio não é banca realizada.
-5. Após demonstração, confirmar serviço/versão/alertas normais e preservar histórico; fator individual é conferido pelo professor.
+1. Confronte doze seções/tabelas/declarações do modelo e mínimo HTML com implementação atual, telas Stitch reais, fluxos/mapas e IA/direitos. Identificação real precisa estar completa.
+2. Garanta atualização por PR em cada mudança de mecânica, com revisão de outro integrante. Arquive PDF automático e valide pdfinfo/legibilidade página a página.
+3. Use versão SemVer/data geradas/coerentes com a candidata e futura tag, sem retroagir. Links vídeo/release/produção só entram quando disponíveis; manter pendência até prova.
+4. Confirme high concept <=1000 caracteres e roadmap claramente futuro. Não usar GDD como relatório técnico.
+5. Prepare GDD final para release; depois do passo35 reconfira tag/metadata e reabra checks se divergir.
 
 Arquivos/configurações a inspecionar/criar/alterar **relativos ao clone real**, com escopo limitado:
 
-- `Pacote automatizado submissao`
-- `RelatorioTecnico.pdf`
-- `Ficha TXT`
-- `docs/evidencias/entrega-banca.md`
+- `docs/gdd.md`
+- `scripts/gdd-pdf.mjs`
+- `docs/evidencias/gdd-final.md`
+- `docs/images/`
 
 Se houver equivalente já funcional, reutilize e documente o caminho efetivo. Não substituir o projeto por scaffold novo. Quem altera workflow compartilhado coordena com Plataforma; não sobrescrever mudança de outra pessoa. Dados de monitoramento ficam em observabilidade, site em gh-pages, fonte em main/branches de PR; quatro pastas deste plano contêm somente prompts, não quatro jogos.
 
@@ -45,16 +51,8 @@ Se houver equivalente já funcional, reutilize e documente o caminho efetivo. N�
 
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
-- [ ] **SQ-12** — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 3.
-- [ ] **SQ-16** — Participação do integrante 3 na banca, com domínio de sua contribuição.
-- [ ] **I07-24** — Executar a demonstração cronometrada pedida pelo professor na banca.
-- [ ] **CR-04** — Conferir marco de entrega: tag v1.0.0, pacote, relatório técnico e ficha TXT enviados ao AVA; horário do início da aula não é inferido do script.
-- [ ] **CR-05** — Confirmar recibo/acesso dos anexos no AVA e URLs para o professor, sem declarar envio que não ocorreu.
-- [ ] **CR-07** — Ensaiar demonstração ao vivo de cinco minutos com falha injetada e rollback.
-- [ ] **B-03** — Viabilidade técnica/execução (25%): demonstrar commit → produção ao vivo.
-- [ ] **B-04** — Viabilidade técnica/execução: demonstrar falha injetada → alerta → rollback, com continuidade.
-- [ ] **B-05** — Viabilidade técnica/execução: justificar manutenção e evolução da solução.
-- [ ] **G8** — Entrega/banca: pacote/relatório/TXT enviados, acesso confirmado e demonstração ensaiada.
+- [ ] **I02-09** — GDD efetivamente revisado e aprovado por PR por outro integrante.
+- [ ] **I02-14** — AVANÇADO: GDD vivo, atualizado por PR revisado a cada mudança de mecânica.
 
 ### Rubrica, integridade e aceites
 
@@ -64,8 +62,8 @@ Eliminatórios: plágio/ativo sem licença zera squad; produção manual zera IN
 
 Validações específicas e resultados esperados:
 
-- Execute os comandos pertinentes dos arquivos deste passo e inspecione seu resultado real, preservando SHA/run/URL/data e falhas. Comandos e caminhos existentes constam do contexto do prompt.
-- Aceite somente com prova dos checks listados, revisão de outro autor e CI verde; ação humana ausente permanece pendente. Não declarar resultados a partir de planejamento.
+- npm run gdd:pdf; pdfinfo artifacts/GDD.pdf; inspeção visual e extração de texto versão/seções.
+- PR humano aprovado; PDFs/links e metadata final conferidos após release35.
 
 Para alteração de código, crie primeiro regressão significativa quando houver comportamento novo/bug verificável, execute a falha e corrija; para documentação, confira conteúdo/link/evidência sem inventar testes. Não executar teste espelhado da implementação nem repetir suites sem necessidade. CI obrigatória deve passar. No PowerShell local, configure `$env:npm_config_script_shell = (Get-Command pwsh).Source` se houver EACCES de cmd. Na CI Linux use comandos nativos do runner.
 
@@ -81,10 +79,10 @@ git config --get user.email
 gh api user --jq .login
 ```
 
-Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-039-entrega-acessos-demo`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
+Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-025-gdd-vivo-pdf`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
 
 ```sh
-git switch -c feature/passo-039-entrega-acessos-demo
+git switch -c feature/passo-025-gdd-vivo-pdf
 git diff --check
 ```
 
@@ -93,17 +91,17 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: confirmar entrega e demonstrar esteira na banca
+git commit -m "docs: revisar gdd vivo e pdf da candidata final
 "
 git push -u origin HEAD
-gh pr create --base main --draft --title "Passo 039: Confirmar entrega e demonstrar esteira na banca" --body-file .contexto/pr-passo-039.md
+gh pr create --base main --draft --title "Passo 025: Revisar GDD vivo e PDF da candidata final" --body-file .contexto/pr-passo-025.md
 ```
 
 Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Lucas Souza** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
 
 ### Evidências, pessoas e resposta final
 
-Entrega AVA e banca dependem de pessoa real ou serviço autorizado no contexto. Não simular apresentação, recibo, envio ou nota.
+Revisão de outro integrante antes do merge. Não simular identidade ou aceite.
 
 Atualize `docs/checklist-avaliacao.md` só com provas: data real, SHA/tag/run/URL, arquivos, comandos e resultado. Atualize AI-USAGE com ferramenta/finalidade/prompt resumido/resultado/revisão/PR verdadeiro. Registre status no `03-controle-execucao.md` e índice de evidências, sem dizer que todo INT foi aceito quando apenas parte foi concluída.
 

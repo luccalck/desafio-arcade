@@ -1,8 +1,8 @@
-# Passo 038 — Conferir URLs finais e congelamento de código
+# Passo 029 — Gravar e validar pitch real de produção
 
-**Responsável proposto:** Davi Paes · Desenvolvimento e Qualidade. **Revisor proposto:** Miguel Oliveira (conta real a confirmar).
-**INT:** INT-04/06/07/01. **Roteiros preservados:** D07. **Checkpoint:** G7/G8.
-**Dependências de execução:** 035, 036, 037. Estes números são entradas; preparação independente pode avançar sem fingir aceite final. Histórico de gates é G0→G8.
+**Responsável:** Miguel Oliveira · bloco 3. **Papel oficial proposto:** Plataforma e Release. **Revisor proposto:** Lucas Souza (conta real a confirmar).
+**INT:** INT-10/09/05. **Roteiros preservados:** P06. **Checkpoint:** G6.
+**Dependências de execução:** 017, 025, 026, 027, 028. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
 - [ ] Validações executadas e evidências arquivadas.
@@ -10,9 +10,15 @@
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
 
+## Regra da execução por blocos
+
+Este passo pertence ao bloco **021–030 de Miguel Oliveira**. Este bloco só inicia após a passagem do passo 020. Execute seus dez passos em ordem, respeitando as entradas anteriores; não espere implementação de outro integrante para um número dentro deste bloco. Ao concluir 030, faça a passagem descrita em `04-passagem-de-bloco.md`.
+
+Revisão por outro autor, dados/acessos, consentimentos, playtest e banca continuam sendo ações humanas obrigatórias. O colega pode revisar já no primeiro bloco, antes de começar seus próprios dez passos. Finalizar este passo significa concluir seu escopo e entregar provas/contratos; não é assinalar checks de release, vídeo ou banca futuros. O próximo responsável executa a validação posterior, sem exigir que você volte a desenvolver seus passos.
+
 ## Prompt profissional — copiar este conteúdo para a IA
 
-Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Davi Paes**, responsável por este passo. Execute **somente o passo 038: Conferir URLs finais e congelamento de código** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
+Você atua como especialista em desenvolvimento de jogos educativos WEB, DevOps, qualidade, segurança e comunicação técnica. Trabalha com **Miguel Oliveira**, responsável por este passo. Execute **somente o passo 029: Gravar e validar pitch real de produção** e as preparações necessárias autorizadas, preservando alterações do usuário. Não executar passos futuros indiscriminadamente.
 
 ### Contexto e fontes obrigatórias
 
@@ -20,24 +26,24 @@ O projeto é Rota do Código/Desafio Arcade, oficina Python de cinco missões e 
 
 Repositório: https://github.com/luccalck/desafio-arcade . Fonte local de referência: `C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade`; em outro computador, localizar o clone real com `git rev-parse --show-toplevel`, não criar cópia concorrente. A branch completa estava em feature/primeiro-ciclo/PR#2; main era bootstrap. Inspecione estado atual/remotes antes de escolher base e preservar main protegida.
 
-Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro D07 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
+Leia `docs/checklist-avaliacao.md`, `docs/auditoria-avaliacao.md`, `docs/gdd.md`, `README.md`, `SQUAD.md`, `AI-USAGE.md`, `THIRD_PARTY.md`, `SECURITY.md`, o índice deste conjunto e o roteiro P06 no contexto. Leia também o HTML **inteiro**, suas abas e JavaScript da ficha, em `C:/Users/user/Downloads/jogo/Avaliação.html` (ou a cópia de Downloads), e modelo GDD se o passo envolver documento. Em outro computador, peça acesso aos originais faltantes; não alegue que os leu se indisponíveis. Os originais são preservados e não devem ser sobrescritos.
 
 Confirme instruções aplicáveis do ambiente/AGENTS.md. Dados de RAs, contas dos outros integrantes, nome do squad e aceites humanos ainda precisam confirmação; não inventar. Os arquivos deste plano foram preparados pela IA para Lucca, não contam como contribuição de Davi/Miguel/Lucas.
 
 ### Resultado específico e execução
 
-1. Confira produção, HML, status, releases e downloads externamente. Execute smoke/offline final, abra vídeo/relatórios e compare versão, SHA e checksum.
-2. Após v1.0.0 só correções fix: por PR revisado e pipeline completa. Não adicionar features, mover tag ou alterar gh-pages à mão. Se hotfix for necessário, validar tratamento da nova versão com professor e preservar histórico.
-3. Prepare conferência antes/durante/depois da banca: URL online, versão defeituosa retirada, anterior saudável, alertas fechados automaticamente e logs conservados.
-4. Comprove contribuição real de Davi em INT-04/06/07 com seus commits/PRs e prepare sua fala. Arquivos de planejamento feitos por Lucca não são commits de Davi.
-5. Reabra checks afetados quando mudar componente; não adicionar teste espelhado ou aprovação fictícia.
+1. Grave gameplay real da produção candidata saudável: versão na tela, edição Python, teste, efeito jogável e proposta/diferencial. Humanamente grave falas/divisão; IA auxilia roteiro/edição, não inventa pessoa/voz/partida.
+2. Monte vídeo<=90s com legendas legíveis, licenças e concordâncias conferidas. Não gerar arquivo vazio, imagem estática como falsa execução ou logs maquiados.
+3. Valide duration com ffprobe incluindo frações; confira reprodução de imagem/áudio/legendas do arquivo inteiro. Registre source SHA/URL/data e hash.
+4. Entregue arquivo como entrada real da pipeline do passo31 antes de tag35, em armazenamento/asset autorizado. Não versionar vídeo pesado no código sem necessidade.
+5. Se jogo/conteúdo demonstrado mudar após gravação, avaliar e refazer trechos afetados; não afirmar gameplay de release que não foi jogada.
 
 Arquivos/configurações a inspecionar/criar/alterar **relativos ao clone real**, com escopo limitado:
 
-- `docs/evidencias/smoke-final.md`
-- `README.md`
-- `docs/operacao-rollback.md`
-- `Issues/PRs reais se correção necessária`
+- `entrada humana pitch.mp4`
+- `docs/pitch-legendas.srt`
+- `docs/evidencias/pitch.md`
+- `THIRD_PARTY.md`
 
 Se houver equivalente já funcional, reutilize e documente o caminho efetivo. Não substituir o projeto por scaffold novo. Quem altera workflow compartilhado coordena com Plataforma; não sobrescrever mudança de outra pessoa. Dados de monitoramento ficam em observabilidade, site em gh-pages, fonte em main/branches de PR; quatro pastas deste plano contêm somente prompts, não quatro jogos.
 
@@ -45,10 +51,10 @@ Se houver equivalente já funcional, reutilize e documente o caminho efetivo. N�
 
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
-- [ ] **SQ-11** — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 2.
-- [ ] **SQ-15** — Participação do integrante 2 na banca, com domínio de sua contribuição.
-- [ ] **CR-09** — Após v1.0.0, congelar funcionalidades: somente correções fix: via PR e pipeline completa.
-- [ ] **CR-10** — CONTÍNUO: nunca alterar produção/gh-pages manualmente após congelamento.
+- [ ] **I10-03** — Gravar gameplay real da build de produção formal.
+- [ ] **I10-04** — Gerar pitch.mp4 com duração ≤90 segundos verificada por ffprobe.
+- [ ] **I10-06** — Inserir legendas legíveis por acessibilidade.
+- [ ] **FIC-11** — Vídeo pitch no AVA ou link — obrigatório.
 
 ### Rubrica, integridade e aceites
 
@@ -58,14 +64,14 @@ Eliminatórios: plágio/ativo sem licença zera squad; produção manual zera IN
 
 Validações específicas e resultados esperados:
 
-- Execute os comandos pertinentes dos arquivos deste passo e inspecione seu resultado real, preservando SHA/run/URL/data e falhas. Comandos e caminhos existentes constam do contexto do prompt.
-- Aceite somente com prova dos checks listados, revisão de outro autor e CI verde; ação humana ausente permanece pendente. Não declarar resultados a partir de planejamento.
+- ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 pitch.mp4; duração <=90.
+- Reprodução humana completa/captura real/licenças/legendas/hash/data/build verificáveis.
 
 Para alteração de código, crie primeiro regressão significativa quando houver comportamento novo/bug verificável, execute a falha e corrija; para documentação, confira conteúdo/link/evidência sem inventar testes. Não executar teste espelhado da implementação nem repetir suites sem necessidade. CI obrigatória deve passar. No PowerShell local, configure `$env:npm_config_script_shell = (Get-Command pwsh).Source` se houver EACCES de cmd. Na CI Linux use comandos nativos do runner.
 
 ### Commit obrigatório pelo GitHub do usuário responsável
 
-**Faça commit pelo GitHub do usuário Davi Paes, usando a própria conta autenticada e a identidade Git real desse usuário.** Não faça commit em nome de luccalck se a pessoa atual for outra, não use conta de colega e não invente e-mail/username. Verifique antes de gravar:
+**Faça commit pelo GitHub do usuário Miguel Oliveira, usando a própria conta autenticada e a identidade Git real desse usuário.** Não faça commit em nome de luccalck se a pessoa atual for outra, não use conta de colega e não invente e-mail/username. Verifique antes de gravar:
 
 ```sh
 git status --short
@@ -75,10 +81,10 @@ git config --get user.email
 gh api user --jq .login
 ```
 
-Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-038-freeze-verificacao-final`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
+Se identidade/autenticação não corresponderem ao responsável, peça que ele autentique sua conta e configure nome/e-mail Git; nunca solicitar token no chat. Continue apenas preparações que não forjem autoria. Branch sugerida deste passo: `feature/passo-029-gravar-pitch`; crie a partir de base real aprovada/dependência, sem descartar alterações. Exemplo do fluxo, **após conferir base e arquivos**:
 
 ```sh
-git switch -c feature/passo-038-freeze-verificacao-final
+git switch -c feature/passo-029-gravar-pitch
 git diff --check
 ```
 
@@ -87,17 +93,17 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "test: conferir urls finais e congelamento de código
+git commit -m "docs: gravar e validar pitch real de produção
 "
 git push -u origin HEAD
-gh pr create --base main --draft --title "Passo 038: Conferir URLs finais e congelamento de código" --body-file .contexto/pr-passo-038.md
+gh pr create --base main --draft --title "Passo 029: Gravar e validar pitch real de produção" --body-file .contexto/pr-passo-029.md
 ```
 
-Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Miguel Oliveira** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
+Escolha prefixo Conventional correto: docs/ci/test/fix/feat conforme mudança; mensagem em português. Crie body-file real com problema→resultado→INT→checks→comandos/resultados→IA→pendências→evidências, novas linhas verdadeiras. Solicite revisão humana do colega confirmado **Lucas Souza** pela conta GitHub fornecida; não adivinhar @username. Aguarde CI/revisão, não dar merge próprio sem aceite. Se um PR for criado por ferramenta Codex, anexar ao chat com attach_artifact. Não modificar main/gh-pages manualmente nem burlar check/reviewer.
 
 ### Evidências, pessoas e resposta final
 
-Revisão de outro integrante antes do merge. Não simular identidade ou aceite.
+Vídeo, falas e consentimento vêm de pessoas reais. Upload/publicação só em destinos autorizados.
 
 Atualize `docs/checklist-avaliacao.md` só com provas: data real, SHA/tag/run/URL, arquivos, comandos e resultado. Atualize AI-USAGE com ferramenta/finalidade/prompt resumido/resultado/revisão/PR verdadeiro. Registre status no `03-controle-execucao.md` e índice de evidências, sem dizer que todo INT foi aceito quando apenas parte foi concluída.
 

@@ -1,14 +1,20 @@
 # Passo 027 — Verificar versão candidata, artefato e hashes PRD
 
-**Responsável proposto:** Miguel Oliveira · Plataforma e Release. **Revisor proposto:** Lucas Souza (conta real a confirmar).
+**Responsável:** Miguel Oliveira · bloco 3. **Papel oficial proposto:** Plataforma e Release. **Revisor proposto:** Lucas Souza (conta real a confirmar).
 **INT:** INT-06/07/03. **Roteiros preservados:** R02/R05. **Checkpoint:** G5/G6.
-**Dependências de execução:** 015, 019, 025, 026. Estes números são entradas; preparação independente pode avançar sem fingir aceite final. Histórico de gates é G0→G8.
+**Dependências de execução:** 015, 019, 025, 026. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
 - [ ] Validações executadas e evidências arquivadas.
 - [ ] Commit/push pela identidade GitHub do responsável.
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
+
+## Regra da execução por blocos
+
+Este passo pertence ao bloco **021–030 de Miguel Oliveira**. Este bloco só inicia após a passagem do passo 020. Execute seus dez passos em ordem, respeitando as entradas anteriores; não espere implementação de outro integrante para um número dentro deste bloco. Ao concluir 030, faça a passagem descrita em `04-passagem-de-bloco.md`.
+
+Revisão por outro autor, dados/acessos, consentimentos, playtest e banca continuam sendo ações humanas obrigatórias. O colega pode revisar já no primeiro bloco, antes de começar seus próprios dez passos. Finalizar este passo significa concluir seu escopo e entregar provas/contratos; não é assinalar checks de release, vídeo ou banca futuros. O próximo responsável executa a validação posterior, sem exigir que você volte a desenvolver seus passos.
 
 ## Prompt profissional — copiar este conteúdo para a IA
 
@@ -43,10 +49,10 @@ Se houver equivalente já funcional, reutilize e documente o caminho efetivo. N�
 
 ### Checks pendentes atribuídos a este passo
 
+Este passo reconfere **I06-14/I06-16** e prepara **I06-15/I06-17**: candidata reproduzível, versão, offline, tamanho e hashes. A conferência contra a GitHub Release final é feita no035 por Lucas. Não exigir que Miguel crie tag final antes de entregar sua candidata.
+
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
-- [ ] **I06-15** — Hash do ZIP promovido à produção formal bate com o da GitHub Release.
-- [ ] **I06-17** — CONTÍNUO/FINAL: conferir offline, tamanho, versão, SHA, data e integridade da release final.
 
 ### Rubrica, integridade e aceites
 
