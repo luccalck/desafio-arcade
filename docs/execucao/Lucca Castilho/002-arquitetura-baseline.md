@@ -8,7 +8,7 @@
 
 - [x] Arquitetura e baseline documentados pela própria conta; aceites humanos separados.
 - [x] Validações locais executadas e evidências registradas; ver baseline-tecnico.md.
-- [ ] Commit/push pela identidade GitHub do responsável.
+- [x] Commit/push pela identidade própria luccalck; b79828c, PR#4 em rascunho.
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
 

@@ -87,3 +87,9 @@ A data UTC do build é2026-10-13T02:49:17.143Z, correspondente a12/10/2026às23:
 Conferimos o HTML integral/texto/script da ficha, modelo GDD, checklist/auditoria, GDD atual, README/SQUAD/políticas/IA/licenças, índice e D01/D02/D04. Originais com os mesmos hashes registrados em [equipe.md](equipe.md), preservados. Sem Godot, Opal ou AI Studio: ARQ-10 e golden eval específicos são condicionais não aplicáveis; não marcamos uso fictício.
 
 SQ-07 continua pendente de validação/assunção técnica efetiva por Desenvolvimento; a coordenação foi acordada, mas não substituímos a participação de Davi. Contratos técnicos entregues para Plataforma/Miguel ainda precisam de leitura/validação humana. Revisão cruzada antes do merge, G0/G1, HML/PRD formal, final/release/offline e playtest permanecem pendentes nos passos correspondentes. [Registro único de pendências](../execucao/05-pendencias-por-passo.md). Não fechamos um INT inteiro ou atribuímos nota.
+
+## Publicação da preparação
+
+Commit próprio `b79828ca6dacb9e32f7995ad905ea0bff9705428`, identidade Git/GitHub luccalck conferida antes da gravação; [PR#4](https://github.com/luccalck/desafio-arcade/pull/4) em rascunho sobre feature/passo-001-equipe-contexto, sem merge. A base intermediária isola002, pois001 e o PRprincipal#2 ainda aguardam integração na main. CI38339152555 acionada por push; seu resultado e o do último HEAD precisam ser conferidos, não inferidos.
+
+A primeira gravação de dois arquivos administrativos no índice manteve CRLF e `git diff --cached --check` apontou whitespace; o comando de commit continuou indevidamente. Corrigimos para LF na atualização seguinte, preservando alterações locais anteriores separadas do índice. Não representar a primeira checagem como aprovada. Gitleaks do primeiro commit não detectou vazamentos.

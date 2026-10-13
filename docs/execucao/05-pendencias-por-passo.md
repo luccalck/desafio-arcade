@@ -26,7 +26,8 @@ Baseline local documentado e validado em12/10/2026; [evidências](../evidencias/
 
 - [ ] **Desenvolvimento / SQ-07:** Davi precisa ler e validar arquitetura/pirâmide e demonstrar participação técnica real nos passos seguintes. Coordenação confirmada não comprova execução pelo colega.
 - [ ] **Contrato com Plataforma:** Miguel precisa conferir comandos, versões, artefatos e interfaces documentados; preparação entregue, aprovação humana ainda não registrada.
-- [ ] **Publicação/CI deste passo:** registrar commit próprio e PR e conferir CI do HEAD publicado. Revisão de outro autor permanece requisito geral antes do merge.
+- [x] **Publicação do passo:** commit próprio b79828c e PR#4 em rascunho; registrado no baseline.
+- [ ] **CI do último HEAD:** conferir a execução após a atualização documental; revisão de outro autor permanece requisito geral antes do merge.
 - [ ] **Validações posteriores:** regressão HML e smoke PRD formais, estabilidade/offline da candidata final e playtest continuam nos passos previstos; suíte local não substitui esses aceites.
 
 ARQ-10 é condicional não aplicável (não usamos Godot); não há obrigação de trocar a stack. G0/G1 permanecem incompletos. Não encontramos defeito funcional reproduzido que exigisse correção nesta inspeção.
