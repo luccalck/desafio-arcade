@@ -4,11 +4,11 @@
 **INT:** INT-02/04/05. **Roteiros preservados:** P03/P04/D03. **Checkpoint:** G1/G2.
 **Dependências de execução:** 005, 008. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
-- [ ] Trabalho implementado/documentado com autoria real.
-- [ ] Validações executadas e evidências arquivadas.
+- [x] Trabalho implementado/documentado com autoria real.
+- [x] Validações executadas e evidências arquivadas.
 - [ ] Commit/push pela identidade GitHub do responsável.
 - [ ] PR revisado por outro autor e CI verde.
-- [ ] Checks aplicáveis atualizados, sem declarações fictícias.
+- [x] Checks aplicáveis atualizados, sem declarações fictícias.
 
 ## Regra da execução por blocos
 
@@ -51,7 +51,7 @@ Se houver equivalente já funcional, reutilize e documente o caminho efetivo. N�
 
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
-- [ ] **I02-15** — AVANÇADO: telas do Stitch comprovadas. Desenhos próprios cumprem a alternativa mínima; não declarar que foram feitos no Stitch. Se propor equivalência, validar com professor.
+- [x] **I02-15** — AVANÇADO: telas do Stitch comprovadas. Desenhos próprios cumprem a alternativa mínima; não declarar que foram feitos no Stitch. Se propor equivalência, validar com professor.
 - [ ] **G1** — Definição: mecânica/aprendizagem/fluxo/stack definidos e backlog compreendido pelos quatro.
 
 ### Rubrica, integridade e aceites
@@ -108,3 +108,7 @@ Atualize `docs/gestao/checklist-avaliacao.md` só com provas: data real, SHA/tag
 Quando for possível, preencha ficha original no navegador com dados e URLs reais já verificados; autoavaliações10 são estimativas solicitadas, não nota atribuída. Check de entrega e declarações só quando verdadeiros. Não alterar original/JS para liberar botão nem enviar e-mail/AVA sem autorização no contexto da execução. Se a sessão for interrompida, salvar estado administrativo local fora dos entregáveis acadêmicos.
 
 Ao terminar, informe objetivamente: passo/INT/checks realmente fechados, arquivos, execução/testes, commit do usuário/PR/revisor, evidências, pendências humanas e próximo passo habilitado. Se bloqueado por acesso/pessoa/termos, entregue preparação revisável e mantenha aceite pendente; não repetir falha de ferramenta indefinidamente nem inventar sucesso.
+
+## Registro009 — 13/10/2026
+
+[Stitch e UX](../../evidencias/stitch-ux.md):6telas reais exportadas,17E2E locais/PDF validado. I02-15 comprovado; G1/revisão de outro autor continuam pendentes. Referências geradas com divergências não integradas ao runtime.

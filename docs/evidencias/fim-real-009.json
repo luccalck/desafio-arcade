@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-13T17:38:19.053Z",
+  "url": "http://127.0.0.1:4173/",
+  "version": {
+    "version": "0.6.0",
+    "sha": "b94469ee807093a4e64769f868c13143a0ff5b0c",
+    "build": "2026-10-13T17:38:03.814Z"
+  },
+  "scenario": "regressão HML preparada: primeira missão, campanha e encerramento pela UI",
+  "project": "",
+  "input": "teclado",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  }
+}

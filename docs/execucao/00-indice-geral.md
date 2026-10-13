@@ -110,3 +110,7 @@ Originais preservados. Repositório/arquivo principal único; .contexto e acompa
 ## Preparação do008 — 13/10/2026
 
 [Inventários, direitos e revisão necessária](../evidencias/direitos.md):158componentes/26ativos e rastreabilidade das etapasIA conhecidas. Nenhum novo check geral fechado;114marcados/298abertos. Declarações/revisões humanas e reconferência com novos ativos/vídeo continuam obrigatórias.
+
+## Preparação009 — 13/10/2026
+
+[Stitch e UX](../evidencias/stitch-ux.md): seis referências reais exportadas, falhas documentadas sem integração ao runtime e17E2E locais verdes. I02-15 comprovado; G1/aceites humanos abertos.

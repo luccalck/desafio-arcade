@@ -8,7 +8,7 @@
 
 Instrução principal: desenvolver jogo WEB educativo conforme os originais do professor e planos C/P/D/R/S, registrar execução verificável e preservar autoria/licenças. Conceito aprovado: programação de robô por sequência, depuração e repetição.
 
-Nenhuma IA em runtime. Nenhum uso de Opal, AI Studio, Stitch ou gerador de imagens raster até este registro. Não houve teste com usuário humano, coleta de consentimento, revisão de colega, vídeo ou medição educativa realizada pela IA.
+Nenhuma IA em runtime. Opal/AI Studio não usados. Stitch passou a ser usado no009; declarações anteriores de ausência descrevem o escopo da respectiva etapa. Não houve teste com usuário humano, coleta de consentimento, revisão de colega, vídeo ou medição educativa realizada pela IA.
 
 Revisão necessária antes do merge: fatos educativos, comportamento, direitos de ativos, dependências, segurança e documentação. Registrar autor/revisor reais e link do PR após a revisão. IA não substitui integrantes, aprovação requerida de outro autor ou banca.
 
@@ -137,3 +137,9 @@ Pedido atual:executar somente008, conferir bibliotecas/ativos/fatos educativos/d
 Resultados e limites:SBOM com158licenças declaradas,26ativos/hashes/fontesGit,53commits varridos com zero achadosGitleaks, nenhuma correspondênciaCPF válida nos formatos textuais analisados. Conferência técnica não é garantia geral de ausência de infração ou substituição da revisão humana. Sem mudança de comportamento, nova dependência npm, playtest humano ou vídeo. Publicação008 será vinculada ao commit/PR reais no controle e na matriz.
 
 Publicação008:7ffb58d/PR#10draft, CIpush38434944934 eCIpr38435010458verdes; PDF13p/pdfinfo e páginas alteradas inspecionadas. Corrigida codificação do inventário a partir dos metadadosUTF-8; seis créditos individuais ainda ausentes nos campos inspecionados, explicitados como pendentes. RequestreviewDaviSouza78 viaAPI retornou422 (não colaborador reconhecido), sem approval/request registrado. Branchpadrão008 atualizada só para rastreamento, semmerge oudeploy; ciência do solicitante não é revisão de outro autor.
+
+## Passo009 — referências Stitch e validaçãoUX — 13/10/2026
+
+Codex auxiliou Lucca a executar009/P03/P04/D03. GoogleStitch, WEB/Balanced, projeto9671895915842664821, recebeu prompt público da oficina (menu/HUD/fim desktop/celular) e pedido de correção sem telemetria fictícia/CDN. Lucca autorizou explicitamente aceitar termos adicionais com marketing/pesquisa desmarcados; nenhuma conexão a outros serviços. [Prompt integral](docs/evidencias/stitch-prompt-009.txt), [export/hashes e conferência](docs/evidencias/stitch-ux.md).
+
+Saídas reais: seis referênciasPNG e mascote, com falhas restantes documentadas. Não importamos HTML/CDN/fontes/código doStitch no runtime nem apresentamos mockups como evidência de execução. Registros antigos de ausência deStitch/raster permanecem históricos.17E2E locais verdes/build válido e capturas reais distintas, fonteb94469e; GDDrev009 preserva12seções/mapas/fluxo. Revisão por outro autor, entendimento dosquatro e direitos coletivos pendentes; nenhuma aprovação humana atribuída à IA. Sem alteração de mecânica/dependência ou deploy neste passo.

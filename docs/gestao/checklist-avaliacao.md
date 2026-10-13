@@ -128,7 +128,7 @@ Não há mínimo textual de “três commits na mesma área”. A unidade da exi
 - [x] I02-12 — PDF abre sem erro: pdfinfo passou e páginas foram inspecionadas. E3/E4.
 - [ ] I02-13 — Versão e data do GDD coerentes com a tag de release final. Não existe tag final.
 - [ ] I02-14 — AVANÇADO: GDD vivo, atualizado por PR revisado a cada mudança de mecânica.
-- [ ] I02-15 — AVANÇADO: telas do Stitch comprovadas. Desenhos próprios cumprem a alternativa mínima; não declarar que foram feitos no Stitch. Se propor equivalência, validar com professor.
+- [x] I02-15 — AVANÇADO: telas do Stitch comprovadas. Desenhos próprios cumprem a alternativa mínima; não declarar que foram feitos no Stitch. Se propor equivalência, validar com professor.
 
 ### Complemento obrigatório do modelo GDD fornecido
 
@@ -592,3 +592,5 @@ Os quatro roteiros e o índice continuam em `C:/dev/studies/senai/semester-2/dev
 | Modelo GDD e requisitos específicos do projeto | GDD, OBJ; complemento explicitamente separado do HTML |
 
 Não adicionar metas de atividades antigas (Jenkins, Spring Boot, AWS, Docker/Kubernetes, Prometheus/Grafana) nem mínimo fictício de dez execuções DORA. O HTML permite ferramentas equivalentes justificadas; não exigir instalar uma engine para jogar. Nota máxima e aprendizagem humana não são inferidas de testes automatizados.
+
+Evidência009/I02-15 — 13/10/2026: [Stitch e UX](../evidencias/stitch-ux.md), seis telas reais exportadas desktop/celular e manifesto SHA-256; referencias de IA distintas de capturas. G1/revisão humana permanecem abertos.

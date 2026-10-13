@@ -110,7 +110,14 @@ I05-10/12/13 revalidados no escopo atual; nenhum dos16checks atribuídos fechado
 
 ## Passo 009
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Escopo técnico preparado em13/10/2026: seis telas reaisStitch exportadas/manifesto, conferência de divergências, GDD atualizado e17E2E locais verdes; [evidência](../evidencias/stitch-ux.md). I02-15 comprovado, G1 aberto.
+
+- [ ] **G1/P04/D03:** Desenvolvimento conferir fluxo e quatro integrantes compreenderem backlog; guardar aceite verdadeiro, sem aprovação atribuída à IA.
+- [ ] Revisão de outro autor antes do merge e direitos coletivos008 continuam obrigatórios. Solicitação de revisor bloqueada pelo acessoAPI422 identificado no008; resolver acesso real, sem revisão fictícia.
+- [ ] ReferênciasStitch têm divergências de XP/contratos/fontes/CDN; não integrar ao jogo. Corrigir/revisar se decidir adotar visual futuramente; não é comportamento faltante do jogo existente.
+- [ ] Playtest e clareza/acessibilidade humana no021; capturas/testes automatizados não o substituem.
+
+PDF/CI/commit/PR: resultados efetivos no registroUX/controle. RAs seguem adiados. Nenhum010 executado nem produção promovida.
 
 ## Passo 010
 
