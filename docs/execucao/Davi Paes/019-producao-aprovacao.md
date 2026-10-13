@@ -129,3 +129,7 @@ Ao terminar, informe objetivamente: passo/INT/checks realmente fechados, arquivo
 ## Encaminhamento explícito do passo003 — 13/10/2026
 
 Este passo executa a integração real de deploy-prd/environmentproducao após HML aceita, mesma build, rollout e rollback necessários. Em13/10 configuramos producao para branchmain, requiredreviewerluccalck e can_admins_bypassfalse. Reconferir configuração e executar aprovação registrada; não usar aprovação de PR como substituto do gate. Implementar/validar promoção/smoke/recuperação antes da primeira produção, conforme018/019; configuração existente sozinha não fecha ARQ-08/I03-17/19/KIT-13.
+
+## Contrato de promoção recebido do007
+
+Job deploy-prd depende de ci/pacote-ci/deploy-hml e environmentproducao, downloads do mesmo SHA/run/tentativa e validação antes de consumo. Implementar scripts/promover.sh com --bundle/--sha/--run/--site-url; jamais reconstruir o ZIP/GDD. Integrar estratégia018/smoke014/rollback022023/aprovação real; habilitar FORMAL_PRD_ENABLED somente com script e aceites reais. [Contrato007](../../evidencias/ci-formal.md). Preparação do job não comprova promoção/recuperação/aprovação.

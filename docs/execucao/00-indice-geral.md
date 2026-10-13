@@ -102,3 +102,7 @@ Originais preservados. Repositório/arquivo principal único; .contexto e acompa
 ## Preparação validada do passo006 — 13/10/2026
 
 [Regressão completa e evidências](../evidencias/regressao-hml.md):17E2E locais/CI e5cenários no preview público; dois roteiros HML entregues ao011 e smoke separado para014/019. Nenhum novo check geral fechado;113marcados/299abertos permanecem. Execução formal e revisão humana ainda pendentes.
+
+## Preparação validada do passo007 — 13/10/2026
+
+[Esteira e contrato de artefatos](../evidencias/ci-formal.md):clone limpo, CI/pacote/avisos no Actions validados. KIT-09 fechado:114marcados/298abertos. Deploys formais e recebimento permanecem nos passos indicados no registro único.

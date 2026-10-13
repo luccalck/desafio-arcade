@@ -27,6 +27,7 @@ Os identificadores abaixo são estáveis. Não renumerar ao concluir. Não infer
 | E4 | [GDD](../gdd.md), imagens em docs/images e geração por [gdd-pdf.mjs](../../scripts/gdd-pdf.mjs). PDF gerado pela CI e pdfinfo; versão 0.6.0, identificação/release final pendentes. |
 | E5 | [Preview público](https://luccalck.github.io/desafio-arcade/) e [HML do preview](https://luccalck.github.io/desafio-arcade/hml/). E2 publicou e executou smoke. HML/version.json respondeu HTTP 200 com SHA de E2. Não é produção formal aprovada. |
 | E6 | [LICENSE](../../LICENSE), [THIRD_PARTY](../../THIRD_PARTY.md), [AI-USAGE](../../AI-USAGE.md), [SECURITY](../../SECURITY.md), hook e scanner; artefatos de segurança em E2. Revisão humana/declaração coletiva pendentes. |
+| E9 | [CI formal preparada007](../evidencias/ci-formal.md):clone limpo/184testes+17E2E, pacoteSHA/run/tentativa validado na CI38428808065. Deploy/recebimento de avisos pendentes. |
 | E8 | [Regressão006](../evidencias/regressao-hml.md):17E2E locais e naCI38348580349,5cenários do preview, capturas/JSON reais. Publicação formal011 e smokePRD014/019 pendentes. |
 | E7 | [Build](../../scripts/build.mjs), [empacotamento](../../scripts/package.mjs), [reprodutibilidade](../../scripts/reproducibility.mjs), [preparação Pages](../../scripts/prepare-pages.mjs), testes de integração/exportação/Pages. E2/E3 comprovam execução; não há GitHub Release por tag. |
 
@@ -369,7 +370,7 @@ Os esqueletos não passam como estão. Nomes/estrutura exemplificados não obrig
 - [ ] KIT-06 — monitor.yml funcional (I08-01).
 - [ ] KIT-07 — Painel pages/status/index.html ou equivalente publicado (I08-16 a I08-21).
 - [ ] KIT-08 — Publicação, rollout, DORA e triagem implementados por scripts equivalentes aos exemplos; não copiar TODO como solução.
-- [ ] KIT-09 — Revisar versões atuais das Actions antes de fixá-las, compatibilidade e registro da escolha.
+- [x] KIT-09 — Actions revisadas em releases/refs/action.yml oficiais em13/10/2026, fixadas por SHA; CI38428808065 validou ferramentas ativas. [Revisão007](../evidencias/ci-formal.md); Pages ainda não executado neste passo.
 - [x] KIT-10 — Cache npm e checkout com histórico para scanner nos jobs atuais. E2.
 - [x] KIT-11 — Corrigir lacuna SemVer no version.json do exemplo. E5/E7: version 0.6.0 presente.
 - [ ] KIT-12 — Configurar Settings Pages com origem conforme requisito ou equivalência validada (I07-01).
