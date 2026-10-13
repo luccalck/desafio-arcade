@@ -97,7 +97,7 @@ Preservar os roteiros e códigos C01/C02, P01–P07, D01–D07, R01–R07 e S01�
 
 1. C01/C02 e G0: completar dados reais e organização dos quatro; distribuir trabalho substantivo em três INT por pessoa e revisão cruzada.
 2. Seguir G1–G2 nos roteiros: revisar o produto aprovado, GDD/telas/direitos, conteúdo e núcleo; preparar as bases técnicas independentes.
-3. Seguir G3–G5: CI formal, revisão/merge, HML, release e produção com aprovação/estratégia/recuperação. Medir as execuções.
-4. Seguir G6–G8: monitoramento/DORA, melhoria, gravação humana em produção, pacote/triagem e banca. Usar vídeo como entrada do pacote antes da tag final; acrescentar evidências de release/triagem ao relatório depois das execuções.
+3. Seguir G3–G5: CI formal, revisão/merge, HML, release e produção com aprovação/estratégia. Ativar monitoramento em G4; em G5 comprovar recuperação, alertas tratados, DORA, melhoria e playtest. Medir as execuções desde o início.
+4. Seguir G6–G8: gravação humana em produção, relatório, pacote, tag/release final, triagem e banca. Usar vídeo como entrada do pacote antes da tag final; acrescentar evidências de release/triagem ao relatório depois das execuções.
 
 Os aceites detalhados continuam nos roteiros por área; esta lista não os substitui. Separar sempre: implementado, executado/validado, dependente de pessoa/acesso e não atendido.
