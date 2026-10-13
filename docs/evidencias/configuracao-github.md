@@ -67,3 +67,9 @@ Fontes lidas nesta sessão/reconferidas: HTML integral/abas/script, modeloGDD/ta
 ## Pendências do aceite
 
 Aceite/teste dos convites; leitura do professor; revisão efetiva antes do merge; defaultmain após integração; migraçãoPages007/011 e ambientes formais. SQ-08 depende de participação real de Plataforma, sem conferir autoria fictícia ao papel. RAs adiados; G0/G1 não liberados. [Pendências](../execucao/05-pendencias-por-passo.md). Nenhum INT inteiro aceito.
+
+## Publicação e CI da preparação
+
+Commit próprio `25ba5e7910c73d8550d732c21615a8aa6a0a3c07`; [PR#5](https://github.com/luccalck/desafio-arcade/pull/5) draft sobre feature/passo-002-arquitetura-baseline, sem merge/reviews. [CI38342833196](https://github.com/luccalck/desafio-arcade/actions/runs/38342833196) concluída com sucesso; qualidade/segurança/build/E2E/ci verdes e preview corretamente ignorado. Atualização documental posterior exige reconferir o HEAD no PR.
+
+Validações administrativas:84Markdown locais semlinks ausentes;40passos/dezporintegrante/313IDssemomissão/depsacíclicas; checklist109marcados303abertos. gitdiffcheckfinal passou; src/tests/scripts/dependências/workflows sem mudanças contra a base4d9acf4. HookGitleaks sem vazamentos no commit. Alterações locais anteriores preservadas fora do índice; não declaramos worktree limpo.

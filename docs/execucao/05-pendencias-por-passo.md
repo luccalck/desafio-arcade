@@ -41,7 +41,7 @@ Preparação executada em13/10/2026; [evidências](../evidencias/configuracao-gi
 - [ ] **Main (I01-18):** revisão real/CI antes do merge do primeiro ciclo; depois restaurar defaultmain e ajustar bases. Revisão permanece requisito geral.
 - [ ] **Pages (I07-01/KIT-12):** executar migração coordenada de origem/publicação para gh-pages nos007/011 com testes; Settings isolado não basta.
 - [ ] **Ambientes formais:** reconciliar gate/reviewers/branches e uso de homologacao/producao nos jobs previstos; configuração não comprova deploy/aprovação.
-- [ ] **Publicação deste passo:** registrar commit/PR e conferir CI do HEAD.
+- [x] **Publicação deste passo:**25ba5e7/PR#5; CI38342833196 verde. Reconferir cada HEAD atualizado; revisão antes do merge permanece geral.
 
 SQ-08/participação de Plataforma permanece geral; sem aceite coletivo inventado. KIT-14 fechado somente quanto à variável/destinos. G0/G1 incompletos.
 

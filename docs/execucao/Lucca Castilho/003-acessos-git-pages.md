@@ -8,9 +8,9 @@
 
 - [x] Preparação/configuração documentadas pela própria conta; aceites finais separados.
 - [x] APIs e HTTP do preview conferidos; evidências redigidas arquivadas.
-- [ ] Commit/push pela identidade GitHub do responsável.
+- [x] Commit/push pela identidade própria luccalck:25ba5e7/PR#5.
 - [ ] PR revisado por outro autor e CI verde.
-- [ ] Checks aplicáveis atualizados, sem declarações fictícias.
+- [x] KIT-14 atualizado com evidência; demais checks/aceites pendentes.
 
 ## Regra da execução por blocos
 
