@@ -1,5 +1,5 @@
 ROTA DO CÓDIGO — v0.6.0
-Commit: 8570bed891c157b44157c1024d782ac3a99e280e
+Commit: 6f5c704665ee6c526571c5d66771f904d8627b59
 
 EXECUÇÃO OFFLINE
 1. Descompacte build.zip em uma pasta local.
