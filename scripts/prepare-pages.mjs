@@ -1,8 +1,10 @@
 import {createHash} from 'node:crypto';
 import {readFile,readdir,mkdir,writeFile} from 'node:fs/promises';
 import {resolve,join,dirname} from 'node:path';
+import {readFileSync} from 'node:fs';
 import {pathToFileURL} from 'node:url';
 import {unzipSync,strToU8,strFromU8} from 'fflate';
+const LOADER=readFileSync(new URL('../pages/index.html',import.meta.url),'utf8');
 const REQUIRED=['index.html','style.css','game.js','version.json','LEIA-ME.txt','LICENSE.txt','THIRD_PARTY.txt'];
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 export function preparePages({zip,checksum,sha,existing={}}){
@@ -18,8 +20,8 @@ export function preparePages({zip,checksum,sha,existing={}}){
  const rollout={strategy:'preview',activeSha:sha,previousSha:previousSha===sha?null:previousSha,version:version.version,build:version.build};
  files['rollout.json']=strToU8(JSON.stringify(rollout,null,2)+'\n');
  files['.nojekyll']=strToU8('');
- const loader=`<!doctype html><html lang="pt-BR"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Rota do Código</title><style>body{margin:0;display:grid;place-items:center;min-height:100vh;background:#080f1a;color:#edf6ff;font-family:Arial}</style><p id="loading">Abrindo Rota do Código…</p><script>(async()=>{const fallback="${sha}",key="rota-do-codigo:preview:selected",valid=s=>typeof s==="string"&&/^[0-9a-f]{40}$/.test(s);let selected=fallback;try{const response=await fetch('./rollout.json',{cache:'no-store'});if(response.ok){const r=await response.json();if(valid(r.activeSha))selected=r.activeSha;}}catch{}try{const saved=sessionStorage.getItem(key);if(valid(saved)){const r=await fetch('./releases/'+saved+'/version.json',{cache:'no-store'});if(r.ok&&(await r.json()).sha===saved)selected=saved;}sessionStorage.setItem(key,selected);}catch{}location.replace('./releases/'+selected+'/index.html');})().catch(()=>{document.getElementById('loading').textContent='Não foi possível abrir. Atualize a página para tentar novamente.';});</script></html>`;
- files['index.html']=strToU8(loader);return files;
+ files['index.html']=strToU8(LOADER.replaceAll('{{SHA}}',sha));return files;
+
 }
 async function readTree(root,relative=''){
  const files={};for(const item of await readdir(join(root,relative),{withFileTypes:true})){if(item.name==='.git')continue;const path=relative?`${relative}/${item.name}`:item.name;if(item.isDirectory())Object.assign(files,await readTree(root,path));else if(item.isFile())files[path]=new Uint8Array(await readFile(join(root,path)));}return files;

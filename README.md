@@ -1,10 +1,12 @@
 # Rota do Código — Desafio Arcade
 
+Para continuar o projeto, abra o [índice de execução](docs/execucao/00-indice-geral.md). **Lucca começa pelo [passo001](<docs/execucao/Lucca Castilho/001-equipe-contexto.md>) e segue até010**; depois Davi011–020, Miguel021–030 e Lucas031–040. Os arquivos de orientação são locais, dentro deste mesmo projeto.
+
 Um jogo educativo WEB para aprender programação construindo as regras de um minijogo. Em cinco missões e um desafio final, você edita funções Python de controles, movimento, colisão, pontuação e ondas, testa resultados e observa o efeito jogando. Ao concluir, pode baixar suas funções `.py` e seu minijogo em HTML independente.
 
-**[Jogar no navegador](https://luccalck.github.io/desafio-arcade/)** · **[GDD completo](docs/gdd.md)** · **[Checklist completo de pendências](docs/checklist-avaliacao.md)** · **[Auditoria do enunciado](docs/auditoria-avaliacao.md)**
+**[Jogar no navegador](https://luccalck.github.io/desafio-arcade/)** · **[GDD completo](docs/gdd.md)** · **[Checklist completo de pendências](docs/gestao/checklist-avaliacao.md)** · **[Auditoria do enunciado](docs/gestao/auditoria-avaliacao.md)**
 
-**[40 passos e prompts em blocos](docs/passos-por-integrante/00-indice-geral.md)** — Lucca executa 001–010, depois Davi 011–020, Miguel 021–030 e Lucas 031–040. Dez arquivos por pessoa, com dependências anteriores, checks, validações, commit pela própria conta e revisão cruzada desde o início. [Passagem de bloco](docs/passos-por-integrante/04-passagem-de-bloco.md) e [estrutura exata do repositório e entregáveis](docs/passos-por-integrante/01-estrutura-repositorio.md).
+**[40 passos e prompts em blocos](docs/execucao/00-indice-geral.md)** — Lucca executa 001–010, depois Davi 011–020, Miguel 021–030 e Lucas 031–040. Dez arquivos por pessoa, com dependências anteriores, checks, validações, commit pela própria conta e revisão cruzada desde o início. [Passagem de bloco](docs/execucao/04-passagem-de-bloco.md) e [estrutura exata do repositório e entregáveis](docs/execucao/01-estrutura-repositorio.md).
 
 O jogo é estático, responsivo e funciona offline. O jogador não precisa instalar Node, Python ou uma engine. O editor executa um subconjunto educativo de Python documentado no GDD, sem backend ou conta.
 
@@ -14,7 +16,7 @@ A candidata atual é a versão **0.6.0**. O GitHub Pages é um preview publicado
 
 O código completo está em `feature/primeiro-ciclo`, temporariamente definida como branch padrão para aparecer na página inicial. O [PR #2](https://github.com/luccalck/desafio-arcade/pull/2) tem destino `main` e aguarda revisão humana de outro autor. `main` continua protegida e contém o bootstrap. Após o merge revisado, deve voltar a ser a branch padrão. Novos PRs devem indicar `main` como destino.
 
-As evidências disponíveis incluem 152 testes de unidade, 26 de integração, 15 cenários E2E, cobertura de instruções de `src/core` de 97,90%, bugs corrigidos com regressão, PDF gerado, build reproduzível e publicação com smoke. Consulte [testes e limites](docs/evidencias/python-pages.md), [CI e publicação](docs/evidencias/ci-python-pages.md) e a [auditoria do enunciado](docs/auditoria-avaliacao.md). Esses resultados não encerram os dez integráveis nem comprovam participação coletiva.
+As evidências disponíveis incluem 152 testes de unidade, 26 de integração, 15 cenários E2E, cobertura de instruções de `src/core` de 97,90%, bugs corrigidos com regressão, PDF gerado, build reproduzível e publicação com smoke. Consulte [testes e limites](docs/evidencias/python-pages.md), [CI e publicação](docs/evidencias/ci-python-pages.md) e a [auditoria do enunciado](docs/gestao/auditoria-avaliacao.md). Esses resultados não encerram os dez integráveis nem comprovam participação coletiva.
 
 ## Como jogar
 
@@ -67,12 +69,19 @@ O projeto exportado pelo jogador é distinto do pacote acadêmico. A esteira for
 | `tests` | Testes de unidade, integração e navegador |
 | `scripts` | Build, documentação e empacotamento |
 | `.github` | Workflows e configuração de dependências |
-| `docs` | GDD, decisões, planos e evidências |
+| `pages` | Fonte do carregador e destino do painel de status |
+| `docs/gdd.md` | GDD completo exigido pelo professor |
+| `docs/relatorio.md` | Fonte do relatório técnico, ainda em preparação |
+| `docs/execucao` | Único roteiro vigente: quatro blocos e prompts |
+| `docs/gestao` | Checklist, auditoria, backlog e decisões atuais |
+| `docs/evidencias` | Testes, bugs e publicação da implementação atual |
+| `docs/images` | Mapas, telas, diagramas e arte do GDD |
+| `docs/historico` | Planos, especificações e evidências anteriores preservados |
 
 GitHub Flow: branch curta → PR para `main` → revisão de outro integrante → CI verde → merge. Usar Conventional Commits e tags anotadas após os aceites. `gh-pages` é escrito apenas pela pipeline.
 
 O professor exige pelo menos **dez PRs revisados por outro autor** e, para cada integrante, **commits e PRs aprovados em pelo menos três integráveis diferentes**, além da participação na banca. A equipe e a distribuição real estão pendentes em [SQUAD.md](SQUAD.md); os commits de um único autor não substituem o trabalho dos quatro.
 
-Consulte [decisões de projeto](docs/design.md), [plano Python/Pages](docs/superpowers/plans/2026-10-12-python-pages.md), [backlog](docs/backlog.md), [segurança](SECURITY.md), [registro de IA](AI-USAGE.md) e [terceiros/licenças](THIRD_PARTY.md).
+Consulte [decisões de projeto](docs/gestao/design.md), [plano Python/Pages](docs/historico/planos/2026-10-12-python-pages.md), [backlog](docs/gestao/backlog.md), [segurança](SECURITY.md), [registro de IA](AI-USAGE.md) e [terceiros/licenças](THIRD_PARTY.md).
 
 Os roteiros do contexto preservam C01/C02, P01–P07, D01–D07, R01–R07, S01–S06 e os checkpoints G0–G8. G0 é o primeiro aceite incompleto. Preparação técnica não substitui revisão humana, dados reais ou evidências de execução.

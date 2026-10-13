@@ -2,7 +2,7 @@
 
 | Data | Ferramenta | Etapa e uso efetivo | Saída | Aceite/revisão |
 |---|---|---|---|---|
-| 07/10/2026 | Codex | Leitura do HTML completo, Word e roteiros; confronto de requisitos; três conceitos e recomendação | Proposta local e docs/design.md | Solicitante aprovou conceito A nesta data |
+| 07/10/2026 | Codex | Leitura do HTML completo, Word e roteiros; confronto de requisitos; três conceitos e recomendação | Proposta local e docs/gestao/design.md | Solicitante aprovou conceito A nesta data |
 | 07/10/2026 | Codex | Core, conteúdo, interface, SVGs originais, testes, correção de foco, scripts e CI | Branch feature/primeiro-ciclo | Testes automatizados registrados; revisão por outro humano ainda pendente antes do merge |
 | 07/10/2026 | Codex | GDD completo e documentação de construção/licenças | docs/gdd.md e PDF gerado | Inspeção técnica/visual pela IA; conferência humana e identificação acadêmica pendentes |
 
@@ -50,7 +50,7 @@ Codex auxiliou a releitura integral do HTML e do JavaScript da ficha, a inspeç�
 
 ## Checklist completo — 12/10/2026
 
-Solicitante pediu um Markdown com todos os itens do HTML e checks atualizados conforme conclusão. Codex desdobrou as dez seções, abas, kit/TODO, cronograma, rubrica, banca e campos/validações JavaScript em docs/checklist-avaliacao.md, com complemento do modelo GDD claramente identificado. Foram separados mínimos, faixa avançada, condicionais e reconferências finais. Marcação inicial usa arquivos e execuções anteriores verificáveis; itens sem execução ou participação humana continuam abertos. Identificadores e links locais conferidos, sem alteração de mecânica ou criação de evidências. Revisão humana deste documento antes do merge permanece pendente; atualização futura exige evidência para cada check.
+Solicitante pediu um Markdown com todos os itens do HTML e checks atualizados conforme conclusão. Codex desdobrou as dez seções, abas, kit/TODO, cronograma, rubrica, banca e campos/validações JavaScript em docs/gestao/checklist-avaliacao.md, com complemento do modelo GDD claramente identificado. Foram separados mínimos, faixa avançada, condicionais e reconferências finais. Marcação inicial usa arquivos e execuções anteriores verificáveis; itens sem execução ou participação humana continuam abertos. Identificadores e links locais conferidos, sem alteração de mecânica ou criação de evidências. Revisão humana deste documento antes do merge permanece pendente; atualização futura exige evidência para cada check.
 
 ## Plano distribuído e rascunho da ficha — 12/10/2026
 
@@ -67,3 +67,11 @@ Solicitante pediu Lucca nos dez primeiros, seguido de um integrante por dez pass
 Checks de comprovação publicada/final foram atribuídos a etapas com as provas disponíveis; regressão local006 é entregue à publicação011 e comparação de candidata027 à release035. Painel020 informa DORA indisponível até integração real024. Rollback básico precisa estar integrado antes de PRD019; etapa022 fortalece/testa recuperação e026 comprova operação real. Protocolo04-passagem-de-bloco.md registra entradas/saídas/evidências e ações humanas. Papéis continuam propostas e permitem trabalho em outras áreas; os quatro precisam autoria real em três INT, revisão cruzada desde o primeiro bloco e banca.
 
 Verificação administrativa confirmou quarenta arquivos, dez por intervalo/pessoa, todos os 313 checks do snapshot mapeados uma vez, identidade/commit corretos nos prompts, links válidos e dependências acíclicas. Nenhuma função do jogo/esteira foi executada por esta reorganização nem contribuição de colega atribuída. Revisão humana antes de merge permanece pendente.
+
+## Organização conforme o kit do professor — 12/10/2026
+
+Solicitante pediu organização de pastas seguindo o HTML e referências locais. Codex comparou a seção06 com a estrutura real, moveu controles para docs/gestao, execução vigente para docs/execucao, planos/especificações/evidências antigos para docs/historico e preservou os nomes/códigos/conteúdo rastreável. Links e caminhos nos documentos foram atualizados para seus destinos locais atuais; esses movimentos não representam reexecução das evidências históricas.
+
+GDD continua docs/gdd.md; docs/relatorio.md foi criado como fonte em preparação, sem PDF técnico final ou métricas inventadas. Carregador existente extraído de scripts/prepare-pages.mjs para pages/index.html e consumido pelo publicador; o HTML gerado tem bytes idênticos aos anteriores. pages/status registra destino ainda não implementado, sem painel fictício. Root README e README do contexto apontam a um único projeto e ao primeiro passo local. Nenhum passo funcional/INT foi encerrado por reorganização.
+
+Validações reais: quarenta prompts/dez por intervalo/pessoa, mapa dos313checks semomissões/duplicações;80MDslocais semlinks ausentes; lint; seis testes de integração Pages; comparação dos17arquivos de publicação antes/depois byte a byte; build de seis missões; GDDpdf12pA4/pdfinfo. Originais HTML/DOCX preservados e hashes conferidos. Revisão humana antes do merge continua pendente; não houve revisão fictícia ou alteração manual de produção. Origem das ferramentas e registros anteriores permanecem no histórico.
