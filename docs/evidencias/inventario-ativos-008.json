@@ -1,0 +1,366 @@
+[
+  {
+    "path": "docs/evidencias/bug-download-py-antes.png",
+    "bytes": 175368,
+    "sha256": "8ead63aa86c9baa73c78f1e568e152f5898f2ad987a019bb9ddb4db09050daf9",
+    "kind": "captura de execuÃ§Ã£o",
+    "originCommits": [
+      "86390e0fa422974084b70095389faa857dd40737"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:86390e0fa422974084b70095389faa857dd40737",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/evidencias/bug-foco-antes.png",
+    "bytes": 56279,
+    "sha256": "a149c14746cabf83150885a5d37d14fb7da0b797339e5cf59e0e52d25627c553",
+    "kind": "captura de execuÃ§Ã£o",
+    "originCommits": [
+      "2fe826e6d33ff0c1f598f13ebc2ee91d36397280"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:2fe826e6d33ff0c1f598f13ebc2ee91d36397280",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/evidencias/bug-regra-antiga-antes.png",
+    "bytes": 130587,
+    "sha256": "35e095b797d0a576bd761404bc6f8e6c80026195fd68f6e8b9105d60d6db3897",
+    "kind": "captura de execuÃ§Ã£o",
+    "originCommits": [
+      "9a5a53c890b57a61145e6968025284749a86db36"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:9a5a53c890b57a61145e6968025284749a86db36",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/evidencias/imagens/passo-006/preview-hml-desktop-encerramento.png",
+    "bytes": 190747,
+    "sha256": "fddf39320a864f26a4e94c6c72794b7cb1b6db33097c2b8d5a28330b60da62fa",
+    "kind": "captura de execuÃ§Ã£o",
+    "originCommits": [
+      "1e0b4b56464af2b3d762a8292f513449197ebc87"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:1e0b4b56464af2b3d762a8292f513449197ebc87",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/evidencias/imagens/passo-006/preview-hml-toque-encerramento.png",
+    "bytes": 110787,
+    "sha256": "02e02c31aa3787e2127e5d145edb8ed4b6fc13fc1d1826f42370b16081d36da4",
+    "kind": "captura de execuÃ§Ã£o",
+    "originCommits": [
+      "1e0b4b56464af2b3d762a8292f513449197ebc87"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:1e0b4b56464af2b3d762a8292f513449197ebc87",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/bench-conexao-real.png",
+    "bytes": 384755,
+    "sha256": "ff922f05d1c088927f445497af4872c9ef46ae30bbc850745e3fc8584006a9bb",
+    "kind": "captura de execuÃ§Ã£o",
+    "originCommits": [
+      "6626be9e0c0cc55ad7a624fd13b55ae03c4205c1"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:6626be9e0c0cc55ad7a624fd13b55ae03c4205c1",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/bench-final-mobile-real.png",
+    "bytes": 131913,
+    "sha256": "189986107fafb16df101bb41125b7b0ae63597ead10a0f2f7bcdbaf254cc6064",
+    "kind": "captura de execuÃ§Ã£o",
+    "originCommits": [
+      "6626be9e0c0cc55ad7a624fd13b55ae03c4205c1"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:6626be9e0c0cc55ad7a624fd13b55ae03c4205c1",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/campanha-real.png",
+    "bytes": 302327,
+    "sha256": "b82e67fc50b097b8dcd2527a6fb83cbeec89a187fca371d6bad39b9e4d1af887",
+    "kind": "captura de execuÃ§Ã£o",
+    "originCommits": [
+      "acf6eb133c181eb7b7674204d7a6d2c91c18abd6"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:acf6eb133c181eb7b7674204d7a6d2c91c18abd6",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/concept.svg",
+    "bytes": 1205,
+    "sha256": "8eea91ca26c38b817bdcd5abf8ee3c10e1e376b5ffbd9a71f7160dd0286a738f",
+    "kind": "desenho de projeto",
+    "originCommits": [
+      "e6d4ad6ebdd19249b744fc0415725dc9a0ab9b35"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:e6d4ad6ebdd19249b744fc0415725dc9a0ab9b35",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/esteira.svg",
+    "bytes": 2192,
+    "sha256": "30b219e02d99c6e2b4425af141ab5ce861cf8dd083d8275d60330d4c4f8aabed",
+    "kind": "desenho de projeto",
+    "originCommits": [
+      "e6d4ad6ebdd19249b744fc0415725dc9a0ab9b35"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:e6d4ad6ebdd19249b744fc0415725dc9a0ab9b35",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/fluxo.svg",
+    "bytes": 1860,
+    "sha256": "4f42a8939a03f10b2d02f3cef65e6c7a1756eb6739c48fd4465dae07b3e882ae",
+    "kind": "desenho de projeto",
+    "originCommits": [
+      "e6d4ad6ebdd19249b744fc0415725dc9a0ab9b35"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:e6d4ad6ebdd19249b744fc0415725dc9a0ab9b35",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/lab-condicao-real.png",
+    "bytes": 219609,
+    "sha256": "5332e5c93310040010360e603e6d4045105cb38c9784029d4d622c3911080502",
+    "kind": "captura de execuÃ§Ã£o",
+    "originCommits": [
+      "0e2e59625d5437bf958f2a1ebfbd4792c7b46d32"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:0e2e59625d5437bf958f2a1ebfbd4792c7b46d32",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/lab-menu-real.png",
+    "bytes": 294200,
+    "sha256": "6028d1c0747a59b0c79fbdece70146df5ac599de0334a64762a10186555af4c0",
+    "kind": "captura de execuÃ§Ã£o",
+    "originCommits": [
+      "0e2e59625d5437bf958f2a1ebfbd4792c7b46d32"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:0e2e59625d5437bf958f2a1ebfbd4792c7b46d32",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/mapa-1.svg",
+    "bytes": 1705,
+    "sha256": "117135f010e8ab78851f0169fe492d0290c497d7b913fe8013cd91a5e9943acc",
+    "kind": "desenho de projeto",
+    "originCommits": [
+      "e6d4ad6ebdd19249b744fc0415725dc9a0ab9b35"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:e6d4ad6ebdd19249b744fc0415725dc9a0ab9b35",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/mapa-2.svg",
+    "bytes": 1941,
+    "sha256": "f38b3f0fdceb48d0c7f0b98a648fdc6299c1bcd8cb45b43190dcc35779769772",
+    "kind": "desenho de projeto",
+    "originCommits": [
+      "e6d4ad6ebdd19249b744fc0415725dc9a0ab9b35"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:e6d4ad6ebdd19249b744fc0415725dc9a0ab9b35",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/mapa-3.svg",
+    "bytes": 1849,
+    "sha256": "e6ffb0de04d094285a388f00d464cef095a4912e302825e6b7783278aa19b4fb",
+    "kind": "desenho de projeto",
+    "originCommits": [
+      "e6d4ad6ebdd19249b744fc0415725dc9a0ab9b35"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:e6d4ad6ebdd19249b744fc0415725dc9a0ab9b35",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/mapa-4.svg",
+    "bytes": 1807,
+    "sha256": "60d0a73806d3ec1bfb01bda89a834064c10697c2d37a605f90f3a324642bc767",
+    "kind": "desenho de projeto",
+    "originCommits": [
+      "acf6eb133c181eb7b7674204d7a6d2c91c18abd6"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:acf6eb133c181eb7b7674204d7a6d2c91c18abd6",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/mapa-5.svg",
+    "bytes": 1759,
+    "sha256": "06dd501aeeab6a06bb7d6f30ef9194d57909920668209b8fa5bcb1c15f35d0f1",
+    "kind": "desenho de projeto",
+    "originCommits": [
+      "0e2e59625d5437bf958f2a1ebfbd4792c7b46d32"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:0e2e59625d5437bf958f2a1ebfbd4792c7b46d32",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/mapa-6.svg",
+    "bytes": 1818,
+    "sha256": "238306db467ab292f6c027aa049540d8d5da6f854266f5473ec070063159b909",
+    "kind": "desenho de projeto",
+    "originCommits": [
+      "0e2e59625d5437bf958f2a1ebfbd4792c7b46d32"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:0e2e59625d5437bf958f2a1ebfbd4792c7b46d32",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/missao-real.png",
+    "bytes": 199942,
+    "sha256": "3da03520ce13b2fe4ca340ed6da396d37c7b946425fb9dbab73b57544b9d56a0",
+    "kind": "captura de execuÃ§Ã£o",
+    "originCommits": [
+      "acf6eb133c181eb7b7674204d7a6d2c91c18abd6"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:acf6eb133c181eb7b7674204d7a6d2c91c18abd6",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/oficina-final-real.png",
+    "bytes": 161744,
+    "sha256": "3aa6c49b01947d78ca76cef45592449d5954f6b08a9ca4a09a8ec1fa1fef55b6",
+    "kind": "captura de execuÃ§Ã£o",
+    "originCommits": [
+      "9a5a53c890b57a61145e6968025284749a86db36"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:9a5a53c890b57a61145e6968025284749a86db36",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/oficina-primeira-real.png",
+    "bytes": 135208,
+    "sha256": "8e185b4438b0b10f18b02abb58d86df5a36b65ff836d54ea3c150fad3c1a3268",
+    "kind": "captura de execuÃ§Ã£o",
+    "originCommits": [
+      "9a5a53c890b57a61145e6968025284749a86db36"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:9a5a53c890b57a61145e6968025284749a86db36",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/pages-python-real.png",
+    "bytes": 187756,
+    "sha256": "d150397512dab4d5afb2d60da832bf4aa032bb04d846b4011f7c568be0e3901a",
+    "kind": "captura de execuÃ§Ã£o",
+    "originCommits": [
+      "de16047e50d8238b856841de06e559f2e1e1eb44"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:de16047e50d8238b856841de06e559f2e1e1eb44",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/python-final-real.png",
+    "bytes": 190486,
+    "sha256": "36dd4442d527c50f9876a48806aa9826047f6de44604a3586e582b74e06126a5",
+    "kind": "captura de execuÃ§Ã£o",
+    "originCommits": [
+      "86390e0fa422974084b70095389faa857dd40737"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:86390e0fa422974084b70095389faa857dd40737",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/python-primeira-real.png",
+    "bytes": 150095,
+    "sha256": "55c244d291e89e321ca6467af0d44707d9ad1fda9f7d41c885073e1ad1bcd5dc",
+    "kind": "captura de execuÃ§Ã£o",
+    "originCommits": [
+      "86390e0fa422974084b70095389faa857dd40737"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:86390e0fa422974084b70095389faa857dd40737",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  },
+  {
+    "path": "docs/images/wireframes.svg",
+    "bytes": 1624,
+    "sha256": "cfa2b3c8fcacd01509f614324176612adaa7ac4453ba27462b908b2ede0fd88e",
+    "kind": "desenho de projeto",
+    "originCommits": [
+      "e6d4ad6ebdd19249b744fc0415725dc9a0ab9b35"
+    ],
+    "responsavelRegistro": "Lucca Castilho / luccalck",
+    "autoria": "Projeto Rota do Código; assistência Codex; confirmação coletiva pendente",
+    "license": "MIT do projeto, condicionada à confirmação coletiva de autoria",
+    "source": "git:e6d4ad6ebdd19249b744fc0415725dc9a0ab9b35",
+    "publicUse": "Conferência técnica atual; declaração coletiva pendente"
+  }
+]

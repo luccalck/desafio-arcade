@@ -93,9 +93,18 @@ Revisão por outro autor permanece geral antes do merge. Nenhum novo check geral
 
 Revisão por outro autor/participação e aceites gerais permanecem antes do merge. PRsDependabot recebemCI em qualquer base; nenhuma execução de atualização do bot foi fabricada. Reexecutar todos os jobs para outra tentativa íntegra; ausência de artefato da tentativa bloqueia coleta. [Evidências007](../evidencias/ci-formal.md).
 
-## Passo 008
+## Passo008 — Inventário e rastreabilidade preparados
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+- [x] Inventário158componentes/26ativos com licenças/créditos/URLs/hashes/fontesGit; arte e fatos educativos conferidos tecnicamente.
+- [x] Matriz das etapasIA conhecidas ligada a commits/PRs reais, sem atribuir trabalho aos colegas ou aprovação fictícia.
+- [x] Termos oficiais consultados; scannerGit53commits/0achados, formatosCPF analisados sem candidatos; fontesPDF daCI identificadas. Limites nas [evidências](../evidencias/direitos.md).
+- [ ] Publicação própria/PR/CI doHEAD e atualização da branchpadrão apósCIverde:conferir na conclusão.
+- [ ] **GDD-15/DIR-14:** confirmação coletiva dos quatro sobre autoria/direitos/propriedade do protótipo naUC; não assinamos por ninguém e não publicamos CPF/assinaturas.
+- [ ] **I05-14/15/21,KIT-28,DIR-02:** revisão real de conteúdo/código/fatos/direitos por outro integrante noPR; completar registros pessoais/poruso onde faltarem. Aprovação do solicitante não substitui revisão de outro autor.
+- [ ] **DIR-01/I05-16:** confirmar adequação/aceite do uso das ferramentas pelos responsáveis e declaração coletiva; consulta técnica dos termos não presta consentimento pessoal.
+- [ ] **I05-11/17,DIR-04/05/06/07/15:** reconferir inventário, originalidade/marcas, licenças e ausência de dados privados até tagfinal, incluindo Stitch009/vídeo029/release035/fechamento040. Nenhum vídeo existente para validar agora.
+
+I05-10/12/13 revalidados no escopo atual; nenhum dos16checks atribuídos fechado. Preparação técnica entregue; G1/G2 coletivos não aceitos. RAs continuam adiados no001/005, sem nova solicitação.
 
 ## Passo 009
 

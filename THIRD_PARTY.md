@@ -25,3 +25,21 @@ Metadados npm conferidos nos package.json instalados em 07/10/2026. Licenças co
 Documentação técnica foi consultada; imagens/logotipos do modelo do professor não foram incorporados. Nenhum aceite de termos do concurso foi feito em nome da equipe.
 
 Python 3 (CPython) é ferramenta de validação local/CI de fixtures editoriais, sob Python Software Foundation License; não é distribuído no site ou ZIP. Documentação/licença: https://docs.python.org/3/license.html . O jogador não precisa instalar Python para jogar; o arquivo .py exportado contém funções originais do projeto sob MIT. Não há nova dependência npm ou runtime CPython incorporado.
+
+## Conferência008 — 13/10/2026
+
+[Inventário completo158dependências](docs/evidencias/inventario-npm-008.md), [dados de biblioteca/autor ou titular/URL/licença](docs/evidencias/inventario-npm-008.json) e [26ativos rastreados](docs/evidencias/inventario-ativos-008.json) complementam a tabela resumida. Licenças declaradas no SBOM:120MIT,18Apache-2.0,1PSF-2.0,7BSD-2-Clause,3BSD-3-Clause,6ISC,2MPL-2.0 e1BlueOak-1.0.0. Nenhuma sem licença declarada. Terceiros conservam suas licenças; MIT do projeto não os relicencia. Nenhuma dependência npm é importada como biblioteca de runtime pelo jogo; ferramentas/transitivos não são copiados para build.zip como node_modules.
+
+| Ativo / uso | Origem e crédito | Licença / situação |
+|---|---|---|
+| Código/CSS/JSON/textos educativos | src/, scripts/, pages/ e Git; registroLucca/luccalck, assistênciaCodex | MIT do projeto; confirmação coletiva pendente |
+| RobôRDC, nave, pedras, estrelas, cristais, ícones | SVG inline em src/scenes/shared.ts/arcade-player.ts/views.ts e CSS | Autoria assistida do projeto; sem ativo externo identificado na inspeção, direitos coletivos pendentes |
+| Dez SVGs de mapas/fluxos/concept/wireframes | docs/images; gerador scripts/gdd-pdf.mjs; hashes/origem no inventário | Desenhos de projeto, MIT; não são prints de execução |
+| Dezesseis PNGs | docs/images/docs/evidencias; fontesGit e hashes no inventário | Capturas reais registradas, algumas de versões anteriores; não reatribuímos data/SHA nem tratamos como arte raster gerada |
+| Fontes do jogo | TrebuchetMS/Consolas/Arial e fallbacks locais, Microsoft conforme fonts/font-faq | Apenas nomes na pilhaCSS; não distribuímos arquivosTTF/WOFF ou CDN |
+| Fontes incorporadas no GDD daCI007 | LiberationSans/Bold2.1.5, titularesGoogle2010/RedHat2012 | SILOFL1.1; metadados extraídos do PDF, fsType0; não copiamos fontes binárias para site |
+| Sons, músicas e vídeo | Nenhum arquivo presente nesta candidata | Ausência declarada; reconferir029 e035 antes do pacote final |
+
+Fontes oficiais: [Microsoft sobre pilhasCSS/embutimento](https://learn.microsoft.com/en-us/typography/fonts/font-faq), [licença Liberation](https://github.com/liberationfonts/liberation-fonts/blob/main/LICENSE). Quando o PDF mudar, reconferir fontes incorporadas reais; navegador/runner pode usar outra família. Chrome/CPython/GitHub são ferramentas/serviços de desenvolvimento; não ativos do jogo. Actions e actionlint/Gitleaks constam nos registros007 e distribuições com suas licenças.
+
+Não usamos marcas/logotipos de SENAI ou Framework como ativos. Referências acadêmicas/técnicas por nome não são autorização para incorporar logotipos. Vídeo e eventuais ativos novos exigem origem/licença/crédito reais antes de publicar. Revisão técnica atual e inventário não encerram os aceites humanos: [auditoria e matriz de revisão008](docs/evidencias/direitos.md).

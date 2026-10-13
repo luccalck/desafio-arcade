@@ -11,7 +11,7 @@ O estado de cada passo consta abaixo. Prompts entregues não significam função
 | 005 | Lucca Castilho | GDD/PDF validados; identificação parcial | 214736a; PR#7 draft sobre004 | CI38346858370/214736a verde; revisão geral pendente | SQ-06; gdd-revisao.md;12seções/804chars/13páginas | RAs/GDD-13; direitos/revisão gerais; release/links finais |
 | 006 | Lucca Castilho | Roteiro preparado; preview validado | 1e0b4b5; PR#8 draft sobre005 | CI38348580349verde; revisão geral pendente | I04-07 revalidado; regressao-hml.md;17locais/5públicos | Execução formal011 e smoke014/019; G3 não aceito |
 | 007 | Lucca Castilho | CI/contratos preparados; clone validado | a2016fd; PR#9draft sobre006 | CI38428808065verde; revisão geral pendente | KIT-09; ci-formal.md;184testes+17E2E/pacote83arquivos | RecebimentoI03-24, scripts/deploy011019, KIT-08 futuro; G3/G4 não aceitos |
-| 008 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
+| 008 | Lucca Castilho | Inventário/auditoria preparados; aceites humanos separados | Publicação em preparação | CI a conferir; revisão real ausente | I05-10/12/13 revalidados; direitos.md/158componentes/26ativos |16checksassignedhumanos/contínuos/final; sem aceites coletivos |
 | 009 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
 | 010 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
 | 011 | Davi Paes | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |

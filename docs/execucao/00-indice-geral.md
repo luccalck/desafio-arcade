@@ -106,3 +106,7 @@ Originais preservados. Repositório/arquivo principal único; .contexto e acompa
 ## Preparação validada do passo007 — 13/10/2026
 
 [Esteira e contrato de artefatos](../evidencias/ci-formal.md):clone limpo, CI/pacote/avisos no Actions validados. KIT-09 fechado:114marcados/298abertos. Deploys formais e recebimento permanecem nos passos indicados no registro único.
+
+## Preparação do008 — 13/10/2026
+
+[Inventários, direitos e revisão necessária](../evidencias/direitos.md):158componentes/26ativos e rastreabilidade das etapasIA conhecidas. Nenhum novo check geral fechado;114marcados/298abertos. Declarações/revisões humanas e reconferência com novos ativos/vídeo continuam obrigatórias.
