@@ -113,3 +113,7 @@ Ao terminar, informe objetivamente: passo/INT/checks realmente fechados, arquivo
 ## Encaminhamento explícito do passo003 — 13/10/2026
 
 Ao executar007, preparar no workflow os contratos/dependências ci → deploy-hml → deploy-prd já previstos neste prompt. SITE_URL está configurada; homologacao/producao aceitam branchmain, e producao exige reviewer sem bypass administrativo. Não confundir configuração com deploy executado. Coordenar o método de publicação Pages e migração de origem com011; entregar arquivos/artefatos prontos para011/019 e testes relevantes. Registrar execução pendente nas seções desses passos do05-pendencias-por-passo.md.
+
+## Encaminhamento de segurança004
+
+Conferir que PRs reais do Dependabot recebem ci na base correta, mantendo jobs de validação sem secrets/permissões de escrita desnecessárias. Defaultmain/base e eventos do bot devem ser coerentes; não tratar a configuração semanal como execução de atualização já comprovada. Preserve gates/scanner/audit/SBOM verificados no004.

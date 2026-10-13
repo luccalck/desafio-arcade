@@ -99,3 +99,9 @@ Usamos IA para inspeção/documentação e comandos com resultados conferidos, s
 ## Ajustes de encerramento003 — 13/10/2026
 
 Com orientação de Lucca, Codex registrou acesso público do professor, conferência dos convites no034 e encaminhamentos explícitos nos007/011/019. Preparou PR2 para revisão/merge automático condicionado à proteção e configurou branchmain nos environments, mantendo requiredreviewer e retirando bypass administrativo de producao. APIs e consulta anônima conferidas; não houve aprovação de colega, merge ou deploy. Registro central incorpora também os ajustes002 anteriormente autorizados, sem inventar participação.
+
+## Passo004 — segurança e privacidade — 13/10/2026
+
+Codex auxiliou LuccaCastilho/luccalck a executar somente004: investigar/ativar Dependabot depois da autenticação humana, conferir scanner/hook/audit/SBOM/permissões, observar rede/armazenamento com Playwright do projeto e documentar política/ausência de telemetria. Fonte781af0f; sem alteração funcional, dependência nova, telemetria ou direito/revisão coletiva inventados.
+
+Resultados: Dependabotalerts habilitados/0alerts/securityupdatesenabled; auditprodução0;SBOM158;históricoGitleaks43commits0;fixtures claramente sintéticas com detecção/redação/exit1 após investigar allowlist; rede local6GET/0externas/0cookies. Scripts/fixtures ignorados, sem credencial real. SECURITY/README/evidências revisados tecnicamente e aguardam revisão de outro autor antes do merge. Branchfeature/passo-004-dependabot-privacidade; commit/PR no controle.

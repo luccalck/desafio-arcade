@@ -97,3 +97,11 @@ Enquanto o PRprincipal#2 aguarda integração, os diffs dependentes são isolado
 Enviamos convites write a DaviSouza78, miguelsenai2024 e6lucassilvaaa em13/10/2026; aceites/acessos e leitura do professor ainda precisam de confirmação. Papéis coordenam, sem limitar contribuição nas outras áreas.
 
 Variables públicas: `SITE_URL=https://luccalck.github.io/desafio-arcade`, `PAGES_PREVIEW_ENABLED=true`. Segredos ficam em secrets/token do job. Pages atual usa Actions; planejamos origem gh-pages juntamente com publicação automatizada nos007/011. Não trocar Settings isoladamente. [Configuração, resultados e plano](docs/evidencias/configuracao-github.md).
+
+## Privacidade e dados locais
+
+Não implementamos telemetria, analytics, contagem remota de partidas ou coleta de dados pessoais do jogador. O jogo não solicita nome, e-mail, idade ou localização, não possui cadastro/ranking e não envia o código Python digitado para um servidor. Conteúdo e execução ficam na build estática.
+
+Guardamos somente progresso, funções Python e preferências no localStorage do navegador, nas chaves da oficina v5 e settingsv1. O carregador do preview guarda na sessionStorage o SHA da versão selecionada; suas requisições de rollout/version.json servem à escolha da release, não à telemetria de partidas. Armazenamento indisponível mantém a oficina na sessão. Reiniciar oficina remove apenas suas fontes/progresso; preferências e campanhas anteriores são preservadas.
+
+Não usamos cookies da aplicação, publicidade, APIs de IA em runtime ou serviços externos na partida. A hospedagem entrega os arquivos estáticos por HTTP; abrir index.html da build permite jogar offline. Novas integrações/coletas exigem revisão desta declaração antes de entrar na build. [Conferência de segurança e privacidade](docs/evidencias/seguranca-inicial.md).

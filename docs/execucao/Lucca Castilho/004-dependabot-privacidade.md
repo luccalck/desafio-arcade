@@ -1,14 +1,16 @@
 # Passo 004 — Completar segurança inicial e privacidade
 
-**Responsável:** Lucca Castilho · bloco 1. **Papel oficial proposto:** Produto e Game Design. **Revisor proposto:** Davi Paes (conta real a confirmar).
+**Execução em13/10/2026:** segurança inicial validada e privacidade documentada. [Evidências](../../evidencias/seguranca-inicial.md). Aceites gerais/finais permanecem separados.
+
+**Responsável:** Lucca Castilho · bloco 1. **Papel oficial proposto:** Produto e Game Design. **Revisor proposto:** Davi Paes (DaviSouza78; revisão geral antes do merge).
 **INT:** INT-05/08/03. **Roteiros preservados:** S01/S02. **Checkpoint:** G0/G2.
 **Dependências de execução:** 001, 003. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
-- [ ] Trabalho implementado/documentado com autoria real.
-- [ ] Validações executadas e evidências arquivadas.
+- [x] Segurança inicial/configuração/política documentadas pela própria conta.
+- [x] APIs/scanners/audit/SBOM/rede executados e evidências arquivadas.
 - [ ] Commit/push pela identidade GitHub do responsável.
 - [ ] PR revisado por outro autor e CI verde.
-- [ ] Checks aplicáveis atualizados, sem declarações fictícias.
+- [x] I05-06/DIR-12 atualizados com provas; gates/condicionais preservados.
 
 ## Regra da execução por blocos
 
@@ -52,12 +54,12 @@ Se houver equivalente já funcional, reutilize e documente o caminho efetivo. N�
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
 - [ ] **SQ-09** — SRE assume observabilidade, alertas, DORA, segurança, licenças e triagem.
-- [ ] **I05-06** — Dependabot efetivamente ativado e verificável no repositório. YAML existe; execução ainda não comprovada e alertas API informaram disabled.
+- [x] **I05-06** — Dependabot efetivamente ativado e verificável no repositório. YAML existe; execução ainda não comprovada e alertas API informaram disabled.
 - [ ] **I08-33** — CONDICIONAL: contagem anônima de partidas/fases, se adotada; sem identificar jogador, finalidade documentada.
 - [ ] **DIR-09** — CONTÍNUO/FINAL: reconferir ausência de coleta pessoal na build entregue, incluindo serviços/telemetria adicionados.
 - [ ] **DIR-10** — CONDICIONAL ranking: só apelido escolhido na hora e guardado no navegador. Jogo atual não tem ranking.
 - [ ] **DIR-11** — CONDICIONAL telemetria: somente anônima e agregada, com coleta/finalidade explicadas no README.
-- [ ] **DIR-12** — Documentar explicitamente no README a ausência de telemetria atual; GDD já declara ausência.
+- [x] **DIR-12** — Documentar explicitamente no README a ausência de telemetria atual; GDD já declara ausência.
 - [ ] **G0** — Preparação: equipe registrada, acessos funcionando, estratégia Git e proteção preparadas. **Primeiro aceite incompleto.**
 
 ### Rubrica, integridade e aceites
@@ -97,8 +99,7 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "fix: completar segurança inicial e privacidade
-"
+git commit -m "docs: validar segurança inicial e documentar privacidade"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 004: Completar segurança inicial e privacidade" --body-file .contexto/pr-passo-004.md
 ```
