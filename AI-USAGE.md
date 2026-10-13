@@ -105,3 +105,9 @@ Com orientação de Lucca, Codex registrou acesso público do professor, confer�
 Codex auxiliou LuccaCastilho/luccalck a executar somente004: investigar/ativar Dependabot depois da autenticação humana, conferir scanner/hook/audit/SBOM/permissões, observar rede/armazenamento com Playwright do projeto e documentar política/ausência de telemetria. Fonte781af0f; sem alteração funcional, dependência nova, telemetria ou direito/revisão coletiva inventados.
 
 Resultados: Dependabotalerts habilitados/0alerts/securityupdatesenabled; auditprodução0;SBOM158;históricoGitleaks43commits0;fixtures claramente sintéticas com detecção/redação/exit1 após investigar allowlist; rede local6GET/0externas/0cookies. Scripts/fixtures ignorados, sem credencial real. SECURITY/README/evidências revisados tecnicamente e aguardam revisão de outro autor antes do merge. Branchfeature/passo-004-dependabot-privacidade; commit/PR no controle.
+
+## Passo005 — GDD e identificação disponível — 13/10/2026
+
+Codex auxiliou LuccaCastilho/luccalck a executar005: lerMD/modelo/GDD/fontes, registrar Aura67/nomes/contas/papéis/links reais, distinguir exportações/futuro/aceites, atualizar backlog e gerar/inspecionar o PDF. Mantidas12seções/Esteira/declaração com direitos coletivos pendentes; RAs adiados, sem CPF/assinaturas.
+
+Resultado: GDDv0.6.0/revisão005data13/10, highconcept804caracteres; PDF13pA4/pdfinfo, texto e páginas inspecionados; sem alteração de comportamento. SQ-06coordenação registrado, GDD-13 ainda aberto. Capturas antigas não reatribuídas; nenhum usuário/aprendizado/banca/revisão humana inventado. Branchfeature/passo-005-gdd-identificacao; publicação/PR reais no controle. Página inicial acompanha candidata nova conforme autorização, semmerge ou produção.

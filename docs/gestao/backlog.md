@@ -1,10 +1,10 @@
 # Backlog rastreável
 
-Squad Aura67: papéis e revisão cruzada confirmados por Lucca, com participação de todos nas áreas. [Identificação parcial](../../SQUAD.md) e [evidências001](../evidencias/equipe.md). Execução vigente: Lucca001–010, Davi011–020, Miguel021–030 e Lucas031–040. Dados/acessos/revisões e comprovação de contribuição continuam obrigatórios.
+Organizamos o squad Aura67 com papéis de coordenação e revisão cruzada, mantendo participação de todos nas áreas. [Identificação parcial](../../SQUAD.md) e [evidências001](../evidencias/equipe.md). Execução vigente: Lucca001–010, Davi011–020, Miguel021–030 e Lucas031–040. Dados/acessos/revisões e comprovação de contribuição continuam obrigatórios.
 
 Não contar itens como PRs feitos nem atribuir contribuições a pessoas desconhecidas. Os roteiros por áreas no contexto são a ordem operacional; G0 continua pendente de squad/acessos/prazo. A preparação autorizada de G1/G2 não fecha seus aceites coletivos.
 
-| Tarefas | INT | Trabalho / validação restante | Papel a confirmar |
+| Tarefas | INT | Trabalho / validação restante | Coordenação |
 |---|---|---|---|
 | C01/C02, R01 | 01 | Identificação, colaboradores, revisão e compreensão pelos quatro | Todos / Plataforma |
 | P01, D01 | 02,04 | Conceito aprovado; GDD/contratos preparados; revisar coletivamente | Produto / Desenvolvimento |
@@ -16,4 +16,17 @@ Não contar itens como PRs feitos nem atribuir contribuições a pessoas desconh
 | S04/S05 | 08 | Sondas, alertas/fechamento, painel e quatro DORA reais | SRE |
 | P06/P07, R06/R07, S06, D07 | 02,06,09,10 | Vídeo humano, relatório, pacote, tag final, triagem, ficha e banca | Todos |
 
-Os dez PRs revisados devem corresponder a trabalho real distribuído; este primeiro lote é um único PR, não dez PRs artificiais. Cada novo PR deve indicar tarefa, INT, autor, revisor, execução e evidência. Split futuro depende das contribuições reais dos integrantes, não de identidades simuladas.
+Os dez PRs revisados devem corresponder a trabalho real distribuído; a quantidade deve ser contada pelos PRs reais e seus aceites, sem criar PRs artificiais para simular a meta. Cada novo PR deve indicar tarefa, INT, autor, revisor, execução e evidência. Split futuro depende das contribuições reais dos integrantes, não de identidades simuladas.
+
+## Atualização do passo005 — 13/10/2026
+
+Produto/Lucca mantém o GDD e o backlog, coordena jogabilidade e preparação de playtest/pitch com as outras áreas. As cinco missões/final continuam aprovadas; não ampliamos mecânicas. Aprendizagem prevista: eventos/decisões, operações, fronteiras/condições, estado/pontos e listas/repetição; prática no editor e resultado observado na nave. Ganho de aprendizagem não foi medido.
+
+| Estado | Trabalho | Próxima evidência |
+|---|---|---|
+| Implementado e testado tecnicamente | OficinaPython, editor, campanha/final, exportaçãoHTML/.py e build estática | Reconferência da candidata/publicação formal nos passos previstos |
+| Atualizado neste005 | Identificação disponível,12seções/Esteira/direitos e PDF do GDD | PR/CI e revisão geral antes da integração |
+| Identificação parcial | Squad/nomes/contas/papéis confirmados; RAs adiados | Completar dados quando fornecidos; GDD-13 segue aberto |
+| Futuro operacional | 006regressão,007esteira,011HML/migração,019PRD,021playtest,029vídeo,034candidata,037ficha/relatório | Execuções e registros reais por etapa; sem confundir plano com aceite |
+
+Playtest, acessibilidade humana, pitch, direitos coletivos e evidências de release permanecem futuros. A descrição da exportação distingue HTMLjogável e funçõesPython editáveis; o .py separado não recompila o HTML automaticamente.

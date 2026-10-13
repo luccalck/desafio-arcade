@@ -57,7 +57,7 @@ Os caminhos locais originais são referências de contexto, não arquivos que o 
 - [x] SQ-03 — Quatro papéis oficiais distintos atribuídos em SQUAD.md, com concordância da equipe informada por Lucca em12/10/2026. Coordenação sem exclusividade: todos atuam nas áreas; [equipe.md](../evidencias/equipe.md).
 - [ ] SQ-04 — Conferir formação/registro previstos em 02/10 e estabilidade dos integrantes após o registro; não inventar registro passado.
 - [ ] SQ-05 — Garantir trabalho real dos quatro: papéis têm responsáveis, mas não exclusividade; todos programam, revisam e aparecem no Git.
-- [ ] SQ-06 — Produto assume GDD, backlog, jogabilidade, testes com usuários e roteiro do vídeo.
+- [x] SQ-06 — Produto/Lucca mantém GDD/backlog e coordena jogabilidade, preparação de playtest e pitch, conforme SQUAD/backlog atualizados no005 em13/10/2026. Testes com usuários/vídeo permanecem nas suas etapas, sem alegar execução.
 - [ ] SQ-07 — Desenvolvimento assume arquitetura do jogo e pirâmide de testes.
 - [ ] SQ-08 — Plataforma assume workflows, releases, ambientes, entrega e rollback.
 - [ ] SQ-09 — SRE assume observabilidade, alertas, DORA, segurança, licenças e triagem.

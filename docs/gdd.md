@@ -1,15 +1,31 @@
 # Rota do Código — Game Design Document
 
-Versão de projeto: **{{VERSION}}**. Data: **12/10/2026**. Oficina de Jogos aprovada em09/10; adaptação dos desafios para Python e publicação de preview solicitadas em12/10. Documento da branch candidata, sem release ou produção desta versão.
+Versão do software: **{{VERSION}}**. Revisão do documento: **005 — 13/10/2026**. Mantemos a oficina de jogos aprovada, com desafios Python e preview web. Este documento descreve a candidata; sua data de revisão não representa data de submissão ou release final.
 
 | Identificação | Situação verdadeira |
 |---|---|
 | Jogo / atividade | Rota do Código / Desafio Arcade — Integração e Entrega Contínua, DevOps |
-| Squad / quatro integrantes / nomes / RAs / papéis | Dados serão fornecidos pelo responsável; ainda incompletos |
+| Squad | Aura 67 |
+| Coordenação de Produto | Lucca Castilho; participação dos quatro em todas as áreas |
+| Data de submissão | Ainda não houve submissão final registrada; preencher na entrega real |
 | Repositório | https://github.com/luccalck/desafio-arcade |
-| PR candidato | https://github.com/luccalck/desafio-arcade/pull/2 |
+| PR do primeiro ciclo | https://github.com/luccalck/desafio-arcade/pull/2; integração protegida ainda pendente |
+| Preview público do jogo | https://luccalck.github.io/desafio-arcade/ |
+| HML do preview | https://luccalck.github.io/desafio-arcade/hml/ |
+| CI de referência conferida | https://github.com/luccalck/desafio-arcade/actions/runs/38345466916 — candidata do passo004, sem deploy nesta execução |
 | Produção / homologação / vídeo / release | Preview Pages configurado; publicação/testes rastreados no workflow. Produção formal, vídeo e release final pendentes |
 | Plataforma | WEB estática responsiva, mesma experiência no computador e celular |
+
+### Equipe
+
+| Integrante | RA | Coordenação | GitHub |
+|---|---|---|---|
+| Lucca Castilho | A informar | Produto e Game Design | luccalck |
+| Davi Paes | A informar | Desenvolvimento e Qualidade | DaviSouza78 |
+| Miguel Oliveira | A informar | Plataforma e Release | miguelsenai2024 |
+| Lucas Souza | A informar | SRE e Segurança | 6lucassilvaaa |
+
+Papéis coordenam, sem exclusividade. Os RAs ficaram para preenchimento posterior por orientação do responsável; não representam identificação completa. Fonte dos dados: [SQUAD](../SQUAD.md).
 
 A aprovação de concepção não substitui revisão por outro integrante. CPF e assinaturas não integram Git ou artefatos públicos; eventual versão privada depende de orientação do professor. Identificação, declaração coletiva e links de release continuam pendentes. Capturas locais e testes automatizados não representam produção ou playtest humano.
 
@@ -17,11 +33,11 @@ A aprovação de concepção não substitui revisão por outro integrante. CPF e
 
 Iniciantes podem memorizar comandos sem entender como uma regra altera um programa. A oficina relaciona eventos, variáveis, condições, estado e repetição a um resultado observável: construir funções de um minijogo. Público: pessoas com leitura básica em português, familiaridade com teclado/toque e sem conhecimento prévio de Python. Editar código no celular pode ser mais trabalhoso e precisa de avaliação humana.
 
-Cada missão começa com um defeito numa função curta. O jogador altera código, compara saídas para entradas diferentes e experimenta o efeito numa nave controlável. Ajuda direta fica sob demanda. Cinco missões compõem um projeto integrado exportável como HTML editável e jogável offline. XP e desbloqueios sinalizam progresso; não medem aprendizagem. Clareza, diversão e transferência de conhecimento ainda exigem playtest humano; nenhum ganho educativo foi medido.
+Cada missão começa com um defeito numa função curta. O jogador altera código, compara saídas para entradas diferentes e experimenta o efeito numa nave controlável. Ajuda direta fica sob demanda. Cinco missões compõem um projeto integrado exportável como HTML jogável offline e funções Python .py para estudo. XP e desbloqueios sinalizam progresso; não medem aprendizagem. Clareza, diversão e transferência de conhecimento ainda exigem playtest humano; nenhum ganho educativo foi medido.
 
 ## 2. High concept
 
-Rota do Código é uma oficina educativa web em que o jogador constrói um minijogo de nave corrigindo cinco funções Python. Controles, movimento, colisão, pontuação e criação de ondas transformam eventos, operações, condições, estado e repetição em efeitos visíveis. Cada regra precisa funcionar para entradas diferentes, com ajuda e testes públicos sob demanda. No desafio final, as cinco funções do jogador comandam uma partida real: alcançar 100 pontos com três vidas libera a exportação de um HTML independente, jogável offline e com código editável. Menus, seis missões e até 700 XP organizam a campanha. O diferencial é produzir e depurar regras de um jogo concreto, relacionando código e comportamento, em vez de repetir uma sequência de comandos ou responder apenas perguntas.
+Rota do Código é uma oficina educativa web em que o jogador constrói um minijogo de nave corrigindo cinco funções Python. Controles, movimento, colisão, pontuação e criação de ondas transformam eventos, operações, condições, estado e repetição em efeitos visíveis. Cada regra precisa funcionar para entradas diferentes, com ajuda e testes públicos sob demanda. No desafio final, as cinco funções do jogador comandam uma partida real: alcançar 100 pontos com três vidas libera a exportação de um HTML independente, jogável offline, e das funções .py para continuar estudando. Menus, seis missões e até 700 XP organizam a campanha. O diferencial é produzir e depurar regras de um jogo concreto, relacionando código e comportamento, em vez de repetir uma sequência de comandos ou responder apenas perguntas.
 
 ## 3. Gênero e plataforma
 
@@ -140,11 +156,15 @@ Referências técnicas: [esbuild](https://esbuild.github.io/api/#format), [Vites
 
 Transitividade/versões no THIRD_PARTY/lockfile/SBOM. Nenhuma dependência nova. Sem Opal, AI Studio, Stitch, raster ou IA em runtime; golden eval dessas ferramentas não se aplica ao uso realizado. Comparação com CPython usa somente fixtures editoriais confiáveis em processo local/CI com timeout. Node VM testa pontes de exportação confiáveis que chamam a mesma AST. Não há CPython, execução remota ou exec/eval da fonte do jogador no navegador.
 
-Declaração de originalidade/direitos: desenvolvido para a atividade com assistência de IA registrada e licenças identificadas; HTML exportado inclui MIT completo. Confirmação coletiva/revisão humana de conteúdo/direitos pendentes. Sem assinaturas/consentimentos/aprovações fictícias. Entrega da UC não autoriza inscrição ou aceite do concurso opcional.
+### Originalidade e direitos
+
+Desenvolvemos o projeto para a atividade, com assistência de IA registrada em [AI-USAGE](../AI-USAGE.md) e componentes/ativos inventariados em [THIRD_PARTY](../THIRD_PARTY.md). O código próprio e o HTML exportado incluem a licença MIT. A confirmação coletiva de direitos e a revisão por outro integrante continuam pendentes antes do merge/entrega; não afirmamos que os quatro assinaram ou aprovaram esta versão.
+
+Não incluímos CPF ou assinaturas nos arquivos públicos. A entrega acadêmica não autoriza inscrição ou aceite dos termos do concurso opcional; eventual documento privado segue a orientação real do professor.
 
 ## 12. Ideias adicionais e próximos passos
 
-Implementado na candidata 0.6.0: cinco missões Python/final, editor limitado/diagnósticos, testes públicos, minijogo real, menus/pausa/opções, 700 XP, fontes/vitórias persistentes, HTML exportável. Evidências locais em docs/evidencias/python-pages.md. Uma campanha ativa; versões anteriores recuperáveis no Git.
+Implementado na candidata 0.6.0: cinco missões Python/final, editor limitado/diagnósticos, testes públicos, minijogo real, menus/pausa/opções, 700 XP, fontes/vitórias persistentes, HTML exportável. Evidências em [jogo e testes](evidencias/python-pages.md), [baseline técnico](evidencias/baseline-tecnico.md) e [privacidade/segurança](evidencias/seguranca-inicial.md). Uma campanha ativa; versões anteriores recuperáveis no Git.
 
 Restam revisão/participação dos quatro, playtest educativo/acessibilidade humana, promoção PRD, recuperação/sondas/DORA medidos, vídeo, triagem e relatório. Novas funções, editor mais amplo, níveis e áudio são futuro. Não há resultados educativos/produção/colaboração simulados. GDD atualizado por PR quando mecânica muda.
 
@@ -152,9 +172,11 @@ Restam revisão/participação dos quatro, playtest educativo/acessibilidade hum
 
 ![CI e preview automatizados; etapas finais planejadas](images/esteira.svg)
 
-Repositório: https://github.com/luccalck/desafio-arcade . GitHub Flow/Conventional Commits, main protegida, PR com ci/revisão por outra pessoa. Actions push/PR: ubuntu-latest/npm ci/lockfile, lint, unidade/integração/conteúdo, E2E, Gitleaks, audit produção, SBOM, reprodutibilidade, GDD/pdfinfo/texto, ZIP/checksum/artefatos. Mapas regenerados ao converter GDD. CI não comprova implantação ou revisão humana.
+Repositório: https://github.com/luccalck/desafio-arcade . A branch padrão acompanha temporariamente a candidata mais recente com CI verde; main continua protegida. Isso facilita rastreamento e não representa promoção em produção. GitHub Flow/Conventional Commits, main protegida, PR com ci/revisão por outra pessoa. Actions push/PR: ubuntu-latest/npm ci/lockfile, lint, unidade/integração/conteúdo, E2E, Gitleaks, audit produção, SBOM, reprodutibilidade, GDD/pdfinfo/texto, ZIP/checksum/artefatos. Mapas regenerados ao converter GDD. CI não comprova implantação ou revisão humana.
 
 Preview autorizado: job publicar-preview depois de ci recupera o mesmo ZIP/checksum; publica /hml/, /releases/<sha>/ imutáveis, loader e rollout.json em gh-pages escrito apenas pela pipeline. Pages Actions publica esse diretório e testa HTTP/versão/edição/movimento em HML e release pública. URL configurada: https://luccalck.github.io/desafio-arcade/ . Resultado de implantação e evidências devem ser conferidos na execução, não inferidos dos arquivos. Main mantém proteção e revisão de outro autor. Ainda planejado para produção formal: mesmo artefato até PRD, aprovação em producao, rollout e recuperação medidos. Azul-verde: validar nova pasta, aprovação registrada em producao, promover ponteiro, smoke, recuperação automática/manual. Sessão deve manter versão válida. Recuperação <5 minutos incluindo Pages exige ensaio real, ainda não realizado.
+
+[Configuração GitHub e ambientes](evidencias/configuracao-github.md): homologacao/producao estão limitados à main, produção exige reviewer e não permite bypass administrativo. Jobs formais/migração Pages são trabalho dos007/011/019; a existência dos environments não comprova deploy ou aprovação.
 
 Sondas HTTP/latência/versão a cada 15 minutos, CSV, Issues JogoForaDoAr/LatenciaAlta, fechamento automático, /status/ e quatro DORA reais com comparação ao lead time de 11 dias/melhoria medida permanecem pendentes. Cron pode atrasar; demonstração exige execução observável.
 

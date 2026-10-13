@@ -58,9 +58,16 @@ Escopo técnico validado em13/10/2026; [evidências](../evidencias/seguranca-ini
 
 Ranking/telemetria/contagem/Opal/Godot não adotados: condicionais registrados sem implementação ou marcação fictícia. Nenhuma autenticação adicional pendente nesta execução, após a confirmação“pronto” e APIs verificadas.
 
-## Passo 005
+## Passo 005 — GDD e identificação disponível
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+GDD e PDF revisados/validados em13/10/2026; [evidências](../evidencias/gdd-revisao.md).
+
+- [x] Aura67/nomes/contas/papéis e links reais disponíveis registrados;12seções/Esteira/declarações mantidas.
+- [x] Highconcept804caracteres; PDF13pA4/pdfinfo e inspeção integral; SQ-06coordenação confirmado pelo trabalho deProduto.
+- [ ] **RAs/GDD-13:** completar quando fornecidos, conforme orientação de deixar para depois; não substituímos por valores inventados.
+- [ ] Publicar commit/PR e conferir CI; atualizar página inicial para candidata005 validada.
+
+Revisão/direitos coletivos permanecem gerais antes do merge. Versão/data/linkrelease e reconferênciaPDF final pertencem ao025/035/037; não são execução final comprovada neste005. Playtest/pitch futuros, sem medições inventadas. G1 não aceito coletivamente só pela revisão técnica.
 
 ## Passo 006
 

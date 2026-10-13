@@ -1,14 +1,16 @@
 # Passo 005 — Completar identificação e conteúdo do GDD
 
-**Responsável:** Lucca Castilho · bloco 1. **Papel oficial proposto:** Produto e Game Design. **Revisor proposto:** Davi Paes (conta real a confirmar).
+**Execução em13/10/2026:** GDD revisado com identificação disponível/PDF validado; RAs adiados e aceites finais separados. [Evidências](../../evidencias/gdd-revisao.md).
+
+**Responsável:** Lucca Castilho · bloco 1. **Papel oficial proposto:** Produto e Game Design. **Revisor proposto:** Davi Paes (DaviSouza78; revisão geral antes do merge).
 **INT:** INT-02/01. **Roteiros preservados:** P01/P02. **Checkpoint:** G1.
 **Dependências de execução:** 001, 002. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
-- [ ] Trabalho implementado/documentado com autoria real.
-- [ ] Validações executadas e evidências arquivadas.
+- [x] GDD/backlog e identificação disponível atualizados pela própria conta; RAs seguem pendentes.
+- [x] GDD/PDF/texto/tabelas/páginas validados e evidências arquivadas.
 - [ ] Commit/push pela identidade GitHub do responsável.
 - [ ] PR revisado por outro autor e CI verde.
-- [ ] Checks aplicáveis atualizados, sem declarações fictícias.
+- [x] SQ-06 atualizado; GDD-13/aceites finais mantidos abertos.
 
 ## Regra da execução por blocos
 
@@ -50,7 +52,7 @@ Se houver equivalente já funcional, reutilize e documente o caminho efetivo. N�
 
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
-- [ ] **SQ-06** — Produto assume GDD, backlog, jogabilidade, testes com usuários e roteiro do vídeo.
+- [x] **SQ-06** — Produto assume GDD, backlog, jogabilidade, testes com usuários e roteiro do vídeo.
 - [ ] **GDD-13** — Identificação completa: squad, nomes, RAs e papéis reais.
 
 ### Rubrica, integridade e aceites
@@ -90,8 +92,7 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: completar identificação e conteúdo do gdd
-"
+git commit -m "docs: revisar GDD e registrar identificação disponível"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 005: Completar identificação e conteúdo do GDD" --body-file .contexto/pr-passo-005.md
 ```
