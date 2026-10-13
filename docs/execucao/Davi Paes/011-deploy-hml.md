@@ -127,3 +127,7 @@ Este passo executa a integração real de deploy-hml com environmenthomologacao 
 ## Contrato recebido do006 — regressão completa
 
 Reutilizar `tests/deploy/pages.spec.mjs` e `playwright.public.config.mjs`: executar projetos `hml-desktop` e `hml-toque` após cada deploy-hml com BASE_URL direta e EXPECTED_SHA do artefato aprovado. Arquivar reports/pages-smoke.xml, reports/pages-e2e/ e test-results/ (screenshots/metadados/traces); falha bloqueia promoção. Os dois cenários cobrem campanha real até vitória e reinício confirmado. Limites60s de propagação/10s por consulta, sem retry de suíte pública. Preview foi validado no006; fechar I04-08/I04-09/I03-16 somente com prova deste deploy formal. [Comandos/resultados006](../../evidencias/regressao-hml.md). Smoke prd-smoke pertence à promoção014/019.
+
+## Contrato de artefato recebido do007
+
+Consumir pacote-ci-SHA-run_id-run_attempt do próprio run aceito; ci-bundle.mjs verify já confere manifesto/ZIP/versão. Implementar scripts/publicar.sh com --bundle/--sha/--run/--site-url, usando os bytes do pacote sem build/GDD/package novos. Publicar somente /hml/, preservando release/loader/status; não usar promotorpreview como publicação formal. Registrar regressão006/Pages/tempo e habilitar FORMAL_HML_ENABLED apenas após scripts/aceites reais. Job deploy-hml já preparado; relatório/upload de falha preservados. [Contrato007](../../evidencias/ci-formal.md).

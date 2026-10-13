@@ -17,6 +17,7 @@ A build incorpora somente código próprio e JSON local. As bibliotecas abaixo s
 | tsx | 4.23.15 | MIT | [Hiroki Osame](https://github.com/privatenumber/tsx) |
 | typescript | 6.0.3 | Apache-2.0 | [Microsoft](https://github.com/microsoft/TypeScript) |
 | typescript-eslint | 8.71.1 | MIT | [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint), contribuidores |
+| actionlint | 1.7.12 | MIT | [rhysd/actionlint](https://github.com/rhysd/actionlint), validação local de workflow; licença conferida na distribuição, não integra o site |
 | Gitleaks CLI | 8.30.1 | MIT | [Gitleaks](https://github.com/gitleaks/gitleaks), scanner de CI/local |
 
 Metadados npm conferidos nos package.json instalados em 07/10/2026. Licenças completas das ferramentas acompanham suas distribuições/node_modules. Chrome é ferramenta de teste/renderização, não integra build.zip. GitHub Actions/Pages são serviços da plataforma, sem dependência remota para jogar offline.

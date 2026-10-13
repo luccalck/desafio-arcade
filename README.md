@@ -55,6 +55,8 @@ $env:npm_config_script_shell = (Get-Command pwsh).Source
 
 A [regressão preparada no passo006](docs/evidencias/regressao-hml.md) amplia a suíte para17E2E locais/CI e valida5cenários no preview público, incluindo campanha até vitória por teclado/toque emulado e reinício. A execução formal após cada deploy permanece no011.
 
+A [preparação da esteira007](docs/evidencias/ci-formal.md) reúne ZIP/GDD/SBOM/relatórios em pacote validado por SHA e execução, com clone limpo/CI comprovados. Os jobs de publicação dependem dos scripts/aceites011 e019; aviso no Actions não comprova recebimento pelo squad.
+
 ## Jogar offline
 
 Descompacte `build.zip` e abra `index.html` no navegador, seguindo o `LEIA-ME.txt` incluído no ZIP. O HTML exportado ao vencer o final também funciona sem rede. O arquivo `.py` contém as funções Python; editá-lo não recompila automaticamente o HTML exportado.

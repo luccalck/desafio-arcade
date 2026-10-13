@@ -81,9 +81,17 @@ Revisão/direitos coletivos permanecem gerais antes do merge. Versão/data/linkr
 
 Revisão por outro autor permanece geral antes do merge. Nenhum novo check geral fechado; I04-07 revalidado. G3 não aceito. A instabilidade inicial de Chrome com4workers e de consultasHTTP de5s foi investigada/registrada; suite serial e esperaHTTP limitada validaram os mesmos fluxos, sem retry ilimitado ou mudanças no jogo.
 
-## Passo 007
+## Passo 007 — Esteira e contrato preparados
 
-Execução ainda não realizada. Encaminhamento003: preparar jobs/dependências/contratos de artefatos para deploy-hml/homologacao e deploy-prd/producao, com CI, permissões mínimas e consumo do mesmo build. [MD007](<Lucca Castilho/007-ci-formal.md>). Configuração dos ambientes já feita; integração funcional/testes permanecem nesta etapa.
+- [x] Jobs paralelos/gate ci e pacoteCI porSHA/run/tentativa preparados; integridade/artefato obrigatório antes do deploy, sem recompilar.
+- [x] Actions oficiais revisadas/fixadas; KIT-09 fechado. Actionlint/testes6contrato/gate local, clone limpo184testes+17E2E, GDD/pdfinfo/build/package/reprodutibilidade e CI38428808065 verdes.
+- [x] PR#9draft/commita2016fd da conta própria; branch padrão007 atualizada apósCIverde para rastreamento. Registros posteriores exigem CI do HEAD.
+- [ ] **I03-24:** aviso no Actions implementado/executado; comprovar consulta/recebimento pelo squad. Nenhuma mensagem externa enviada.
+- [ ] **011 — I03-09/15/16/21, G3:** implementar scripts/publicar.sh segundo contrato, ativar FORMAL_HML_ENABLED somente com script/aceites reais, migrar Pages e executar HML da main/revisão/E2E/medição<=15min. Preparação de007 não é implantação.
+- [ ] **019/014/018/022/023 — I03-17/18/19, G4/G5:** scripts/promover.sh, FORMAL_PRD_ENABLED, mesmo pacote/ambiente/aprovação/estratégia/smoke/recuperação reais.
+- [ ] **KIT-08:** publicação/rollout/DORA/triagem seguem nos011/018/024/031/032/035; contratos preparados não encerram esses requisitos.
+
+Revisão por outro autor/participação e aceites gerais permanecem antes do merge. PRsDependabot recebemCI em qualquer base; nenhuma execução de atualização do bot foi fabricada. Reexecutar todos os jobs para outra tentativa íntegra; ausência de artefato da tentativa bloqueia coleta. [Evidências007](../evidencias/ci-formal.md).
 
 ## Passo 008
 

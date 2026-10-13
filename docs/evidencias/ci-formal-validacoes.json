@@ -1,0 +1,70 @@
+{
+  "junit.xml": {
+    "tests": 184,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "e2e-junit.xml": {
+    "tests": 17,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "commands": [
+    {
+      "command": "npm ci",
+      "seconds": 2.97,
+      "exit": 0
+    },
+    {
+      "command": "npm run lint",
+      "seconds": 3.9,
+      "exit": 0
+    },
+    {
+      "command": "npm run test:ci",
+      "seconds": 3.31,
+      "exit": 0
+    },
+    {
+      "command": "npm run build",
+      "seconds": 1.73,
+      "exit": 0
+    },
+    {
+      "command": "npm run gdd:pdf",
+      "seconds": 2.3,
+      "exit": 0
+    },
+    {
+      "command": "npm run package",
+      "seconds": 0.55,
+      "exit": 0
+    },
+    {
+      "command": "npm run reproducibility",
+      "seconds": 1.19,
+      "exit": 0
+    },
+    {
+      "command": "npm run test:e2e -- --workers=1",
+      "seconds": 53.42,
+      "exit": 0
+    }
+  ],
+  "sourceSha": "a2016fd635d55defc79d688958532537e711bf28",
+  "run": "38428808065",
+  "bundle": {
+    "schema": 1,
+    "sha": "a2016fd635d55defc79d688958532537e711bf28",
+    "run": "38428808065",
+    "version": "0.6.0",
+    "build": "2026-10-13T16:14:19.833Z",
+    "files": 83,
+    "zip": {
+      "sha256": "17c4fa92eb2888202979a287cd2023a86916315d9392200f10c24c8f6f043e00",
+      "bytes": 26485
+    }
+  }
+}

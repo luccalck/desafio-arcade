@@ -1,14 +1,16 @@
 # Passo 007 — Preparar esteira formal e contratos de artefatos
 
-**Responsável:** Lucca Castilho · bloco 1. **Papel oficial proposto:** Produto e Game Design. **Revisor proposto:** Davi Paes (conta real a confirmar).
+**Execução em13/10/2026:**CI/contratos/clone validados, implantação e recebimento separados. [Evidências](../../evidencias/ci-formal.md).
+
+**Responsável:** Lucca Castilho · bloco 1. **Papel oficial proposto:** Produto e Game Design. **Revisor proposto:** Davi Paes (DaviSouza78; revisão geral antes do merge).
 **INT:** INT-03/06/05. **Roteiros preservados:** R02/R03/S02. **Checkpoint:** G2.
 **Dependências de execução:** 002, 003, 004, 006. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
-- [ ] Trabalho implementado/documentado com autoria real.
-- [ ] Validações executadas e evidências arquivadas.
-- [ ] Commit/push pela identidade GitHub do responsável.
+- [x] Esteira e contratos implementados; jogo/build/package existentes preservados.
+- [x] Actionlint/testes/clone limpo e pacote real da CI validados.
+- [x] Publicação própria luccalck:a2016fd/PR#9draft; CI38428808065verde.
 - [ ] PR revisado por outro autor e CI verde.
-- [ ] Checks aplicáveis atualizados, sem declarações fictícias.
+- [x] KIT-09 fechado; I03-24/KIT-08/deploys formais permanecem abertos.
 
 ## Regra da execução por blocos
 
@@ -53,7 +55,7 @@ Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução
 
 - [ ] **I03-24** — AVANÇADO: notificações da esteira implementadas e recebimento comprovado.
 - [ ] **KIT-08** — Publicação, rollout, DORA e triagem implementados por scripts equivalentes aos exemplos; não copiar TODO como solução.
-- [ ] **KIT-09** — Revisar versões atuais das Actions antes de fixá-las, compatibilidade e registro da escolha.
+- [x] **KIT-09** — Revisão/pins/compatibilidade registrados nas evidências007; ActionsPages não executadas nesta etapa.
 
 ### Rubrica, integridade e aceites
 
@@ -92,8 +94,7 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "ci: preparar esteira formal e contratos de artefatos
-"
+git commit -m "ci: preparar esteira formal e contratos de artefatos"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 007: Preparar esteira formal e contratos de artefatos" --body-file .contexto/pr-passo-007.md
 ```

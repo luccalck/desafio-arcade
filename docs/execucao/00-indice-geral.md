@@ -38,7 +38,7 @@ Meta: faixa avançada, sem garantir nota. Fórmula `(0,7×A + 0,3×B)×F`; pesos
 
 ## Checks, gates e produção
 
-Mapa inicial preserva cobertura dos313 checks abertos do snapshot original. Estado atualizado fica no checklist principal: após cinco fechamentos específicos do001 e configuração de SITE_URL/acesso público do professor no003 e Dependabot/privacidade no004 e coordenaçãoProduto/GDD no005, são113 marcados e299 abertos/condicionais. Nenhum INT/gate inteiro foi aceito. O mapa não substitui esse estado.
+Mapa inicial preserva cobertura dos313 checks abertos do snapshot original. Estado atualizado fica no checklist principal: após cinco fechamentos específicos do001 e configuração de SITE_URL/acesso público do professor no003 e Dependabot/privacidade no004 e coordenaçãoProduto/GDD no005 e revisão das Actions no007, são114 marcados e298 abertos/condicionais. Nenhum INT/gate inteiro foi aceito. O mapa não substitui esse estado.
 
 G0–G2 são preparados por Lucca; G3/G4 por Davi; G5 e preparação G6 por Miguel; G6–G8 por Lucas. Liberação continua conforme entradas/aceites dos roteiros e pessoas reais. Rollback básico deve estar integrado ANTES de primeira PRD no019; Miguel fortalece e comprova no022/026. Painel020 trata DORA indisponível honestamente até Miguel ligar dados reais no024. Assim não há retorno obrigatório a Davi para implementar esses itens.
 
@@ -102,3 +102,7 @@ Originais preservados. Repositório/arquivo principal único; .contexto e acompa
 ## Preparação validada do passo006 — 13/10/2026
 
 [Regressão completa e evidências](../evidencias/regressao-hml.md):17E2E locais/CI e5cenários no preview público; dois roteiros HML entregues ao011 e smoke separado para014/019. Nenhum novo check geral fechado;113marcados/299abertos permanecem. Execução formal e revisão humana ainda pendentes.
+
+## Preparação validada do passo007 — 13/10/2026
+
+[Esteira e contrato de artefatos](../evidencias/ci-formal.md):clone limpo, CI/pacote/avisos no Actions validados. KIT-09 fechado:114marcados/298abertos. Deploys formais e recebimento permanecem nos passos indicados no registro único.
