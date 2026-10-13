@@ -129,7 +129,7 @@ Escopo técnico validado em13/10/2026: fontec56df79/clone limpo,184testes/18E2E 
 - [ ] Release/tag/notas/SBOM/GDDanexados e checksumPRD/release:015/027/035. Conferir offline/versão/tamanho/checksum finais no027/035/038; validação atual não encerra I06-07–12/15/17/18.
 - [ ] HMLformal e push→HML no011, smoke014/019, produção019; consumir o mesmo artefato daCI sem recompilar nos ambientes. Nenhum desses passos foi executado no010.
 
-Nenhum novo check geral fechado;115marcados/297abertos. Commit/PR/CI serão registrados com resultados reais.
+Nenhum novo check geral fechado;115marcados/297abertos. Publicação010:c56df79/0f0104c; PR#12draft sobre009, CIpush38444743006/PR38444831221 verdes; semmerge/deploy/revisão presumidos.
 
 ## Passo 011
 

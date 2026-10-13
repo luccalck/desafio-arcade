@@ -66,3 +66,7 @@ I06-01–06/13/14/16 e I04-01–07/15 foram revalidados no escopo atual, sem fec
 Passagem Lucca→Davi em [registro do bloco](../execucao/06-passagem-lucca-davi.md). Revisão de outro autor, direitos coletivos, RAs adiados e aceites de acesso continuam no registro único. O bloqueio de solicitar Davi como revisor foiAPI422 no008; não simulamos review nem repetimos a mesma tentativa. Davi pode preparar011 sobre a candidata010 verde; publicarHMLformal exige main revisada e contrato/flags corretos. Não executamos011 neste passo.
 
 CI/PR/commits publicados serão registrados abaixo e no controle; os artefatos de CI são a origem para a futura HML, não os ZIPs locais desta conferência.
+
+## Publicação010 — 13/10/2026
+
+Commits c56df79 (teste/configuração) e0f0104c (provas/repasse), autoria Git verificada luccalck/256704169+luccalck@users.noreply.github.com. [PR#12](https://github.com/luccalck/desafio-arcade/pull/12) draft sobre009. [CIpush38444743006](https://github.com/luccalck/desafio-arcade/actions/runs/38444743006) e [CIpr38444831221](https://github.com/luccalck/desafio-arcade/actions/runs/38444831221) concluídas com sucesso. Qualidade/build/E2E/segurança/pacote-ci/ci/notificar passaram;18E2E da CIpush em53,5s; PDF18p. JobsHML/PRD/preview ignorados. ZIPCIpush28.582bytes, SHA-2560154f9aea6da92ba00c88db56a504dbe59bd7de8518bef0a0eeabbcf5083d149, distinto dos ZIPs locais por fonte/data; não houve promoção. Nenhuma revisão ou recebimentoDavi inventados.

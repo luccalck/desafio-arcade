@@ -6,7 +6,7 @@
 
 - [x] Trabalho implementado/documentado com autoria real.
 - [x] Validações executadas e evidências arquivadas.
-- [ ] Commit/push pela identidade GitHub do responsável.
+- [x] Commit/push pela identidade GitHub do responsável.
 - [ ] PR revisado por outro autor e CI verde.
 - [x] Checks aplicáveis atualizados, sem declarações fictícias.
 
@@ -111,3 +111,5 @@ Ao terminar, informe objetivamente: passo/INT/checks realmente fechados, arquivo
 ## Registro010 — 13/10/2026
 
 [Offline e integridade](../../evidencias/offline-integridade.md):clonec56df79,184testes/18E2E, PDF18p/ZIP/checksum/reprodutibilidade verdes. G2 e revisão humana permanecem abertos. [Repasse paraDavi](../06-passagem-lucca-davi.md).
+
+Publicação:c56df79/0f0104c, PR#12draft, CIpush38444743006/PR38444831221 verdes. Checkbox conjunto PRrevisado/CI permanece aberto: revisão de outro autor não ocorreu.

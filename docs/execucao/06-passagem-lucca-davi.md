@@ -17,7 +17,7 @@ No clone do Davi: conferir git status, git remote -v, identidadeGit/GitHub, git 
 |005/008/009 | docs/gdd.md, imagens, AI-USAGE.md, THIRD_PARTY.md, evidencias/direitos.md, stitch-ux.md |12seções/PDF/telas/inventários; review/direitos/quatro/G1 pendentes |
 |007/010 | scripts/ci-bundle.mjs, prepare-pages.mjs, build/package/reproducibility, esteira.yml, evidencias/ci-formal.md, offline-integridade.md | Artefato porSHA/run/tentativa; ZIP/checksum/PDF;18E2E e clone/offline comprovados |
 
-PRs reais do bloco001–009: #3,#4,#5,#6,#7,#8,#9,#10,#11, todos de luccalck e abertos na conferência13/10. PR010 será registrado após criação. Nenhum desses registros prova aprovação dos colegas ou conta como autoria deles.
+PRs reais do bloco001–009: #3,#4,#5,#6,#7,#8,#9,#10,#11, todos de luccalck e abertos na conferência13/10. PR010: [#12](https://github.com/luccalck/desafio-arcade/pull/12), draft sobre009, commitsc56df79/0f0104c eCIpush38444743006/PR38444831221 verdes. Nenhum desses registros prova aprovação dos colegas ou conta como autoria deles.
 
 ## Entradas concretas para011
 
