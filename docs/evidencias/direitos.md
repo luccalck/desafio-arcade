@@ -44,3 +44,13 @@ Outro integrante deve ler os arquivos/termos e os diffs, testar regras relevante
 ## Checks e continuidade
 
 Nenhum dos16checks atribuídos ao008 foi fechado:todos envolvem confirmação humana, continuidade até release ou vídeo ainda inexistente. I05-10/12/13 foram revalidados no escopo disponível; isso não encerra I05-11/14/15/16/17/21,KIT-28,GDD-15 ouDIR. Documento/source/registro de IA completo por etapas conhecidas é preparação revisável, não garantia de nota ou propriedade definitiva. [Pendências008](../execucao/05-pendencias-por-passo.md).
+
+## Publicação e limitações confirmadas
+
+Commit próprio `7ffb58d4e410bd9ee2a95e21f1170a41d130828e`; [PR#10](https://github.com/luccalck/desafio-arcade/pull/10) draft sobre007. [CIpush38434944934](https://github.com/luccalck/desafio-arcade/actions/runs/38434944934) e [CIpr38435010458](https://github.com/luccalck/desafio-arcade/actions/runs/38435010458) SUCCESS; deploys ignorados. GDD gerado localmente:13pA4/363614bytes/pdfinfo exit0/804caracteres,12seções preservadas; páginas alteradas e adjacentes1/11/12/13 inspecionadas, sem corte observado. CI valida o PDF e arquiva seu próprio artefato.
+
+Corrigimos uma leitura com codificação padrãoWindows que havia deformado campos do inventário; reconstruímos os dados com UTF-8 a partir do SBOM/metadados/créditos explícitos. Nenhum texto genérico de modelos de licença foi mantido como autor. Seis componentes não trazem crédito pessoal/titular nos campos inspecionados: @esbuild/win32-x64, @eslint/config-helpers, @rolldown/binding-win32-x64-msvc, argparse, lightningcss e lightningcss-win32-x64-msvc. Licenças estão declaradas; autoria/créditos precisam confirmação na origem antes do aceite final. Não inserimos nomes inferidos.
+
+Tentativa real de solicitar revisãoDaviSouza78:GitHubCLI retornouexit0, mas nenhum request apareceu; API direta retornouHTTP422, informando que o usuário não é colaborador reconhecido para solicitar review. Consulta reviews/requested_reviewers permanece vazia. Não repetimos solicitações nem fabricamos aprovação. Regularizar acesso conforme pendência anterior003/034 e registrar revisão verdadeira antes do merge; não perguntar novamente pelosRAs ou convites já adiados.
+
+Branch padrão atualizada para008 apósCIverde para rastreamento, sem merge/deploy. Registros posteriores acionam CI própria a conferir peloHEAD.

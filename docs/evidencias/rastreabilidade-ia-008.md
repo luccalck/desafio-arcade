@@ -24,8 +24,10 @@ Ferramenta em todas as linhas:Codex. Integrante responsável pelos registros/com
 
 ## Uso atual008
 
-13/10/2026 · Codex · responsávelLuccaCastilho/luccalck. Pedido:executar somente008; conferir bibliotecas/ativos/direitos, ligar usos de IA ao histórico, preservar alterações e identidade, não consentir pelos quatro. Saídas:inventários158componentes/26ativos, leitura dos termos oficiais, auditoria técnica/fatos educativos e matriz de revisão. Commit/PR será acrescentado após publicação real; revisão de outro autor ainda pendente.
+13/10/2026 · Codex · responsávelLuccaCastilho/luccalck. Pedido:executar somente008; conferir bibliotecas/ativos/direitos, ligar usos de IA ao histórico, preservar alterações e identidade, não consentir pelos quatro. Saídas:inventários158componentes/26ativos, leitura dos termos oficiais, auditoria técnica/fatos educativos e matriz de revisão. Commit `7ffb58d4e410bd9ee2a95e21f1170a41d130828e` / [PR#10](https://github.com/luccalck/desafio-arcade/pull/10) publicados; revisão de outro autor ainda pendente (requestAPI422 por acesso de colaborador).
 
 ## O que falta para completar o registro
+
+Créditos das seis dependências sem autor/titular individual declarado constam como pendentes no inventário; não preenchidos por suposição.
 
 Revisor real deve registrar no PR alcance, fatos/arquivos verificados, correções ou limitações e aprovação. Os quatro precisam confirmar autoria/propriedade/direitos; informação privada segue orientação do professor, sem CPF/assinatura pública. Novas ferramentas/usoStitch009, vídeo029, tag/release035 e fechamento040 precisam novas linhas com autores/versões/data/PR efetivos. Este registro de etapas não prova cada chamada individual nem pode encerrar I05-14/15/17/21 por si só.

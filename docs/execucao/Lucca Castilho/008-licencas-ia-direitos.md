@@ -7,8 +7,8 @@
 **Dependências de execução:** 001, 004, 005. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [x] Inventários e rastreabilidade das etapas conhecidas preparados, sem declaração coletiva fictícia.
-- [x] SBOM/metadados/ativos/termos/Git/fatos educativos conferidos; PDF/CI em validação.
-- [ ] Commit/push pela identidade GitHub do responsável.
+- [x] SBOM/metadados/ativos/termos/Git/fatos educativos conferidos; PDF13p/pdfinfo/CI verdes; revisão humana continua ausente.
+- [x] Publicação própria luccalck:7ffb58d/PR#10draft; CIpush/pr verdes, branch padrão008 para rastreamento.
 - [ ] PR revisado por outro autor e CI verde.
 - [x]16checksassigned mantidos abertos; I05-10/12/13 revalidados no escopo técnico.
 

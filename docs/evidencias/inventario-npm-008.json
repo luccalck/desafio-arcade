@@ -5,13 +5,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "The Babel Team (https://babel.dev/team)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40babel/helper-string-parser@7.29.7",
+    "url": "https://www.npmjs.com/package/@babel/helper-string-parser/v/7.29.7",
     "source": [
       "https://github.com/babel/babel.git",
       "https://babel.dev/docs/en/next/babel-helper-string-parser"
     ],
-    "author": "The Babel Team (https://babel.dev/team)",
-    "url": "https://www.npmjs.com/package/@babel/helper-string-parser/v/7.29.7",
     "licenseFiles": [
       "node_modules/@babel/helper-string-parser/LICENSE"
     ]
@@ -22,12 +23,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "The Babel Team (https://babel.dev/team)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40babel/helper-validator-identifier@7.29.7",
+    "url": "https://www.npmjs.com/package/@babel/helper-validator-identifier/v/7.29.7",
     "source": [
       "https://github.com/babel/babel.git"
     ],
-    "author": "The Babel Team (https://babel.dev/team)",
-    "url": "https://www.npmjs.com/package/@babel/helper-validator-identifier/v/7.29.7",
     "licenseFiles": [
       "node_modules/@babel/helper-validator-identifier/LICENSE"
     ]
@@ -38,13 +40,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "The Babel Team (https://babel.dev/team)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40babel/parser@7.29.9",
+    "url": "https://www.npmjs.com/package/@babel/parser/v/7.29.9",
     "source": [
       "https://github.com/babel/babel.git",
       "https://babel.dev/docs/en/next/babel-parser"
     ],
-    "author": "The Babel Team (https://babel.dev/team)",
-    "url": "https://www.npmjs.com/package/@babel/parser/v/7.29.9",
     "licenseFiles": [
       "node_modules/@babel/parser/LICENSE"
     ]
@@ -55,13 +58,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "The Babel Team (https://babel.dev/team)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40babel/types@7.29.8",
+    "url": "https://www.npmjs.com/package/@babel/types/v/7.29.8",
     "source": [
       "https://github.com/babel/babel.git",
       "https://babel.dev/docs/en/next/babel-types"
     ],
-    "author": "The Babel Team (https://babel.dev/team)",
-    "url": "https://www.npmjs.com/package/@babel/types/v/7.29.8",
     "licenseFiles": [
       "node_modules/@babel/types/LICENSE"
     ]
@@ -72,12 +76,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Charles Samborski <[contato omitido]> (https://demurgos.net)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40bcoe/v8-coverage@1.0.2",
+    "url": "https://www.npmjs.com/package/@bcoe/v8-coverage/v/1.0.2",
     "source": [
       "git://github.com/bcoe/v8-coverage.git"
     ],
-    "author": "Charles Samborski",
-    "url": "https://www.npmjs.com/package/@bcoe/v8-coverage/v/1.0.2",
     "licenseFiles": [
       "node_modules/@bcoe/v8-coverage/LICENSE.md",
       "node_modules/@bcoe/v8-coverage/LICENSE.txt"
@@ -89,12 +94,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jared Wray <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40cacheable/memory@2.2.0",
+    "url": "https://www.npmjs.com/package/@cacheable/memory/v/2.2.0",
     "source": [
       "git+https://github.com/jaredwray/cacheable.git"
     ],
-    "author": "Jared Wray",
-    "url": "https://www.npmjs.com/package/@cacheable/memory/v/2.2.0",
     "licenseFiles": [
       "node_modules/@cacheable/memory/LICENSE"
     ]
@@ -105,12 +111,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jared Wray <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40cacheable/utils@2.5.0",
+    "url": "https://www.npmjs.com/package/@cacheable/utils/v/2.5.0",
     "source": [
       "git+https://github.com/jaredwray/cacheable.git"
     ],
-    "author": "Jared Wray",
-    "url": "https://www.npmjs.com/package/@cacheable/utils/v/2.5.0",
     "licenseFiles": [
       "node_modules/@cacheable/utils/LICENSE"
     ]
@@ -121,12 +128,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Autor/titular não declarado nos campos inspecionados; conferir na origem",
+    "creditSource": "ausente nos metadados/créditos explícitos inspecionados",
     "purl": "pkg:npm/%40esbuild/win32-x64@0.28.2",
+    "url": "https://www.npmjs.com/package/@esbuild/win32-x64/v/0.28.2",
     "source": [
       "git+https://github.com/evanw/esbuild.git"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@esbuild/win32-x64/v/0.28.2",
     "licenseFiles": []
   },
   {
@@ -135,13 +143,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Toru Nagashima",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40eslint-community/eslint-utils@4.10.1",
+    "url": "https://www.npmjs.com/package/@eslint-community/eslint-utils/v/4.10.1",
     "source": [
       "https://github.com/eslint-community/eslint-utils",
       "https://github.com/eslint-community/eslint-utils#readme"
     ],
-    "author": "Toru Nagashima",
-    "url": "https://www.npmjs.com/package/@eslint-community/eslint-utils/v/4.10.1",
     "licenseFiles": [
       "node_modules/@eslint-community/eslint-utils/LICENSE"
     ]
@@ -152,12 +161,13 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Toru Nagashima (https://github.com/mysticatea)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/eslint-visitor-keys@3.4.3",
+    "url": "https://www.npmjs.com/package/eslint-visitor-keys/v/3.4.3",
     "source": [
       "https://github.com/eslint/eslint-visitor-keys#readme"
     ],
-    "author": "Toru Nagashima (https://github.com/mysticatea)",
-    "url": "https://www.npmjs.com/package/eslint-visitor-keys/v/3.4.3",
     "licenseFiles": [
       "node_modules/@eslint-community/eslint-utils/node_modules/eslint-visitor-keys/LICENSE"
     ]
@@ -168,13 +178,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Toru Nagashima",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40eslint-community/regexpp@4.12.2",
+    "url": "https://www.npmjs.com/package/@eslint-community/regexpp/v/4.12.2",
     "source": [
       "https://github.com/eslint-community/regexpp",
       "https://github.com/eslint-community/regexpp#readme"
     ],
-    "author": "Toru Nagashima",
-    "url": "https://www.npmjs.com/package/@eslint-community/regexpp/v/4.12.2",
     "licenseFiles": [
       "node_modules/@eslint-community/regexpp/LICENSE"
     ]
@@ -185,13 +196,14 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Nicholas C. Zakas",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40eslint/config-array@0.23.5",
+    "url": "https://www.npmjs.com/package/@eslint/config-array/v/0.23.5",
     "source": [
       "git+https://github.com/eslint/rewrite.git",
       "https://github.com/eslint/rewrite/tree/main/packages/config-array#readme"
     ],
-    "author": "Nicholas C. Zakas",
-    "url": "https://www.npmjs.com/package/@eslint/config-array/v/0.23.5",
     "licenseFiles": [
       "node_modules/@eslint/config-array/LICENSE"
     ]
@@ -202,13 +214,14 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Autor/titular não declarado nos campos inspecionados; conferir na origem",
+    "creditSource": "ausente nos metadados/créditos explícitos inspecionados",
     "purl": "pkg:npm/%40eslint/config-helpers@0.7.0",
+    "url": "https://www.npmjs.com/package/@eslint/config-helpers/v/0.7.0",
     "source": [
       "git+https://github.com/eslint/rewrite.git",
       "https://github.com/eslint/rewrite/tree/main/packages/config-helpers#readme"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@eslint/config-helpers/v/0.7.0",
     "licenseFiles": [
       "node_modules/@eslint/config-helpers/LICENSE"
     ]
@@ -219,13 +232,14 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Nicholas C. Zakas",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40eslint/core@1.2.1",
+    "url": "https://www.npmjs.com/package/@eslint/core/v/1.2.1",
     "source": [
       "git+https://github.com/eslint/rewrite.git",
       "https://github.com/eslint/rewrite/tree/main/packages/core#readme"
     ],
-    "author": "Nicholas C. Zakas",
-    "url": "https://www.npmjs.com/package/@eslint/core/v/1.2.1",
     "licenseFiles": [
       "node_modules/@eslint/core/LICENSE"
     ]
@@ -236,13 +250,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright OpenJS Foundation and other contributors, <www.openjsf.org>",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/%40eslint/js@10.0.1",
+    "url": "https://www.npmjs.com/package/@eslint/js/v/10.0.1",
     "source": [
       "https://github.com/eslint/eslint.git",
       "https://eslint.org"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@eslint/js/v/10.0.1",
     "licenseFiles": [
       "node_modules/@eslint/js/LICENSE"
     ]
@@ -253,13 +268,14 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Nicholas C. Zakas",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40eslint/object-schema@3.0.5",
+    "url": "https://www.npmjs.com/package/@eslint/object-schema/v/3.0.5",
     "source": [
       "git+https://github.com/eslint/rewrite.git",
       "https://github.com/eslint/rewrite/tree/main/packages/object-schema#readme"
     ],
-    "author": "Nicholas C. Zakas",
-    "url": "https://www.npmjs.com/package/@eslint/object-schema/v/3.0.5",
     "licenseFiles": [
       "node_modules/@eslint/object-schema/LICENSE"
     ]
@@ -270,13 +286,14 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Nicholas C. Zakas",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40eslint/plugin-kit@0.7.3",
+    "url": "https://www.npmjs.com/package/@eslint/plugin-kit/v/0.7.3",
     "source": [
       "git+https://github.com/eslint/rewrite.git",
       "https://github.com/eslint/rewrite/tree/main/packages/plugin-kit#readme"
     ],
-    "author": "Nicholas C. Zakas",
-    "url": "https://www.npmjs.com/package/@eslint/plugin-kit/v/0.7.3",
     "licenseFiles": [
       "node_modules/@eslint/plugin-kit/LICENSE"
     ]
@@ -287,13 +304,14 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Nicholas C. Zakas",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40humanfs/core@0.19.2",
+    "url": "https://www.npmjs.com/package/@humanfs/core/v/0.19.2",
     "source": [
       "git+https://github.com/humanwhocodes/humanfs.git",
       "https://github.com/humanwhocodes/humanfs#readme"
     ],
-    "author": "Nicholas C. Zakas",
-    "url": "https://www.npmjs.com/package/@humanfs/core/v/0.19.2",
     "licenseFiles": [
       "node_modules/@humanfs/core/LICENSE"
     ]
@@ -304,13 +322,14 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Nicholas C. Zakas",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40humanfs/node@0.16.8",
+    "url": "https://www.npmjs.com/package/@humanfs/node/v/0.16.8",
     "source": [
       "git+https://github.com/humanwhocodes/humanfs.git",
       "https://github.com/humanwhocodes/humanfs#readme"
     ],
-    "author": "Nicholas C. Zakas",
-    "url": "https://www.npmjs.com/package/@humanfs/node/v/0.16.8",
     "licenseFiles": [
       "node_modules/@humanfs/node/LICENSE"
     ]
@@ -321,13 +340,14 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Nicholas C. Zakas",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40humanfs/types@0.15.0",
+    "url": "https://www.npmjs.com/package/@humanfs/types/v/0.15.0",
     "source": [
       "git+https://github.com/humanwhocodes/humanfs.git",
       "https://github.com/humanwhocodes/humanfs#readme"
     ],
-    "author": "Nicholas C. Zakas",
-    "url": "https://www.npmjs.com/package/@humanfs/types/v/0.15.0",
     "licenseFiles": []
   },
   {
@@ -336,12 +356,13 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Nicholas C. Zaks",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40humanwhocodes/module-importer@1.0.1",
+    "url": "https://www.npmjs.com/package/@humanwhocodes/module-importer/v/1.0.1",
     "source": [
       "git+https://github.com/humanwhocodes/module-importer.git"
     ],
-    "author": "Nicholas C. Zaks",
-    "url": "https://www.npmjs.com/package/@humanwhocodes/module-importer/v/1.0.1",
     "licenseFiles": [
       "node_modules/@humanwhocodes/module-importer/LICENSE"
     ]
@@ -352,12 +373,13 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Nicholas C. Zaks",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40humanwhocodes/retry@0.4.3",
+    "url": "https://www.npmjs.com/package/@humanwhocodes/retry/v/0.4.3",
     "source": [
       "git+https://github.com/humanwhocodes/retry.git"
     ],
-    "author": "Nicholas C. Zaks",
-    "url": "https://www.npmjs.com/package/@humanwhocodes/retry/v/0.4.3",
     "licenseFiles": [
       "node_modules/@humanwhocodes/retry/LICENSE"
     ]
@@ -368,10 +390,11 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Justin Ridgewell <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40jridgewell/resolve-uri@3.1.2",
-    "source": [],
-    "author": "Justin Ridgewell",
     "url": "https://www.npmjs.com/package/@jridgewell/resolve-uri/v/3.1.2",
+    "source": [],
     "licenseFiles": [
       "node_modules/@jridgewell/resolve-uri/LICENSE"
     ]
@@ -382,13 +405,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Justin Ridgewell <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40jridgewell/sourcemap-codec@1.6.0",
+    "url": "https://www.npmjs.com/package/@jridgewell/sourcemap-codec/v/1.6.0",
     "source": [
       "git+https://github.com/jridgewell/sourcemaps.git",
       "https://github.com/jridgewell/sourcemaps/tree/main/packages/sourcemap-codec"
     ],
-    "author": "Justin Ridgewell",
-    "url": "https://www.npmjs.com/package/@jridgewell/sourcemap-codec/v/1.6.0",
     "licenseFiles": [
       "node_modules/@jridgewell/sourcemap-codec/LICENSE"
     ]
@@ -399,13 +423,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Justin Ridgewell <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40jridgewell/trace-mapping@0.3.31",
+    "url": "https://www.npmjs.com/package/@jridgewell/trace-mapping/v/0.3.31",
     "source": [
       "git+https://github.com/jridgewell/sourcemaps.git",
       "https://github.com/jridgewell/sourcemaps/tree/main/packages/trace-mapping"
     ],
-    "author": "Justin Ridgewell",
-    "url": "https://www.npmjs.com/package/@jridgewell/trace-mapping/v/0.3.31",
     "licenseFiles": [
       "node_modules/@jridgewell/trace-mapping/LICENSE"
     ]
@@ -416,13 +441,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jared Wray <[contato omitido]> (http://jaredwray.com)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40keyv/bigmap@1.3.1",
+    "url": "https://www.npmjs.com/package/@keyv/bigmap/v/1.3.1",
     "source": [
       "git+https://github.com/jaredwray/keyv.git",
       "https://github.com/jaredwray/keyv"
     ],
-    "author": "Jared Wray",
-    "url": "https://www.npmjs.com/package/@keyv/bigmap/v/1.3.1",
     "licenseFiles": [
       "node_modules/@keyv/bigmap/LICENSE"
     ]
@@ -433,13 +459,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jared Wray <[contato omitido]> (https://jaredwray.com)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40keyv/serialize@1.1.1",
+    "url": "https://www.npmjs.com/package/@keyv/serialize/v/1.1.1",
     "source": [
       "git+https://github.com/jaredwray/keyv.git",
       "https://github.com/jaredwray/keyv"
     ],
-    "author": "Jared Wray",
-    "url": "https://www.npmjs.com/package/@keyv/serialize/v/1.1.1",
     "licenseFiles": [
       "node_modules/@keyv/serialize/LICENSE"
     ]
@@ -450,13 +477,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Boshen and oxc contributors",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40oxc-project/types@0.152.0",
+    "url": "https://www.npmjs.com/package/@oxc-project/types/v/0.152.0",
     "source": [
       "git+https://github.com/oxc-project/oxc.git",
       "https://oxc.rs"
     ],
-    "author": "Boshen and oxc contributors",
-    "url": "https://www.npmjs.com/package/@oxc-project/types/v/0.152.0",
     "licenseFiles": [
       "node_modules/@oxc-project/types/LICENSE"
     ]
@@ -467,13 +495,14 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Microsoft Corporation",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40playwright/test@1.63.0",
+    "url": "https://www.npmjs.com/package/@playwright/test/v/1.63.0",
     "source": [
       "git+https://github.com/microsoft/playwright.git",
       "https://playwright.dev"
     ],
-    "author": "Microsoft Corporation",
-    "url": "https://www.npmjs.com/package/@playwright/test/v/1.63.0",
     "licenseFiles": [
       "node_modules/@playwright/test/LICENSE"
     ]
@@ -484,13 +513,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Autor/titular não declarado nos campos inspecionados; conferir na origem",
+    "creditSource": "ausente nos metadados/créditos explícitos inspecionados",
     "purl": "pkg:npm/%40rolldown/binding-win32-x64-msvc@1.2.12",
+    "url": "https://www.npmjs.com/package/@rolldown/binding-win32-x64-msvc/v/1.2.12",
     "source": [
       "git+https://github.com/rolldown/rolldown.git",
       "https://rolldown.rs/"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@rolldown/binding-win32-x64-msvc/v/1.2.12",
     "licenseFiles": []
   },
   {
@@ -499,13 +529,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2026-present, rolldown/plugins repository contributors",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/%40rolldown/pluginutils@1.0.1",
+    "url": "https://www.npmjs.com/package/@rolldown/pluginutils/v/1.0.1",
     "source": [
       "git+https://github.com/rolldown/plugins.git",
       "https://github.com/rolldown/plugins/tree/main/packages/pluginutils#readme"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@rolldown/pluginutils/v/1.0.1",
     "licenseFiles": [
       "node_modules/@rolldown/pluginutils/LICENSE"
     ]
@@ -516,13 +547,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Bart van der Schoor; Andrew Brown; Olivier Chevet; Matt Wistrand; Shaun Luttin; Satana Charuwichitratana; Erik Schierboom; Bogdan Paranytsia; CXuesong; Joey Kilpatrick",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40types/chai@5.2.3",
+    "url": "https://www.npmjs.com/package/@types/chai/v/5.2.3",
     "source": [
       "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
       "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/chai"
     ],
-    "author": "Bart van der Schoor; Andrew Brown; Olivier Chevet; Matt Wistrand; Shaun Luttin; Satana Charuwichitratana; Erik Schierboom; Bogdan Paranytsia; CXuesong; Joey Kilpatrick",
-    "url": "https://www.npmjs.com/package/@types/chai/v/5.2.3",
     "licenseFiles": [
       "node_modules/@types/chai/LICENSE"
     ]
@@ -533,13 +565,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Rodrigo Pietnechuk",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40types/deep-eql@4.0.2",
+    "url": "https://www.npmjs.com/package/@types/deep-eql/v/4.0.2",
     "source": [
       "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
       "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/deep-eql"
     ],
-    "author": "Rodrigo Pietnechuk",
-    "url": "https://www.npmjs.com/package/@types/deep-eql/v/4.0.2",
     "licenseFiles": [
       "node_modules/@types/deep-eql/LICENSE"
     ]
@@ -550,13 +583,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jimmy Leung",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40types/esrecurse@4.3.1",
+    "url": "https://www.npmjs.com/package/@types/esrecurse/v/4.3.1",
     "source": [
       "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
       "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/esrecurse"
     ],
-    "author": "Jimmy Leung",
-    "url": "https://www.npmjs.com/package/@types/esrecurse/v/4.3.1",
     "licenseFiles": [
       "node_modules/@types/esrecurse/LICENSE"
     ]
@@ -567,13 +601,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "RReverser",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40types/estree@1.0.9",
+    "url": "https://www.npmjs.com/package/@types/estree/v/1.0.9",
     "source": [
       "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
       "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/estree"
     ],
-    "author": "RReverser",
-    "url": "https://www.npmjs.com/package/@types/estree/v/1.0.9",
     "licenseFiles": [
       "node_modules/@types/estree/LICENSE"
     ]
@@ -584,13 +619,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Boris Cherny; Lucian Buzzo; Roland Groza; Jason Kwok",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40types/json-schema@7.0.15",
+    "url": "https://www.npmjs.com/package/@types/json-schema/v/7.0.15",
     "source": [
       "https://github.com/DefinitelyTyped/DefinitelyTyped.git",
       "https://github.com/DefinitelyTyped/DefinitelyTyped/tree/master/types/json-schema"
     ],
-    "author": "Boris Cherny; Lucian Buzzo; Roland Groza; Jason Kwok",
-    "url": "https://www.npmjs.com/package/@types/json-schema/v/7.0.15",
     "licenseFiles": [
       "node_modules/@types/json-schema/LICENSE"
     ]
@@ -601,13 +637,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2019 typescript-eslint and other contributors",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/%40typescript-eslint/eslint-plugin@8.71.1",
+    "url": "https://www.npmjs.com/package/@typescript-eslint/eslint-plugin/v/8.71.1",
     "source": [
       "https://github.com/typescript-eslint/typescript-eslint.git",
       "https://typescript-eslint.io/packages/eslint-plugin"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@typescript-eslint/eslint-plugin/v/8.71.1",
     "licenseFiles": [
       "node_modules/@typescript-eslint/eslint-plugin/LICENSE"
     ]
@@ -618,12 +655,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "kael",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/ignore@7.0.12",
+    "url": "https://www.npmjs.com/package/ignore/v/7.0.12",
     "source": [
       "https://github.com/kaelzhang/node-ignore.git"
     ],
-    "author": "kael",
-    "url": "https://www.npmjs.com/package/ignore/v/7.0.12",
     "licenseFiles": [
       "node_modules/@typescript-eslint/eslint-plugin/node_modules/ignore/LICENSE-MIT"
     ]
@@ -634,13 +672,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2019 typescript-eslint and other contributors",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/%40typescript-eslint/parser@8.71.1",
+    "url": "https://www.npmjs.com/package/@typescript-eslint/parser/v/8.71.1",
     "source": [
       "https://github.com/typescript-eslint/typescript-eslint.git",
       "https://typescript-eslint.io/packages/parser"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@typescript-eslint/parser/v/8.71.1",
     "licenseFiles": [
       "node_modules/@typescript-eslint/parser/LICENSE"
     ]
@@ -651,13 +690,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2025 typescript-eslint and other contributors",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/%40typescript-eslint/project-service@8.71.1",
+    "url": "https://www.npmjs.com/package/@typescript-eslint/project-service/v/8.71.1",
     "source": [
       "https://github.com/typescript-eslint/typescript-eslint.git",
       "https://typescript-eslint.io"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@typescript-eslint/project-service/v/8.71.1",
     "licenseFiles": [
       "node_modules/@typescript-eslint/project-service/LICENSE"
     ]
@@ -668,13 +708,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2019 typescript-eslint and other contributors",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/%40typescript-eslint/scope-manager@8.71.1",
+    "url": "https://www.npmjs.com/package/@typescript-eslint/scope-manager/v/8.71.1",
     "source": [
       "https://github.com/typescript-eslint/typescript-eslint.git",
       "https://typescript-eslint.io/packages/scope-manager"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@typescript-eslint/scope-manager/v/8.71.1",
     "licenseFiles": [
       "node_modules/@typescript-eslint/scope-manager/LICENSE"
     ]
@@ -685,13 +726,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2025 typescript-eslint and other contributors",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/%40typescript-eslint/tsconfig-utils@8.71.1",
+    "url": "https://www.npmjs.com/package/@typescript-eslint/tsconfig-utils/v/8.71.1",
     "source": [
       "https://github.com/typescript-eslint/typescript-eslint.git",
       "https://typescript-eslint.io"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@typescript-eslint/tsconfig-utils/v/8.71.1",
     "licenseFiles": [
       "node_modules/@typescript-eslint/tsconfig-utils/LICENSE"
     ]
@@ -702,13 +744,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2021 typescript-eslint and other contributors",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/%40typescript-eslint/type-utils@8.71.1",
+    "url": "https://www.npmjs.com/package/@typescript-eslint/type-utils/v/8.71.1",
     "source": [
       "https://github.com/typescript-eslint/typescript-eslint.git",
       "https://typescript-eslint.io"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@typescript-eslint/type-utils/v/8.71.1",
     "licenseFiles": [
       "node_modules/@typescript-eslint/type-utils/LICENSE"
     ]
@@ -719,13 +762,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2019 typescript-eslint and other contributors",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/%40typescript-eslint/types@8.71.1",
+    "url": "https://www.npmjs.com/package/@typescript-eslint/types/v/8.71.1",
     "source": [
       "https://github.com/typescript-eslint/typescript-eslint.git",
       "https://typescript-eslint.io"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@typescript-eslint/types/v/8.71.1",
     "licenseFiles": [
       "node_modules/@typescript-eslint/types/LICENSE"
     ]
@@ -736,13 +780,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2019 typescript-eslint and other contributors",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/%40typescript-eslint/typescript-estree@8.71.1",
+    "url": "https://www.npmjs.com/package/@typescript-eslint/typescript-estree/v/8.71.1",
     "source": [
       "https://github.com/typescript-eslint/typescript-eslint.git",
       "https://typescript-eslint.io/packages/typescript-estree"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@typescript-eslint/typescript-estree/v/8.71.1",
     "licenseFiles": [
       "node_modules/@typescript-eslint/typescript-estree/LICENSE"
     ]
@@ -753,13 +798,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2019 typescript-eslint and other contributors",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/%40typescript-eslint/utils@8.71.1",
+    "url": "https://www.npmjs.com/package/@typescript-eslint/utils/v/8.71.1",
     "source": [
       "https://github.com/typescript-eslint/typescript-eslint.git",
       "https://typescript-eslint.io/packages/utils"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@typescript-eslint/utils/v/8.71.1",
     "licenseFiles": [
       "node_modules/@typescript-eslint/utils/LICENSE"
     ]
@@ -770,13 +816,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2019 typescript-eslint and other contributors",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/%40typescript-eslint/visitor-keys@8.71.1",
+    "url": "https://www.npmjs.com/package/@typescript-eslint/visitor-keys/v/8.71.1",
     "source": [
       "https://github.com/typescript-eslint/typescript-eslint.git",
       "https://typescript-eslint.io"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@typescript-eslint/visitor-keys/v/8.71.1",
     "licenseFiles": [
       "node_modules/@typescript-eslint/visitor-keys/LICENSE"
     ]
@@ -787,13 +834,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Anthony Fu <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40vitest/coverage-v8@5.0.3",
+    "url": "https://www.npmjs.com/package/@vitest/coverage-v8/v/5.0.3",
     "source": [
       "git+https://github.com/vitest-dev/vitest.git",
       "https://vitest.dev/guide/coverage"
     ],
-    "author": "Anthony Fu",
-    "url": "https://www.npmjs.com/package/@vitest/coverage-v8/v/5.0.3",
     "licenseFiles": [
       "node_modules/@vitest/coverage-v8/LICENSE"
     ]
@@ -804,13 +852,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Vitest Team",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40vitest/istanbul-lib-coverage@1.0.2",
+    "url": "https://www.npmjs.com/package/@vitest/istanbul-lib-coverage/v/1.0.2",
     "source": [
       "git+https://github.com/vitest-dev/istanbuljs.git",
       "https://vitest.dev/"
     ],
-    "author": "Vitest Team",
-    "url": "https://www.npmjs.com/package/@vitest/istanbul-lib-coverage/v/1.0.2",
     "licenseFiles": [
       "node_modules/@vitest/istanbul-lib-coverage/LICENSE"
     ]
@@ -821,13 +870,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Vitest Team",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/%40vitest/istanbul-lib-report@1.0.2",
+    "url": "https://www.npmjs.com/package/@vitest/istanbul-lib-report/v/1.0.2",
     "source": [
       "git+https://github.com/vitest-dev/istanbuljs.git",
       "https://vitest.dev"
     ],
-    "author": "Vitest Team",
-    "url": "https://www.npmjs.com/package/@vitest/istanbul-lib-report/v/1.0.2",
     "licenseFiles": [
       "node_modules/@vitest/istanbul-lib-report/LICENSE"
     ]
@@ -838,13 +888,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2021-Present VoidZero Inc. and Vitest contributors",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/%40vitest/mocker@5.0.3",
+    "url": "https://www.npmjs.com/package/@vitest/mocker/v/5.0.3",
     "source": [
       "git+https://github.com/vitest-dev/vitest.git",
       "https://github.com/vitest-dev/vitest/tree/main/packages/mocker"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@vitest/mocker/v/5.0.3",
     "licenseFiles": [
       "node_modules/@vitest/mocker/LICENSE"
     ]
@@ -855,13 +906,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2021-Present VoidZero Inc. and Vitest contributors",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/%40vitest/spy@5.0.3",
+    "url": "https://www.npmjs.com/package/@vitest/spy/v/5.0.3",
     "source": [
       "git+https://github.com/vitest-dev/vitest.git",
       "https://vitest.dev/api/mock"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/@vitest/spy/v/5.0.3",
     "licenseFiles": [
       "node_modules/@vitest/spy/LICENSE"
     ]
@@ -872,13 +924,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (C) 2012-2022 by various contributors (see AUTHORS)",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/acorn@8.19.0",
+    "url": "https://www.npmjs.com/package/acorn/v/8.19.0",
     "source": [
       "git+https://github.com/acornjs/acorn.git",
       "https://github.com/acornjs/acorn"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/acorn/v/8.19.0",
     "licenseFiles": [
       "node_modules/acorn/LICENSE"
     ]
@@ -889,13 +942,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (C) 2012-2017 by Ingvar Stepanyan",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/acorn-jsx@5.3.2",
+    "url": "https://www.npmjs.com/package/acorn-jsx/v/5.3.2",
     "source": [
       "https://github.com/acornjs/acorn-jsx",
       "https://github.com/acornjs/acorn-jsx"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/acorn-jsx/v/5.3.2",
     "licenseFiles": [
       "node_modules/acorn-jsx/LICENSE"
     ]
@@ -906,12 +960,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Evgeny Poberezkin",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/ajv@8.20.0",
+    "url": "https://www.npmjs.com/package/ajv/v/8.20.0",
     "source": [
       "https://ajv.js.org"
     ],
-    "author": "Evgeny Poberezkin",
-    "url": "https://www.npmjs.com/package/ajv/v/8.20.0",
     "licenseFiles": [
       "node_modules/ajv/LICENSE"
     ]
@@ -922,10 +977,11 @@
     "licenses": [
       "PSF-2.0"
     ],
+    "author": "Autor/titular não declarado nos campos inspecionados; conferir na origem",
+    "creditSource": "ausente nos metadados/créditos explícitos inspecionados",
     "purl": "pkg:npm/argparse@3.0.2",
-    "source": [],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
     "url": "https://www.npmjs.com/package/argparse/v/3.0.2",
+    "source": [],
     "licenseFiles": [
       "node_modules/argparse/LICENSE"
     ]
@@ -936,12 +992,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jake Luer <[contato omitido]> (http://qualiancy.com)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/assertion-error@2.0.1",
+    "url": "https://www.npmjs.com/package/assertion-error/v/2.0.1",
     "source": [
       "git@github.com:chaijs/assertion-error.git"
     ],
-    "author": "Jake Luer",
-    "url": "https://www.npmjs.com/package/assertion-error/v/2.0.1",
     "licenseFiles": [
       "node_modules/assertion-error/LICENSE"
     ]
@@ -952,13 +1009,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Ari Perkkiö <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/ast-v8-to-istanbul@1.0.7",
+    "url": "https://www.npmjs.com/package/ast-v8-to-istanbul/v/1.0.7",
     "source": [
       "git+https://github.com/AriPerkkio/ast-v8-to-istanbul.git",
       "https://github.com/AriPerkkio/ast-v8-to-istanbul"
     ],
-    "author": "Ari PerkkiÃƒÆ’Ã‚Â¶",
-    "url": "https://www.npmjs.com/package/ast-v8-to-istanbul/v/1.0.7",
     "licenseFiles": [
       "node_modules/ast-v8-to-istanbul/LICENSE"
     ]
@@ -969,12 +1027,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Original code Copyright Julian Gruber <[contato omitido]>; Port to TypeScript Copyright Isaac Z. Schlueter <[contato omitido]>",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/balanced-match@4.0.4",
+    "url": "https://www.npmjs.com/package/balanced-match/v/4.0.4",
     "source": [
       "git://github.com/juliangruber/balanced-match.git"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/balanced-match/v/4.0.4",
     "licenseFiles": [
       "node_modules/balanced-match/LICENSE.md"
     ]
@@ -985,12 +1044,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright Julian Gruber <[contato omitido]>; TypeScript port Copyright Isaac Z. Schlueter <[contato omitido]>",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/brace-expansion@5.0.12",
+    "url": "https://www.npmjs.com/package/brace-expansion/v/5.0.12",
     "source": [
       "git+https://github.com/juliangruber/brace-expansion.git"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/brace-expansion/v/5.0.12",
     "licenseFiles": [
       "node_modules/brace-expansion/LICENSE"
     ]
@@ -1001,12 +1061,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jared Wray <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/cacheable@2.5.0",
+    "url": "https://www.npmjs.com/package/cacheable/v/2.5.0",
     "source": [
       "git+https://github.com/jaredwray/cacheable.git"
     ],
-    "author": "Jared Wray",
-    "url": "https://www.npmjs.com/package/cacheable/v/2.5.0",
     "licenseFiles": [
       "node_modules/cacheable/LICENSE"
     ]
@@ -1017,13 +1078,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jake Luer <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/chai@6.3.0",
+    "url": "https://www.npmjs.com/package/chai/v/6.3.0",
     "source": [
       "https://github.com/chaijs/chai",
       "http://chaijs.com"
     ],
-    "author": "Jake Luer",
-    "url": "https://www.npmjs.com/package/chai/v/6.3.0",
     "licenseFiles": [
       "node_modules/chai/LICENSE"
     ]
@@ -1034,13 +1096,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "André Cruz <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/cross-spawn@7.0.6",
+    "url": "https://www.npmjs.com/package/cross-spawn/v/7.0.6",
     "source": [
       "git@github.com:moxystudio/node-cross-spawn.git",
       "https://github.com/moxystudio/node-cross-spawn"
     ],
-    "author": "AndrÃƒÆ’Ã‚Â© Cruz",
-    "url": "https://www.npmjs.com/package/cross-spawn/v/7.0.6",
     "licenseFiles": [
       "node_modules/cross-spawn/LICENSE"
     ]
@@ -1051,12 +1114,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Josh Junon (https://github.com/qix-)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/debug@4.4.3",
+    "url": "https://www.npmjs.com/package/debug/v/4.4.3",
     "source": [
       "git://github.com/debug-js/debug.git"
     ],
-    "author": "Josh Junon (https://github.com/qix-)",
-    "url": "https://www.npmjs.com/package/debug/v/4.4.3",
     "licenseFiles": [
       "node_modules/debug/LICENSE"
     ]
@@ -1067,12 +1131,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Thorsten Lorenz",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/deep-is@0.1.4",
+    "url": "https://www.npmjs.com/package/deep-is/v/0.1.4",
     "source": [
       "http://github.com/thlorenz/deep-is.git"
     ],
-    "author": "Thorsten Lorenz",
-    "url": "https://www.npmjs.com/package/deep-is/v/0.1.4",
     "licenseFiles": [
       "node_modules/deep-is/LICENSE"
     ]
@@ -1083,12 +1148,13 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Lovell Fuller <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/detect-libc@2.1.2",
+    "url": "https://www.npmjs.com/package/detect-libc/v/2.1.2",
     "source": [
       "git://github.com/lovell/detect-libc.git"
     ],
-    "author": "Lovell Fuller",
-    "url": "https://www.npmjs.com/package/detect-libc/v/2.1.2",
     "licenseFiles": [
       "node_modules/detect-libc/LICENSE"
     ]
@@ -1099,12 +1165,13 @@
     "licenses": [
       "BSD-2-Clause"
     ],
+    "author": "Felix Boehm <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/entities@8.1.0",
+    "url": "https://www.npmjs.com/package/entities/v/8.1.0",
     "source": [
       "https://github.com/fb55/entities.git"
     ],
-    "author": "Felix Boehm",
-    "url": "https://www.npmjs.com/package/entities/v/8.1.0",
     "licenseFiles": [
       "node_modules/entities/LICENSE"
     ]
@@ -1115,13 +1182,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Guy Bedford",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/es-module-lexer@2.3.2",
+    "url": "https://www.npmjs.com/package/es-module-lexer/v/2.3.2",
     "source": [
       "git+https://github.com/guybedford/es-module-lexer.git",
       "https://github.com/guybedford/es-module-lexer#readme"
     ],
-    "author": "Guy Bedford",
-    "url": "https://www.npmjs.com/package/es-module-lexer/v/2.3.2",
     "licenseFiles": [
       "node_modules/es-module-lexer/LICENSE"
     ]
@@ -1132,12 +1200,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2020 Evan Wallace",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/esbuild@0.28.2",
+    "url": "https://www.npmjs.com/package/esbuild/v/0.28.2",
     "source": [
       "git+https://github.com/evanw/esbuild.git"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/esbuild/v/0.28.2",
     "licenseFiles": [
       "node_modules/esbuild/LICENSE.md"
     ]
@@ -1148,10 +1217,11 @@
     "licenses": [
       "MIT"
     ],
-    "purl": "pkg:npm/escape-string-regexp@4.0.0",
-    "source": [],
     "author": "Sindre Sorhus",
+    "creditSource": "author/contributors do package.json",
+    "purl": "pkg:npm/escape-string-regexp@4.0.0",
     "url": "https://www.npmjs.com/package/escape-string-regexp/v/4.0.0",
+    "source": [],
     "licenseFiles": [
       "node_modules/escape-string-regexp/license"
     ]
@@ -1162,12 +1232,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Nicholas C. Zakas <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/eslint@10.12.0",
+    "url": "https://www.npmjs.com/package/eslint/v/10.12.0",
     "source": [
       "https://eslint.org"
     ],
-    "author": "Nicholas C. Zakas",
-    "url": "https://www.npmjs.com/package/eslint/v/10.12.0",
     "licenseFiles": [
       "node_modules/eslint/LICENSE"
     ]
@@ -1178,13 +1249,14 @@
     "licenses": [
       "BSD-2-Clause"
     ],
+    "author": "Titular/crédito declarado: Copyright (C) 2012-2013 Yusuke Suzuki (twitter: @Constellation) and other contributors.",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/eslint-scope@9.1.2",
+    "url": "https://www.npmjs.com/package/eslint-scope/v/9.1.2",
     "source": [
       "https://github.com/eslint/js.git",
       "https://github.com/eslint/js/blob/main/packages/eslint-scope/README.md"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/eslint-scope/v/9.1.2",
     "licenseFiles": [
       "node_modules/eslint-scope/LICENSE"
     ]
@@ -1195,13 +1267,14 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Toru Nagashima (https://github.com/mysticatea)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/eslint-visitor-keys@5.0.1",
+    "url": "https://www.npmjs.com/package/eslint-visitor-keys/v/5.0.1",
     "source": [
       "https://github.com/eslint/js.git",
       "https://github.com/eslint/js/blob/main/packages/eslint-visitor-keys/README.md"
     ],
-    "author": "Toru Nagashima (https://github.com/mysticatea)",
-    "url": "https://www.npmjs.com/package/eslint-visitor-keys/v/5.0.1",
     "licenseFiles": [
       "node_modules/eslint-visitor-keys/LICENSE"
     ]
@@ -1212,13 +1285,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Evgeny Poberezkin",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/ajv@6.15.0",
+    "url": "https://www.npmjs.com/package/ajv/v/6.15.0",
     "source": [
       "https://github.com/ajv-validator/ajv.git",
       "https://github.com/ajv-validator/ajv"
     ],
-    "author": "Evgeny Poberezkin",
-    "url": "https://www.npmjs.com/package/ajv/v/6.15.0",
     "licenseFiles": [
       "node_modules/eslint/node_modules/ajv/LICENSE"
     ]
@@ -1229,13 +1303,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Evgeny Poberezkin",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/json-schema-traverse@0.4.1",
+    "url": "https://www.npmjs.com/package/json-schema-traverse/v/0.4.1",
     "source": [
       "git+https://github.com/epoberezkin/json-schema-traverse.git",
       "https://github.com/epoberezkin/json-schema-traverse#readme"
     ],
-    "author": "Evgeny Poberezkin",
-    "url": "https://www.npmjs.com/package/json-schema-traverse/v/0.4.1",
     "licenseFiles": [
       "node_modules/eslint/node_modules/json-schema-traverse/LICENSE"
     ]
@@ -1246,13 +1321,14 @@
     "licenses": [
       "BSD-2-Clause"
     ],
+    "author": "Nicholas C. Zakas <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/espree@11.2.0",
+    "url": "https://www.npmjs.com/package/espree/v/11.2.0",
     "source": [
       "https://github.com/eslint/js.git",
       "https://github.com/eslint/js/blob/main/packages/espree/README.md"
     ],
-    "author": "Nicholas C. Zakas",
-    "url": "https://www.npmjs.com/package/espree/v/11.2.0",
     "licenseFiles": [
       "node_modules/espree/LICENSE"
     ]
@@ -1263,13 +1339,14 @@
     "licenses": [
       "BSD-3-Clause"
     ],
+    "author": "Joel Feenstra <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/esquery@1.7.0",
+    "url": "https://www.npmjs.com/package/esquery/v/1.7.0",
     "source": [
       "https://github.com/estools/esquery.git",
       "https://github.com/estools/esquery/"
     ],
-    "author": "Joel Feenstra",
-    "url": "https://www.npmjs.com/package/esquery/v/1.7.0",
     "licenseFiles": [
       "node_modules/esquery/license.txt"
     ]
@@ -1280,13 +1357,14 @@
     "licenses": [
       "BSD-2-Clause"
     ],
+    "author": "Crédito explícito no código distribuído: Copyright (C) 2014 Yusuke Suzuki <[contato omitido]>",
+    "creditSource": "node_modules/esrecurse/esrecurse.js",
     "purl": "pkg:npm/esrecurse@4.3.0",
+    "url": "https://www.npmjs.com/package/esrecurse/v/4.3.0",
     "source": [
       "https://github.com/estools/esrecurse.git",
       "https://github.com/estools/esrecurse"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/esrecurse/v/4.3.0",
     "licenseFiles": []
   },
   {
@@ -1295,13 +1373,14 @@
     "licenses": [
       "BSD-2-Clause"
     ],
+    "author": "Crédito explícito no código distribuído: Copyright (C) 2012-2013 Yusuke Suzuki <[contato omitido]>; Copyright (C) 2012 Ariya Hidayat <[contato omitido]>",
+    "creditSource": "node_modules/estraverse/estraverse.js",
     "purl": "pkg:npm/estraverse@5.3.0",
+    "url": "https://www.npmjs.com/package/estraverse/v/5.3.0",
     "source": [
       "http://github.com/estools/estraverse.git",
       "https://github.com/estools/estraverse"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/estraverse/v/5.3.0",
     "licenseFiles": [
       "node_modules/estraverse/LICENSE.BSD"
     ]
@@ -1312,12 +1391,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Rich Harris",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/estree-walker@3.0.3",
+    "url": "https://www.npmjs.com/package/estree-walker/v/3.0.3",
     "source": [
       "https://github.com/Rich-Harris/estree-walker"
     ],
-    "author": "Rich Harris",
-    "url": "https://www.npmjs.com/package/estree-walker/v/3.0.3",
     "licenseFiles": [
       "node_modules/estree-walker/LICENSE"
     ]
@@ -1328,13 +1408,14 @@
     "licenses": [
       "BSD-2-Clause"
     ],
+    "author": "Crédito explícito no código distribuído: Copyright (C) 2013 Yusuke Suzuki <[contato omitido]>",
+    "creditSource": "node_modules/esutils/lib/utils.js",
     "purl": "pkg:npm/esutils@2.0.3",
+    "url": "https://www.npmjs.com/package/esutils/v/2.0.3",
     "source": [
       "http://github.com/estools/esutils.git",
       "https://github.com/estools/esutils"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/esutils/v/2.0.3",
     "licenseFiles": [
       "node_modules/esutils/LICENSE.BSD"
     ]
@@ -1345,13 +1426,14 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Titular/crédito declarado: Copyright 2024 Misha Kaletsky",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/expect-type@1.4.0",
+    "url": "https://www.npmjs.com/package/expect-type/v/1.4.0",
     "source": [
       "https://github.com/mmkal/expect-type.git",
       "https://github.com/mmkal/expect-type#readme"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/expect-type/v/1.4.0",
     "licenseFiles": [
       "node_modules/expect-type/LICENSE"
     ]
@@ -1362,13 +1444,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Evgeny Poberezkin",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/fast-deep-equal@3.1.3",
+    "url": "https://www.npmjs.com/package/fast-deep-equal/v/3.1.3",
     "source": [
       "git+https://github.com/epoberezkin/fast-deep-equal.git",
       "https://github.com/epoberezkin/fast-deep-equal#readme"
     ],
-    "author": "Evgeny Poberezkin",
-    "url": "https://www.npmjs.com/package/fast-deep-equal/v/3.1.3",
     "licenseFiles": [
       "node_modules/fast-deep-equal/LICENSE"
     ]
@@ -1379,13 +1462,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "James Halliday",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/fast-json-stable-stringify@2.1.0",
+    "url": "https://www.npmjs.com/package/fast-json-stable-stringify/v/2.1.0",
     "source": [
       "git://github.com/epoberezkin/fast-json-stable-stringify.git",
       "https://github.com/epoberezkin/fast-json-stable-stringify"
     ],
-    "author": "James Halliday",
-    "url": "https://www.npmjs.com/package/fast-json-stable-stringify/v/2.1.0",
     "licenseFiles": [
       "node_modules/fast-json-stable-stringify/LICENSE"
     ]
@@ -1396,12 +1480,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Ramesh Nair <[contato omitido]> (http://www.hiddentao.com/)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/fast-levenshtein@2.0.6",
+    "url": "https://www.npmjs.com/package/fast-levenshtein/v/2.0.6",
     "source": [
       "https://github.com/hiddentao/fast-levenshtein.git"
     ],
-    "author": "Ramesh Nair",
-    "url": "https://www.npmjs.com/package/fast-levenshtein/v/2.0.6",
     "licenseFiles": [
       "node_modules/fast-levenshtein/LICENSE.md"
     ]
@@ -1412,13 +1497,14 @@
     "licenses": [
       "BSD-3-Clause"
     ],
+    "author": "Vincent Le Goff <[contato omitido]> (https://github.com/zekth)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/fast-uri@3.1.8",
+    "url": "https://www.npmjs.com/package/fast-uri/v/3.1.8",
     "source": [
       "git+https://github.com/fastify/fast-uri.git",
       "https://github.com/fastify/fast-uri"
     ],
-    "author": "Vincent Le Goff",
-    "url": "https://www.npmjs.com/package/fast-uri/v/3.1.8",
     "licenseFiles": [
       "node_modules/fast-uri/LICENSE"
     ]
@@ -1429,13 +1515,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "thecodrr <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/fdir@6.5.0",
+    "url": "https://www.npmjs.com/package/fdir/v/6.5.0",
     "source": [
       "git+https://github.com/thecodrr/fdir.git",
       "https://github.com/thecodrr/fdir#readme"
     ],
-    "author": "thecodrr",
-    "url": "https://www.npmjs.com/package/fdir/v/6.5.0",
     "licenseFiles": [
       "node_modules/fdir/LICENSE"
     ]
@@ -1446,12 +1533,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Arjun Barrett <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/fflate@0.8.3",
+    "url": "https://www.npmjs.com/package/fflate/v/0.8.3",
     "source": [
       "https://101arrowz.github.io/fflate"
     ],
-    "author": "Arjun Barrett",
-    "url": "https://www.npmjs.com/package/fflate/v/0.8.3",
     "licenseFiles": [
       "node_modules/fflate/LICENSE"
     ]
@@ -1462,12 +1550,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jared Wray <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/file-entry-cache@11.1.5",
+    "url": "https://www.npmjs.com/package/file-entry-cache/v/11.1.5",
     "source": [
       "git+https://github.com/jaredwray/cacheable.git"
     ],
-    "author": "Jared Wray",
-    "url": "https://www.npmjs.com/package/file-entry-cache/v/11.1.5",
     "licenseFiles": [
       "node_modules/file-entry-cache/LICENSE"
     ]
@@ -1478,10 +1567,11 @@
     "licenses": [
       "MIT"
     ],
-    "purl": "pkg:npm/find-up@5.0.0",
-    "source": [],
     "author": "Sindre Sorhus",
+    "creditSource": "author/contributors do package.json",
+    "purl": "pkg:npm/find-up@5.0.0",
     "url": "https://www.npmjs.com/package/find-up/v/5.0.0",
+    "source": [],
     "licenseFiles": [
       "node_modules/find-up/license"
     ]
@@ -1492,12 +1582,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jared Wray <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/flat-cache@6.1.23",
+    "url": "https://www.npmjs.com/package/flat-cache/v/6.1.23",
     "source": [
       "git+https://github.com/jaredwray/cacheable.git"
     ],
-    "author": "Jared Wray",
-    "url": "https://www.npmjs.com/package/flat-cache/v/6.1.23",
     "licenseFiles": [
       "node_modules/flat-cache/LICENSE"
     ]
@@ -1508,13 +1599,14 @@
     "licenses": [
       "ISC"
     ],
+    "author": "Andrea Giammarchi",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/flatted@3.4.4",
+    "url": "https://www.npmjs.com/package/flatted/v/3.4.4",
     "source": [
       "git+https://github.com/WebReflection/flatted.git",
       "https://github.com/WebReflection/flatted#readme"
     ],
-    "author": "Andrea Giammarchi",
-    "url": "https://www.npmjs.com/package/flatted/v/3.4.4",
     "licenseFiles": [
       "node_modules/flatted/LICENSE"
     ]
@@ -1525,10 +1617,11 @@
     "licenses": [
       "ISC"
     ],
+    "author": "Gulp Team <[contato omitido]> (https://gulpjs.com/)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/glob-parent@6.0.2",
-    "source": [],
-    "author": "Gulp Team",
     "url": "https://www.npmjs.com/package/glob-parent/v/6.0.2",
+    "source": [],
     "licenseFiles": [
       "node_modules/glob-parent/LICENSE"
     ]
@@ -1539,10 +1632,11 @@
     "licenses": [
       "MIT"
     ],
-    "purl": "pkg:npm/globals@17.13.0",
-    "source": [],
     "author": "Sindre Sorhus",
+    "creditSource": "author/contributors do package.json",
+    "purl": "pkg:npm/globals@17.13.0",
     "url": "https://www.npmjs.com/package/globals/v/17.13.0",
+    "source": [],
     "licenseFiles": [
       "node_modules/globals/license"
     ]
@@ -1553,10 +1647,11 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jared Wray <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/hashery@1.5.1",
-    "source": [],
-    "author": "Jared Wray",
     "url": "https://www.npmjs.com/package/hashery/v/1.5.1",
+    "source": [],
     "licenseFiles": [
       "node_modules/hashery/LICENSE"
     ]
@@ -1567,13 +1662,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jared Wray <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/hookified@1.15.1",
+    "url": "https://www.npmjs.com/package/hookified/v/1.15.1",
     "source": [
       "git+https://github.com/jaredwray/hookified.git",
       "https://github.com/jaredwray/hookified#readme"
     ],
-    "author": "Jared Wray",
-    "url": "https://www.npmjs.com/package/hookified/v/1.15.1",
     "licenseFiles": [
       "node_modules/hookified/LICENSE"
     ]
@@ -1584,12 +1680,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "kael",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/ignore@5.3.2",
+    "url": "https://www.npmjs.com/package/ignore/v/5.3.2",
     "source": [
       "git@github.com:kaelzhang/node-ignore.git"
     ],
-    "author": "kael",
-    "url": "https://www.npmjs.com/package/ignore/v/5.3.2",
     "licenseFiles": [
       "node_modules/ignore/LICENSE-MIT"
     ]
@@ -1600,13 +1697,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jens Taylor",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/imurmurhash@0.1.4",
+    "url": "https://www.npmjs.com/package/imurmurhash/v/0.1.4",
     "source": [
       "https://github.com/jensyt/imurmurhash-js",
       "https://github.com/jensyt/imurmurhash-js"
     ],
-    "author": "Jens Taylor",
-    "url": "https://www.npmjs.com/package/imurmurhash/v/0.1.4",
     "licenseFiles": []
   },
   {
@@ -1615,12 +1713,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/is-extglob@2.1.1",
+    "url": "https://www.npmjs.com/package/is-extglob/v/2.1.1",
     "source": [
       "https://github.com/jonschlinkert/is-extglob"
     ],
-    "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-    "url": "https://www.npmjs.com/package/is-extglob/v/2.1.1",
     "licenseFiles": [
       "node_modules/is-extglob/LICENSE"
     ]
@@ -1631,12 +1730,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/is-glob@4.0.3",
+    "url": "https://www.npmjs.com/package/is-glob/v/4.0.3",
     "source": [
       "https://github.com/micromatch/is-glob"
     ],
-    "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-    "url": "https://www.npmjs.com/package/is-glob/v/4.0.3",
     "licenseFiles": [
       "node_modules/is-glob/LICENSE"
     ]
@@ -1647,13 +1747,14 @@
     "licenses": [
       "ISC"
     ],
+    "author": "Isaac Z. Schlueter <[contato omitido]> (http://blog.izs.me/)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/isexe@2.0.0",
+    "url": "https://www.npmjs.com/package/isexe/v/2.0.0",
     "source": [
       "git+https://github.com/isaacs/isexe.git",
       "https://github.com/isaacs/isexe#readme"
     ],
-    "author": "Isaac Z. Schlueter",
-    "url": "https://www.npmjs.com/package/isexe/v/2.0.0",
     "licenseFiles": [
       "node_modules/isexe/LICENSE"
     ]
@@ -1664,10 +1765,11 @@
     "licenses": [
       "MIT"
     ],
-    "purl": "pkg:npm/js-tokens@10.0.0",
-    "source": [],
     "author": "Simon Lydell",
+    "creditSource": "author/contributors do package.json",
+    "purl": "pkg:npm/js-tokens@10.0.0",
     "url": "https://www.npmjs.com/package/js-tokens/v/10.0.0",
+    "source": [],
     "licenseFiles": [
       "node_modules/js-tokens/LICENSE"
     ]
@@ -1678,13 +1780,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Evgeny Poberezkin",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/json-schema-traverse@1.0.0",
+    "url": "https://www.npmjs.com/package/json-schema-traverse/v/1.0.0",
     "source": [
       "git+https://github.com/epoberezkin/json-schema-traverse.git",
       "https://github.com/epoberezkin/json-schema-traverse#readme"
     ],
-    "author": "Evgeny Poberezkin",
-    "url": "https://www.npmjs.com/package/json-schema-traverse/v/1.0.0",
     "licenseFiles": [
       "node_modules/json-schema-traverse/LICENSE"
     ]
@@ -1695,13 +1798,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "James Halliday",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/json-stable-stringify-without-jsonify@1.0.1",
+    "url": "https://www.npmjs.com/package/json-stable-stringify-without-jsonify/v/1.0.1",
     "source": [
       "git://github.com/samn/json-stable-stringify.git",
       "https://github.com/samn/json-stable-stringify"
     ],
-    "author": "James Halliday",
-    "url": "https://www.npmjs.com/package/json-stable-stringify-without-jsonify/v/1.0.1",
     "licenseFiles": [
       "node_modules/json-stable-stringify-without-jsonify/LICENSE"
     ]
@@ -1712,13 +1816,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jared Wray <[contato omitido]> (http://jaredwray.com)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/keyv@5.6.0",
+    "url": "https://www.npmjs.com/package/keyv/v/5.6.0",
     "source": [
       "git+https://github.com/jaredwray/keyv.git",
       "https://github.com/jaredwray/keyv"
     ],
-    "author": "Jared Wray",
-    "url": "https://www.npmjs.com/package/keyv/v/5.6.0",
     "licenseFiles": [
       "node_modules/keyv/LICENSE"
     ]
@@ -1729,13 +1834,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "George Zahariev <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/levn@0.4.1",
+    "url": "https://www.npmjs.com/package/levn/v/0.4.1",
     "source": [
       "git://github.com/gkz/levn.git",
       "https://github.com/gkz/levn"
     ],
-    "author": "George Zahariev",
-    "url": "https://www.npmjs.com/package/levn/v/0.4.1",
     "licenseFiles": [
       "node_modules/levn/LICENSE"
     ]
@@ -1746,12 +1852,13 @@
     "licenses": [
       "MPL-2.0"
     ],
+    "author": "Autor/titular não declarado nos campos inspecionados; conferir na origem",
+    "creditSource": "ausente nos metadados/créditos explícitos inspecionados",
     "purl": "pkg:npm/lightningcss@1.33.0",
+    "url": "https://www.npmjs.com/package/lightningcss/v/1.33.0",
     "source": [
       "https://github.com/parcel-bundler/lightningcss.git"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/lightningcss/v/1.33.0",
     "licenseFiles": [
       "node_modules/lightningcss/LICENSE"
     ]
@@ -1762,12 +1869,13 @@
     "licenses": [
       "MPL-2.0"
     ],
+    "author": "Autor/titular não declarado nos campos inspecionados; conferir na origem",
+    "creditSource": "ausente nos metadados/créditos explícitos inspecionados",
     "purl": "pkg:npm/lightningcss-win32-x64-msvc@1.33.0",
+    "url": "https://www.npmjs.com/package/lightningcss-win32-x64-msvc/v/1.33.0",
     "source": [
       "https://github.com/parcel-bundler/lightningcss.git"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/lightningcss-win32-x64-msvc/v/1.33.0",
     "licenseFiles": [
       "node_modules/lightningcss-win32-x64-msvc/LICENSE"
     ]
@@ -1778,12 +1886,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2015 Vitaly Puzrin.",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/linkify-it@6.1.0",
+    "url": "https://www.npmjs.com/package/linkify-it/v/6.1.0",
     "source": [
       "git+https://github.com/markdown-it/linkify-it.git"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/linkify-it/v/6.1.0",
     "licenseFiles": [
       "node_modules/linkify-it/LICENSE"
     ]
@@ -1794,10 +1903,11 @@
     "licenses": [
       "MIT"
     ],
-    "purl": "pkg:npm/locate-path@6.0.0",
-    "source": [],
     "author": "Sindre Sorhus",
+    "creditSource": "author/contributors do package.json",
+    "purl": "pkg:npm/locate-path@6.0.0",
     "url": "https://www.npmjs.com/package/locate-path/v/6.0.0",
+    "source": [],
     "licenseFiles": [
       "node_modules/locate-path/license"
     ]
@@ -1808,12 +1918,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Rich Harris",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/magic-string@1.4.3",
+    "url": "https://www.npmjs.com/package/magic-string/v/1.4.3",
     "source": [
       "git+https://github.com/Rich-Harris/magic-string.git"
     ],
-    "author": "Rich Harris",
-    "url": "https://www.npmjs.com/package/magic-string/v/1.4.3",
     "licenseFiles": [
       "node_modules/magic-string/LICENSE"
     ]
@@ -1824,12 +1935,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) Pooya Parsa <[contato omitido]> and Anthony Fu <https://github.com/antfu>",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/magicast@0.5.5",
+    "url": "https://www.npmjs.com/package/magicast/v/0.5.5",
     "source": [
       "unjs/magicast"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/magicast/v/0.5.5",
     "licenseFiles": [
       "node_modules/magicast/LICENSE"
     ]
@@ -1840,10 +1952,11 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2014 Vitaly Puzrin, Alex Kocharin.",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/markdown-it@15.0.2",
-    "source": [],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
     "url": "https://www.npmjs.com/package/markdown-it/v/15.0.2",
+    "source": [],
     "licenseFiles": [
       "node_modules/markdown-it/LICENSE"
     ]
@@ -1854,12 +1967,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2015 Vitaly Puzrin, Alex Kocharin.; Copyright Joyent, Inc. and other Node contributors. All rights reserved.",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/mdurl@2.1.0",
+    "url": "https://www.npmjs.com/package/mdurl/v/2.1.0",
     "source": [
       "git+https://github.com/markdown-it/mdurl.git"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/mdurl/v/2.1.0",
     "licenseFiles": [
       "node_modules/mdurl/LICENSE"
     ]
@@ -1870,12 +1984,13 @@
     "licenses": [
       "BlueOak-1.0.0"
     ],
+    "author": "Isaac Z. Schlueter <[contato omitido]> (http://blog.izs.me)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/minimatch@10.2.6",
+    "url": "https://www.npmjs.com/package/minimatch/v/10.2.6",
     "source": [
       "git@github.com:isaacs/minimatch"
     ],
-    "author": "Isaac Z. Schlueter",
-    "url": "https://www.npmjs.com/package/minimatch/v/10.2.6",
     "licenseFiles": [
       "node_modules/minimatch/LICENSE.md"
     ]
@@ -1886,10 +2001,11 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2020 Vercel, Inc.",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/ms@2.1.3",
-    "source": [],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
     "url": "https://www.npmjs.com/package/ms/v/2.1.3",
+    "source": [],
     "licenseFiles": [
       "node_modules/ms/license.md"
     ]
@@ -1900,10 +2016,11 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Andrey Sitnik <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/nanoid@3.3.20",
-    "source": [],
-    "author": "Andrey Sitnik",
     "url": "https://www.npmjs.com/package/nanoid/v/3.3.20",
+    "source": [],
     "licenseFiles": [
       "node_modules/nanoid/LICENSE"
     ]
@@ -1914,10 +2031,11 @@
     "licenses": [
       "MIT"
     ],
-    "purl": "pkg:npm/natural-compare@1.4.0",
-    "source": [],
     "author": "Lauri Rooden (https://github.com/litejs/natural-compare-lite)",
+    "creditSource": "author/contributors do package.json",
+    "purl": "pkg:npm/natural-compare@1.4.0",
     "url": "https://www.npmjs.com/package/natural-compare/v/1.4.0",
+    "source": [],
     "licenseFiles": []
   },
   {
@@ -1926,13 +2044,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Kevin Deng <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/obug@2.2.1",
+    "url": "https://www.npmjs.com/package/obug/v/2.2.1",
     "source": [
       "git+https://github.com/sxzz/obug.git",
       "https://github.com/sxzz/obug#readme"
     ],
-    "author": "Kevin Deng",
-    "url": "https://www.npmjs.com/package/obug/v/2.2.1",
     "licenseFiles": [
       "node_modules/obug/LICENSE"
     ]
@@ -1943,13 +2062,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "George Zahariev <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/optionator@0.9.4",
+    "url": "https://www.npmjs.com/package/optionator/v/0.9.4",
     "source": [
       "git://github.com/gkz/optionator.git",
       "https://github.com/gkz/optionator"
     ],
-    "author": "George Zahariev",
-    "url": "https://www.npmjs.com/package/optionator/v/0.9.4",
     "licenseFiles": [
       "node_modules/optionator/LICENSE"
     ]
@@ -1960,10 +2080,11 @@
     "licenses": [
       "MIT"
     ],
-    "purl": "pkg:npm/p-limit@3.1.0",
-    "source": [],
     "author": "Sindre Sorhus",
+    "creditSource": "author/contributors do package.json",
+    "purl": "pkg:npm/p-limit@3.1.0",
     "url": "https://www.npmjs.com/package/p-limit/v/3.1.0",
+    "source": [],
     "licenseFiles": [
       "node_modules/p-limit/license"
     ]
@@ -1974,10 +2095,11 @@
     "licenses": [
       "MIT"
     ],
-    "purl": "pkg:npm/p-locate@5.0.0",
-    "source": [],
     "author": "Sindre Sorhus",
+    "creditSource": "author/contributors do package.json",
+    "purl": "pkg:npm/p-locate@5.0.0",
     "url": "https://www.npmjs.com/package/p-locate/v/5.0.0",
+    "source": [],
     "licenseFiles": [
       "node_modules/p-locate/license"
     ]
@@ -1988,10 +2110,11 @@
     "licenses": [
       "MIT"
     ],
-    "purl": "pkg:npm/path-exists@4.0.0",
-    "source": [],
     "author": "Sindre Sorhus",
+    "creditSource": "author/contributors do package.json",
+    "purl": "pkg:npm/path-exists@4.0.0",
     "url": "https://www.npmjs.com/package/path-exists/v/4.0.0",
+    "source": [],
     "licenseFiles": [
       "node_modules/path-exists/license"
     ]
@@ -2002,10 +2125,11 @@
     "licenses": [
       "MIT"
     ],
-    "purl": "pkg:npm/path-key@3.1.1",
-    "source": [],
     "author": "Sindre Sorhus",
+    "creditSource": "author/contributors do package.json",
+    "purl": "pkg:npm/path-key@3.1.1",
     "url": "https://www.npmjs.com/package/path-key/v/3.1.1",
+    "source": [],
     "licenseFiles": [
       "node_modules/path-key/license"
     ]
@@ -2016,10 +2140,11 @@
     "licenses": [
       "ISC"
     ],
-    "purl": "pkg:npm/picocolors@1.1.1",
-    "source": [],
     "author": "Alexey Raspopov",
+    "creditSource": "author/contributors do package.json",
+    "purl": "pkg:npm/picocolors@1.1.1",
     "url": "https://www.npmjs.com/package/picocolors/v/1.1.1",
+    "source": [],
     "licenseFiles": [
       "node_modules/picocolors/LICENSE"
     ]
@@ -2030,12 +2155,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/picomatch@4.0.7",
+    "url": "https://www.npmjs.com/package/picomatch/v/4.0.7",
     "source": [
       "https://github.com/micromatch/picomatch"
     ],
-    "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-    "url": "https://www.npmjs.com/package/picomatch/v/4.0.7",
     "licenseFiles": [
       "node_modules/picomatch/LICENSE"
     ]
@@ -2046,13 +2172,14 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Microsoft Corporation",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/playwright@1.63.0",
+    "url": "https://www.npmjs.com/package/playwright/v/1.63.0",
     "source": [
       "git+https://github.com/microsoft/playwright.git",
       "https://playwright.dev"
     ],
-    "author": "Microsoft Corporation",
-    "url": "https://www.npmjs.com/package/playwright/v/1.63.0",
     "licenseFiles": [
       "node_modules/playwright/LICENSE"
     ]
@@ -2063,13 +2190,14 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Microsoft Corporation",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/playwright-core@1.63.0",
+    "url": "https://www.npmjs.com/package/playwright-core/v/1.63.0",
     "source": [
       "git+https://github.com/microsoft/playwright.git",
       "https://playwright.dev"
     ],
-    "author": "Microsoft Corporation",
-    "url": "https://www.npmjs.com/package/playwright-core/v/1.63.0",
     "licenseFiles": [
       "node_modules/playwright-core/LICENSE"
     ]
@@ -2080,12 +2208,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Andrey Sitnik <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/postcss@8.5.29",
+    "url": "https://www.npmjs.com/package/postcss/v/8.5.29",
     "source": [
       "https://postcss.org/"
     ],
-    "author": "Andrey Sitnik",
-    "url": "https://www.npmjs.com/package/postcss/v/8.5.29",
     "licenseFiles": [
       "node_modules/postcss/LICENSE"
     ]
@@ -2096,13 +2225,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "George Zahariev <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/prelude-ls@1.2.1",
+    "url": "https://www.npmjs.com/package/prelude-ls/v/1.2.1",
     "source": [
       "git://github.com/gkz/prelude-ls.git",
       "http://preludels.com"
     ],
-    "author": "George Zahariev",
-    "url": "https://www.npmjs.com/package/prelude-ls/v/1.2.1",
     "licenseFiles": [
       "node_modules/prelude-ls/LICENSE"
     ]
@@ -2113,13 +2243,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Mathias Bynens",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/punycode@2.3.1",
+    "url": "https://www.npmjs.com/package/punycode/v/2.3.1",
     "source": [
       "https://github.com/mathiasbynens/punycode.js.git",
       "https://mths.be/punycode"
     ],
-    "author": "Mathias Bynens",
-    "url": "https://www.npmjs.com/package/punycode/v/2.3.1",
     "licenseFiles": [
       "node_modules/punycode/LICENSE-MIT.txt"
     ]
@@ -2130,13 +2261,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Mathias Bynens",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/punycode.js@2.3.1",
+    "url": "https://www.npmjs.com/package/punycode.js/v/2.3.1",
     "source": [
       "https://github.com/mathiasbynens/punycode.js.git",
       "https://mths.be/punycode"
     ],
-    "author": "Mathias Bynens",
-    "url": "https://www.npmjs.com/package/punycode.js/v/2.3.1",
     "licenseFiles": [
       "node_modules/punycode.js/LICENSE-MIT.txt"
     ]
@@ -2147,13 +2279,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jared Wray <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/qified@0.10.1",
+    "url": "https://www.npmjs.com/package/qified/v/0.10.1",
     "source": [
       "git+https://github.com/jaredwray/qified.git",
       "https://github.com/jaredwray/qified#readme"
     ],
-    "author": "Jared Wray",
-    "url": "https://www.npmjs.com/package/qified/v/0.10.1",
     "licenseFiles": [
       "node_modules/qified/LICENSE"
     ]
@@ -2164,13 +2297,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jared Wray <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/hookified@2.2.0",
+    "url": "https://www.npmjs.com/package/hookified/v/2.2.0",
     "source": [
       "git+https://github.com/jaredwray/hookified.git",
       "https://github.com/jaredwray/hookified#readme"
     ],
-    "author": "Jared Wray",
-    "url": "https://www.npmjs.com/package/hookified/v/2.2.0",
     "licenseFiles": [
       "node_modules/qified/node_modules/hookified/LICENSE"
     ]
@@ -2181,10 +2315,11 @@
     "licenses": [
       "MIT"
     ],
-    "purl": "pkg:npm/require-from-string@2.0.2",
-    "source": [],
     "author": "Vsevolod Strukchinsky",
+    "creditSource": "author/contributors do package.json",
+    "purl": "pkg:npm/require-from-string@2.0.2",
     "url": "https://www.npmjs.com/package/require-from-string/v/2.0.2",
+    "source": [],
     "licenseFiles": [
       "node_modules/require-from-string/license"
     ]
@@ -2195,13 +2330,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2024-present VoidZero Inc. & Contributors; Copyright (c) 2017 [these people](https://github.com/rollup/rollup/graphs/contributors); Copyright (c) 2020 Evan Wallace",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/rolldown@1.2.12",
+    "url": "https://www.npmjs.com/package/rolldown/v/1.2.12",
     "source": [
       "git+https://github.com/rolldown/rolldown.git",
       "https://rolldown.rs/"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/rolldown/v/1.2.12",
     "licenseFiles": [
       "node_modules/rolldown/LICENSE",
       "node_modules/rolldown/THIRD-PARTY-LICENSE"
@@ -2213,12 +2349,13 @@
     "licenses": [
       "ISC"
     ],
+    "author": "GitHub Inc.",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/semver@7.8.5",
+    "url": "https://www.npmjs.com/package/semver/v/7.8.5",
     "source": [
       "git+https://github.com/npm/node-semver.git"
     ],
-    "author": "GitHub Inc.",
-    "url": "https://www.npmjs.com/package/semver/v/7.8.5",
     "licenseFiles": [
       "node_modules/semver/LICENSE"
     ]
@@ -2229,10 +2366,11 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Kevin Mårtensson",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/shebang-command@2.0.0",
-    "source": [],
-    "author": "Kevin MÃƒÆ’Ã‚Â¥rtensson",
     "url": "https://www.npmjs.com/package/shebang-command/v/2.0.0",
+    "source": [],
     "licenseFiles": [
       "node_modules/shebang-command/license"
     ]
@@ -2243,10 +2381,11 @@
     "licenses": [
       "MIT"
     ],
-    "purl": "pkg:npm/shebang-regex@3.0.0",
-    "source": [],
     "author": "Sindre Sorhus",
+    "creditSource": "author/contributors do package.json",
+    "purl": "pkg:npm/shebang-regex@3.0.0",
     "url": "https://www.npmjs.com/package/shebang-regex/v/3.0.0",
+    "source": [],
     "licenseFiles": [
       "node_modules/shebang-regex/license"
     ]
@@ -2257,12 +2396,13 @@
     "licenses": [
       "BSD-3-Clause"
     ],
+    "author": "Valentin 7rulnik Semirulnik <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/source-map-js@1.2.2",
+    "url": "https://www.npmjs.com/package/source-map-js/v/1.2.2",
     "source": [
       "https://github.com/7rulnik/source-map-js"
     ],
-    "author": "Valentin 7rulnik Semirulnik",
-    "url": "https://www.npmjs.com/package/source-map-js/v/1.2.2",
     "licenseFiles": [
       "node_modules/source-map-js/LICENSE"
     ]
@@ -2273,12 +2413,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) Pooya Parsa <[contato omitido]>",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/std-env@4.3.0",
+    "url": "https://www.npmjs.com/package/std-env/v/4.3.0",
     "source": [
       "unjs/std-env"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/std-env/v/4.3.0",
     "licenseFiles": [
       "node_modules/std-env/LICENCE"
     ]
@@ -2289,13 +2430,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2022 Tinylibs",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/tinybench@6.2.1",
+    "url": "https://www.npmjs.com/package/tinybench/v/6.2.1",
     "source": [
       "tinylibs/tinybench",
       "https://github.com/tinylibs/tinybench#readme"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/tinybench/v/6.2.1",
     "licenseFiles": [
       "node_modules/tinybench/LICENSE"
     ]
@@ -2306,13 +2448,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "James Garbutt (https://github.com/43081j)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/tinyexec@1.3.1",
+    "url": "https://www.npmjs.com/package/tinyexec/v/1.3.1",
     "source": [
       "git+https://github.com/tinylibs/tinyexec.git",
       "https://github.com/tinylibs/tinyexec#readme"
     ],
-    "author": "James Garbutt (https://github.com/43081j)",
-    "url": "https://www.npmjs.com/package/tinyexec/v/1.3.1",
     "licenseFiles": [
       "node_modules/tinyexec/LICENSE"
     ]
@@ -2323,13 +2466,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Superchupu",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/tinyglobby@0.2.17",
+    "url": "https://www.npmjs.com/package/tinyglobby/v/0.2.17",
     "source": [
       "git+https://github.com/SuperchupuDev/tinyglobby.git",
       "https://superchupu.dev/tinyglobby"
     ],
-    "author": "Superchupu",
-    "url": "https://www.npmjs.com/package/tinyglobby/v/0.2.17",
     "licenseFiles": [
       "node_modules/tinyglobby/LICENSE"
     ]
@@ -2340,13 +2484,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2022 Tinylibs",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/tinyrainbow@3.2.0",
+    "url": "https://www.npmjs.com/package/tinyrainbow/v/3.2.0",
     "source": [
       "git+https://github.com/tinylibs/tinyrainbow.git",
       "https://github.com/tinylibs/tinyrainbow#readme"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/tinyrainbow/v/3.2.0",
     "licenseFiles": [
       "node_modules/tinyrainbow/LICENCE"
     ]
@@ -2357,12 +2502,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "JoshuaKGoldberg",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/ts-api-utils@2.5.0",
+    "url": "https://www.npmjs.com/package/ts-api-utils/v/2.5.0",
     "source": [
       "https://github.com/JoshuaKGoldberg/ts-api-utils"
     ],
-    "author": "JoshuaKGoldberg",
-    "url": "https://www.npmjs.com/package/ts-api-utils/v/2.5.0",
     "licenseFiles": [
       "node_modules/ts-api-utils/LICENSE.md"
     ]
@@ -2373,12 +2519,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Hiroki Osame",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/tsx@4.23.15",
+    "url": "https://www.npmjs.com/package/tsx/v/4.23.15",
     "source": [
       "https://tsx.hirok.io"
     ],
-    "author": "Hiroki Osame",
-    "url": "https://www.npmjs.com/package/tsx/v/4.23.15",
     "licenseFiles": [
       "node_modules/tsx/LICENSE"
     ]
@@ -2389,13 +2536,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "George Zahariev <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/type-check@0.4.0",
+    "url": "https://www.npmjs.com/package/type-check/v/0.4.0",
     "source": [
       "git://github.com/gkz/type-check.git",
       "https://github.com/gkz/type-check"
     ],
-    "author": "George Zahariev",
-    "url": "https://www.npmjs.com/package/type-check/v/0.4.0",
     "licenseFiles": [
       "node_modules/type-check/LICENSE"
     ]
@@ -2406,13 +2554,14 @@
     "licenses": [
       "Apache-2.0"
     ],
+    "author": "Microsoft Corp.",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/typescript@6.0.3",
+    "url": "https://www.npmjs.com/package/typescript/v/6.0.3",
     "source": [
       "https://github.com/microsoft/TypeScript.git",
       "https://www.typescriptlang.org/"
     ],
-    "author": "Microsoft Corp.",
-    "url": "https://www.npmjs.com/package/typescript/v/6.0.3",
     "licenseFiles": [
       "node_modules/typescript/LICENSE.txt"
     ]
@@ -2423,13 +2572,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright (c) 2019 typescript-eslint and other contributors",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/typescript-eslint@8.71.1",
+    "url": "https://www.npmjs.com/package/typescript-eslint/v/8.71.1",
     "source": [
       "https://github.com/typescript-eslint/typescript-eslint.git",
       "https://typescript-eslint.io/packages/typescript-eslint"
     ],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
-    "url": "https://www.npmjs.com/package/typescript-eslint/v/8.71.1",
     "licenseFiles": [
       "node_modules/typescript-eslint/LICENSE"
     ]
@@ -2440,10 +2590,11 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Titular/crédito declarado: Copyright Mathias Bynens <https://mathiasbynens.be/>",
+    "creditSource": "linha explícita de copyright na licença",
     "purl": "pkg:npm/uc.micro@3.0.0",
-    "source": [],
-    "author": "NÃƒÆ’Ã‚Â£o declarado no package.json; conferir mantenedores na origem",
     "url": "https://www.npmjs.com/package/uc.micro/v/3.0.0",
+    "source": [],
     "licenseFiles": [
       "node_modules/uc.micro/LICENSE.txt"
     ]
@@ -2454,13 +2605,14 @@
     "licenses": [
       "BSD-2-Clause"
     ],
+    "author": "Gary Court <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/uri-js@4.4.1",
+    "url": "https://www.npmjs.com/package/uri-js/v/4.4.1",
     "source": [
       "http://github.com/garycourt/uri-js",
       "https://github.com/garycourt/uri-js"
     ],
-    "author": "Gary Court",
-    "url": "https://www.npmjs.com/package/uri-js/v/4.4.1",
     "licenseFiles": [
       "node_modules/uri-js/LICENSE"
     ]
@@ -2471,13 +2623,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Evan You",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/vite@8.3.3",
+    "url": "https://www.npmjs.com/package/vite/v/8.3.3",
     "source": [
       "git+https://github.com/vitejs/vite.git",
       "https://vite.dev"
     ],
-    "author": "Evan You",
-    "url": "https://www.npmjs.com/package/vite/v/8.3.3",
     "licenseFiles": [
       "node_modules/vite/LICENSE.md"
     ]
@@ -2488,13 +2641,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Anthony Fu <[contato omitido]>",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/vitest@5.0.3",
+    "url": "https://www.npmjs.com/package/vitest/v/5.0.3",
     "source": [
       "git+https://github.com/vitest-dev/vitest.git",
       "https://vitest.dev"
     ],
-    "author": "Anthony Fu",
-    "url": "https://www.npmjs.com/package/vitest/v/5.0.3",
     "licenseFiles": [
       "node_modules/vitest/LICENSE.md"
     ]
@@ -2505,12 +2659,13 @@
     "licenses": [
       "ISC"
     ],
+    "author": "Isaac Z. Schlueter <[contato omitido]> (http://blog.izs.me)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/which@2.0.2",
+    "url": "https://www.npmjs.com/package/which/v/2.0.2",
     "source": [
       "git://github.com/isaacs/node-which.git"
     ],
-    "author": "Isaac Z. Schlueter",
-    "url": "https://www.npmjs.com/package/which/v/2.0.2",
     "licenseFiles": [
       "node_modules/which/LICENSE"
     ]
@@ -2521,13 +2676,14 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Mathias Buus (@mafintosh)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/why-is-node-running@3.2.1",
+    "url": "https://www.npmjs.com/package/why-is-node-running/v/3.2.1",
     "source": [
       "https://github.com/mafintosh/why-is-node-running.git",
       "https://github.com/mafintosh/why-is-node-running"
     ],
-    "author": "Mathias Buus (@mafintosh)",
-    "url": "https://www.npmjs.com/package/why-is-node-running/v/3.2.1",
     "licenseFiles": [
       "node_modules/why-is-node-running/LICENSE"
     ]
@@ -2538,12 +2694,13 @@
     "licenses": [
       "MIT"
     ],
+    "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
+    "creditSource": "author/contributors do package.json",
     "purl": "pkg:npm/word-wrap@1.2.5",
+    "url": "https://www.npmjs.com/package/word-wrap/v/1.2.5",
     "source": [
       "https://github.com/jonschlinkert/word-wrap"
     ],
-    "author": "Jon Schlinkert (https://github.com/jonschlinkert)",
-    "url": "https://www.npmjs.com/package/word-wrap/v/1.2.5",
     "licenseFiles": [
       "node_modules/word-wrap/LICENSE"
     ]
@@ -2554,10 +2711,11 @@
     "licenses": [
       "MIT"
     ],
-    "purl": "pkg:npm/yocto-queue@0.1.0",
-    "source": [],
     "author": "Sindre Sorhus",
+    "creditSource": "author/contributors do package.json",
+    "purl": "pkg:npm/yocto-queue@0.1.0",
     "url": "https://www.npmjs.com/package/yocto-queue/v/0.1.0",
+    "source": [],
     "licenseFiles": [
       "node_modules/yocto-queue/license"
     ]
