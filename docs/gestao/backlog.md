@@ -1,5 +1,7 @@
 # Backlog rastreável
 
+Squad Aura67: papéis e revisão cruzada confirmados por Lucca, com participação de todos nas áreas. [Identificação parcial](../../SQUAD.md) e [evidências001](../evidencias/equipe.md). Execução vigente: Lucca001–010, Davi011–020, Miguel021–030 e Lucas031–040. Dados/acessos/revisões e comprovação de contribuição continuam obrigatórios.
+
 Não contar itens como PRs feitos nem atribuir contribuições a pessoas desconhecidas. Os roteiros por áreas no contexto são a ordem operacional; G0 continua pendente de squad/acessos/prazo. A preparação autorizada de G1/G2 não fecha seus aceites coletivos.
 
 | Tarefas | INT | Trabalho / validação restante | Papel a confirmar |
@@ -15,4 +17,3 @@ Não contar itens como PRs feitos nem atribuir contribuições a pessoas desconh
 | P06/P07, R06/R07, S06, D07 | 02,06,09,10 | Vídeo humano, relatório, pacote, tag final, triagem, ficha e banca | Todos |
 
 Os dez PRs revisados devem corresponder a trabalho real distribuído; este primeiro lote é um único PR, não dez PRs artificiais. Cada novo PR deve indicar tarefa, INT, autor, revisor, execução e evidência. Split futuro depende das contribuições reais dos integrantes, não de identidades simuladas.
-
