@@ -111,3 +111,9 @@ Resultados: Dependabotalerts habilitados/0alerts/securityupdatesenabled; auditpr
 Codex auxiliou LuccaCastilho/luccalck a executar005: lerMD/modelo/GDD/fontes, registrar Aura67/nomes/contas/papéis/links reais, distinguir exportações/futuro/aceites, atualizar backlog e gerar/inspecionar o PDF. Mantidas12seções/Esteira/declaração com direitos coletivos pendentes; RAs adiados, sem CPF/assinaturas.
 
 Resultado: GDDv0.6.0/revisão005data13/10, highconcept804caracteres; PDF13pA4/pdfinfo, texto e páginas inspecionados; sem alteração de comportamento. SQ-06coordenação registrado, GDD-13 ainda aberto. Capturas antigas não reatribuídas; nenhum usuário/aprendizado/banca/revisão humana inventado. Branchfeature/passo-005-gdd-identificacao; publicação/PR reais no controle. Página inicial acompanha candidata nova conforme autorização, semmerge ou produção.
+
+## Passo006 — regressão de navegador — 13/10/2026
+
+Codex auxiliou Lucca Castilho/luccalck a ler006/D05/R04/testes/fluxos, compartilhar roteiro UI local/público e separar regressão HML de smoke PRD. Reutilizamos Playwright já instalado (Apache-2.0), sem dependência nova ou mudança de comportamento do jogo. Prompt: executar somente006, sem injetar progresso, com identidade real e provas verificáveis.
+
+Resultados:17E2E locais verdes com1worker;5cenários no preview público verdes, campanha por teclado/toque emulado e reinício, screenshots/JSON/JUnit reais. Falhas anteriores de Chrome/esperaHTTP registradas; ajustes limitados do teste, sem bug artificial ou logs maquiados. Roteiro completo entregue ao011; checks formais continuam abertos. Revisão humana por outro autor antes do merge pendente. Branchfeature/passo-006-regressao-hml; commit/PR no controle.

@@ -1,10 +1,24 @@
 import {test,expect} from '@playwright/test';
-import {readFileSync,mkdirSync} from 'node:fs';
-const pkg=JSON.parse(readFileSync('package.json','utf8')),missions=JSON.parse(readFileSync('src/content/missions.json','utf8')).missions;
-const root=(process.env.PAGES_URL||'http://127.0.0.1:4173/').replace(/\/?$/,'/');
-async function verify(page,url,label){
- await expect.poll(async()=>{const r=await page.request.get(new URL('version.json',url).href);if(!r.ok())return '';return (await r.json()).sha;},{timeout:60000,intervals:[1000,2000,5000]}).toBe(process.env.EXPECTED_SHA);
- await page.goto(url,{waitUntil:'networkidle'});await expect(page.locator('.top-meta')).toContainText(`v${pkg.version}`);await expect(page.locator('.home')).toContainText('Aprenda Python');await page.locator('#new-game').click();await expect(page.locator('#code-editor')).toHaveValue(missions[0].starter);await page.locator('#test-rules').click();await expect(page.locator('#test-summary')).toContainText('1/4');await page.locator('#code-editor').fill(missions[0].reference);await page.locator('#test-rules').click();await expect(page.locator('#test-summary')).toContainText('Tudo certo');await page.locator('#play-game').click();await page.keyboard.down('ArrowRight');await expect.poll(async()=>Number(await page.locator('#ship').getAttribute('data-x'))).toBeGreaterThan(280);await page.keyboard.up('ArrowRight');await page.locator('#pause-game').click();mkdirSync('reports/screens',{recursive:true});await page.screenshot({path:`reports/screens/pages-${label}-python.png`,fullPage:true});
-}
-test('HML pública: HTTP/versão/Python e movimento real',async({page})=>verify(page,new URL('hml/',root).href,'hml'));
-test('Pages público: loader e release do mesmo SHA',async({page})=>{const rollout=await page.request.get(new URL('rollout.json',root).href);expect(rollout.status()).toBe(200);const active=(await rollout.json()).activeSha;expect(active).toBe(process.env.EXPECTED_SHA);await verify(page,new URL(`releases/${active}/`,root).href,'release');await page.goto(root,{waitUntil:'networkidle'});await expect(page).toHaveURL(new RegExp(`/releases/${active}/index.html`));await expect(page.locator('.home')).toContainText('Python');});
+import {missions} from '../e2e/helpers.mjs';
+import {campaignRegression,restartRegression,verifyBuild,evidence} from '../e2e/regression.mjs';
+test('@hml campanha: primeira missão até vitória e encerramento',async({page,baseURL},info)=>campaignRegression(page,info,{url:baseURL,sha:process.env.EXPECTED_SHA,touch:!!info.project.use.hasTouch}));
+test('@hml reinício confirmado e progressão bloqueada',async({page,baseURL},info)=>restartRegression(page,info,{url:baseURL,sha:process.env.EXPECTED_SHA,touch:!!info.project.use.hasTouch}));
+test('@prd smoke reduzido: release do mesmo SHA, editor e movimento',async({page,baseURL},info)=>{
+ if(!baseURL)throw Error('PAGES_URL da raiz publicada é obrigatória para prd-smoke.');
+ const root=baseURL.replace(/\/?$/,'/');
+ const rollout=await page.request.get(new URL('rollout.json',root).href);expect(rollout.status()).toBe(200);
+ const active=(await rollout.json()).activeSha;expect(active).toBe(process.env.EXPECTED_SHA);
+ const release=new URL(`releases/${active}/`,root).href;
+ const version=await verifyBuild(page,release,process.env.EXPECTED_SHA);
+ await page.goto(root,{waitUntil:'networkidle'});
+ await expect(page).toHaveURL(new URL('index.html',release).href);
+ await page.locator('#new-game').click();
+ await expect(page.locator('#code-editor')).toHaveValue(missions[0].starter);
+ await page.locator('#code-editor').fill(missions[0].reference);
+ await page.locator('#test-rules').click();
+ await expect(page.locator('#test-summary')).toContainText('Tudo certo');
+ await page.locator('#play-game').click();await page.keyboard.down('ArrowRight');
+ try{await expect.poll(async()=>Number(await page.locator('#ship').getAttribute('data-x'))).toBeGreaterThan(280);}finally{await page.keyboard.up('ArrowRight');}
+ await page.locator('#pause-game').click();
+ await evidence(page,info,'smoke-release',version);
+});

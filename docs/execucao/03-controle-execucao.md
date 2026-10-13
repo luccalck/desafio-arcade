@@ -9,7 +9,7 @@ O estado de cada passo consta abaixo. Prompts entregues não significam função
 | 003 | Lucca Castilho | Preparação executada; convites enviados | 25ba5e7; PR#5 draft sobre002 | CI38342833196/25ba5e7 verde; revisão geral pendente | KIT-14/I01-03; configuracao-github.md; proteção/HTTP/ambientes reconferidos | Convites final034; PR2 auto-merge aguardando aprovação; defaultmain após merge; jobs/migração007/011/019; G0/G1 incompletos |
 | 004 | Lucca Castilho | Segurança inicial validada; aceites gerais separados | ba7494b; PR#6 draft sobre003 | CI38345279238/ba7494b verde; revisão geral pendente | I05-06/DIR-12; seguranca-inicial.md | Reconferênciafinal/privacy/Dependabot e participação/revisão gerais; G0 não aceito |
 | 005 | Lucca Castilho | GDD/PDF validados; identificação parcial | 214736a; PR#7 draft sobre004 | CI38346858370/214736a verde; revisão geral pendente | SQ-06; gdd-revisao.md;12seções/804chars/13páginas | RAs/GDD-13; direitos/revisão gerais; release/links finais |
-| 006 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
+| 006 | Lucca Castilho | Roteiro preparado; preview validado | 1e0b4b5; PR#8 draft sobre005 | CI38348580349verde; revisão geral pendente | I04-07 revalidado; regressao-hml.md;17locais/5públicos | Execução formal011 e smoke014/019; G3 não aceito |
 | 007 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
 | 008 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
 | 009 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |

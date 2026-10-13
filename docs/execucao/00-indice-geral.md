@@ -98,3 +98,7 @@ Vídeo029 vem de produção candidata e é entrada humana anterior à tag035; pa
 - [Checklist principal](../gestao/checklist-avaliacao.md) e [auditoria do HTML](../gestao/auditoria-avaliacao.md).
 
 Originais preservados. Repositório/arquivo principal único; .contexto e acompanhamento local não integram pacote acadêmico. Critérios eliminatórios e condicionais continuam nos prompts. Concurso não está autorizado por esta reorganização.
+
+## Preparação validada do passo006 — 13/10/2026
+
+[Regressão completa e evidências](../evidencias/regressao-hml.md):17E2E locais/CI e5cenários no preview público; dois roteiros HML entregues ao011 e smoke separado para014/019. Nenhum novo check geral fechado;113marcados/299abertos permanecem. Execução formal e revisão humana ainda pendentes.

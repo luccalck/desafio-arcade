@@ -53,6 +53,8 @@ $env:npm_config_script_shell = (Get-Command pwsh).Source
 | `npm run reproducibility` | Comparar builds, normalizando somente a data de version.json |
 | `npm run sbom` | Emitir SBOM CycloneDX |
 
+A [regressão preparada no passo006](docs/evidencias/regressao-hml.md) amplia a suíte para17E2E locais/CI e valida5cenários no preview público, incluindo campanha até vitória por teclado/toque emulado e reinício. A execução formal após cada deploy permanece no011.
+
 ## Jogar offline
 
 Descompacte `build.zip` e abra `index.html` no navegador, seguindo o `LEIA-ME.txt` incluído no ZIP. O HTML exportado ao vencer o final também funciona sem rede. O arquivo `.py` contém as funções Python; editá-lo não recompila automaticamente o HTML exportado.

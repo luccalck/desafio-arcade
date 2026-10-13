@@ -27,6 +27,7 @@ Os identificadores abaixo são estáveis. Não renumerar ao concluir. Não infer
 | E4 | [GDD](../gdd.md), imagens em docs/images e geração por [gdd-pdf.mjs](../../scripts/gdd-pdf.mjs). PDF gerado pela CI e pdfinfo; versão 0.6.0, identificação/release final pendentes. |
 | E5 | [Preview público](https://luccalck.github.io/desafio-arcade/) e [HML do preview](https://luccalck.github.io/desafio-arcade/hml/). E2 publicou e executou smoke. HML/version.json respondeu HTTP 200 com SHA de E2. Não é produção formal aprovada. |
 | E6 | [LICENSE](../../LICENSE), [THIRD_PARTY](../../THIRD_PARTY.md), [AI-USAGE](../../AI-USAGE.md), [SECURITY](../../SECURITY.md), hook e scanner; artefatos de segurança em E2. Revisão humana/declaração coletiva pendentes. |
+| E8 | [Regressão006](../evidencias/regressao-hml.md):17E2E locais e naCI38348580349,5cenários do preview, capturas/JSON reais. Publicação formal011 e smokePRD014/019 pendentes. |
 | E7 | [Build](../../scripts/build.mjs), [empacotamento](../../scripts/package.mjs), [reprodutibilidade](../../scripts/reproducibility.mjs), [preparação Pages](../../scripts/prepare-pages.mjs), testes de integração/exportação/Pages. E2/E3 comprovam execução; não há GitHub Release por tag. |
 
 Os caminhos locais originais são referências de contexto, não arquivos que o professor precisa clonar. O código principal permanece em `jogo-arcade`. Os checks de continuidade abaixo exigem validação final, mesmo quando há evidência de uma execução anterior.
@@ -184,9 +185,9 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I04-04 — Pelo menos três testes de integração. E3: 26.
 - [x] I04-05 — Carregamento e validação de schema do conteúdo JSON testados. E3.
 - [x] I04-06 — JSON inválido quebra a build. E3/E7.
-- [x] I04-07 — Pelo menos dois cenários E2E de navegador. E3: quinze cenários.
-- [ ] I04-08 — Regressão publicada abre a HML, inicia partida, completa primeira fase e verifica tela de fim; implementar/conferir o roteiro inteiro.
-- [ ] I04-09 — Essa regressão roda contra HML a cada deploy formal.
+- [x] I04-07 — Pelo menos dois cenários E2E de navegador. E3: quinze originais; [regressão006](../evidencias/regressao-hml.md):17locais verdes e5cenários no preview público em13/10/2026.
+- [ ] I04-08 — Roteiro completo preparado/validado no006, inclusive vitória e reinício; fechar após execução formal da HML no011. [Evidências](../evidencias/regressao-hml.md).
+- [ ] I04-09 — Essa regressão roda contra HML a cada deploy formal; módulo006 entregue ao011, ainda não integrado/executado como job formal.
 - [ ] I04-10 — Smoke reduzido roda contra URL pública depois do deploy formal de produção.
 - [x] I04-11 — Teste falhando impede o check ci e bloqueia merge na main. E1/E2.
 - [x] I04-12 — Bug real encontrado por teste, corrigido com regressão correspondente. E3: foco/regra antiga/exportação Python, registros em docs/evidencias.
