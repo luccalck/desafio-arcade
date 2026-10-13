@@ -1,12 +1,14 @@
 # Passo 001 — Registrar equipe, contexto e marcos reais
 
-**Responsável:** Lucca Castilho · bloco 1. **Papel oficial proposto:** Produto e Game Design. **Revisor proposto:** Davi Paes (conta real a confirmar).
+**Execução em12/10/2026:** preparação executada; identificação parcial. Squad Aura67 e contas/papéis/revisão informados; RAs adiados pelo responsável, acesso e revisão humana ainda pendentes. [Evidências e validações](../../evidencias/equipe.md). G0 não está aceito; os próximos passos não foram executados.
+
+**Responsável:** Lucca Castilho · bloco 1. **Papel de coordenação confirmado:** Produto e Game Design. **Revisor previsto:** Davi Paes (DaviSouza78; acesso/revisão pendentes).
 **INT:** INT-01/02/09. **Roteiros preservados:** C01/C02/P01. **Checkpoint:** G0.
 **Dependências de execução:** Inspeção do contexto e autorização do usuário; não depende de passo anterior.. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
-- [ ] Validações executadas e evidências arquivadas.
-- [ ] Commit/push pela identidade GitHub do responsável.
+- [x] Validações de documentos, identidade/contas e dados disponíveis executadas; evidências arquivadas. Identificação completa/revisão seguem pendentes.
+- [x] Commit/push pela identidade GitHub do responsável: 72d2b6f, luccalck; registro nas evidências.
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
 
@@ -51,22 +53,22 @@ Se houver equivalente já funcional, reutilize e documente o caminho efetivo. N�
 
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
-- [ ] **OBJ-08** — Ler o regulamento completo citado na seção 02; a tabela do HTML não substitui essa leitura. Não confundir leitura do HTML com leitura do PDF externo.
-- [ ] **SQ-01** — Definir nome real do squad.
+- [x] **OBJ-08** — Ler o regulamento completo citado na seção 02; a tabela do HTML não substitui essa leitura. Não confundir leitura do HTML com leitura do PDF externo.
+- [x] **SQ-01** — Definir nome real do squad.
 - [ ] **SQ-02** — Registrar exatamente quatro integrantes em SQUAD.md: nome completo, RA e papel de cada um.
-- [ ] **SQ-03** — Atribuir os quatro papéis oficiais, distintos: Produto e Game Design; Desenvolvimento e Qualidade; Plataforma e Release; SRE e Segurança.
+- [x] **SQ-03** — Atribuir os quatro papéis oficiais, distintos: Produto e Game Design; Desenvolvimento e Qualidade; Plataforma e Release; SRE e Segurança.
 - [ ] **SQ-04** — Conferir formação/registro previstos em 02/10 e estabilidade dos integrantes após o registro; não inventar registro passado.
 - [ ] **SQ-05** — Garantir trabalho real dos quatro: papéis têm responsáveis, mas não exclusividade; todos programam, revisam e aparecem no Git.
 - [ ] **SQ-19** — CONDICIONAL: equipe de três ou cinco somente com autorização do professor para a UC; não elegível ao concurso.
 - [ ] **I01-12** — SQUAD.md completo, coerente com colaboradores e autoria. Arquivo existe, dados ausentes.
 - [ ] **CR-01** — Conferir marcos de 02/10: leitura do regulamento, formação, escolha do tema, SQUAD e repositório, primeiro PR com esqueleto.
 - [ ] **CR-02** — Conferir prévia formativa de 05/10: v0.1.0, INT-01/02/03/06 e tela jogável na HML pela pipeline; guardar devolutiva real se houver. A prévia não compõe a nota.
-- [ ] **FIC-01** — Nome do squad preenchido.
+- [x] **FIC-01** — Nome do squad preenchido.
 - [ ] **FIC-03** — Integrante 1: nome completo com pelo menos duas palavras, RA com pelo menos três caracteres, papel real.
 - [ ] **FIC-04** — Integrante 2: nome completo com pelo menos duas palavras, RA com pelo menos três caracteres, papel real.
 - [ ] **FIC-05** — Integrante 3: nome completo com pelo menos duas palavras, RA com pelo menos três caracteres, papel real.
 - [ ] **FIC-06** — Integrante 4: nome completo com pelo menos duas palavras, RA com pelo menos três caracteres, papel real.
-- [ ] **FIC-07** — Quatro papéis distintos dentre os oficiais, sem inventar quinto papel.
+- [x] **FIC-07** — Quatro papéis distintos dentre os oficiais, sem inventar quinto papel.
 
 ### Rubrica, integridade e aceites
 
@@ -105,8 +107,7 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: registrar equipe, contexto e marcos reais
-"
+git commit -m "docs: registrar equipe, contexto e marcos reais"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 001: Registrar equipe, contexto e marcos reais" --body-file .contexto/pr-passo-001.md
 ```

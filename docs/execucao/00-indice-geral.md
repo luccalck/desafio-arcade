@@ -30,13 +30,13 @@ Use o [protocolo de passagem de bloco](04-passagem-de-bloco.md). Ao terminar010 
 | Miguel Oliveira | Plataforma e Release | 04 (playtest/regressões), 07 (recuperação), 08 (DORA/melhoria), 10 (vídeo) | Lucas Souza |
 | Lucas Souza | SRE e Segurança | 09 (pacote/triagem), 10 (relatório/ficha/banca), 01 (tag/contribuição), 05 (auditoria) | Lucca Castilho |
 
-Papéis têm donos, não exclusividade. Revisores são propostas a confirmar com contas reais. F1 exige commits e PRs aprovados em pelo menos três INT por pessoa **e participação na banca**; mínimo de dez PRs reais revisados por outro autor no squad. Não contar estes arquivos preparados pela IA como contribuição dos colegas. Os quatro falam na banca e fornecem consentimentos/gravações reais quando necessário, mesmo que Lucas coordene o último bloco.
+Papéis têm donos, não exclusividade. No passo001, Lucca confirmou squad Aura67, contas e concordância com papéis/revisão cruzada; **todos participam de todas as áreas**. Contas: luccalck, DaviSouza78, miguelsenai2024 e6lucassilvaaa, conforme [SQUAD.md](../../SQUAD.md). RAs e execução de acessos/revisões permanecem pendentes. F1 exige commits e PRs aprovados em pelo menos três INT por pessoa **e participação na banca**; mínimo de dez PRs reais revisados por outro autor no squad. Não contar estes arquivos preparados pela IA como contribuição dos colegas. Os quatro falam na banca e fornecem consentimentos/gravações reais quando necessário, mesmo que Lucas coordene o último bloco.
 
 Meta: faixa avançada, sem garantir nota. Fórmula `(0,7×A + 0,3×B)×F`; pesos A 10/8/15/12/10/10/12/10/8/5; B 25/25/30/20. Autoavaliações10 são estimativas solicitadas, não prova ou nota oficial.
 
 ## Checks, gates e produção
 
-Mapa inicial preserva cobertura dos 313 checks abertos do snapshot original. Estado atual do checklist: 103 checks específicos marcados, 309 abertos/condicionais; quatro estimativas B foram preenchidas no rascunho. Nenhum INT/gate inteiro foi aceito. O mapa não substitui esse estado.
+Mapa inicial preserva cobertura dos313 checks abertos do snapshot original. Estado atualizado fica no checklist principal: após cinco fechamentos específicos do001, são108 marcados e304 abertos/condicionais. Nenhum INT/gate inteiro foi aceito. O mapa não substitui esse estado.
 
 G0–G2 são preparados por Lucca; G3/G4 por Davi; G5 e preparação G6 por Miguel; G6–G8 por Lucas. Liberação continua conforme entradas/aceites dos roteiros e pessoas reais. Rollback básico deve estar integrado ANTES de primeira PRD no019; Miguel fortalece e comprova no022/026. Painel020 trata DORA indisponível honestamente até Miguel ligar dados reais no024. Assim não há retorno obrigatório a Davi para implementar esses itens.
 

@@ -1,10 +1,10 @@
 # Controle da execução humana e técnica
 
-Todos os passos abaixo estão **pendentes**. Prompts entregues não significam função implementada/validada ou autoria dos colegas. Atualizar com SHA/run/PR/revisor/dados reais; não preencher colunas com identidade de outra pessoa. Checklist principal é a fonte dos checks.
+O estado de cada passo consta abaixo. Prompts entregues não significam função implementada/validada ou autoria dos colegas. Atualizar com SHA/run/PR/revisor/dados reais; não preencher colunas com identidade de outra pessoa. Checklist principal é a fonte dos checks.
 
 | Passo | Responsável | Estado | Commit/PR da própria conta | Revisão de outro autor / CI | Checks/evidências fechados | Dependência humana restante |
 |---|---|---|---|---|---|---|
-| 001 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
+| 001 | Lucca Castilho | Preparação executada; identificação parcial | 72d2b6f; PR#3 rascunho sobre candidata | CI38336896510 verde; DaviSouza78 indicado, revisão pendente | OBJ-08, SQ-01, SQ-03, FIC-01, FIC-07; docs/evidencias/equipe.md | RAs adiados; acesso/revisão; marcos sem prova; G0 incompleto |
 | 002 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
 | 003 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
 | 004 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |

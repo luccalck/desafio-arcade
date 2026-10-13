@@ -1,5 +1,7 @@
 # Rota do Código — decisões aprovadas
 
+Squad: **Aura 67**, informado em12/10/2026. Papéis/revisão concordados pelo responsável e registrados em [SQUAD.md](../../SQUAD.md); todos participam de todas as áreas. RAs e validação completa de G0 seguem pendentes. [Conferência do passo001](../evidencias/equipe.md). A concepção do jogo existente não foi alterada por este registro.
+
 Alternativa A, **Oficina de Jogos**, aprovada pelo solicitante em 09/10/2026; adaptação Python/publicação Pages autorizadas em12/10/2026. [Especificação](../historico/especificacoes/2026-10-12-python-pages-design.md) e [plano](../historico/planos/2026-10-12-python-pages.md). Mantidos nome, paleta e stack; regras Python de minijogo substituem circuitos. Histórico preservado, uma única fonte/campanha ativa.
 
 Público iniciante; eventos, operações, condições, estado e repetição ligados a comportamento executável. Cinco funções defeituosas: editar/testar entradas/observar nave. Ajuda/testes sob demanda, sem preenchimento automático. Outras regras corretas isolam o conceito nas primeiras missões; final usa todas as fontes do jogador, 23 casos e vitória com 100 pontos/três vidas. Exporta HTML independente com funções editáveis/MIT.

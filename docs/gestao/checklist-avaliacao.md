@@ -40,7 +40,7 @@ Os caminhos locais originais são referências de contexto, não arquivos que o 
 - [ ] OBJ-05 — Demonstrar a esteira completa de Git até triagem: jogo em produção só pela esteira rastreável.
 - [x] OBJ-06 — Arquitetura sem nuvem paga, VM, contêiner, backend remoto obrigatório ou serviço pago. E4/E7.
 - [ ] OBJ-07 — Se adotar ferramenta equivalente à referência, justificar a troca e sua compatibilidade no relatório técnico. Stack própria já descrita no GDD; relatório final ausente.
-- [ ] OBJ-08 — Ler o regulamento completo citado na seção 02; a tabela do HTML não substitui essa leitura. Não confundir leitura do HTML com leitura do PDF externo.
+- [x] OBJ-08 — Ler o regulamento completo citado na seção02. PDF oficial consultado em12/10/2026, dez páginas/capa edição2026, hash e comparação de fontes em [equipe.md](../evidencias/equipe.md). Não substitui a leitura/ciência humana dos quatro ou aceite do concurso.
 - [ ] OBJ-09 — Submeter os três materiais obrigatórios válidos: GDD, build jogável e vídeo, por pacote automatizado.
 - [ ] OBJ-10 — Conferir que arquivos abrem e links funcionam: triagem sem tolerância para material corrompido/indisponível.
 - [ ] OBJ-11 — Demonstrar entregas frequentes durante o período, com dados reais de deploy; não criar uma quantidade mínima de execuções inexistente no HTML.
@@ -48,9 +48,9 @@ Os caminhos locais originais são referências de contexto, não arquivos que o 
 
 ## 02 e 03 — Squad, papéis e autoria real
 
-- [ ] SQ-01 — Definir nome real do squad.
+- [x] SQ-01 — Nome real do squad: Aura67, informado por Lucca em12/10/2026; [SQUAD.md](../../SQUAD.md).
 - [ ] SQ-02 — Registrar exatamente quatro integrantes em SQUAD.md: nome completo, RA e papel de cada um.
-- [ ] SQ-03 — Atribuir os quatro papéis oficiais, distintos: Produto e Game Design; Desenvolvimento e Qualidade; Plataforma e Release; SRE e Segurança.
+- [x] SQ-03 — Quatro papéis oficiais distintos atribuídos em SQUAD.md, com concordância da equipe informada por Lucca em12/10/2026. Coordenação sem exclusividade: todos atuam nas áreas; [equipe.md](../evidencias/equipe.md).
 - [ ] SQ-04 — Conferir formação/registro previstos em 02/10 e estabilidade dos integrantes após o registro; não inventar registro passado.
 - [ ] SQ-05 — Garantir trabalho real dos quatro: papéis têm responsáveis, mas não exclusividade; todos programam, revisam e aparecem no Git.
 - [ ] SQ-06 — Produto assume GDD, backlog, jogabilidade, testes com usuários e roteiro do vídeo.
@@ -485,13 +485,13 @@ Esta tabela transcreve os três níveis como critérios de conferência. Os esta
 
 Preencher juntos no HTML original, com declarações verdadeiras. Validação de formulário não verifica automaticamente a existência/qualidade das evidências. Não marcar os dez INT só para liberar o botão.
 
-- [ ] FIC-01 — Nome do squad preenchido.
+- [x] FIC-01 — Aura67 preenchido no rascunho do HTML original/Live Server em12/10/2026; [registro](../evidencias/equipe.md). Reconferir ao gerar ficha final.
 - [x] FIC-02 — URL HTTP/HTTPS do repositório real disponível. E1; inserção no formulário em FIC-29.
 - [ ] FIC-03 — Integrante 1: nome completo com pelo menos duas palavras, RA com pelo menos três caracteres, papel real.
 - [ ] FIC-04 — Integrante 2: nome completo com pelo menos duas palavras, RA com pelo menos três caracteres, papel real.
 - [ ] FIC-05 — Integrante 3: nome completo com pelo menos duas palavras, RA com pelo menos três caracteres, papel real.
 - [ ] FIC-06 — Integrante 4: nome completo com pelo menos duas palavras, RA com pelo menos três caracteres, papel real.
-- [ ] FIC-07 — Quatro papéis distintos dentre os oficiais, sem inventar quinto papel.
+- [x] FIC-07 — Quatro papéis oficiais distintos conferidos/selecionados no HTML original em12/10/2026, conforme equipe confirmada; [registro](../evidencias/equipe.md). RAs/entrega continuam pendentes.
 - [ ] FIC-08 — URL pública de produção formal — obrigatória.
 - [ ] FIC-09 — Link/print da última execução verde — obrigatório; escolher a execução final, não somente a candidata E2.
 - [ ] FIC-10 — Link do painel /status/ — obrigatório.
