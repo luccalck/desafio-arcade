@@ -73,3 +73,13 @@ Aceite/teste dos convites; leitura do professor; revisão efetiva antes do merge
 Commit próprio `25ba5e7910c73d8550d732c21615a8aa6a0a3c07`; [PR#5](https://github.com/luccalck/desafio-arcade/pull/5) draft sobre feature/passo-002-arquitetura-baseline, sem merge/reviews. [CI38342833196](https://github.com/luccalck/desafio-arcade/actions/runs/38342833196) concluída com sucesso; qualidade/segurança/build/E2E/ci verdes e preview corretamente ignorado. Atualização documental posterior exige reconferir o HEAD no PR.
 
 Validações administrativas:84Markdown locais semlinks ausentes;40passos/dezporintegrante/313IDssemomissão/depsacíclicas; checklist109marcados303abertos. gitdiffcheckfinal passou; src/tests/scripts/dependências/workflows sem mudanças contra a base4d9acf4. HookGitleaks sem vazamentos no commit. Alterações locais anteriores preservadas fora do índice; não declaramos worktree limpo.
+
+## Ajustes solicitados após o003 — 13/10/2026
+
+Confirmamos orientação de leitura pública pelo professor. Consulta HTTP sem Authorization/cookies à API do repositório retornou200/privatefalse; não alegamos que o professor pessoalmente abriu o link. I01-03 fechado quanto à disponibilidade do acesso de leitura. Aceite/teste dos três convites foi programado para034 por orientação do responsável, permanecendo pendente até prova.
+
+Marcamos PR#2 ready e habilitamos allow_auto_merge no repositório; `gh pr merge 2 --auto --merge` registrou autoMergeRequest/MERGE habilitada porluccalck em2026-10-13T03:49:18Z. O PR permanece OPEN/REVIEW_REQUIRED: merge não executado, proteção exige outra aprovação e ci. Não usamos adminoverride. A defaultmain será restaurada após o merge efetivo, sem antecipar I01-18.
+
+Atualizamos homologacao/producao por PUTenvironments e criamos deployment-branch-policies main. ReconferênciaAPI: ambos permitem branchmain; producao conserva requiredreviewerluccalck/prevent_self_reviewfalse e agora can_admins_bypassfalse. Nenhuma aprovação/deploy foi realizada. Esses valores substituem a configuração anterior descrita no snapshot acima.
+
+Os jobs formais não foram implantados no003, cuja execução é preparação/configuração; seus contratos já constam nos007/011/019. Explicitamos os encaminhamentos nesses MDs e no registro central:007preparaesteira,011executaHML/migraçãoPages,019executaPRD após rollout/rollback. Não consideramos deploy feito porque settings existem.

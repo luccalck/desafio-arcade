@@ -125,3 +125,7 @@ Atualize `docs/gestao/checklist-avaliacao.md` só com provas: data real, SHA/tag
 Quando for possível, preencha ficha original no navegador com dados e URLs reais já verificados; autoavaliações10 são estimativas solicitadas, não nota atribuída. Check de entrega e declarações só quando verdadeiros. Não alterar original/JS para liberar botão nem enviar e-mail/AVA sem autorização no contexto da execução. Se a sessão for interrompida, salvar estado administrativo local fora dos entregáveis acadêmicos.
 
 Ao terminar, informe objetivamente: passo/INT/checks realmente fechados, arquivos, execução/testes, commit do usuário/PR/revisor, evidências, pendências humanas e próximo passo habilitado. Se bloqueado por acesso/pessoa/termos, entregue preparação revisável e mantenha aceite pendente; não repetir falha de ferramenta indefinidamente nem inventar sucesso.
+
+## Encaminhamento explícito do passo003 — 13/10/2026
+
+Este passo executa a integração real de deploy-prd/environmentproducao após HML aceita, mesma build, rollout e rollback necessários. Em13/10 configuramos producao para branchmain, requiredreviewerluccalck e can_admins_bypassfalse. Reconferir configuração e executar aprovação registrada; não usar aprovação de PR como substituto do gate. Implementar/validar promoção/smoke/recuperação antes da primeira produção, conforme018/019; configuração existente sozinha não fecha ARQ-08/I03-17/19/KIT-13.

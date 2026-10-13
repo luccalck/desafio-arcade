@@ -95,3 +95,7 @@ Executamos o código existente e registramos seus limites. A primeira tentativa 
 Codex auxiliou LuccaCastilho/luccalck a executar somente003: lerMD/fontes, conferir identidade e APIs, enviar convites reais a contas confirmadas, configurar SITE_URL, documentar fluxoGit e planejar transiçãoPages007/011. Resultado: configuração-github.md, README/template e controle. Convites aguardam aceite; nenhuma aprovação de colega/produção ou autoria de outro integrante simulada.
 
 Usamos IA para inspeção/documentação e comandos com resultados conferidos, sem tokens/secrets no registro. Sem código novo do jogo, merge ou edição manual de gh-pages. Branchfeature/passo-003-acessos-git-pages; commit/PR no controle. Revisão humana antes do merge permanece geral.
+
+## Ajustes de encerramento003 — 13/10/2026
+
+Com orientação de Lucca, Codex registrou acesso público do professor, conferência dos convites no034 e encaminhamentos explícitos nos007/011/019. Preparou PR2 para revisão/merge automático condicionado à proteção e configurou branchmain nos environments, mantendo requiredreviewer e retirando bypass administrativo de producao. APIs e consulta anônima conferidas; não houve aprovação de colega, merge ou deploy. Registro central incorpora também os ajustes002 anteriormente autorizados, sem inventar participação.

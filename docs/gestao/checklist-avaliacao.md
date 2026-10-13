@@ -92,7 +92,7 @@ Não há mínimo textual de “três commits na mesma área”. A unidade da exi
 
 - [x] I01-01 — Repositório único e público, com uma fonte principal de código. E1.
 - [ ] I01-02 — Quatro integrantes reais adicionados como colaboradores, com acesso testado. Em13/10, três convites write enviados; aceites/testes pelas próprias contas pendentes. [Evidência003](../evidencias/configuracao-github.md).
-- [ ] I01-03 — Professor com acesso de leitura confirmado.
+- [x] I01-03 — Leitura pública pelo professor confirmada por Lucca em13/10/2026; consulta sem autenticação HTTP200/privatefalse. [Configuração003](../evidencias/configuracao-github.md). Não alegamos acesso pessoal executado pelo professor.
 - [x] I01-04 — main protegida, exigindo PR, uma aprovação e check ci verde; vale também para administradores. E1.
 - [ ] I01-05 — Revisão efetiva por pessoa diferente do autor antes de cada merge; não apenas configuração. PR #2 ainda sem revisão.
 - [x] I01-06 — Estratégia GitHub Flow e branching documentadas no README. E1/README.

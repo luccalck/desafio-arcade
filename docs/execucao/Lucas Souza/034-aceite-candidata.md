@@ -107,3 +107,7 @@ Atualize `docs/gestao/checklist-avaliacao.md` só com provas: data real, SHA/tag
 Quando for possível, preencha ficha original no navegador com dados e URLs reais já verificados; autoavaliações10 são estimativas solicitadas, não nota atribuída. Check de entrega e declarações só quando verdadeiros. Não alterar original/JS para liberar botão nem enviar e-mail/AVA sem autorização no contexto da execução. Se a sessão for interrompida, salvar estado administrativo local fora dos entregáveis acadêmicos.
 
 Ao terminar, informe objetivamente: passo/INT/checks realmente fechados, arquivos, execução/testes, commit do usuário/PR/revisor, evidências, pendências humanas e próximo passo habilitado. Se bloqueado por acesso/pessoa/termos, entregue preparação revisável e mantenha aceite pendente; não repetir falha de ferramenta indefinidamente nem inventar sucesso.
+
+## Conferência final de acesso encaminhada pelo passo003
+
+Por orientação de Lucca em13/10, verificar aqui o aceite dos convites de DaviSouza78, miguelsenai2024 e6lucassilvaaa e o acesso real usando as próprias contas antes de aceitar a candidata. Convites enviados em13/10 não comprovam aceite/teste/contribuição. Atualizar I01-02 e a pendência003 somente com prova; se acesso faltar, registrar e resolver antes do aceite final, sem simular o colega. O professor utilizará leitura pública, confirmada pelo responsável e consulta anônimaHTTP200.
