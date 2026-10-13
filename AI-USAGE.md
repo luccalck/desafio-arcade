@@ -117,3 +117,9 @@ Resultado: GDDv0.6.0/revisão005data13/10, highconcept804caracteres; PDF13pA4/pd
 Codex auxiliou Lucca Castilho/luccalck a ler006/D05/R04/testes/fluxos, compartilhar roteiro UI local/público e separar regressão HML de smoke PRD. Reutilizamos Playwright já instalado (Apache-2.0), sem dependência nova ou mudança de comportamento do jogo. Prompt: executar somente006, sem injetar progresso, com identidade real e provas verificáveis.
 
 Resultados:17E2E locais verdes com1worker;5cenários no preview público verdes, campanha por teclado/toque emulado e reinício, screenshots/JSON/JUnit reais. Falhas anteriores de Chrome/esperaHTTP registradas; ajustes limitados do teste, sem bug artificial ou logs maquiados. Roteiro completo entregue ao011; checks formais continuam abertos. Revisão humana por outro autor antes do merge pendente. Branchfeature/passo-006-regressao-hml; commit/PR no controle.
+
+## Passo007 — contratos da esteira — 13/10/2026
+
+Codex auxilia Lucca Castilho/luccalck a executar somente007/R02/R03/S02: conferir fontes oficiais/SHAs das Actions, preservar validações paralelas e preparar coleta de artefato único por SHA/run/tentativa, integridade antes do deploy e resumo de status no Actions. Reutiliza build/package/prepare-pages existentes, sem alterar jogo ou instalar dependência de runtime.
+
+Seis testes de contrato passaram após falha inicial por módulo ainda ausente; fixtures sintéticas não representam PDF/relatórios acadêmicos reais. Actionlint e gate local com estados sintéticos passaram nas verificações esperadas. Validação de clone limpo e CI estão em andamento; resultados finais ficarão em docs/evidencias/ci-formal.md. Deploys dependem de scripts011/019 e flags explícitas; não enviamos mensagens externas nem registramos recebimento humano de notificação. Revisão por outro autor antes do merge continua pendente.
