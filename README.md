@@ -2,7 +2,7 @@
 
 Um jogo educativo WEB para aprender programação construindo as regras de um minijogo. Em cinco missões e um desafio final, você edita funções Python de controles, movimento, colisão, pontuação e ondas, testa resultados e observa o efeito jogando. Ao concluir, pode baixar suas funções `.py` e seu minijogo em HTML independente.
 
-**[Jogar no navegador](https://luccalck.github.io/desafio-arcade/)** · **[GDD completo](docs/gdd.md)** · **[O que falta para a avaliação](docs/auditoria-avaliacao.md)**
+**[Jogar no navegador](https://luccalck.github.io/desafio-arcade/)** · **[GDD completo](docs/gdd.md)** · **[Checklist completo de pendências](docs/checklist-avaliacao.md)** · **[Auditoria do enunciado](docs/auditoria-avaliacao.md)**
 
 O jogo é estático, responsivo e funciona offline. O jogador não precisa instalar Node, Python ou uma engine. O editor executa um subconjunto educativo de Python documentado no GDD, sem backend ou conta.
 

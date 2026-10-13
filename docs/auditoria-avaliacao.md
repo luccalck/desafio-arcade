@@ -1,6 +1,6 @@
 # Auditoria do enunciado — Desafio Arcade
 
-Conferência em 12/10/2026. Este documento lista o que existe e o que falta; não atribui nota nem substitui a avaliação do professor. A candidata atual é a Oficina de Jogos WEB com desafios em Python, versão 0.6.0.
+Conferência em 12/10/2026. Este documento lista o que existe e o que falta; não atribui nota nem substitui a avaliação do professor. A candidata atual é a Oficina de Jogos WEB com desafios em Python, versão 0.6.0. O acompanhamento item a item fica no [checklist completo](checklist-avaliacao.md), com identificadores estáveis e evidências para cada check.
 
 ## Fontes e método
 

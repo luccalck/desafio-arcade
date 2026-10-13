@@ -47,3 +47,7 @@ Teste encontrou ausência de botão .py imediatamente ao vencer; falha/captura a
 ## Auditoria do enunciado e apresentação do repositório — 12/10/2026
 
 Codex auxiliou a releitura integral do HTML e do JavaScript da ficha, a inspeção real de histórico/PRs/configurações e a redação da auditoria, matriz e README em português. A branch padrão passou temporariamente para a branch com o código completo; main continua protegida e aguarda revisão de outro autor. A auditoria distingue configuração, execução, lacunas e dependências humanas, sem atribuir nota ou contribuição fictícia. Nenhuma mecânica, imagem ou identidade nova foi criada nesta etapa. Revisão humana destes documentos e do código antes do merge continua pendente.
+
+## Checklist completo — 12/10/2026
+
+Solicitante pediu um Markdown com todos os itens do HTML e checks atualizados conforme conclusão. Codex desdobrou as dez seções, abas, kit/TODO, cronograma, rubrica, banca e campos/validações JavaScript em docs/checklist-avaliacao.md, com complemento do modelo GDD claramente identificado. Foram separados mínimos, faixa avançada, condicionais e reconferências finais. Marcação inicial usa arquivos e execuções anteriores verificáveis; itens sem execução ou participação humana continuam abertos. Identificadores e links locais conferidos, sem alteração de mecânica ou criação de evidências. Revisão humana deste documento antes do merge permanece pendente; atualização futura exige evidência para cada check.
