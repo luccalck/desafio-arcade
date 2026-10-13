@@ -6,7 +6,7 @@ Um jogo educativo WEB para aprender programação construindo as regras de um mi
 
 **[Jogar no navegador](https://luccalck.github.io/desafio-arcade/)** · **[GDD completo](docs/gdd.md)** · **[Checklist completo de pendências](docs/gestao/checklist-avaliacao.md)** · **[Auditoria do enunciado](docs/gestao/auditoria-avaliacao.md)**
 
-**[40 passos e prompts em blocos](docs/execucao/00-indice-geral.md)** — Lucca executa 001–010, depois Davi 011–020, Miguel 021–030 e Lucas 031–040. Dez arquivos por pessoa, com dependências anteriores, checks, validações, commit pela própria conta e revisão cruzada desde o início. [Passagem de bloco](docs/execucao/04-passagem-de-bloco.md) e [estrutura exata do repositório e entregáveis](docs/execucao/01-estrutura-repositorio.md).
+**[25 MDs e quarenta etapas preservadas](docs/execucao/00-indice-geral.md)** — Lucca mantém001–010; Davi, Miguel e Lucas têm cinco arquivos cada, com duas etapas completas por arquivo. Tarefas/checks/dependências/validações preservados, commit pela própria conta e revisão cruzada desde o início. [Passagem de bloco](docs/execucao/04-passagem-de-bloco.md) e [estrutura exata do repositório e entregáveis](docs/execucao/01-estrutura-repositorio.md).
 
 O jogo é estático, responsivo e funciona offline. O jogador não precisa instalar Node, Python ou uma engine. O editor executa um subconjunto educativo de Python documentado no GDD, sem backend ou conta.
 
@@ -109,3 +109,7 @@ Não implementamos telemetria, analytics, contagem remota de partidas ou coleta 
 Guardamos somente progresso, funções Python e preferências no localStorage do navegador, nas chaves da oficina v5 e settingsv1. O carregador do preview guarda na sessionStorage o SHA da versão selecionada; suas requisições de rollout/version.json servem à escolha da release, não à telemetria de partidas. Armazenamento indisponível mantém a oficina na sessão. Reiniciar oficina remove apenas suas fontes/progresso; preferências e campanhas anteriores são preservadas.
 
 Não usamos cookies da aplicação, publicidade, APIs de IA em runtime ou serviços externos na partida. A hospedagem entrega os arquivos estáticos por HTTP; abrir index.html da build permite jogar offline. Novas integrações/coletas exigem revisão desta declaração antes de entrar na build. [Conferência de segurança e privacidade](docs/evidencias/seguranca-inicial.md).
+
+## Consultar os materiais do Stitch
+
+[Telas, prompt, proveniência e ZIP original](docs/images/stitch-009/README.md) estão neste repositório. O projeto editável no serviçoGoogle exige acesso à respectiva conta; consultar os resultados não depende desse acesso. GDD/build/relatórios gerados pelaCI ficam nos artefatos doActions, com retenção; anexos permanentes da release serão entregues na etapa de release. Não há pitch final gravado ou pacote final neste momento.

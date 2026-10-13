@@ -4,6 +4,10 @@ Atualizado em 13/10/2026. Registro único das pendências encontradas durante a 
 
 Ao encerrar cada passo, atualizar sua seção com todas as pendências: requisito/check, motivo, responsável ou dependência, próximo passo e evidência necessária. Fechar um item apenas com evidência real, registrando arquivo, commit, execução ou ação humana. Diferenciar pendência de execução, aceite e obrigação futura. Passo não executado não significa ausência de pendências.
 
+## Como registrar os MDs consolidados
+
+Davi, Miguel e Lucas têm cinco MDs cada, mas este arquivo conserva as seções001–040. Ao executar um par, registrar cada etapa em sua própria seção, incluindo ações humanas e obrigações futuras. Não fundir status nem marcar duas etapas como feitas apenas por abrir o arquivo. [Índice vigente](00-indice-geral.md) e [mapa de consolidação](07-mapa-consolidacao.json).
+
 ## Requisitos gerais pendentes
 
 - [ ] **Revisão humana e integração (INT-01):** PR#3 e PR#4 ainda sem aprovação de outro integrante. Por orientação de Lucca, não tratar essa revisão como bloqueio para avançar na preparação do passo002; continua obrigatória para merge/aceite da rubrica. Acesso aos colegas será configurado no003. CI verde não substitui revisão. Mínimo de dez PRs revisados e fator individual continuam exigindo provas reais.
@@ -36,7 +40,7 @@ Regressão HML/smoke PRD formais, estabilidade da candidata final e playtest per
 
 Preparação executada em13/10/2026; [evidências](../evidencias/configuracao-github.md). SITE_URL configurada e três convites write enviados.
 
-- [ ] **Aceite/acesso (I01-02), conferência final034:** convites enviados; verificar aceite e acesso real no [034](<Lucas Souza/034-aceite-candidata.md>) por orientação de Lucca. Não considerar atendido até prova.
+- [ ] **Aceite/acesso (I01-02), conferência final034:** convites enviados; verificar aceite e acesso real no [034](<Lucas Souza/033-034-relatorio-aceite-candidata.md#etapa-034>) por orientação de Lucca. Não considerar atendido até prova.
 - [x] **Professor (I01-03):** leitura pública confirmada por Lucca; consulta sem autenticação HTTP200/privatefalse em13/10. Não requer usuário GitHub adicional.
 - [ ] **Main (I01-18):** PR#2 pronto para revisão, merge automático habilitado condicionado às regras; ainda OPEN/REVIEW_REQUIRED. Após aprovação real/merge, restaurar defaultmain e ajustar bases. Não usar bypass.
 **Trabalho futuro encaminhado, não execução faltante do003:** migraçãoPages atribuída aos007/011 abaixo, com orientação nos próprios MDs.
@@ -133,7 +137,7 @@ Nenhum novo check geral fechado;115marcados/297abertos. Publicação010:c56df79/
 
 ## Passo 011
 
-Execução ainda não realizada. Encaminhamento003: implementar/executar deploy-hml/environmenthomologacao, migração coordenada Pages para origemgh-pages e regressão/HTTP/versão após propagação. [MD011](<Davi Paes/011-deploy-hml.md>). I07-01/KIT-12/ARQ-07/I03-15 dependem dessas provas, não de Settings ou plano.
+Execução ainda não realizada. Encaminhamento003: implementar/executar deploy-hml/environmenthomologacao, migração coordenada Pages para origemgh-pages e regressão/HTTP/versão após propagação. [MD011](<Davi Paes/011-012-hml-sondas.md#etapa-011>). I07-01/KIT-12/ARQ-07/I03-15 dependem dessas provas, não de Settings ou plano.
 
 ## Passo 012
 
@@ -165,7 +169,7 @@ Não executado. Preencher as pendências efetivamente encontradas ao encerrar es
 
 ## Passo 019
 
-Execução ainda não realizada. Encaminhamento003: implementar/executar deploy-prd/environmentproducao após HML/rollout/rollback preparados, recuperar o mesmo artefato e obter aprovação real. [MD019](<Davi Paes/019-producao-aprovacao.md>). Gate/branchmain já configurados; não há execução de PRD registrada.
+Execução ainda não realizada. Encaminhamento003: implementar/executar deploy-prd/environmentproducao após HML/rollout/rollback preparados, recuperar o mesmo artefato e obter aprovação real. [MD019](<Davi Paes/019-020-producao-painel.md#etapa-019>). Gate/branchmain já configurados; não há execução de PRD registrada.
 
 ## Passo 020
 
@@ -225,7 +229,7 @@ Não executado. Preencher as pendências efetivamente encontradas ao encerrar es
 
 ## Passo 034
 
-Execução ainda não realizada. Conferir ao final, conforme orientação de Lucca, aceite dos três convites e acesso real de cada integrante. Atualizar I01-02 e registro003 somente com prova. [MD034](<Lucas Souza/034-aceite-candidata.md>). Ausência de acesso bloqueia aceite final; não marcar concluído só por convite.
+Execução ainda não realizada. Conferir ao final, conforme orientação de Lucca, aceite dos três convites e acesso real de cada integrante. Atualizar I01-02 e registro003 somente com prova. [MD034](<Lucas Souza/033-034-relatorio-aceite-candidata.md#etapa-034>). Ausência de acesso bloqueia aceite final; não marcar concluído só por convite.
 
 ## Passo 035
 

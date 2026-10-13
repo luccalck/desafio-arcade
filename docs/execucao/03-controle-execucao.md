@@ -1,6 +1,6 @@
 # Controle da execução humana e técnica
 
-O estado de cada passo consta abaixo. Prompts entregues não significam função implementada/validada ou autoria dos colegas. Atualizar com SHA/run/PR/revisor/dados reais; não preencher colunas com identidade de outra pessoa. Checklist principal é a fonte dos checks.
+A tabela mantém quarenta etapas para rastreamento, apesar dos25MDs vigentes. Cada MD novo executa duas etapas: atualizar ambas as linhas separadamente, sem registrar etapa não executada. O estado de cada passo consta abaixo. Prompts entregues não significam função implementada/validada ou autoria dos colegas. Atualizar com SHA/run/PR/revisor/dados reais; não preencher colunas com identidade de outra pessoa. Checklist principal é a fonte dos checks.
 
 | Passo | Responsável | Estado | Commit/PR da própria conta | Revisão de outro autor / CI | Checks/evidências fechados | Dependência humana restante |
 |---|---|---|---|---|---|---|

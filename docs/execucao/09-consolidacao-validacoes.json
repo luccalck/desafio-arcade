@@ -1,0 +1,33 @@
+{
+  "base": "a6824e8255c19781b9194111bf9dad272663862a",
+  "date": "2026-10-13",
+  "mdCounts": {
+    "Lucca Castilho": 10,
+    "Davi Paes": 5,
+    "Miguel Oliveira": 5,
+    "Lucas Souza": 5
+  },
+  "stagesPreserved": 30,
+  "assignedCheckOccurrences": 256,
+  "uniqueAssignedChecks": 256,
+  "numberedActionsPreserved": 148,
+  "localLinksResolved": 467,
+  "missingLinks": 0,
+  "stitchZipBytes": 1016086,
+  "stitchZipSha256": "352cb949976e74bff9e5a3c39c92caed71976c31b8fd2639427b784aa723e07d",
+  "readerReview": "IA somente leitura, duas passagens; não é revisão humana",
+  "checkStatesChanged": false,
+  "publication": {
+    "commit": "8a3b7bbcdded8d88363ceb72a293a428968e575c",
+    "pr": 13,
+    "pushRun": 38448600323,
+    "prRun": 38448755452,
+    "pushConclusion": "success",
+    "prConclusion": "success",
+    "remoteFoldersVerified": true,
+    "remoteOriginalZipBytes": 1016086,
+    "humanReview": false,
+    "merged": false,
+    "deployed": false
+  }
+}

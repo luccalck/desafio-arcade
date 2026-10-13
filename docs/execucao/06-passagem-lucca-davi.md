@@ -1,6 +1,6 @@
 # Passagem do bloco001–010 — Lucca → Davi
 
-Preparação do bloco concluída no escopo técnico em13/10/2026; nenhum gate coletivo/final é aceito apenas por este registro. Uma fonte principal: jogo-arcade. Davi executa011–020 pela própria contaDaviSouza78, preservando alterações existentes e revisão cruzada. Lucca continua responsável por revisar/participar da banca e pelas pendências humanas compartilhadas.
+Preparação do bloco concluída no escopo técnico em13/10/2026; nenhum gate coletivo/final é aceito apenas por este registro. Uma fonte principal: jogo-arcade. Davi executa cinco MDs cobrindo011–020 pela própria contaDaviSouza78, preservando alterações existentes e revisão cruzada. Lucca continua responsável por revisar/participar da banca e pelas pendências humanas compartilhadas.
 
 ## Base e verificação antes de começar011
 
@@ -32,3 +32,7 @@ PRs reais do bloco001–009: #3,#4,#5,#6,#7,#8,#9,#10,#11, todos de luccalck e a
 [Registro único por passo](05-pendencias-por-passo.md) e [checklist](../gestao/checklist-avaliacao.md) prevalecem. G0/G1/G2/G3 não liberados coletivamente. Identificação/acesso/revisão/direitos/participação e playtest são reais. Release/tag/SBOManexado/notas, HML/PRD, recuperação/sondas/DORA, vídeo/pacote/triagem/relatório/ficha/banca pertencem aos passos seguintes.
 
 Davi deve registrar recebimento e compreensão deste repasse pessoalmente; não atribuímos esse aceite à IA ou a Lucca. Revisão exigida pelo professor continua obrigatória antes do merge; não usar aprovação da concepção para substituí-la.
+
+## Primeiro arquivo vigente após consolidação
+
+[Davi — MD1/5, etapas011–012](<Davi Paes/011-012-hml-sondas.md>): HMLformal e sondas, cumprindo cada etapa na ordem e registrando separadamente execução/pendências. Os quatro MDs seguintes estão no índice; não usar os antigos arquivos unitários.
