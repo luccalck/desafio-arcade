@@ -1,6 +1,6 @@
 # Passo 006 — Completar regressão de navegador exigida na HML
 
-**Execução em13/10/2026:** módulo preparado e preview validado; publicação/CI e execução formal separadas. [Evidências](../../evidencias/regressao-hml.md).
+**Execução em13/10/2026:** módulo preparado e preview validado; publicação/CI confirmadas, execução formal separada. [Evidências](../../evidencias/regressao-hml.md).
 
 **Responsável:** Lucca Castilho · bloco 1. **Papel oficial proposto:** Produto e Game Design. **Revisor proposto:** Davi Paes (DaviSouza78; revisão geral antes do merge).
 **INT:** INT-04/03. **Roteiros preservados:** D05/R04. **Checkpoint:** G2 preparação/G3 execução.
@@ -8,7 +8,7 @@
 
 - [x] Dois cenários completos UI preparados e testados, sem alteração de comportamento do jogo.
 - [x] Build/lint/17E2E locais e5cenários do preview público validados; capturas/JSON/JUnit reais.
-- [ ] Commit/push pela identidade GitHub do responsável.
+- [x] Commit/push próprio luccalck:1e0b4b5/PR#8; CI38348580349verde, atualização da branch padrão006 sem merge/deploy.
 - [ ] PR revisado por outro autor e CI verde.
 - [x] I04-07 revalidado; I04-08/I04-09/I03-16 formais mantidos abertos, encaminhados ao011.
 

@@ -27,6 +27,7 @@ Os identificadores abaixo são estáveis. Não renumerar ao concluir. Não infer
 | E4 | [GDD](../gdd.md), imagens em docs/images e geração por [gdd-pdf.mjs](../../scripts/gdd-pdf.mjs). PDF gerado pela CI e pdfinfo; versão 0.6.0, identificação/release final pendentes. |
 | E5 | [Preview público](https://luccalck.github.io/desafio-arcade/) e [HML do preview](https://luccalck.github.io/desafio-arcade/hml/). E2 publicou e executou smoke. HML/version.json respondeu HTTP 200 com SHA de E2. Não é produção formal aprovada. |
 | E6 | [LICENSE](../../LICENSE), [THIRD_PARTY](../../THIRD_PARTY.md), [AI-USAGE](../../AI-USAGE.md), [SECURITY](../../SECURITY.md), hook e scanner; artefatos de segurança em E2. Revisão humana/declaração coletiva pendentes. |
+| E8 | [Regressão006](../evidencias/regressao-hml.md):17E2E locais e naCI38348580349,5cenários do preview, capturas/JSON reais. Publicação formal011 e smokePRD014/019 pendentes. |
 | E7 | [Build](../../scripts/build.mjs), [empacotamento](../../scripts/package.mjs), [reprodutibilidade](../../scripts/reproducibility.mjs), [preparação Pages](../../scripts/prepare-pages.mjs), testes de integração/exportação/Pages. E2/E3 comprovam execução; não há GitHub Release por tag. |
 
 Os caminhos locais originais são referências de contexto, não arquivos que o professor precisa clonar. O código principal permanece em `jogo-arcade`. Os checks de continuidade abaixo exigem validação final, mesmo quando há evidência de uma execução anterior.

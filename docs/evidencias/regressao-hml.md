@@ -63,3 +63,11 @@ O011 deve rodar a regressão a cada deploy-hml e arquivar `reports/pages-smoke.x
 ## Checks e pendências
 
 I04-07 revalidado com17cenários locais. I04-08/I04-09/I03-16 permanecem abertos conforme divisão006→011: roteiro preparado e executado no preview, falta execução formal de HML da main aprovada após cada deploy. I04-10 depende do smoke pós-produção formal014/019. Nenhum novo check geral fechado; G3 não aceito, revisão de outro autor continua necessária antes do merge. Pendências no [registro único](../execucao/05-pendencias-por-passo.md).
+
+## Publicação e CI
+
+Commit próprio `1e0b4b56464af2b3d762a8292f513449197ebc87`, identidade Git/GitHub luccalck conferida; hook Gitleaks sem achados e push concluído. [PR#8](https://github.com/luccalck/desafio-arcade/pull/8) em rascunho, base temporária005 para isolar este passo. [CI38348580349](https://github.com/luccalck/desafio-arcade/actions/runs/38348580349) SUCCESS: qualidade, segurança, build, E2E e aceite agregado passaram; preview ignorado por branch.
+
+Baixamos o artefato e2e do SHA acima e conferimos seu JUnit:17testes,0falhas,0erros,0ignorados. O jogo local/CI e o preview público têm SHAs diferentes explicitamente registrados; não afirmamos que a candidata006 foi implantada. Relatórios originais em `.contexto/passo-006/ci-38348580349/`.
+
+Por autorização persistente, a branch padrão foi atualizada para `feature/passo-006-regressao-hml` após a CI verde. API confirmou main protegida por ci/uma aprovação/incluindo administradores. Isso atualiza rastreamento; não faz merge, revisão humana ou deploy. Registros documentais posteriores acionam CI própria a conferir pelo HEAD.

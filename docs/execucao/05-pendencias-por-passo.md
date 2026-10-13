@@ -75,7 +75,7 @@ Revisão/direitos coletivos permanecem gerais antes do merge. Versão/data/linkr
 - [x] Dois cenários completos compartilhados: primeira missão→campanha→vitória e reinício confirmado/progressão, sem injetar progresso.
 - [x] Desktop/teclado e390×844/toque emulado; smoke de release separado; entradas BASE_URL/PAGES_URL/EXPECTED_SHA e espera limitada.
 - [x] Build/lint;17E2E locais verdes com1worker e5cenários públicos verdes após ajuste de esperaHTTP. Falhas iniciais preservadas nas [evidências](../evidencias/regressao-hml.md).
-- [ ] Publicação própria/PR/CI do HEAD e atualização da branch padrão após CI verde: conferir na conclusão.
+- [x] Publicação própria1e0b4b5/PR#8 e CI38348580349verde; JUnit da CI confirma17testes/0falhas. Branch padrão atualizada para006 após CIverde, sem merge/deploy; conferir CI de registros posteriores.
 - [ ] **I04-08/I04-09/I03-16 — passo011:** usar o módulo preparado a cada deploy-hml da main aprovada e guardar run/URL/SHA/JUnit/capturas. Preview experimental não encerra a execução formal.
 - [ ] **I04-10 —014/019:** smoke depois da promoção real de produção, usando o mesmo artefato; não declarar smoke do preview como PRD formal.
 
