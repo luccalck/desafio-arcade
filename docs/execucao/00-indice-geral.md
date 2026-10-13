@@ -2,6 +2,8 @@
 
 **Atualização:** 12/10/2026. Organização solicitada: Lucca faz os dez primeiros passos, entrega a Davi, que faz os dez seguintes, depois Miguel e Lucas. Um jogo WEB/um repositório, sem cópias por integrante. Os prompts continuam completos, com check, comando, evidência, commit pela própria conta e PR revisado.
 
+Use o [registro único de pendências por passo](05-pendencias-por-passo.md) ao encerrar cada execução.
+
 ## Ordem obrigatória dos blocos
 
 | Ordem | Responsável | Passos | Entrega principal | Próximo |
@@ -36,7 +38,7 @@ Meta: faixa avançada, sem garantir nota. Fórmula `(0,7×A + 0,3×B)×F`; pesos
 
 ## Checks, gates e produção
 
-Mapa inicial preserva cobertura dos313 checks abertos do snapshot original. Estado atualizado fica no checklist principal: após cinco fechamentos específicos do001, são108 marcados e304 abertos/condicionais. Nenhum INT/gate inteiro foi aceito. O mapa não substitui esse estado.
+Mapa inicial preserva cobertura dos313 checks abertos do snapshot original. Estado atualizado fica no checklist principal: após cinco fechamentos específicos do001 e configuração de SITE_URL/acesso público do professor no003, são110 marcados e302 abertos/condicionais. Nenhum INT/gate inteiro foi aceito. O mapa não substitui esse estado.
 
 G0–G2 são preparados por Lucca; G3/G4 por Davi; G5 e preparação G6 por Miguel; G6–G8 por Lucas. Liberação continua conforme entradas/aceites dos roteiros e pessoas reais. Rollback básico deve estar integrado ANTES de primeira PRD no019; Miguel fortalece e comprova no022/026. Painel020 trata DORA indisponível honestamente até Miguel ligar dados reais no024. Assim não há retorno obrigatório a Davi para implementar esses itens.
 

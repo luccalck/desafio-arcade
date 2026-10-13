@@ -1,12 +1,12 @@
 # Pendências após cada passo
 
-Atualizado em 12/10/2026. Registro único das pendências encontradas durante a execução. Complementa o [controle](03-controle-execucao.md) e o [checklist da avaliação](../gestao/checklist-avaliacao.md), sem substituí-los.
+Atualizado em 13/10/2026. Registro único das pendências encontradas durante a execução. Complementa o [controle](03-controle-execucao.md) e o [checklist da avaliação](../gestao/checklist-avaliacao.md), sem substituí-los.
 
 Ao encerrar cada passo, atualizar sua seção com todas as pendências: requisito/check, motivo, responsável ou dependência, próximo passo e evidência necessária. Fechar um item apenas com evidência real, registrando arquivo, commit, execução ou ação humana. Diferenciar pendência de execução, aceite e obrigação futura. Passo não executado não significa ausência de pendências.
 
 ## Requisitos gerais pendentes
 
-- [ ] **Revisão humana e integração (INT-01):** PR#3 ainda sem aprovação de outro integrante. Por orientação de Lucca, não tratar essa revisão como bloqueio para avançar na preparação do passo002; continua obrigatória para merge/aceite da rubrica. Acesso aos colegas será configurado no003. CI verde não substitui revisão. Mínimo de dez PRs revisados e fator individual continuam exigindo provas reais.
+- [ ] **Revisão humana e integração (INT-01):** PR#3 e PR#4 ainda sem aprovação de outro integrante. Por orientação de Lucca, não tratar essa revisão como bloqueio para avançar na preparação do passo002; continua obrigatória para merge/aceite da rubrica. Acesso aos colegas será configurado no003. CI verde não substitui revisão. Mínimo de dez PRs revisados e fator individual continuam exigindo provas reais.
 
 ## Passo 001 — Equipe, contexto e marcos reais
 
@@ -22,19 +22,28 @@ A revisão do PR está na seção geral, não repetida como bloqueio operacional
 
 ## Passo 002 — Arquitetura e baseline de qualidade
 
-Baseline local documentado e validado em12/10/2026; [evidências](../evidencias/baseline-tecnico.md).
+**Escopo técnico concluído.** Baseline documentado e validado em12/10/2026; conferência final e organização das pendências em13/10/2026. [Evidências](../evidencias/baseline-tecnico.md).
 
-- [ ] **Desenvolvimento / SQ-07:** Davi precisa ler e validar arquitetura/pirâmide e demonstrar participação técnica real nos passos seguintes. Coordenação confirmada não comprova execução pelo colega.
-- [ ] **Contrato com Plataforma:** Miguel precisa conferir comandos, versões, artefatos e interfaces documentados; preparação entregue, aprovação humana ainda não registrada.
-- [x] **Publicação do passo:** commit próprio b79828c e PR#4 em rascunho; registrado no baseline.
-- [x] **CI registrada:** execução38339152555/b79828c concluída com sucesso; jobs técnicos verdes e preview ignorado. Conferir novamente o HEAD de cada atualização nos checks do PR; revisão de outro autor permanece requisito geral antes do merge.
-- [ ] **Validações posteriores:** regressão HML e smoke PRD formais, estabilidade/offline da candidata final e playtest continuam nos passos previstos; suíte local não substitui esses aceites.
+- [x] Arquitetura e contratos de conteúdo/motor/editor/exportação documentados.
+- [x] Instalação, lint, unidades/integrações, cobertura, build, JSON inválido e E2E executados.
+- [x] Publicação pela própria conta: PR#4 e HEAD4d9acf4; CI38339356756 concluída com sucesso.
 
-ARQ-10 é condicional não aplicável (não usamos Godot); não há obrigação de trocar a stack. G0/G1 permanecem incompletos. Não encontramos defeito funcional reproduzido que exigisse correção nesta inspeção.
+Por orientação de Lucca em13/10, retiramos as conferências específicas de Davi e Miguel dos aceites deste passo. Isso não registra aprovação ou contribuição deles. A revisão do PR permanece somente nos requisitos gerais de integração, conforme o professor, sem bloquear a preparação do próximo passo.
 
-## Passo 003
+Regressão HML/smoke PRD formais, estabilidade da candidata final e playtest pertencem aos passos posteriores; não são trabalho técnico faltante do002. SQ-07 continua no checklist geral como responsabilidade/contribuição efetiva de Desenvolvimento. ARQ-10 não se aplica à stack atual. Nenhum INT ou G0/G1 completo foi aceito apenas por encerrar o escopo técnico.
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+## Passo 003 — Acessos, Git e configuração Pages
+
+Preparação executada em13/10/2026; [evidências](../evidencias/configuracao-github.md). SITE_URL configurada e três convites write enviados.
+
+- [ ] **Aceite/acesso (I01-02), conferência final034:** convites enviados; verificar aceite e acesso real no [034](<Lucas Souza/034-aceite-candidata.md>) por orientação de Lucca. Não considerar atendido até prova.
+- [x] **Professor (I01-03):** leitura pública confirmada por Lucca; consulta sem autenticação HTTP200/privatefalse em13/10. Não requer usuário GitHub adicional.
+- [ ] **Main (I01-18):** PR#2 pronto para revisão, merge automático habilitado condicionado às regras; ainda OPEN/REVIEW_REQUIRED. Após aprovação real/merge, restaurar defaultmain e ajustar bases. Não usar bypass.
+**Trabalho futuro encaminhado, não execução faltante do003:** migraçãoPages atribuída aos007/011 abaixo, com orientação nos próprios MDs.
+- [x] **Configuração dos ambientes:** homologacao/producao limitados à main; producao com reviewer obrigatório e bypassadminfalse, conferidos por API. Uso real dos jobs atribuídos a007/011/019 abaixo; nenhum deploy/aprovação simulados.
+- [x] **Publicação deste passo:**25ba5e7/PR#5; CI38342833196 verde. Reconferir cada HEAD atualizado; revisão antes do merge permanece geral.
+
+SQ-08/participação de Plataforma permanece geral; sem aceite coletivo inventado. KIT-14 fechado somente quanto à variável/destinos. G0/G1 incompletos.
 
 ## Passo 004
 
@@ -50,7 +59,7 @@ Não executado. Preencher as pendências efetivamente encontradas ao encerrar es
 
 ## Passo 007
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Execução ainda não realizada. Encaminhamento003: preparar jobs/dependências/contratos de artefatos para deploy-hml/homologacao e deploy-prd/producao, com CI, permissões mínimas e consumo do mesmo build. [MD007](<Lucca Castilho/007-ci-formal.md>). Configuração dos ambientes já feita; integração funcional/testes permanecem nesta etapa.
 
 ## Passo 008
 
@@ -66,7 +75,7 @@ Não executado. Preencher as pendências efetivamente encontradas ao encerrar es
 
 ## Passo 011
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Execução ainda não realizada. Encaminhamento003: implementar/executar deploy-hml/environmenthomologacao, migração coordenada Pages para origemgh-pages e regressão/HTTP/versão após propagação. [MD011](<Davi Paes/011-deploy-hml.md>). I07-01/KIT-12/ARQ-07/I03-15 dependem dessas provas, não de Settings ou plano.
 
 ## Passo 012
 
@@ -98,7 +107,7 @@ Não executado. Preencher as pendências efetivamente encontradas ao encerrar es
 
 ## Passo 019
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Execução ainda não realizada. Encaminhamento003: implementar/executar deploy-prd/environmentproducao após HML/rollout/rollback preparados, recuperar o mesmo artefato e obter aprovação real. [MD019](<Davi Paes/019-producao-aprovacao.md>). Gate/branchmain já configurados; não há execução de PRD registrada.
 
 ## Passo 020
 
@@ -158,7 +167,7 @@ Não executado. Preencher as pendências efetivamente encontradas ao encerrar es
 
 ## Passo 034
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Execução ainda não realizada. Conferir ao final, conforme orientação de Lucca, aceite dos três convites e acesso real de cada integrante. Atualizar I01-02 e registro003 somente com prova. [MD034](<Lucas Souza/034-aceite-candidata.md>). Ausência de acesso bloqueia aceite final; não marcar concluído só por convite.
 
 ## Passo 035
 

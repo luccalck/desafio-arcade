@@ -85,3 +85,15 @@ O professor exige pelo menos **dez PRs revisados por outro autor** e, para cada 
 Consulte [decisões de projeto](docs/gestao/design.md), [plano Python/Pages](docs/historico/planos/2026-10-12-python-pages.md), [backlog](docs/gestao/backlog.md), [segurança](SECURITY.md), [registro de IA](AI-USAGE.md) e [terceiros/licenças](THIRD_PARTY.md).
 
 Os roteiros do contexto preservam C01/C02, P01–P07, D01–D07, R01–R07, S01–S06 e os checkpoints G0–G8. G0 é o primeiro aceite incompleto. Preparação técnica não substitui revisão humana, dados reais ou evidências de execução.
+
+## Fluxo Git e configuração GitHub — passo003
+
+Uma fonte principal, branches curtas e commits Conventional Commits em português (`feat:`, `fix:`, `test:`, `docs:`, `ci:`). Antes de gravar, cada integrante confere `git config --get user.name`, `git config --get user.email` e `gh api user --jq .login`; não usa a conta de um colega. Antes de trocar de branch, confere status e preserva alterações locais.
+
+Fluxo normal: branch curta → PR main → revisão de outro autor → ci verde do HEAD → merge. Main exige uma aprovação, ci/strict e proteção também para administradores. Novos pushes podem descartar aprovação antiga. Sem autoaprovação ou bypass.
+
+Enquanto o PRprincipal#2 aguarda integração, os diffs dependentes são isolados temporariamente:003→002→001→primeiro-ciclo→main. Registramos a exceção no PR; após integração revisada/CI, ajustamos bases e restauramos main como padrão. Isso não equivale a aprovação/merge.
+
+Enviamos convites write a DaviSouza78, miguelsenai2024 e6lucassilvaaa em13/10/2026; aceites/acessos e leitura do professor ainda precisam de confirmação. Papéis coordenam, sem limitar contribuição nas outras áreas.
+
+Variables públicas: `SITE_URL=https://luccalck.github.io/desafio-arcade`, `PAGES_PREVIEW_ENABLED=true`. Segredos ficam em secrets/token do job. Pages atual usa Actions; planejamos origem gh-pages juntamente com publicação automatizada nos007/011. Não trocar Settings isoladamente. [Configuração, resultados e plano](docs/evidencias/configuracao-github.md).

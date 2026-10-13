@@ -1,14 +1,16 @@
 # Passo 003 — Preparar acessos, revisão Git e configuração Pages
 
-**Responsável:** Lucca Castilho · bloco 1. **Papel oficial proposto:** Produto e Game Design. **Revisor proposto:** Davi Paes (conta real a confirmar).
+**Execução em13/10/2026:** preparação/configuração e convites realizados; acesso aceito/revisão/migração Pages pendentes. [Evidências](../../evidencias/configuracao-github.md).
+
+**Responsável:** Lucca Castilho · bloco 1. **Papel oficial proposto:** Produto e Game Design. **Revisor proposto:** Davi Paes (DaviSouza78; convite enviado, aceite pendente).
 **INT:** INT-01/03/07. **Roteiros preservados:** C02/R01. **Checkpoint:** G0/G1.
 **Dependências de execução:** 001. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
-- [ ] Trabalho implementado/documentado com autoria real.
-- [ ] Validações executadas e evidências arquivadas.
-- [ ] Commit/push pela identidade GitHub do responsável.
+- [x] Preparação/configuração documentadas pela própria conta; aceites finais separados.
+- [x] APIs e HTTP do preview conferidos; evidências redigidas arquivadas.
+- [x] Commit/push pela identidade própria luccalck:25ba5e7/PR#5.
 - [ ] PR revisado por outro autor e CI verde.
-- [ ] Checks aplicáveis atualizados, sem declarações fictícias.
+- [x] KIT-14 atualizado com evidência; demais checks/aceites pendentes.
 
 ## Regra da execução por blocos
 
@@ -96,8 +98,7 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "ci: preparar acessos, revisão git e configuração pages
-"
+git commit -m "docs: preparar acessos, revisão Git e configuração Pages"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 003: Preparar acessos, revisão Git e configuração Pages" --body-file .contexto/pr-passo-003.md
 ```

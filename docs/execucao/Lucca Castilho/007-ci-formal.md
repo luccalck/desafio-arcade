@@ -109,3 +109,7 @@ Atualize `docs/gestao/checklist-avaliacao.md` só com provas: data real, SHA/tag
 Quando for possível, preencha ficha original no navegador com dados e URLs reais já verificados; autoavaliações10 são estimativas solicitadas, não nota atribuída. Check de entrega e declarações só quando verdadeiros. Não alterar original/JS para liberar botão nem enviar e-mail/AVA sem autorização no contexto da execução. Se a sessão for interrompida, salvar estado administrativo local fora dos entregáveis acadêmicos.
 
 Ao terminar, informe objetivamente: passo/INT/checks realmente fechados, arquivos, execução/testes, commit do usuário/PR/revisor, evidências, pendências humanas e próximo passo habilitado. Se bloqueado por acesso/pessoa/termos, entregue preparação revisável e mantenha aceite pendente; não repetir falha de ferramenta indefinidamente nem inventar sucesso.
+
+## Encaminhamento explícito do passo003 — 13/10/2026
+
+Ao executar007, preparar no workflow os contratos/dependências ci → deploy-hml → deploy-prd já previstos neste prompt. SITE_URL está configurada; homologacao/producao aceitam branchmain, e producao exige reviewer sem bypass administrativo. Não confundir configuração com deploy executado. Coordenar o método de publicação Pages e migração de origem com011; entregar arquivos/artefatos prontos para011/019 e testes relevantes. Registrar execução pendente nas seções desses passos do05-pendencias-por-passo.md.

@@ -4,9 +4,9 @@ O estado de cada passo consta abaixo. Prompts entregues não significam função
 
 | Passo | Responsável | Estado | Commit/PR da própria conta | Revisão de outro autor / CI | Checks/evidências fechados | Dependência humana restante |
 |---|---|---|---|---|---|---|
-| 001 | Lucca Castilho | Preparação executada; identificação parcial | 72d2b6f; PR#3 rascunho sobre candidata | CI38336896510 verde; DaviSouza78 indicado, revisão pendente | OBJ-08, SQ-01, SQ-03, FIC-01, FIC-07; docs/evidencias/equipe.md | RAs adiados; acesso/revisão; marcos sem prova; G0 incompleto |
-| 002 | Lucca Castilho | Baseline local validado; aceites humanos pendentes | b79828c; PR#4 rascunho sobre passo001 | CI38339152555/b79828c verde; revisão geral pendente; reconferir HEAD | I04-01–06/15 e I06-01–03 revalidados; baseline-tecnico.md; nenhum novo check fechado | SQ-07/contratos com Davi e Miguel; revisão geral; G0/G1 incompletos |
-| 003 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
+| 001 | Lucca Castilho | Preparação executada; identificação parcial | 72d2b6f; PR#3 rascunho sobre candidata | CI38336896510 verde; DaviSouza78 indicado, revisão pendente | OBJ-08, SQ-01, SQ-03, FIC-01, FIC-07; docs/evidencias/equipe.md | RAs adiados; acesso; marcos sem prova; participação futura; revisão como requisito geral; G0 incompleto |
+| 002 | Lucca Castilho | Escopo técnico concluído; integração separada | b79828c; PR#4 rascunho sobre passo001 | CI38339356756/4d9acf4 verde; revisão no requisito geral | I04-01–06/15 e I06-01–03 revalidados; baseline-tecnico.md; nenhum novo check fechado | Nenhuma conferência específica para encerrar002; obrigações gerais/aceites G0/G1 preservados |
+| 003 | Lucca Castilho | Preparação executada; convites enviados | 25ba5e7; PR#5 draft sobre002 | CI38342833196/25ba5e7 verde; revisão geral pendente | KIT-14/I01-03; configuracao-github.md; proteção/HTTP/ambientes reconferidos | Convites final034; PR2 auto-merge aguardando aprovação; defaultmain após merge; jobs/migração007/011/019; G0/G1 incompletos |
 | 004 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
 | 005 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
 | 006 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |

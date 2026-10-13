@@ -89,3 +89,13 @@ Foram atualizados SQUAD, design/backlog, evidências/equipe, checklist e control
 | Codex | Lucca Castilho / luccalck | Executar somente002; inspecionar oficina existente, contratos e pirâmide, executar checks e registrar fatos/pendências sem inventar autoria/bug | Arquitetura em docs/evidencias/baseline-tecnico.md;152unidades/26integrações/15E2E; cobertura97,90%; JSON inválido bloqueia build em ensaio isolado; sem alteração funcional | Revisão técnica de outro integrante e contratos de Desenvolvimento/Plataforma pendentes antes do merge | Branch feature/passo-002-arquitetura-baseline; commit/PR conferidos no controle da execução |
 
 Executamos o código existente e registramos seus limites. A primeira tentativa local de E2E falhou por cmd.exe EACCES; servidor iniciado por Node e opção existente EXTERNAL_SERVER permitiram a execução completa. Não atribuímos contribuições a colegas nem registramos aprovação deles.
+
+## Passo003 — Git, acessos e Pages — 13/10/2026
+
+Codex auxiliou LuccaCastilho/luccalck a executar somente003: lerMD/fontes, conferir identidade e APIs, enviar convites reais a contas confirmadas, configurar SITE_URL, documentar fluxoGit e planejar transiçãoPages007/011. Resultado: configuração-github.md, README/template e controle. Convites aguardam aceite; nenhuma aprovação de colega/produção ou autoria de outro integrante simulada.
+
+Usamos IA para inspeção/documentação e comandos com resultados conferidos, sem tokens/secrets no registro. Sem código novo do jogo, merge ou edição manual de gh-pages. Branchfeature/passo-003-acessos-git-pages; commit/PR no controle. Revisão humana antes do merge permanece geral.
+
+## Ajustes de encerramento003 — 13/10/2026
+
+Com orientação de Lucca, Codex registrou acesso público do professor, conferência dos convites no034 e encaminhamentos explícitos nos007/011/019. Preparou PR2 para revisão/merge automático condicionado à proteção e configurou branchmain nos environments, mantendo requiredreviewer e retirando bypass administrativo de producao. APIs e consulta anônima conferidas; não houve aprovação de colega, merge ou deploy. Registro central incorpora também os ajustes002 anteriormente autorizados, sem inventar participação.

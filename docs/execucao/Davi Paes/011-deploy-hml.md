@@ -119,3 +119,7 @@ Atualize `docs/gestao/checklist-avaliacao.md` só com provas: data real, SHA/tag
 Quando for possível, preencha ficha original no navegador com dados e URLs reais já verificados; autoavaliações10 são estimativas solicitadas, não nota atribuída. Check de entrega e declarações só quando verdadeiros. Não alterar original/JS para liberar botão nem enviar e-mail/AVA sem autorização no contexto da execução. Se a sessão for interrompida, salvar estado administrativo local fora dos entregáveis acadêmicos.
 
 Ao terminar, informe objetivamente: passo/INT/checks realmente fechados, arquivos, execução/testes, commit do usuário/PR/revisor, evidências, pendências humanas e próximo passo habilitado. Se bloqueado por acesso/pessoa/termos, entregue preparação revisável e mantenha aceite pendente; não repetir falha de ferramenta indefinidamente nem inventar sucesso.
+
+## Encaminhamento explícito do passo003 — 13/10/2026
+
+Este passo executa a integração real de deploy-hml com environmenthomologacao e a migração coordenada de origem/publicação Pages planejada no003/007. Validar origemliteralgh-pages ou equivalente aprovado, o disparo quando o bot usa GITHUB_TOKEN, preservação das releases/loader e recuperação; não mudar Settings isoladamente. Consumir o mesmo ZIP/checksum e executar regressão após propagação. Environments já limitados à main; SITE_URL configurada. Configuração prévia não fecha I07-01/KIT-12/ARQ-07/I03-15: fechar somente depois das provas reais.
