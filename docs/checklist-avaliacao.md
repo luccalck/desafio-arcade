@@ -2,6 +2,8 @@
 
 Referência: `Avaliação.html` do professor, incluindo as dez seções, todas as abas dos integráveis, kit, cronograma, rubrica e campos/validações gerados por JavaScript. Atualização inicial: **12/10/2026**. Este é o checklist principal de acompanhamento; a [auditoria](auditoria-avaliacao.md) explica o diagnóstico. Nenhum INT está integralmente encerrado.
 
+Execução distribuída em [40 passos — dez por integrante](passos-por-integrante/00-indice-geral.md), com [mapa dos 313 checks inicialmente abertos](passos-por-integrante/02-mapa-checks.md). O mapa conserva o snapshot de planejamento; o estado atualizado permanece neste checklist. Quatro estimativas B foram preenchidas nesta etapa, sem fechar qualquer entrega/INT.
+
 ## Como manter os checks
 
 - `[x]`: o item específico foi concluído e possui a evidência indicada. Não significa que todo o INT ou checkpoint foi aceito.
@@ -507,10 +509,10 @@ Preencher juntos no HTML original, com declarações verdadeiras. Validação de
 - [ ] FIC-22 — INT-08 entregue/evidenciado e autoavaliação 0–10 verdadeira.
 - [ ] FIC-23 — INT-09 entregue/evidenciado e autoavaliação 0–10 verdadeira.
 - [ ] FIC-24 — INT-10 entregue/evidenciado e autoavaliação 0–10 verdadeira.
-- [ ] FIC-25 — Estimativa B de inovação/originalidade 0–10.
-- [ ] FIC-26 — Estimativa B de viabilidade técnica/execução 0–10.
-- [ ] FIC-27 — Estimativa B de jogabilidade 0–10.
-- [ ] FIC-28 — Estimativa B de apresentação 0–10.
+- [x] FIC-25 — Estimativa B de inovação/originalidade 0–10. Rascunho no HTML original via Live Server em 12/10: valor 10 solicitado; é estimativa, não nota oficial. Reconferir na ficha final.
+- [x] FIC-26 — Estimativa B de viabilidade técnica/execução 0–10. Rascunho em 12/10: valor 10 solicitado, sem declarar execução completa. Reconferir na ficha final.
+- [x] FIC-27 — Estimativa B de jogabilidade 0–10. Rascunho em 12/10: valor 10 solicitado, sem substituir playtest humano. Reconferir na ficha final.
+- [x] FIC-28 — Estimativa B de apresentação 0–10. Rascunho em 12/10: valor 10 solicitado, sem declarar banca realizada. Reconferir na ficha final.
 - [ ] FIC-29 — Inserir e conferir todos os dados/links no HTML original; o script só exige comprimento mínimo para links de evidência, não valida disponibilidade.
 - [ ] FIC-30 — Declaração 1 verdadeira: quatro registrados em SQUAD.md, sem alterações desde 02/10. Não preencher retroativamente uma história inexistente.
 - [ ] FIC-31 — Declaração 2 verdadeira: todos os ativos de terceiros e usos IA registrados em THIRD_PARTY/AI-USAGE.

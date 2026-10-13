@@ -51,3 +51,11 @@ Codex auxiliou a releitura integral do HTML e do JavaScript da ficha, a inspeç�
 ## Checklist completo — 12/10/2026
 
 Solicitante pediu um Markdown com todos os itens do HTML e checks atualizados conforme conclusão. Codex desdobrou as dez seções, abas, kit/TODO, cronograma, rubrica, banca e campos/validações JavaScript em docs/checklist-avaliacao.md, com complemento do modelo GDD claramente identificado. Foram separados mínimos, faixa avançada, condicionais e reconferências finais. Marcação inicial usa arquivos e execuções anteriores verificáveis; itens sem execução ou participação humana continuam abertos. Identificadores e links locais conferidos, sem alteração de mecânica ou criação de evidências. Revisão humana deste documento antes do merge permanece pendente; atualização futura exige evidência para cada check.
+
+## Plano distribuído e rascunho da ficha — 12/10/2026
+
+Solicitante informou Lucca Castilho, Davi Paes, Miguel Oliveira e Lucas Souza e pediu divisão igual de pelo menos vinte passos, com prompts profissionais e commit pela própria conta GitHub. Codex preparou quarenta passos, dez por pasta de integrante, índice/dependências, estrutura de repositório e mapa de todos os 313 checks inicialmente abertos. Papéis/revisores são propostas; nomes são os fornecidos. Esses documentos de planejamento feitos com a conta do solicitante não comprovam autoria/contribuição dos outros três.
+
+Cada prompt inclui escopo, arquivos, contexto HTML/checklist, checks literais, comandos/validações, dependências/aceites G0–G8, integráveis, rubrica, eliminatórios, dados humanos, revisão cruzada e instrução obrigatória de commit com a própria conta real. Não foram implementadas as funções futuras da esteira nesta etapa. Mapa conferido sem omissão/duplicação, quantidade igual e dependências acíclicas. Revisão humana antes do merge permanece pendente.
+
+HTML original foi aberto em Live Server local, preservado. Dados disponíveis e autoavaliações 10 solicitadas foram preenchidos como rascunho; nenhum INT foi declarado entregue e nenhuma declaração aceita. Faltam dados/URLs/execuções verdadeiros para liberar TXT. Valores estimados não são nota oficial nem fator individual comprovado. Estado/captura real ficaram no contexto local; nenhum consentimento, RA ou revisão foi inventado.
