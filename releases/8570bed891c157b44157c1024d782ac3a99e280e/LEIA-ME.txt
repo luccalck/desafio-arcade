@@ -1,0 +1,13 @@
+ROTA DO CÓDIGO — v0.6.0
+Commit: 8570bed891c157b44157c1024d782ac3a99e280e
+
+EXECUÇÃO OFFLINE
+1. Descompacte build.zip em uma pasta local.
+2. Abra index.html no navegador (Chrome, Edge ou Firefox).
+3. Todo conteúdo, estilo e código necessário está nesta pasta. Não é preciso instalar engine, Node ou baixar arquivos.
+
+COMO JOGAR
+Escolha Começar oficina ou Continuar. Corrija as funções Python no editor; Testar regra verifica entradas diferentes. Jogar aplica sua função ao minijogo. Use setas esquerda/direita, A/D ou botões de toque para pilotar a nave; o botão II pausa/retoma, e Jogar reinicia. Ajuda e situações de teste aparecem quando solicitadas. Cinco missões ensinam controles, movimento, colisões, pontuação e repetição. No final, valide as cinco funções e alcance 100 pontos com três vidas; depois use Baixar meu jogo para obter HTML offline com o mesmo interpretador educativo, e Minhas funções .py para salvar as regras Python. Editar o arquivo .py não recompila automaticamente o HTML. O editor aceita um subconjunto de Python, com def/indentação/dicionário/if/range/append e limites de laço e execução; não usa APIs externas. Cinco missões concedem 100 XP cada e o final 200 XP, uma vez (700 total). Preferências e código/progresso ficam no navegador quando permitido, senão na sessão. Reset altera somente a nova oficina; campanhas anteriores são preservadas.
+
+O jogo não coleta dados pessoais e não usa serviços remotos na partida.
+Repositório: https://github.com/luccalck/desafio-arcade
