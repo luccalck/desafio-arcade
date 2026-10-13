@@ -1,6 +1,6 @@
 # Rota do Código — Game Design Document
 
-Versão do software: **{{VERSION}}**. Revisão do documento: **008 — 13/10/2026**. Mantemos a oficina de jogos aprovada, com desafios Python e preview web. Este documento descreve a candidata; sua data de revisão não representa data de submissão ou release final.
+Versão do software: **{{VERSION}}**. Revisão do documento: **009 — 13/10/2026**. Mantemos a oficina de jogos aprovada, com desafios Python e preview web. Este documento descreve a candidata; sua data de revisão não representa data de submissão ou release final.
 
 | Identificação | Situação verdadeira |
 |---|---|
@@ -132,13 +132,53 @@ Setas ou A/D pilotam fora do editor; toque usa botões de direção. Textarea na
 
 Em 390×844, arena/editor empilhados sem overflow horizontal nos testes; código longo rola dentro do campo. Jogar revela arena no celular. Alvos principais ≥44px, toque 48px. Testes de pausa/erros/menus/foco/campanha/toque/persistência/offline não certificam todos os aparelhos ou acessibilidade completa. P05: playtest por colegas de outra turma e revisão de clareza ainda pendentes.
 
+### Referências geradas no Stitch — 13/10/2026
+
+Produzimos menu/HUD/fim para desktop e celular no Stitch, com prompt da oficina aprovada. São referências conceituais e **não capturas de execução**. A conferência encontrou valores/assinaturas/fontes divergentes; não incorporamos seu HTML ao jogo. Contratos das seções4/6 e capturas reais prevalecem. [Origem, prompt, export e divergências](evidencias/stitch-ux.md).
+
+Referência Stitch — menu desktop. Dados ilustrativos; divergências registradas na conferênciaUX.
+
+![Referência Stitch — menu desktop](images/stitch-009/menu_principal_desktop/screen.png)
+
+Referência Stitch — oficina desktop. Dados ilustrativos; divergências registradas na conferênciaUX.
+
+![Referência Stitch — oficina desktop](images/stitch-009/oficina_hud_desktop/screen.png)
+
+Referência Stitch — encerramento desktop. Dados ilustrativos; divergências registradas na conferênciaUX.
+
+![Referência Stitch — encerramento desktop](images/stitch-009/encerramento_do_projeto_desktop/screen.png)
+
+Referência Stitch — menu celular. Dados ilustrativos; divergências registradas na conferênciaUX.
+
+![Referência Stitch — menu celular](images/stitch-009/menu_principal_m_vel/screen.png)
+
+Referência Stitch — oficina celular. Dados ilustrativos; divergências registradas na conferênciaUX.
+
+![Referência Stitch — oficina celular](images/stitch-009/oficina_hud_m_vel/screen.png)
+
+Referência Stitch — encerramento celular. Dados ilustrativos; divergências registradas na conferênciaUX.
+
+![Referência Stitch — encerramento celular](images/stitch-009/encerramento_do_projeto_m_vel/screen.png)
+
+### Reconferência real da candidata — 13/10/2026
+
+![Menu executado localmente — fonte b94469e](images/menu-real-009.png)
+
+![HUD executado localmente — fonte b94469e](images/hud-real-009.png)
+
+![Encerramento executado localmente — fonte b94469e](images/fim-real-009.png)
+
+![Vitória real no celular — fonte b94469e](images/fim-mobile-real-009.png)
+
+Capturas Chrome/Playwright, build0.6.0;17cenários passaram, incluindo teclado/editor, campanha/toque e exportação offline. Fonte/data/metadados em stitch-ux.md. Não representam produção ou playtest humano. Revisão de Desenvolvimento e compreensão dos quatro continuam pendentes; G1 não foi aceito pela IA.
+
 ## 9. Áudio e música
 
 Ausência de trilha/efeitos/controle de volume. Feedback visual/textual. Áudio futuro exige origem/licença, controle e alternativa textual por PR.
 
 ## 10. Arte e referências visuais
 
-Mascote/nave/objetos/ícones/mapas/wireframes/concept SVG/CSS originais, criados com assistência do Codex. PNGs são capturas reais. Fontes Trebuchet MS/Consolas e alternativas locais, sem distribuição de arquivos de fonte ou CDN. Sem ativos copiados de jogos/modelo Word.
+Mascote/nave/objetos/ícones/mapas/wireframes/concept SVG/CSS originais, criados com assistência do Codex. PNGs anteriores e as imagens real-009 são capturas reais; PNGs em stitch-009 são referências de IA identificadas, sem integração ao site. Fontes Trebuchet MS/Consolas e alternativas locais, sem distribuição de arquivos de fonte ou CDN. Sem ativos copiados de jogos/modelo Word.
 
 Referência de interação: relação direta entre código e resultado de um pequeno jogo. Não reproduz outro título nem declara eficácia educativa por referência. Versões anteriores/fontes consultadas permanecem no histórico; não descrevem mecânica ativa.
 
@@ -149,12 +189,13 @@ Referências técnicas: [esbuild](https://esbuild.github.io/api/#format), [Vites
 | Ferramenta / componente | Uso efetivo | Licença / condição |
 |---|---|---|
 | Codex | Requisitos/concepção/código/conteúdo/testes/arte vetorial/documentação | AI-USAGE; revisão por outro humano antes do merge pendente |
+| Google Stitch | Referências menu/HUD/fim desktop/celular; export real sem integração ao jogo | Termos Google/IA; revisão humana pendente; THIRD_PARTY |
 | TypeScript / esbuild | Tipos/empacotamento | Apache-2.0 / MIT |
 | Ajv / Vitest / Playwright | Schema/regras/navegador | MIT / MIT / Apache-2.0 |
 | Markdown-it / fflate | GDD/ZIP | MIT / MIT |
 | ESLint / typescript-eslint / tsx | Lint/validação | MIT conforme inventário |
 
-Transitividade/versões no THIRD_PARTY/lockfile/SBOM. Nenhuma dependência nova. Sem Opal, AI Studio, Stitch, raster ou IA em runtime; golden eval dessas ferramentas não se aplica ao uso realizado. Comparação com CPython usa somente fixtures editoriais confiáveis em processo local/CI com timeout. Node VM testa pontes de exportação confiáveis que chamam a mesma AST. Não há CPython, execução remota ou exec/eval da fonte do jogador no navegador.
+Transitividade/versões no THIRD_PARTY/lockfile/SBOM. Nenhuma dependência nova. Sem Opal, AI Studio ou IA em runtime. Stitch foi usado no009 para referências visuais; não gerou conteúdo avaliado em runtime. Golden eval específica de Opal/AI Studio não se aplica ao uso realizado. Comparação com CPython usa somente fixtures editoriais confiáveis em processo local/CI com timeout. Node VM testa pontes de exportação confiáveis que chamam a mesma AST. Não há CPython, execução remota ou exec/eval da fonte do jogador no navegador.
 
 [Conferência técnica de direitos008](evidencias/direitos.md) e [inventário de ativos](evidencias/inventario-ativos-008.json) documentam origem/licenças e revisão coletiva pendente. Fontes incorporadas no PDF devem ser reconferidas por build; MIT do projeto não relicencia terceiros.
 

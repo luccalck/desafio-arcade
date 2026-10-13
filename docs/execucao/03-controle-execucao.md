@@ -12,7 +12,7 @@ O estado de cada passo consta abaixo. Prompts entregues não significam função
 | 006 | Lucca Castilho | Roteiro preparado; preview validado | 1e0b4b5; PR#8 draft sobre005 | CI38348580349verde; revisão geral pendente | I04-07 revalidado; regressao-hml.md;17locais/5públicos | Execução formal011 e smoke014/019; G3 não aceito |
 | 007 | Lucca Castilho | CI/contratos preparados; clone validado | a2016fd; PR#9draft sobre006 | CI38428808065verde; revisão geral pendente | KIT-09; ci-formal.md;184testes+17E2E/pacote83arquivos | RecebimentoI03-24, scripts/deploy011019, KIT-08 futuro; G3/G4 não aceitos |
 | 008 | Lucca Castilho | Inventário/auditoria preparados; aceites humanos separados | 7ffb58d; PR#10draft sobre007 | CIpush38434944934/CIpr38435010458verdes; reviewAPI422/acesso pendente | I05-10/12/13 revalidados; direitos.md/158componentes/26ativos |16checksassignedhumanos/contínuos/final; sem aceites coletivos |
-| 009 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
+| 009 | Lucca Castilho | Escopo técnico documentado/validado; aceites humanos separados | bca6a71; PR#11draft sobre008 | CIpush38442245309/PR38442289110 verdes; revisão pendente | I02-15; stitch-ux.md,6telas/17E2E locais | G1/quatro, Desenvolvimento/direitos/playtest |
 | 010 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
 | 011 | Davi Paes | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
 | 012 | Davi Paes | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |

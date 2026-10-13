@@ -1,0 +1,66 @@
+{
+  "date": "2026-10-13",
+  "project": "https://stitch.withgoogle.com/projects/9671895915842664821?pli=1",
+  "modelLabel": "Balanced (modelo interno não identificado)",
+  "archiveSha256": "352cb949976e74bff9e5a3c39c92caed71976c31b8fd2639427b784aa723e07d",
+  "archiveBytes": 1016086,
+  "files": [
+    {
+      "file": "docs/images/stitch-009/encerramento_do_projeto_desktop/screen.png",
+      "sha256": "b96d457ba72c876559623d71d8e7afd51e364822ae73b11f9ccdde9f6dcb8172",
+      "bytes": 214732,
+      "width": 1280,
+      "height": 1112,
+      "origin": "Google Stitch, projeto 9671895915842664821; export PNG original, sem retoque"
+    },
+    {
+      "file": "docs/images/stitch-009/encerramento_do_projeto_m_vel/screen.png",
+      "sha256": "addc3b6c7752028976be39c7ccd688605bf06dcf0eabe815babc09b32cc8f54e",
+      "bytes": 91010,
+      "width": 390,
+      "height": 971,
+      "origin": "Google Stitch, projeto 9671895915842664821; export PNG original, sem retoque"
+    },
+    {
+      "file": "docs/images/stitch-009/mascote_rob_geom_trico/screen.png",
+      "sha256": "67a6ea6d31e4efd3674b0d976008318404afa959add33d43a9d99cba83d3deec",
+      "bytes": 14863,
+      "width": 120,
+      "height": 128,
+      "origin": "Google Stitch, projeto 9671895915842664821; export PNG original, sem retoque"
+    },
+    {
+      "file": "docs/images/stitch-009/menu_principal_desktop/screen.png",
+      "sha256": "c088f21d1b30be73237ceca93097c81d7e6ec81f02b51d49fe23e0d1c9e6194c",
+      "bytes": 314068,
+      "width": 1280,
+      "height": 749,
+      "origin": "Google Stitch, projeto 9671895915842664821; export PNG original, sem retoque"
+    },
+    {
+      "file": "docs/images/stitch-009/menu_principal_m_vel/screen.png",
+      "sha256": "e9d62461af63cec2c163a0a8329f344283ffd13012af1b72e172b77e3f3a36ac",
+      "bytes": 70023,
+      "width": 390,
+      "height": 884,
+      "origin": "Google Stitch, projeto 9671895915842664821; export PNG original, sem retoque"
+    },
+    {
+      "file": "docs/images/stitch-009/oficina_hud_desktop/screen.png",
+      "sha256": "8e35b960b056881a2f44d839eb1aa959efed20d577b76125e92d86b70fb10ace",
+      "bytes": 182168,
+      "width": 1280,
+      "height": 952,
+      "origin": "Google Stitch, projeto 9671895915842664821; export PNG original, sem retoque"
+    },
+    {
+      "file": "docs/images/stitch-009/oficina_hud_m_vel/screen.png",
+      "sha256": "24b251724f124c824fdd845b36909b0456acf267a4a712aae9ca459fc56cfada",
+      "bytes": 133642,
+      "width": 390,
+      "height": 1326,
+      "origin": "Google Stitch, projeto 9671895915842664821; export PNG original, sem retoque"
+    }
+  ],
+  "runtimeImported": false
+}

@@ -1,0 +1,62 @@
+<testsuites id="" name="" tests="17" failures="0" skipped="0" errors="0" time="56.068892">
+<testsuite name="smoke.spec.mjs" timestamp="2026-10-13T17:38:05.230Z" hostname="" tests="4" failures="0" skipped="0" time="16.696" errors="0">
+<testcase name="regressão HML preparada: primeira missão, campanha e encerramento pela UI" classname="smoke.spec.mjs" time="13.232">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\.contexto\passo-009\jogo-results\smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI\attachments\menu-70168bb86d3f62d61ddaa6ae4a9859450732663f.png]]
+
+[[ATTACHMENT|..\.contexto\passo-009\jogo-results\smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI\attachments\menu-metadados-07cc7c9cc7f99ae61dc1828a0dd4662b9a9342b7.json]]
+
+[[ATTACHMENT|..\.contexto\passo-009\jogo-results\smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI\attachments\primeira-missao-concluida-290d9003217d34494349d81ef9a090aaac23fbad.png]]
+
+[[ATTACHMENT|..\.contexto\passo-009\jogo-results\smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI\attachments\primeira-missao-concluida-metadados-99f3c31158cf2647442d9de982040752998def43.json]]
+
+[[ATTACHMENT|..\.contexto\passo-009\jogo-results\smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI\attachments\encerramento-real-f126903516b075e229d1b8a57fe59338a95c4810.png]]
+
+[[ATTACHMENT|..\.contexto\passo-009\jogo-results\smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI\attachments\encerramento-real-metadados-d4179ee2e9dad28b87af835a8c154d591eae2e01.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="regressão HML preparada: reinício confirmado e bloqueio de missões" classname="smoke.spec.mjs" time="1.515">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\.contexto\passo-009\jogo-results\smoke-regressão-HML-prepar-cd98a-rmado-e-bloqueio-de-missões\attachments\reinicio-confirmado-6fcb1f0f5048eed32b0f57029e334f18f7fd3802.png]]
+
+[[ATTACHMENT|..\.contexto\passo-009\jogo-results\smoke-regressão-HML-prepar-cd98a-rmado-e-bloqueio-de-missões\attachments\reinicio-confirmado-metadados-42cfc6e675c987e4b226242b9bd333ae82cd716c.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="smoke web: versão, editor e primeira função corrigida" classname="smoke.spec.mjs" time="0.67">
+</testcase>
+<testcase name="primeira missão: problema real, Python e correção" classname="smoke.spec.mjs" time="1.279">
+</testcase>
+</testsuite>
+<testsuite name="workshop.spec.mjs" timestamp="2026-10-13T17:38:05.230Z" hostname="" tests="13" failures="0" skipped="0" time="37.243" errors="0">
+<testcase name="syntax: diagnóstico de linha sem executar APIs externas" classname="workshop.spec.mjs" time="0.776">
+</testcase>
+<testcase name="edição invalida teste e não permite retomar regra antiga" classname="workshop.spec.mjs" time="0.894">
+</testcase>
+<testcase name="movimento aplica operações e muda comportamento real" classname="workshop.spec.mjs" time="1.313">
+</testcase>
+<testcase name="pausa conserva tick e nave, retoma sem recriar partida" classname="workshop.spec.mjs" time="1.195">
+</testcase>
+<testcase name="ajuda opcional, foco após restaurar código e preferências" classname="workshop.spec.mjs" time="1.082">
+</testcase>
+<testcase name="código e vitórias persistem; replay não duplica XP; reset próprio" classname="workshop.spec.mjs" time="1.04">
+</testcase>
+<testcase name="campanha final: pilotagem real, 700XP e HTML exportado offline" classname="workshop.spec.mjs" time="13.746">
+</testcase>
+<testcase name="mobile390x844: campanha por toque e vitória real sem overflow" classname="workshop.spec.mjs" time="13.589">
+</testcase>
+<testcase name="arquivo do projeto principal offline: editar e testar sem rede" classname="workshop.spec.mjs" time="0.818">
+</testcase>
+<testcase name="storage indisponível mantém fontes e campanha na sessão" classname="workshop.spec.mjs" time="0.797">
+</testcase>
+<testcase name="campanha anterior não desbloqueia oficina" classname="workshop.spec.mjs" time="0.63">
+</testcase>
+<testcase name="editor Python: Tab e Enter indentam; Escape permite sair" classname="workshop.spec.mjs" time="0.741">
+</testcase>
+<testcase name="JavaScript antigo preservado sem desbloquear campanha Python" classname="workshop.spec.mjs" time="0.622">
+</testcase>
+</testsuite>
+</testsuites>
