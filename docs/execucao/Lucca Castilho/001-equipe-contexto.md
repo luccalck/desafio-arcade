@@ -1,14 +1,14 @@
 # Passo 001 — Registrar equipe, contexto e marcos reais
 
-**Execução em12/10/2026:** preparação/identificação parcial em andamento. Squad Aura67 e contas/papéis/revisão informados; RAs adiados pelo responsável, acesso e revisão humana ainda pendentes. [Evidências e validações](../../evidencias/equipe.md). G0 não está aceito; os próximos passos não foram executados.
+**Execução em12/10/2026:** preparação executada; identificação parcial. Squad Aura67 e contas/papéis/revisão informados; RAs adiados pelo responsável, acesso e revisão humana ainda pendentes. [Evidências e validações](../../evidencias/equipe.md). G0 não está aceito; os próximos passos não foram executados.
 
-**Responsável:** Lucca Castilho · bloco 1. **Papel oficial proposto:** Produto e Game Design. **Revisor proposto:** Davi Paes (conta real a confirmar).
+**Responsável:** Lucca Castilho · bloco 1. **Papel de coordenação confirmado:** Produto e Game Design. **Revisor previsto:** Davi Paes (DaviSouza78; acesso/revisão pendentes).
 **INT:** INT-01/02/09. **Roteiros preservados:** C01/C02/P01. **Checkpoint:** G0.
 **Dependências de execução:** Inspeção do contexto e autorização do usuário; não depende de passo anterior.. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
 - [ ] Trabalho implementado/documentado com autoria real.
 - [x] Validações de documentos, identidade/contas e dados disponíveis executadas; evidências arquivadas. Identificação completa/revisão seguem pendentes.
-- [ ] Commit/push pela identidade GitHub do responsável.
+- [x] Commit/push pela identidade GitHub do responsável: 72d2b6f, luccalck; registro nas evidências.
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
 

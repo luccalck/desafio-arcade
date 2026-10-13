@@ -54,3 +54,13 @@ Fechamentos específicos: OBJ-08 (leitura do regulamento), SQ-01 (nome), SQ-03 (
 Branch curta: `feature/passo-001-equipe-contexto`, baseada na candidata71933bf para preservar o código existente. PR do passo sobre `feature/primeiro-ciclo` isola estas alterações enquanto o PR principal#2 ainda aguarda revisão para main. Esse PR intermediário não equivale a integração na main nem aprovação final. CI por push da branch executa o workflow existente; publicação do preview só ocorre na branch candidata configurada.
 
 Não foram executados002/003, convites, promoção, release ou aceite próprio. Revisão prevista por DaviSouza78 depende de acesso confirmado e ação humana. G0 continua incompleto; preparação independente posterior não libera automaticamente seus aceites.
+
+## Publicação e validação desta preparação
+
+Commit `72d2b6f8a743a6d52213948e9cda546964e61377`, de autoria Git confirmada de luccalck, publicado na branch curta. [PR#3](https://github.com/luccalck/desafio-arcade/pull/3) aberto como rascunho sobre a candidata, sem merge e sem revisão humana registrada.
+
+[CI38336896510](https://github.com/luccalck/desafio-arcade/actions/runs/38336896510), para esse SHA: concluída com sucesso; qualidade, segurança, E2E, build e gate ci verdes. Publicação de preview ignorada conforme condição existente de branch. Não representa homologação ou produção deste passo.
+
+Validações locais: `git diff --check` sem erros; verificador de links Markdown: 81 arquivos, zero caminhos locais ausentes; verificador do plano: 40 passos, dez consecutivos por integrante, 313 checks do mapa cobertos uma vez, dependências anteriores sem ciclo. Checklist atual: 108 marcados e 304 abertos. Hook Gitleaks sem vazamentos no commit. Originais HTML/DOCX conferidos por SHA-256 e preservados.
+
+Captura real do rascunho da ficha arquivada apenas no contexto local: `.contexto/passo-001/ficha-squad.png`. A captura não constitui ficha final ou envio.
