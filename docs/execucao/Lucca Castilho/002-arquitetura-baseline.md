@@ -10,7 +10,7 @@
 - [x] Validações locais executadas e evidências registradas; ver baseline-tecnico.md.
 - [x] Commit/push pela identidade própria luccalck; b79828c, PR#4 em rascunho.
 - [ ] PR revisado por outro autor e CI verde.
-- [ ] Checks aplicáveis atualizados, sem declarações fictícias.
+- [x] Checks técnicos revalidados e registrados; nenhum novo check humano ou gate fechado.
 
 ## Regra da execução por blocos
 
