@@ -1,0 +1,3 @@
+
+> rota-do-codigo@0.6.0 lint
+> eslint . && tsc --noEmit

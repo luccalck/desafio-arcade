@@ -1,0 +1,61 @@
+{
+  "source": "c56df79d58eda2a8ab6a518b7011ff6eaa21e8da",
+  "cleanBefore": true,
+  "cleanAfter": true,
+  "zip": {
+    "bytes": 28581,
+    "sha256": "c2aeee6ddbc6a9ffb18a0ebebbee9d1671732e6e9279a91cf492fc689ad348f4",
+    "version": {
+      "version": "0.6.0",
+      "sha": "c56df79d58eda2a8ab6a518b7011ff6eaa21e8da",
+      "build": "2026-10-13T18:05:02.107Z"
+    },
+    "entries": [
+      {
+        "file": "index.html",
+        "sha256": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282",
+        "bytes": 567
+      },
+      {
+        "file": "style.css",
+        "sha256": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da",
+        "bytes": 9033
+      },
+      {
+        "file": "game.js",
+        "sha256": "bbcf59d6d038717675a3494ec38e0fcaa8bf6c9108544594367d5cd15ed606d8",
+        "bytes": 53955
+      },
+      {
+        "file": "version.json",
+        "sha256": "2e345f15456a694279b5fd17a551e6721efdb02fc89b3bd7545767ccf6d2c427",
+        "bytes": 117
+      },
+      {
+        "file": "LEIA-ME.txt",
+        "sha256": "8d42c317082085cfe53fbff06f8f47ae0f581805fd40bebc910eec27a68c89b8",
+        "bytes": 1552
+      },
+      {
+        "file": "LICENSE.txt",
+        "sha256": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb",
+        "bytes": 1088
+      },
+      {
+        "file": "THIRD_PARTY.txt",
+        "sha256": "8660b447aa26d5d5d3320682a8bc4009389cd955ab227b95934bcb20fabf6b33",
+        "bytes": 7732
+      }
+    ]
+  },
+  "offlineScenarioZip": {
+    "bytes": 28582,
+    "sha256": "585c875dd742620296f1f8f0ecea890c37131e65de48fa1a036f6cf67f7d8a87",
+    "version": {
+      "version": "0.6.0",
+      "sha": "c56df79d58eda2a8ab6a518b7011ff6eaa21e8da",
+      "build": "2026-10-13T18:05:06.265Z"
+    }
+  },
+  "note": "O comando package precedeu a comparação reprodutível; o cenário empacotou a build final dessa comparação. Datas e checksums dos dois ZIPs locais são distintos; nenhum foi promovido entre HML e PRD."
+}

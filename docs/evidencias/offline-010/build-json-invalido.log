@@ -1,0 +1,28 @@
+
+> rota-do-codigo@0.6.0 build
+> npm run content:check && node scripts/build.mjs
+
+
+> rota-do-codigo@0.6.0 content:check
+> tsx scripts/check-content.ts
+
+node:internal/modules/run_main:107
+    triggerUncaughtException(
+    ^
+
+Error: Transform failed with 1 error:
+C:\dev\studies\senai\semester-2\devops\desafio-arcade\jogo-arcade\.contexto\passo-010\clone-validacao\src\content\missions.json:1:2: ERROR: Expected string in JSON but found "JSON"
+    at failureErrorWithLog (C:\dev\studies\senai\semester-2\devops\desafio-arcade\jogo-arcade\.contexto\passo-010\clone-validacao\node_modules\esbuild\lib\main.js:1752:15)
+    at C:\dev\studies\senai\semester-2\devops\desafio-arcade\jogo-arcade\.contexto\passo-010\clone-validacao\node_modules\esbuild\lib\main.js:1019:50
+    at responseCallbacks.<computed> (C:\dev\studies\senai\semester-2\devops\desafio-arcade\jogo-arcade\.contexto\passo-010\clone-validacao\node_modules\esbuild\lib\main.js:886:9)
+    at handleIncomingPacket (C:\dev\studies\senai\semester-2\devops\desafio-arcade\jogo-arcade\.contexto\passo-010\clone-validacao\node_modules\esbuild\lib\main.js:941:12)
+    at Socket.readFromStdout (C:\dev\studies\senai\semester-2\devops\desafio-arcade\jogo-arcade\.contexto\passo-010\clone-validacao\node_modules\esbuild\lib\main.js:864:7)
+    at Socket.emit (node:events:509:28)
+    at addChunk (node:internal/streams/readable:563:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:514:3)
+    at Readable.push (node:internal/streams/readable:394:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23) {
+  name: 'TransformError'
+}
+
+Node.js v24.15.0

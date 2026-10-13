@@ -1,0 +1,44 @@
+
+> rota-do-codigo@0.6.0 test:ci
+> vitest run --coverage
+
+
+ RUN  v5.0.3 C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade/.contexto/passo-010/clone-validacao
+      Coverage enabled with v8
+
+ ✓ tests/unit/preferences.test.ts (9 tests) 7ms
+ ✓ tests/unit/progress.test.ts (19 tests) 9ms
+ ✓ tests/unit/save.test.ts (12 tests) 9ms
+ ✓ tests/integration/pages.test.mjs (6 tests) 36ms
+ ✓ tests/unit/arcade.test.ts (22 tests) 28ms
+ ✓ tests/integration/ci-bundle.test.mjs (6 tests) 48ms
+ ✓ tests/unit/code.test.ts (74 tests) 48ms
+ ✓ tests/integration/export.test.ts (5 tests) 22ms
+ ✓ tests/integration/content.test.ts (15 tests) 23ms
+ ✓ tests/unit/code-native.test.mjs (16 tests) 1634ms
+
+ Test Files  10 passed (10)
+      Tests  184 passed (184)
+   Start at  15:04:58
+   Duration  2.08s (tests 53%, transform 24%, import 13%, worker 9%)
+
+JUNIT report written to C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade/.contexto/passo-010/clone-validacao/reports/junit.xml
+ % Coverage report from v8
+------------------|---------|----------|---------|---------|-------------------
+File              | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s
+------------------|---------|----------|---------|---------|-------------------
+All files         |    97.9 |    95.23 |     100 |     100 |
+ arcade-engine.ts |     100 |    93.47 |     100 |     100 | 15,27-32
+ code-parser.ts   |   97.83 |    95.97 |     100 |     100 | 31,43,47,58,63
+ code-print.ts    |   66.66 |       50 |     100 |     100 | 4
+ code-runtime.ts  |   97.43 |    95.87 |     100 |     100 | 5,15-16,23
+ preferences.ts   |     100 |    91.66 |     100 |     100 | 8
+ progress.ts      |   96.15 |    93.75 |     100 |     100 | 20
+------------------|---------|----------|---------|---------|-------------------
+
+=============================== Coverage summary ===============================
+Statements   : 97.9% ( 468/478 )
+Branches     : 95.23% ( 320/336 )
+Functions    : 100% ( 54/54 )
+Lines        : 100% ( 128/128 )
+================================================================================

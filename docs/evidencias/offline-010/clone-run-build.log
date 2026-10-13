@@ -1,0 +1,10 @@
+
+> rota-do-codigo@0.6.0 build
+> npm run content:check && node scripts/build.mjs
+
+
+> rota-do-codigo@0.6.0 content:check
+> tsx scripts/check-content.ts
+
+Conteúdo válido: 6 missões; cinco referências passam e starters têm falhas observáveis.
+Build estática v0.6.0, SHA c56df79 → dist/
