@@ -117,7 +117,7 @@ Escopo técnico preparado em13/10/2026: seis telas reaisStitch exportadas/manife
 - [ ] ReferênciasStitch têm divergências de XP/contratos/fontes/CDN; não integrar ao jogo. Corrigir/revisar se decidir adotar visual futuramente; não é comportamento faltante do jogo existente.
 - [ ] Playtest e clareza/acessibilidade humana no021; capturas/testes automatizados não o substituem.
 
-PDF/CI/commit/PR: resultados efetivos no registroUX/controle. RAs seguem adiados. Nenhum010 executado nem produção promovida.
+PDF18p/pdfinfo e páginas alteradas inspecionados; bca6a71/PR#11draft, CIpush38442245309/PR38442289110verdes. Resultados completos no registroUX/controle. RAs seguem adiados. Nenhum010 executado nem produção promovida.
 
 ## Passo 010
 

@@ -113,4 +113,4 @@ Originais preservados. Repositório/arquivo principal único; .contexto e acompa
 
 ## Preparação009 — 13/10/2026
 
-[Stitch e UX](../evidencias/stitch-ux.md): seis referências reais exportadas, falhas documentadas sem integração ao runtime e17E2E locais verdes. I02-15 comprovado; G1/aceites humanos abertos.
+[Stitch e UX](../evidencias/stitch-ux.md): seis referências reais exportadas, falhas documentadas sem integração ao runtime e17E2E locais verdes. I02-15 comprovado;115marcados/297abertos. PR#11/bca6a71 com CIpush38442245309/PR38442289110verdes. G1/aceites humanos abertos.

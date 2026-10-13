@@ -6,7 +6,7 @@
 
 - [x] Trabalho implementado/documentado com autoria real.
 - [x] Validações executadas e evidências arquivadas.
-- [ ] Commit/push pela identidade GitHub do responsável.
+- [x] Commit/push pela identidade GitHub do responsável.
 - [ ] PR revisado por outro autor e CI verde.
 - [x] Checks aplicáveis atualizados, sem declarações fictícias.
 
@@ -112,3 +112,5 @@ Ao terminar, informe objetivamente: passo/INT/checks realmente fechados, arquivo
 ## Registro009 — 13/10/2026
 
 [Stitch e UX](../../evidencias/stitch-ux.md):6telas reais exportadas,17E2E locais/PDF validado. I02-15 comprovado; G1/revisão de outro autor continuam pendentes. Referências geradas com divergências não integradas ao runtime.
+
+Publicação:bca6a71/PR#11draft, CIpush38442245309/PR38442289110verdes. Checkbox conjunto PRrevisado/CI permanece aberto porque não houve revisão de outro autor.
