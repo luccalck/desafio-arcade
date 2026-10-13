@@ -81,3 +81,11 @@ Validações reais: quarenta prompts/dez por intervalo/pessoa, mapa dos313checks
 Codex auxiliou leitura/confronto do HTML, modelo DOCX, requisitos/roteiros/GDD e regulamento oficial completo, conferência real Git/GitHub, registro dos dados que Lucca forneceu, planejamento de contribuição e atualização do rascunho da ficha. Squad Aura67, papéis e revisão cruzada foram confirmados pelo responsável; todos atuam nas áreas. Contas verificadas por API; RAs adiados por solicitação humana. Não houve convite/acesso, revisão de colega, aceite de concurso ou contribuição simulada.
 
 Foram atualizados SQUAD, design/backlog, evidências/equipe, checklist e controle do001. Cinco checks específicos têm fonte e prova; G0 e passo completo seguem pendentes de identificação/ações humanas. Branch própria preserva a candidata existente; PR intermediário sobre a branch candidata isola o001 enquanto o principal aguarda revisão para main. Ferramentas de extração/estado/captura ficaram no contexto local; originais preservados. Revisão humana de DaviSouza78 antes do merge ainda necessária.
+
+## Passo002 — arquitetura e baseline — 12/10/2026
+
+| Ferramenta | Integrante | Finalidade / prompt resumido | Resultado registrado | Revisão humana | Rastreabilidade |
+|---|---|---|---|---|---|
+| Codex | Lucca Castilho / luccalck | Executar somente002; inspecionar oficina existente, contratos e pirâmide, executar checks e registrar fatos/pendências sem inventar autoria/bug | Arquitetura em docs/evidencias/baseline-tecnico.md;152unidades/26integrações/15E2E; cobertura97,90%; JSON inválido bloqueia build em ensaio isolado; sem alteração funcional | Revisão técnica de outro integrante e contratos de Desenvolvimento/Plataforma pendentes antes do merge | Branch feature/passo-002-arquitetura-baseline; commit/PR conferidos no controle da execução |
+
+Executamos o código existente e registramos seus limites. A primeira tentativa local de E2E falhou por cmd.exe EACCES; servidor iniciado por Node e opção existente EXTERNAL_SERVER permitiram a execução completa. Não atribuímos contribuições a colegas nem registramos aprovação deles.

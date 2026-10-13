@@ -1,11 +1,13 @@
 # Passo 002 — Verificar arquitetura e baseline de qualidade
 
-**Responsável:** Lucca Castilho · bloco 1. **Papel oficial proposto:** Produto e Game Design. **Revisor proposto:** Davi Paes (conta real a confirmar).
+**Execução em12/10/2026:** baseline técnico documentado/validado; aceites humanos pendentes. [Evidências](../../evidencias/baseline-tecnico.md).
+
+**Responsável:** Lucca Castilho · bloco 1. **Papel oficial proposto:** Produto e Game Design. **Revisor proposto:** Davi Paes (DaviSouza78; acesso/revisão pendentes).
 **INT:** INT-04/06/03. **Roteiros preservados:** D01/D02/D04. **Checkpoint:** G1 preparação.
 **Dependências de execução:** 001. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
-- [ ] Trabalho implementado/documentado com autoria real.
-- [ ] Validações executadas e evidências arquivadas.
+- [x] Arquitetura e baseline documentados pela própria conta; aceites humanos separados.
+- [x] Validações locais executadas e evidências registradas; ver baseline-tecnico.md.
 - [ ] Commit/push pela identidade GitHub do responsável.
 - [ ] PR revisado por outro autor e CI verde.
 - [ ] Checks aplicáveis atualizados, sem declarações fictícias.
@@ -91,8 +93,7 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: verificar arquitetura e baseline de qualidade
-"
+git commit -m "docs: verificar arquitetura e baseline de qualidade"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 002: Verificar arquitetura e baseline de qualidade" --body-file .contexto/pr-passo-002.md
 ```
