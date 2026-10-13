@@ -66,7 +66,7 @@ GDD e PDF revisados/validados em13/10/2026; [evidências](../evidencias/gdd-revi
 - [x] Highconcept804caracteres; PDF13pA4/pdfinfo e inspeção integral; SQ-06coordenação confirmado pelo trabalho deProduto.
 - [ ] **RAs/GDD-13:** completar quando fornecidos, conforme orientação de deixar para depois; não substituímos por valores inventados.
 - [x] Publicação própria214736a/PR#7 e CI38346858370verde; reconferir o HEAD atualizado.
-- [ ] Atualizar branch padrão para candidata005 depois da CI final verde, conforme autorização de rastreamento.
+- [x] Branch padrão atualizada para `feature/passo-005-gdd-identificacao`, após CI38347042669verde; API confirmou o rastreamento, sem merge/deploy. PDF da CI baixado e validado; evidências acima.
 
 Revisão/direitos coletivos permanecem gerais antes do merge. Versão/data/linkrelease e reconferênciaPDF final pertencem ao025/035/037; não são execução final comprovada neste005. Playtest/pitch futuros, sem medições inventadas. G1 não aceito coletivamente só pela revisão técnica.
 

@@ -33,10 +33,18 @@ OriginaisHTML/DOCXpreservados e comparados aoGDD; todos os campos/modelo/tabelas
 
 RAs/GDD-13identificação completa; confirmação coletiva/revisão e coerênciafinal de versão/data/links apósrelease verdadeira. Remetidos à seção005 do [registro único](../execucao/05-pendencias-por-passo.md) e tarefas finais pertinentes, sem bloquear preparação técnica independente. Ficha final/TXT não gerados.
 
-Por autorização persistente de Lucca, a página inicialGitHub será apontada à candidata005 após push/CIverde. Isso atualiza rastreamento, sem merge/deploy ou suspensão deproteção; main volta a ser padrão apósintegração revisada. [GDD](../gdd.md) e [backlog](../gestao/backlog.md).
+Por autorização persistente de Lucca, a página inicial do GitHub foi apontada à candidata005 após push e CI verde em13/10/2026. Isso atualiza rastreamento, sem merge/deploy ou suspensão deproteção; main volta a ser padrão apósintegração revisada. [GDD](../gdd.md) e [backlog](../gestao/backlog.md).
 
 ## Publicação da revisão
 
 Commit próprio `214736a5aef2a693eedb690b2d39f414f2c02041`; [PR#7](https://github.com/luccalck/desafio-arcade/pull/7) draft sobre feature/passo-004-dependabot-privacidade. [CI38346858370](https://github.com/luccalck/desafio-arcade/actions/runs/38346858370) SUCCESS, checks técnicos verdes e preview ignorado por branch. Sem merge/revisão humana/deploy. A CI gera e arquiva o PDF da fonte; atualizações documentais posteriores acionam nova execução a conferir pelo HEAD.
 
 A autorização de rastreamento mantém a candidata mais recente como default após validação, preservando proteção/main e bases dos PRs. Isso não prova execução de releasefinal ou aprovação coletiva.
+
+## Artefato da CI e rastreamento confirmado
+
+A execução [CI38347042669](https://github.com/luccalck/desafio-arcade/actions/runs/38347042669), do commit `7d532d4bc5c5712e178d791c613787b6dd3dc4d3`, terminou com SUCCESS. Baixamos o artefato `build-7d532d4bc5c5712e178d791c613787b6dd3dc4d3` pelo GitHub CLI e conferimos seu GDD.pdf:13páginas,332952bytes; pdfinfo exit0, texto integral com identificação disponível/Esteira e zero blocos de texto fora dos limites externos. Inspecionamos visualmente páginas1/3/11/13 da CI, além das13páginas do PDF local já renderizadas. Os PDFs local e da CI têm bytes diferentes; não declaramos identidade binária.
+
+A consulta `gh repo view --json defaultBranchRef` confirmou `feature/passo-005-gdd-identificacao` como branch padrão. A alteração ocorreu por API após a CI verde, conforme autorização de rastreamento. PR#7 manteve base004 e head005; main continua com CI e uma revisão obrigatórias, incluindo administradores. Não houve merge ou deploy.
+
+Logs, texto e renderizações estão no diretório local ignorado `.contexto/passo-005/`; o PDF baixado está em `ci-38347042669/artifacts/GDD.pdf`. São provas de validação documental, sem constituir pacote final de submissão.
