@@ -91,7 +91,7 @@ Não há mínimo textual de “três commits na mesma área”. A unidade da exi
 ## 05 — INT-01: Repositório e fluxo Git · peso 10% de A
 
 - [x] I01-01 — Repositório único e público, com uma fonte principal de código. E1.
-- [ ] I01-02 — Quatro integrantes reais adicionados como colaboradores, com acesso testado.
+- [ ] I01-02 — Quatro integrantes reais adicionados como colaboradores, com acesso testado. Em13/10, três convites write enviados; aceites/testes pelas próprias contas pendentes. [Evidência003](../evidencias/configuracao-github.md).
 - [ ] I01-03 — Professor com acesso de leitura confirmado.
 - [x] I01-04 — main protegida, exigindo PR, uma aprovação e check ci verde; vale também para administradores. E1.
 - [ ] I01-05 — Revisão efetiva por pessoa diferente do autor antes de cada merge; não apenas configuração. PR #2 ainda sem revisão.
@@ -373,7 +373,7 @@ Os esqueletos não passam como estão. Nomes/estrutura exemplificados não obrig
 - [x] KIT-11 — Corrigir lacuna SemVer no version.json do exemplo. E5/E7: version 0.6.0 presente.
 - [ ] KIT-12 — Configurar Settings Pages com origem conforme requisito ou equivalência validada (I07-01).
 - [ ] KIT-13 — Integrar homologacao e producao nos jobs; producao com reviewer obrigatório (ARQ-07/08).
-- [ ] KIT-14 — Configurar SITE_URL/variável equivalente não sensível para HML/PRD/sondas/triagem, com URLs coerentes.
+- [x] KIT-14 — SITE_URL pública configurada em13/10/2026 com https://luccalck.github.io/desafio-arcade e destinos derivados documentados/verificados no [passo003](../evidencias/configuracao-github.md). Integração nos jobs formais/sondas/triagem permanece nos respectivos checks.
 - [ ] KIT-15 — Esperar propagação do Pages com tentativa limitada antes dos E2E formais de HML.
 - [x] KIT-16 — Publicação atual não cancela um deploy em andamento: grupo pages-preview cancel-in-progress false. E2.
 - [ ] KIT-17 — Preservar essa proteção de concorrência no deploy/rollout formal; serializar mudanças de ponteiro.
