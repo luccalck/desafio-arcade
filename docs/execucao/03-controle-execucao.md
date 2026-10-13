@@ -5,7 +5,7 @@ O estado de cada passo consta abaixo. Prompts entregues não significam função
 | Passo | Responsável | Estado | Commit/PR da própria conta | Revisão de outro autor / CI | Checks/evidências fechados | Dependência humana restante |
 |---|---|---|---|---|---|---|
 | 001 | Lucca Castilho | Preparação executada; identificação parcial | 72d2b6f; PR#3 rascunho sobre candidata | CI38336896510 verde; DaviSouza78 indicado, revisão pendente | OBJ-08, SQ-01, SQ-03, FIC-01, FIC-07; docs/evidencias/equipe.md | RAs adiados; acesso/revisão; marcos sem prova; G0 incompleto |
-| 002 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
+| 002 | Lucca Castilho | Baseline local validado; aceites humanos pendentes | b79828c; PR#4 rascunho sobre passo001 | CI38339152555/b79828c verde; revisão geral pendente; reconferir HEAD | I04-01–06/15 e I06-01–03 revalidados; baseline-tecnico.md; nenhum novo check fechado | SQ-07/contratos com Davi e Miguel; revisão geral; G0/G1 incompletos |
 | 003 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
 | 004 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |
 | 005 | Lucca Castilho | Pendente | Não executado | Não executada | Nenhum neste plano | Conferir MD/dependências |

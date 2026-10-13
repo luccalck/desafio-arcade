@@ -31,6 +31,10 @@ Os identificadores abaixo são estáveis. Não renumerar ao concluir. Não infer
 
 Os caminhos locais originais são referências de contexto, não arquivos que o professor precisa clonar. O código principal permanece em `jogo-arcade`. Os checks de continuidade abaixo exigem validação final, mesmo quando há evidência de uma execução anterior.
 
+## Revalidação técnica do passo002 — 12/10/2026
+
+[Baseline técnico](../evidencias/baseline-tecnico.md): fonte776a0a9, npm ci/lint/test:ci/build verdes;152unidades,26integrações,15E2E locais, cobertura core97,90%; ensaio isolado de JSON inválido bloqueou build. Revalidados I04-01–06/15 e I06-01–03; estados gerais mantidos. SQ-07 depende da participação técnica de Desenvolvimento; ARQ-10 não se aplica à stack atual. Nenhum novo check ou gate completo fechado neste passo.
+
 ## 01 — Objetivo, produto e limites da avaliação
 
 - [x] OBJ-01 — Protótipo gamificado aborda educação em tecnologia, com problema e público descritos. E4: programação por construção/depuração de regras de um minijogo.
