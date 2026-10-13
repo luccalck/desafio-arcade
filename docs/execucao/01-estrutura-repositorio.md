@@ -11,13 +11,32 @@ docs/execucao/
 ├── 02-mapa-checks.md
 ├── 03-controle-execucao.md
 ├── 04-passagem-de-bloco.md
-├── Lucca Castilho/  # 001–010
-├── Davi Paes/  # 011–020
-├── Miguel Oliveira/  # 021–030
-└── Lucas Souza/  # 031–040
+├── 05-pendencias-por-passo.md
+├── 06-passagem-lucca-davi.md
+├── 07-mapa-consolidacao.json
+├── 08-consolidacao-e-acesso.md
+├── Lucca Castilho/  # dez MDs001–010 preservados
+├── Davi Paes/  # cinco MDs completos
+    ├── 011-012-hml-sondas.md
+    ├── 013-014-conteudo-smoke.md
+    ├── 015-016-releases-alertas.md
+    ├── 017-018-pitch-rollout.md
+    └── 019-020-producao-painel.md
+├── Miguel Oliveira/  # cinco MDs completos
+    ├── 021-022-playtest-rollback-automatico.md
+    ├── 023-024-rollback-manual-dora.md
+    ├── 025-026-gdd-ensaio-falha.md
+    ├── 027-028-integridade-melhoria.md
+    └── 029-030-video-triagem.md
+└── Lucas Souza/  # cinco MDs completos
+    ├── 031-032-pacote-triagem-agendada.md
+    ├── 033-034-relatorio-aceite-candidata.md
+    ├── 035-036-release-triagem-final.md
+    ├── 037-038-ficha-banca-freeze.md
+    └── 039-040-entrega-contribuicao.md
 ```
 
-Cada pasta contém exatamente dez MDs de passos. O índice dá título/link/dependência para todos os números. Lucca faz001–010, depois Davi011–020, Miguel021–030 e Lucas031–040; colegas revisam desde o início. O mapa cobre cada um dos 313 checks inicialmente abertos. Os 99 checks já executados têm evidência no checklist; reconferir os afetados por mudanças. Equilibrar quantidade de prompts não atribui participação automaticamente.
+Lucca mantém dez MDs; os outros três têm exatamente cinco MDs cada, duas etapas completas por arquivo. Os40IDs continuam no controle/checklist/mapa. [Mapa auditável da consolidação](07-mapa-consolidacao.json) e [verificação de cobertura e acesso](08-consolidacao-e-acesso.md). Não fechar checks, atribuir participação ou saltar gates ao reorganizar arquivos.
 
 ## Fonte a manter no repositório
 

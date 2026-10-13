@@ -1,0 +1,642 @@
+{
+  "date": "2026-10-13",
+  "unit": "25 MDs: Lucca10, Davi5, Miguel5, Lucas5; quarenta etapas/IDs preservados",
+  "stages": [
+    {
+      "etapa": "011",
+      "original": "docs/execucao/Davi Paes/011-deploy-hml.md",
+      "sha256OriginalWorkingTree": "c11ae9af188d3202620e86db23b10c505e744f970b5c079f11f573f2cf8b2825",
+      "novo": "docs/execucao/Davi Paes/011-012-hml-sondas.md",
+      "anchor": "etapa-011",
+      "checkIds": [
+        "ARQ-07",
+        "I03-15",
+        "I03-16",
+        "I03-21",
+        "I03-25",
+        "I07-04",
+        "KIT-14",
+        "KIT-15",
+        "G3",
+        "I04-08",
+        "I04-09"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 11
+    },
+    {
+      "etapa": "012",
+      "original": "docs/execucao/Davi Paes/012-sondas-monitor.md",
+      "sha256OriginalWorkingTree": "6c91bb08c0dad4a3ae694be56ccbc880fb14f9e7034ab5742f667380a7b701a9",
+      "novo": "docs/execucao/Davi Paes/011-012-hml-sondas.md",
+      "anchor": "etapa-012",
+      "checkIds": [
+        "I08-01",
+        "I08-02",
+        "I08-03",
+        "I08-04",
+        "I08-05",
+        "I08-06",
+        "I08-07",
+        "I08-08",
+        "KIT-06",
+        "KIT-25",
+        "KIT-27"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 11
+    },
+    {
+      "etapa": "013",
+      "original": "docs/execucao/Davi Paes/013-aprendizagem-conteudo.md",
+      "sha256OriginalWorkingTree": "7ff665699cb5708660e20c730d0941951fd4f3fc7a4d2ea8aa1a1d7bbbbe7c61",
+      "novo": "docs/execucao/Davi Paes/013-014-conteudo-smoke.md",
+      "anchor": "etapa-013",
+      "checkIds": [
+        "I04-14",
+        "KIT-29",
+        "B-01",
+        "B-02"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 4
+    },
+    {
+      "etapa": "014",
+      "original": "docs/execucao/Davi Paes/014-smoke-producao.md",
+      "sha256OriginalWorkingTree": "65eb9e6741fbf050f28ccb89a1d231a8b3d89c06fc525e0046dc3db4b406961c",
+      "novo": "docs/execucao/Davi Paes/013-014-conteudo-smoke.md",
+      "anchor": "etapa-014",
+      "checkIds": [
+        "I04-10"
+      ],
+      "preservedNumberedActions": 4,
+      "preservedChecks": 1
+    },
+    {
+      "etapa": "015",
+      "original": "docs/execucao/Davi Paes/015-releases-tags.md",
+      "sha256OriginalWorkingTree": "141a82f30d2847a5198dd69b1b223c861e4449e7fd4b9650fea4043b9b5c5661",
+      "novo": "docs/execucao/Davi Paes/015-016-releases-alertas.md",
+      "anchor": "etapa-015",
+      "checkIds": [
+        "I01-10",
+        "I05-09",
+        "I06-07",
+        "I06-08",
+        "I06-09",
+        "I06-10",
+        "I06-11",
+        "I06-12",
+        "I07-06"
+      ],
+      "preservedNumberedActions": 4,
+      "preservedChecks": 9
+    },
+    {
+      "etapa": "016",
+      "original": "docs/execucao/Davi Paes/016-alertas-issues.md",
+      "sha256OriginalWorkingTree": "6ddd81acfa5631d222207efe08d70c8f3086e597abb9cb2e311956b62543e56b",
+      "novo": "docs/execucao/Davi Paes/015-016-releases-alertas.md",
+      "anchor": "etapa-016",
+      "checkIds": [
+        "I08-09",
+        "I08-10",
+        "I08-11",
+        "I08-12",
+        "I08-13",
+        "I08-14",
+        "I08-15",
+        "KIT-26"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 8
+    },
+    {
+      "etapa": "017",
+      "original": "docs/execucao/Davi Paes/017-roteiro-pitch.md",
+      "sha256OriginalWorkingTree": "91a34c7bd0e6e5aef0db5bb8695fa36b00544496a1fac1c6e5e9308e1b4cdb59",
+      "novo": "docs/execucao/Davi Paes/017-018-pitch-rollout.md",
+      "anchor": "etapa-017",
+      "checkIds": [
+        "I10-01",
+        "I10-02",
+        "I10-05",
+        "I10-07",
+        "DIR-13"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 5
+    },
+    {
+      "etapa": "018",
+      "original": "docs/execucao/Davi Paes/018-rollout-carregador.md",
+      "sha256OriginalWorkingTree": "b99fddbf89cccfae0c848e259a181fa8b396aa189a0527f13751d7ade56c49f3",
+      "novo": "docs/execucao/Davi Paes/017-018-pitch-rollout.md",
+      "anchor": "etapa-018",
+      "checkIds": [
+        "I07-08",
+        "I07-09",
+        "I07-15",
+        "KIT-18",
+        "KIT-19"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 5
+    },
+    {
+      "etapa": "019",
+      "original": "docs/execucao/Davi Paes/019-producao-aprovacao.md",
+      "sha256OriginalWorkingTree": "8222ba082505ee44365af13a988f6c56fb4e072801584e32fe8125fe44a9aa10",
+      "novo": "docs/execucao/Davi Paes/019-020-producao-painel.md",
+      "anchor": "etapa-019",
+      "checkIds": [
+        "OBJ-05",
+        "ARQ-03",
+        "ARQ-06",
+        "ARQ-08",
+        "I03-17",
+        "I03-18",
+        "I03-19",
+        "I03-20",
+        "I07-10",
+        "I07-11",
+        "I07-12",
+        "I07-13",
+        "I07-19",
+        "KIT-13",
+        "KIT-17",
+        "KIT-20"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 16
+    },
+    {
+      "etapa": "020",
+      "original": "docs/execucao/Davi Paes/020-painel-status.md",
+      "sha256OriginalWorkingTree": "506cc9b1efbe1f5f4052d7a39e38f987830881d8332e724f271c5a20ad2d217f",
+      "novo": "docs/execucao/Davi Paes/019-020-producao-painel.md",
+      "anchor": "etapa-020",
+      "checkIds": [
+        "I08-16",
+        "I08-17",
+        "I08-18",
+        "I08-19",
+        "I08-20",
+        "KIT-07",
+        "FIC-10",
+        "G4"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 8
+    },
+    {
+      "etapa": "021",
+      "original": "docs/execucao/Miguel Oliveira/021-playtest-real.md",
+      "sha256OriginalWorkingTree": "4451f20f1daae0adbfce900be876cf877605c2141471f6d503a33d9d1075c7bf",
+      "novo": "docs/execucao/Miguel Oliveira/021-022-playtest-rollback-automatico.md",
+      "anchor": "etapa-021",
+      "checkIds": [
+        "B-06",
+        "B-07",
+        "B-08",
+        "B-09"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 4
+    },
+    {
+      "etapa": "022",
+      "original": "docs/execucao/Miguel Oliveira/022-rollback-automatico.md",
+      "sha256OriginalWorkingTree": "e606a5c1ed75473219d0307e4e7933fb649e072f86507ebd13f42bcc1c78788e",
+      "novo": "docs/execucao/Miguel Oliveira/021-022-playtest-rollback-automatico.md",
+      "anchor": "etapa-022",
+      "checkIds": [
+        "I07-16",
+        "I07-17"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 2
+    },
+    {
+      "etapa": "023",
+      "original": "docs/execucao/Miguel Oliveira/023-rollback-manual.md",
+      "sha256OriginalWorkingTree": "f28d463bef2d786309bed92c60af609fe6272840aff5f6159519adb273bd7c08",
+      "novo": "docs/execucao/Miguel Oliveira/023-024-rollback-manual-dora.md",
+      "anchor": "etapa-023",
+      "checkIds": [
+        "I07-18",
+        "KIT-05"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 2
+    },
+    {
+      "etapa": "024",
+      "original": "docs/execucao/Miguel Oliveira/024-dora-real.md",
+      "sha256OriginalWorkingTree": "b622816337a0781e69ccd4c976d8730bfdea4a5b4194bb51e4d2b19f4a8a2dcb",
+      "novo": "docs/execucao/Miguel Oliveira/023-024-rollback-manual-dora.md",
+      "anchor": "etapa-024",
+      "checkIds": [
+        "OBJ-11",
+        "I08-22",
+        "I08-23",
+        "I08-24",
+        "I08-25",
+        "I08-26",
+        "I08-27",
+        "I08-30",
+        "I08-21"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 9
+    },
+    {
+      "etapa": "025",
+      "original": "docs/execucao/Miguel Oliveira/025-gdd-vivo-pdf.md",
+      "sha256OriginalWorkingTree": "a102e2e3da19466318d26fe1b33149bcc7b600196e249b65ef1649160997030a",
+      "novo": "docs/execucao/Miguel Oliveira/025-026-gdd-ensaio-falha.md",
+      "anchor": "etapa-025",
+      "checkIds": [
+        "I02-09",
+        "I02-14"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 2
+    },
+    {
+      "etapa": "026",
+      "original": "docs/execucao/Miguel Oliveira/026-ensaio-falha-bug.md",
+      "sha256OriginalWorkingTree": "af273a42075a17f942fb7cf9ea69284cf1201a3886af13bcf9abe41b02245f59",
+      "novo": "docs/execucao/Miguel Oliveira/025-026-gdd-ensaio-falha.md",
+      "anchor": "etapa-026",
+      "checkIds": [
+        "I07-20",
+        "I07-21",
+        "I07-22",
+        "I07-23",
+        "I07-25",
+        "I08-31",
+        "CR-03"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 7
+    },
+    {
+      "etapa": "027",
+      "original": "docs/execucao/Miguel Oliveira/027-reprodutibilidade-final.md",
+      "sha256OriginalWorkingTree": "8be617134f75154b1f347ca0e48398013aa1f3b130dda8695f9b837d1576ccd9",
+      "novo": "docs/execucao/Miguel Oliveira/027-028-integridade-melhoria.md",
+      "anchor": "etapa-027",
+      "checkIds": [],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 0
+    },
+    {
+      "etapa": "028",
+      "original": "docs/execucao/Miguel Oliveira/028-melhoria-metrica.md",
+      "sha256OriginalWorkingTree": "a1dbc671a38a65ddfe870b445593709f004800a2de1ba0cdb0d89648e19fd0d5",
+      "novo": "docs/execucao/Miguel Oliveira/027-028-integridade-melhoria.md",
+      "anchor": "etapa-028",
+      "checkIds": [
+        "ARQ-09",
+        "I08-28",
+        "I08-29",
+        "I08-32",
+        "G5"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 5
+    },
+    {
+      "etapa": "029",
+      "original": "docs/execucao/Miguel Oliveira/029-gravar-pitch.md",
+      "sha256OriginalWorkingTree": "6e31623d19eefcf1c8506dc301e70cb6621e837706cae4841057f8bcf3e6cc01",
+      "novo": "docs/execucao/Miguel Oliveira/029-030-video-triagem.md",
+      "anchor": "etapa-029",
+      "checkIds": [
+        "I10-03",
+        "I10-04",
+        "I10-06",
+        "FIC-11"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 4
+    },
+    {
+      "etapa": "030",
+      "original": "docs/execucao/Miguel Oliveira/030-triagem-validadores.md",
+      "sha256OriginalWorkingTree": "59e9069715e988217603bfd50f6a090ab2d7a135ae59cf2b603a44ef1503f042",
+      "novo": "docs/execucao/Miguel Oliveira/029-030-video-triagem.md",
+      "anchor": "etapa-030",
+      "checkIds": [
+        "OBJ-10",
+        "I09-09",
+        "I09-10",
+        "I09-11",
+        "I09-12",
+        "I09-13",
+        "I09-14",
+        "I09-15",
+        "I09-16",
+        "I09-17",
+        "I09-18",
+        "KIT-21",
+        "KIT-22",
+        "KIT-23",
+        "KIT-24"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 15
+    },
+    {
+      "etapa": "031",
+      "original": "docs/execucao/Lucas Souza/031-pacote-pipeline.md",
+      "sha256OriginalWorkingTree": "c7e01a7bb8bffd06d927d63fa5bce5c2686cc91a1b20ad2289e7d7079166526d",
+      "novo": "docs/execucao/Lucas Souza/031-032-pacote-triagem-agendada.md",
+      "anchor": "etapa-031",
+      "checkIds": [
+        "OBJ-09",
+        "I09-01",
+        "I09-02",
+        "I09-03",
+        "I09-04",
+        "I09-06",
+        "I09-07",
+        "I09-08"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 8
+    },
+    {
+      "etapa": "032",
+      "original": "docs/execucao/Lucas Souza/032-triagem-agendada.md",
+      "sha256OriginalWorkingTree": "9f3842a92335f543cee32d6e42ce69120da145e8e02040b68585d3a9996b564e",
+      "novo": "docs/execucao/Lucas Souza/031-032-pacote-triagem-agendada.md",
+      "anchor": "etapa-032",
+      "checkIds": [
+        "I09-21",
+        "I09-22"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 2
+    },
+    {
+      "etapa": "033",
+      "original": "docs/execucao/Lucas Souza/033-relatorio-tecnico.md",
+      "sha256OriginalWorkingTree": "e9c6ced9b33a1fcbbb8c92b7d3e6ba9444adde07eb4b2d1b480c74fab4180eef",
+      "novo": "docs/execucao/Lucas Souza/033-034-relatorio-aceite-candidata.md",
+      "anchor": "etapa-033",
+      "checkIds": [
+        "OBJ-07",
+        "I04-13",
+        "I10-08",
+        "I10-09",
+        "I10-10",
+        "I10-11",
+        "I10-12",
+        "I10-13",
+        "I10-14",
+        "I10-15",
+        "I10-17",
+        "KIT-04",
+        "FIC-12",
+        "G6"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 14
+    },
+    {
+      "etapa": "034",
+      "original": "docs/execucao/Lucas Souza/034-aceite-candidata.md",
+      "sha256OriginalWorkingTree": "5c9b87133b790d16a4c07f599c116f3c4736bbb932ef200b9744c69b66c41935",
+      "novo": "docs/execucao/Lucas Souza/033-034-relatorio-aceite-candidata.md",
+      "anchor": "etapa-034",
+      "checkIds": [
+        "I04-17",
+        "B-10"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 2
+    },
+    {
+      "etapa": "035",
+      "original": "docs/execucao/Lucas Souza/035-tag-final-release.md",
+      "sha256OriginalWorkingTree": "2fb669dc9ed6ac499b10eb56e82c42c6511b291342ccaf4307bc06a25e507703",
+      "novo": "docs/execucao/Lucas Souza/035-036-release-triagem-final.md",
+      "anchor": "etapa-035",
+      "checkIds": [
+        "I01-11",
+        "I02-13",
+        "I03-09",
+        "I06-15",
+        "I06-17",
+        "I06-18"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 6
+    },
+    {
+      "etapa": "036",
+      "original": "docs/execucao/Lucas Souza/036-triagem-final-eliminatorios.md",
+      "sha256OriginalWorkingTree": "daf8d237beec734860b712e1aff247e2d847b19e0f19bc1a0874bff6da171134",
+      "novo": "docs/execucao/Lucas Souza/035-036-release-triagem-final.md",
+      "anchor": "etapa-036",
+      "checkIds": [
+        "I05-22",
+        "I05-23",
+        "I07-03",
+        "I09-19",
+        "I09-20",
+        "EL-01",
+        "EL-02",
+        "EL-03",
+        "EL-04",
+        "EL-05",
+        "G7",
+        "I03-13"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 12
+    },
+    {
+      "etapa": "037",
+      "original": "docs/execucao/Lucas Souza/037-ficha-relatorio-banca.md",
+      "sha256OriginalWorkingTree": "78417acaf6c169d86563137621e4baed855175d705e875702d76a34b189de3fc",
+      "novo": "docs/execucao/Lucas Souza/037-038-ficha-banca-freeze.md",
+      "anchor": "etapa-037",
+      "checkIds": [
+        "SQ-10",
+        "SQ-14",
+        "I10-18",
+        "I10-19",
+        "CR-06",
+        "B-11",
+        "B-12",
+        "B-13",
+        "B-14",
+        "FIC-08",
+        "FIC-09",
+        "FIC-13",
+        "FIC-15",
+        "FIC-16",
+        "FIC-17",
+        "FIC-18",
+        "FIC-19",
+        "FIC-20",
+        "FIC-21",
+        "FIC-22",
+        "FIC-23",
+        "FIC-24",
+        "FIC-25",
+        "FIC-26",
+        "FIC-27",
+        "FIC-28",
+        "FIC-29",
+        "FIC-30",
+        "FIC-31",
+        "FIC-32",
+        "FIC-33",
+        "FIC-34",
+        "FIC-35",
+        "FIC-36",
+        "FIC-37",
+        "FIC-38",
+        "GDD-14",
+        "GDD-16"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 38
+    },
+    {
+      "etapa": "038",
+      "original": "docs/execucao/Lucas Souza/038-freeze-verificacao-final.md",
+      "sha256OriginalWorkingTree": "07a7094ea979ac7b1567e03051aefd8fd52947ad0005fd6aebca668bebce9c50",
+      "novo": "docs/execucao/Lucas Souza/037-038-ficha-banca-freeze.md",
+      "anchor": "etapa-038",
+      "checkIds": [
+        "SQ-11",
+        "SQ-15",
+        "CR-09",
+        "CR-10"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 4
+    },
+    {
+      "etapa": "039",
+      "original": "docs/execucao/Lucas Souza/039-entrega-acessos-demo.md",
+      "sha256OriginalWorkingTree": "29512d8f003c31c7a33778352bd50fa619f2a65328097fea0a9a05741dfc3429",
+      "novo": "docs/execucao/Lucas Souza/039-040-entrega-contribuicao.md",
+      "anchor": "etapa-039",
+      "checkIds": [
+        "SQ-12",
+        "SQ-16",
+        "I07-24",
+        "CR-04",
+        "CR-05",
+        "CR-07",
+        "B-03",
+        "B-04",
+        "B-05",
+        "G8"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 10
+    },
+    {
+      "etapa": "040",
+      "original": "docs/execucao/Lucas Souza/040-contribuicao-condicionais.md",
+      "sha256OriginalWorkingTree": "45462ffad0e91be8d76ff197405e5e4857dc657003bd6225ed73c122427cbf92",
+      "novo": "docs/execucao/Lucas Souza/039-040-entrega-contribuicao.md",
+      "anchor": "etapa-040",
+      "checkIds": [
+        "SQ-13",
+        "SQ-17",
+        "SQ-18",
+        "SQ-20",
+        "I01-09",
+        "I01-14",
+        "I01-15",
+        "I01-16",
+        "I01-17",
+        "I09-23",
+        "I09-24",
+        "I10-16",
+        "CR-08",
+        "CR-11",
+        "CR-12",
+        "CR-13",
+        "B-15",
+        "DIR-16",
+        "FIC-14",
+        "FIC-39",
+        "CON-01",
+        "CON-02",
+        "CON-03",
+        "CON-04",
+        "CON-05",
+        "CON-06",
+        "CON-07",
+        "CON-08",
+        "CON-09",
+        "CON-10",
+        "CON-11",
+        "I01-07"
+      ],
+      "preservedNumberedActions": 5,
+      "preservedChecks": 32
+    }
+  ],
+  "mapping": {
+    "Davi Paes/011-deploy-hml.md": "Davi Paes/011-012-hml-sondas.md#etapa-011",
+    "Davi Paes/012-sondas-monitor.md": "Davi Paes/011-012-hml-sondas.md#etapa-012",
+    "Davi Paes/013-aprendizagem-conteudo.md": "Davi Paes/013-014-conteudo-smoke.md#etapa-013",
+    "Davi Paes/014-smoke-producao.md": "Davi Paes/013-014-conteudo-smoke.md#etapa-014",
+    "Davi Paes/015-releases-tags.md": "Davi Paes/015-016-releases-alertas.md#etapa-015",
+    "Davi Paes/016-alertas-issues.md": "Davi Paes/015-016-releases-alertas.md#etapa-016",
+    "Davi Paes/017-roteiro-pitch.md": "Davi Paes/017-018-pitch-rollout.md#etapa-017",
+    "Davi Paes/018-rollout-carregador.md": "Davi Paes/017-018-pitch-rollout.md#etapa-018",
+    "Davi Paes/019-producao-aprovacao.md": "Davi Paes/019-020-producao-painel.md#etapa-019",
+    "Davi Paes/020-painel-status.md": "Davi Paes/019-020-producao-painel.md#etapa-020",
+    "Miguel Oliveira/021-playtest-real.md": "Miguel Oliveira/021-022-playtest-rollback-automatico.md#etapa-021",
+    "Miguel Oliveira/022-rollback-automatico.md": "Miguel Oliveira/021-022-playtest-rollback-automatico.md#etapa-022",
+    "Miguel Oliveira/023-rollback-manual.md": "Miguel Oliveira/023-024-rollback-manual-dora.md#etapa-023",
+    "Miguel Oliveira/024-dora-real.md": "Miguel Oliveira/023-024-rollback-manual-dora.md#etapa-024",
+    "Miguel Oliveira/025-gdd-vivo-pdf.md": "Miguel Oliveira/025-026-gdd-ensaio-falha.md#etapa-025",
+    "Miguel Oliveira/026-ensaio-falha-bug.md": "Miguel Oliveira/025-026-gdd-ensaio-falha.md#etapa-026",
+    "Miguel Oliveira/027-reprodutibilidade-final.md": "Miguel Oliveira/027-028-integridade-melhoria.md#etapa-027",
+    "Miguel Oliveira/028-melhoria-metrica.md": "Miguel Oliveira/027-028-integridade-melhoria.md#etapa-028",
+    "Miguel Oliveira/029-gravar-pitch.md": "Miguel Oliveira/029-030-video-triagem.md#etapa-029",
+    "Miguel Oliveira/030-triagem-validadores.md": "Miguel Oliveira/029-030-video-triagem.md#etapa-030",
+    "Lucas Souza/031-pacote-pipeline.md": "Lucas Souza/031-032-pacote-triagem-agendada.md#etapa-031",
+    "Lucas Souza/032-triagem-agendada.md": "Lucas Souza/031-032-pacote-triagem-agendada.md#etapa-032",
+    "Lucas Souza/033-relatorio-tecnico.md": "Lucas Souza/033-034-relatorio-aceite-candidata.md#etapa-033",
+    "Lucas Souza/034-aceite-candidata.md": "Lucas Souza/033-034-relatorio-aceite-candidata.md#etapa-034",
+    "Lucas Souza/035-tag-final-release.md": "Lucas Souza/035-036-release-triagem-final.md#etapa-035",
+    "Lucas Souza/036-triagem-final-eliminatorios.md": "Lucas Souza/035-036-release-triagem-final.md#etapa-036",
+    "Lucas Souza/037-ficha-relatorio-banca.md": "Lucas Souza/037-038-ficha-banca-freeze.md#etapa-037",
+    "Lucas Souza/038-freeze-verificacao-final.md": "Lucas Souza/037-038-ficha-banca-freeze.md#etapa-038",
+    "Lucas Souza/039-entrega-acessos-demo.md": "Lucas Souza/039-040-entrega-contribuicao.md#etapa-039",
+    "Lucas Souza/040-contribuicao-condicionais.md": "Lucas Souza/039-040-entrega-contribuicao.md#etapa-040"
+  },
+  "checkboxStatesChanged": false,
+  "originalNumberedActionsPreserved": true,
+  "authorOfReorganization": "Lucca Castilho/luccalck com assistência do Codex; não autoria dos outros integrantes",
+  "corrections": [
+    {
+      "type": "dependência circular",
+      "before": "contrato019 exigia rollback022023 antes da primeira PRD",
+      "after": "rollback básico018019 antes da PRD; fortalecimento022 e manual023 posteriores, conforme o protocolo vigente"
+    },
+    {
+      "type": "entrada ausente",
+      "before": "035 exigia HML/PRD da tag, mas jobs/environments atuais só aceitam main",
+      "after": "015 passa a compatibilizar tags autorizadas e environments com proveniência/approval; 035 confere esse contrato antes de criar a tag"
+    },
+    {
+      "type": "execução de par",
+      "after": "reutilizar branch e PR existentes na segunda etapa; não repetir criação nem duplicar PR"
+    }
+  ]
+}

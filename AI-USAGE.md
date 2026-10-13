@@ -153,3 +153,11 @@ Codex auxilia LuccaCastilho/luccalck a executar somente010/D04/R02: validar clon
 Fontec56df79:clone limpo184testes/18E2E verdes; PDF18p/pdfinfo; sete arquivos noZIP28.581bytes, comparação somente data normalizada. EnsaioJSONinválido bloqueou build/foi restaurado; Gitleaks bloqueou string sintética nunca emitida, sem incidente real. Capturas vêm da execução file:// com rede desligada, não simulam produção ou aprendizagem humana. [Provas](docs/evidencias/offline-integridade.md), [passagemLucca→Davi](docs/execucao/06-passagem-lucca-davi.md). Direitos/revisão/quatro/G0G1G2 permanecem humanos/pendentes; recebimentoDavi não inventado. Commit/PR/CI de publicação serão vinculados no controle.
 
 Publicação010:c56df79/0f0104c, PR#12draft sobre009; CIpush38444743006/PR38444831221verdes com18E2E/PDF18p/segurança/pacote. Recebimento/revisãoDavi pendentes; semmerge/deploy. Checklist geral115marcados/297abertos, G2 não liberado sequencialmente.
+
+## Consolidação dos roteiros — 13/10/2026
+
+Lucca solicitou reduzir somente os blocos futuros de Davi/Miguel/Lucas de10para5MDs cada, sem perder conteúdo, e disponibilizar materiaisStitch peloGitHub. Codex agrupou30etapas em15MDs, manteve256checks/148ações numeradas, contratos/aceites/eliminação/F1, atualizou links/índices/estrutura/repasse e conservou10MDs deLucca. Prompt: reorganizar conteúdo completo com própria identidade, sem executar etapas futuras ou fabricar participação. [Mapa](docs/execucao/07-mapa-consolidacao.json), [conferência](docs/execucao/08-consolidacao-e-acesso.md).
+
+Um agente de IA fez Reader Testing somente leitura conforme skilldoc-coauthoring; identificou dependência circular de rollback019 versus022023 e incompatibilidade de tags035 com refs/ambientes sómain. Documentos corrigidos com baseline018019 e compatibilização segura preparada no015, sem alterar workflow ou conceder permissões. Isso não é revisão humana do squad.
+
+ZIPoriginalStitch publicado como referência de design, com hash idêntico ao registro009 e scan sem achados; não foi modificado/importado ao jogo. GitHub permite consultar os exports, não editar a contaGoogle. Autoria da reorganização éLucca/IA, não execução ou autoria dos outros três. Nenhum check ou gate novo fechado; revisão humana/direitos/participação e demais evidências futuras permanecem abertos.

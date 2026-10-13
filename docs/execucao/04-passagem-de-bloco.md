@@ -1,6 +1,6 @@
 # Passagem entre os quatro blocos
 
-Execução: **Lucca001–010 → Davi011–020 → Miguel021–030 → Lucas031–040**. Implementação do bloco termina antes da implementação do próximo; revisão cruzada e obrigações humanas continuam desde o início.
+Execução: **Lucca001–010 → Davi011–020 → Miguel021–030 → Lucas031–040**. Lucca mantém dez MDs; Davi/Miguel/Lucas têm cinco cada, duas etapas por MD. Implementação do bloco termina antes da implementação do próximo; revisão cruzada e obrigações humanas continuam desde o início. Ao concluir020/030/040, todas as dez etapas do respectivo bloco precisam ter registro, apesar dos cinco arquivos.
 
 ## Regra comum de passagem
 

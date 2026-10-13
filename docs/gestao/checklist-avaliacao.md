@@ -2,7 +2,7 @@
 
 Referência: `Avaliação.html` do professor, incluindo as dez seções, todas as abas dos integráveis, kit, cronograma, rubrica e campos/validações gerados por JavaScript. Atualização inicial: **12/10/2026**. Este é o checklist principal de acompanhamento; a [auditoria](auditoria-avaliacao.md) explica o diagnóstico. Nenhum INT está integralmente encerrado.
 
-Execução distribuída em [40 passos — dez por integrante](../execucao/00-indice-geral.md), com [mapa dos 313 checks inicialmente abertos](../execucao/02-mapa-checks.md). O mapa conserva o snapshot de planejamento; o estado atualizado permanece neste checklist. Quatro estimativas B foram preenchidas nesta etapa, sem fechar qualquer entrega/INT.
+Execução distribuída em [25MDs — quarenta etapas preservadas](../execucao/00-indice-geral.md), com [mapa dos 313 checks inicialmente abertos](../execucao/02-mapa-checks.md). O mapa conserva o snapshot de planejamento; o estado atualizado permanece neste checklist. Quatro estimativas B foram preenchidas nesta etapa, sem fechar qualquer entrega/INT.
 
 ## Como manter os checks
 
