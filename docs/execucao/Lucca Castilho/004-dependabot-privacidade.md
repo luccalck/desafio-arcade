@@ -8,7 +8,7 @@
 
 - [x] Segurança inicial/configuração/política documentadas pela própria conta.
 - [x] APIs/scanners/audit/SBOM/rede executados e evidências arquivadas.
-- [ ] Commit/push pela identidade GitHub do responsável.
+- [x] Commit/push pela identidade própria luccalck:ba7494b/PR#6.
 - [ ] PR revisado por outro autor e CI verde.
 - [x] I05-06/DIR-12 atualizados com provas; gates/condicionais preservados.
 
@@ -54,7 +54,7 @@ Se houver equivalente já funcional, reutilize e documente o caminho efetivo. N�
 Cada item abaixo vem literalmente do checklist inicial. Alguns exigem execução posterior, reconferência final ou condição opcional. Preparar código não encerra execução/humano. Não mudar um checkbox condicional para [x] quando não aplicável: registrar decisão com fonte. Consulte mapa para referências compartilhadas.
 
 - [ ] **SQ-09** — SRE assume observabilidade, alertas, DORA, segurança, licenças e triagem.
-- [x] **I05-06** — Dependabot efetivamente ativado e verificável no repositório. YAML existe; execução ainda não comprovada e alertas API informaram disabled.
+- [x] **I05-06** — Dependabot efetivamente ativado e verificado em13/10: alerts habilitados/APIHTTP200 e securityupdatesenabled; YAML semanal confirmado. Estado inicial disabled foi superado; não alegamos job/PR de atualização executado.
 - [ ] **I08-33** — CONDICIONAL: contagem anônima de partidas/fases, se adotada; sem identificar jogador, finalidade documentada.
 - [ ] **DIR-09** — CONTÍNUO/FINAL: reconferir ausência de coleta pessoal na build entregue, incluindo serviços/telemetria adicionados.
 - [ ] **DIR-10** — CONDICIONAL ranking: só apelido escolhido na hora e guardado no navegador. Jogo atual não tem ranking.

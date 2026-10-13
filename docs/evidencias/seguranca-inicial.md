@@ -47,3 +47,9 @@ Fontes originais/roteiros lidos nesta sessão e reconferidos: HTML integral/abas
 - `privacidade-rede.json`: `e8b721e9a9649cdcadb8ec806a9e96f579d00f3fabd83296ee3d07c159575f3f`.
 
 Relatórios/logs/configs de ensaio em .contexto/passo-004, ignorado. CI fornece seus próprios artefatos verificáveis depois do push. [Registro único de pendências](../execucao/05-pendencias-por-passo.md). DIR-12/I05-06 fechados; G0/INTinteiros/declarações coletivas não fechados por esta execução.
+
+## Publicação e CI
+
+Commit próprio `ba7494b7e9737b7c8900c6592aa2c314cee9047b`; [PR#6](https://github.com/luccalck/desafio-arcade/pull/6) draft sobre feature/passo-003-acessos-git-pages, isolando004 enquanto as dependências aguardam integração revisada. [CI38345279238](https://github.com/luccalck/desafio-arcade/actions/runs/38345279238) SUCCESS: qualidade/segurança/build/E2E/ci, previewSKIPPED conforme branch. Sem merge/revisão de colega/deploy. Reconferir o HEAD de qualquer atualização posterior no PR.
+
+Diff finalcheckpassed;85Markdown0links ausentes,40passos/dezporintegrante/313IDssemomissão/depsacíclicas;112marcados300abertos. Fonte/dep/workflow/DependabotYAML preservados contra781af0f. HookGitleaks do commit sem detecções; estado da autenticação validado pela identidade própria antes da gravação.

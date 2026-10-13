@@ -52,7 +52,7 @@ Escopo técnico validado em13/10/2026; [evidências](../evidencias/seguranca-ini
 - [x] Dependabot habilitado e verificado depois da autenticação humana; I05-06 fechado.
 - [x] Gitleaks/hook/audit/SBOM executados e política documentada; fixture sintética/redação/exit1 comprovados.
 - [x] README declara ausência de telemetria; código/rede observados; DIR-12 fechado.
-- [ ] Publicar commit/PR e conferir CI do HEAD; revisão antes do merge permanece geral.
+- [x] Publicação própria ba7494b/PR#6 e CI38345279238 verde; reconferir HEAD atualizado. Revisão antes do merge permanece geral.
 
 **Obrigações gerais/futuras:** política/direitos/participação real da equipe e SQ-09 seguem no checklist geral; não conferimos autoria ou aceite fictício a colegas. G0 segue incompleto por dados/acessos/aceites anteriores. DIR-09 é reconferência da candidata final, encaminhada ao034; logs de atualizações Dependabot devem ser conferidos no fechamento e CI dos seusPRs/base correta no007.
 
