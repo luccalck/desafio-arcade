@@ -85,7 +85,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: produzir telas e validar ux conforme faixa avançada"
+git commit -m "docs: produzir telas e validar ux conforme faixa avançada
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 009: Produzir telas e validar UX conforme faixa avançada" --body-file .contexto/pr-passo-009.md
 ```

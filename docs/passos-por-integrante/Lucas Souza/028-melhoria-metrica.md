@@ -87,7 +87,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "fix: implementar e medir melhoria orientada por dora"
+git commit -m "fix: implementar e medir melhoria orientada por dora
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 028: Implementar e medir melhoria orientada por DORA" --body-file .contexto/pr-passo-028.md
 ```

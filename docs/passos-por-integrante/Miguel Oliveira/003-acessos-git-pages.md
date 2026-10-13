@@ -91,7 +91,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "ci: preparar acessos, revisão git e configuração pages"
+git commit -m "ci: preparar acessos, revisão git e configuração pages
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 003: Preparar acessos, revisão Git e configuração Pages" --body-file .contexto/pr-passo-003.md
 ```

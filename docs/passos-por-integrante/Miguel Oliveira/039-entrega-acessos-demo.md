@@ -93,7 +93,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: confirmar entrega e demonstrar esteira na banca"
+git commit -m "docs: confirmar entrega e demonstrar esteira na banca
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 039: Confirmar entrega e demonstrar esteira na banca" --body-file .contexto/pr-passo-039.md
 ```

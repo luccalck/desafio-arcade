@@ -84,7 +84,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "test: conferir build offline e integridade antes da hml"
+git commit -m "test: conferir build offline e integridade antes da hml
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 010: Conferir build offline e integridade antes da HML" --body-file .contexto/pr-passo-010.md
 ```

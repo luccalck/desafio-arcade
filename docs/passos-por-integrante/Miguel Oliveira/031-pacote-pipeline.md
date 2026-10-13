@@ -91,7 +91,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "ci: automatizar pacote com vídeo como entrada humana"
+git commit -m "ci: automatizar pacote com vídeo como entrada humana
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 031: Automatizar pacote com vídeo como entrada humana" --body-file .contexto/pr-passo-031.md
 ```

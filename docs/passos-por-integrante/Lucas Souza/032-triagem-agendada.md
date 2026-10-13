@@ -84,7 +84,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "ci: agendar triagem e alertas até banca"
+git commit -m "ci: agendar triagem e alertas até banca
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 032: Agendar triagem e alertas até banca" --body-file .contexto/pr-passo-032.md
 ```

@@ -84,7 +84,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "ci: criar tag final e executar release formal"
+git commit -m "ci: criar tag final e executar release formal
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 035: Criar tag final e executar release formal" --body-file .contexto/pr-passo-035.md
 ```

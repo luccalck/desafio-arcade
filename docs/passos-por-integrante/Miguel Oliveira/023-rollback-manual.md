@@ -85,7 +85,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "ci: criar recuperação manual pela pipeline"
+git commit -m "ci: criar recuperação manual pela pipeline
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 023: Criar recuperação manual pela pipeline" --body-file .contexto/pr-passo-023.md
 ```

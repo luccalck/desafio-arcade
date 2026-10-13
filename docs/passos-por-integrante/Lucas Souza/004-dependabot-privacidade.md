@@ -92,7 +92,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "fix: completar segurança inicial e privacidade"
+git commit -m "fix: completar segurança inicial e privacidade
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 004: Completar segurança inicial e privacidade" --body-file .contexto/pr-passo-004.md
 ```

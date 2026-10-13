@@ -91,7 +91,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "feat: calcular quatro dora e linha de base"
+git commit -m "feat: calcular quatro dora e linha de base
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 024: Calcular quatro DORA e linha de base" --body-file .contexto/pr-passo-024.md
 ```

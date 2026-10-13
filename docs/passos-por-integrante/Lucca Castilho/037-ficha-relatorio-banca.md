@@ -120,7 +120,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: consolidar relatório, ficha e apresentação"
+git commit -m "docs: consolidar relatório, ficha e apresentação
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 037: Consolidar relatório, ficha e apresentação" --body-file .contexto/pr-passo-037.md
 ```

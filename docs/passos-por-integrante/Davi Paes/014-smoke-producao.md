@@ -83,7 +83,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "test: preparar smoke prd formal e gates de teste"
+git commit -m "test: preparar smoke prd formal e gates de teste
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 014: Preparar smoke PRD formal e gates de teste" --body-file .contexto/pr-passo-014.md
 ```

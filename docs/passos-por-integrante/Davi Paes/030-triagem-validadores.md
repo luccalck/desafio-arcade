@@ -98,7 +98,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "test: implementar triagem automatizada e testes negativos"
+git commit -m "test: implementar triagem automatizada e testes negativos
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 030: Implementar triagem automatizada e testes negativos" --body-file .contexto/pr-passo-030.md
 ```

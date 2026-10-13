@@ -84,7 +84,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: completar identificação e conteúdo do gdd"
+git commit -m "docs: completar identificação e conteúdo do gdd
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 005: Completar identificação e conteúdo do GDD" --body-file .contexto/pr-passo-005.md
 ```

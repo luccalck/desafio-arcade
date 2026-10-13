@@ -85,7 +85,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "test: verificar versão candidata, artefato e hashes prd"
+git commit -m "test: verificar versão candidata, artefato e hashes prd
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 027: Verificar versão candidata, artefato e hashes PRD" --body-file .contexto/pr-passo-027.md
 ```

@@ -88,7 +88,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: revisar gdd vivo e pdf da candidata final"
+git commit -m "docs: revisar gdd vivo e pdf da candidata final
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 025: Revisar GDD vivo e PDF da candidata final" --body-file .contexto/pr-passo-025.md
 ```

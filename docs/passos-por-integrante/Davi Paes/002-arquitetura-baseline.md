@@ -85,7 +85,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: verificar arquitetura e baseline de qualidade"
+git commit -m "docs: verificar arquitetura e baseline de qualidade
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 002: Verificar arquitetura e baseline de qualidade" --body-file .contexto/pr-passo-002.md
 ```

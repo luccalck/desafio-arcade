@@ -91,7 +91,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "feat: implementar dois alertas e fechamento automático"
+git commit -m "feat: implementar dois alertas e fechamento automático
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 016: Implementar dois alertas e fechamento automático" --body-file .contexto/pr-passo-016.md
 ```

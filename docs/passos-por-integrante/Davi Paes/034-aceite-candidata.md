@@ -84,7 +84,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "test: executar estabilidade e revisão da candidata"
+git commit -m "test: executar estabilidade e revisão da candidata
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 034: Executar estabilidade e revisão da candidata" --body-file .contexto/pr-passo-034.md
 ```

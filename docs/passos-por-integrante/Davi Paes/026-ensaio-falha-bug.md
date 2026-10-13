@@ -90,7 +90,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "test: ensaiar falha controlada, recuperação e regressões"
+git commit -m "test: ensaiar falha controlada, recuperação e regressões
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 026: Ensaiar falha controlada, recuperação e regressões" --body-file .contexto/pr-passo-026.md
 ```

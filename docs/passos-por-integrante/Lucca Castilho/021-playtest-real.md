@@ -87,7 +87,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: realizar playtest e registrar aprendizagem real"
+git commit -m "docs: realizar playtest e registrar aprendizagem real
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 021: Realizar playtest e registrar aprendizagem real" --body-file .contexto/pr-passo-021.md
 ```

@@ -92,7 +92,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "feat: publicar painel de disponibilidade e dora"
+git commit -m "feat: publicar painel de disponibilidade e dora
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 020: Publicar painel de disponibilidade e DORA" --body-file .contexto/pr-passo-020.md
 ```

@@ -99,7 +99,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: registrar equipe, contexto e marcos reais"
+git commit -m "docs: registrar equipe, contexto e marcos reais
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 001: Registrar equipe, contexto e marcos reais" --body-file .contexto/pr-passo-001.md
 ```

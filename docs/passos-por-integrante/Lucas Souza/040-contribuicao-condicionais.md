@@ -114,7 +114,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: auditar fator individual e condicionais restantes"
+git commit -m "docs: auditar fator individual e condicionais restantes
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 040: Auditar fator individual e condicionais restantes" --body-file .contexto/pr-passo-040.md
 ```

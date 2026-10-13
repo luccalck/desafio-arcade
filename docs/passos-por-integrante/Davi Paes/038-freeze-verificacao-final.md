@@ -87,7 +87,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "test: conferir urls finais e congelamento de código"
+git commit -m "test: conferir urls finais e congelamento de código
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 038: Conferir URLs finais e congelamento de código" --body-file .contexto/pr-passo-038.md
 ```

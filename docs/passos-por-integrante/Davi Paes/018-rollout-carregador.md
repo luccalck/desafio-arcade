@@ -89,7 +89,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "feat: implementar controle de rollout e sessão"
+git commit -m "feat: implementar controle de rollout e sessão
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 018: Implementar controle de rollout e sessão" --body-file .contexto/pr-passo-018.md
 ```

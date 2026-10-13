@@ -94,7 +94,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: executar triagem final e auditoria eliminatória"
+git commit -m "docs: executar triagem final e auditoria eliminatória
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 036: Executar triagem final e auditoria eliminatória" --body-file .contexto/pr-passo-036.md
 ```

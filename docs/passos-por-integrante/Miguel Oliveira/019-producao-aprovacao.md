@@ -100,7 +100,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "ci: entregar produção com aprovação e azul-verde"
+git commit -m "ci: entregar produção com aprovação e azul-verde
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 019: Entregar produção com aprovação e azul-verde" --body-file .contexto/pr-passo-019.md
 ```

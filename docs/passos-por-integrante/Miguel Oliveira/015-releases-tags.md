@@ -92,7 +92,8 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "ci: automatizar github releases por tag e anexos"
+git commit -m "ci: automatizar github releases por tag e anexos
+"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 015: Automatizar GitHub Releases por tag e anexos" --body-file .contexto/pr-passo-015.md
 ```
