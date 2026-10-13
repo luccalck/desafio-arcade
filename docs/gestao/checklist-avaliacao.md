@@ -203,7 +203,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I05-03 — Relatório Gitleaks disponível como artefato. E2.
 - [x] I05-04 — npm audit das dependências de produção bloqueia vulnerabilidade crítica. E2/E6.
 - [x] I05-05 — Relatório npm audit arquivado. E2.
-- [ ] I05-06 — Dependabot efetivamente ativado e verificável no repositório. YAML existe; execução ainda não comprovada e alertas API informaram disabled.
+- [x] I05-06 — Dependabot ativado/verificado em13/10/2026: alerts habilitados, APIHTTP200/0alerts, securityupdatesenabled e YAMLnpm/Actions na branchpadrão. [Segurança004](../evidencias/seguranca-inicial.md). Não alegamos PR ou job de atualização executado.
 - [x] I05-07 — SBOM CycloneDX/SPDX gerado com npm sbom. E2.
 - [x] I05-08 — SBOM disponível como artefato de build. E2.
 - [ ] I05-09 — SBOM anexado a cada GitHub Release. Nenhuma release existe.
@@ -479,7 +479,7 @@ Esta tabela transcreve os três níveis como critérios de conferência. Os esta
 - [ ] DIR-09 — CONTÍNUO/FINAL: reconferir ausência de coleta pessoal na build entregue, incluindo serviços/telemetria adicionados.
 - [ ] DIR-10 — CONDICIONAL ranking: só apelido escolhido na hora e guardado no navegador. Jogo atual não tem ranking.
 - [ ] DIR-11 — CONDICIONAL telemetria: somente anônima e agregada, com coleta/finalidade explicadas no README.
-- [ ] DIR-12 — Documentar explicitamente no README a ausência de telemetria atual; GDD já declara ausência.
+- [x] DIR-12 — Ausência de telemetria explicitada no README em13/10/2026, com dados/chaves/reset; rede/código conferidos no [004](../evidencias/seguranca-inicial.md). Reconferência finalDIR-09 continua aberta.
 - [ ] DIR-13 — Concordância real de quem aparecer no vídeo (I10-07).
 - [ ] DIR-14 — Conferir declaração coletiva de propriedade/originalidade: na UC, protótipo pertence ao squad.
 - [ ] DIR-15 — Não publicar CPF/assinaturas/segredos em código, logs, capturas ou artefatos públicos; reconferência final complementar às orientações do projeto.

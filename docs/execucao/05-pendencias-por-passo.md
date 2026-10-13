@@ -45,9 +45,18 @@ Preparação executada em13/10/2026; [evidências](../evidencias/configuracao-gi
 
 SQ-08/participação de Plataforma permanece geral; sem aceite coletivo inventado. KIT-14 fechado somente quanto à variável/destinos. G0/G1 incompletos.
 
-## Passo 004
+## Passo 004 — Segurança inicial e privacidade
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Escopo técnico validado em13/10/2026; [evidências](../evidencias/seguranca-inicial.md).
+
+- [x] Dependabot habilitado e verificado depois da autenticação humana; I05-06 fechado.
+- [x] Gitleaks/hook/audit/SBOM executados e política documentada; fixture sintética/redação/exit1 comprovados.
+- [x] README declara ausência de telemetria; código/rede observados; DIR-12 fechado.
+- [x] Publicação própria ba7494b/PR#6 e CI38345279238 verde; reconferir HEAD atualizado. Revisão antes do merge permanece geral.
+
+**Obrigações gerais/futuras:** política/direitos/participação real da equipe e SQ-09 seguem no checklist geral; não conferimos autoria ou aceite fictício a colegas. G0 segue incompleto por dados/acessos/aceites anteriores. DIR-09 é reconferência da candidata final, encaminhada ao034; logs de atualizações Dependabot devem ser conferidos no fechamento e CI dos seusPRs/base correta no007.
+
+Ranking/telemetria/contagem/Opal/Godot não adotados: condicionais registrados sem implementação ou marcação fictícia. Nenhuma autenticação adicional pendente nesta execução, após a confirmação“pronto” e APIs verificadas.
 
 ## Passo 005
 

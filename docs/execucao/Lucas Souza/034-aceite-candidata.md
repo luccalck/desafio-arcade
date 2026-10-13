@@ -111,3 +111,7 @@ Ao terminar, informe objetivamente: passo/INT/checks realmente fechados, arquivo
 ## Conferência final de acesso encaminhada pelo passo003
 
 Por orientação de Lucca em13/10, verificar aqui o aceite dos convites de DaviSouza78, miguelsenai2024 e6lucassilvaaa e o acesso real usando as próprias contas antes de aceitar a candidata. Convites enviados em13/10 não comprovam aceite/teste/contribuição. Atualizar I01-02 e a pendência003 somente com prova; se acesso faltar, registrar e resolver antes do aceite final, sem simular o colega. O professor utilizará leitura pública, confirmada pelo responsável e consulta anônimaHTTP200.
+
+## Reconferência de segurança e privacidade004
+
+Na candidata final, reconferir DIR-09 no código e rede após serviços/monitoramento adicionados, mantendo declaração README coerente. Conferir estados/logs do Dependabot e PRs reais, sem exigir alerta ou atualização fictícia quando não há vulnerabilidade. Atualizar evidências da release; scanner/audit verdes de uma fonte antiga não encerram a reconferência final.
