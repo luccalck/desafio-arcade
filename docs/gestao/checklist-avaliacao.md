@@ -184,9 +184,9 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I04-04 — Pelo menos três testes de integração. E3: 26.
 - [x] I04-05 — Carregamento e validação de schema do conteúdo JSON testados. E3.
 - [x] I04-06 — JSON inválido quebra a build. E3/E7.
-- [x] I04-07 — Pelo menos dois cenários E2E de navegador. E3: quinze cenários.
-- [ ] I04-08 — Regressão publicada abre a HML, inicia partida, completa primeira fase e verifica tela de fim; implementar/conferir o roteiro inteiro.
-- [ ] I04-09 — Essa regressão roda contra HML a cada deploy formal.
+- [x] I04-07 — Pelo menos dois cenários E2E de navegador. E3: quinze originais; [regressão006](../evidencias/regressao-hml.md):17locais verdes e5cenários no preview público em13/10/2026.
+- [ ] I04-08 — Roteiro completo preparado/validado no006, inclusive vitória e reinício; fechar após execução formal da HML no011. [Evidências](../evidencias/regressao-hml.md).
+- [ ] I04-09 — Essa regressão roda contra HML a cada deploy formal; módulo006 entregue ao011, ainda não integrado/executado como job formal.
 - [ ] I04-10 — Smoke reduzido roda contra URL pública depois do deploy formal de produção.
 - [x] I04-11 — Teste falhando impede o check ci e bloqueia merge na main. E1/E2.
 - [x] I04-12 — Bug real encontrado por teste, corrigido com regressão correspondente. E3: foco/regra antiga/exportação Python, registros em docs/evidencias.

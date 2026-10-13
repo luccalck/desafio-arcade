@@ -123,3 +123,7 @@ Ao terminar, informe objetivamente: passo/INT/checks realmente fechados, arquivo
 ## Encaminhamento explícito do passo003 — 13/10/2026
 
 Este passo executa a integração real de deploy-hml com environmenthomologacao e a migração coordenada de origem/publicação Pages planejada no003/007. Validar origemliteralgh-pages ou equivalente aprovado, o disparo quando o bot usa GITHUB_TOKEN, preservação das releases/loader e recuperação; não mudar Settings isoladamente. Consumir o mesmo ZIP/checksum e executar regressão após propagação. Environments já limitados à main; SITE_URL configurada. Configuração prévia não fecha I07-01/KIT-12/ARQ-07/I03-15: fechar somente depois das provas reais.
+
+## Contrato recebido do006 — regressão completa
+
+Reutilizar `tests/deploy/pages.spec.mjs` e `playwright.public.config.mjs`: executar projetos `hml-desktop` e `hml-toque` após cada deploy-hml com BASE_URL direta e EXPECTED_SHA do artefato aprovado. Arquivar reports/pages-smoke.xml, reports/pages-e2e/ e test-results/ (screenshots/metadados/traces); falha bloqueia promoção. Os dois cenários cobrem campanha real até vitória e reinício confirmado. Limites60s de propagação/10s por consulta, sem retry de suíte pública. Preview foi validado no006; fechar I04-08/I04-09/I03-16 somente com prova deste deploy formal. [Comandos/resultados006](../../evidencias/regressao-hml.md). Smoke prd-smoke pertence à promoção014/019.
