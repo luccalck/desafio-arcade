@@ -1,14 +1,16 @@
 # Passo 008 — Conferir licenças, autoria e revisão humana da IA
 
-**Responsável:** Lucca Castilho · bloco 1. **Papel oficial proposto:** Produto e Game Design. **Revisor proposto:** Davi Paes (conta real a confirmar).
+**Execução em13/10/2026:**inventário/rastreabilidade/auditoria técnica preparados; direitos/revisões humanos pendentes. [Evidências](../../evidencias/direitos.md).
+
+**Responsável:** Lucca Castilho · bloco 1. **Papel oficial proposto:** Produto e Game Design. **Revisor proposto:** Davi Paes (DaviSouza78; revisão geral antes do merge).
 **INT:** INT-05/02/01. **Roteiros preservados:** S01/S02/P04. **Checkpoint:** G1/G2 e contínuo.
 **Dependências de execução:** 001, 004, 005. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
-- [ ] Trabalho implementado/documentado com autoria real.
-- [ ] Validações executadas e evidências arquivadas.
-- [ ] Commit/push pela identidade GitHub do responsável.
+- [x] Inventários e rastreabilidade das etapas conhecidas preparados, sem declaração coletiva fictícia.
+- [x] SBOM/metadados/ativos/termos/Git/fatos educativos conferidos; PDF13p/pdfinfo/CI verdes; revisão humana continua ausente.
+- [x] Publicação própria luccalck:7ffb58d/PR#10draft; CIpush/pr verdes, branch padrão008 para rastreamento.
 - [ ] PR revisado por outro autor e CI verde.
-- [ ] Checks aplicáveis atualizados, sem declarações fictícias.
+- [x]16checksassigned mantidos abertos; I05-10/12/13 revalidados no escopo técnico.
 
 ## Regra da execução por blocos
 
@@ -106,8 +108,7 @@ Use `git add` somente com caminhos efetivamente alterados neste escopo, revise d
 ```sh
 git diff --cached --check
 git diff --cached --stat
-git commit -m "docs: conferir licenças, autoria e revisão humana da ia
-"
+git commit -m "docs: conferir licenças, autoria e revisão humana da ia"
 git push -u origin HEAD
 gh pr create --base main --draft --title "Passo 008: Conferir licenças, autoria e revisão humana da IA" --body-file .contexto/pr-passo-008.md
 ```

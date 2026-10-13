@@ -1,6 +1,6 @@
 # Rota do Código — Game Design Document
 
-Versão do software: **{{VERSION}}**. Revisão do documento: **005 — 13/10/2026**. Mantemos a oficina de jogos aprovada, com desafios Python e preview web. Este documento descreve a candidata; sua data de revisão não representa data de submissão ou release final.
+Versão do software: **{{VERSION}}**. Revisão do documento: **008 — 13/10/2026**. Mantemos a oficina de jogos aprovada, com desafios Python e preview web. Este documento descreve a candidata; sua data de revisão não representa data de submissão ou release final.
 
 | Identificação | Situação verdadeira |
 |---|---|
@@ -155,6 +155,8 @@ Referências técnicas: [esbuild](https://esbuild.github.io/api/#format), [Vites
 | ESLint / typescript-eslint / tsx | Lint/validação | MIT conforme inventário |
 
 Transitividade/versões no THIRD_PARTY/lockfile/SBOM. Nenhuma dependência nova. Sem Opal, AI Studio, Stitch, raster ou IA em runtime; golden eval dessas ferramentas não se aplica ao uso realizado. Comparação com CPython usa somente fixtures editoriais confiáveis em processo local/CI com timeout. Node VM testa pontes de exportação confiáveis que chamam a mesma AST. Não há CPython, execução remota ou exec/eval da fonte do jogador no navegador.
+
+[Conferência técnica de direitos008](evidencias/direitos.md) e [inventário de ativos](evidencias/inventario-ativos-008.json) documentam origem/licenças e revisão coletiva pendente. Fontes incorporadas no PDF devem ser reconferidas por build; MIT do projeto não relicencia terceiros.
 
 ### Originalidade e direitos
 
