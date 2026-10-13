@@ -15,6 +15,7 @@ docs/execucao/
 ├── 06-passagem-lucca-davi.md
 ├── 07-mapa-consolidacao.json
 ├── 08-consolidacao-e-acesso.md
+├── 09-consolidacao-validacoes.json
 ├── Lucca Castilho/  # dez MDs001–010 preservados
 ├── Davi Paes/  # cinco MDs completos
     ├── 011-012-hml-sondas.md
