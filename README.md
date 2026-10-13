@@ -14,7 +14,7 @@ O jogo é estático, responsivo e funciona offline. O jogador não precisa insta
 
 A candidata atual é a versão **0.6.0**. O GitHub Pages é um preview publicado e testado pela pipeline. Produção formal, recuperação, monitoramento, DORA, vídeo e pacote acadêmico final ainda estão pendentes.
 
-O código completo está em `feature/primeiro-ciclo`, temporariamente definida como branch padrão para aparecer na página inicial. O [PR #2](https://github.com/luccalck/desafio-arcade/pull/2) tem destino `main` e aguarda revisão humana de outro autor. `main` continua protegida e contém o bootstrap. Após o merge revisado, deve voltar a ser a branch padrão. Novos PRs devem indicar `main` como destino.
+A branch padrão acompanha temporariamente a candidata mais recente publicada com CI verde, para mostrar o rastreamento atualizado de cada passo. O [PR #2](https://github.com/luccalck/desafio-arcade/pull/2) aguarda integração em main sob revisão obrigatória; main continua protegida. Atualizar a branch padrão não faz merge nem deploy. Após a integração revisada, main deve voltar a ser o destino padrão definitivo.
 
 As evidências disponíveis incluem 152 testes de unidade, 26 de integração, 15 cenários E2E, cobertura de instruções de `src/core` de 97,90%, bugs corrigidos com regressão, PDF gerado, build reproduzível e publicação com smoke. Consulte [testes e limites](docs/evidencias/python-pages.md), [CI e publicação](docs/evidencias/ci-python-pages.md) e a [auditoria do enunciado](docs/gestao/auditoria-avaliacao.md). Esses resultados não encerram os dez integráveis nem comprovam participação coletiva.
 
