@@ -4,11 +4,11 @@
 **INT:** INT-06/04. **Roteiros preservados:** D04/R02. **Checkpoint:** G2/G3.
 **Dependências de execução:** 002, 006, 007, 009. Dependências técnicas vêm de números anteriores, do mesmo bloco ou do bloco já entregue. Revisões/dados humanos não dependem da vez de implementar. Gates continuam G0→G8.
 
-- [ ] Trabalho implementado/documentado com autoria real.
-- [ ] Validações executadas e evidências arquivadas.
-- [ ] Commit/push pela identidade GitHub do responsável.
+- [x] Trabalho implementado/documentado com autoria real.
+- [x] Validações executadas e evidências arquivadas.
+- [x] Commit/push pela identidade GitHub do responsável.
 - [ ] PR revisado por outro autor e CI verde.
-- [ ] Checks aplicáveis atualizados, sem declarações fictícias.
+- [x] Checks aplicáveis atualizados, sem declarações fictícias.
 
 ## Regra da execução por blocos
 
@@ -107,3 +107,9 @@ Atualize `docs/gestao/checklist-avaliacao.md` só com provas: data real, SHA/tag
 Quando for possível, preencha ficha original no navegador com dados e URLs reais já verificados; autoavaliações10 são estimativas solicitadas, não nota atribuída. Check de entrega e declarações só quando verdadeiros. Não alterar original/JS para liberar botão nem enviar e-mail/AVA sem autorização no contexto da execução. Se a sessão for interrompida, salvar estado administrativo local fora dos entregáveis acadêmicos.
 
 Ao terminar, informe objetivamente: passo/INT/checks realmente fechados, arquivos, execução/testes, commit do usuário/PR/revisor, evidências, pendências humanas e próximo passo habilitado. Se bloqueado por acesso/pessoa/termos, entregue preparação revisável e mantenha aceite pendente; não repetir falha de ferramenta indefinidamente nem inventar sucesso.
+
+## Registro010 — 13/10/2026
+
+[Offline e integridade](../../evidencias/offline-integridade.md):clonec56df79,184testes/18E2E, PDF18p/ZIP/checksum/reprodutibilidade verdes. G2 e revisão humana permanecem abertos. [Repasse paraDavi](../06-passagem-lucca-davi.md).
+
+Publicação:c56df79/0f0104c, PR#12draft, CIpush38444743006/PR38444831221 verdes. Checkbox conjunto PRrevisado/CI permanece aberto: revisão de outro autor não ocorreu.

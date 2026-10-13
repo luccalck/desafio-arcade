@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="184" failures="0" errors="0" time="1.8625915">
+    <testsuite name="tests/integration/ci-bundle.test.mjs" timestamp="2026-10-13T18:05:00.440Z" hostname="DESKTOP-LGLDOFB" tests="6" failures="0" errors="0" skipped="0" time="0.0477206">
+        <testcase classname="tests/integration/ci-bundle.test.mjs" name="reúne bytes originais e identifica SHA/run, sem recompilar" time="0.0294721">
+        </testcase>
+        <testcase classname="tests/integration/ci-bundle.test.mjs" name="recusa scanner/relatório ausente" time="0.0034303">
+        </testcase>
+        <testcase classname="tests/integration/ci-bundle.test.mjs" name="checksum e SHA incorretos bloqueiam o contrato" time="0.0044073">
+        </testcase>
+        <testcase classname="tests/integration/ci-bundle.test.mjs" name="adulteração de PDF após coleta bloqueia deploy" time="0.0035709">
+        </testcase>
+        <testcase classname="tests/integration/ci-bundle.test.mjs" name="run diferente e arquivo extra impedem consumir outro pacote" time="0.0029577">
+        </testcase>
+        <testcase classname="tests/integration/ci-bundle.test.mjs" name="caminho fora do pacote é recusado" time="0.001721">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/integration/content.test.ts" timestamp="2026-10-13T18:05:00.442Z" hostname="DESKTOP-LGLDOFB" tests="15" failures="0" errors="0" skipped="0" time="0.0225868">
+        <testcase classname="tests/integration/content.test.ts" name="conteúdo da oficina &gt; seis missões e referências válidas" time="0.0105679">
+        </testcase>
+        <testcase classname="tests/integration/content.test.ts" name="conteúdo da oficina &gt; entrada inválida null" time="0.0007708">
+        </testcase>
+        <testcase classname="tests/integration/content.test.ts" name="conteúdo da oficina &gt; entrada inválida {}" time="0.0002451">
+        </testcase>
+        <testcase classname="tests/integration/content.test.ts" name="conteúdo da oficina &gt; entrada inválida JSON" time="0.000192">
+        </testcase>
+        <testcase classname="tests/integration/content.test.ts" name="conteúdo da oficina &gt; entrada inválida 1" time="0.0001733">
+        </testcase>
+        <testcase classname="tests/integration/content.test.ts" name="conteúdo da oficina &gt; campo desconhecido" time="0.0006486">
+        </testcase>
+        <testcase classname="tests/integration/content.test.ts" name="conteúdo da oficina &gt; meta inventada" time="0.0006407">
+        </testcase>
+        <testcase classname="tests/integration/content.test.ts" name="conteúdo da oficina &gt; referência errada" time="0.0010624">
+        </testcase>
+        <testcase classname="tests/integration/content.test.ts" name="conteúdo da oficina &gt; starter já resolvido" time="0.0009614">
+        </testcase>
+        <testcase classname="tests/integration/content.test.ts" name="conteúdo da oficina &gt; IDs repetidos" time="0.0006743">
+        </testcase>
+        <testcase classname="tests/integration/content.test.ts" name="conteúdo da oficina &gt; ordem errada" time="0.0005326">
+        </testcase>
+        <testcase classname="tests/integration/content.test.ts" name="conteúdo da oficina &gt; casos insuficientes" time="0.0006772">
+        </testcase>
+        <testcase classname="tests/integration/content.test.ts" name="conteúdo da oficina &gt; campo de entrada estranho" time="0.0005603">
+        </testcase>
+        <testcase classname="tests/integration/content.test.ts" name="conteúdo da oficina &gt; zero obrigatório na onda" time="0.0013283">
+        </testcase>
+        <testcase classname="tests/integration/content.test.ts" name="conteúdo da oficina &gt; final não tem sexta função artificial" time="0.001537">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/integration/export.test.ts" timestamp="2026-10-13T18:05:00.445Z" hostname="DESKTOP-LGLDOFB" tests="5" failures="0" errors="0" skipped="0" time="0.0216332">
+        <testcase classname="tests/integration/export.test.ts" name="HTML exportado contém AST validada e player local" time="0.0108689">
+        </testcase>
+        <testcase classname="tests/integration/export.test.ts" name="export bloqueia regra errada" time="0.0025535">
+        </testcase>
+        <testcase classname="tests/integration/export.test.ts" name="comentário não fecha script exportado" time="0.002297">
+        </testcase>
+        <testcase classname="tests/integration/export.test.ts" name="arquivo Python contém cinco fontes reais e licença" time="0.0019055">
+        </testcase>
+        <testcase classname="tests/integration/export.test.ts" name="arquivo Python também exige contratos corretos" time="0.001161">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/integration/pages.test.mjs" timestamp="2026-10-13T18:05:00.446Z" hostname="DESKTOP-LGLDOFB" tests="6" failures="0" errors="0" skipped="0" time="0.0361867">
+        <testcase classname="tests/integration/pages.test.mjs" name="cria HML/release e loader relativo a base do Pages" time="0.0127624">
+        </testcase>
+        <testcase classname="tests/integration/pages.test.mjs" name="preserva release anterior e evita sobrescrever um SHA" time="0.0104674">
+        </testcase>
+        <testcase classname="tests/integration/pages.test.mjs" name="checksum divergente bloqueia publicação" time="0.0026703">
+        </testcase>
+        <testcase classname="tests/integration/pages.test.mjs" name="SHA/versão incoerentes bloqueiam" time="0.0027797">
+        </testcase>
+        <testcase classname="tests/integration/pages.test.mjs" name="entrada extra ou traversal não entra no site" time="0.0028565">
+        </testcase>
+        <testcase classname="tests/integration/pages.test.mjs" name="arquivo exigido ausente bloqueia" time="0.0021518">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/unit/arcade.test.ts" timestamp="2026-10-13T18:05:00.447Z" hostname="DESKTOP-LGLDOFB" tests="22" failures="0" errors="0" skipped="0" time="0.0277232">
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; começa com três vidas e uma onda real" time="0.0075332">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; esquerda move quatro pixels" time="0.0015838">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; direita move quatro pixels" time="0.0006393">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; sem tecla permanece" time="0.0006614">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; não ultrapassa limite do campo" time="0.000752">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; coletar cristal acrescenta 10" time="0.0011147">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; coletar estrela acrescenta 25" time="0.0006854">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; pedra remove uma vida uma única vez" time="0.0007892">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; objeto distante não colide" time="0.0006575">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; última vida encerra partida" time="0.0005594">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; cem pontos vencem" time="0.0005119">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; não modifica entrada do motor" time="0.0004592">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; final é idempotente" time="0.0018359">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; objetos que saem são descartados" time="0.0007423">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; nova onda usa função do jogador" time="0.000805">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; erro na onda não trava criação" time="0.0004858">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; contrato inválido controlar interrompe" time="0.0006046">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; contrato inválido mover interrompe" time="0.0004151">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; contrato inválido colidir interrompe" time="0.0004125">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; contrato inválido pontuar interrompe" time="0.0004199">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; runtime com erro fica visível" time="0.0004582">
+        </testcase>
+        <testcase classname="tests/unit/arcade.test.ts" name="minijogo real &gt; casos registram erro e saída real" time="0.001892">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/unit/code-native.test.mjs" timestamp="2026-10-13T18:05:00.449Z" hostname="DESKTOP-LGLDOFB" tests="16" failures="0" errors="0" skipped="0" time="1.633581">
+        <testcase classname="tests/unit/code-native.test.mjs" name="CPython/editorial/browser/export: controlar" time="0.2491621">
+        </testcase>
+        <testcase classname="tests/unit/code-native.test.mjs" name="CPython/editorial/browser/export: mover" time="0.2486955">
+        </testcase>
+        <testcase classname="tests/unit/code-native.test.mjs" name="CPython/editorial/browser/export: colidir" time="0.2471675">
+        </testcase>
+        <testcase classname="tests/unit/code-native.test.mjs" name="CPython/editorial/browser/export: pontuar" time="0.2457042">
+        </testcase>
+        <testcase classname="tests/unit/code-native.test.mjs" name="CPython/editorial/browser/export: criarOnda" time="0.1933372">
+        </testcase>
+        <testcase classname="tests/unit/code-native.test.mjs" name="semântica CPython confiável return -10 % 3" time="0.0479022">
+        </testcase>
+        <testcase classname="tests/unit/code-native.test.mjs" name="semântica CPython confiável return -7 // 2" time="0.0478061">
+        </testcase>
+        <testcase classname="tests/unit/code-native.test.mjs" name="semântica CPython confiável return [] or 7" time="0.0511401">
+        </testcase>
+        <testcase classname="tests/unit/code-native.test.mjs" name="semântica CPython confiável return not 1 == 2" time="0.0485922">
+        </testcase>
+        <testcase classname="tests/unit/code-native.test.mjs" name="semântica CPython confiável return [1,2] == [1,2]" time="0.0492502">
+        </testcase>
+        <testcase classname="tests/unit/code-native.test.mjs" name="semântica CPython confiável return 0 &lt; 2 &lt;= 3" time="0.0478384">
+        </testcase>
+        <testcase classname="tests/unit/code-native.test.mjs" name="semântica CPython confiável x = 1
+if True:
+    x = 3
+return x" time="0.0491481">
+        </testcase>
+        <testcase classname="tests/unit/code-native.test.mjs" name="semântica CPython confiável a = []
+n = 3
+for i in range(n):
+    a.append(i)
+    n = 0
+    i = 99
+return a" time="0.0476574">
+        </testcase>
+        <testcase classname="tests/unit/code-native.test.mjs" name="semântica CPython confiável a = []
+for i in range(5,0,-2):
+    a.append(i)
+return a" time="0.048769">
+        </testcase>
+        <testcase classname="tests/unit/code-native.test.mjs" name="comentário/source não entra no script do export" time="0.0019064">
+        </testcase>
+        <testcase classname="tests/unit/code-native.test.mjs" name="export usa os mesmos limites de execução" time="0.0059212">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/unit/code.test.ts" timestamp="2026-10-13T18:05:00.451Z" hostname="DESKTOP-LGLDOFB" tests="74" failures="0" errors="0" skipped="0" time="0.0481621">
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; função recebe dicionário e preserva entrada" time="0.0069052">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica 2+3*4" time="0.0021281">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica (2+3)*4" time="0.0005617">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica 10-4-2" time="0.0003828">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica -3+ +2" time="0.0003822">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica -10%3" time="0.0003687">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica 10%-3" time="0.0003385">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica -7//2" time="0.0003533">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica 8/2" time="0.0004223">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica 3&gt;=3" time="0.0003372">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica 3&gt;4" time="0.0002706">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica 3&lt;4" time="0.0002662">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica 3!=4" time="0.000417">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica 3==3" time="0.0002942">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica not False" time="0.0003205">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica not 1 == 2" time="0.0002845">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica 0 or 5" time="0.0002496">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica 2 and 7" time="0.0002809">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica False and ausente" time="0.0002352">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica True or ausente" time="0.0002439">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica [] or 5" time="0.0002121">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica [1] and 7" time="0.000321">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica [1,2] == [1,2]" time="0.0003397">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica True == 1" time="0.0002428">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica 0 &lt; 2 &lt;= 3" time="0.000252">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; semântica 3 &lt; 2 &lt; ausente" time="0.00024">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; comentários e strings escapadas" time="0.0006087">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; if/elif e escopo de função" time="0.0007674">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; atribuição de valor existente e conta acumulada" time="0.0003011">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; range zero não cria objetos" time="0.0006785">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; range start/stop/step negativo" time="0.0006522">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; range avalia limite uma vez; contador alterado não muda sequência" time="0.000429">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; return encerra laço" time="0.0002825">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; lista de entrada não modifica objeto do chamador" time="0.0003386">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; diagnóstico return ausente" time="0.0019623">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; diagnóstico return entrada[&quot;ausente&quot;]" time="0.00048">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; diagnóstico a = 1
+a.append(2)
+return a" time="0.0004214">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; diagnóstico return 1/0" time="0.0003799">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; diagnóstico return 1//0" time="0.0006663">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; diagnóstico return 1%0" time="0.0004087">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; diagnóstico return &quot;2&quot;+3" time="0.0005182">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; diagnóstico a = []
+a.append(&quot;texto&quot;)
+return a" time="0.0004559">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; diagnóstico for i in range(3,0,0):
+    return i
+return 0" time="0.0006062">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; diagnóstico for i in range(2.5):
+    return i
+return 0" time="0.0004839">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; diagnóstico x = 1" time="0.0003837">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; fora do subset import os
+return 1" time="0.0003853">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; fora do subset return entrada.constructor" time="0.0002381">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; fora do subset __steps = 0
+return 1" time="0.0002298">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; fora do subset return globalThis.x" time="0.0004077">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; fora do subset while True:
+    return 0" time="0.0002941">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; fora do subset return Math.random()" time="0.0002049">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; fora do subset entrada[&quot;pontos&quot;] = 9
+return 9" time="0.0003366">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; fora do subset fetch(&quot;x&quot;)
+return 1" time="0.0003527">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; fora do subset return range(5)" time="0.0003321">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; fora do subset return 1 + not False" time="0.0004967">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; fora do subset return -not True" time="0.0004753">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; fora do subset return 3 == not False" time="0.0003261">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; fora do subset return 01" time="0.0002535">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; fora do subset return entrada[&quot;__proto__&quot;]" time="0.0002525">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; rejeita JavaScript" time="0.00043">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; nome preservado" time="0.0004336">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; rejeita função adicional" time="0.0005038">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; diagnóstico aponta linha real" time="0.0005534">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; bloco precisa de indentação" time="0.0005026">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; dedent inválido é localizado" time="0.0004844">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; tab informa alternativa de espaços" time="0.0003377">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; escape desconhecido" time="0.0003321">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; número infinito" time="0.0005751">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; limite de fonte" time="0.0004876">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; limite de grupos" time="0.0005968">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; limite AST" time="0.0011012">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; limite de laço" time="0.0006226">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; limite de lista" time="0.0006861">
+        </testcase>
+        <testcase classname="tests/unit/code.test.ts" name="Python educativo executável &gt; limite de operações aninhadas" time="0.0020128">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/unit/preferences.test.ts" timestamp="2026-10-13T18:05:00.460Z" hostname="DESKTOP-LGLDOFB" tests="9" failures="0" errors="0" skipped="0" time="0.0069734">
+        <testcase classname="tests/unit/preferences.test.ts" name="padrões sem dados" time="0.0024004">
+        </testcase>
+        <testcase classname="tests/unit/preferences.test.ts" name="JSON quebrado retorna padrão" time="0.001128">
+        </testcase>
+        <testcase classname="tests/unit/preferences.test.ts" name="valida tipos sem coerção" time="0.0003391">
+        </testcase>
+        <testcase classname="tests/unit/preferences.test.ts" name="preferência explícita é carregada" time="0.0002181">
+        </testcase>
+        <testcase classname="tests/unit/preferences.test.ts" name="versão desconhecida não é assumida" time="0.0001553">
+        </testcase>
+        <testcase classname="tests/unit/preferences.test.ts" name="leitura bloqueada não quebra menus" time="0.0002637">
+        </testcase>
+        <testcase classname="tests/unit/preferences.test.ts" name="gravação bloqueada retorna false" time="0.0002587">
+        </testcase>
+        <testcase classname="tests/unit/preferences.test.ts" name="sem storage não promete salvar" time="0.0001836">
+        </testcase>
+        <testcase classname="tests/unit/preferences.test.ts" name="grava apenas chave própria" time="0.0003779">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/unit/progress.test.ts" timestamp="2026-10-13T18:05:00.462Z" hostname="DESKTOP-LGLDOFB" tests="19" failures="0" errors="0" skipped="0" time="0.0085796">
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; primeira missão concede um marco" time="0.0024157">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; revisitar não aumenta XP" time="0.0004362">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; missão bloqueada não completa" time="0.0001542">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; missão desconhecida não completa" time="0.0001408">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; campanha completa contém seis marcos" time="0.0001566">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; não modifica lista anterior" time="0.0001386">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; JSON válido restaura prefixo da campanha" time="0.00027">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; dados inválidos têm fallback: {invalid" time="0.0002188">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; dados inválidos têm fallback: null" time="0.0001855">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; dados inválidos têm fallback: {}" time="0.0001054">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; dados inválidos têm fallback: {&quot;version&quot;:1,&quot;completed&quot;:[&quot;dados&quot;,&quot;firmware&quot;,&quot;circuito&quot;,&quot;automacao&quot;,&quot;lotes&quot;,&quot;final&quot;]}" time="0.0001555">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; dados inválidos têm fallback: {&quot;version&quot;:5,&quot;completed&quot;:[&quot;circuito&quot;]}" time="0.0001717">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; dados inválidos têm fallback: {&quot;version&quot;:5,&quot;completed&quot;:[&quot;dados&quot;,&quot;dados&quot;]}" time="0.0001434">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; dados inválidos têm fallback: {&quot;version&quot;:5,&quot;completed&quot;:[&quot;dados&quot;,&quot;outra&quot;]}" time="0.0001331">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; sem armazenamento carrega vazio" time="0.0003002">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; erro de leitura não quebra a partida" time="0.000261">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; erro de escrita mantém fallback" time="0.0001895">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; reset só remove chave do jogo" time="0.0001885">
+        </testcase>
+        <testcase classname="tests/unit/progress.test.ts" name="campanha local &gt; reset sem armazenamento é seguro" time="0.0009435">
+        </testcase>
+    </testsuite>
+    <testsuite name="tests/unit/save.test.ts" timestamp="2026-10-13T18:05:00.464Z" hostname="DESKTOP-LGLDOFB" tests="12" failures="0" errors="0" skipped="0" time="0.0094449">
+        <testcase classname="tests/unit/save.test.ts" name="fallback sem armazenamento contém os starters reais" time="0.0028194">
+        </testcase>
+        <testcase classname="tests/unit/save.test.ts" name="fontes válidas são restauradas" time="0.000491">
+        </testcase>
+        <testcase classname="tests/unit/save.test.ts" name="fonte inválida preserva fallback: {invalid" time="0.0003387">
+        </testcase>
+        <testcase classname="tests/unit/save.test.ts" name="fonte inválida preserva fallback: null" time="0.0001653">
+        </testcase>
+        <testcase classname="tests/unit/save.test.ts" name="fonte inválida preserva fallback: {&quot;version&quot;:3,&quot;sources&quot;:{}}" time="0.0001239">
+        </testcase>
+        <testcase classname="tests/unit/save.test.ts" name="fonte inválida preserva fallback: {&quot;version&quot;:5,&quot;sources&quot;:{&quot;controlar&quot;:5}}" time="0.0001134">
+        </testcase>
+        <testcase classname="tests/unit/save.test.ts" name="fonte extensa não entra no editor" time="0.0003895">
+        </testcase>
+        <testcase classname="tests/unit/save.test.ts" name="falha de leitura preserva sessão" time="0.0002488">
+        </testcase>
+        <testcase classname="tests/unit/save.test.ts" name="escrita usa somente a chave da oficina" time="0.0007104">
+        </testcase>
+        <testcase classname="tests/unit/save.test.ts" name="erro de escrita é indicado" time="0.0003706">
+        </testcase>
+        <testcase classname="tests/unit/save.test.ts" name="sem armazenamento escrita é falsa" time="0.0001773">
+        </testcase>
+        <testcase classname="tests/unit/save.test.ts" name="reset somente de fontes novas e falha segura" time="0.001718">
+        </testcase>
+    </testsuite>
+</testsuites>

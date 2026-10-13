@@ -1,0 +1,73 @@
+<testsuites id="" name="" tests="18" failures="0" skipped="0" errors="0" time="67.132495">
+<testsuite name="offline-package.spec.mjs" timestamp="2026-10-13T18:05:07.582Z" hostname="" tests="1" failures="0" skipped="0" time="13.517" errors="0">
+<testcase name="ZIP offline: campanha completa e downloads reais sem rede" classname="offline-package.spec.mjs" time="13.517">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\offline-package-ZIP-offlin-969d7--e-downloads-reais-sem-rede\attachments\offline-integridade-d4d43722452198c894c6972c3ced0ccb0f1f1677.json]]
+]]>
+</system-out>
+<system-err>
+</system-err>
+</testcase>
+</testsuite>
+<testsuite name="smoke.spec.mjs" timestamp="2026-10-13T18:05:07.582Z" hostname="" tests="4" failures="0" skipped="0" time="16.237" errors="0">
+<testcase name="regressão HML preparada: primeira missão, campanha e encerramento pela UI" classname="smoke.spec.mjs" time="13.151">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI\attachments\menu-1a7cf3656515b88e2ec8b86cfa9abd2c77220930.png]]
+
+[[ATTACHMENT|..\test-results\smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI\attachments\menu-metadados-59386dedd907291ac81763dfbe28b5af8c0bcf84.json]]
+
+[[ATTACHMENT|..\test-results\smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI\attachments\primeira-missao-concluida-86afef6224d9dd6e9e085485fcd76749158cbc19.png]]
+
+[[ATTACHMENT|..\test-results\smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI\attachments\primeira-missao-concluida-metadados-3ce5ce132707e5b6dc6ccc4219907f9477178974.json]]
+
+[[ATTACHMENT|..\test-results\smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI\attachments\encerramento-real-a7240bc114fd1fe26c532514bfb57583f13191e3.png]]
+
+[[ATTACHMENT|..\test-results\smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI\attachments\encerramento-real-metadados-5726f707105b1f0e5c7ff8da4cd52cdc0423718e.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="regressão HML preparada: reinício confirmado e bloqueio de missões" classname="smoke.spec.mjs" time="1.394">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\smoke-regressão-HML-prepar-cd98a-rmado-e-bloqueio-de-missões\attachments\reinicio-confirmado-5a8e718585898b81f63ee974c26b7643db073b98.png]]
+
+[[ATTACHMENT|..\test-results\smoke-regressão-HML-prepar-cd98a-rmado-e-bloqueio-de-missões\attachments\reinicio-confirmado-metadados-092afa7cf0483f66de41be83b3b6583520d929af.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="smoke web: versão, editor e primeira função corrigida" classname="smoke.spec.mjs" time="0.55">
+</testcase>
+<testcase name="primeira missão: problema real, Python e correção" classname="smoke.spec.mjs" time="1.142">
+</testcase>
+</testsuite>
+<testsuite name="workshop.spec.mjs" timestamp="2026-10-13T18:05:07.582Z" hostname="" tests="13" failures="0" skipped="0" time="35.45" errors="0">
+<testcase name="syntax: diagnóstico de linha sem executar APIs externas" classname="workshop.spec.mjs" time="0.627">
+</testcase>
+<testcase name="edição invalida teste e não permite retomar regra antiga" classname="workshop.spec.mjs" time="0.696">
+</testcase>
+<testcase name="movimento aplica operações e muda comportamento real" classname="workshop.spec.mjs" time="1.093">
+</testcase>
+<testcase name="pausa conserva tick e nave, retoma sem recriar partida" classname="workshop.spec.mjs" time="1.311">
+</testcase>
+<testcase name="ajuda opcional, foco após restaurar código e preferências" classname="workshop.spec.mjs" time="0.982">
+</testcase>
+<testcase name="código e vitórias persistem; replay não duplica XP; reset próprio" classname="workshop.spec.mjs" time="0.82">
+</testcase>
+<testcase name="campanha final: pilotagem real, 700XP e HTML exportado offline" classname="workshop.spec.mjs" time="13.242">
+</testcase>
+<testcase name="mobile390x844: campanha por toque e vitória real sem overflow" classname="workshop.spec.mjs" time="13.616">
+</testcase>
+<testcase name="arquivo do projeto principal offline: editar e testar sem rede" classname="workshop.spec.mjs" time="0.766">
+</testcase>
+<testcase name="storage indisponível mantém fontes e campanha na sessão" classname="workshop.spec.mjs" time="0.752">
+</testcase>
+<testcase name="campanha anterior não desbloqueia oficina" classname="workshop.spec.mjs" time="0.476">
+</testcase>
+<testcase name="editor Python: Tab e Enter indentam; Escape permite sair" classname="workshop.spec.mjs" time="0.594">
+</testcase>
+<testcase name="JavaScript antigo preservado sem desbloquear campanha Python" classname="workshop.spec.mjs" time="0.475">
+</testcase>
+</testsuite>
+</testsuites>

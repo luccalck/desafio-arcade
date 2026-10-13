@@ -1,0 +1,6 @@
+
+> rota-do-codigo@0.6.0 gdd:pdf
+> node scripts/gdd-pdf.mjs
+
+Seis mapas da oficina, fluxo, wireframes, esteira e concept gerados.
+GDD.pdf gerado; high concept: 804 caracteres. Validar com pdfinfo e inspeção visual.

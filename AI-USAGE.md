@@ -145,3 +145,11 @@ Codex auxiliou Lucca a executar009/P03/P04/D03. GoogleStitch, WEB/Balanced, proj
 Saídas reais: seis referênciasPNG e mascote, com falhas restantes documentadas. Não importamos HTML/CDN/fontes/código doStitch no runtime nem apresentamos mockups como evidência de execução. Registros antigos de ausência deStitch/raster permanecem históricos.17E2E locais verdes/build válido e capturas reais distintas, fonteb94469e; GDDrev009 preserva12seções/mapas/fluxo. Revisão por outro autor, entendimento dosquatro e direitos coletivos pendentes; nenhuma aprovação humana atribuída à IA. Sem alteração de mecânica/dependência ou deploy neste passo.
 
 Publicação009:bca6a71/PR#11draft sobre008, CIpush38442245309/PR38442289110verdes;184testes+17E2E/PDF18p e segurança/artefatos passaram. Não houve merge/deploy/revisão humana. As telasStitch continuam referências auditadas com divergências.
+
+## Passo010 — ZIP offline e passagem de bloco — 13/10/2026
+
+Codex auxilia LuccaCastilho/luccalck a executar somente010/D04/R02: validar clone limpo, pacote/checksum/versão/reprodutibilidade, campanha completa e downloads semrede. Reutilizamos scripts e Playwright já instalados. Acrescentamos E2EdoZIP e exclusão.contexto noESLint após falha real analisando arquivos gerados; não alteramos jogo/dependências/workflows. Prompt: somente010, autoria real, preservar alterações, evidências e pendências verdadeiras.
+
+Fontec56df79:clone limpo184testes/18E2E verdes; PDF18p/pdfinfo; sete arquivos noZIP28.581bytes, comparação somente data normalizada. EnsaioJSONinválido bloqueou build/foi restaurado; Gitleaks bloqueou string sintética nunca emitida, sem incidente real. Capturas vêm da execução file:// com rede desligada, não simulam produção ou aprendizagem humana. [Provas](docs/evidencias/offline-integridade.md), [passagemLucca→Davi](docs/execucao/06-passagem-lucca-davi.md). Direitos/revisão/quatro/G0G1G2 permanecem humanos/pendentes; recebimentoDavi não inventado. Commit/PR/CI de publicação serão vinculados no controle.
+
+Publicação010:c56df79/0f0104c, PR#12draft sobre009; CIpush38444743006/PR38444831221verdes com18E2E/PDF18p/segurança/pacote. Recebimento/revisãoDavi pendentes; semmerge/deploy. Checklist geral115marcados/297abertos, G2 não liberado sequencialmente.

@@ -1,0 +1,32 @@
+
+> rota-do-codigo@0.6.0 test:e2e
+> playwright test --workers=1
+
+[WebServer] (node:22948) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 18 tests using 1 worker
+
+(node:4388) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+  ok  1 tests\e2e\offline-package.spec.mjs:9:1 › ZIP offline: campanha completa e downloads reais sem rede (13.5s)
+  ok  2 tests\e2e\smoke.spec.mjs:5:1 › regressão HML preparada: primeira missão, campanha e encerramento pela UI (13.2s)
+  ok  3 tests\e2e\smoke.spec.mjs:6:1 › regressão HML preparada: reinício confirmado e bloqueio de missões (1.4s)
+  ok  4 tests\e2e\smoke.spec.mjs:8:1 › smoke web: versão, editor e primeira função corrigida (550ms)
+  ok  5 tests\e2e\smoke.spec.mjs:9:1 › primeira missão: problema real, Python e correção (1.1s)
+  ok  6 tests\e2e\workshop.spec.mjs:5:1 › syntax: diagnóstico de linha sem executar APIs externas (627ms)
+  ok  7 tests\e2e\workshop.spec.mjs:6:1 › edição invalida teste e não permite retomar regra antiga (696ms)
+  ok  8 tests\e2e\workshop.spec.mjs:7:1 › movimento aplica operações e muda comportamento real (1.1s)
+  ok  9 tests\e2e\workshop.spec.mjs:8:1 › pausa conserva tick e nave, retoma sem recriar partida (1.3s)
+  ok 10 tests\e2e\workshop.spec.mjs:9:1 › ajuda opcional, foco após restaurar código e preferências (982ms)
+  ok 11 tests\e2e\workshop.spec.mjs:10:1 › código e vitórias persistem; replay não duplica XP; reset próprio (820ms)
+  ok 12 tests\e2e\workshop.spec.mjs:11:1 › campanha final: pilotagem real, 700XP e HTML exportado offline (13.2s)
+  ok 13 tests\e2e\workshop.spec.mjs:12:1 › mobile390x844: campanha por toque e vitória real sem overflow (13.6s)
+  ok 14 tests\e2e\workshop.spec.mjs:13:1 › arquivo do projeto principal offline: editar e testar sem rede (766ms)
+  ok 15 tests\e2e\workshop.spec.mjs:14:1 › storage indisponível mantém fontes e campanha na sessão (752ms)
+  ok 16 tests\e2e\workshop.spec.mjs:15:1 › campanha anterior não desbloqueia oficina (476ms)
+  ok 17 tests\e2e\workshop.spec.mjs:17:1 › editor Python: Tab e Enter indentam; Escape permite sair (594ms)
+  ok 18 tests\e2e\workshop.spec.mjs:19:1 › JavaScript antigo preservado sem desbloquear campanha Python (475ms)
+
+  18 passed (1.1m)

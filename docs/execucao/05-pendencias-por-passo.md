@@ -121,7 +121,15 @@ PDF18p/pdfinfo e páginas alteradas inspecionados; bca6a71/PR#11draft, CIpush384
 
 ## Passo 010
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Escopo técnico validado em13/10/2026: fontec56df79/clone limpo,184testes/18E2E verdes, campanha completa doZIPfile://semrede e exportações, PDF18p, checksum/tamanho/version/reprodutibilidade. [Evidências](../evidencias/offline-integridade.md); [passagem paraDavi](06-passagem-lucca-davi.md).
+
+- [ ] **G2:** base técnica comprovada; liberação sequencial permanece dependente de G0/G1 e integração revisada na main, sem aceite coletivo daIA.
+- [ ] Revisão por outro autor antes do merge; resolver acesso doDavi (API422 no008) sem aprovação fictícia. Recebimento/compreensão da passagem porDavi ainda não registrados.
+- [ ] RAs/acessos/direitos/quatro permanecem nos passos001/003/005/008/009 e conferência034; RAs seguem adiados.
+- [ ] Release/tag/notas/SBOM/GDDanexados e checksumPRD/release:015/027/035. Conferir offline/versão/tamanho/checksum finais no027/035/038; validação atual não encerra I06-07–12/15/17/18.
+- [ ] HMLformal e push→HML no011, smoke014/019, produção019; consumir o mesmo artefato daCI sem recompilar nos ambientes. Nenhum desses passos foi executado no010.
+
+Nenhum novo check geral fechado;115marcados/297abertos. Publicação010:c56df79/0f0104c; PR#12draft sobre009, CIpush38444743006/PR38444831221 verdes; semmerge/deploy/revisão presumidos.
 
 ## Passo 011
 
