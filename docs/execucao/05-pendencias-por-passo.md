@@ -412,6 +412,8 @@ Triagem agendada e mecanismo de vigilância preparados em 14/10/2026 por Lucas S
 - [ ] **Roteiros S04/S03 e fontes originais.** Guias externos e HTML original da ficha não estão presentes no ambiente local. Dependência: acesso aos originais. Ação: conferir quando disponibilizados, sem afirmar leitura ausente.
 - [ ] **Revisão humana cruzada.** PR deste par aguarda revisão de Lucca Castilho (`luccalck`); CI do HEAD final deve passar. Dependência: revisão formal registrada. Ação: aguardar revisão humana antes de merge.
 
+Publicação MD1 Lucas — 14/10/2026: commits próprios `35b38f5` e `19ecb7c`, [PR#25](https://github.com/luccalck/desafio-arcade/pull/25) em rascunho sobre a branch do MD5. [CI push 38630118693](https://github.com/luccalck/desafio-arcade/actions/runs/38630118693) e [CI PR 38630201513](https://github.com/luccalck/desafio-arcade/actions/runs/38630201513) SUCCESS, inclusive ci agregado. Suíte completa com 260 testes em 25 arquivos e cobertura mantida. Revisão de Lucca Castilho (`luccalck`) solicitada; revisão humana obrigatória antes de qualquer merge.
+
 ## Passo 033
 
 Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
