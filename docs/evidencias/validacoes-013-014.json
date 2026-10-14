@@ -36,5 +36,29 @@
   "formalPrdSmoke": false,
   "rollbackExecuted": false,
   "reviewApproved": false,
-  "remote": null
+  "remote": {
+    "commit": "909ac53a2f4d01c8d17493c9b2e27407a383bd8c",
+    "pr": 16,
+    "base": "feature/passos-011-012-hml-sondas",
+    "push": {
+      "run": 38502833358,
+      "conclusion": "success"
+    },
+    "pullRequest": {
+      "run": 38502867894,
+      "conclusion": "success"
+    },
+    "unitIntegration": 194,
+    "e2e": 28,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "bundleFiles": 157,
+    "artifactVerified": true,
+    "pdfPages": 19,
+    "pdfFormat": "A4",
+    "reviewRequested": "miguelsenai2024",
+    "reviewApproved": false,
+    "formalDeploy": false
+  }
 }
