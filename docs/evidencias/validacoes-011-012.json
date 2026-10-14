@@ -1,0 +1,107 @@
+{
+  "date": "2026-10-13",
+  "timezone": "America/Montevideo",
+  "base": "e28fb1c243eb2d33ccecf77ee2b8cdc403b7a19e",
+  "account": "DaviSouza78",
+  "scope": [
+    "011",
+    "012"
+  ],
+  "local": {
+    "tests": 192,
+    "e2e": 18,
+    "core": {
+      "statements": 97.9,
+      "branches": 95.23,
+      "functions": 100,
+      "lines": 100
+    },
+    "lint": "passed",
+    "actionlint": "passed",
+    "shellcheck": "not-installed",
+    "gitleaks": "no-findings",
+    "build": "passed",
+    "pdf": {
+      "pages": 18,
+      "format": "A4",
+      "pdfinfo": "passed"
+    },
+    "zipBytes": 28725,
+    "reproducibility": "passed"
+  },
+  "initialFailure": {
+    "tests": 14,
+    "cause": "python command resolved to Store alias",
+    "resolution": "bundled CPython directory prepended to PATH"
+  },
+  "previewSamples": {
+    "schema": 1,
+    "run": null,
+    "runAttempt": null,
+    "formalHml": false,
+    "formalPrd": false,
+    "samples": [
+      {
+        "data": "2026-10-14T02:18:39.733Z",
+        "alvo": "hml",
+        "url": "https://luccalck.github.io/desafio-arcade/hml/",
+        "codigo": 200,
+        "tempo": 0.33940230000000005,
+        "versao": "0.6.0",
+        "sha": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+        "versionUrl": "https://luccalck.github.io/desafio-arcade/hml/version.json",
+        "erro": null
+      },
+      {
+        "data": "2026-10-14T02:18:40.271Z",
+        "alvo": "producao",
+        "url": "https://luccalck.github.io/desafio-arcade/",
+        "codigo": 200,
+        "tempo": 0.20542829999999992,
+        "versao": "0.6.0",
+        "sha": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+        "versionUrl": "https://luccalck.github.io/desafio-arcade/releases/71933bfd4bd35f8c3ac8f5899a0e9af00db29f32/version.json",
+        "erro": null
+      }
+    ]
+  },
+  "formalDeployment": false,
+  "pushToHmlSeconds": null,
+  "workflowDispatchExecuted": false,
+  "observabilidadePublished": false,
+  "reviewHuman": null,
+  "remote": {
+    "account": "DaviSouza78",
+    "permission": "WRITE",
+    "commit": "b3d5353b2110abf7703954ab919645943739a813",
+    "pr": 15,
+    "base": "docs/ficha-entrega-dados-equipe",
+    "pushRun": {
+      "id": 38501135262,
+      "conclusion": "success"
+    },
+    "pullRequestRun": {
+      "id": 38501139202,
+      "conclusion": "success"
+    },
+    "tests": 192,
+    "e2e": 18,
+    "bundleFiles": 107,
+    "zipBytes": 28732,
+    "zipSha256": "90de3337d11844593e5a0e473710ff21b992c0876a8a659ca3079c4f5f8d1900",
+    "localHmlFromCi": {
+      "preservedFiles": 52,
+      "hmlFiles": 7,
+      "rebuilt": false,
+      "published": false
+    },
+    "reviewRequested": "miguelsenai2024",
+    "reviewApproved": false,
+    "dispatch": {
+      "executed": false,
+      "status": 404,
+      "reason": "monitor.yml ainda ausente na branch padrao"
+    },
+    "formalDeployment": false
+  }
+}
