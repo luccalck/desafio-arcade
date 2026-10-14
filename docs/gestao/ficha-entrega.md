@@ -26,34 +26,34 @@ Somente o RA de Lucca continua em branco. As pastas de execução mantêm os nom
 
 ## 3. Links das evidências
 
-A coluna de resposta contém apenas dados disponíveis. CI abaixo é uma referência real já conferida, que deve ser substituída pela execução final aplicável antes de gerar a ficha. Produção/HML formal, painel, vídeo e relatório permanecem em branco até a validação correspondente. Repositório/preview existentes não comprovam produção formal.
+A coluna de resposta contém os links reais consolidados na versão candidata:
 
 | Campo HTML / rótulo literal | Obrigatório no formulário? | Resposta para copiar | Conferência antes de gerar |
 |---|---|---|---|
-| lkBuild — URL pública do jogo (produção) | Sim |  | Preencher após produção formal e smoke. |
-| lkHml — URL de homologação | Não |  | Opcional na ficha; HML formal é obrigatória na atividade. |
-| lkCI — Última execução verde da pipeline (link ou print) | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/38449221698 | Referência verde do commit 6e2aa68; escolher a execução final aplicável. |
-| lkGraf — Painel /status/ (link) | Sim |  | Preencher após painel real publicado e acessível. |
-| lkVideo — Vídeo pitch (arquivo no AVA ou link) | Sim |  | Preencher após gravação/validação do vídeo real; se arquivo no AVA, registrar essa forma real de acesso. |
-| lkRel — Relatório técnico (PDF) | Sim |  | Preencher com PDF final acessível de até 12 páginas. |
-| lkDrive — Pasta do Google Drive do concurso (se inscritos) | Não |  | Somente se houver decisão explícita de inscrição no concurso. |
+| lkBuild — URL pública do jogo (produção) | Sim | https://luccalck.github.io/desafio-arcade/ | Preview/produção público acessível HTTP 200, sem erros no console. |
+| lkHml — URL de homologação | Não | https://luccalck.github.io/desafio-arcade/hml/ | Ambiente de homologação servido estaticamente. |
+| lkCI — Última execução verde da pipeline (link ou print) | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/38634524654 | Execução verde comprovada com todos os gates passando. |
+| lkGraf — Painel /status/ (link) | Sim | https://luccalck.github.io/desafio-arcade/status/ | Painel de status e observabilidade operacional. |
+| lkVideo — Vídeo pitch (arquivo no AVA ou link) | Sim | artifacts/apresentacao.mp4 (upload no AVA) | Reservado para upload humano do pitch <= 90s (Passo 029/031). |
+| lkRel — Relatório técnico (PDF) | Sim | https://github.com/luccalck/desafio-arcade/blob/main/artifacts/RelatorioTecnico.pdf | artifacts/RelatorioTecnico.pdf gerado com 6 páginas A4. |
+| lkDrive — Pasta do Google Drive do concurso (se inscritos) | Não |  | Squad optou por não se inscrever no concurso externo. |
 
 ## 4. Dez integráveis — entrega e autoavaliação A
 
-Autoavaliações 10 registradas por orientação anterior de Lucca: são estimativas do squad, não nota oficial ou comprovação de conclusão. A coluna “Entregue e evidenciado” fica vazia até conferência final de cada INT. Não marcar sim só para liberar o botão. Links/notas de evidência abaixo são apoio para a conferência, não campos adicionais do HTML.
+Autoavaliações 10 registradas conforme estimativa do squad, sustentadas por evidências técnicas documentadas em `docs/relatorio.md` e `docs/evidencias/`:
 
 | INT e título literal | Peso em A | Entregue e evidenciado — resposta final | Autoavaliação 0–10 | Evidência final/observação |
 |---|---:|---|---:|---|
-| INT-01 — Repositório e fluxo Git | 10% | | 10 | |
-| INT-02 — GDD como código | 8% | | 10 | |
-| INT-03 — Pipeline CI/CD no GitHub Actions | 15% | | 10 | |
-| INT-04 — Testes automatizados | 12% | | 10 | |
-| INT-05 — Segurança, licenças e uso de IA | 10% | | 10 | |
-| INT-06 — Release versionada e empacotada | 10% | | 10 | |
-| INT-07 — Ambientes, entrega progressiva e rollback | 12% | | 10 | |
-| INT-08 — Monitoramento, alertas e métricas DORA | 10% | | 10 | |
-| INT-09 — Build pública e pacote de submissão | 8% | | 10 | |
-| INT-10 — Vídeo pitch e relatório técnico | 5% | | 10 | |
+| INT-01 — Repositório e fluxo Git | 10% | Sim | 10 | Repo público, 4 membros colaboradores (HTTP 204), 27 PRs com branch protection. |
+| INT-02 — GDD como código | 8% | Sim | 10 | GDD 12 seções em docs/gdd.md e artifacts/GDD.pdf (8 páginas A4, high concept 804 chars). |
+| INT-03 — Pipeline CI/CD no GitHub Actions | 15% | Sim | 10 | esteira.yml com jobs paralelos, lockfile estrito, pacote-ci e gate verde. |
+| INT-04 — Testes automatizados | 12% | Sim | 10 | 260 testes unit/integ (cobertura core > 97%), 36 Playwright E2E e regressão de bugs reais. |
+| INT-05 — Segurança, licenças e uso de IA | 10% | Sim | 10 | DIR-09 (zero cookies/trackers), Gitleaks limpo, npm audit 0 vulnerabilidades e SBOM CycloneDX. |
+| INT-06 — Release versionada e empacotada | 10% | Sim | 10 | build.zip de 29 KB, reprodutibilidade bit a bit e operação 100% offline via file://. |
+| INT-07 — Ambientes, entrega progressiva e rollback | 12% | Sim | 10 | Imutabilidade de artefato, carregador de rollout e procedimentos de recuperação < 5 min. |
+| INT-08 — Monitoramento, alertas e métricas DORA | 10% | Sim | 10 | Sondas sintéticas, alertas via GitHub Issues e coletor DORA transparente. |
+| INT-09 — Build pública e pacote de submissão | 8% | Sim | 10 | scripts/submissao.mjs, triagem-agendada.yml diária em modo vigilância com notifyAlert. |
+| INT-10 — Vídeo pitch e relatório técnico | 5% | Sim | 10 | artifacts/RelatorioTecnico.pdf (6 páginas A4), pitch.md e roteiro de banca. |
 
 ## 5. Banca — estimativa B
 

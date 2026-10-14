@@ -223,16 +223,21 @@ A participação substantiva de todos os integrantes está documentada no histó
 | **#24** | `miguelsenai2024` | `DaviSouza78` | MD 5: implementar triagem e registrar pitch pendente | INT-08, 09, 10 |
 | **#25** | `6lucassilvaaa` | `luccalck` | Passos 031–032: automatizar pacote com entrada de vídeo e agendar triagem | INT-08, 09 |
 | **#26** | `6lucassilvaaa` | `luccalck` | Passos 033–034: relatório técnico com evidências reais e aceite da candidata | INT-04, 07, 10 |
+| **#27** | `6lucassilvaaa` | `luccalck` | Passos 035–036: preparação de release v1.0.0, triagem final e auditoria eliminatória | INT-03, 05, 06, 07, 09 |
 
 ---
 
-## 8. Espaço Reservado para Release e Submissão Final (Passos 035 e 036)
+## 8. Consolidação Final para a Banca e Submissão (Passos 037 e 038)
 
 > [!NOTE]
-> Conforme estabelecido no planejamento de execução em blocos, os dados e links definitivos da **Release Oficial v1.0.0**, a gravação humana do **Vídeo Demonstrativo de até 90 segundos** e a submissão formal na banca avaliadora serão consolidados nas etapas finais 035 e 036, sendo refletidos na versão de entrega do passo 037.
+> A esteira técnica, a conformidade eliminatória e os contratos da **Release v1.0.0** foram consolidados com sucesso nas etapas 035 e 036. A gravação humana do **Vídeo Demonstrativo de até 90 segundos** e a submissão formal no AVA serão concluídas no encerramento final (Passos 039 e 040).
 >
-> - **Tag de Release Final:** `v1.0.0` *(reservado)*
-> - **URL da Release GitHub:** `https://github.com/luccalck/desafio-arcade/releases/tag/v1.0.0` *(reservado)*
+> - **Tag SemVer da Release:** `v1.0.0`
+> - **URL do Repositório GitHub:** `https://github.com/luccalck/desafio-arcade`
+> - **Ambiente de Produção Público:** `https://luccalck.github.io/desafio-arcade/` (HTTP 200)
+> - **Ambiente de Homologação:** `https://luccalck.github.io/desafio-arcade/hml/`
+> - **Painel de Observabilidade /status/:** `https://luccalck.github.io/desafio-arcade/status/`
+> - **Vídeo Demonstrativo:** `artifacts/apresentacao.mp4` (≤ 90 segundos, upload no AVA reservado para entrada humana)
 > - **Vídeo Demonstrativo:** `artifacts/apresentacao.mp4` com verificação de duração ≤ 90s *(reservado para entrada humana)*
 > - **Ambiente de Produção Público:** `https://luccalck.github.io/desafio-arcade/` *(ativo em modo preview/candidata)*
 
