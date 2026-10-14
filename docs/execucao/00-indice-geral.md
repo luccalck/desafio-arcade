@@ -148,3 +148,5 @@ Originais preservados. Repositório/arquivo principal único; .contexto e acompa
 [PublicadorHML](../evidencias/deploy-hml.md) e [sondas/contrato](../evidencias/sondas.md) implementados na branch doMD1, respeitando011→012. Publicação formal/medição real/Pages/observabilidade/aceites permanecem no [registro único](05-pendencias-por-passo.md). Nenhum MD013–014 executado; revisão humana deMiguel obrigatória antes do merge.
 
 PublicaçãoMD1/Davi — 13/10/2026: b3d5353/PR#15; CIs38501135262/38501139202 SUCCESS. I08-01 comprova workflow/cron versionados. HML formal, tempo real, observabilidade, G3/G4 e revisão deMiguel permanecem pendentes nas seções011/012 do registro único. Não houve avanço aoMD2.
+
+PreparaçãoMD2/Davi — 13/10/2026: etapas013/014 na branch feature/passos-013-014-conteudo-smoke, sobre9ce2522/MD1. [Conteúdo/aprendizagem](../evidencias/aprendizagem-conteudo.md) e [smokePRD](../evidencias/smoke-prd.md):194testes,27E2E completos e1novo teste deURL; falhas controladas bloqueiam build/runner. Playtest/produção/rollback não executados; pendências separadas013/014 no registro único. NenhumMD3executado.

@@ -1,0 +1,40 @@
+{
+  "date": "2026-10-13",
+  "timezone": "America/Montevideo",
+  "account": "DaviSouza78",
+  "base": "9ce2522f876676be7db54ee8aeefc388983c6c14",
+  "scope": [
+    "013",
+    "014"
+  ],
+  "local": {
+    "unitIntegration": 194,
+    "core": {
+      "statements": 97.9,
+      "branches": 95.23,
+      "functions": 100,
+      "lines": 100
+    },
+    "fullE2e": 27,
+    "additionalUrlTest": 1,
+    "contentCheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "invalidBuild": {
+      "exitCode": 1,
+      "sourceRestoredByteForByte": true
+    },
+    "publicRunnerAgainstLocalFault": {
+      "exitCode": 1,
+      "fault": "style.css HTTP404",
+      "junitFailures": 1
+    },
+    "syntheticCases": true
+  },
+  "humanPlaytest": false,
+  "formalHml": false,
+  "formalPrdSmoke": false,
+  "rollbackExecuted": false,
+  "reviewApproved": false,
+  "remote": null
+}
