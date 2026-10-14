@@ -89,15 +89,22 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run reproducibility
-      - run: npm run gdd:pdf
-      - name: Verificação do PDF
+      - name: Instalar validador de PDFs
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y poppler-utils
+      - run: npm run gdd:pdf
+      - run: npm run relatorio:pdf
+      - name: Verificação do PDF
+        run: |
           mkdir -p reports
           pdfinfo artifacts/GDD.pdf | tee reports/pdfinfo.txt
           pdftotext artifacts/GDD.pdf reports/gdd-texto.txt
           test -s reports/gdd-texto.txt
+          pdfinfo artifacts/RelatorioTecnico.pdf | tee reports/relatorio-pdfinfo.txt
+          pdftotext artifacts/RelatorioTecnico.pdf reports/relatorio-texto.txt
+          test -s reports/relatorio-texto.txt
+          node --input-type=module -e 'import {readFile} from "node:fs/promises";import {validateReportPages} from "./scripts/ci-bundle.mjs";validateReportPages(await readFile("reports/relatorio-pdfinfo.txt","utf8"));'
       - run: npm run package
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2
         with:
@@ -106,6 +113,7 @@ jobs:
             artifacts/build.zip
             artifacts/build.zip.sha256
             artifacts/GDD.pdf
+            artifacts/RelatorioTecnico.pdf
             dist/version.json
           if-no-files-found: error
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2
@@ -344,13 +352,10 @@ jobs:
           BASE_URL: ${{ vars.SITE_URL }}/hml/
           EXPECTED_SHA: ${{ github.sha }}
         run: npx playwright test --config playwright.public.config.mjs --project=hml-desktop --project=hml-toque
-      - name: Registrar duração observada sem inventar horário de push
+      - name: Comprovar horário de recebimento do push e limite até HML
         env:
           GH_TOKEN: ${{ github.token }}
-        shell: bash
-        run: |
-          gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" --jq '{sha: .head_sha, run: .id, createdAt: .created_at, event: .event}' > reports/hml-run.json
-          node --input-type=module -e 'import {readFile,writeFile} from "node:fs/promises";const r=JSON.parse(await readFile("reports/hml-run.json","utf8"));r.e2eFinishedAt=new Date().toISOString();r.runToHmlSeconds=(Date.parse(r.e2eFinishedAt)-Date.parse(r.createdAt))/1000;r.pushToHmlSeconds=null;r.limitSeconds=900;r.note="createdAt do run é proxy; horário real de recebimento do push ainda deve ser comprovado.";await writeFile("reports/hml-run.json",JSON.stringify(r,null,2));console.log(JSON.stringify(r));if(r.runToHmlSeconds>900)process.exitCode=1;'
+        run: node scripts/ci-bundle.mjs hml-timing
       - name: Conferir bytes servidos na HML aceita
         env:
           SOURCE_SHA: ${{ github.sha }}
@@ -552,13 +557,22 @@ jobs:
         run: node scripts/release.mjs publish pacote-ci docs/notas-versao.md
 
   submissao:
-    needs: [ci, pacote-ci]
-    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v')) && vars.SUBMISSAO_ENABLED == 'true' && needs.ci.result == 'success'
+    needs: [ci, pacote-ci, deploy-prd, release]
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') && vars.SUBMISSAO_ENABLED == 'true' && needs.ci.result == 'success' && needs.deploy-prd.result == 'success' && needs.release.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 15
     permissions:
       contents: read
       actions: read
+    env:
+      SITE_URL: ${{ vars.SITE_URL }}
+      EXPECTED_SHA: ${{ github.sha }}
+      VIDEO_VALIDATION_RUN: ${{ vars.VIDEO_VALIDATION_RUN }}
+      VIDEO_VALIDATION_ATTEMPT: ${{ vars.VIDEO_VALIDATION_ATTEMPT }}
+      VIDEO_VALIDATION_SHA: ${{ vars.VIDEO_VALIDATION_SHA }}
+      VIDEO_SHA256: ${{ vars.VIDEO_SHA256 }}
+      VIDEO_PROVENANCE_PATH: inputs-video/video-provenance.json
+      PRODUCTION_RECEIPT_DIR: producao/reports
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -572,38 +586,51 @@ jobs:
         with:
           name: pacote-ci-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
           path: pacote-ci
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: deploy-prd-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: producao
       - name: Instalar dependências de triagem
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y poppler-utils ffmpeg
-      - name: Obter vídeo humano real validado
+      - name: Conferir origem fixada do vídeo humano validado
         env:
           GH_TOKEN: ${{ github.token }}
         shell: bash
         run: |
-          mkdir -p inputs-video
-          if gh run list --workflow entrada-video.yml --status success --limit 1 --json databaseId --jq '.[0].databaseId' | grep -q '^[0-9]'; then
-            RUN_ID=$(gh run list --workflow entrada-video.yml --status success --limit 1 --json databaseId --jq '.[0].databaseId')
-            gh run download "$RUN_ID" --dir inputs-video
-            find inputs-video -type f -name '*.mp4' -exec mv {} inputs-video/pitch.mp4 \;
-          fi
-          test -s inputs-video/pitch.mp4 || { echo '::error::Vídeo humano obrigatório não fornecido. Pacote de submissão bloqueado.'; exit 1; }
-      - name: Gerar pasta de submissão automatizada
-        env:
-          SITE_URL: ${{ vars.SITE_URL || 'https://luccalck.github.io/desafio-arcade' }}
-          EXPECTED_SHA: ${{ github.sha }}
+          [[ "$VIDEO_VALIDATION_RUN" =~ ^[0-9]+$ && "$VIDEO_VALIDATION_ATTEMPT" =~ ^[1-9][0-9]*$ && "$VIDEO_VALIDATION_SHA" =~ ^[a-f0-9]{40}$ && "$VIDEO_SHA256" =~ ^[a-f0-9]{64}$ ]]
+          gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${VIDEO_VALIDATION_RUN}" > video-run.json
+          node --input-type=module <<'NODE'
+          import {readFile} from 'node:fs/promises';
+          const r=JSON.parse(await readFile('video-run.json','utf8')),e=process.env;
+          if(r.path!=='.github/workflows/entrada-video.yml'||r.event!=='workflow_dispatch'||r.conclusion!=='success'||r.head_sha!==e.VIDEO_VALIDATION_SHA||String(r.run_attempt)!==e.VIDEO_VALIDATION_ATTEMPT)throw Error('Origem fixada do vídeo não corresponde à validação autorizada.');
+          NODE
+          gh run download "$VIDEO_VALIDATION_RUN" --name "video-validado-${VIDEO_VALIDATION_RUN}-${VIDEO_VALIDATION_ATTEMPT}" --dir inputs-video
+      - name: Gerar submissão só dos bytes homologados, publicados e verificados
         run: node scripts/submissao.mjs create pacote-ci inputs-video/pitch.mp4 "$SITE_URL" submissao
-      - name: Executar triagem formal da submissão
+      - name: Executar e arquivar triagem formal na tag final
         env:
           PRAZO: ${{ vars.PRAZO }}
-          EXPECTED_SHA: ${{ github.sha }}
-        run: bash scripts/triagem.sh submissao
+        shell: bash
+        run: |
+          set -o pipefail
+          bash scripts/triagem.sh submissao | tee reports/triagem-final.log
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         with:
           name: submissao-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
           path: submissao/
           if-no-files-found: error
-          retention-days: 30
+          retention-days: 90
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: triagem-final-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            reports/triagem-final.log
+            reports/pages-smoke.xml
+            test-results/
+          if-no-files-found: warn
 
   notificar:
     needs: [qualidade, seguranca, build, e2e, pacote-ci, ci, deploy-hml, deploy-prd, monitor-pos-producao, publicar-preview, release, submissao]

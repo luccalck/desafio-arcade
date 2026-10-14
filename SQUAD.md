@@ -1,12 +1,12 @@
-# Squad Aura 67 — identificação parcial
+# Squad Aura 67 — identificação
 
-Somos o squad **Aura 67**, com quatro nomes e contas confirmados em12/10/2026. Organizamos papéis e revisão cruzada como responsabilidades de coordenação: **todos participam de todas as áreas**, programam, revisam e apresentam seu trabalho. Os nomes completos e RAs de Davi, Miguel e Lucas foram informados em13/10/2026; somente o RA de Lucca continua em branco para preenchimento posterior.
+Somos o squad **Aura 67**, com quatro nomes e contas confirmados em12/10/2026. Organizamos papéis e revisão cruzada como responsabilidades de coordenação: **todos participam de todas as áreas**, programam, revisam e apresentam seu trabalho. Os nomes completos e RAs de Davi, Miguel e Lucas foram informados em13/10/2026; Lucca informou o nome completo Lucca Castilho Costa e RA 26179873 em 14/10/2026.
 
 Nome do squad: **Aura 67**.
 
 | Nome completo | RA | Papel oficial | GitHub |
 |---|---|---|---|
-| Lucca Castilho | | Produto e Game Design | luccalck |
+| Lucca Castilho Costa | 26179873 | Produto e Game Design | luccalck |
 | Davi Marcondes Paes de Souza | 26180842 | Desenvolvimento e Qualidade | DaviSouza78 |
 | Miguel Oliveira de Almeida | 26179933 | Plataforma e Release | miguelsenai2024 |
 | Lucas Souza da Silva | 26179875 | SRE e Segurança | 6lucassilvaaa |
@@ -21,4 +21,4 @@ Horário real de início da aula de 09/10/2026: pendente. Situação de registro
 
 Lucca coordena GDD, backlog, jogabilidade e a preparação dos testes com usuários/roteiro do vídeo. A execução educativa/playtest e gravação permanecem nos passos correspondentes, com participação dos quatro e autoria real. Coordenação não transfere ao colega os commits preparados por IA.
 
-Dados confirmados estão no [GDD](docs/gdd.md) e no [rascunho persistente da ficha](docs/gestao/ficha-entrega.md); o RA de Lucca continua pendente. Revisão coletiva de conteúdo/direitos e versão final permanece geral, sem aceite fictício.
+Dados confirmados estão no [GDD](docs/gdd.md) e no [rascunho persistente da ficha](docs/gestao/ficha-entrega.md); os quatro nomes e RAs estão registrados com dados fornecidos pelos integrantes. Revisão coletiva de conteúdo/direitos e versão final permanece geral, sem aceite fictício.

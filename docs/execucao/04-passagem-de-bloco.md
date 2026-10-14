@@ -36,7 +36,7 @@ Comparação com release final/dados finais GDD aguarda035/037 de Lucas. Miguel 
 
 ## Lucas → fechamento, depois do 040
 
-Conferência de 14/10/2026: [passagem técnica do Bloco 4 preparada](11-passagem-lucas-fechamento.md). Concluídos pacote de submissão, relatório técnico PDF de 6 páginas, estabilidade e verificação de acessos, release v1.0.0, triagem final com auditoria eliminatória, consolidação dos 49 campos da ficha, roteiro da banca com 10 min de fala dividida, verificação externa de URLs, Code Freeze formalizado, auditoria das contribuições (28 PRs, todos aptos a F=1,0) e decisão sobre o concurso.
+Reconferência de14/10/2026: [passagem031–040](11-passagem-lucas-fechamento.md) distingue preparação, CI e execução operacional. Release/triagem/AVA/banca não estão comprovadas no snapshot inicial; F não atestado. Identificação completa, pitch pendente e concurso sem decisão coletiva comprovada.
 
 Os quatro revisam os PRs e participam da banca examinadora. Não marcar G8, recibo AVA, banca realizada ou F1 definitivo antes das respectivas ações humanas reais.
 

@@ -2,7 +2,7 @@
 
 **Squad:** Aura 67
 **Projeto:** Rota do Código — Desafio Arcade
-**Atualização:** 14/10/2026 (Encerramento do Bloco 4 — Etapa 040)
+**Atualização:** 14/10/2026 (reconferência de autoria; fechamento pendente)
 
 Este documento consolida a autoria real, o histórico de Pull Requests, a distribuição de integráveis (INTs) e a governança de revisão cruzada exigida pelo regulamento acadêmico da disciplina.
 
@@ -10,20 +10,20 @@ Este documento consolida a autoria real, o histórico de Pull Requests, a distri
 
 ## 1. Resumo da Distribuição por Integrante
 
-O regulamento exige que cada integrante tenha commits e Pull Requests aprovados em pelo menos **três integráveis diferentes** e participe da banca com domínio de sua contribuição, garantindo o fator individual **F = 1,0**.
+O regulamento exige que cada integrante tenha commits e Pull Requests aprovados em pelo menos **três integráveis diferentes** e participe da banca com domínio de sua contribuição, como requisitos para o fator individual máximo, que depende da avaliação do professor e da banca efetivamente realizada.
 
-| Integrante | Conta GitHub | Papel Oficial | Qtd. Commits | PRs Autorais | INTs Atendidos (≥ 3 exigidos) | Status Fator F |
+| Integrante | Conta GitHub | Papel Oficial | Qtd. Commits | PRs Autorais | INTs de escopo autoral (aprovação a verificar) | Status Fator F |
 |---|---|---|---:|---|---|---|
-| **Lucca Castilho** | `luccalck` | Produto e Game Design | 56 | #2, #3, #4, #5, #6, #7, #8, #9, #10, #11, #12, #13, #14 | INT-01, INT-02, INT-03, INT-04, INT-05, INT-06 | Apto a F=1,0 (SQ-10, SQ-14 pendente de banca) |
-| **Davi Marcondes Paes de Souza** | `DaviSouza78` | Desenvolvimento e Qualidade | 10 | #15, #16, #17, #18, #19 | INT-03, INT-04, INT-06, INT-07, INT-08 | Apto a F=1,0 (SQ-11, SQ-15 pendente de banca) |
-| **Miguel Oliveira de Almeida** | `miguelsenai2024` | Plataforma e Release | 11 | #20, #21, #22, #23, #24 | INT-02, INT-06, INT-07, INT-08, INT-09, INT-10 | Apto a F=1,0 (SQ-12, SQ-16 pendente de banca) |
-| **Lucas Souza da Silva** | `6lucassilvaaa` | SRE e Segurança | 10 | #25, #26, #27, #28, #29 | INT-01, INT-06, INT-09, INT-10 | Apto a F=1,0 (SQ-13, SQ-17 pendente de banca) |
+| **Lucca Castilho Costa** | `luccalck` | Produto e Game Design | 56 | #2, #3, #4, #5, #6, #7, #8, #9, #10, #11, #12, #13, #14 | INT-01, INT-02, INT-03, INT-04, INT-05, INT-06 | F não atestado; revisões e banca a conferir |
+| **Davi Marcondes Paes de Souza** | `DaviSouza78` | Desenvolvimento e Qualidade | 10 | #15, #16, #17, #18, #19 | INT-03, INT-04, INT-06, INT-07, INT-08 | F não atestado; reviews confirmados, banca pendente |
+| **Miguel Oliveira de Almeida** | `miguelsenai2024` | Plataforma e Release | 11 | #20, #21, #22, #23, #24 | INT-02, INT-06, INT-07, INT-08, INT-09, INT-10 | F não atestado; reviews confirmados, banca pendente |
+| **Lucas Souza da Silva** | `6lucassilvaaa` | SRE e Segurança | 10 | #25, #26, #27, #28, #29 | INT-01, INT-06, INT-09, INT-10 | F não atestado; revisões e banca a conferir |
 
 ---
 
 ## 2. Inventário Completo de Pull Requests do Repositório
 
-O squad superou amplamente a exigência regulamentar mínima de **dez Pull Requests revisados por outro autor**:
+Inventário de 28 PRs autorais (#2–#29), cuja consulta inicial de 14/10/2026 encontrou todos abertos e zero reviews registrados. Lucca informou depois que revisou o trabalho dos colegas; essa declaração permite registrar suas revisões efetivas nos PRs de outros autores, sem autoaprovar seus próprios PRs. A coluna de revisor abaixo representa a distribuição proposta, não uma aprovação. Atualizar contagens somente com eventos verificáveis da API. O mínimo não estava comprovado no snapshot inicial. Após autorização de Lucca,15 reviews APPROVED nos HEADs correspondentes dos PRs 15–29 foram confirmados pela API; [prova atual](evidencias/revisoes-confirmadas-2026-10-14.md). Os PRs de Lucca permanecem sem revisão de outro autor.
 
 | PR # | Título do Pull Request | Autor | Revisor Proposto/Ativo | INTs Vinculados | Status / Branch Base |
 |---|---|---|---|---|---|
@@ -58,8 +58,14 @@ O squad superou amplamente a exigência regulamentar mínima de **dez Pull Reque
 
 ---
 
-## 3. Conformidade com os Padrões Git e Conventional Commits
+## 3. Estado das revisões confirmado
 
-- **Padrão de Mensagens:** 100% dos commits do histórico seguem Conventional Commits em língua portuguesa (`feat:`, `fix:`, `docs:`, `ci:`, `test:`).
-- **Sem Auto-Merge:** Todos os Pull Requests foram abertos como draft ou para revisão formal por outro integrante da squad, sem autoaprovação ou bypass de branch protection.
-- **Rastreabilidade Total:** Cada commit possui autoria e e-mail autênticos dos integrantes (`luccalck`, `DaviSouza78`, `miguelsenai2024`, `6lucassilvaaa`), sem commits artificiais, anônimos ou forjados.
+Os PRs 15–29 possuem aprovação real de Lucca; nenhum merge é inferido por isso. PRs 2–14 ainda precisam de outro revisor. Fatores individuais permanecem pendentes de avaliação/banca. Ver [revisões confirmadas](evidencias/revisoes-confirmadas-2026-10-14.md).
+
+## 4. Como verificar a contribuição
+
+As contagens acima são o recorte do histórico usado na etapa 040, não uma contagem de assinaturas criptográficas ou revisão. Consultar `git log`, arquivos alterados e a API de cada PR para revalidar autoria, escopo, HEAD, review e merge. A associação de um PR a um INT indica conteúdo, não o aceite completo desse integrável.
+
+Commits preservam suas identidades originais; não atribuímos trabalho de um integrante a outro. O padrão adotado é Conventional Commits em português, sem afirmar auditoria de 100% das mensagens. A proteção de main exige CI e aprovação de outra pessoa. Não criamos revisões em nome dos colegas nem tratamos banca futura como realizada.
+
+Fonte do snapshot: [reconferência dos registros](evidencias/reconferencia-registros.md). O estado operacional posterior deve ser registrado com links de reviews/merges reais. A nota e o fator individual permanecem sob avaliação do professor.

@@ -1,39 +1,17 @@
-# Etapa 036 — Triagem Final e Auditoria Eliminatória
+# Etapa 036 — Triagem final pendente e condições eliminatórias
 
-**Responsável:** Lucas Souza da Silva (`6lucassilvaaa`)  
-**Data:** 14/10/2026  
-**Versão Avaliada:** `v1.0.0` (candidata à entrega)  
-**Checkpoint:** G7  
+Reconferência de 14/10/2026. A implementação autoral de Lucas está no [PR #27](https://github.com/luccalck/desafio-arcade/pull/27). Não ocorreu triagem final aprovada na tag v1.0.0 no snapshot auditado; não há pacote final com vídeo ou tag remota. O relatório anterior de “100% de conformidade” foi retirado por exceder as evidências.
 
----
+| Condição | Evidência disponível | O que falta conferir |
+|---|---|---|
+| Ativos originais/licenciados | THIRD_PARTY, AI-USAGE, SVGs, capturas reais e inventário | Revisão final de licenças/direitos, materiais gerados por IA e vídeo; scanner não prova direitos |
+| Produção somente pela pipeline | Histórico Pages consultado contém bot de Actions e previews | Preservar exclusividade na execução formal e recuperação; não inferir produção de preview |
+| Sem credencial real | Gitleaks CI auditada sem achados | Reconferir tag, artefatos e vídeo; nunca testar com segredo real |
+| Clone limpo | CI ubuntu-latest, npm ci, lint/testes/build aprovados | Revalidar HEAD corrigido e esteira CD efetiva; runner não é VM/contêiner contratado pelo projeto |
+| Prazo | Regra do enunciado preservada | Horário/entrada oficiais não devem ser inventados nem inferidos do Git |
 
-## 1. Auditoria das Condições Eliminatórias da Rubrica
+O limite regulamentar da build é **inferior a 25 MB**. O GDD exige todas as **12 seções**, além de identificação/declarações/Esteira, e não só quatro tópicos mínimos. O PDF GDD auditado tem 18 páginas; somente o relatório técnico tem limite de doze páginas.
 
-Foi realizada uma auditoria rigorosa de todas as condições eliminatórias estipuladas no regulamento acadêmico e na ficha de avaliação:
+O validador deverá verificar pacote real, manifesto/proveniência, GDD, ZIP/version.json/offline, URLs/smoke, squad e vídeo de até90s. Emitir `TRIAGEM APROVADA` somente após resultado real aprovado, na tag correta, arquivando o log. Testes com fixtures e HTTP200 isolado não substituem a triagem.
 
-| Critério Eliminatório | Requisito da Avaliação | Resultado da Auditoria | Evidência / Status |
-|---|---|:---:|---|
-| **EL-01 / I05-22** | Sem plágio ou uso de ativo sem licença/autorização | **CONFORME** | Todos os mapas, ilustrações, wireframes e diagramas foram gerados por código SVG ou capturados diretamente da aplicação. Bibliotecas de terceiros (esbuild, Vitest, Playwright, fflate, Ajv) possuem licenças permissivas (MIT/ISC/Apache-2.0) inventariadas em `THIRD_PARTY.md` e `LICENSE.txt`. |
-| **EL-02 / I07-03** | Produção exclusivamente pela esteira automatizada | **CONFORME** | A branch `gh-pages` e os artefatos de publicação são manipulados unicamente pelo bot `github-actions[bot]` através do workflow `.github/workflows/esteira.yml`. Zero commits ou alterações manuais foram realizados no ambiente de publicação. |
-| **EL-03 / I05-23** | Zero credenciais ou segredos reais no repositório | **CONFORME** | Varredura completa com Gitleaks em todo o histórico (`fetch-depth: 0`) executada sem nenhum achado de credencial. Credenciais de API utilizadas em sessões locais operam exclusivamente em memória/variáveis de ambiente locais e nunca foram versionadas em código ou logs. |
-| **EL-04 / I03-09** | Pipeline reproduzível a partir de clone limpo | **CONFORME** | A esteira CI executa em containers limpos `ubuntu-latest` com `npm ci` estrito via `package-lock.json`, executando lint, 260 testes unitários/integração, 36 testes Playwright E2E, build estática, geração de PDF e empacotamento sem depender de arquivos locais. |
-| **EL-05** | Regra do prazo original do enunciado | **CONFORME** | Todo o histórico de execução, commits Conventional Commits e PRs rastreia com honestidade o desenvolvimento contínuo da squad, sem falsificação cronológica ou antecipação artificial de datas. |
-
----
-
-## 2. Auditoria da Triagem de Submissão (I09-19, I09-20)
-
-A integridade do pacote de submissão foi auditada através do validador oficial `scripts/triagem.mjs` e do executor `scripts/triagem.sh`:
-
-1. **Validação Estrutural e Contratos:**
-   - `build.zip`: Válido, contendo `index.html`, `LEIA-ME.txt`, `game.js`, `style.css` e metadados com 29.003 bytes (< 50 MB regulamentares).
-   - `GDD.pdf`: Válido com 8 páginas A4, contendo as 4 seções obrigatórias (premissa, high concept, gênero/plataforma, mecânicas-core).
-   - `RelatorioTecnico.pdf`: Válido com 6 páginas A4 (< 12 páginas) cobrindo os 10 INTs, bugs reais, métricas DORA e retrospectiva.
-2. **Entrada de Vídeo e Triagem em Modo Vigilância:**
-   - O validador rejeita qualquer submissão formal sem o arquivo real `pitch.mp4` (vídeo gravado por humanos com duração ≤ 90s verificado via `ffprobe`).
-   - O workflow agendado `.github/workflows/triagem-agendada.yml` opera em modo de vigilância contínua (`--modo=vigilancia`), monitorando a integridade dos contratos e disparando alertas (`notifyAlert`) via GitHub Issues com a label `alerta` em caso de regressão operacional até o momento da banca avaliadora.
-3. **Condições Pendentes para a Submissão Formal Definitiva:**
-   - Gravação humana do vídeo demonstrativo (Passo 029);
-   - Preenchimento do RA numérico de Lucca Castilho em `SQUAD.md`;
-   - Definição do horário oficial da variável `PRAZO` no ambiente da esteira;
-   - Aprovação final de Lucca Castilho (`luccalck`) no PR antes do merge na branch protegida `main`.
+Lucca Castilho Costa / RA26179873 já foi informado e registrado. O pitch continua pendente por ordem de Lucca. Permanecem pendentes a produção/candidata efetiva, pacote final, horário oficial para triagem, tag final e execução agendada sobre origem imutável. Ver [pendências036](../execucao/05-pendencias-por-passo.md) e [reconferência](reconferencia-registros.md).

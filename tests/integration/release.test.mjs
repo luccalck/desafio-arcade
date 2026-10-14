@@ -8,9 +8,10 @@ const proof={annotated:true,integrated:true,protectedMain:true,approved:true};
 function bundle(){
  const site=Object.fromEntries(['index.html','game.js','style.css','LEIA-ME.txt','LICENSE.txt','THIRD_PARTY.txt'].map(n=>[n,strToU8('fixture')]));
  site['version.json']=strToU8(JSON.stringify({sha,version:'0.6.0',build:'2026-10-13T00:00:00Z'}));
- const zip=zipSync(site),files={'build.zip':zip,'build.zip.sha256':strToU8(hash(zip)),'GDD.pdf':strToU8('%PDF-fixture'),'version.json':site['version.json'],'sbom.cdx.json':strToU8('{"bomFormat":"CycloneDX"}')};
- for(const n of ['reports/seguranca/gitleaks.json','reports/seguranca/npm-audit.json','reports/qualidade/junit.xml','reports/qualidade/coverage/coverage-summary.json','reports/e2e/reports/e2e-junit.xml','reports/construcao/pdfinfo.txt','reports/construcao/reproducibility.json'])files[n]=strToU8('fixture');
- files['ci-manifest.json']=strToU8(JSON.stringify({schema:1,sha,run,version:'0.6.0',build:'2026-10-13T00:00:00Z',files:Object.fromEntries(Object.entries(files).map(([n,b])=>[n,{sha256:hash(b),bytes:b.length}]))}));return files;
+ const zip=zipSync(site),files={'build.zip':zip,'build.zip.sha256':strToU8(hash(zip)),'GDD.pdf':strToU8('%PDF-fixture'),'RelatorioTecnico.pdf':strToU8('%PDF-report-fixture'),'version.json':site['version.json'],'sbom.cdx.json':strToU8('{"bomFormat":"CycloneDX"}')};
+ for(const n of ['reports/seguranca/gitleaks.json','reports/seguranca/npm-audit.json','reports/qualidade/junit.xml','reports/qualidade/coverage/coverage-summary.json','reports/e2e/reports/e2e-junit.xml','reports/construcao/pdfinfo.txt','reports/construcao/relatorio-pdfinfo.txt','reports/construcao/reproducibility.json'])files[n]=strToU8('fixture');
+ files['reports/construcao/relatorio-pdfinfo.txt']=strToU8('Pages: 1\n');
+ files['ci-manifest.json']=strToU8(JSON.stringify({schema:1,sha,run,runAttempt:'1',version:'0.6.0',build:'2026-10-13T00:00:00Z',files:Object.fromEntries(Object.entries(files).map(([n,b])=>[n,{sha256:hash(b),bytes:b.length}]))}));return files;
 }
 const plan=()=>planRelease({bundle:bundle(),sha,run,tag:'v0.6.0',version:'0.6.0',proof,notes,notesHash:hash(notes)});
 it('recusa tag leve, fora da main, sem proteção/aprovação e versão incoerente',()=>{
@@ -18,7 +19,7 @@ it('recusa tag leve, fora da main, sem proteção/aprovação e versão incoeren
  for(const tag of ['v1.0.0','v00.6.0','v0.6.0-rc1','outra'])expect(()=>validateTag({tag,sha,version:'0.6.0',proof})).toThrow();
 });
 it('preserva os bytes aprovados e exige notas com hash autorizado',()=>{
- const p=plan();expect(Object.keys(p.assets)).toEqual(['build.zip','build.zip.sha256','sbom.cdx.json','GDD.pdf','release-manifest.json']);
+ const p=plan();expect(Object.keys(p.assets)).toEqual(['build.zip','build.zip.sha256','sbom.cdx.json','GDD.pdf','RelatorioTecnico.pdf','release-manifest.json']);
  expect(JSON.parse(Buffer.from(p.assets['release-manifest.json']).toString()).runAttempt).toBe('1');
  expect(hash(p.assets['build.zip'])).toBe(hash(bundle()['build.zip']));
  expect(()=>planRelease({bundle:bundle(),sha,run,tag:'v0.6.0',version:'0.6.0',proof,notes,notesHash:'b'.repeat(64)})).toThrow(/notas/i);
@@ -46,4 +47,8 @@ it('recusa sobrescrita antes de qualquer escrita e não repara release publicada
  const corrupted=apiMock(),upload=corrupted.api.uploadAsset;
  corrupted.api.uploadAsset=async(r,n,b)=>{await upload(r,n,b);if(n==='build.zip')corrupted.state.bytes[n]=strToU8('upload incorreto');};
  await expect(publishRelease(p,corrupted.api)).rejects.toThrow(/Upload divergente/);expect(corrupted.state.writes).not.toContain('publish');
+});
+
+it('não publica outro attempt sob inventário da primeira tentativa',()=>{
+ expect(()=>planRelease({bundle:bundle(),sha,run,attempt:'2',tag:'v0.6.0',version:'0.6.0',proof,notes,notesHash:hash(notes)})).toThrow(/Tentativa/);
 });

@@ -5,7 +5,11 @@ const pkg=JSON.parse(await readFile('package.json','utf8'));
 const sha=process.env.GITHUB_SHA || execFileSync('git',['rev-parse','HEAD'],{encoding:'utf8'}).trim();
 const tag=process.env.GITHUB_REF_TYPE==='tag'?process.env.GITHUB_REF_NAME:undefined;
 if(tag && tag!==`v${pkg.version}`)throw new Error(`Tag ${tag} diverge da versão ${pkg.version}.`);
-const version={version:pkg.version,sha,build:process.env.BUILD_DATE||new Date().toISOString()};
+// A data de origem do commit mantém os mesmos bytes ao construir main e tag.
+// O horário real da execução continua nos metadados do Actions e no manifesto CI.
+const sourceDate=execFileSync('git',['show','-s','--format=%cI',sha],{encoding:'utf8'}).trim();
+if(!Number.isFinite(Date.parse(sourceDate)))throw new Error('Data de origem do commit inválida.');
+const version={version:pkg.version,sha,build:process.env.BUILD_DATE||new Date(sourceDate).toISOString()};
 await mkdir('dist',{recursive:true});
 const playerBuild=await build({entryPoints:['src/scenes/export-player.ts'],bundle:true,format:'iife',platform:'browser',target:'es2022',write:false,minify:true,legalComments:'eof'});
 const playerBundle=playerBuild.outputFiles[0].text;

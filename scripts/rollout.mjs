@@ -14,6 +14,11 @@ function assertRelease(files,sha){
  const v=JSON.parse(strFromU8(files[`releases/${sha}/version.json`]));
  if(v.sha!==sha||!/^\d+\.\d+\.\d+$/.test(v.version||''))throw Error('Release incoerente.');
 }
+export function verifyCandidateSmoke({sha,run,runAttempt,siteUrl,smoke}){
+ const base=new URL(siteUrl);if(base.protocol!=='https:'||base.username||base.password||base.search||base.hash)throw Error('URL inválida.');
+ const expected=new URL(`releases/${sha}/`,base.href.replace(/\/?$/,'/')).href;
+ if(!smoke||smoke.passed!==true||smoke.mode!=='release'||smoke.expectedSha!==sha||smoke.version?.sha!==sha||smoke.url!==expected||!Array.isArray(smoke.errors)||smoke.errors.length||String(smoke.run)!==String(run)||String(smoke.runAttempt)!==String(runAttempt)||!run||!runAttempt)throw Error('smoke aprovado do mesmo SHA/run/tentativa/URL exigido.');
+}
 export function planRollout({action,existing={},bundle,sha,run,runAttempt,actor,reason,smoke,siteUrl}){
  if(!/^[a-zA-Z0-9][a-zA-Z0-9-]{0,38}$/.test(actor||''))throw Error('ator inválido.');
  if(typeof reason!=='string'||!reason.trim()||reason.length>240||[...reason].some(c=>c.charCodeAt(0)<32))throw Error('motivo inválido.');
@@ -31,9 +36,7 @@ export function planRollout({action,existing={},bundle,sha,run,runAttempt,actor,
   rollout.canario=sha;
  }else if(action==='promover'){
   if(rollout.canario!==sha)throw Error('SHA não é candidato.');
-  const base=new URL(siteUrl);if(base.protocol!=='https:'||base.username||base.password||base.search||base.hash)throw Error('URL inválida.');
-  const expected=new URL(`releases/${sha}/`,base.href.replace(/\/?$/,'/')).href;
-  if(!smoke||smoke.passed!==true||smoke.mode!=='release'||smoke.expectedSha!==sha||smoke.version?.sha!==sha||smoke.url!==expected||!Array.isArray(smoke.errors)||smoke.errors.length||String(smoke.run)!==String(run)||String(smoke.runAttempt)!==String(runAttempt)||!run||!runAttempt)throw Error('smoke aprovado do mesmo SHA/run/tentativa/URL exigido.');
+  verifyCandidateSmoke({sha,run,runAttempt,siteUrl,smoke});
   rollout.anterior=rollout.estavel;rollout.estavel=sha;rollout.canario=null;
  }else if(action==='rollback'){
   if(rollout.anterior!==sha)throw Error('Destino de rollback não é anterior.');

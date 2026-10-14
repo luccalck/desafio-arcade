@@ -35,7 +35,7 @@ export function checkGddSections(text){
  if(expected.some(section=>!headings.includes(section)))fail('GDD não contém as quatro seções obrigatórias.');return true;
 }
 export function checkDuration(seconds){
- const n=Number(seconds);if(!Number.isFinite(n)||n<0)fail('ffprobe retornou duração inválida.');if(n>90)fail(`Vídeo excede 90 segundos (${n}).`);return true;
+ const n=Number(seconds);if(!Number.isFinite(n)||n<=0)fail('ffprobe retornou duração inválida.');if(n>90)fail(`Vídeo excede 90 segundos (${n}).`);return true;
 }
 export function checkZip(bytes){
  let files;try{files=unzipSync(bytes);}catch{fail('build.zip corrompido ou ilegível.');}
@@ -87,7 +87,7 @@ export async function notifyAlert({kind='TriagemIndisponivel',url,reason,repo=pr
  return null;
 }
 
-export async function validateSubmission({directory,env=process.env,now=new Date(),fetchImpl=fetch,runCommand=run,squadText,generateManifest=false,mode='entrega',alertApi=null,alertOnFailure=false}){
+export async function validateSubmission({directory,env=process.env,now=new Date(),fetchImpl=fetch,runCommand=run,squadText,generateManifest=false,mode='entrega',alertApi=null,alertOnFailure=false,verifyPackage=async(directory,options)=>(await import('./submissao.mjs')).verifySubmissionPackage(directory,options)}){
  if(mode==='vigilancia'){
   if(env.PRAZO)parseDeadline(env.PRAZO);
  }else{
@@ -121,7 +121,7 @@ export async function validateSubmission({directory,env=process.env,now=new Date
 
  const expectedSha=env.EXPECTED_SHA;if(!/^[a-f0-9]{40}$/.test(expectedSha||''))fail('EXPECTED_SHA deve ser o SHA real da candidata (40 hexadecimais).');
  try{
-  await runCommand('npx',['playwright','test','--config','playwright.public.config.mjs'],{env:{...process.env,PAGES_URL:publicRoot.href,BASE_URL:new URL('hml/',publicRoot).href,EXPECTED_SHA:expectedSha}});
+  await runCommand('npx',['playwright','test','--config','playwright.public.config.mjs','--project=prd-smoke'],{env:{...process.env,PAGES_URL:publicRoot.href,BASE_URL:new URL('hml/',publicRoot).href,EXPECTED_SHA:expectedSha}});
  }catch(err){
   if(alertApi)await alertApi.notify?.('SmokeFalhou',publicRoot.href,err.message);
   else if(alertOnFailure)await notifyAlert({kind:'SmokeFalhou',url:publicRoot.href,reason:err.message});
@@ -131,6 +131,7 @@ export async function validateSubmission({directory,env=process.env,now=new Date
  const manifestPath=join(directory,'MANIFESTO.sha256');
  if(generateManifest)await writeFile(manifestPath,makeManifest(files),{flag:'wx'});
  const manifest=await readFile(manifestPath,'utf8');verifyManifest(files,manifest);
+ await verifyPackage(directory,{expectedSha,runId:env.SUBMISSION_RUN_ID??env.GITHUB_RUN_ID,runAttempt:env.SUBMISSION_RUN_ATTEMPT??env.GITHUB_RUN_ATTEMPT});
  return {approved:true,url:publicRoot.href,assets:requiredAssets.length,mode};
 }
 
@@ -149,6 +150,7 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).hr
    alertOnFailure:alertar
   });
   console.log(JSON.stringify(result));
+  console.log('TRIAGEM APROVADA');
  }
  catch(error){console.error(`TRIAGEM REPROVADA: ${error.message}`);process.exitCode=1;}
 }

@@ -10,7 +10,8 @@ export const tree=(p=pointer())=>({...releases(oldSha),'rollout.json':strToU8(JS
 export function bundle(){
  // Somente contrato sintético, sem alegar PDF/relatório acadêmico executado.
  const hash=b=>createHash('sha256').update(b).digest('hex'),zip=zipSync(site(newSha));
- const files={'build.zip':zip,'build.zip.sha256':strToU8(hash(zip)),'GDD.pdf':strToU8('%PDF-fixture'),'version.json':strToU8(JSON.stringify(version(newSha))),'sbom.cdx.json':strToU8('{"bomFormat":"CycloneDX"}')};
- for(const n of ['reports/seguranca/gitleaks.json','reports/seguranca/npm-audit.json','reports/qualidade/junit.xml','reports/qualidade/coverage/coverage-summary.json','reports/e2e/reports/e2e-junit.xml','reports/construcao/pdfinfo.txt','reports/construcao/reproducibility.json'])files[n]=strToU8('fixture');
+ const files={'build.zip':zip,'build.zip.sha256':strToU8(hash(zip)),'GDD.pdf':strToU8('%PDF-fixture'),'RelatorioTecnico.pdf':strToU8('%PDF-report-fixture'),'version.json':strToU8(JSON.stringify(version(newSha))),'sbom.cdx.json':strToU8('{"bomFormat":"CycloneDX"}')};
+ for(const n of ['reports/seguranca/gitleaks.json','reports/seguranca/npm-audit.json','reports/qualidade/junit.xml','reports/qualidade/coverage/coverage-summary.json','reports/e2e/reports/e2e-junit.xml','reports/construcao/pdfinfo.txt','reports/construcao/relatorio-pdfinfo.txt','reports/construcao/reproducibility.json'])files[n]=strToU8('fixture');
+ files['reports/construcao/relatorio-pdfinfo.txt']=strToU8('Pages: 1\n');
  files['ci-manifest.json']=strToU8(JSON.stringify({schema:1,...options,version:'0.6.0',build:version(newSha).build,files:Object.fromEntries(Object.entries(files).map(([n,b])=>[n,{sha256:hash(b),bytes:b.length}]))}));return files;
 }

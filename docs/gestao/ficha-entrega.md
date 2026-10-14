@@ -1,6 +1,6 @@
 # Respostas para a ficha de entrega do professor
 
-Atualização: 13/10/2026. Este é o registro persistente para preencher o HTML original de uma vez, no fechamento. Não é a ficha TXT gerada pelo professor nem comprova entrega. Campos de resposta vazios ainda precisam ser completados; não substituir por dados fictícios. Os nomes completos e três RAs abaixo foram informados por Lucca nesta data.
+Atualização: 14/10/2026. Este é o registro persistente para preencher o HTML original de uma vez, no fechamento. Não é a ficha TXT gerada pelo professor nem comprova entrega. Campos de resposta vazios ainda precisam ser completados; não substituir por dados fictícios. Os dados de Davi, Miguel e Lucas foram informados por Lucca em 13/10; Lucca confirmou seu nome completo e RA em 14/10/2026.
 
 Fonte: `C:/Users/user/Downloads/jogo/Avaliação.html`, barra superior e seção 10, incluindo os campos e validadores gerados por JavaScript. Mantemos o original sem alterações. Os papéis/contas estão em [SQUAD](../../SQUAD.md). Nome do jogo para referência: Rota do Código; o formulário não tem campo separado para esse título.
 
@@ -17,43 +17,43 @@ Copiar nas quatro linhas da seção 10, na ordem abaixo. As classes .mNome/.mRA/
 
 | Linha | Nome completo | RA | Papel |
 |---|---|---|---|
-| 1 | Lucca Castilho |  | Produto e Game Design |
+| 1 | Lucca Castilho Costa | 26179873 | Produto e Game Design |
 | 2 | Davi Marcondes Paes de Souza | 26180842 | Desenvolvimento e Qualidade |
 | 3 | Miguel Oliveira de Almeida | 26179933 | Plataforma e Release |
 | 4 | Lucas Souza da Silva | 26179875 | SRE e Segurança |
 
-Somente o RA de Lucca continua em branco. As pastas de execução mantêm os nomes abreviados históricos; isso não muda as pessoas nem as contas. Não inserir CPF, assinatura, senha ou token neste registro.
+Os quatro nomes completos e RAs estão preenchidos com dados fornecidos pelos integrantes. As pastas de execução mantêm os nomes abreviados históricos; isso não muda as pessoas nem as contas. Não inserir CPF, assinatura, senha ou token neste registro.
 
 ## 3. Links das evidências
 
-A coluna de resposta contém os links reais consolidados na versão candidata:
+Os campos finais ficam vazios até comprovação da versão efetivamente entregue. O run abaixo é uma referência histórica auditada; deve ser substituído pela execução final aplicável.
 
 | Campo HTML / rótulo literal | Obrigatório no formulário? | Resposta para copiar | Conferência antes de gerar |
 |---|---|---|---|
-| lkBuild — URL pública do jogo (produção) | Sim | https://luccalck.github.io/desafio-arcade/ | Preview/produção público acessível HTTP 200, sem erros no console. |
-| lkHml — URL de homologação | Não | https://luccalck.github.io/desafio-arcade/hml/ | Ambiente de homologação servido estaticamente. |
-| lkCI — Última execução verde da pipeline (link ou print) | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/38634524654 | Execução verde comprovada com todos os gates passando. |
-| lkGraf — Painel /status/ (link) | Sim | https://luccalck.github.io/desafio-arcade/status/ | Painel de status e observabilidade operacional. |
-| lkVideo — Vídeo pitch (arquivo no AVA ou link) | Sim | artifacts/apresentacao.mp4 (upload no AVA) | Reservado para upload humano do pitch <= 90s (Passo 029/031). |
-| lkRel — Relatório técnico (PDF) | Sim | https://github.com/luccalck/desafio-arcade/blob/main/artifacts/RelatorioTecnico.pdf | artifacts/RelatorioTecnico.pdf gerado com 6 páginas A4. |
-| lkDrive — Pasta do Google Drive do concurso (se inscritos) | Não |  | Squad optou por não se inscrever no concurso externo. |
+| lkBuild — URL pública do jogo (produção) | Sim | | Preview HTTP 200 não comprova produção formal da candidata. |
+| lkHml — URL de homologação | Não | | Confirmar deploy formal e SHA servido, além do HTTP 200. |
+| lkCI — Última execução verde da pipeline (link ou print) | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/38649548723 | Referência auditada no SHA e71de72; deploys e submissão ignorados nesse run. Substituir no fechamento. |
+| lkGraf — Painel /status/ (link) | Sim | | Em 14/10, consulta da auditoria retornou 404; reconferir após publicação. |
+| lkVideo — Vídeo pitch (arquivo no AVA ou link) | Sim | | Pendente por orientação de Lucca; não usar caminho inexistente como entrega. |
+| lkRel — Relatório técnico (PDF) | Sim | | Publicar PDF gerado pela CI e confirmar acesso; arquivo local não é link público. |
+| lkDrive — Pasta do Google Drive do concurso (se inscritos) | Não | | Concurso opcional, sem decisão coletiva/autorização comprovada. |
 
 ## 4. Dez integráveis — entrega e autoavaliação A
 
-Autoavaliações 10 registradas conforme estimativa do squad, sustentadas por evidências técnicas documentadas em `docs/relatorio.md` e `docs/evidencias/`:
+As notas 10 são estimativas solicitadas por Lucca, não resultados medidos ou nota oficial. Os dez campos de entrega foram reabertos após confronto com as evidências; preencher apenas no fechamento real de cada INT.
 
 | INT e título literal | Peso em A | Entregue e evidenciado — resposta final | Autoavaliação 0–10 | Evidência final/observação |
 |---|---:|---|---:|---|
-| INT-01 — Repositório e fluxo Git | 10% | Sim | 10 | Repo público, 4 membros colaboradores (HTTP 204), 27 PRs com branch protection. |
-| INT-02 — GDD como código | 8% | Sim | 10 | GDD 12 seções em docs/gdd.md e artifacts/GDD.pdf (8 páginas A4, high concept 804 chars). |
-| INT-03 — Pipeline CI/CD no GitHub Actions | 15% | Sim | 10 | esteira.yml com jobs paralelos, lockfile estrito, pacote-ci e gate verde. |
-| INT-04 — Testes automatizados | 12% | Sim | 10 | 260 testes unit/integ (cobertura core > 97%), 36 Playwright E2E e regressão de bugs reais. |
-| INT-05 — Segurança, licenças e uso de IA | 10% | Sim | 10 | DIR-09 (zero cookies/trackers), Gitleaks limpo, npm audit 0 vulnerabilidades e SBOM CycloneDX. |
-| INT-06 — Release versionada e empacotada | 10% | Sim | 10 | build.zip de 29 KB, reprodutibilidade bit a bit e operação 100% offline via file://. |
-| INT-07 — Ambientes, entrega progressiva e rollback | 12% | Sim | 10 | Imutabilidade de artefato, carregador de rollout e procedimentos de recuperação < 5 min. |
-| INT-08 — Monitoramento, alertas e métricas DORA | 10% | Sim | 10 | Sondas sintéticas, alertas via GitHub Issues e coletor DORA transparente. |
-| INT-09 — Build pública e pacote de submissão | 8% | Sim | 10 | scripts/submissao.mjs, triagem-agendada.yml diária em modo vigilância com notifyAlert. |
-| INT-10 — Vídeo pitch e relatório técnico | 5% | Sim | 10 | artifacts/RelatorioTecnico.pdf (6 páginas A4), pitch.md e roteiro de banca. |
+| INT-01 — Repositório e fluxo Git | 10% | | 10 | Registrar revisões reais, integrações e tags; autoria não equivale a aprovação. |
+| INT-02 — GDD como código | 8% | | 10 | 12 seções; PDF da CI auditada tem 18 páginas. Conferir revisão e versão final. |
+| INT-03 — Pipeline CI/CD no GitHub Actions | 15% | | 10 | CI verde comprovada; completar execução formal de HML/PRD e tempo de entrega. |
+| INT-04 — Testes automatizados | 12% | | 10 | CI auditada: 152 unidade, 108 integração, 36 E2E; falta provar HML/PRD formais. |
+| INT-05 — Segurança, licenças e uso de IA | 10% | | 10 | Scanners CI sem achados; conferir inventários/revisão e materiais finais. |
+| INT-06 — Release versionada e empacotada | 10% | | 10 | ZIP CI 29.001 bytes; ausência de tag/release no snapshot auditado. |
+| INT-07 — Ambientes, entrega progressiva e rollback | 12% | | 10 | Preparação e testes não comprovam rollout ou recuperação real abaixo de 5 min. |
+| INT-08 — Monitoramento, alertas e métricas DORA | 10% | | 10 | Ativar e executar sondas/painel, alertas e medir DORA reais. |
+| INT-09 — Build pública e pacote de submissão | 8% | | 10 | Pacote final/triagem dependem de produção, vídeo real e prazo oficial. |
+| INT-10 — Vídeo pitch e relatório técnico | 5% | | 10 | Relatório em revisão; pitch e banca continuam pendentes. |
 
 ## 5. Banca — estimativa B
 

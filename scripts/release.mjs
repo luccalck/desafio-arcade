@@ -12,10 +12,10 @@ export function validateTag({tag,sha,version,proof}){
 }
 export function planRelease({bundle,sha,run,attempt='1',tag,version,proof,notes,notesHash}){
  validateTag({tag,sha,version,proof});const manifest=verifyBundle(bundle,{sha,run});
- if(!/^[1-9]\d*$/.test(String(attempt)))throw Error('Tentativa do artefato inválida.');
+ if(!/^[1-9]\d*$/.test(String(attempt))||String(manifest.runAttempt)!==String(attempt))throw Error('Tentativa do artefato inválida/divergente.');
  if(manifest.version!==version)throw Error('Versão do artefato diverge da tag/package.json.');
  if(!notes?.includes(`## ${version}\n`)||hash(notes)!==notesHash)throw Error('Notas ausentes ou hash das notas não autorizado por revisão humana.');
- const assets=Object.fromEntries(['build.zip','build.zip.sha256','sbom.cdx.json','GDD.pdf'].map(n=>[n,bundle[n]]));
+ const assets=Object.fromEntries(['build.zip','build.zip.sha256','sbom.cdx.json','GDD.pdf','RelatorioTecnico.pdf'].map(n=>[n,bundle[n]]));
  const inventory=Object.fromEntries(Object.entries(assets).map(([n,b])=>[n,{sha256:hash(b),bytes:b.length}]));
  assets['release-manifest.json']=Buffer.from(JSON.stringify({schema:1,tag,sha,run:String(run),runAttempt:String(attempt),version,build:manifest.build,notesSha256:notesHash,files:inventory},null,2)+'\n');
  return {tag,sha,notes,assets};

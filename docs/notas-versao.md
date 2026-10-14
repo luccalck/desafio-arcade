@@ -1,5 +1,18 @@
 # Notas de versão — proposta para revisão
 
+## 0.7.0
+
+Candidata de engenharia para validar a esteira formal do Desafio Arcade.
+
+- Identificação de Lucca Castilho Costa, RA26179873, e correção dos registros que confundiam preparação com execução.
+- Relatório técnico PDF integrado à CI, verificações de proveniência e submissão condicionada à produção aceita.
+- Triagem completa do pacote imutável, vídeo fixado por origem/digest e registros de aprovação com fontes reais.
+- Build com data de origem estável por commit para preservar as releases por SHA entre main e tag.
+- Revalidação idempotente e correções dos contratos de recuperação, testadas antes da execução operacional.
+
+O pitch, a submissão acadêmica final, o playtest humano e a banca continuam sujeitos às suas evidências. Esta candidata não é a entrega final v1.0.0. Resultados de deploy, smoke, monitoramento e recuperação são registrados somente após a execução.
+
+
 Estas notas ainda não receberam aprovação humana e não descrevem uma release publicada. Antes da tag autorizada, revisar conteúdo por PR e configurar RELEASE_NOTES_SHA256 com o hash exato deste arquivo aprovado. Alteração posterior exige nova revisão/hash. Não há tagv0.1.0 histórica comprovada; v1.0.0 pertence à etapa035.
 
 ## 1.0.0

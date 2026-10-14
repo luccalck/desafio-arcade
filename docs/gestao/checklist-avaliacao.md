@@ -51,12 +51,12 @@ Os caminhos locais originais são referências de contexto, não arquivos que o 
 - [ ] OBJ-09 — Submeter os três materiais obrigatórios válidos: GDD, build jogável e vídeo, por pacote automatizado.
 - [ ] OBJ-10 — Conferir que arquivos abrem e links funcionam: triagem sem tolerância para material corrompido/indisponível.
 - [ ] OBJ-11 — Demonstrar entregas frequentes durante o período, com dados reais de deploy; não criar uma quantidade mínima de execuções inexistente no HTML.
-- [x] OBJ-12 — Separar avaliação da UC de inscrição/engajamento/premiação do concurso: não influenciam a nota. Decisão de escopo documentada na auditoria.
+- [x] OBJ-12 — Separar avaliação da UC de inscrição/engajamento/premiação do concurso: não influenciam a nota. Separação de escopo documentada; decisão coletiva de inscrição permanece pendente.
 
 ## 02 e 03 — Squad, papéis e autoria real
 
 - [x] SQ-01 — Nome real do squad: Aura67, informado por Lucca em12/10/2026; [SQUAD.md](../../SQUAD.md).
-- [ ] SQ-02 — Registrar exatamente quatro integrantes em SQUAD.md: nome completo, RA e papel de cada um.
+- [x] SQ-02 — Registrar exatamente quatro integrantes em SQUAD.md: nomes completos, RAs e papéis reais. Completo em 14/10/2026 após Lucca informar 26179873; não comprova registro histórico em 02/10.
 - [x] SQ-03 — Quatro papéis oficiais distintos atribuídos em SQUAD.md, com concordância da equipe informada por Lucca em12/10/2026. Coordenação sem exclusividade: todos atuam nas áreas; [equipe.md](../evidencias/equipe.md).
 - [ ] SQ-04 — Conferir formação/registro previstos em 02/10 e estabilidade dos integrantes após o registro; não inventar registro passado.
 - [ ] SQ-05 — Garantir trabalho real dos quatro: papéis têm responsáveis, mas não exclusividade; todos programam, revisam e aparecem no Git.
@@ -64,17 +64,17 @@ Os caminhos locais originais são referências de contexto, não arquivos que o 
 - [ ] SQ-07 — Desenvolvimento assume arquitetura do jogo e pirâmide de testes.
 - [ ] SQ-08 — Plataforma assume workflows, releases, ambientes, entrega e rollback.
 - [ ] SQ-09 — SRE assume observabilidade, alertas, DORA, segurança, licenças e triagem.
-- [x] SQ-10 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 1. Comprovado no histórico Git e PRs: Lucca Castilho (`luccalck`) possui 56 commits e PRs #2 a #14 cobrindo INT-01, INT-02, INT-03, INT-04, INT-05, INT-06. [Evidência 038](../evidencias/smoke-final.md) e [contribuicoes.md](../contribuicoes.md).
-- [x] SQ-11 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 2. Comprovado no histórico Git e PRs: Davi Marcondes Paes de Souza (`DaviSouza78`) possui 10 commits e PRs #15 a #19 cobrindo INT-03, INT-04, INT-06, INT-07, INT-08. [Evidência 038](../evidencias/smoke-final.md) e [contribuicoes.md](../contribuicoes.md).
-- [x] SQ-12 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 3. Comprovado no histórico Git e PRs: Miguel Oliveira (`miguelsenai2024`) possui 11 commits e PRs #20 a #24 cobrindo INT-02, INT-06, INT-07, INT-08, INT-09, INT-10. [Evidência 039](../evidencias/entrega-banca.md) e [contribuicoes.md](../contribuicoes.md).
-- [x] SQ-13 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 4. Comprovado no histórico Git e PRs: Lucas Souza (`6lucassilvaaa`) possui 10 commits e PRs #25 a #29 cobrindo INT-01, INT-06, INT-09, INT-10. [Evidência 040](../evidencias/auditoria-encerramento.md) e [contribuicoes.md](../contribuicoes.md).
+- [ ] SQ-10 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 1. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [x] SQ-11 — Commits e PRs de Davi com escopo em pelo menos três INT: 03/04/06/07/08. PRs15–19 aprovados por luccalck noHEAD confirmado em14/10/2026; ver [revisões](../evidencias/revisoes-confirmadas-2026-10-14.md) e [contribuições](../contribuicoes.md). Banca e F continuam pendentes.
+- [x] SQ-12 — Commits e PRs de Miguel com escopo em pelo menos três INT: 02/06/07/08/09/10. PRs20–24 aprovados por luccalck noHEAD confirmado em14/10/2026; ver [revisões](../evidencias/revisoes-confirmadas-2026-10-14.md) e [contribuições](../contribuicoes.md). Banca e F continuam pendentes.
+- [x] SQ-13 — Commits e PRs de Lucas com escopo em pelo menos três INT: 01/06/09/10. PRs25–29 aprovados por luccalck noHEAD confirmado em14/10/2026; ver [revisões](../evidencias/revisoes-confirmadas-2026-10-14.md) e [contribuições](../contribuicoes.md). Banca e F continuam pendentes.
 - [ ] SQ-14 — Participação do integrante 1 na banca, com domínio de sua contribuição.
 - [ ] SQ-15 — Participação do integrante 2 na banca, com domínio de sua contribuição.
 - [ ] SQ-16 — Participação do integrante 3 na banca, com domínio de sua contribuição.
 - [ ] SQ-17 — Participação do integrante 4 na banca, com domínio de sua contribuição.
-- [x] SQ-18 — Conferir o fator F individual pelo histórico: 1,0 para ≥3 INT + banca; 0,8 para dois; 0,5 para um ou nenhum. Auditado em docs/evidencias/auditoria-encerramento.md e docs/contribuicoes.md: os quatro integrantes cumpriram a exigência técnica de commits e PRs em ≥3 INTs, estando aptos ao F=1,0 condicionado à presença física e arguição na banca.
+- [ ] SQ-18 — Conferir o fator F individual pelo histórico: 1,0 para ≥3 INT + banca; 0,8 para dois; 0,5 para um ou nenhum. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [ ] SQ-19 — CONDICIONAL: equipe de três ou cinco somente com autorização do professor para a UC; não elegível ao concurso.
-- [x] SQ-20 — CONDICIONAL concurso: conferir exigência de exatamente quatro integrantes e efeito de desistência/cancelamento; não tratar identidade simulada como integrante. Squad Aura 67 possui exatamente quatro integrantes reais; decisão formal de não inscrição no concurso documentada em docs/concurso-decisao.md.
+- [ ] SQ-20 — CONDICIONAL concurso: conferir exigência de exatamente quatro integrantes e efeito de desistência/cancelamento; não tratar identidade simulada como integrante. Condição ainda não comprovada; concurso opcional e sem autorização coletiva registrada. Ver [decisão pendente](../concurso-decisao.md).
 
 Não há mínimo textual de “três commits na mesma área”. A unidade da exigência é **três integráveis diferentes**, com commits e PRs aprovados. Uma organização possível é um PR substantivo por INT/pessoa, sem dividir artificialmente trabalho ou atribuir commits de terceiros.
 
@@ -104,12 +104,12 @@ Não há mínimo textual de “três commits na mesma área”. A unidade da exi
 - [x] I01-09 — CONTÍNUO/FINAL: conferir Conventional Commits no histórico completo da release final. 100% dos commits do repositório seguem Conventional Commits em língua portuguesa (feat, fix, docs, ci, test). [Auditoria docs/contribuicoes.md](../contribuicoes.md).
 - [ ] I01-10 — Tag SemVer anotada v0.1.0 da prévia: comprovar a situação real, sem criar data/evidência retroativa.
 - [ ] I01-11 — Tag SemVer anotada v1.0.0 da entrega, criada sobre versão aprovada.
-- [ ] I01-12 — SQUAD.md completo, coerente com colaboradores e autoria. Arquivo existe, dados ausentes.
+- [x] I01-12 — SQUAD.md completo com quatro nomes, RAs, papéis e contas; dados fornecidos pelos integrantes e colaboradores confirmados na auditoria.
 - [x] I01-13 — .gitignore exclui builds e segredos; código/lockfile versionados. E1/E6.
-- [x] I01-14 — Pelo menos dez PRs reais revisados por pessoa diferente do autor; guardar links e revisores. Auditados 28 Pull Requests no repositório com branches, links, autores e revisores mapeados em [docs/contribuicoes.md](../contribuicoes.md).
-- [x] I01-15 — Conferir commits de cada pessoa em três ou mais INT e seus PRs aprovados (SQ-10 a SQ-13). Todos os 4 integrantes comprovaram commits e PRs em ≥ 3 INTs distintos (Lucca: 6, Davi: 5, Miguel: 6, Lucas: 4). [docs/contribuicoes.md](../contribuicoes.md).
-- [x] I01-16 — `git log --oneline v0.1.0..v1.0.0` conta uma história legível, com tags existentes e autoria real. Auditado em [docs/contribuicoes.md](../contribuicoes.md) e [docs/evidencias/auditoria-encerramento.md](../evidencias/auditoria-encerramento.md).
-- [x] I01-17 — AVANÇADO: histórico exemplar e contribuição equilibrada dos quatro, além de Conventional Commits. Histórico íntegro com contribuição balanceada documentada em [docs/contribuicoes.md](../contribuicoes.md) e [docs/relatorio.md](../relatorio.md) Seção 7.
+- [x] I01-14 — Pelo menos dez PRs revisados por outro autor:15 aprovações reais de luccalck nos HEADs dos PRs15–29 confirmadas pela API em14/10/2026. Ver [revisões](../evidencias/revisoes-confirmadas-2026-10-14.md). Não comprova merge ou revisão dos PRs próprios.
+- [ ] I01-15 — Conferir commits de cada pessoa em três ou mais INT e seus PRs aprovados (SQ-10 a SQ-13). Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [ ] I01-16 — `git log --oneline v0.1.0..v1.0.0` conta uma história legível, com tags existentes e autoria real. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [ ] I01-17 — AVANÇADO: histórico exemplar e contribuição equilibrada dos quatro, além de Conventional Commits. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [ ] I01-18 — Restaurar main como branch padrão após merge revisado; até lá apontar PRs explicitamente para main. Preparação interna para a mudança temporária de visualização.
 
 ## INT-02: GDD como código · peso 8% de A
@@ -146,7 +146,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] GDD-10 — Arte/referências/concept art com origem e direitos. E4/E6.
 - [x] GDD-11 — IA/terceiros, ferramentas, usos, componentes, licenças e direitos descritos. E4/E6.
 - [x] GDD-12 — Ideias adicionais/roadmap separados do implementado. E4.
-- [ ] GDD-13 — Identificação completa: squad, nomes, RAs e papéis reais. Na revisão025, RA de Lucca segue vazio; não preencher sem dado confirmado.
+- [x] GDD-13 — Identificação completa: squad, quatro nomes, RAs, papéis e contas; Lucca Castilho Costa / 26179873 confirmado em 14/10/2026.
 - [ ] GDD-14 — Versão/data coerentes com release, links finais reais e acessíveis.
 - [ ] GDD-15 — Declaração de originalidade/direitos conferida pelos quatro, sem assinatura/CPF públicos; eventual versão privada conforme orientação.
 - [ ] GDD-16 — Revisão humana de texto, tabelas, declarações, mapas e legibilidade da versão final do PDF.
@@ -161,7 +161,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I03-06 — Unidade/integração executadas com JUnit e cobertura. E2/E3.
 - [x] I03-07 — Segurança Gitleaks/npm audit/SBOM integrada e bloqueante conforme INT-05. E2.
 - [x] I03-08 — Build do jogo, GDD.pdf e build.zip automatizados. E2/E7.
-- [x] I03-09 — Clone limpo reproduz esteira formal completa, sem passos ocultos/configuração local indispensável. Comprovado pela esteira remota GitHub Actions em runner limpo ubuntu-latest: 260 testes unit/integ, 36 E2E, lint, build e pacote com CI verde. [Evidência 035](../evidencias/release-final.md).
+- [ ] I03-09 — Clone limpo reproduz esteira formal completa, sem passos ocultos/configuração local indispensável. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [x] I03-10 — Status check ci obrigatório na main. E1.
 - [x] I03-11 — Credenciais usadas pelo workflow via secrets/token do GitHub; configuração não sensível via variables. E2/E6.
 - [x] I03-12 — Permissões mínimas declaradas nos jobs atuais. E2.
@@ -222,7 +222,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I05-19 — AVANÇADO: pre-commit Gitleaks instalado e execução local comprovada. E6/commits documentais anteriores.
 - [x] I05-20 — AVANÇADO: política de vulnerabilidade/segredos documentada em SECURITY.md. E6; revisão coletiva ainda pendente.
 - [ ] I05-21 — AVANÇADO: usos de IA rastreáveis por PR, com revisão humana registrada (I05-14/15/17).
-- [x] I05-22 — CONTÍNUO/FINAL: zero ativo protegido/plagiado sem autorização, inclusive conteúdo gerado; condição eliminatória para o squad. Auditado em 14/10/2026: todos os mapas, diagramas e wireframes gerados por código SVG ou capturas da aplicação; dependências com licenças permissivas conferidas em THIRD_PARTY.md. [Evidência 036](../evidencias/triagem-final.md).
+- [ ] I05-22 — CONTÍNUO/FINAL: conferir direitos/licenças de todos os ativos e usos de IA, inclusive materiais finais. Inventários existem, mas não atestar conformidade integral ou ausência de plágio só pelo scanner. [Reconferência](../evidencias/triagem-final.md).
 - [x] I05-23 — CONTÍNUO/FINAL: zero credencial real no repositório; se houver incidente, revogar e corrigir com evidência sem expor o valor. Credencial real zera INT-05. Varredura com Gitleaks em todo o histórico com 0 achados; credenciais locais mantidas estritamente em memória/sessão. [Evidência 036](../evidencias/triagem-final.md).
 
 ## INT-06: Release versionada e empacotada · peso 10% de A
@@ -250,7 +250,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 
 - [ ] I07-01 — Pages configurado com gh-pages como origem, conforme HTML; atual build_type é workflow. Alinhar ou validar equivalência fundamentada antes do aceite.
 - [x] I07-02 — gh-pages escrito apenas pela pipeline nas publicações atuais. E2/E7.
-- [x] I07-03 — CONTÍNUO/FINAL: nenhuma produção alterada à mão; alteração manual de gh-pages zera INT-07. gh-pages gerenciada exclusivamente pela pipeline GitHub Actions (github-actions[bot]), sem commits manuais. [Evidência 036](../evidencias/triagem-final.md).
+- [x] I07-03 — CONTÍNUO: histórico gh-pages consultado na auditoria contém apenas publicação pelo bot deActions, sem alteração manual observada. Preservar esse controle e reconferir publicações formais/recuperação; não equivale a execução dePRD.
 - [ ] I07-04 — /hml/ contém último build da main aprovado no CI. Atual HML é preview da feature.
 - [x] I07-05 — Releases do preview em /releases/<sha>/, preservadas sem sobrescrever conteúdo. E2/E7.
 - [ ] I07-06 — Releases formais de produção imutáveis, com teste/evidência dessa propriedade.
@@ -332,8 +332,8 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I09-18 — Falha em qualquer checagem reprova o job e impede entrega considerada aprovada.
 - [ ] I09-19 — Rodar triagem na tag v1.0.0 e arquivar resultado TRIAGEM APROVADA verdadeiro.
 - [ ] I09-20 — Arquivar pacote e logs da triagem junto da release/execução correspondente.
-- [x] I09-21 — AVANÇADO: triagem agendada até a banca. 14/10/2026: workflow .github/workflows/triagem-agendada.yml configurado com cron diário (0 12 * * *) e workflow_dispatch em modo vigilância; ativação operacional automática condicionada ao merge na branch padrão.
-- [x] I09-22 — AVANÇADO: triagem agendada avisa se a URL cair até a banca, com notificação real. 14/10/2026: scripts/triagem.mjs suporta modo vigilância e emissão de alertas via GitHub Issues (label alerta e marcadores idempotentes); validado com simulação de erro 503/timeout em testes automatizados.
+- [ ] I09-21 — AVANÇADO: triagem agendada até a banca. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [ ] I09-22 — AVANÇADO: triagem agendada avisa se a URL cair até a banca, com notificação real. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [ ] I09-23 — CONDICIONAL concurso: enviar o mesmo pacote ao Drive do responsável e conferir acesso total ao e-mail do regulamento.
 - [ ] I09-24 — CONDICIONAL concurso: testar compartilhamento em janela anônima com outra conta.
 
@@ -346,17 +346,17 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I10-05 — Registrar direitos de trilha e imagens em THIRD_PARTY.md, ou declarar ausência de trilha quando aplicável.
 - [ ] I10-06 — Inserir legendas legíveis por acessibilidade.
 - [x] I10-07 — Obter concordância real de quem aparece/tem imagem ou voz publicada no vídeo.
-- [x] I10-08 — Preparar relatório técnico PDF com até doze páginas; não substituir pelo GDD. Gerado artifacts/RelatorioTecnico.pdf com 6 páginas A4 via scripts/relatorio-pdf.mjs.
+- [ ] I10-08 — Gerar e validar relatório técnico revisado em artifacts/RelatorioTecnico.pdf pela pipeline, com até doze páginas; não substituir pelo GDD.
 - [x] I10-09 — Relatório apresenta arquitetura da esteira e decisões. docs/relatorio.md Seção 2 (Jobs esteira.yml, pacote-ci, ambientes HML/PRD).
 - [x] I10-10 — Relatório apresenta alternativas descartadas e justificativas. docs/relatorio.md Seção 3 (Descarte de Pyodide, engines pesadas, backend com RCE, nuvem paga).
-- [x] I10-11 — Relatório contém prints reais com data e links de build/evidência de cada um dos dez INT. docs/relatorio.md Seção 4 rastreia INT-01 a INT-10.
-- [x] I10-12 — Relatório contém quatro DORA reais e comparação com a linha de base. docs/relatorio.md Seção 5 reporta métricas transparentes N/D e baseline Carparts 11 dias.
-- [x] I10-13 — Retrospectiva registra o que funcionou. docs/relatorio.md Seção 6.1.
-- [x] I10-14 — Retrospectiva registra o que não funcionou. docs/relatorio.md Seção 6.2 (latência cron Actions, utilitários nativos Windows).
-- [x] I10-15 — Retrospectiva registra o que mudariam, sustentado por dados. docs/relatorio.md Seção 6.3 (Web Worker para AST, pré-validação local de contratos).
-- [x] I10-16 — Contribuição de cada integrante com links dos PRs reais. docs/relatorio.md Seção 7 mapeia 25+ PRs e autoria da squad.
-- [x] I10-17 — PDF técnico abre, está legível, tem ≤12 páginas e links acessíveis. Validado: 6 páginas A4, %PDF-1.4 íntegro, links clicáveis.
-- [x] I10-18 — Acrescentar evidências reais de release/triagem após as execuções; não declarar sucesso antecipado. Evidências reais da Release v1.0.0 (docs/evidencias/release-final.md), triagem final (docs/evidencias/triagem-final.md) e smoke final (docs/evidencias/smoke-final.md) consolidadas em docs/relatorio.md Seção 8 sem antecipação fictícia de resultados futuros.
+- [ ] I10-11 — Relatório contém prints reais com data e links de build/evidência de cada um dos dez INT. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [ ] I10-12 — Relatório contém quatro DORA reais e comparação com a linha de base. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [x] I10-13 — Retrospectiva registra o que funcionou. docs/relatorio.md Seção7.
+- [x] I10-14 — Retrospectiva registra o que não funcionou. docs/relatorio.md Seção7: antecipação de aceites e acúmulo dePRs semintegração.
+- [x] I10-15 — Retrospectiva registra o que mudariam, sustentado por dados. docs/relatorio.md Seção7: revisão de registros/proveniência, com base nos27checkscontestados e bundleauditado; efeitoDORAa medir.
+- [x] I10-16 — Contribuição de cada integrante com links dos PRs reais. docs/relatorio.md Seção7 e docs/contribuicoes.md mapeiam os28PRsautorais e os respectivos estados de revisão.
+- [ ] I10-17 — Validar o PDF técnico revisado: abrir/renderizar, conferir legibilidade, links e limite de doze páginas; publicar o artefato acessível.
+- [ ] I10-18 — Acrescentar evidências reais de release/triagem após as execuções; não declarar sucesso antecipado. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [ ] I10-19 — AVANÇADO: narrativa clara do pitch, legendas e retrospectiva honesta com dados.
 
 ## 06 — Kit de partida: fechar as lacunas dos exemplos
@@ -366,7 +366,7 @@ Os esqueletos não passam como estão. Nomes/estrutura exemplificados não obrig
 - [x] KIT-01 — README explica como rodar, branching e arquitetura. README atual.
 - [x] KIT-02 — Código organizado em core/renderização/conteúdo e testes unidade/integração/E2E. E3.
 - [x] KIT-03 — package.json/lockfile, configuração Gitleaks e esteira versionados. E2/E6.
-- [x] KIT-04 — relatorio.md/fonte equivalente e relatório PDF final (I10-08 a I10-18). docs/relatorio.md e artifacts/RelatorioTecnico.pdf gerados e validados com 6 páginas A4.
+- [ ] KIT-04 — Fonte docs/relatorio.md e gerador PDF disponíveis; validar/publicar relatório final e completar provas pendentes de I10-08 a I10-18.
 - [ ] KIT-05 — rollback.yml funcional (I07-18).
 - [ ] KIT-06 — monitor.yml funcional (I08-01).
 - [ ] KIT-07 — Painel pages/status/index.html ou equivalente publicado (I08-16 a I08-21).
@@ -405,11 +405,11 @@ Datas abaixo são as datas do enunciado original, não comprovação de que houv
 - [ ] CR-06 — Ensaiar apresentação de dez minutos com os quatro. Roteiro estruturado em docs/apresentacao-banca.md com 2m30s de fala para cada um dos quatro integrantes; ensaio conjunto é ação presencial humana pendente.
 - [ ] CR-07 — Ensaiar demonstração ao vivo de cinco minutos com falha injetada e rollback. Roteiro em três atos (promoção, falha/alerta/rollback < 5 min e contingência offline) estruturado em docs/evidencias/entrega-banca.md Seção 3; ensaio conjunto e execução presencial agendados.
 - [ ] CR-08 — Preparar os quatro para cinco minutos de perguntas. Roteiro com perguntas técnicas prováveis e respostas fundamentadas preparado em docs/apresentacao-banca.md Seção 3.
-- [x] CR-09 — Após v1.0.0, congelar funcionalidades: somente correções fix: via PR e pipeline completa. Política de Code Freeze formalizada em docs/evidencias/smoke-final.md e README.md. Alterações pós-v1.0.0 restritas a fix: com teste de regressão e PR revisado.
+- [ ] CR-09 — Após v1.0.0, congelar funcionalidades e admitir correções via PR revisado/CI. Política preparada; sem tag final no snapshot auditado.
 - [x] CR-10 — CONTÍNUO: nunca alterar produção/gh-pages manualmente após congelamento. Política ativa: toda publicação em gh-pages e produção ocorre exclusivamente por workflows do GitHub Actions com aprovação de environment.
-- [x] CR-11 — CONDICIONAL concurso: submissão até 21/10/2026, 23h59, horário de Brasília. Não aplicável (N/A): decisão formal de não inscrição no concurso documentada em docs/concurso-decisao.md; foco exclusivo no prazo da UC.
-- [x] CR-12 — CONDICIONAL concurso: melhorias após devolutiva continuam passando pela esteira. Não aplicável (N/A) devido à não participação no concurso externo.
-- [x] CR-13 — CONDICIONAL concurso: manter URL pública no ar durante triagem de novembro. O repositório e GitHub Pages permanecerão públicos e operacionais; triagem agendada ativa em modo vigilância.
+- [ ] CR-11 — CONDICIONAL concurso: submissão até 21/10/2026, 23h59, horário de Brasília. Condição ainda não comprovada; concurso opcional e sem autorização coletiva registrada. Ver [decisão pendente](../concurso-decisao.md).
+- [ ] CR-12 — CONDICIONAL concurso: melhorias após devolutiva continuam passando pela esteira. Condição ainda não comprovada; concurso opcional e sem autorização coletiva registrada. Ver [decisão pendente](../concurso-decisao.md).
+- [ ] CR-13 — CONDICIONAL concurso: manter URL pública no ar durante triagem de novembro. Condição ainda não comprovada; concurso opcional e sem autorização coletiva registrada. Ver [decisão pendente](../concurso-decisao.md).
 
 ## 08 — Rubrica completa e banca
 
@@ -463,11 +463,11 @@ Esta tabela transcreve os três níveis como critérios de conferência. Os esta
 
 ### Condições eliminatórias — reconferência final
 
-- [x] EL-01 — Sem plágio ou ativo sem licença/autorização: infração zera avaliação do squad. Auditado em 14/10/2026: zero ativos protegidos/plagiados, licenças MIT conferidas em THIRD_PARTY.md. [Evidência 036](../evidencias/triagem-final.md).
-- [x] EL-02 — Produção somente pela pipeline: alteração manual zera INT-07. gh-pages e releases escritas unicamente pela automação GitHub Actions. [Evidência 036](../evidencias/triagem-final.md).
+- [ ] EL-01 — Sem plágio ou ativo sem licença/autorização: infração zera avaliação do squad. Conferir revisão final de direitos, inventários/IA e vídeo; não assumir licençaMIT sobre toda referência gerada por terceiros.
+- [x] EL-02 — CONTÍNUO: nenhuma alteração manual deprodução observada na consulta; históricoPages consultado é dobotActions. Reconferir no fechamento; política obrigatória preservada.
 - [x] EL-03 — Nenhuma credencial real no repositório: infração zera INT-05 e requer revogação. Varredura com Gitleaks limpa no histórico completo. [Evidência 036](../evidencias/triagem-final.md).
 - [x] EL-04 — Pipeline funciona desde clone limpo: falha nessa condição zera INT-03. Verificado em runner limpo ubuntu-latest do GitHub Actions. [Evidência 036](../evidencias/triagem-final.md).
-- [x] EL-05 — Regra do enunciado original: integrável entregue após o início da aula de 09/10, sem justificativa aceita, recebe nota zero nesse integrável. Histórico e cronologia verdadeiros, sem falsificação temporal. [Evidência 036](../evidencias/triagem-final.md).
+- [ ] EL-05 — Regra original de prazo do enunciado: conferir com o professor; não atestar atendimento por cronologia Git nem fabricar data/horário.
 
 ## 09 — IA, originalidade, imagem e LGPD
 
@@ -490,7 +490,7 @@ Esta tabela transcreve os três níveis como critérios de conferência. Os esta
 
 ## 10 — Ficha TXT: campos e validações reais do JavaScript
 
-[Respostas persistentes da ficha](ficha-entrega.md), atualizadas em13/10 com nomes completos e RAs de três integrantes; RAdeLucca em branco. Registrar dados nesteMD não equivale a preencher/entregar oHTML.
+[Respostas persistentes da ficha](ficha-entrega.md), atualizadas em13/10 com nomes completos e RAs de três integrantes; quatro RAs registrados no MD, incluindo Lucca26179873; preenchimento final doHTMLpendente. Registrar dados nesteMD não equivale a preencher/entregar oHTML.
 
 Preencher juntos no HTML original, com declarações verdadeiras. Validação de formulário não verifica automaticamente a existência/qualidade das evidências. Não marcar os dez INT só para liberar o botão.
 
@@ -500,24 +500,24 @@ Preencher juntos no HTML original, com declarações verdadeiras. Validação de
 - [ ] FIC-04 — Integrante 2: nome completo com pelo menos duas palavras, RA com pelo menos três caracteres, papel real.
 - [ ] FIC-05 — Integrante 3: nome completo com pelo menos duas palavras, RA com pelo menos três caracteres, papel real.
 - [ ] FIC-06 — Integrante 4: nome completo com pelo menos duas palavras, RA com pelo menos três caracteres, papel real.
-- [x] FIC-07 — Quatro papéis oficiais distintos conferidos/selecionados no HTML original em12/10/2026, conforme equipe confirmada; [registro](../evidencias/equipe.md). RAs/entrega continuam pendentes.
-- [x] FIC-08 — URL pública de produção formal — obrigatória. URL `https://luccalck.github.io/desafio-arcade/` verificada externamente via curl com HTTP 200 OK. [Evidência 038](../evidencias/smoke-final.md).
-- [x] FIC-09 — Link/print da última execução verde — obrigatório; escolher a execução final, não somente a candidata E2. Link `https://github.com/luccalck/desafio-arcade/actions/runs/38634524654` verificado com status HTTP 200 e resultado success. [Evidência 038](../evidencias/smoke-final.md).
+- [x] FIC-07 — Quatro papéis oficiais distintos conferidos/selecionados no HTML original em12/10/2026, conforme equipe confirmada; [registro](../evidencias/equipe.md). Quatro RAs registrados noMDem14/10/2026; transcrição final noHTML e entrega continuam pendentes.
+- [ ] FIC-08 — URL pública de produção formal — obrigatória. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [ ] FIC-09 — Selecionar última CIverde aplicável à entrega. Run38649548723 é referência histórica auditada, com deploys ignorados; não é CI deentregafinal.
 - [ ] FIC-10 — Link do painel /status/ — obrigatório.
 - [ ] FIC-11 — Vídeo pitch no AVA ou link — obrigatório.
-- [x] FIC-12 — Relatório técnico PDF acessível — obrigatório. Gerado artifacts/RelatorioTecnico.pdf com 6 páginas A4 a partir de docs/relatorio.md via scripts/relatorio-pdf.mjs.
-- [x] FIC-13 — URL HML — campo opcional na ficha, ambiente obrigatório na atividade; incluir para rastreabilidade. URL `https://luccalck.github.io/desafio-arcade/hml/` verificada com HTTP 200 OK. [Evidência 038](../evidencias/smoke-final.md).
+- [ ] FIC-12 — Relatório técnico PDF acessível — obrigatório. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [ ] FIC-13 — URLHML opcional na ficha e ambiente obrigatório: confirmar deployformal/SHA e regressão; HTTP200dopreview não basta.
 - [ ] FIC-14 — CONDICIONAL concurso: link Drive — opcional na ficha, preencher se inscritos.
-- [x] FIC-15 — INT-01 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, repo público e fluxo Git).
-- [x] FIC-16 — INT-02 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, GDD.pdf 8p A4).
-- [x] FIC-17 — INT-03 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, esteira GitHub Actions).
-- [x] FIC-18 — INT-04 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, 260 testes unit/integ e 36 E2E).
-- [x] FIC-19 — INT-05 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, segurança e privacidade).
-- [x] FIC-20 — INT-06 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, release e pacote offline 29KB).
-- [x] FIC-21 — INT-07 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, ambientes, rollout e rollback).
-- [x] FIC-22 — INT-08 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, observabilidade e DORA).
-- [x] FIC-23 — INT-09 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, pacote de submissão e triagem).
-- [x] FIC-24 — INT-10 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, relatório técnico e pitch).
+- [ ] FIC-15 — INT-01 entregue/evidenciado e autoavaliação 0–10 verdadeira. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [ ] FIC-16 — INT-02 entregue/evidenciado e autoavaliação 0–10 verdadeira. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [ ] FIC-17 — INT-03 entregue/evidenciado e autoavaliação 0–10 verdadeira. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [ ] FIC-18 — INT-04 entregue/evidenciado e autoavaliação 0–10 verdadeira. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [ ] FIC-19 — INT-05 entregue/evidenciado e autoavaliação 0–10 verdadeira. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [ ] FIC-20 — INT-06 entregue/evidenciado e autoavaliação 0–10 verdadeira. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [ ] FIC-21 — INT-07 entregue/evidenciado e autoavaliação 0–10 verdadeira. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [ ] FIC-22 — INT-08 entregue/evidenciado e autoavaliação 0–10 verdadeira. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [ ] FIC-23 — INT-09 entregue/evidenciado e autoavaliação 0–10 verdadeira. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [ ] FIC-24 — INT-10 entregue/evidenciado e autoavaliação 0–10 verdadeira. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [x] FIC-25 — Estimativa B de inovação/originalidade 0–10. Rascunho no HTML original via Live Server em 12/10: valor 10 solicitado; é estimativa, não nota oficial. Reconferir na ficha final.
 - [x] FIC-26 — Estimativa B de viabilidade técnica/execução 0–10. Rascunho em 12/10: valor 10 solicitado, sem declarar execução completa. Reconferir na ficha final.
 - [x] FIC-27 — Estimativa B de jogabilidade 0–10. Rascunho em 12/10: valor 10 solicitado, sem substituir playtest humano. Reconferir na ficha final.
@@ -538,17 +538,17 @@ Preencher juntos no HTML original, com declarações verdadeiras. Validação de
 
 Não integra a nota da UC. Estes itens continuam listados para cobertura integral; não se tornam pendências acadêmicas obrigatórias sem decisão de inscrição.
 
-- [x] CON-01 — Decisão explícita e conjunta de inscrição. Deliberada e documentada a decisão unânime do squad de NÃO participar do concurso externo opcional, focando com rigor na avaliação da UC. [docs/concurso-decisao.md](../concurso-decisao.md).
-- [x] CON-02 — Exatamente quatro integrantes elegíveis; todos maiores de dezoito anos na inscrição. Não aplicável (N/A) em razão da decisão em CON-01. [docs/concurso-decisao.md](../concurso-decisao.md).
-- [x] CON-03 — CPF válido e residência no Brasil, conferidos privadamente; não inserir CPF no Git/artefatos públicos. Cumprido: nenhum CPF foi exposto no Git/documentos públicos (DIR-09).
-- [x] CON-04 — Inscrição individual pelo formulário oficial da landing page, janela 21/09–21/10/2026. Não aplicável (N/A) em razão da decisão em CON-01.
-- [x] CON-05 — Reler regulamento vigente antes da inscrição: organizadora pode alterá-lo (item 17.2). Regulamento oficial edição 2026 lido para ciência das regras.
-- [x] CON-06 — Ler cláusulas de propriedade intelectual/uso de imagem, itens 12 e 13, e aceitar somente com orientação humana específica. Direitos autorais integralmente preservados com a equipe e SENAI.
-- [x] CON-07 — Vídeo no Instagram em colaboração com @framework.digital e perfil oficial do Programadores do Amanhã, conforme regulamento vigente. Não aplicável (N/A) em razão da decisão em CON-01.
-- [x] CON-08 — Drive do responsável com todos os materiais, acesso total ao e-mail correto da organização e verificação com outra conta. Não aplicável (N/A): submissão exclusiva via AVA.
-- [x] CON-09 — Submissão completa até 21/10/2026, 23h59 Brasília; sem prazo extra de produção previsto no regulamento. Não aplicável (N/A): prazo acadêmico seguido com encerramento em 14/10/2026.
-- [x] CON-10 — Manter link no ar na triagem de novembro. Repositório e GitHub Pages permanecerão públicos e operacionais.
-- [x] CON-11 — Conferir que inscrição/termos/imagem/voz não foram aceitos automaticamente em nome de alguém. Atestado que nenhuma IA ou ferramenta aceitou termos ou cedeu direitos em nome dos integrantes.
+- [ ] CON-01 — Decisão explícita e conjunta de inscrição. Condição ainda não comprovada; concurso opcional e sem autorização coletiva registrada. Ver [decisão pendente](../concurso-decisao.md).
+- [ ] CON-02 — Exatamente quatro integrantes elegíveis; todos maiores de dezoito anos na inscrição. Condição ainda não comprovada; concurso opcional e sem autorização coletiva registrada. Ver [decisão pendente](../concurso-decisao.md).
+- [ ] CON-03 — CPF válido e residência no Brasil, conferidos privadamente; não inserir CPF no Git/artefatos públicos. Condição ainda não comprovada; concurso opcional e sem autorização coletiva registrada. Ver [decisão pendente](../concurso-decisao.md).
+- [ ] CON-04 — Inscrição individual pelo formulário oficial da landing page, janela 21/09–21/10/2026. Condição ainda não comprovada; concurso opcional e sem autorização coletiva registrada. Ver [decisão pendente](../concurso-decisao.md).
+- [ ] CON-05 — Reler regulamento vigente antes da inscrição: organizadora pode alterá-lo (item 17.2). Condição ainda não comprovada; concurso opcional e sem autorização coletiva registrada. Ver [decisão pendente](../concurso-decisao.md).
+- [ ] CON-06 — Ler cláusulas de propriedade intelectual/uso de imagem, itens 12 e 13, e aceitar somente com orientação humana específica. Condição ainda não comprovada; concurso opcional e sem autorização coletiva registrada. Ver [decisão pendente](../concurso-decisao.md).
+- [ ] CON-07 — Vídeo no Instagram em colaboração com @framework.digital e perfil oficial do Programadores do Amanhã, conforme regulamento vigente. Condição ainda não comprovada; concurso opcional e sem autorização coletiva registrada. Ver [decisão pendente](../concurso-decisao.md).
+- [ ] CON-08 — Drive do responsável com todos os materiais, acesso total ao e-mail correto da organização e verificação com outra conta. Condição ainda não comprovada; concurso opcional e sem autorização coletiva registrada. Ver [decisão pendente](../concurso-decisao.md).
+- [ ] CON-09 — Submissão completa até 21/10/2026, 23h59 Brasília; sem prazo extra de produção previsto no regulamento. Condição ainda não comprovada; concurso opcional e sem autorização coletiva registrada. Ver [decisão pendente](../concurso-decisao.md).
+- [ ] CON-10 — Manter link no ar na triagem de novembro. Condição ainda não comprovada; concurso opcional e sem autorização coletiva registrada. Ver [decisão pendente](../concurso-decisao.md).
+- [ ] CON-11 — Conferir que inscrição/termos/imagem/voz não foram aceitos automaticamente em nome de alguém. Condição ainda não comprovada; concurso opcional e sem autorização coletiva registrada. Ver [decisão pendente](../concurso-decisao.md).
 
 O critério de engajamento social do item 9.3 pertence ao concurso, não à banca da UC. A Faculdade SENAI não organiza nem tem vínculo com o concurso.
 

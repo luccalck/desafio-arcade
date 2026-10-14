@@ -1,7 +1,7 @@
 import {it,expect} from 'vitest';
-import {makeHmlReceipt,verifyApproval,planProduction,planManualRollback,ensurePipeline,verifyRecoveredRelease,verifyFinalSmoke} from '../../scripts/promover.mjs';
+import {makeHmlReceipt,verifyApproval,planProduction,planManualRollback,ensurePipeline,verifyRecoveredRelease,verifyFinalSmoke,verifyManualRecovery} from '../../scripts/promover.mjs';
 import {bundle,options,oldSha,newSha,site,tree,pointer,releases,version} from '../fixtures/pacote.mjs';
-const environment={id:7,name:'producao',can_admins_bypass:false,protection_rules:[{type:'required_reviewers',reviewers:[{type:'User',reviewer:{login:'revisor-fixture'}}]}]};
+const environment={id:7,name:'producao',can_admins_bypass:false,protection_rules:[{type:'required_reviewers',prevent_self_review:true,reviewers:[{type:'User',reviewer:{login:'revisor-fixture'}}]}]};
 const approvals=[{state:'approved',user:{login:'revisor-fixture',type:'User'},environments:[{id:7,name:'producao'}]}];
 const fetcher=async url=>({ok:true,arrayBuffer:async()=>site(newSha)[new URL(url).pathname.split('/').at(-1)]});
 const receipt=()=>makeHmlReceipt(bundle(),{...options,fetcher});
@@ -81,4 +81,37 @@ it('checkpoint preserva SemVer anterior para smoke de recuperação entre versõ
 it('reexecução registra quem a disparou, sem atribuir o ato ao autor do push original',()=>{
  const env={GITHUB_ACTIONS:'true',GITHUB_ACTOR:options.actor,GITHUB_TRIGGERING_ACTOR:'reexec-fixture',GITHUB_SHA:newSha,GITHUB_RUN_ID:'123',GITHUB_RUN_ATTEMPT:'2',GITHUB_REF:'refs/heads/main',GITHUB_REPOSITORY:'fixture/arcade',FORMAL_HML_ENABLED:'true',FORMAL_PRD_ENABLED:'true',MONITOR_ENABLED:'true',ALERTS_ENABLED:'true'};
  expect(()=>ensurePipeline({...options,runAttempt:'2',actor:'reexec-fixture'},env)).not.toThrow();expect(()=>ensurePipeline({...options,runAttempt:'2'},env)).toThrow(/Contexto/);
+});
+
+it('revalida main/tag do mesmo SHA sem trocar o ponteiro, mantendo aprovação e recibo novos',async()=>{
+ const params=await approved();params.existing={...params.existing,...releases(newSha),'rollout.json':new TextEncoder().encode(JSON.stringify(pointer(newSha,oldSha)))};
+ const opened=planProduction('abrir',params);
+ expect(opened.action).toBeNull();expect(opened.transaction.revalidation).toBe(true);expect(opened.plan.files).toBe(params.existing);
+ const p={...options,existing:params.existing,transaction:opened.transaction,smoke};
+ expect(planProduction('promover',p).action).toBeNull();
+ expect(planProduction('recuperar',p).action).toBeNull();
+ expect(()=>planProduction('promover',{...p,smoke:{...smoke,run:'999'}})).toThrow(/smoke/);
+ expect(()=>planProduction('abrir',{...params,approvals:[]})).toThrow(/aprovação/);
+ const altered={...params.existing,[`releases/${newSha}/game.js`]:new TextEncoder().encode('outros bytes')};
+ expect(()=>planProduction('abrir',{...params,existing:altered})).toThrow(/imutável/);
+ const concurrent={...params.existing,...releases('c'.repeat(40)),'rollout.json':new TextEncoder().encode(JSON.stringify(pointer(newSha,oldSha,'c'.repeat(40))))};
+ expect(()=>planProduction('abrir',{...params,existing:concurrent})).toThrow(/candidata/);
+});
+it('confirma rollback manual por baselineVersion, instante, run e os sete hashes públicos',async()=>{
+ const tx=planProduction('abrir',await approved()).transaction;
+ const manual={...tx,sha:oldSha,at:tx.createdAt};
+ const root={date:new Date().toISOString(),passed:true,mode:'root',expectedSha:oldSha,version:version(oldSha),url:options.siteUrl,run:options.run,runAttempt:options.runAttempt,errors:[]};
+ const good=async url=>({ok:true,arrayBuffer:async()=>site(oldSha)[new URL(url).pathname.split('/').at(-1)]});
+ expect(Object.keys(await verifyManualRecovery(manual,root,{fetcher:good}))).toHaveLength(7);
+ for(const change of [{version:{...root.version,version:'0.0.0'}},{runAttempt:'2'},{date:'2000-01-01T00:00:00Z'},{errors:['HTTP503']},{errors:null}])await expect(verifyManualRecovery(manual,{...root,...change},{fetcher:good})).rejects.toThrow(/Smoke/);
+ await expect(verifyManualRecovery(manual,root,{fetcher:async()=>({ok:false})})).rejects.toThrow(/HTTP/);
+});
+
+it('respeita a política real prevent_self_review sem dispensar a aprovação registrada',()=>{
+ const e={...environment,protection_rules:[{type:'required_reviewers',prevent_self_review:false,reviewers:[{type:'User',reviewer:{login:options.actor}}]}]};
+ const history=[{...approvals[0],user:{login:options.actor,type:'User'}}];
+ expect(verifyApproval(e,history,options.actor).reviewer).toBe(options.actor);
+ expect(()=>verifyApproval(e,[],options.actor)).toThrow(/aprovação/);
+ const strict={...e,protection_rules:[{...e.protection_rules[0],prevent_self_review:true}]};
+ expect(()=>verifyApproval(strict,history,options.actor)).toThrow(/aprovação/);
 });

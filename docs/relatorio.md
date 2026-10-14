@@ -1,246 +1,136 @@
-# Relatório Técnico — Desafio Arcade: Rota do Código
+# Relatório Técnico — Desafio Arcade
 
-- **Projeto:** Rota do Código (Desafio Arcade — Oficina Python WEB)
-- **Squad:** Aura 67
-- **Versão Candidata:** v0.6.0 (preparação para release final v1.0.0)
-- **Data do Relatório:** 14/10/2026
-- **Repositório Oficial:** [github.com/luccalck/desafio-arcade](https://github.com/luccalck/desafio-arcade)
-- **Acesso Público (Anônimo):** HTTP 200 verificado via GitHub REST API
+**Rota do Código · Squad Aura 67 · Candidata {{VERSION}} · 14/10/2026**
 
----
+Construímos uma oficina WEB de programação em que o jogador corrige cinco funções Python e usa suas próprias regras num minijogo de nave. O produto atravessa uma esteira de integração, teste, segurança e entrega estática no GitHub. Este relatório distingue o que foi implementado, o que executamos e as provas ainda pendentes.
 
-## 1. Identificação da Equipe e Governança
+**Repositório:** [luccalck/desafio-arcade](https://github.com/luccalck/desafio-arcade). **Referência técnica auditada:** [CI 38649548723](https://github.com/luccalck/desafio-arcade/actions/runs/38649548723), SHA `e71de729219028ee314fb52949e1ee28ffeeb678`, versão 0.6.0. A candidata {{VERSION}} corrige o fechamento; não é declarada como entrega acadêmica final v1.0.0. Dados da referência não são atribuídos automaticamente ao novo código ou a uma publicação posterior.
 
-O squad **Aura 67** é composto por quatro integrantes com papéis e coordenações definidos para o desenvolvimento integrado do projeto acadêmico. Todos os integrantes participam ativamente da programação, testes, revisão cruzada e apresentação técnica em banca:
+## 1. Equipe, autoria e problema educativo
 
-| Nome Completo | RA | Papel Oficial | GitHub | Status de Acesso (API) |
-|---|---|---|---|:---:|
-| **Lucca Castilho** | *(pendente)* | Produto e Game Design | `luccalck` | Colaborador (HTTP 204) |
-| **Davi Marcondes Paes de Souza** | 26180842 | Desenvolvimento e Qualidade | `DaviSouza78` | Colaborador (HTTP 204) |
-| **Miguel Oliveira de Almeida** | 26179933 | Plataforma e Release | `miguelsenai2024` | Colaborador (HTTP 204) |
-| **Lucas Souza da Silva** | 26179875 | SRE e Segurança | `6lucassilvaaa` | Colaborador (HTTP 204) |
+| Integrante | RA | Coordenação | GitHub |
+|---|---|---|---|
+| Lucca Castilho Costa | 26179873 | Produto e Game Design | luccalck |
+| Davi Marcondes Paes de Souza | 26180842 | Desenvolvimento e Qualidade | DaviSouza78 |
+| Miguel Oliveira de Almeida | 26179933 | Plataforma e Release | miguelsenai2024 |
+| Lucas Souza da Silva | 26179875 | SRE e Segurança | 6lucassilvaaa |
 
-### Política de Governança e Revisão Cruzada
-A governança do projeto adota a regra de revisão cruzada obrigatória por outro autor antes de qualquer merge na branch principal (`main`):
-- Davi revisa Lucca;
-- Miguel revisa Davi;
-- Lucas revisa Miguel;
-- Lucca revisa Lucas.
+Os papéis organizam a coordenação; todos participam das áreas. O nome completo e RA de Lucca foram confirmados pelo próprio integrante em 14/10. Não incluímos CPF, assinaturas ou credenciais públicas.
 
-Todos os integrantes possuem contribuições com commits assinados e pull requests aprovados em pelo menos 3 Integráveis (INT) diferentes, cumprindo os critérios de autoria real estabelecidos no regulamento acadêmico.
+O problema educativo é memorizar comandos sem compreender como uma regra muda um programa. O público é iniciante em programação, com leitura básica em português e familiaridade com teclado ou toque. Cada missão apresenta um defeito, um editor curto e uma arena para experimentar. Comparar entradas e saídas fornece feedback observável; o final integra as cinco funções, exige 100 pontos com três vidas e permite exportar HTML jogável offline e fontes .py.
 
----
-
-## 2. Arquitetura da Solução e Decisões de Engenharia
-
-O jogo **Rota do Código** foi arquitetado como uma aplicação web educacional estática, responsiva e estritamente offline, voltada para ensinar conceitos fundamentais de lógica de programação e Python a estudantes do ensino fundamental e médio.
-
-```text
-+-----------------------------------------------------------------------------------+
-|                              Camada de Apresentação                               |
-|   HTML5 Semântico + CSS3 Grid/Flexbox + SVG Nativo + Acessibilidade (ARIA/Focus)  |
-+-----------------------------------------+-----------------------------------------+
-                                          |
-                                          v
-+-----------------------------------------------------------------------------------+
-|                                Núcleo da Aplicação                                |
-|   Engine de Estado (TypeScript) <----> Interpretador AST Local (Python Subset)    |
-|   - Validação Léxica e Sintática        - Sandbox em Memória (Sem eval/Function)  |
-|   - Execução Passo a Passo              - Exportação de Código (.py / .html)      |
-+-----------------------------------------------------------------------------------+
-```
-
-### Arquitetura da Esteira CI/CD
-A esteira de integração e entrega contínua foi implementada com **GitHub Actions** (`.github/workflows/esteira.yml`), operando sob o princípio de imutabilidade de artefatos (*Build Once, Deploy Anywhere*):
-
-```text
-[Push / Pull Request]
-        │
-        ├──> [Job: qualidade] (ESLint, TypeScript tsc, Vitest Coverage, Content Check)
-        ├──> [Job: seguranca] (Gitleaks, npm audit, SBOM CycloneDX)
-        ├──> [Job: build]     (esbuild bundle, GDD PDF, Package ZIP, SHA-256)
-        └──> [Job: e2e]       (Playwright Chromium Desktop 1280x720 e Mobile 390x844)
-                │
-                v
-        [Job: pacote-ci]      (Consolidação de artefato único e manifesto SHA-256)
-                │
-                v
-        [Job: ci (Gate)]      (Validação de status verde em todas as etapas)
-                │
-        ┌───────┴────────────────────────┐
-        v                                v
- [deploy-hml] (Homologação)       [deploy-prd] (Produção - Aprovação Manual)
-```
-
-1. **Execuções Paralelas e Rápidas:** Jobs independentes de qualidade, segurança, build e E2E executam simultaneamente em runners `ubuntu-latest` com cache de dependências npm.
-2. **Pacote Único e Manifesto Criptográfico:** O job `pacote-ci` agrega o pacote `build.zip`, o documento `GDD.pdf`, metadados de versão `version.json`, SBOM e relatórios, gerando um manifesto SHA-256 (`ci-manifest.json`). Qualquer alteração de byte invalida a cadeia.
-3. **Ambientes Segregados:** As etapas de publicação utilizam environments protegidos do GitHub (`homologacao` e `producao`), garantindo que releases só cheguem à produção com aprovação formal e esteira estritamente verde.
-
----
-
-## 3. Justificativa da Stack e Alternativas Descartadas
-
-Em conformidade com os requisitos pedagógicos, técnicos e de inclusão digital (critério OBJ-07), a escolha tecnológica priorizou leveza extrema, compatibilidade multiplataforma, ausência de custos e operação 100% desconectada da rede.
-
-| Tecnologia Adotada | Finalidade no Projeto | Justificativa Técnica |
+| Missão | Conceito praticado | Critério verificável |
 |---|---|---|
-| **TypeScript + esbuild** | Núcleo do jogo e empacotamento | Tipagem estática rigorosa com tempo de build inferior a 200 ms e bundle final minificado com menos de 30 KB. |
-| **Interpretador AST Próprio** | Avaliação do subset Python pedagógico | Execução segura em memória sem permissões perigosas, instantânea e sem overhead de download. |
-| **SVG Nativo e CSS Moderno** | Gráficos, mapas e responsividade | Renderização nítida em qualquer resolução (desktop e telas móveis), sem bibliotecas pesadas de terceiros. |
-| **Vitest + Playwright** | Pirâmide de testes completa | Testes unitários com cobertura superior a 90% e E2E real cobrindo teclado e toque em viewport 390x844. |
-| **GitHub Pages + Actions** | Hospedagem estática e automação | Custo zero, CDN global, versionamento por branch e conformidade nativa com auditoria open-source. |
+| Controlar | Eventos e decisões | -1/0/1 conforme teclas; direita tem prioridade |
+| Mover | Operações e parâmetros | Posição + direção × velocidade |
+| Colidir | Comparação e fronteira | Distância menor ou igual ao raio |
+| Pontuar | Estado e condições | Preservar acumulado; cristal +10, estrela +25 |
+| Criar onda | Listas e repetição | Quantidade exata, início 40, intervalo 80 |
+| Projeto final | Integração e depuração | 23 casos e vitória no jogo construído |
 
-### Alternativas Técnicas Descartadas e Justificativas (I10-10)
+Ações e resultados são reais no navegador, mas XP, testes aprovados e vitória não medem aprendizagem por si. O playtest de três minutos com colega de outra turma ainda precisa ocorrer. Não atribuímos resultados a usuários inexistentes.
 
-1. **Pyodide / WebAssembly CPython Completo:**
-   - *Motivo do Descarte:* O download do WebAssembly e biblioteca padrão do Pyodide exige entre **15 MB e 30 MB** na inicialização da página. Em computadores escolares antigos ou redes móveis com sinal instável, causaria travamentos e tempo de espera inaceitável (> 10 segundos). O subset pedagógico focado nas cinco funções da oficina exigia apenas um analisador AST leve (< 10 KB).
-2. **Game Engines Pesadas (Phaser, Godot Web, Unity WebGL):**
-   - *Motivo do Descarte:* Geram artefatos finais variando de 10 MB a 60 MB, dificultam drasticamente a acessibilidade por teclado e leitores de tela (ARIA) devido ao canvas opaco, e impedem a distribuição em pacote ZIP ultraleve (< 50 KB). O SVG combinado com DOM semântico garantiu acessibilidade universal e controle pixel-perfect.
-3. **Backend com Execução Remota de Código (Node.js API, Containers Docker):**
-   - *Motivo do Descarte:* Violaria o requisito obrigatório de funcionamento 100% offline via protocolo `file://`. Além disso, exporia o ambiente a riscos severos de Remote Code Execution (RCE), custos de servidor em nuvem e complexidade operacional desnecessária.
-4. **BaaS ou Serviços Pagos de Nuvem (Firebase, AWS, Vercel Pro):**
-   - *Motivo do Descarte:* O projeto segue a premissa de sustentabilidade acadêmica sem custo financeiro para a instituição ou estudantes, aproveitando os recursos gratuitos do ecossistema GitHub.
+## 2. Arquitetura e decisões
 
----
+O site estático usa TypeScript, HTML/CSS/SVG e esbuild. Regras puras ficam em `src/core`, separadas da apresentação e do conteúdo JSON validado por contrato. O interpretador lê uma AST de um subconjunto explícito de Python: funções, condições, operações, listas e repetição limitada. Não é CPython completo e não executa imports ou bibliotecas arbitrárias. Limites de nós, passos e iterações reduzem o risco de travamento; não usamos eval/Function para executar a fonte do jogador.
 
-## 4. Rastreabilidade dos Dez Integráveis (INT-01 a INT-10)
+A oficina e a exportação compartilham a semântica do interpretador e as regras do motor. Preferências/progresso usam armazenamento local, sem conta ou backend. O método offline documentado é descompactar build.zip e abrir index.html no navegador. A experiência móvel é o mesmo site responsivo; editar código em tela pequena continua sendo uma limitação a avaliar com pessoas.
 
-Todos os dez integráveis do Desafio Arcade foram mapeados, implementados e validados por evidências concretas:
+| Decisão | Motivo | Alternativa e limite da decisão |
+|---|---|---|
+| DOM/SVG e TypeScript | Interface acessível por teclado, escopo pequeno e regras testáveis | Engine web poderia ser válida; acrescentaria integração e dependências sem necessidade demonstrada |
+| Subconjunto Python local | Operação offline e regras curtas de cinco missões | CPython/WASM ampliaria compatibilidade, mas não foi necessário; não fizemos benchmark comparativo |
+| Site estático no Pages | Build publicável sem backend, VM ou nuvem paga | Execução remota exigiria infraestrutura e quebraria o método offline |
+| Vitest e Playwright | Testar regras, contratos, navegador, toque e exportação | Contagens/cobertura não substituem playtest ou revisão humana |
+| Azul-verde | Preservar versão estável, candidata e rota de recuperação | Canário é alternativa permitida; não é preciso implementar as duas |
 
-### INT-01: Governança, Repositório e Gestão de Versão
-- **Repositório:** [luccalck/desafio-arcade](https://github.com/luccalck/desafio-arcade), público, com branch `main` protegida.
-- **Evidências:** Quatro colaboradores ativos verificados com resposta HTTP 204 via API do GitHub (`docs/evidencias/equipe.md`).
-- **Histórico de PRs:** 25 Pull Requests abertos e revisados cobrindo todas as etapas da esteira.
+A build da CI de referência tem 29.001 bytes compactados, abaixo de 25 MB. Esse tamanho é uma medida do artefato auditado, não previsão de tempo de carga, desempenho em dispositivo antigo ou tamanho de outra versão.
 
-### INT-02: Game Design Document (GDD)
-- **Estrutura:** Documento completo em 12 seções em `docs/gdd.md`, cobrindo premissa, mecânicas, 5 missões, desafio final e esteira.
-- **Evidências:** `artifacts/GDD.pdf` gerado via Playwright com 8 páginas A4, high concept de 804 caracteres (limite < 1000) e 6 mapas conceituais em SVG.
-- **Captura:** Telas da oficina e menu validadas em `docs/images/menu-real-009.png` e `docs/images/hud-real-009.png`.
+## 3. Esteira e cadeia de confiança
 
-### INT-03: Esteira Automatizada CI/CD
-- **Pipeline:** `.github/workflows/esteira.yml` com jobs paralelos, lockfile `package-lock.json` estrito e cache npm.
-- **Evidências:** Execução `38428808065` com sucesso em todos os gates; integridade de empacotamento com `ci-bundle.mjs` (`docs/evidencias/ci-formal.md`).
+```text
+branch curta → PR → revisão de outro autor → CI → main protegida
+  → pacote único + manifesto → /hml/ + E2E
+  → environment producao aprovado → /releases/<sha>/ + smoke
+  → promoção azul-verde ou rollback → sondas + Issues + /status/
+  → vídeo real como entrada → submissão + triagem → AVA e banca
+```
 
-### INT-04: Pirâmide de Testes e Qualidade de Código
-- **Pirâmide de Testes:**
-  - 152 testes unitários de lógica central e compilador AST.
-  - 26+ testes de integração de empacotamento, contratos e triagem.
-  - Cobertura de código do núcleo da aplicação superior a 97%.
-  - 17 testes ponta a ponta (E2E) via Playwright em Desktop e Mobile Touch (390x844).
-- **Citação Obrigatória de Bug Real Histórico (I04-13):**
-  - **Bug da Retomada de Regra Antiga Após Edição:** Identificado em 09/10/2026 na tarefa D06 (`docs/evidencias/bug-regra-antiga.md`).
-    - *Falha Anterior:* Ao editar o código da função no meio da partida, o player mantinha habilitado o botão "Retomar" executando o bytecode desatualizado da regra anterior. A falha foi comprovada e reproduzida no teste E2E `tests/e2e/workshop.spec.mjs`, resultando em falha registrada no JUnit `bug-regra-antiga-antes.junit.xml` e captura `bug-regra-antiga-antes.png`.
-    - *Correção Aplicada:* No módulo `src/scenes/app.ts`, foi implementada a invalidação imediata de aceites e do fingerprint de compilação assim que qualquer alteração de código ocorre, forçando nova validação pedagógica via "Testar Regra" antes de liberar o botão de ação.
-    - *Teste de Regressão:* Cenário em `tests/e2e/workshop.spec.mjs` ("edição invalida regra e desabilita retomar") incorporado permanentemente à suite de CI.
-  - **Bug Histórico #1 (Perda de Foco via Teclado):** Issue #1 (`docs/evidencias/bug-foco.md`), onde a remoção de um comando no editor lançava o foco do teclado de volta ao `body`. Corrigido em `src/scenes/app.ts` restaurando o foco no primeiro controle ativo.
+A CI distribui qualidade, segurança, build e E2E em jobs independentes no runner ubuntu-latest. Usa lockfile/npm ci, lint/tipagem, validação de conteúdo, testes/cobertura, Gitleaks bloqueante, auditoria de produção contra vulnerabilidades críticas, SBOM, build, PDF e checksum. O gate `ci` depende dos resultados; o bundle consolida os arquivos e seus hashes para impedir mistura de execuções.
 
-### INT-05: Segurança, Privacidade e Licenças
-- **Privacidade Rigorosa (DIR-09):** Zero cookies, zero scripts de telemetria externa, zero coleta de dados pessoais (`docs/evidencias/direitos.md`).
-- **Segurança de Código:** Varredura com Gitleaks sem ocorrência de segredos ou chaves. `npm audit --omit=dev --audit-level=critical` com **0 vulnerabilidades**.
-- **SBOM e Licenças:** Inventário de componentes em formato CycloneDX (`sbom.cdx.json`). Uso exclusivo de bibliotecas open-source permissivas (MIT/ISC/Apache-2.0).
-- **Uso Ético de IA:** Rastreabilidade transparente registrada em `AI-USAGE.md` e `docs/evidencias/rastreabilidade-ia-008.md`.
+O contrato de entrega é compilar uma vez e promover o mesmo ZIP. HML precisa executar regressão real; produção exige aprovação no environment, release imutável, smoke e promoção. A sessão mantém a versão válida para evitar troca no meio da partida. Recuperação automática/manual deve preservar o serviço e ser medida incluindo propagação Pages. Proteções e CI permanecem; autorização de Lucca não permite simular revisão de outro autor nos próprios PRs.
 
-### INT-06: Empacotamento Offline e Reprodutibilidade
-- **Pacote ZIP:** Jogo compilado compactado em `artifacts/build.zip` com apenas **~26.500 bytes** (limite: < 50 MB).
-- **Operação Desconectada:** Execução comprovada diretamente via protocolo `file://` sem requisições de rede (`docs/evidencias/offline-integridade.md`).
-- **Reprodutibilidade:** Script `scripts/reproducibility.mjs` valida compilações idênticas bit a bit com hash SHA-256 idempotente.
+A reconferência identificou lacunas: relatório fora do bundle, pacote concorrente com produção, proveniência insuficiente, seleção de vídeo só por execução recente, triagem agendada sem recuperar o pacote e inconsistência entre versão/tag. Corrigimos os registros para tornar essas lacunas explícitas. A execução dos scripts e testes corrigidos precisa gerar novas provas; a existência do código não valida implantação.
 
-### INT-07: Implantação Contínua e Estratégia de Rollback
-- **Ambiente de Publicação:** GitHub Pages automatizado exclusivamente via pipeline.
-- **Prevenção de Falhas:** Procedimentos e scripts automatizados de recuperação e rollback manual/automático em menos de 5 minutos documentados em `docs/evidencias/rollback-automatico.md` e `docs/evidencias/ensaio-recuperacao.md`.
+## 4. Qualidade, segurança e evidências visuais
 
-### INT-08: Observabilidade e Telemetria Operacional
-- **Sondas de Disponibilidade:** Script `scripts/sondar.mjs` para validação de endpoints HTTP e tempo de resposta.
-- **Painel de Monitoramento:** Painel visual estático `scripts/status.mjs` e módulo de alerta `scripts/alertas.mjs`.
-- **Coleta de Métricas DORA:** Coletor automatizado `scripts/dora.mjs` com persistência em JSON.
+Na CI de referência, os JUnit confirmam **152 testes de unidade + 108 de integração = 260**, além de **36 E2E**, sem falhas ou skips. A cobertura ponderada de `src/core` é **97,91% das instruções, 100% das linhas, 100% das funções e 95,24% das ramificações**. Supera os mínimos de 15/3/2 testes e 70% do core nessa execução. A medição deve ser refeita no HEAD final; cenários de adaptadores não provam eventos de produção. No fechamento da candidata {{VERSION}}, a reexecução local passou em **270 testes de unidade/integração**; lint/tipagem e actionlint também passaram. Esses resultados locais, informados pela execução de fechamento, ainda não são CI remota nem deploy. A suíte local E2E do HEAD corrigido também passou: **36/36 em 53 s**, com servidor isolado na porta4187 e dois workers. Essas execuções revalidam os testes da candidata, preservando a distinção da referência histórica; não comprovam HML ou PRD.
 
-### INT-09: Automação do Pacote de Submissão e Triagem Agendada
-- **Automação de Pacote:** Script `scripts/submissao.mjs` que valida a entrada humana do vídeo demonstrativo (formato MP4, verificação via `ffprobe` com duração ≤ 90 segundos, checksum SHA-256 e tamanho) e reúne a documentação técnica.
-- **Triagem em Vigilância:** Workflow agendado `.github/workflows/triagem-agendada.yml` executando diariamente às 12:00 UTC com notificação de alertas em caso de regressão nos contratos de entrega.
+Baixamos o bundle real da CI e conferimos 170 arquivos por tamanho/SHA-256 sem divergência. O ZIP tem SHA-256 `3bfb09573d93a58d34e72c3379ae6a6386202dbb40047d151ea106cbc3754a87`; contém LEIA-ME.txt e metadados. O E2E offline faz parte da suíte aprovada. O GDD PDF abre via pdfinfo e tem 18 páginas A4. O limite de doze páginas é deste relatório, não do GDD.
 
-### INT-10: Comunicação Técnica e Apresentação
-- **Pitch de Apresentação:** Roteiro objetivo com minutagem e suporte a legendas detalhado em `docs/evidencias/pitch.md`.
-- **Relatório Técnico Profissional:** Este documento compilado em PDF com menos de 12 páginas (`artifacts/RelatorioTecnico.pdf`).
+Gitleaks não reportou achados e npm audit de produção não reportou vulnerabilidades no bundle consultado. SBOM e registros de IA/terceiros existem. Esses resultados têm alcance limitado à execução e ao inventário: não garantem direitos de todo ativo ou ausência absoluta de segredos. Revalidar tag, artefatos e vídeo; nunca introduzir segredo real para testar detecção. Ativos do Stitch são referências identificadas, não capturas de execução.
 
----
+### Capturas reais da aplicação
 
-## 5. Métricas DORA e Comparação com a Linha de Base
+![Menu real da oficina](images/menu-real-009.png)
 
-A coleta de métricas de engenharia DORA (*DevOps Research and Assessment*) foi executada com o script oficial do projeto `scripts/dora.mjs`, utilizando a API REST do GitHub com autenticação somente leitura para a janela temporal de **01/10/2026 00:00 UTC a 14/10/2026 09:16:34 UTC** (`docs/evidencias/dora.md` e `docs/evidencias/melhoria-dora.md`):
+**Figura 1.** Menu capturado em 13/10/2026 às 14:38:06, America/Sao_Paulo. Origem: localhost:4173, versão 0.6.0, SHA b94469ee; metadados preservados em docs/evidencias/menu-real-009.json. É prova histórica local da interface, não produção da candidata atual.
 
-| Métrica DORA | Resultado Medido | Amostras | Unidade | Justificativa Técnica e Real |
-|---|:---:|:---:|:---:|---|
-| **Frequência de Deploy** | **N/D** | 0 deploys formais | deploys/dia | Nenhum job `deploy-prd` formal concluído na branch principal na janela; deploys de preview/HML foram excluídos da métrica de produção. |
-| **Lead Time for Changes** | **N/D** | 0 pares commit→PRD | horas | Sem deploys formais de produção vinculados aos commits para calcular o delta de tempo. |
-| **Taxa de Falha de Mudança** | **N/D** | 0 deploys | % | Ausência de denominador formal de produção; registrar 0% seria incorreto sem amostras reais. |
-| **Tempo Médio de Recuperação (MTTR)**| **N/D** | 0 incidentes | minutos | Nenhuma Issue com a etiqueta `alerta` foi aberta e encerrada na janela de medição. |
+![Missão real com editor e arena](images/hud-real-009.png)
 
-### Comparação com a Linha de Base (Baseline Carparts)
-- **Linha de Base de Referência (Carparts):** Lead time histórico de **11 dias** (conforme registrado no checklist e na auditoria inicial).
-- **Análise Crítica e Integridade de Dados:** O squad manteve transparência absoluta: **não foram inventados dados artificiais** para forçar um indicador positivo fictício. Enquanto a candidata v0.6.0 está em processo de estabilização e homologação pré-release, os deploys formais em ambiente `producao` permanecem aguardando a tag oficial v1.0.0. A esteira automatizada executa em menos de 3 minutos, projetando uma redução dramática do lead time em relação aos 11 dias da baseline assim que o primeiro deploy formal for promovido.
+**Figura 2.** Primeira missão capturada em 13/10/2026 às 14:38:07, America/Sao_Paulo, mesma origem/versão, viewport 1280×900; metadados em docs/evidencias/hud-real-009.json. Mostra a regra editada e feedback 4/4; não comprova playtest humano nem aprendizagem.
 
----
+### Bug real e regressão
 
-## 6. Retrospectiva Técnica da Engenharia
+O registro histórico de D06 documenta a retomada de regra antiga após editar código durante a partida: a ação de retomar podia executar a compilação anterior. A correção invalida o aceite/fingerprint ao editar e exige nova aplicação da fonte. O cenário E2E de regressão permanece em tests/e2e/workshop.spec.mjs; falha anterior, JUnit e captura estão em docs/evidencias/bug-regra-antiga.md e arquivos associados. Não criamos bug fictício para cumprir rubrica. [PR da regressão e contexto](https://github.com/luccalck/desafio-arcade/pull/8).
 
-### 6.1 O que Funcionou Bem (I10-13)
-1. **Interpretador AST Próprio em TypeScript:** A escolha de construir um analisador sintático enxuto para o subset Python da oficina eliminou o gargalo de carregar runtimes gigantescos como Pyodide, resultando em uma aplicação com inicialização quase instantânea (< 100 ms) e consumo ínfimo de memória.
-2. **Contrato Rígido de Artefatos:** A implementação do `ci-bundle.mjs` com manifesto de hashes SHA-256 impediu qualquer inconsistência entre artefatos gerados na esteira e entregues em homologação.
-3. **Pirâmide de Testes Automatizada:** A combinação de 152 testes unitários com suites ponta a ponta no Playwright capturou bugs reais antes que atingissem a entrega final, especialmente o bug de retenção de regras antigas no editor.
-4. **Governança por Blocos e Revisão Cruzada:** A divisão do trabalho em blocos sequenciais bem delimitados evitou conflitos de mesclagem e assegurou que cada membro compreendesse profundamente a arquitetura.
+## 5. Rastreabilidade dos dez integráveis
 
-### 6.2 O que Não Funcionou ou Apresentou Dificuldades (I10-14)
-1. **Latência e Descarte do Agendador `cron` do GitHub Actions:** O agendamento periódico (`*/15` ou diário) demonstrou sofrer atrasos substanciais de até dezenas de minutos durante horários de pico nos servidores públicos do GitHub, exigindo o suporte a acionamento manual (`workflow_dispatch`).
-2. **Disparidade de Ferramentas de Sistema em Ambientes Windows:** A ausência padrão de utilitários como `pdfinfo` e `ffprobe` no PATH de máquinas de desenvolvimento Windows gerou a necessidade de implementar verificações defensivas e adaptadores com mocks durante a execução local.
-3. **Complexidade de Validação do Subset Python:** Manter a flexibilidade didática para aceitar variações válidas de código dos alunos sem recorrer ao `eval()` do JavaScript exigiu refatorações minuciosas na árvore sintática abstrata (AST).
+Cada linha traz uma fonte acessível, um resultado conhecido e o limite do aceite. Os links são de PRs ou execuções reais, não certificação de que tudo foi integrado.
 
-### 6.3 O que a Equipe Mudaria com Base nos Dados (I10-15)
-1. **Isolamento da Avaliação do Código em Web Worker:** Para futuras versões, a equipe planeja desacoplar a execução do parser AST da thread principal da interface gráfica através de um Web Worker dedicado. Isso garantirá imunidade completa contra travamentos de UI caso o usuário escreva laços excessivamente longos.
-2. **Validação Prévia de Contratos em Pré-Commit:** Adicionar validações leves de manifesto e checksums diretamente em hooks locais (via Git hooks) para fornecer feedback em segundos ao desenvolvedor antes mesmo de disparar a esteira remota.
-3. **Infraestrutura Dedicada para Sondas de Observabilidade:** Para projetos em escala comercial, substituir o monitoramento dependente do cron do Actions por um agente leve ou webhook hospedado em servidor contínuo.
+| INT / peso em A | Fonte e evidência | Estado e pendência de aceite |
+|---|---|---|
+| INT-01 /10% | [PR14](https://github.com/luccalck/desafio-arcade/pull/14), [PR29](https://github.com/luccalck/desafio-arcade/pull/29); SQUAD/contribuições | Quatro autores/colaboradores;15 reviews de Lucca nos PRs 15–29 confirmados após autorização. PRs próprios exigem outro revisor; integração/banca a conferir |
+| INT-02 /8% | [CI auditada](https://github.com/luccalck/desafio-arcade/actions/runs/38649548723), [PR22](https://github.com/luccalck/desafio-arcade/pull/22) | GDD completo, PDF 18p; revisar a versão/identificação atualizada e coerência com a release efetiva |
+| INT-03 /15% | [CI auditada](https://github.com/luccalck/desafio-arcade/actions/runs/38649548723), [PR15](https://github.com/luccalck/desafio-arcade/pull/15) | CI verde; HML/PRD ignorados naquele run. Execução formal e push→HML≤15min precisam de prova |
+| INT-04 /12% | [CI auditada](https://github.com/luccalck/desafio-arcade/actions/runs/38649548723), [PR16](https://github.com/luccalck/desafio-arcade/pull/16) | 260 + 36 testes e cobertura comprovados; revalidar HEAD e E2E/smoke dos ambientes reais |
+| INT-05 /10% | [PR10](https://github.com/luccalck/desafio-arcade/pull/10), [CI auditada](https://github.com/luccalck/desafio-arcade/actions/runs/38649548723) | Scanners/SBOM/inventários; revisar direitos de componentes e materiais finais |
+| INT-06 /10% | [PR17](https://github.com/luccalck/desafio-arcade/pull/17), [PR23](https://github.com/luccalck/desafio-arcade/pull/23) | ZIP/checksum/offline; tag/release e equivalência comPRD precisam de execução |
+| INT-07 /12% | [PR19](https://github.com/luccalck/desafio-arcade/pull/19), [PR21](https://github.com/luccalck/desafio-arcade/pull/21) | Contratos/testes de azul-verde e rollback; medir operação < 5 min e continuidade real |
+| INT-08 /10% | [PR19](https://github.com/luccalck/desafio-arcade/pull/19), [PR23](https://github.com/luccalck/desafio-arcade/pull/23) | Scripts/painel/coletor; publicar status, executar sondas/Issues/DORA e comprovar melhoria |
+| INT-09 /8% | [PR24](https://github.com/luccalck/desafio-arcade/pull/24), [PR25](https://github.com/luccalck/desafio-arcade/pull/25) | Automação preparada; pacote/triagem finais bloqueados porpitch e demais verificações |
+| INT-10 /5% | [PR26](https://github.com/luccalck/desafio-arcade/pull/26), [PR28](https://github.com/luccalck/desafio-arcade/pull/28) | Fonte/gerador do relatório e roteiros; publicar PDF revisado, pitch, ensaio e banca pendentes |
 
----
+A raiz [Pages](https://luccalck.github.io/desafio-arcade/) e [HML](https://luccalck.github.io/desafio-arcade/hml/) responderam200 na consulta da auditoria; HML/rollout apontavam para o preview 71933bf. `/status/` respondeu404. Não chamamos essas respostas de produção formal da candidata e não preenchemos a ficha com URLs finais presumidas.
 
-## 7. Quadro de Contribuições da Equipe por Pull Request (I10-16)
+## 6. Operação, DORA e recuperação
 
-A participação substantiva de todos os integrantes está documentada no histórico oficial de Pull Requests do repositório:
+| Métrica | Definição adotada | Situação do snapshot auditado |
+|---|---|---|
+| Frequência de implantação | Deploys formais de produção bem-sucedidos por janela | N/D; previews não usados como produção |
+| Lead time de mudanças | Intervalo verificável da mudança até produção | N/D; comparar amostras futuras com a linha de base de 11 dias |
+| Taxa de falha de mudança | Deploys formais com falha/incidente sobre deploys da janela | N/D; ausência de amostra não é0% |
+| Tempo de recuperação | Do início de falha registrada até recuperação validada | N/D; testes de fixtures não são incidente real |
 
-| PR # | Autor | Revisor | Título do Pull Request e Escopo Principal | Integráveis |
-|:---:|:---:|:---:|---|:---:|
-| **#2** | `luccalck` | Squad | feat: oficina Python WEB e preview GitHub Pages automatizado | INT-01, 02, 03, 04 |
-| **#3** a **#7** | `luccalck` | Squad | docs/ci: registros iniciais da Aura 67, GDD, segurança, Pages | INT-01, 02, 05 |
-| **#8** a **#12** | `luccalck` | Squad | test/ci: regressão HML, contratos de artefatos, UX Stitch, offline | INT-03, 04, 06 |
-| **#13** a **#14** | `luccalck` | Squad | docs: consolidação de roteiros futuros e ficha de entrega | INT-01, 02, 10 |
-| **#15** | `DaviSouza78` | `luccalck` | Etapas 011–012: homologação formal e sondas de observabilidade | INT-03, 07, 08 |
-| **#16** | `DaviSouza78` | `luccalck` | Etapas 013–014: validar conteúdo educativo e smoke de produção | INT-04, 07 |
-| **#17** | `DaviSouza78` | `luccalck` | Etapas 015–016: releases verificadas e alertas com recuperação | INT-06, 07, 08 |
-| **#18** | `DaviSouza78` | `luccalck` | feat: preparar pitch e controle azul-verde (017–018) | INT-07, 10 |
-| **#19** | `DaviSouza78` | `luccalck` | ci: preparar produção com recuperação e painel (019–020) | INT-07, 08 |
-| **#20** | `miguelsenai2024` | `DaviSouza78` | MD 1: preparar playtest e fortalecer recuperação automática | INT-04, 07 |
-| **#21** | `miguelsenai2024` | `DaviSouza78` | MD 2: rollback manual e métricas DORA | INT-07, 08 |
-| **#22** | `miguelsenai2024` | `DaviSouza78` | MD 3: GDD da candidata e preparação do ensaio | INT-02, 07 |
-| **#23** | `miguelsenai2024` | `DaviSouza78` | Passos 027–028: validar integridade e registrar DORA | INT-06, 08 |
-| **#24** | `miguelsenai2024` | `DaviSouza78` | MD 5: implementar triagem e registrar pitch pendente | INT-08, 09, 10 |
-| **#25** | `6lucassilvaaa` | `luccalck` | Passos 031–032: automatizar pacote com entrada de vídeo e agendar triagem | INT-08, 09 |
-| **#26** | `6lucassilvaaa` | `luccalck` | Passos 033–034: relatório técnico com evidências reais e aceite da candidata | INT-04, 07, 10 |
-| **#27** | `6lucassilvaaa` | `luccalck` | Passos 035–036: preparação de release v1.0.0, triagem final e auditoria eliminatória | INT-03, 05, 06, 07, 09 |
+O coletor deve usar timestamps de deploys/PRs/Issues e explicitar janela, IDs, denominadores e ausências. A linha de base de 11 dias é referência do enunciado, não uma medida já obtida no jogo. Não há mínimo inventado de dez execuções. Uma hipótese de melhoria é reduzir retrabalho pela verificação de proveniência antes da publicação; somente dados reais de antes/depois permitem afirmar efeito.
 
----
+As sondas previstas a cada 15 min registram HTTP, latência e versão. Issues JogoForaDoAr e LatenciaAlta usam limiar > 2 s, idempotência e fechamento automático. O painel deve mostrar ausência de amostra como indisponível. Ensaios controlados devem ser identificados como tal e distinguir janela/timestamps, propagação Pages, alertas e disponibilidade contínua. Não registramos recuperação < 5 min ou ganho DORA sem medição.
 
-## 8. Consolidação Final para a Banca e Submissão (Passos 037 e 038)
+## 7. Colaboração, retrospectiva e próximos aceites
 
-> [!NOTE]
-> A esteira técnica, a conformidade eliminatória e os contratos da **Release v1.0.0** foram consolidados com sucesso nas etapas 035 e 036. A gravação humana do **Vídeo Demonstrativo de até 90 segundos** e a submissão formal no AVA serão concluídas no encerramento final (Passos 039 e 040).
->
-> - **Tag SemVer da Release:** `v1.0.0`
-> - **URL do Repositório GitHub:** `https://github.com/luccalck/desafio-arcade`
-> - **Ambiente de Produção Público:** `https://luccalck.github.io/desafio-arcade/` (HTTP 200)
-> - **Ambiente de Homologação:** `https://luccalck.github.io/desafio-arcade/hml/`
-> - **Painel de Observabilidade /status/:** `https://luccalck.github.io/desafio-arcade/status/`
-> - **Vídeo Demonstrativo:** `artifacts/apresentacao.mp4` (≤ 90 segundos, upload no AVA reservado para entrada humana)
-> - **Vídeo Demonstrativo:** `artifacts/apresentacao.mp4` com verificação de duração ≤ 90s *(reservado para entrada humana)*
-> - **Ambiente de Produção Público:** `https://luccalck.github.io/desafio-arcade/` *(ativo em modo preview/candidata)*
+| Integrante | PRs autorais de referência | Escopo de contribuição |
+|---|---|---|
+| Lucca | [#2](https://github.com/luccalck/desafio-arcade/pull/2) a [#14](https://github.com/luccalck/desafio-arcade/pull/14) | Produto, GDD, jogoPython, segurança,CI eoffline |
+| Davi | [#15](https://github.com/luccalck/desafio-arcade/pull/15) a [#19](https://github.com/luccalck/desafio-arcade/pull/19) | HML, conteúdo/testes, release,alertas,produção/painel |
+| Miguel | [#20](https://github.com/luccalck/desafio-arcade/pull/20) a [#24](https://github.com/luccalck/desafio-arcade/pull/24) | Playtest preparado, recuperação,DORA,GDD,integridade,triagem |
+| Lucas | [#25](https://github.com/luccalck/desafio-arcade/pull/25) a [#29](https://github.com/luccalck/desafio-arcade/pull/29) | Submissão,relatório,candidata,release/ficha/banca eautoria |
 
----
+No snapshot inicial,28 PRs estavam abertos sem reviews. Após Lucca afirmar que revisou o trabalho dos colegas e autorizar o registro, a API confirmou15 aprovações suas nos PRs 15–29, nos HEADs correspondentes. Isso cumpre o mínimo numérico de dezreviews por outro autor nesse recorte, mas não aprova os própriosPRs, não comprova merge e não determina F. Nenhuma revisão foi atribuída a outra pessoa. A nota depende de(0,7×A+0,3×B)×F e da banca; as autoavaliações10na ficha permanecem estimativas solicitadas.
 
-*Relatório Técnico elaborado pelo Squad Aura 67 · Rota do Código · Outubro de 2026.*
+**O que funcionou:** regras separadas da interface permitiram testar comportamento e exportação; a CI detecta contratos inválidos e arquiva provas; o bundle com manifesto permitiu conferir170 arquivos sem divergência. **O que falhou no processo:** documentos anteciparam aceites sem eventos correspondentes; acumularPRsabertos e gates ignorados gerou aparência de entrega completa. A auditoria reabriu27checks contestados e separou preparação de execução.
+
+**O que mudamos:** identificação real completa, ficha com campos finais vazios, conclusões limitadas à prova e correção da cadeia de automação. **O que medir adiante:** tempo real de entrega, recuperação e efeito de uma melhoria DORA. Não usamos supostas falhas de cron, benchmarks ou consentimentos não observados para sustentar a retrospectiva.
+
+O pitch real permanece pendente por orientação de Lucca. Sem esse vídeo não há pacote acadêmico final completo nem triagem final aprovável. Ainda precisam ocorrer playtest humano, preenchimento verdadeiro do HTML/TXT, envio/reciboAVA, ensaio10min+5min e banca com os quatro. Concurso externo é opcional, sem inscrição ou decisão coletiva comprovada; nenhum termo é aceito automaticamente.
+
+**Fontes locais de acompanhamento:** docs/execucao/05-pendencias-por-passo.md, docs/gestao/checklist-avaliacao.md, docs/evidencias/reconferencia-registros.md e docs/contribuicoes.md. Os resultados operacionais posteriores devem acrescentar run/SHA/hashes/horários reais a este relatório antes da versão de entrega; até lá, não é relatório de encerramento integral.

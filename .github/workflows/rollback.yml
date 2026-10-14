@@ -37,6 +37,7 @@ jobs:
       MONITOR_ENABLED: ${{ vars.MONITOR_ENABLED }}
       ALERTS_ENABLED: ${{ vars.ALERTS_ENABLED }}
       MANUAL_REASON: ${{ inputs.reason }}
+      PLAYWRIGHT_CHANNEL: chromium
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -46,6 +47,7 @@ jobs:
           node-version: '24.15.0'
           cache: npm
       - run: npm ci
+      - run: npx playwright install --with-deps chromium
       - name: Restaurar anterior validada sem caminho ou SHA fornecido pelo operador
         id: restaurar
         run: node scripts/promover.mjs manual --sha "$GITHUB_SHA" --run "$GITHUB_RUN_ID" --site-url "$SITE_URL"
@@ -62,7 +64,7 @@ jobs:
         run: |
           node scripts/aguardar-versao.mjs "$PAGES_URL" "$EXPECTED_SHA" root
           npx playwright test --config playwright.public.config.mjs --project=prd-smoke
-          node --input-type=module -e 'import {readFile} from "node:fs/promises";import {verifyRecoveredRelease} from "./scripts/promover.mjs";const r=JSON.parse(await readFile(process.env.SMOKE_REPORT,"utf8")),tx=JSON.parse(await readFile("reports/rollback-manual.json","utf8"));if(r.passed!==true||r.mode!=="root"||r.url!==tx.siteUrl||r.run!==tx.run||r.runAttempt!==tx.runAttempt||r.expectedSha!==tx.sha||r.version?.sha!==tx.sha||r.version?.version!==tx.version||r.errors?.length)throw Error("Smoke/versão restaurada divergente.");await verifyRecoveredRelease(tx);'
+          node --input-type=module -e 'import {readFile} from "node:fs/promises";import {verifyManualRecovery} from "./scripts/promover.mjs";const r=JSON.parse(await readFile(process.env.SMOKE_REPORT,"utf8")),tx=JSON.parse(await readFile("reports/rollback-manual.json","utf8"));await verifyManualRecovery(tx,r);'
       - name: Confirmar sondas e alertas em execução separada
         env:
           EXPECTED_SHA: ${{ steps.restaurar.outputs.sha }}

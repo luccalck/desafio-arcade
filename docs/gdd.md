@@ -1,12 +1,12 @@
 # Rota do Código — Game Design Document
 
-Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do documento: **025 — 14/10/2026**. Mantemos a oficina de jogos aprovada, com desafios Python e preview web. Este documento descreve a candidata do código-fonte; sua data de revisão não representa data de submissão, tag ou release final. A versão/SHA do pacote final serão reconferidos após a etapa 035.
+Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do documento: **026 — 14/10/2026**. Mantemos a oficina de jogos aprovada, com desafios Python e preview web. Este documento descreve a candidata do código-fonte; sua data de revisão não representa data de submissão, tag ou release final. A versão/SHA do pacote final serão reconferidos após a etapa 035.
 
 | Identificação | Situação verdadeira |
 |---|---|
 | Jogo / atividade | Rota do Código / Desafio Arcade — Integração e Entrega Contínua, DevOps |
 | Squad | Aura 67 |
-| Coordenação de Produto | Lucca Castilho; participação dos quatro em todas as áreas |
+| Coordenação de Produto | Lucca Castilho Costa; participação dos quatro em todas as áreas |
 | Data de submissão | Ainda não houve submissão final registrada; preencher na entrega real |
 | Repositório | https://github.com/luccalck/desafio-arcade |
 | PR do primeiro ciclo | https://github.com/luccalck/desafio-arcade/pull/2; integração protegida ainda pendente |
@@ -20,16 +20,16 @@ Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do doc
 
 | Integrante | RA | Coordenação | GitHub |
 |---|---|---|---|
-| Lucca Castilho | | Produto e Game Design | luccalck |
+| Lucca Castilho Costa | 26179873 | Produto e Game Design | luccalck |
 | Davi Marcondes Paes de Souza | 26180842 | Desenvolvimento e Qualidade | DaviSouza78 |
 | Miguel Oliveira de Almeida | 26179933 | Plataforma e Release | miguelsenai2024 |
 | Lucas Souza da Silva | 26179875 | SRE e Segurança | 6lucassilvaaa |
 
-Papéis coordenam, sem exclusividade. Os nomes completos e RAs de três integrantes foram informados em13/10/2026. O RA de Lucca permanece em branco; a identificação ainda não está completa. Fonte dos dados: [SQUAD](../SQUAD.md).
+Papéis coordenam, sem exclusividade. Os nomes completos e RAs de três integrantes foram informados em13/10/2026. Lucca informou seu nome completo e RA 26179873 em 14/10/2026; a tabela contém os quatro RAs reais. Fonte dos dados: [SQUAD](../SQUAD.md).
 
 Consulta pública em 14/10/2026: raiz e `/hml/` responderam HTTP 200, mas a HML servia a versão 0.6.0 do SHA `71933bfd4bd35f8c3ac8f5899a0e9af00db29f32`, anterior a este MD. `/status/` respondeu HTTP 404. Essas URLs não comprovam a candidata atual, produção formal ou painel publicado. O PR técnico mais recente antes desta revisão é [#21](https://github.com/luccalck/desafio-arcade/pull/21), com CI verde e revisão humana ainda pendente.
 
-A aprovação de concepção não substitui revisão por outro integrante. CPF e assinaturas não integram Git ou artefatos públicos; eventual versão privada depende de orientação do professor. Identificação, declaração coletiva e links de release continuam pendentes. Capturas locais e testes automatizados não representam produção ou playtest humano.
+A aprovação de concepção não substitui revisão por outro integrante. CPF e assinaturas não integram Git ou artefatos públicos; eventual versão privada depende de orientação do professor. Declaração coletiva e links de release continuam pendentes. Capturas locais e testes automatizados não representam produção ou playtest humano.
 
 ## 1. Premissa e problema endereçado
 

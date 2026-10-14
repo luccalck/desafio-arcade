@@ -9,20 +9,11 @@
 
 ---
 
-## 1. Conferência dos Artefatos da Esteira e Pacote de Submissão
+## 1. Estado real dos entregáveis
 
-Conforme especificado na arquitetura de entrega automatizada (`scripts/submissao.mjs` e `scripts/package.mjs`), os artefatos acadêmicos que compõem o pacote oficial de submissão foram conferidos estruturalmente:
+A [CI auditada38649548723](https://github.com/luccalck/desafio-arcade/actions/runs/38649548723) produziu buildZIP de29.001 bytes, GDD 18páginas e relatórios de testes/segurança. Não produziu submissão final, pitch ou relatório técnico no bundle. O vídeo permanece pendente por ordem de Lucca. Os scripts de manifesto/pacote são implementação; não comprovam entrega.
 
-| Artefato | Arquivo / Origem | Tamanho / Integridade | Status de Conferência |
-|---|---|---|---|
-| Pacote jogável offline | `build.zip` | 29.001 bytes, SHA-256 `3c5e99b7d9862f08dda82df3243fd22b1e4533297343ca7e083b1317fb2dcbe7` | Válido. Testado sob protocolo `file://` com 100% de sucesso (`tests/e2e/offline-package.spec.mjs`). |
-| Game Design Document | `artifacts/GDD.pdf` | 8 páginas A4, %PDF-1.4 | Válido. Gerado a partir de `docs/gdd.md` via `scripts/gdd-pdf.mjs`. |
-| Relatório Técnico | `artifacts/RelatorioTecnico.pdf` | 6 páginas A4, 243.318 bytes, %PDF-1.4 | Válido. Gerado a partir de `docs/relatorio.md` via `scripts/relatorio-pdf.mjs` (limite ≤ 12 páginas respeitado). |
-| Link público do jogo | `artifacts/LINK_DO_JOGO.txt` | 42 bytes (`https://luccalck.github.io/desafio-arcade/`) | Válido. URL externa testada via HTTP (200 OK). |
-| Vídeo pitch (≤ 90s) | `artifacts/apresentacao.mp4` | Entrada física de gravação humana (Passo 029/031) | Pendente de gravação e upload humano. Não substituído por gravação sintética ou placeholder. |
-| Manifesto de integridade | `artifacts/MANIFESTO.sha256` | Hashes SHA-256 dos 4 arquivos obrigatórios | Estruturado por `scripts/submissao.mjs`. |
-
----
+Relatório técnico revisado: [fonte](../relatorio.md), a gerar/validar/publicar pelaCI. Ficha: [rascunho](../gestao/ficha-entrega.md), semTXTfinal gerado. Os49campos devem receber respostas verdadeiras, sem tratar links presumidos ou estimativas10como aceites.
 
 ## 2. Orientações para a Submissão no AVA Institucional (Ação Humana)
 
@@ -69,7 +60,7 @@ A demonstração ao vivo da esteira perante a banca examinadora foi desenhada pa
 
 Para assegurar o atendimento aos critérios **SQ-14**, **SQ-15**, **SQ-16**, **SQ-17**, **B-11** e **B-12**, o tempo total de fala de 10 minutos foi distribuído equitativamente (2m30s para cada um):
 
-- **00:00 – 02:30 | Lucca Castilho (Produto e Game Design):**
+- **00:00 – 02:30 | Lucca Castilho Costa (Produto e Game Design):**
   - High concept do *Rota do Código*, premissa pedagógica e público-alvo (GDD 12 seções).
   - Loop de jogabilidade: 5 missões educativas, interpretador Python AST e exportação.
   - Governança de design, backlog e condução dos primeiros ciclos.
@@ -88,15 +79,6 @@ Para assegurar o atendimento aos critérios **SQ-14**, **SQ-15**, **SQ-16**, **S
 
 ---
 
-## 5. Auditoria de Contribuição do Integrante 3 — Miguel Oliveira (SQ-12)
+## 5. Contribuições e defesa
 
-Auditado o histórico Git e GitHub Pull Requests para Miguel Oliveira (`miguelsenai2024`):
-- **Commits no repositório:** 11 commits autorais no histórico.
-- **Pull Requests aprovados:**
-  - PR #20: *MD 1 Miguel: preparar playtest e fortalecer recuperação automática* (INT-02, INT-07).
-  - PR #21: *MD 2: rollback manual e métricas DORA* (INT-07, INT-08).
-  - PR #22: *MD 3: GDD da candidata e preparação do ensaio* (INT-02, INT-07).
-  - PR #23: *Passos 027–028: validar integridade e registrar DORA* (INT-06, INT-08).
-  - PR #24: *MD5: implementar triagem e registrar pitch pendente* (INT-09, INT-10).
-- **Atendimento de SQ-12:** Confirmada a atuação autoral de Miguel em pelo menos cinco integráveis distintos (INT-02, INT-06, INT-07, INT-08, INT-09, INT-10), superando o requisito mínimo regulamentar de 3 INTs.
-- **Participação na banca (SQ-16):** Roteiro e divisão de tempo estruturados acima; presença presencial agendada para a data da banca.
+O [inventário](../contribuicoes.md) mapeia autoria e escopo dos28 PRs; snapshot inicial sem reviews registrados. Não atesta aprovação ou F=1,0. Presença/domínio na banca e ensaio cronometrado ainda precisam ocorrer. O roteiro acima é uma proposta; recuperação abaixo de 5 min precisa ser medida em operação antes da demonstração.

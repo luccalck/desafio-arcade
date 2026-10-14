@@ -28,3 +28,20 @@ it('inclui promoção que ocorreu antes de falha no job de produção',()=>{
  expect(result.metrics.deploymentFrequency.samples).toBe(1);
  expect(result.metrics.changeFailureRate.value).toBe(100);
 });
+
+it('histórico gh-pages disponível exige promoção real; revalidar tag não aumenta deploys',()=>{
+ const tag={...run,id:11,head_branch:'v0.6.0'};
+ const params={repo,from,to,runs:[run,tag],jobs:new Map([[10,[job]],[11,[job]]]),commits:new Map([[sha,'2026-10-09T12:00:00Z']]),issues:[],rollbacks:[]};
+ const promoted={sha,run:10,at:job.completed_at,url:`https://github.com/${repo}/commit/abc`};
+ expect(calculateDora({...params,promotions:[promoted]}).metrics.deploymentFrequency.samples).toBe(1);
+ expect(calculateDora({...params,promotions:[]}).metrics.deploymentFrequency.value).toBeNull();
+});
+
+it('lead time usa fim do job com smoke; falha após virada explicita horário apenas de controle',()=>{
+ const promotion={sha,run:10,at:'2026-10-10T11:00:00Z',url:`https://github.com/${repo}/commit/abc`};
+ const params={repo,from,to,runs:[run],commits:new Map([[sha,'2026-10-09T12:00:00Z']]),issues:[],rollbacks:[],promotions:[promotion]};
+ const success=calculateDora({...params,jobs:new Map([[10,[job]]])});
+ expect(success.metrics.leadTime.value).toBe(24);expect(success.evidence.deploys[0].at).toBe(job.completed_at);expect(success.evidence.deploys[0].timing).toBe('deploy-prd-concluido-com-smoke');expect(success.evidence.deploys[0].promotionUrl).toBe(promotion.url);
+ const failure=calculateDora({...params,jobs:new Map([[10,[{...job,conclusion:'failure'}]]])});
+ expect(failure.metrics.leadTime.value).toBe(23);expect(failure.evidence.deploys[0].at).toBe(promotion.at);expect(failure.evidence.deploys[0].timing).toBe('commit-de-controle-sem-confirmacao-cdn');
+});

@@ -5,13 +5,11 @@ on:
   workflow_dispatch:
     inputs:
       modo:
-        description: 'Modo de triagem (entrega ou vigilancia)'
+        description: 'Entrega aplica PRAZO; vigilância revalida o pacote já entregue'
         required: false
-        default: 'vigilancia'
+        default: vigilancia
         type: choice
-        options:
-          - vigilancia
-          - entrega
+        options: [vigilancia, entrega]
       alertar:
         description: 'Registrar alerta em caso de falha'
         required: false
@@ -19,87 +17,97 @@ on:
         type: boolean
 permissions:
   contents: read
+  actions: read
   issues: write
 concurrency:
   group: triagem-agendada
   cancel-in-progress: false
 jobs:
   triagem-agendada:
+    if: vars.TRIAGEM_AGENDADA_ENABLED == 'true'
     runs-on: ubuntu-latest
     timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      PRAZO: ${{ vars.PRAZO }}
+      EXPECTED_SHA: ${{ vars.SUBMISSION_SHA }}
+      SUBMISSION_RUN_ID: ${{ vars.SUBMISSION_RUN_ID }}
+      SUBMISSION_RUN_ATTEMPT: ${{ vars.SUBMISSION_RUN_ATTEMPT }}
+      SUBMISSION_TAG: ${{ vars.SUBMISSION_TAG }}
+      SUBMISSION_ARTIFACT_ID: ${{ vars.SUBMISSION_ARTIFACT_ID }}
+      SUBMISSION_ARTIFACT_DIGEST: ${{ vars.SUBMISSION_ARTIFACT_DIGEST }}
+      SITE_URL: ${{ vars.SITE_URL }}
+      MODO: ${{ inputs.modo || 'vigilancia' }}
+      ALERTAR: ${{ github.event_name == 'schedule' || inputs.alertar }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
+          ref: ${{ vars.SUBMISSION_SHA }}
           persist-credentials: false
       - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
         with:
           node-version: '24.15.0'
           cache: npm
       - run: npm ci
-      - name: Instalar dependências de sistema (Poppler e FFmpeg)
+      - name: Instalar dependências de triagem
         run: |
           sudo apt-get update -qq
           sudo apt-get install -y poppler-utils ffmpeg
-      - name: Executar triagem agendada
-        env:
-          PRAZO: ${{ vars.PRAZO }}
-          SITE_URL: ${{ vars.SITE_URL || 'https://luccalck.github.io/desafio-arcade' }}
-          EXPECTED_SHA: ${{ vars.EXPECTED_SHA || github.sha }}
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MODO: ${{ github.event.inputs.modo || 'vigilancia' }}
-          ALERTAR: ${{ github.event.inputs.alertar != false }}
+      - name: Recuperar pacote imutável exato e conferir proveniência remota
         shell: bash
         run: |
-          mkdir -p submissao
-          # Se submissão já foi gerada na release/artefato, conferir integridade
-          FLAGS="--modo=$MODO"
-          if [ "$ALERTAR" = "true" ]; then
-            FLAGS="$FLAGS --alertar"
-          fi
-          if [ -d submissao ] && [ -f submissao/MANIFESTO.sha256 ]; then
-            node scripts/triagem.mjs submissao $FLAGS || {
-              echo "::warning::Inconformidade detectada na triagem agendada."
-              exit 1
-            }
-          else
-            echo "Pasta de submissão não empacotada neste checkout. Verificando URL de produção diretamente..."
-            # Validação direta da URL de produção se a pasta submissao não estiver versionada na branch
-            node -e "
-              const url = process.env.SITE_URL;
-              const res = await fetch(url);
-              if (res.status !== 200) {
-                console.error('URL pública indisponível:', res.status);
-                process.exit(1);
-              }
-              console.log('Produção online e respondendo HTTP 200:', url);
-            " || {
-              if [ "$ALERTAR" = "true" ]; then
-                node -e "
-                  import {notifyAlert} from './scripts/triagem.mjs';
-                  await notifyAlert({kind:'JogoForaDoAr',url:process.env.SITE_URL,reason:'Produção fora do ar na triagem agendada'});
-                "
-              fi
-              exit 1
-            }
-          fi
-      - name: Documentar execução agendada e atraso Actions
+          [[ "$EXPECTED_SHA" =~ ^[a-f0-9]{40}$ && "$SUBMISSION_RUN_ID" =~ ^[0-9]+$ && "$SUBMISSION_RUN_ATTEMPT" =~ ^[1-9][0-9]*$ && "$SUBMISSION_ARTIFACT_ID" =~ ^[0-9]+$ && "$SUBMISSION_ARTIFACT_DIGEST" =~ ^sha256:[a-f0-9]{64}$ && "$SUBMISSION_TAG" =~ ^v[0-9]+\.[0-9]+\.[0-9]+$ ]]
+          mkdir -p reports
+          gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${SUBMISSION_RUN_ID}" > reports/submissao-run.json
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${SUBMISSION_ARTIFACT_ID}" > reports/submissao-artefato.json
+          gh api "repos/${GITHUB_REPOSITORY}/git/ref/tags/${SUBMISSION_TAG}" > reports/submissao-tag.json
+          node --input-type=module <<'NODE'
+          import {readFile} from 'node:fs/promises';
+          import {execFileSync} from 'node:child_process';
+          const e=process.env,r=JSON.parse(await readFile('reports/submissao-run.json','utf8')),a=JSON.parse(await readFile('reports/submissao-artefato.json','utf8')),t=JSON.parse(await readFile('reports/submissao-tag.json','utf8'));
+          if(r.path!=='.github/workflows/esteira.yml'||r.event!=='push'||r.conclusion!=='success'||r.head_sha!==e.EXPECTED_SHA||String(r.id)!==e.SUBMISSION_RUN_ID||String(r.run_attempt)!==e.SUBMISSION_RUN_ATTEMPT)throw Error('Run final não corresponde à origem fixada.');
+          if(a.expired||a.workflow_run?.id!==r.id||a.workflow_run?.head_sha!==e.EXPECTED_SHA||a.name!==`submissao-${e.EXPECTED_SHA}-${e.SUBMISSION_RUN_ID}-${e.SUBMISSION_RUN_ATTEMPT}`||a.digest!==e.SUBMISSION_ARTIFACT_DIGEST)throw Error('Artefato expirado, digest ou origem divergente.');
+          if(t.object?.type!=='tag')throw Error('Tag final deve ser anotada.');
+          const tag=JSON.parse(execFileSync('gh',['api',`repos/${e.GITHUB_REPOSITORY}/git/tags/${t.object.sha}`],{encoding:'utf8'}));
+          if(tag.object.type!=='commit'||tag.object.sha!==e.EXPECTED_SHA)throw Error('Tag final aponta a outro SHA.');
+          NODE
+          gh api "repos/${GITHUB_REPOSITORY}/actions/artifacts/${SUBMISSION_ARTIFACT_ID}/zip" > pacote-submissao.zip
+          node --input-type=module <<'NODE'
+          import {readFile,writeFile,mkdir} from 'node:fs/promises';
+          import {createHash} from 'node:crypto';
+          import {unzipSync} from 'fflate';
+          const bytes=await readFile('pacote-submissao.zip');
+          if('sha256:'+createHash('sha256').update(bytes).digest('hex')!==process.env.SUBMISSION_ARTIFACT_DIGEST)throw Error('SHA-256 do arquivo remoto divergente.');
+          const expected=['GDD.pdf','LINK_DO_JOGO.txt','build.zip','pitch.mp4','MANIFESTO.sha256','submissao-manifest.json'];
+          const files=unzipSync(bytes,{filter:f=>{if(!expected.includes(f.name))throw Error('Arquivo inesperado no artefato.');return true;}});
+          if(expected.some(n=>!files[n])||Object.keys(files).length!==expected.length)throw Error('Submissão incompleta.');
+          await mkdir('submissao');for(const [name,data] of Object.entries(files))await writeFile(`submissao/${name}`,data);
+          NODE
+      - name: Revalidar o pacote real completo, hashes, PDF, vídeo e smoke público
+        shell: bash
+        run: |
+          set -o pipefail
+          node scripts/submissao.mjs verify submissao
+          node scripts/triagem.mjs submissao --modo="$MODO" | tee reports/triagem-agendada.log
+      - name: Notificar falha real de recuperação ou validação
+        if: failure() && (github.event_name == 'schedule' || inputs.alertar)
+        run: |
+          node --input-type=module -e "import {notifyAlert} from './scripts/triagem.mjs';await notifyAlert({kind:'TriagemIndisponivel',url:process.env.SITE_URL,reason:'Falha na recuperação ou revalidação do pacote final imutável. Consultar a execução Actions '+process.env.GITHUB_RUN_ID});"
+      - name: Documentar horário real e fonte agendada
         if: always()
         shell: bash
         run: |
           mkdir -p reports
-          node -e '
-            import {writeFile} from "node:fs/promises";
-            const report = {
-              timestamp: new Date().toISOString(),
-              runId: process.env.GITHUB_RUN_ID,
-              event: process.env.GITHUB_EVENT_NAME,
-              note: "GitHub Actions schedule pode apresentar atrasos operacionais de minutos a horas conforme carga dos runners."
-            };
-            await writeFile("reports/triagem-agendada-execucao.json", JSON.stringify(report, null, 2) + "\n");
-          '
+          gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" --jq '{id,event,created_at,run_started_at,head_sha}' > reports/triagem-agendada-run.json
+          node --input-type=module <<'NODE'
+          import {writeFile,readFile} from 'node:fs/promises';
+          const run=JSON.parse(await readFile('reports/triagem-agendada-run.json','utf8'));
+          const report={...run,observedAt:new Date().toISOString(),cron:'0 12 * * *',submissionRun:process.env.SUBMISSION_RUN_ID,submissionArtifact:process.env.SUBMISSION_ARTIFACT_ID,delayNote:'created_at e run_started_at são horários reais da API; não representam o instante prometido pelo scheduler. Compare a janela nominal de 12:00 UTC com a data desta execução.'};
+          await writeFile('reports/triagem-agendada-execucao.json',JSON.stringify(report,null,2)+'\n');
+          NODE
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
         with:
-          name: triagem-agendada-${{ github.run_id }}
+          name: triagem-agendada-${{ github.run_id }}-${{ github.run_attempt }}
           path: reports/
           if-no-files-found: warn

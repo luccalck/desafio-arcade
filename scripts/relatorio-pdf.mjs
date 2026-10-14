@@ -1,5 +1,5 @@
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
-import { resolve } from 'node:path';
+import { resolve, relative, extname, isAbsolute } from 'node:path';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import MarkdownIt from 'markdown-it';
@@ -18,21 +18,23 @@ if (!source.includes('# Relatório Técnico') && !source.includes('# Relatório 
 const md = new MarkdownIt({ html: true, linkify: true });
 let html = md.render(source.replaceAll('{{VERSION}}', pkg.version));
 
-// Inline local images as base64
-for (const match of [...html.matchAll(/src="([^"]+\.(?:png|jpg|jpeg|svg|webp))"/g)]) {
-  const imgPath = match[1];
-  try {
-    const fullPath = resolve(imgPath.startsWith('docs/') ? imgPath : resolve('docs', imgPath));
-    const image = await readFile(fullPath);
-    let mime = 'image/png';
-    if (imgPath.endsWith('.svg')) mime = 'image/svg+xml';
-    else if (imgPath.endsWith('.jpg') || imgPath.endsWith('.jpeg')) mime = 'image/jpeg';
-    else if (imgPath.endsWith('.webp')) mime = 'image/webp';
-    html = html.replace(match[0], `src="data:${mime};base64,${image.toString('base64')}"`);
-  } catch (err) {
-    console.warn(`Aviso: imagem não encontrada para inline: ${imgPath} (${err.message})`);
+// Missing or remote evidence must stop generation rather than silently drop a print.
+const docsRoot = resolve('docs');
+for (const match of [...html.matchAll(/src="([^"]+)"/g)]) {
+  const imagePath = decodeURIComponent(match[1]);
+  const fullPath = resolve(imagePath.startsWith('docs/') ? imagePath : resolve(docsRoot, imagePath));
+  const withinDocs = relative(docsRoot, fullPath);
+  if (/^[a-z][a-z0-9+.-]*:/i.test(imagePath) || imagePath.startsWith('//') || withinDocs.startsWith('..') || isAbsolute(withinDocs)) {
+    throw new Error(`Evidência deve ser arquivo local dentro de docs/: ${imagePath}`);
   }
+  const mime = { '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.svg': 'image/svg+xml', '.webp': 'image/webp' }[extname(fullPath).toLowerCase()];
+  if (!mime) throw new Error(`Formato de imagem não suportado: ${imagePath}`);
+  const bytes = await readFile(fullPath);
+  if (!bytes.length) throw new Error(`Evidência vazia: ${imagePath}`);
+  html = html.replaceAll(match[0], `src="data:${mime};base64,${bytes.toString('base64')}"`);
 }
+
+html = html.replace(/<p>(<img[^>]+>)<\/p>\s*<p>(<strong>Figura [\s\S]*?)<\/p>/g, '<figure>$1<figcaption>$2</figcaption></figure>');
 
 const css = `
 @page {
@@ -41,7 +43,7 @@ const css = `
 }
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-  font-size: 8.8pt;
+  font-size: 10pt;
   line-height: 1.38;
   color: #1a202c;
   background: #ffffff;
@@ -65,6 +67,7 @@ h2 {
   margin-bottom: 8px;
   break-after: avoid;
 }
+h2 + p { break-after: avoid; }
 h3 {
   font-size: 10.5pt;
   color: #2d3748;
@@ -88,7 +91,7 @@ li {
 table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 7.8pt;
+  font-size: 8.7pt;
   margin: 8px 0;
   break-inside: avoid;
 }
@@ -106,13 +109,15 @@ th {
 tr {
   break-inside: avoid;
 }
+figure { margin: 8px 0; }
+figcaption { font-size: 8.7pt; line-height: 1.3; }
 figure, img {
   break-inside: avoid;
 }
 img {
   display: block;
   max-width: 95%;
-  max-height: 75mm;
+  max-height: 80mm;
   margin: 8px auto;
   border: 1px solid #e2e8f0;
   border-radius: 4px;
@@ -124,7 +129,7 @@ a {
 }
 code {
   font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-  font-size: 7.8pt;
+  font-size: 8.7pt;
   background: #f7fafc;
   border: 1px solid #e2e8f0;
   border-radius: 3px;
@@ -135,7 +140,7 @@ pre {
   border: 1px solid #e2e8f0;
   border-radius: 4px;
   padding: 6px 8px;
-  font-size: 7.8pt;
+  font-size: 8.7pt;
   white-space: pre-wrap;
   overflow-wrap: anywhere;
   break-inside: avoid;
@@ -173,6 +178,7 @@ const browser = await chromium.launch({
 
 try {
   const page = await browser.newPage();
+  await page.route(/^https?:/, route => route.abort());
   const fullHtml = `<!doctype html>
 <html lang="pt-BR">
 <head>
@@ -185,7 +191,9 @@ try {
 </body>
 </html>`;
 
-  await page.setContent(fullHtml, { waitUntil: 'networkidle' });
+  await page.setContent(fullHtml, { waitUntil: 'load' });
+  const brokenImages = await page.locator('img').evaluateAll(images => images.filter(image => !image.complete || !image.naturalWidth).length);
+  if (brokenImages) throw new Error(`${brokenImages} imagem(ns) de evidência não renderizou/renderizaram.`);
 
   const pdfPath = 'artifacts/RelatorioTecnico.pdf';
   const htmlPath = 'artifacts/RelatorioTecnico.html';
@@ -217,28 +225,13 @@ try {
     throw new Error(`Cabeçalho inválido no arquivo PDF gerado: ${pdfHeader}`);
   }
 
-  // Count pages from PDF structure or pdfinfo
-  let pageCount = null;
-  try {
-    const { stdout } = await execFileAsync('pdfinfo', [pdfPath]);
-    const m = stdout.match(/Pages:\s+(\d+)/);
-    if (m) pageCount = parseInt(m[1], 10);
-  } catch {
-    // pdfinfo not installed, parse PDF catalog
-    const text = pdfBytes.toString('latin1');
-    const m = text.match(/\/Type\s*\/Pages[\s\S]*?\/Count\s+(\d+)/);
-    if (m) pageCount = parseInt(m[1], 10);
+  const { stdout } = await execFileAsync('pdfinfo', [pdfPath]);
+  const count = stdout.match(/Pages:\s+(\d+)/);
+  const pageCount = count ? Number(count[1]) : NaN;
+  if (!Number.isInteger(pageCount) || pageCount < 1 || pageCount > 12) {
+    throw new Error(`Relatório técnico deve ter de 1 a 12 páginas: ${pageCount}`);
   }
-
-  console.log(`Relatório Técnico PDF gerado com sucesso: ${pdfPath} (${pdfBytes.length} bytes)`);
-  if (pageCount !== null) {
-    console.log(`Total de páginas: ${pageCount}`);
-    if (pageCount > 12) {
-      throw new Error(`Relatório técnico excedeu o limite máximo de 12 páginas: ${pageCount} páginas.`);
-    }
-  } else {
-    console.log('Aviso: Não foi possível determinar a contagem exata de páginas via parser/pdfinfo.');
-  }
+  console.log(`Relatório Técnico PDF gerado: ${pdfPath} (${pdfBytes.length} bytes, ${pageCount} páginas)`);
 } finally {
   await browser.close();
 }

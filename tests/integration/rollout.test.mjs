@@ -14,8 +14,9 @@ const smoke={passed:true,errors:[],mode:'release',url:`https://example.test/arca
 function bundle(sha=b){
  const zip=zipSync(Object.fromEntries(Object.entries(release(sha)).map(([n,v])=>[n.split('/').at(-1),v]))),hash=bytes=>createHash('sha256').update(bytes).digest('hex');
  // Pacote sintético completo; não é resultado de CI acadêmico.
- const files={'build.zip':zip,'build.zip.sha256':strToU8(hash(zip)),'GDD.pdf':strToU8('%PDF-fixture'),'version.json':strToU8(JSON.stringify(manifest(sha))),'sbom.cdx.json':strToU8('{"bomFormat":"CycloneDX"}')};
- for(const n of ['reports/seguranca/gitleaks.json','reports/seguranca/npm-audit.json','reports/qualidade/junit.xml','reports/qualidade/coverage/coverage-summary.json','reports/e2e/reports/e2e-junit.xml','reports/construcao/pdfinfo.txt','reports/construcao/reproducibility.json'])files[n]=strToU8('fixture');
+ const files={'build.zip':zip,'build.zip.sha256':strToU8(hash(zip)),'GDD.pdf':strToU8('%PDF-fixture'),'RelatorioTecnico.pdf':strToU8('%PDF-report-fixture'),'version.json':strToU8(JSON.stringify(manifest(sha))),'sbom.cdx.json':strToU8('{"bomFormat":"CycloneDX"}')};
+ for(const n of ['reports/seguranca/gitleaks.json','reports/seguranca/npm-audit.json','reports/qualidade/junit.xml','reports/qualidade/coverage/coverage-summary.json','reports/e2e/reports/e2e-junit.xml','reports/construcao/pdfinfo.txt','reports/construcao/relatorio-pdfinfo.txt','reports/construcao/reproducibility.json'])files[n]=strToU8('fixture');
+ files['reports/construcao/relatorio-pdfinfo.txt']=strToU8('Pages: 1\n');
  files['ci-manifest.json']=strToU8(JSON.stringify({schema:1,sha,run:'123',runAttempt:'1',version:'0.6.0',build:manifest(sha).build,files:Object.fromEntries(Object.entries(files).map(([n,v])=>[n,{sha256:hash(v),bytes:v.length}]))}));return files;
 }
 it('migra preview sem perder ativa/anterior e rejeita ponteiro contraditório ou traversal',()=>{

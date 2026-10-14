@@ -60,43 +60,14 @@ Running 1 test using 1 worker
 
 ---
 
-## 3. Declaração Formal de Congelamento de Código (Code Freeze)
+## 3. Política de congelamento e autoria — reconferência
 
-Em cumprimento aos critérios **CR-09** e **CR-10**:
-1. **Congelamento de Funcionalidades (CR-09):**
-   A versão candidata `v1.0.0` está formalmente congelada. Nenhuma nova funcionalidade, refatoração estrutural ou mudança de escopo é permitida. Apenas correções de bugs impeditivos identificados na triagem ou ensaios são permitidas, obrigatoriamente sob o prefixo `fix:`, com teste de regressão prévio comprovando a falha e a correção, via Pull Request aprovado e pipeline CI completa verde.
-2. **Imutabilidade de Produção (CR-10):**
-   É terminantemente proibida qualquer edição direta ou push manual na branch `gh-pages` ou nos ambientes de produção. Todas as publicações e eventuais rollbacks ocorrem estritamente através dos workflows declarativos do GitHub Actions (`esteira.yml` e `rollback.yml`), protegidos por aprovação de ambiente (`producao`).
+A consulta inicial de 14/10/2026 não encontrou tag v1.0.0 nem release final. A política de code freeze está preparada; não declarar congelamento pós-release como executado. Toda alteração operacional deve passar por PR/CI e publicação exclusiva pela pipeline; não editar gh-pages manualmente.
 
----
+Os 28 PRs #2–#29 estavam abertos e sem reviews registrados no snapshot. As listas de “PRs aprovados” e aptidão ao fator máximo anteriormente presentes foram corrigidas. O [quadro de contribuições](../contribuicoes.md) preserva o escopo autoral e a distribuição proposta de revisão. Lucca declarou posteriormente ter revisado o trabalho dos colegas; somente eventos reais podem confirmar aprovação/integração. Próprios PRs exigem outra pessoa.
 
-## 4. Auditoria de Autoria e Participação dos Integrantes (SQ-10 e SQ-11)
+## 4. Contingência preparada
 
-Auditou-se o histórico Git e os Pull Requests do repositório para atestar a participação efetiva de cada integrante em pelo menos três integráveis (INTs) distintos:
+O ZIP offline é a alternativa de demonstração em falta de rede. Rollback manual e automático estão preparados em scripts e testes, mas o objetivo de recuperação abaixo de cinco minutos, incluindo propagação Pages e continuidade de URL, exige ensaio real cronometrado. Não prometemos esse tempo antes da medição.
 
-- **Integrante 1 — Lucca Castilho (`luccalck`):**
-  - 56 commits no repositório.
-  - Pull Requests aprovados: #2, #3, #4, #5, #6, #7, #8, #9, #10, #11, #12, #13, #14.
-  - Abrange INT-01, INT-02, INT-03, INT-04, INT-05, INT-06 (atende e supera o critério **SQ-10**).
-  - Participação na banca (**SQ-14**): roteiro estruturado em `docs/apresentacao-banca.md` (abertura, produto e gameplay); presença física na banca agendada como pendência humana.
-- **Integrante 2 — Davi Marcondes Paes de Souza (`DaviSouza78`):**
-  - 10 commits no repositório.
-  - Pull Requests aprovados: #15, #16, #17, #18, #19.
-  - Abrange INT-03, INT-04, INT-06, INT-07, INT-08 (atende e supera o critério **SQ-11**).
-  - Participação na banca (**SQ-15**): roteiro estruturado em `docs/apresentacao-banca.md` (infraestrutura, esteira e automação); presença física na banca agendada como pendência humana.
-- **Integrante 3 — Miguel Oliveira de Almeida (`miguelsenai2024`):**
-  - 11 commits no repositório.
-  - Pull Requests aprovados: #20, #21, #22, #23, #24.
-  - Abrange INT-02, INT-07, INT-08, INT-09, INT-10.
-- **Integrante 4 — Lucas Souza da Silva (`6lucassilvaaa`):**
-  - 7 commits no repositório (+ commits das etapas 037-038).
-  - Pull Requests: #25, #26, #27 e #28.
-  - Abrange INT-01, INT-06, INT-09, INT-10.
-
----
-
-## 5. Procedimentos de Contingência e Rollback na Banca
-
-Conforme consolidado em `docs/operacao-rollback.md`:
-- Em caso de instabilidade na conexão de internet durante a apresentação perante a banca examinadora, a equipe alternará imediatamente para a execução local do pacote offline `build.zip` através do navegador em `file:///`.
-- Em caso de anomalia na versão pública durante a avaliação, o operador aciona o workflow `rollback.yml` com motivo `alerta-confirmado`, restaurando a versão estável anterior em menos de 5 minutos, sem qualquer intervenção manual na branch `gh-pages`.
+O HTTP200 da raiz/HML acima comprova o preview consultado, não produção formal da candidata. A auditoria reconferiu HML no SHA71933bf e status404. A [reconferência de registros](reconferencia-registros.md) delimita os resultados auditados e as provas ainda necessárias.

@@ -1,20 +1,23 @@
 import {writeFile,mkdir} from 'node:fs/promises';
 import {dirname,resolve} from 'node:path';
 import {pathToFileURL} from 'node:url';
-const keys={deploymentFrequency:['deploys/dia','Implantações formais bem-sucedidas / dias da janela'],leadTime:['horas','Média entre data do commit e término do job deploy-prd'],changeFailureRate:['%','Implantações formais seguidas de rollback correlacionado / implantações formais'],mttr:['minutos','Média da abertura ao fechamento de Issues de alerta']};
+const keys={deploymentFrequency:['deploys/dia','Implantações formais bem-sucedidas / dias da janela'],leadTime:['horas','Média entre data do commit e término do deploy-prd aprovado; virada seguida de falha usa horário do commit de controle, sem afirmar confirmação CDN'],changeFailureRate:['%','Implantações formais seguidas de rollback correlacionado / implantações formais'],mttr:['minutos','Média da abertura ao fechamento de Issues de alerta']};
 const inside=(value,from,to)=>Number.isFinite(Date.parse(value))&&Date.parse(value)>=Date.parse(from)&&Date.parse(value)<Date.parse(to);
 export async function collectPages(get,{limit=100}={}){
  const all=[];for(let page=1;page<=limit;page++){const part=await get(page);if(!Array.isArray(part))throw Error('Resposta paginada inválida.');all.push(...part);if(part.length<100)return all;}throw Error('Limite de paginação excedido; resultado incompleto.');
 }
-export function calculateDora({repo,from,to,runs,jobs,commits,issues,rollbacks,promotions=[],generatedAt=new Date().toISOString()}){
+export function calculateDora({repo,from,to,runs,jobs,commits,issues,rollbacks,promotions=null,generatedAt=new Date().toISOString()}){
  if(!/^[-\w.]+\/[-\w.]+$/.test(repo)||!Number.isFinite(Date.parse(from))||!Number.isFinite(Date.parse(to))||Date.parse(to)<=Date.parse(from))throw Error('Repositório ou janela inválidos.');
  const days=(Date.parse(to)-Date.parse(from))/86400000,deploys=[];
  for(const run of runs){
   if(run.event!=='push'||!(run.head_branch==='main'||/^v\d+\.\d+\.\d+$/.test(run.head_branch??''))||!/^[a-f0-9]{40}$/.test(run.head_sha??''))continue;
   for(const job of jobs.get(run.id)??[])if(job.name==='deploy-prd'){
-   const promoted=promotions.find(p=>p.sha===run.head_sha&&p.run===run.id&&inside(p.at,from,to));
-   if(promoted)deploys.push({sha:run.head_sha,at:promoted.at,url:promoted.url,run:run.id});
-   else if(job.conclusion==='success'&&inside(job.completed_at,from,to))deploys.push({sha:run.head_sha,at:job.completed_at,url:job.html_url??run.html_url,run:run.id});
+   const promoted=promotions?.find(p=>p.sha===run.head_sha&&p.run===run.id&&inside(p.at,from,to));
+   if(promoted){
+    const confirmed=job.conclusion==='success'&&inside(job.completed_at,from,to);
+    deploys.push({sha:run.head_sha,at:confirmed?job.completed_at:promoted.at,url:confirmed?(job.html_url??run.html_url):promoted.url,run:run.id,promotionUrl:promoted.url,timing:confirmed?'deploy-prd-concluido-com-smoke':'commit-de-controle-sem-confirmacao-cdn'});
+   }
+   else if(promotions===null&&job.conclusion==='success'&&inside(job.completed_at,from,to))deploys.push({sha:run.head_sha,at:job.completed_at,url:job.html_url??run.html_url,run:run.id});
   }
  }
  const unique=[...new Map(deploys.map(d=>[`${d.run}:${d.sha}`,d])).values()].sort((a,b)=>a.at.localeCompare(b.at));
@@ -42,7 +45,7 @@ export async function fetchDora({repo,from,to,token,fetcher=globalThis.fetch}){
   if(!commits.has(run.head_sha))commits.set(run.head_sha,(await api(`/commits/${run.head_sha}`)).commit.committer.date);
  }
  const issues=await collectPages(async page=>await api(`/issues?state=all&labels=alerta&since=${encodeURIComponent(from)}&per_page=100&page=${page}`));
- let rollbacks=null,promotions=[];try{
+ let rollbacks=null,promotions=null;try{
   const history=await collectPages(async page=>await api(`/commits?sha=gh-pages&since=${encodeURIComponent(from)}&until=${encodeURIComponent(to)}&per_page=100&page=${page}`));
   rollbacks=history.flatMap(c=>{const match=/^deploy: rollback [a-f0-9]{40}; falha=([a-f0-9]{40});/.exec(c.commit?.message??'');return match?[{sha:match[1],at:c.commit.committer.date,url:c.html_url}]:[];});
   promotions=history.flatMap(c=>{const match=/^deploy: promover ([a-f0-9]{40});.*execução (\d+)\/\d+/.exec(c.commit?.message??'');return match?[{sha:match[1],run:Number(match[2]),at:c.commit.committer.date,url:c.html_url}]:[];});

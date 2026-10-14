@@ -8,9 +8,10 @@ function bundle(){
  const site=Object.fromEntries(['index.html','game.js','style.css','LEIA-ME.txt','LICENSE.txt','THIRD_PARTY.txt'].map(n=>[n,strToU8('fixture')]));
  site['version.json']=strToU8(JSON.stringify({sha,version:'0.6.0',build:'2026-10-13T00:00:00Z'}));
  const zip=zipSync(site),hash=b=>createHash('sha256').update(b).digest('hex');
- const files={'build.zip':zip,'build.zip.sha256':strToU8(hash(zip)),'GDD.pdf':strToU8('%PDF-fixture'),'version.json':site['version.json'],'sbom.cdx.json':strToU8('{"bomFormat":"CycloneDX"}')};
- for(const name of ['reports/seguranca/gitleaks.json','reports/seguranca/npm-audit.json','reports/qualidade/junit.xml','reports/qualidade/coverage/coverage-summary.json','reports/e2e/reports/e2e-junit.xml','reports/construcao/pdfinfo.txt','reports/construcao/reproducibility.json'])files[name]=strToU8('fixture');
- files['ci-manifest.json']=strToU8(JSON.stringify({schema:1,sha,run,version:'0.6.0',build:'2026-10-13T00:00:00Z',files:Object.fromEntries(Object.entries(files).map(([name,b])=>[name,{sha256:hash(b),bytes:b.length}]))}));
+ const files={'build.zip':zip,'build.zip.sha256':strToU8(hash(zip)),'GDD.pdf':strToU8('%PDF-fixture'),'RelatorioTecnico.pdf':strToU8('%PDF-report-fixture'),'version.json':site['version.json'],'sbom.cdx.json':strToU8('{"bomFormat":"CycloneDX"}')};
+ for(const name of ['reports/seguranca/gitleaks.json','reports/seguranca/npm-audit.json','reports/qualidade/junit.xml','reports/qualidade/coverage/coverage-summary.json','reports/e2e/reports/e2e-junit.xml','reports/construcao/pdfinfo.txt','reports/construcao/relatorio-pdfinfo.txt','reports/construcao/reproducibility.json'])files[name]=strToU8('fixture');
+ files['reports/construcao/relatorio-pdfinfo.txt']=strToU8('Pages: 1\n');
+ files['ci-manifest.json']=strToU8(JSON.stringify({schema:1,sha,run,runAttempt:'1',version:'0.6.0',build:'2026-10-13T00:00:00Z',files:Object.fromEntries(Object.entries(files).map(([name,b])=>[name,{sha256:hash(b),bytes:b.length}]))}));
  return files;
 }
 it('publica somente HML e preserva produção, releases e painel byte a byte',()=>{
