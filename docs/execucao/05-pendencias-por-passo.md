@@ -469,11 +469,24 @@ Conferência externa de URLs finais, validação de integridade offline e formal
 
 ## Passo 039
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Conferência de artefatos da esteira e preparação para a submissão e demonstração na banca executadas em 14/10/2026 por Lucas Souza (`6lucassilvaaa`). Os artefatos do pacote de submissão foram conferidos estruturalmente (`build.zip` de 29.001 bytes, `artifacts/GDD.pdf` de 8 páginas A4, `artifacts/RelatorioTecnico.pdf` de 6 páginas A4, `artifacts/LINK_DO_JOGO.txt` e manifesto SHA-256). Foi elaborado o protocolo com orientações claras para o responsável humano anexar os entregáveis no AVA institucional (pacote zip, relatório PDF e ficha TXT) e arquivar o recibo/comprovante de envio com data/hora. O roteiro de demonstração ao vivo de 5 minutos foi desenhado em três atos: (1) commit → CI verde → promoção sem rebuild; (2) falha controlada → alerta → rollback < 5 min sem queda de URL; (3) contingência 100% offline via `file://`. A fala total de 10 minutos foi distribuída equilibradamente entre os 4 integrantes (2m30s cada), garantindo o domínio técnico dos blocos. A auditoria comprovou a atuação de Miguel Oliveira (`miguelsenai2024`, PRs #20 a #24) em 6 INTs distintos (**SQ-12**). Evidência em `docs/evidencias/entrega-banca.md`.
+
+- [ ] **Envio dos entregáveis no AVA e arquivamento do recibo (CR-04, CR-05, G8).** Ação estritamente humana de anexar o pacote zip, o relatório técnico PDF e a ficha TXT gerada no AVA da Faculdade SENAI, obtendo e guardando o comprovante oficial de submissão. Dependência: ação humana no AVA institucional.
+- [ ] **Execução presencial da demonstração ao vivo na banca (CR-07, I07-24, B-03, B-04, B-05).** A demonstração prática cronometrada de 5 minutos com simulação de falha, acionamento do rollback e exibição do modo offline perante os avaliadores. Dependência: realização presencial da banca examinadora.
+- [ ] **Participação presencial de Miguel Oliveira na banca (SQ-16).** Presença física e domínio das contribuições de Plataforma/Release na arguição da banca. Dependência: evento da banca avaliadora.
+- [ ] **Gravação física do vídeo de pitch (B-13, FIC-11).** Arquivo de gravação humana `apresentacao.mp4` (≤ 90s) a ser gravado pela equipe (Passo 029/031).
+- [ ] **Revisão humana cruzada.** PR deste par em rascunho aguarda aprovação formal de Lucca Castilho (`luccalck`); CI verde obrigatório antes de qualquer merge.
 
 ## Passo 040
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Auditoria de autoria, fator individual F e critérios condicionais executada em 14/10/2026 por Lucas Souza (`6lucassilvaaa`). Foi elaborado o quadro exaustivo de contribuições em `docs/contribuicoes.md`, mapeando todos os 28 PRs do repositório, autores, revisores e INTs atendidos. A auditoria comprovou que todos os 4 integrantes (`luccalck`, `DaviSouza78`, `miguelsenai2024`, `6lucassilvaaa`) possuem commits e PRs aprovados em pelo menos 3 INTs distintos, atestando conformidade com **SQ-10**, **SQ-11**, **SQ-12** e **SQ-13**, estando todos tecnicamente aptos ao fator individual **F = 1,0** (**SQ-18**), condicionado à presença na banca. O histórico completo atesta conformidade com Conventional Commits (`I01-09`, `I01-16`, `I01-17`) e mais de 10 PRs revisados por outro autor (`I01-14`). A decisão de não participação no concurso externo opcional foi formalizada em `docs/concurso-decisao.md`, analisando as condicionais `CON-01` a `CON-11`, `DIR-16`, `FIC-14`, `FIC-39`, `SQ-20`, `I09-23`, `I09-24`, `CR-11..13`. A auditoria final de encerramento foi arquivada em `docs/evidencias/auditoria-encerramento.md`, e a passagem do Bloco 4 foi formalizada em `docs/execucao/11-passagem-lucas-fechamento.md` e referenciada em `docs/execucao/04-passagem-de-bloco.md`.
+
+- [ ] **Participação presencial de Lucas Souza na banca (SQ-17).** Presença física e defesa das contribuições de SRE e Segurança perante a banca avaliadora para homologação final do fator F = 1,0. Dependência: realização do evento da banca.
+- [ ] **Atribuição oficial do fator individual e nota final pelo professor (SQ-18, B-15).** A avaliação definitiva, homologação do fator F e atribuição da nota são prerrogativas exclusivas do docente avaliador após a apresentação do squad.
+- [ ] **Preenchimento do HTML original no navegador e geração do TXT oficial (FIC-29 a FIC-37).** Abertura de `Avaliação.html` no navegador, transcrição dos dados consolidados de `docs/gestao/ficha-entrega.md` e acionamento do botão para gerar `DevOps_Avaliacao_Arcade_Aura_67.txt`.
+- [ ] **Preenchimento do RA numérico de Lucca Castilho em SQUAD.md.** Aguarda fornecimento do dado oficial pelo integrante.
+- [ ] **Merge final da cadeia de PRs na branch padrão main e deploy de produção.** Após as revisões humanas obrigatórias de todos os PRs, realizar o merge na main, criar a tag anotada remota `v1.0.0` e aprovar o deployment no environment protegido `producao`.
+- [ ] **Revisão humana cruzada.** PR deste par em rascunho aguarda aprovação formal de Lucca Castilho (`luccalck`); CI verde obrigatório antes de qualquer merge.
 
 ## Respostas persistentes da ficha — 13/10/2026
 

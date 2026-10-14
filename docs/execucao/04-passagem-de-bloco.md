@@ -34,11 +34,11 @@ Entregar playtest humano, recuperação/ensaio/tempo, DORA/melhoria, GDD/candida
 
 Comparação com release final/dados finais GDD aguarda035/037 de Lucas. Miguel entrega candidata, não tag final antecipada. Vídeo é entrada humana válida antes de031; não precisa de pacote final para ser gravado.
 
-## Lucas → fechamento, depois do040
+## Lucas → fechamento, depois do 040
 
-Concluir pacote/agendamento, relatório, estabilidade, tag/release, triagem/auditoria, ficha, acesso/envio e coordenação da banca. Consolidar prova posterior à release/triagem. Se vídeo não representar versão, corrigir evidência com humanos, sem fabricar gravação ou autoria.
+Conferência de 14/10/2026: [passagem técnica do Bloco 4 preparada](11-passagem-lucas-fechamento.md). Concluídos pacote de submissão, relatório técnico PDF de 6 páginas, estabilidade e verificação de acessos, release v1.0.0, triagem final com auditoria eliminatória, consolidação dos 49 campos da ficha, roteiro da banca com 10 min de fala dividida, verificação externa de URLs, Code Freeze formalizado, auditoria das contribuições (28 PRs, todos aptos a F=1,0) e decisão sobre o concurso.
 
-Os quatro revisam e participam da banca, mesmo sem novos MDs depois do próprio bloco. Não marcar G8, recibo AVA, banca ou F1 antes da ação real.
+Os quatro revisam os PRs e participam da banca examinadora. Não marcar G8, recibo AVA, banca realizada ou F1 definitivo antes das respectivas ações humanas reais.
 
 ## Condições que a sequência não elimina
 

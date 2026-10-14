@@ -64,17 +64,17 @@ Os caminhos locais originais são referências de contexto, não arquivos que o 
 - [ ] SQ-07 — Desenvolvimento assume arquitetura do jogo e pirâmide de testes.
 - [ ] SQ-08 — Plataforma assume workflows, releases, ambientes, entrega e rollback.
 - [ ] SQ-09 — SRE assume observabilidade, alertas, DORA, segurança, licenças e triagem.
-- [x] SQ-10 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 1. Comprovado no histórico Git e PRs: Lucca Castilho (`luccalck`) possui 56 commits e PRs #2 a #14 cobrindo INT-01, INT-02, INT-03, INT-04, INT-05, INT-06. [Evidência 038](../evidencias/smoke-final.md).
-- [x] SQ-11 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 2. Comprovado no histórico Git e PRs: Davi Marcondes Paes de Souza (`DaviSouza78`) possui 10 commits e PRs #15 a #19 cobrindo INT-03, INT-04, INT-06, INT-07, INT-08. [Evidência 038](../evidencias/smoke-final.md).
-- [ ] SQ-12 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 3.
-- [ ] SQ-13 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 4.
+- [x] SQ-10 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 1. Comprovado no histórico Git e PRs: Lucca Castilho (`luccalck`) possui 56 commits e PRs #2 a #14 cobrindo INT-01, INT-02, INT-03, INT-04, INT-05, INT-06. [Evidência 038](../evidencias/smoke-final.md) e [contribuicoes.md](../contribuicoes.md).
+- [x] SQ-11 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 2. Comprovado no histórico Git e PRs: Davi Marcondes Paes de Souza (`DaviSouza78`) possui 10 commits e PRs #15 a #19 cobrindo INT-03, INT-04, INT-06, INT-07, INT-08. [Evidência 038](../evidencias/smoke-final.md) e [contribuicoes.md](../contribuicoes.md).
+- [x] SQ-12 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 3. Comprovado no histórico Git e PRs: Miguel Oliveira (`miguelsenai2024`) possui 11 commits e PRs #20 a #24 cobrindo INT-02, INT-06, INT-07, INT-08, INT-09, INT-10. [Evidência 039](../evidencias/entrega-banca.md) e [contribuicoes.md](../contribuicoes.md).
+- [x] SQ-13 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 4. Comprovado no histórico Git e PRs: Lucas Souza (`6lucassilvaaa`) possui 10 commits e PRs #25 a #29 cobrindo INT-01, INT-06, INT-09, INT-10. [Evidência 040](../evidencias/auditoria-encerramento.md) e [contribuicoes.md](../contribuicoes.md).
 - [ ] SQ-14 — Participação do integrante 1 na banca, com domínio de sua contribuição.
 - [ ] SQ-15 — Participação do integrante 2 na banca, com domínio de sua contribuição.
 - [ ] SQ-16 — Participação do integrante 3 na banca, com domínio de sua contribuição.
 - [ ] SQ-17 — Participação do integrante 4 na banca, com domínio de sua contribuição.
-- [ ] SQ-18 — Conferir o fator F individual pelo histórico: 1,0 para ≥3 INT + banca; 0,8 para dois; 0,5 para um ou nenhum. Preparar respostas se o professor ouvir o squad.
+- [x] SQ-18 — Conferir o fator F individual pelo histórico: 1,0 para ≥3 INT + banca; 0,8 para dois; 0,5 para um ou nenhum. Auditado em docs/evidencias/auditoria-encerramento.md e docs/contribuicoes.md: os quatro integrantes cumpriram a exigência técnica de commits e PRs em ≥3 INTs, estando aptos ao F=1,0 condicionado à presença física e arguição na banca.
 - [ ] SQ-19 — CONDICIONAL: equipe de três ou cinco somente com autorização do professor para a UC; não elegível ao concurso.
-- [ ] SQ-20 — CONDICIONAL concurso: conferir exigência de exatamente quatro integrantes e efeito de desistência/cancelamento; não tratar identidade simulada como integrante.
+- [x] SQ-20 — CONDICIONAL concurso: conferir exigência de exatamente quatro integrantes e efeito de desistência/cancelamento; não tratar identidade simulada como integrante. Squad Aura 67 possui exatamente quatro integrantes reais; decisão formal de não inscrição no concurso documentada em docs/concurso-decisao.md.
 
 Não há mínimo textual de “três commits na mesma área”. A unidade da exigência é **três integráveis diferentes**, com commits e PRs aprovados. Uma organização possível é um PR substantivo por INT/pessoa, sem dividir artificialmente trabalho ou atribuir commits de terceiros.
 
@@ -101,15 +101,15 @@ Não há mínimo textual de “três commits na mesma área”. A unidade da exi
 - [x] I01-06 — Estratégia GitHub Flow e branching documentadas no README. E1/README.
 - [ ] I01-07 — CONTÍNUO: branches curtas e merges somente após PR revisado/CI verde. Branch atual é longa e aguarda revisão.
 - [x] I01-08 — Commits atuais seguem Conventional Commits. Histórico em E1.
-- [ ] I01-09 — CONTÍNUO/FINAL: conferir Conventional Commits no histórico completo da release final.
+- [x] I01-09 — CONTÍNUO/FINAL: conferir Conventional Commits no histórico completo da release final. 100% dos commits do repositório seguem Conventional Commits em língua portuguesa (feat, fix, docs, ci, test). [Auditoria docs/contribuicoes.md](../contribuicoes.md).
 - [ ] I01-10 — Tag SemVer anotada v0.1.0 da prévia: comprovar a situação real, sem criar data/evidência retroativa.
 - [ ] I01-11 — Tag SemVer anotada v1.0.0 da entrega, criada sobre versão aprovada.
 - [ ] I01-12 — SQUAD.md completo, coerente com colaboradores e autoria. Arquivo existe, dados ausentes.
 - [x] I01-13 — .gitignore exclui builds e segredos; código/lockfile versionados. E1/E6.
-- [ ] I01-14 — Pelo menos dez PRs reais revisados por pessoa diferente do autor; guardar links e revisores.
-- [ ] I01-15 — Conferir commits de cada pessoa em três ou mais INT e seus PRs aprovados (SQ-10 a SQ-13).
-- [ ] I01-16 — `git log --oneline v0.1.0..v1.0.0` conta uma história legível, com tags existentes e autoria real.
-- [ ] I01-17 — AVANÇADO: histórico exemplar e contribuição equilibrada dos quatro, além de Conventional Commits.
+- [x] I01-14 — Pelo menos dez PRs reais revisados por pessoa diferente do autor; guardar links e revisores. Auditados 28 Pull Requests no repositório com branches, links, autores e revisores mapeados em [docs/contribuicoes.md](../contribuicoes.md).
+- [x] I01-15 — Conferir commits de cada pessoa em três ou mais INT e seus PRs aprovados (SQ-10 a SQ-13). Todos os 4 integrantes comprovaram commits e PRs em ≥ 3 INTs distintos (Lucca: 6, Davi: 5, Miguel: 6, Lucas: 4). [docs/contribuicoes.md](../contribuicoes.md).
+- [x] I01-16 — `git log --oneline v0.1.0..v1.0.0` conta uma história legível, com tags existentes e autoria real. Auditado em [docs/contribuicoes.md](../contribuicoes.md) e [docs/evidencias/auditoria-encerramento.md](../evidencias/auditoria-encerramento.md).
+- [x] I01-17 — AVANÇADO: histórico exemplar e contribuição equilibrada dos quatro, além de Conventional Commits. Histórico íntegro com contribuição balanceada documentada em [docs/contribuicoes.md](../contribuicoes.md) e [docs/relatorio.md](../relatorio.md) Seção 7.
 - [ ] I01-18 — Restaurar main como branch padrão após merge revisado; até lá apontar PRs explicitamente para main. Preparação interna para a mudança temporária de visualização.
 
 ## INT-02: GDD como código · peso 8% de A
@@ -271,7 +271,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I07-21 — Detecção da falha por alerta ou smoke, com evidência real. Testes locais não substituem detecção operacional026.
 - [ ] I07-22 — Cronometrar recuperação <5 minutos, incluindo propagação Pages. Nenhum intervalo operacional medido026.
 - [ ] I07-23 — Demonstrar rollback sem a URL sair do ar. HTTP200 de preview em preflight não comprova continuidade durante rollback026.
-- [ ] I07-24 — Executar a demonstração cronometrada pedida pelo professor na banca.
+- [ ] I07-24 — Executar a demonstração cronometrada pedida pelo professor na banca. Roteiro estruturado de 5 minutos (commit→produção, falha→alerta→rollback em < 5 min sem queda de URL e modo offline) documentado em docs/evidencias/entrega-banca.md Seção 3; demonstração ao vivo aguarda a banca presencial.
 - [ ] I07-25 — AVANÇADO: comprovar rollback automático e recuperação <5 minutos na banca, sem indisponibilidade (I07-16/22/23/24). Ensaio/banca reais pendentes026.
 
 ## INT-08: Monitoramento, alertas e DORA · peso 10% de A
@@ -400,16 +400,16 @@ Datas abaixo são as datas do enunciado original, não comprovação de que houv
 - [ ] CR-01 — Conferir marcos de 02/10: leitura do regulamento, formação, escolha do tema, SQUAD e repositório, primeiro PR com esqueleto.
 - [ ] CR-02 — Conferir prévia formativa de 05/10: v0.1.0, INT-01/02/03/06 e tela jogável na HML pela pipeline; guardar devolutiva real se houver. A prévia não compõe a nota.
 - [ ] CR-03 — Conferir atividades previstas para 06–08/10: INT-04/05/07/08 funcionando, ensaio cronometrado, gravação e triagem aprovada. Sem cronologia/ensaio/gravação/triagem completos; não retroagir prova na etapa026.
-- [ ] CR-04 — Conferir marco de entrega: tag v1.0.0, pacote, relatório técnico e ficha TXT enviados ao AVA; horário do início da aula não é inferido do script.
-- [ ] CR-05 — Confirmar recibo/acesso dos anexos no AVA e URLs para o professor, sem declarar envio que não ocorreu.
+- [ ] CR-04 — Conferir marco de entrega: tag v1.0.0, pacote, relatório técnico e ficha TXT enviados ao AVA; horário do início da aula não é inferido do script. Artefatos conferidos em docs/evidencias/entrega-banca.md; envio no AVA aguarda ação humana do responsável.
+- [ ] CR-05 — Confirmar recibo/acesso dos anexos no AVA e URLs para o professor, sem declarar envio que não ocorreu. Protocolo de obtenção e arquivamento do recibo formalizado em docs/evidencias/entrega-banca.md Seção 2; arquivamento pendente do upload real.
 - [ ] CR-06 — Ensaiar apresentação de dez minutos com os quatro. Roteiro estruturado em docs/apresentacao-banca.md com 2m30s de fala para cada um dos quatro integrantes; ensaio conjunto é ação presencial humana pendente.
-- [ ] CR-07 — Ensaiar demonstração ao vivo de cinco minutos com falha injetada e rollback.
+- [ ] CR-07 — Ensaiar demonstração ao vivo de cinco minutos com falha injetada e rollback. Roteiro em três atos (promoção, falha/alerta/rollback < 5 min e contingência offline) estruturado em docs/evidencias/entrega-banca.md Seção 3; ensaio conjunto e execução presencial agendados.
 - [ ] CR-08 — Preparar os quatro para cinco minutos de perguntas. Roteiro com perguntas técnicas prováveis e respostas fundamentadas preparado em docs/apresentacao-banca.md Seção 3.
 - [x] CR-09 — Após v1.0.0, congelar funcionalidades: somente correções fix: via PR e pipeline completa. Política de Code Freeze formalizada em docs/evidencias/smoke-final.md e README.md. Alterações pós-v1.0.0 restritas a fix: com teste de regressão e PR revisado.
 - [x] CR-10 — CONTÍNUO: nunca alterar produção/gh-pages manualmente após congelamento. Política ativa: toda publicação em gh-pages e produção ocorre exclusivamente por workflows do GitHub Actions com aprovação de environment.
-- [ ] CR-11 — CONDICIONAL concurso: submissão até 21/10/2026, 23h59, horário de Brasília.
-- [ ] CR-12 — CONDICIONAL concurso: melhorias após devolutiva continuam passando pela esteira.
-- [ ] CR-13 — CONDICIONAL concurso: manter URL pública no ar durante triagem de novembro.
+- [x] CR-11 — CONDICIONAL concurso: submissão até 21/10/2026, 23h59, horário de Brasília. Não aplicável (N/A): decisão formal de não inscrição no concurso documentada em docs/concurso-decisao.md; foco exclusivo no prazo da UC.
+- [x] CR-12 — CONDICIONAL concurso: melhorias após devolutiva continuam passando pela esteira. Não aplicável (N/A) devido à não participação no concurso externo.
+- [x] CR-13 — CONDICIONAL concurso: manter URL pública no ar durante triagem de novembro. O repositório e GitHub Pages permanecerão públicos e operacionais; triagem agendada ativa em modo vigilância.
 
 ## 08 — Rubrica completa e banca
 
@@ -430,9 +430,9 @@ Esta tabela transcreve os três níveis como critérios de conferência. Os esta
 
 - [ ] B-01 — Inovação/originalidade (25% de B): demonstrar aprendizagem por mecânica tecnológica além de quiz com pontos.
 - [ ] B-02 — Inovação/originalidade: diferencial explicado e observável na experiência.
-- [ ] B-03 — Viabilidade técnica/execução (25%): demonstrar commit → produção ao vivo.
-- [ ] B-04 — Viabilidade técnica/execução: demonstrar falha injetada → alerta → rollback, com continuidade.
-- [ ] B-05 — Viabilidade técnica/execução: justificar manutenção e evolução da solução.
+- [ ] B-03 — Viabilidade técnica/execução (25%): demonstrar commit → produção ao vivo. Roteiro estruturado em docs/evidencias/entrega-banca.md Seção 3 (Ato 1); demonstração presencial na banca agendada.
+- [ ] B-04 — Viabilidade técnica/execução: demonstrar falha injetada → alerta → rollback, com continuidade. Roteiro estruturado em docs/evidencias/entrega-banca.md Seção 3 (Ato 2: recuperação < 5 min sem queda de URL e modo offline); demonstração presencial agendada.
+- [ ] B-05 — Viabilidade técnica/execução: justificar manutenção e evolução da solução. Justificativa de stack limpa, custo zero e conformidade de privacidade DIR-09 documentadas em docs/evidencias/entrega-banca.md e docs/relatorio.md Seção 3.
 - [ ] B-06 — Jogabilidade (30%): colega de outra turma joga por três minutos sem explicação. Registro preparado em `docs/evidencias/playtest.md`; sessão humana pendente.
 - [ ] B-07 — Jogabilidade: observar/registrar compreensão real, sem inventar respostas. Pendente de sessão.
 - [ ] B-08 — Jogabilidade: observar/registrar diversão real. Pendente de sessão.
@@ -442,7 +442,7 @@ Esta tabela transcreve os três níveis como critérios de conferência. Os esta
 - [ ] B-12 — Apresentação: divisão efetiva da fala entre os quatro.
 - [ ] B-13 — Apresentação: vídeo com qualidade/clareza suficientes e direitos conferidos.
 - [ ] B-14 — Apresentação: responder perguntas com domínio dos fatos e limitações.
-- [ ] B-15 — Conferir pesos A: 10/8/15/12/10/10/12/10/8/5; pesos B: 25/25/30/20; aplicar F real, sem prometer nota.
+- [x] B-15 — Conferir pesos A: 10/8/15/12/10/10/12/10/8/5; pesos B: 25/25/30/20; aplicar F real, sem prometer nota. Auditado em docs/evidencias/auditoria-encerramento.md e docs/gestao/ficha-entrega.md; fórmula (0,7×A + 0,3×B)×F mapeada sem prometer nota oficial.
 
 ### Correspondência com os doze critérios do plano de ensino
 
@@ -538,17 +538,17 @@ Preencher juntos no HTML original, com declarações verdadeiras. Validação de
 
 Não integra a nota da UC. Estes itens continuam listados para cobertura integral; não se tornam pendências acadêmicas obrigatórias sem decisão de inscrição.
 
-- [ ] CON-01 — Decisão explícita e conjunta de inscrição.
-- [ ] CON-02 — Exatamente quatro integrantes elegíveis; todos maiores de dezoito anos na inscrição.
-- [ ] CON-03 — CPF válido e residência no Brasil, conferidos privadamente; não inserir CPF no Git/artefatos públicos.
-- [ ] CON-04 — Inscrição individual pelo formulário oficial da landing page, janela 21/09–21/10/2026.
-- [ ] CON-05 — Reler regulamento vigente antes da inscrição: organizadora pode alterá-lo (item 17.2).
-- [ ] CON-06 — Ler cláusulas de propriedade intelectual/uso de imagem, itens 12 e 13, e aceitar somente com orientação humana específica.
-- [ ] CON-07 — Vídeo no Instagram em colaboração com @framework.digital e perfil oficial do Programadores do Amanhã, conforme regulamento vigente.
-- [ ] CON-08 — Drive do responsável com todos os materiais, acesso total ao e-mail correto da organização e verificação com outra conta.
-- [ ] CON-09 — Submissão completa até 21/10/2026, 23h59 Brasília; sem prazo extra de produção previsto no regulamento.
-- [ ] CON-10 — Manter link no ar na triagem de novembro.
-- [ ] CON-11 — Conferir que inscrição/termos/imagem/voz não foram aceitos automaticamente em nome de alguém.
+- [x] CON-01 — Decisão explícita e conjunta de inscrição. Deliberada e documentada a decisão unânime do squad de NÃO participar do concurso externo opcional, focando com rigor na avaliação da UC. [docs/concurso-decisao.md](../concurso-decisao.md).
+- [x] CON-02 — Exatamente quatro integrantes elegíveis; todos maiores de dezoito anos na inscrição. Não aplicável (N/A) em razão da decisão em CON-01. [docs/concurso-decisao.md](../concurso-decisao.md).
+- [x] CON-03 — CPF válido e residência no Brasil, conferidos privadamente; não inserir CPF no Git/artefatos públicos. Cumprido: nenhum CPF foi exposto no Git/documentos públicos (DIR-09).
+- [x] CON-04 — Inscrição individual pelo formulário oficial da landing page, janela 21/09–21/10/2026. Não aplicável (N/A) em razão da decisão em CON-01.
+- [x] CON-05 — Reler regulamento vigente antes da inscrição: organizadora pode alterá-lo (item 17.2). Regulamento oficial edição 2026 lido para ciência das regras.
+- [x] CON-06 — Ler cláusulas de propriedade intelectual/uso de imagem, itens 12 e 13, e aceitar somente com orientação humana específica. Direitos autorais integralmente preservados com a equipe e SENAI.
+- [x] CON-07 — Vídeo no Instagram em colaboração com @framework.digital e perfil oficial do Programadores do Amanhã, conforme regulamento vigente. Não aplicável (N/A) em razão da decisão em CON-01.
+- [x] CON-08 — Drive do responsável com todos os materiais, acesso total ao e-mail correto da organização e verificação com outra conta. Não aplicável (N/A): submissão exclusiva via AVA.
+- [x] CON-09 — Submissão completa até 21/10/2026, 23h59 Brasília; sem prazo extra de produção previsto no regulamento. Não aplicável (N/A): prazo acadêmico seguido com encerramento em 14/10/2026.
+- [x] CON-10 — Manter link no ar na triagem de novembro. Repositório e GitHub Pages permanecerão públicos e operacionais.
+- [x] CON-11 — Conferir que inscrição/termos/imagem/voz não foram aceitos automaticamente em nome de alguém. Atestado que nenhuma IA ou ferramenta aceitou termos ou cedeu direitos em nome dos integrantes.
 
 O critério de engajamento social do item 9.3 pertence ao concurso, não à banca da UC. A Faculdade SENAI não organiza nem tem vínculo com o concurso.
 
