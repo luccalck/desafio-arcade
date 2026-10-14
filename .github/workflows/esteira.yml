@@ -351,6 +351,17 @@ jobs:
         run: |
           gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" --jq '{sha: .head_sha, run: .id, createdAt: .created_at, event: .event}' > reports/hml-run.json
           node --input-type=module -e 'import {readFile,writeFile} from "node:fs/promises";const r=JSON.parse(await readFile("reports/hml-run.json","utf8"));r.e2eFinishedAt=new Date().toISOString();r.runToHmlSeconds=(Date.parse(r.e2eFinishedAt)-Date.parse(r.createdAt))/1000;r.pushToHmlSeconds=null;r.limitSeconds=900;r.note="createdAt do run é proxy; horário real de recebimento do push ainda deve ser comprovado.";await writeFile("reports/hml-run.json",JSON.stringify(r,null,2));console.log(JSON.stringify(r));if(r.runToHmlSeconds>900)process.exitCode=1;'
+      - name: Conferir bytes servidos na HML aceita
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+          SOURCE_RUN: ${{ github.run_id }}
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: node scripts/promover.mjs hml --bundle pacote-ci --sha "$SOURCE_SHA" --run "$SOURCE_RUN" --site-url "$SITE_URL"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: aceite-hml-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reports/hml-aceite.json
+          if-no-files-found: error
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
         with:
@@ -364,7 +375,10 @@ jobs:
     needs: [ci, pacote-ci, deploy-hml]
     if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v')) && vars.FORMAL_PRD_ENABLED == 'true' && needs.deploy-hml.result == 'success'
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 30
+    outputs:
+      recovered: ${{ steps.confirmar-recuperacao.outcome == 'success' }}
+      observed_sha: ${{ steps.confirmar-recuperacao.outcome == 'success' && steps.recuperar.outputs.sha || github.sha }}
     environment:
       name: producao
       url: ${{ vars.SITE_URL }}/
@@ -376,6 +390,14 @@ jobs:
       contents: write
       pages: write
       id-token: write
+    env:
+      SOURCE_SHA: ${{ github.sha }}
+      SOURCE_RUN: ${{ github.run_id }}
+      SITE_URL: ${{ vars.SITE_URL }}
+      FORMAL_HML_ENABLED: ${{ vars.FORMAL_HML_ENABLED }}
+      FORMAL_PRD_ENABLED: ${{ vars.FORMAL_PRD_ENABLED }}
+      MONITOR_ENABLED: ${{ vars.MONITOR_ENABLED }}
+      ALERTS_ENABLED: ${{ vars.ALERTS_ENABLED }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -394,16 +416,73 @@ jobs:
           SOURCE_SHA: ${{ github.sha }}
           SOURCE_RUN: ${{ github.run_id }}
         run: node scripts/ci-bundle.mjs verify pacote-ci - "$SOURCE_SHA" "$SOURCE_RUN"
-      - name: Consumir contrato do passo019
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: aceite-hml-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: aceite-hml
+      - name: Abrir candidata sem tráfego após conferir aprovação e HML
+        id: abrir
         env:
           GH_TOKEN: ${{ github.token }}
-          SOURCE_SHA: ${{ github.sha }}
-          SOURCE_RUN: ${{ github.run_id }}
-          SITE_URL: ${{ vars.SITE_URL }}
         shell: bash
+        run: bash scripts/promover.sh --bundle pacote-ci --sha "$SOURCE_SHA" --run "$SOURCE_RUN" --site-url "$SITE_URL"
+      - uses: ./.github/actions/publicar-pages
+        with:
+          name: pages-candidata-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ steps.abrir.outputs.path }}
+      - name: Esperar propagação e testar candidata antes da virada
+        env:
+          BASE_URL: ${{ vars.SITE_URL }}/hml/
+          RELEASE_URL: ${{ vars.SITE_URL }}/releases/${{ github.sha }}/
+          EXPECTED_SHA: ${{ github.sha }}
+          SMOKE_REPORT: reports/candidata-smoke.json
         run: |
-          test -f scripts/promover.sh || { echo '::error::Script do passo019 ainda ausente. Deploy bloqueado.'; exit 1; }
-          bash scripts/promover.sh --bundle pacote-ci --sha "$SOURCE_SHA" --run "$SOURCE_RUN" --site-url "$SITE_URL"
+          node scripts/aguardar-versao.mjs "$RELEASE_URL" "$EXPECTED_SHA" release
+          npx playwright test --config playwright.public.config.mjs --project=release-smoke
+      - name: Virar estável uma vez com smoke aprovado
+        id: promover
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/promover.mjs promover --sha "$SOURCE_SHA" --run "$SOURCE_RUN" --site-url "$SITE_URL"
+      - uses: ./.github/actions/publicar-pages
+        with:
+          name: pages-estavel-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ steps.promover.outputs.path }}
+      - name: Esperar propagação e testar raiz pública após virada
+        env:
+          BASE_URL: ${{ vars.SITE_URL }}/hml/
+          PAGES_URL: ${{ vars.SITE_URL }}/
+          EXPECTED_SHA: ${{ github.sha }}
+          SMOKE_REPORT: reports/producao-smoke.json
+        run: |
+          node scripts/aguardar-versao.mjs "$PAGES_URL" "$EXPECTED_SHA" root
+          npx playwright test --config playwright.public.config.mjs --project=prd-smoke
+          node scripts/promover.mjs finalizar --sha "$SOURCE_SHA" --run "$SOURCE_RUN" --site-url "$SITE_URL"
+      - name: Restaurar automaticamente após falha, sem ocultar job vermelho
+        id: recuperar
+        if: (failure() || cancelled()) && steps.abrir.outputs.recoverable == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/promover.mjs recuperar --sha "$SOURCE_SHA" --run "$SOURCE_RUN" --site-url "$SITE_URL"
+      - uses: ./.github/actions/publicar-pages
+        id: publicar-recuperacao
+        if: (failure() || cancelled()) && steps.recuperar.outcome == 'success'
+        with:
+          name: pages-recuperada-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ steps.recuperar.outputs.path }}
+      - name: Verificar versão recuperada na raiz
+        id: confirmar-recuperacao
+        if: (failure() || cancelled()) && steps.publicar-recuperacao.outcome == 'success'
+        env:
+          BASE_URL: ${{ vars.SITE_URL }}/hml/
+          PAGES_URL: ${{ vars.SITE_URL }}/
+          EXPECTED_SHA: ${{ steps.recuperar.outputs.sha }}
+          EXPECTED_VERSION: ${{ steps.recuperar.outputs.version }}
+          SMOKE_REPORT: reports/recuperacao-smoke.json
+        run: |
+          node scripts/aguardar-versao.mjs "$PAGES_URL" "$EXPECTED_SHA" root
+          npx playwright test --config playwright.public.config.mjs --project=prd-smoke
+          node scripts/promover.mjs confirmar-recuperacao --sha "$SOURCE_SHA" --run "$SOURCE_RUN" --site-url "$SITE_URL"
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
         with:
@@ -413,8 +492,35 @@ jobs:
             test-results/
           if-no-files-found: warn
 
+  monitor-pos-producao:
+    needs: deploy-prd
+    if: always() && vars.MONITOR_ENABLED == 'true' && (needs.deploy-prd.result == 'success' || needs.deploy-prd.outputs.recovered == 'true')
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+      - name: Esperar sondas e alertas no workflow próprio, sem publicar o jogo
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_SHA: ${{ needs.deploy-prd.outputs.observed_sha }}
+        run: node scripts/observar-producao.mjs
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: monitor-pos-producao-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reports/monitor-pos-producao.json
+          if-no-files-found: warn
+
   release:
-    needs: [ci, pacote-ci, deploy-prd]
+    needs: [ci, pacote-ci, deploy-prd, monitor-pos-producao]
     if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') && vars.FORMAL_RELEASE_ENABLED == 'true' && needs.deploy-prd.result == 'success'
     runs-on: ubuntu-latest
     timeout-minutes: 10
@@ -446,7 +552,7 @@ jobs:
         run: node scripts/release.mjs publish pacote-ci docs/notas-versao.md
 
   notificar:
-    needs: [qualidade, seguranca, build, e2e, pacote-ci, ci, deploy-hml, deploy-prd, publicar-preview, release]
+    needs: [qualidade, seguranca, build, e2e, pacote-ci, ci, deploy-hml, deploy-prd, monitor-pos-producao, publicar-preview, release]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 2

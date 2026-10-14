@@ -1,0 +1,140 @@
+{
+  "date": "2026-10-14",
+  "responsible": "DaviSouza78",
+  "base": "d6a72f6ce4d89a0ce4ca45845b82f645dc6a1b36",
+  "scope": [
+    19,
+    20
+  ],
+  "local": {
+    "unitIntegration": {
+      "command": "npm run test:ci -- --maxWorkers=2",
+      "passed": 235,
+      "failures": 0,
+      "coreStatementsCoverage": 97.9
+    },
+    "e2eFull": {
+      "command": "playwright test --workers=1 --retries=0",
+      "passed": 36,
+      "failures": 0
+    },
+    "e2ePanelRecheck": {
+      "passed": 3,
+      "failures": 0
+    },
+    "lint": true,
+    "build": true,
+    "actionlint": {
+      "passed": true,
+      "shellcheck": false
+    },
+    "images": [
+      {
+        "path": "docs/evidencias/imagens/passo020/painel-local-sem-dados-mobile.png",
+        "sha256": "5c90762d2988d7848facbcda808951940a504cbd1494364ebf7b26cc3a03931c",
+        "fileModifiedAt": "2026-10-14T04:00:53.855Z",
+        "source": "HTTP local Playwright com fontes sintéticas identificadas",
+        "production": false
+      },
+      {
+        "path": "docs/evidencias/imagens/passo020/painel-local-dados-sinteticos-desktop.png",
+        "sha256": "1fa668b1e22e9ec2488e324332a3d60b9adb26a5537018d98f3a61a4c454084a",
+        "fileModifiedAt": "2026-10-14T04:00:54.132Z",
+        "source": "HTTP local Playwright com fontes sintéticas identificadas",
+        "production": false
+      }
+    ]
+  },
+  "realReadOnly": {
+    "statusUrl": {
+      "url": "https://luccalck.github.io/desafio-arcade/status/",
+      "http": 404,
+      "collectedAt": "2026-10-14T03:52:40.729Z"
+    },
+    "dataSnapshot": {
+      "collectedAt": "2026-10-14T03:52:40.371Z",
+      "period": {
+        "from": "2026-10-13T03:52:40.056Z",
+        "to": "2026-10-14T03:52:40.056Z"
+      },
+      "availability": null,
+      "latency": null,
+      "count": 0,
+      "known": 0,
+      "unknown": 0,
+      "lastSample": null,
+      "stale": true,
+      "version": null,
+      "sha": null,
+      "strategy": "Indisponível",
+      "errors": [
+        "Sem amostras de produção nas últimas24h.",
+        "Rollout público inválido ou indisponível.",
+        "Fonte observabilidade indisponível: HTTP404: https://api.github.com/repos/luccalck/desafio-arcade/git/ref/heads/observabilidade"
+      ],
+      "dora": [
+        {
+          "key": "deploymentFrequency",
+          "label": "Frequência de implantação",
+          "unit": "deploys/dia",
+          "value": null,
+          "samples": null,
+          "source": null,
+          "period": null,
+          "reason": "Dados rastreáveis indisponíveis; integração da etapa024 pendente."
+        },
+        {
+          "key": "leadTime",
+          "label": "Lead time de mudanças",
+          "unit": "horas",
+          "value": null,
+          "samples": null,
+          "source": null,
+          "period": null,
+          "reason": "Dados rastreáveis indisponíveis; integração da etapa024 pendente."
+        },
+        {
+          "key": "changeFailureRate",
+          "label": "Taxa de falha em mudanças",
+          "unit": "%",
+          "value": null,
+          "samples": null,
+          "source": null,
+          "period": null,
+          "reason": "Dados rastreáveis indisponíveis; integração da etapa024 pendente."
+        },
+        {
+          "key": "mttr",
+          "label": "Tempo de recuperação",
+          "unit": "minutos",
+          "value": null,
+          "samples": null,
+          "source": null,
+          "period": null,
+          "reason": "Dados rastreáveis indisponíveis; integração da etapa024 pendente."
+        }
+      ],
+      "dataCommit": null
+    },
+    "environment": {
+      "can_admins_bypass": false,
+      "name": "producao",
+      "policy": {
+        "custom_branch_policies": true,
+        "protected_branches": false
+      },
+      "reviewers": [
+        "luccalck"
+      ]
+    },
+    "mainSha": "c04b8fa4e83ae0f7246b7c00bf64f6d3865bc6dc",
+    "formalFlagsEnabled": false
+  },
+  "ci": null,
+  "productionDeployment": false,
+  "environmentApproval": false,
+  "operationalRecovery": false,
+  "doraMeasured": false,
+  "humanReviewApproved": false,
+  "handoffHumanAcknowledged": false
+}

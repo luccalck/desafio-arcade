@@ -113,6 +113,8 @@ Cada arquivo contém duas etapas completas. Execute os cinco MDs do integrante e
 
 ## Documentos de apoio
 
+- [Passagem técnica Davi→Miguel após020](10-passagem-davi-miguel.md), [produção019](../evidencias/producao.md) e [painel020/contratoDORA](../evidencias/painel-status.md). Preparação técnica com pendências humanas/operacionais no registro único; recebimento por Miguel ainda não confirmado.
+
 - [Roteiro017](../pitch-roteiro.md), [legendas preliminares](../pitch-legendas.srt), [direitos e consentimentos](../evidencias/video-direitos.md) e [contrato/provas de rollout018](../evidencias/rollout.md). Pendências separadas017/018 no registro único; gravação e rollout formal aguardam suas entradas humanas.
 
 - [Respostas persistentes para a ficha do professor](../gestao/ficha-entrega.md): nomes/RAs disponíveis, campos finais em branco e declarações/validadores; usar no037.

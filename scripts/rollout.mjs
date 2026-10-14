@@ -20,7 +20,7 @@ export function planRollout({action,existing={},bundle,sha,run,runAttempt,actor,
  if(!validSha(sha))throw Error('SHA inválido.');
  const files={...existing},rollout=existing['rollout.json']?normalizeRollout(JSON.parse(strFromU8(existing['rollout.json']))):{...EMPTY,retiradas:[]};
  // Recuperação não depende de a versão defeituosa ainda estar completa.
- for(const s of (action==='rollback'?[sha]:[rollout.estavel,rollout.anterior,rollout.canario]).filter(Boolean))assertRelease(files,s);
+ for(const s of (action==='rollback'?[sha]:action==='abortar'?[rollout.estavel,rollout.anterior]:[rollout.estavel,rollout.anterior,rollout.canario]).filter(Boolean))assertRelease(files,s);
  if(action==='abrir'){
   if(rollout.retiradas.includes(sha)||sha===rollout.estavel||sha===rollout.anterior||(rollout.canario&&rollout.canario!==sha))throw Error('Candidato já ativo, retirado ou ocupado.');
   const manifest=verifyBundle(bundle,{sha,run});
@@ -38,8 +38,11 @@ export function planRollout({action,existing={},bundle,sha,run,runAttempt,actor,
   if(rollout.anterior!==sha)throw Error('Destino de rollback não é anterior.');
   rollout.retiradas=[...new Set([...rollout.retiradas,rollout.estavel])];
   rollout.estavel=sha;rollout.anterior=null;rollout.canario=null;
- }else throw Error('Ação deve ser abrir, promover ou rollback.');
- const validated=normalizeRollout(rollout);assertRelease(files,sha);
+ }else if(action==='abortar'){
+  if(rollout.canario!==sha||!rollout.estavel)throw Error('Candidata e estável recuperável exigidas.');
+  rollout.retiradas=[...new Set([...rollout.retiradas,sha])];rollout.canario=null;
+ }else throw Error('Ação deve ser abrir, promover, rollback ou abortar.');
+ const validated=normalizeRollout(rollout);if(action!=='abortar')assertRelease(files,sha);
  files['rollout.json']=strToU8(JSON.stringify(validated,null,2)+'\n');Object.assign(files,loaderFiles());
  return {files,rollout:validated,message:`deploy: ${action} ${sha}; ator=${actor}; motivo=${reason.trim()}`};
 }
@@ -52,7 +55,7 @@ export function commitPlan({root,files,message,env=process.env}){
  const git=(...args)=>execFileSync('git',['-C',root,...args],{encoding:'utf8'}).trim();
  const canonical=path=>{const p=realpathSync.native(path);return process.platform==='win32'?p.toLowerCase():p;};
  if(canonical(git('rev-parse','--show-toplevel'))!==canonical(root)||git('branch','--show-current')!=='gh-pages'||git('status','--porcelain'))throw Error('Checkout gh-pages limpo exigido.');
- const changed=Object.keys(files).filter(name=>['index.html','loader.mjs','rollout-contract.mjs','rollout.json'].includes(name)||/^releases\/[a-f0-9]{40}\//.test(name));
+ const changed=Object.keys(files).filter(name=>['index.html','loader.mjs','rollout-contract.mjs','rollout.json','status/index.html','status/status.mjs'].includes(name)||/^releases\/[a-f0-9]{40}\//.test(name));
  return {git,changed};
 }
 async function main(){

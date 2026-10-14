@@ -1,8 +1,18 @@
 name: monitoramento-jogo
+run-name: ${{ inputs.parent_run && format('Sondas pós-produção {0}', inputs.parent_run) || 'Monitoramento agendado ou manual' }}
 on:
   schedule:
     - cron: '*/15 * * * *'
   workflow_dispatch:
+    inputs:
+      parent_run:
+        description: Execução/tentativa de produção solicitante, quando aplicável
+        type: string
+        default: ''
+      expected_sha:
+        description: SHA esperado da produção para reconferência pós-deploy
+        type: string
+        default: ''
 permissions:
   contents: read
 concurrency:
@@ -46,9 +56,10 @@ jobs:
         run: |
           mkdir -p "dados/status/runs/${GITHUB_RUN_ID}"
           cp reports/sondas.json "dados/status/runs/${GITHUB_RUN_ID}/${GITHUB_RUN_ATTEMPT}.json"
+          cp reports/sondas.json dados/status/ultima.json
           git -C dados config user.name 'github-actions[bot]'
           git -C dados config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git -C dados add status/sondas.csv status/runs
+          git -C dados add status/sondas.csv status/ultima.json status/runs
           git -C dados commit -m "chore: registrar sondas ${GITHUB_RUN_ID}/${GITHUB_RUN_ATTEMPT}"
           git -C dados -c 'credential.helper=!f() { echo username=x-access-token; echo password="$GH_TOKEN"; }; f' push origin observabilidade
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
@@ -59,6 +70,31 @@ jobs:
             reports/sondas.json
             dados/status/sondas.csv
           if-no-files-found: warn
+  validar-pos-producao:
+    needs: [sondar, alertar]
+    if: always() && inputs.expected_sha != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: sondas-${{ github.run_id }}-${{ github.run_attempt }}
+          path: inputs
+      - name: Conferir sondas formais da versão e não apenas dispatch
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+          SONDAR_RESULT: ${{ needs.sondar.result }}
+          ALERTAR_RESULT: ${{ needs.alertar.result }}
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs'),r=JSON.parse(fs.readFileSync('inputs/reports/sondas.json','utf8'));
+          if(process.env.SONDAR_RESULT!=='success'||process.env.ALERTAR_RESULT!=='success')throw Error('Sondas/alertas não executados com sucesso');
+          if(!/^[a-f0-9]{40}$/.test(process.env.EXPECTED_SHA)||r.formalHml!==true||r.formalPrd!==true)throw Error('Coleta formal ausente');
+          for(const target of ['hml','producao']){const s=r.samples.find(s=>s.alvo===target);if(!s||s.codigo!==200||s.erro!==null||!/^[a-f0-9]{40}$/.test(s.sha)||!/^\d+\.\d+\.\d+$/.test(s.versao)||(target==='producao'&&s.sha!==process.env.EXPECTED_SHA))throw Error('Sonda não confirmou '+target);}
+          NODE
   alertar:
     needs: sondar
     if: github.ref == 'refs/heads/main' && vars.ALERTS_ENABLED == 'true'
