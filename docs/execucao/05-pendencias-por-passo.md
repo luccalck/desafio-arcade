@@ -433,11 +433,20 @@ Estabilidade e aceite técnico da versão candidata v0.6.0 executados em 14/10/2
 
 ## Passo 035
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Preparação técnica e validação de proveniência da Release Formal v1.0.0 executadas em 14/10/2026 por Lucas Souza (`6lucassilvaaa`). Contratos de tag anotada SemVer, integridade e imutabilidade do artefato validados: `build.zip` (29.003 bytes, SHA-256 `037a3d554348e87e2a2214cc99696eecb4937dee5d511fd1da0c6217259fc6de`), `GDD.pdf`, `RelatorioTecnico.pdf`, `sbom.cdx.json` e `release-manifest.json`. Reprodutibilidade bit a bit verificada e notas de versão atualizadas com a seção 1.0.0 em `docs/notas-versao.md`. README.md atualizado com o comando `npm run relatorio:pdf`. Evidência detalhada em `docs/evidencias/release-final.md`. Checks estruturalmente atendidos: I02-13, I03-09, I06-15, I06-17, I06-18.
+
+- [ ] **Tag anotada pública remota v1.0.0 e deploy de produção (I01-11, G7).** A criação da tag anotada remota no GitHub e a publicação no environment protegido `producao` exigem: merge da cadeia de PRs na branch padrão `main` e aprovação humana do reviewer no GitHub Actions. Motivo: evitar tags prematuras em branches de feature e garantir aprovação humana formal. Dependência: aprovação e merge por Lucca Castilho (`luccalck`). Ação: após o merge na main, criar a tag remota anotada `git tag -a v1.0.0` e acompanhar a execução da release.
+- [ ] **Entrada humana do vídeo pitch (Passo 029/031).** A release final depende da inclusão do arquivo MP4 real de gravação humana para completar o pacote de submissão. Dependência: gravação humana pelo squad. Ação: disponibilizar `pitch.mp4` para validação via `entrada-video.yml`.
+- [ ] **SQUAD.md e RA de Lucca.** O RA de Lucca permanece em branco. Dependência: fornecimento pelo integrante. Ação: preencher RA numérico no SQUAD.md antes da tag final.
+- [ ] **Revisão humana cruzada.** PR deste par em rascunho aguarda revisão formal de Lucca Castilho (`luccalck`); CI verde obrigatório antes de qualquer merge. Dependência: revisão humana registrada no GitHub.
 
 ## Passo 036
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Triagem final e auditoria eliminatória executadas em 14/10/2026 por Lucas Souza (`6lucassilvaaa`). Auditoria das condições eliminatórias concluída com 100% de conformidade: EL-01 / I05-22 (sem plágio, imagens e diagramas SVG gerados internamente, licenças permissivas em THIRD_PARTY.md), EL-02 / I07-03 (produção e branch gh-pages escritas exclusivamente pela pipeline GitHub Actions sem alteração manual), EL-03 / I05-23 (zero credenciais ou segredos no histórico verificado com Gitleaks), EL-04 / I03-09 (pipeline reproduzível desde clone limpo em ubuntu-latest), EL-05 (cronologia honesta e rastreabilidade integral). Verificação da triagem via `scripts/triagem.mjs` confirmou estrutura de arquivos (`build.zip`, `GDD.pdf`, `RelatorioTecnico.pdf`). Triagem em modo vigilância ativa (`.github/workflows/triagem-agendada.yml`) para notificar regressões operacionais até a banca. Evidência em `docs/evidencias/triagem-final.md`. Checks atendidos: EL-01, EL-02, EL-03, EL-04, EL-05, I05-22, I05-23, I07-03, I03-13.
+
+- [ ] **Submissão formal definitiva e TRIAGEM APROVADA (I09-19, I09-20, G7).** A emissão formal de TRIAGEM APROVADA pelo validador com saída zero em runner de produção depende da presença física do vídeo real `pitch.mp4` (Passo 029), da URL pública de produção formal e do preenchimento dos 4 RAs em `SQUAD.md`. Dependências: Passo 029, promoção formal em produção e dado de Lucca. Ação: após o merge e vídeo, executar `bash scripts/triagem.sh submissao` no runner de CI e arquivar o pacote e logs da triagem.
+- [ ] **Variável PRAZO oficial.** Configurar o horário ISO 8601 exato com fuso da data limite da entrega no repositório. Dependência: definição da data/horário oficial da aula.
+- [ ] **Revisão humana cruzada.** PR deste par aguarda revisão e aprovação de Lucca Castilho (`luccalck`); CI deve permanecer verde no commit do HEAD. Dependência: revisão formal no GitHub.
 
 ## Passo 037
 
