@@ -263,8 +263,8 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I07-13 — CONDICIONAL azul-verde: virar estavel de uma vez, mantendo referência à anterior; percentual 0 durante preparação.
 - [x] I07-14 — Preview preserva versão do jogador durante a sessão quando ainda válida. E7/testes Pages.
 - [ ] I07-15 — Validar manutenção de versão na sessão sob a estratégia formal, inclusive retirada da versão defeituosa e armazenamento indisponível.
-- [ ] I07-16 — Smoke de produção falhando dispara rollback automático pela pipeline.
-- [ ] I07-17 — Rollback restaura estavel para anterior e retira canário defeituoso, sem recompilar.
+- [ ] I07-16 — Smoke de produção falhando dispara rollback automático pela pipeline. Contrato e testes locais reforçados no022 (`docs/evidencias/rollback-automatico.md`); falta execução formal observada.
+- [ ] I07-17 — Rollback restaura estavel para anterior e retira canário defeituoso, sem recompilar. Hashes/HTTP da baseline testados localmente no022; falta prova no Pages.
 - [ ] I07-18 — rollback.yml com workflow_dispatch para recuperação manual pela pipeline.
 - [ ] I07-19 — Histórico gh-pages registra mudanças em rollout.json, quem disparou e por quê.
 - [ ] I07-20 — Ensaio com versão defeituosa proposital, controlado e rastreável.
@@ -433,10 +433,10 @@ Esta tabela transcreve os três níveis como critérios de conferência. Os esta
 - [ ] B-03 — Viabilidade técnica/execução (25%): demonstrar commit → produção ao vivo.
 - [ ] B-04 — Viabilidade técnica/execução: demonstrar falha injetada → alerta → rollback, com continuidade.
 - [ ] B-05 — Viabilidade técnica/execução: justificar manutenção e evolução da solução.
-- [ ] B-06 — Jogabilidade (30%): colega de outra turma joga por três minutos sem explicação.
-- [ ] B-07 — Jogabilidade: observar/registrar compreensão real, sem inventar respostas.
-- [ ] B-08 — Jogabilidade: observar/registrar diversão real.
-- [ ] B-09 — Jogabilidade: observar/registrar aprendizagem real.
+- [ ] B-06 — Jogabilidade (30%): colega de outra turma joga por três minutos sem explicação. Registro preparado em `docs/evidencias/playtest.md`; sessão humana pendente.
+- [ ] B-07 — Jogabilidade: observar/registrar compreensão real, sem inventar respostas. Pendente de sessão.
+- [ ] B-08 — Jogabilidade: observar/registrar diversão real. Pendente de sessão.
+- [ ] B-09 — Jogabilidade: observar/registrar aprendizagem real. Pendente de sessão.
 - [ ] B-10 — Jogabilidade: não há bugs bloqueantes na build demonstrada.
 - [ ] B-11 — Apresentação (20%): fala clara e dentro do tempo.
 - [ ] B-12 — Apresentação: divisão efetiva da fala entre os quatro.
