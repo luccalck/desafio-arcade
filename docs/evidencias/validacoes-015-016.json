@@ -1,0 +1,68 @@
+{
+  "startedLocalDate": "2026-10-13",
+  "validationLocalDate": "2026-10-14",
+  "timezone": "America/Montevideo",
+  "account": "DaviSouza78",
+  "base": "8ae86cc1ab919fa406435b41ba54f592399186e3",
+  "scope": [
+    "015",
+    "016"
+  ],
+  "local": {
+    "fullSuiteBeforeAdditionalProvenanceTest": 203,
+    "releaseContractTests": 4,
+    "provenanceTests": 1,
+    "alertTests": 5,
+    "coreStatements": 97.9,
+    "lint": "passed",
+    "build": "passed",
+    "actionlint": "passed",
+    "shellcheck": "not-installed"
+  },
+  "label": {
+    "name": "alerta",
+    "color": "B60205",
+    "verifiedViaGitHubApi": true
+  },
+  "notifications": {
+    "source": "Confirmação humana de Davi nestechat",
+    "allFourValidated": true
+  },
+  "environmentPolicies": {
+    "homologacao": [
+      "branch:main"
+    ],
+    "producao": [
+      "branch:main"
+    ],
+    "modified": false
+  },
+  "releaseExecuted": false,
+  "tagCreated": false,
+  "formalDeployment": false,
+  "realIncidentCreated": false,
+  "reviewApproved": false,
+  "remote": {
+    "commit": "389b1b0da88432fc02e2689111785d6791964910",
+    "pr": 17,
+    "base": "feature/passos-013-014-conteudo-smoke",
+    "push": {
+      "run": 38504617087,
+      "conclusion": "success"
+    },
+    "pullRequest": {
+      "run": 38504677552,
+      "conclusion": "success"
+    },
+    "unitIntegration": 204,
+    "e2e": 28,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "bundleFiles": 157,
+    "artifactVerified": true,
+    "releaseExecuted": false,
+    "tagCreated": false,
+    "realIncidentCreated": false
+  }
+}

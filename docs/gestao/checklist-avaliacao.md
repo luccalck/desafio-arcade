@@ -284,13 +284,13 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I08-06 — Registrar versão servida obtida de version.json.
 - [ ] I08-07 — Acumular resultados em status/sondas.csv, com data/alvo/código/tempo e versão registrada.
 - [ ] I08-08 — Dados na branch observabilidade; cada sonda não dispara publicação Pages.
-- [ ] I08-09 — Criar label alerta nas Issues.
+- [x] I08-09 — Criar label alerta nas Issues. 14/10/2026, contaDaviSouza78: criação e GET labels/alerta confirmados; corB60205/descrição operacional. [Evidência016](../evidencias/alertas.md). Não comprova incidente.
 - [ ] I08-10 — Abrir JogoForaDoAr quando resposta diferente de HTTP 200.
 - [ ] I08-11 — Abrir LatenciaAlta quando tempo ultrapassa dois segundos.
 - [ ] I08-12 — Evitar duplicação de alerta já aberto para o mesmo incidente/alvo.
 - [ ] I08-13 — Fechar automaticamente JogoForaDoAr quando serviço volta ao normal.
 - [ ] I08-14 — Fechar automaticamente LatenciaAlta quando latência volta ao normal.
-- [ ] I08-15 — Quatro integrantes assistem o repositório e verificam recebimento das notificações por e-mail/celular conforme seus canais.
+- [x] I08-15 — Quatro integrantes assistem o repositório e verificam recebimento das notificações por e-mail/celular conforme seus canais. 14/10/2026: Davi respondeu nestechat “todos ja fizeram a validação” à pergunta explícita sobreWatch/recebimento pelosquatro. Confirmação humana, sem alegar inspeção pelaIA. [Evidência016](../evidencias/alertas.md).
 - [ ] I08-16 — Publicar painel /status/ no Pages.
 - [ ] I08-17 — Painel mostra disponibilidade.
 - [ ] I08-18 — Painel mostra latência.
@@ -602,3 +602,5 @@ Revalidação010 — 13/10/2026: [offline/integridade](../evidencias/offline-int
 Preparação011–012 — 13/10/2026, DaviSouza78: [publicadorHML](../evidencias/deploy-hml.md) preserva produção/releases/status e consome pacote validado; [sondas](../evidencias/sondas.md) distinguem HTTP/rede/timeout/versão e guardamCSV/JSON. Testes locais e consultas ao preview são provas técnicas; não houve HML/PRDformal/aceiteG3/G4/monitoragendado. Checks formais continuam abertos; publicação/CI doHEAD serão conferidas no controle e no registro único.
 
 Revalidação013/014 — 13/10/2026: [conteúdo/aprendizagem](../evidencias/aprendizagem-conteudo.md) e [smokePRD](../evidencias/smoke-prd.md). Soluções alternativas e seis entradas de transferência coerentes entre fonte/AST/HTML/Python;194testes e cobertura core97,90%. Build com resultado inválido bloqueou e fonte foi restaurada byte a byte. Smoke local com falhas deSHA/carregador/recurso/runtime/console/controle e recusa deHML; runner público retornouexit1 emCSS404 sintético. I04-14/KIT-29 continuam condicionais não aplicáveis (Opal/AIStudio ausentes), B-01/B-02 aguardam avaliação humana021/banca, I04-10 permanece aberto até pós-deploy019. Nenhum novo check/gate fechado por essas preparações.
+
+Revalidação015/016 — 14/10/2026: tag/SemVer/proveniência/mesmoartefato/notas e imutabilidade de anexos testados localmente; alertas200/500/timeout/2,0/2,01/duplicação/recuperação/alvos independentes testados com mocks. I08-09/I08-15 fechados porAPI e confirmação humana identificadas acima. I01-10/I05-09/I06-07–12/I07-06/I08-10–14/KIT-26/gates continuam abertos até execução/aprovação real, não por existência de código.

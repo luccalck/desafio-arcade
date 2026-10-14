@@ -215,11 +215,37 @@ Publicação013/014 — 13/10/2026: commit próprio 909ac53a2f4d01c8d17493c9b2e2
 
 ## Passo 015
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Contrato de proveniência/tag/anexos e idempotência preparado e testado; [evidência](../evidencias/releases.md). Nenhuma tag ou release publicada; nenhum aceite de produção ou imutabilidadePages presumido.
+
+| O que falta | Motivo e dependência | Ação necessária |
+|---|---|---|
+| Revisão/integração/main eHML011 | Main ainda bootstrap; CI dosMDs não substitui aprovação/integração | Miguel revisaPR doMD3 e responsáveis integram cadeia aprovada; concluir011 antes de publicar |
+| Políticas de ambientes para tags autorizadas | Homologacao/producao aceitam somentemain; WRITE não autoriza remover gates | Coordenar comPlataforma/responsável as tags mínimas e manter reviewer/proteções/sem bypass; validar com execução real |
+| Notas revisadas eRELEASE_NOTES_SHA256 | Proposta ainda sem aprovação humana/hash autorizado | Humano revisa arquivo porPR; registrarhash exato aprovado e habilitarFORMAL_RELEASE_ENABLED somente após entradas |
+| Execução da tag/pacote/HML/PRD/anexos eI05-09/I06-07–12 | Publicador preparado, mas sem tag autorizada/deploy019; simulação não comprova entrega | Na035, tag anotada sobrecommit aprovado, mesmaexecução/pacote, aprovaçãoproducao e hashes dos anexos; arquivar ghreleaseview/run |
+| v0.1.0 histórica/I01-10 | Tag/evidência não existe na conferência atual | Responsável/professor orientam regularização semdatas retroativas; não criar história fictícia |
+| ImutabilidadePages/I07-06 e gatesG4/G7 | GitHubRelease e diretórioPages são objetos distintos; operação futura | Validar preservação deprodução/bytes via019/027/035 e obter aceites reais; v1.0.0 somente035 |
+| FontesR05/R02 externas | Caminhos originais não existem no computador | Equipe disponibiliza originais para confronto; contratos preservados não são leitura desses originais |
+
+PublicaçãoMD3 — 14/10/2026: commit próprio 389b1b0da88432fc02e2689111785d6791964910, [PR#17](https://github.com/luccalck/desafio-arcade/pull/17), base temporária MD2. [CI push38504617087](https://github.com/luccalck/desafio-arcade/actions/runs/38504617087) e [CI PR38504677552](https://github.com/luccalck/desafio-arcade/actions/runs/38504677552) SUCCESS, inclusive ci agregado. Pacote real157arquivos baixado/verificado porSHA/run:204testes de unidade/integração e28E2E, semfalhas/erros/ignorados. Release/deploys ignorados porcondição; não houve tag/produção/Issue deincidente. I08-09/I08-15 têm fontes reais distintas (labelAPI e confirmação deDavi). Revisão deMiguel e aceites operacionais permanecem pendentes.
+
+- [ ] **Repetição operacional/035:** testes garantem idempotência do mesmo pacote; rerun isolado pode buscar artefato da nova tentativa inexistente. Validar procedimento porrun/tentativa original antes da tag, com políticas/aprovações reais; falha deve permanecer explícita, sem escolher origem alternativa ou sobrescrever draft/release com bytes novos.
 
 ## Passo 016
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Reconciliação deIssues preparada após015, com testes de falha/recuperação sem incidentes fictícios. [Evidência](../evidencias/alertas.md). I08-09: labelalerta criada eAPI conferida em14/10/2026. I08-15: Davi confirmou nestechat que os quatro fizeramWatch e verificaramnotificações; fonte humana, sem atribuir inspeção pessoal àIA.
+
+| O que falta | Motivo e dependência | Ação necessária |
+|---|---|---|
+| Monitor/alertas operacionais eG4 | 012 ainda semrunpersistido/formal; main/integração e aprovação pendentes; flags não habilitadas | IntegrarPRs revisados, concluirHML011/PRD019 e entradasG4, ativarMONITOR_ENABLED/ALERTS_ENABLED só então |
+| I08-10–14/KIT-26 e histórico real | Testesmock não sãoIssues reais; não há incidente comprovado | Rodarworkflow com sondas verdadeiras; arquivarabertura/deduplicação/normalização/fechamento, alvos e URLs/run; não fabricar outageCSV |
+| Ensaio026 e insumoDORA024 | Falha controlada/observação pertencem a etapasposteriores | No026, induzir falha autorizada e demonstrar detecção/recuperação; no024 usar horários reais deIssues, não métricas sintéticas |
+| Revisão eCI doHEAD | CIs389b1b0 passaram; workflows compartilhados ainda precisam de revisão dePlataforma/Miguel e CI verde doHEAD final | Solicitar revisão noPR doMD3 e integrar somente após aprovação; preservar políticas/permissões sem bypass |
+| OriginalS03 externo | Caminho original não disponível nestecomputador | Equipe disponibiliza para leitura/confronto; contrato012 local consultado sem alegar original ausente |
+
+Conferência transversalMD3 — 14/10/2026: não houve redução de proteções/alteração de políticas. Homologacao/producao seguem somente branchmain viaAPI. A compatibilidade da sonda012 com o ponteiro formal018 ainda exige confronto ao implementar018: erro deponteiro mantém alertas abertos/desconhecidos, nunca conta como recuperação. Pendências operacionais específicas permanecem nas seções015/016 acima.
+
+PublicaçãoMD3 — 14/10/2026: commit próprio 389b1b0da88432fc02e2689111785d6791964910, [PR#17](https://github.com/luccalck/desafio-arcade/pull/17), base temporária MD2. [CI push38504617087](https://github.com/luccalck/desafio-arcade/actions/runs/38504617087) e [CI PR38504677552](https://github.com/luccalck/desafio-arcade/actions/runs/38504677552) SUCCESS, inclusive ci agregado. Pacote real157arquivos baixado/verificado porSHA/run:204testes de unidade/integração e28E2E, semfalhas/erros/ignorados. Release/deploys ignorados porcondição; não houve tag/produção/Issue deincidente. I08-09/I08-15 têm fontes reais distintas (labelAPI e confirmação deDavi). Revisão deMiguel e aceites operacionais permanecem pendentes.
 
 ## Passo 017
 
