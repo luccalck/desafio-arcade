@@ -6,7 +6,7 @@ import {pathToFileURL} from 'node:url';
 import {unzipSync,strToU8,strFromU8} from 'fflate';
 import {normalizeRollout} from '../pages/rollout-contract.mjs';
 const LOADER=readFileSync(new URL('../pages/index.html',import.meta.url),'utf8');
-export const loaderFiles=()=>Object.fromEntries(['index.html','loader.mjs','rollout-contract.mjs'].map(name=>[name,strToU8(name==='index.html'?LOADER:readFileSync(new URL('../pages/'+name,import.meta.url),'utf8'))]));
+export const loaderFiles=()=>Object.fromEntries(['index.html','loader.mjs','rollout-contract.mjs','status/index.html','status/status.mjs'].map(name=>[name,strToU8(name==='index.html'?LOADER:readFileSync(new URL('../pages/'+name,import.meta.url),'utf8'))]));
 const REQUIRED=['index.html','style.css','game.js','version.json','LEIA-ME.txt','LICENSE.txt','THIRD_PARTY.txt'];
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 export function preparePages({zip,checksum,sha,existing={}}){

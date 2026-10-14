@@ -1,0 +1,21 @@
+<!doctype html>
+<html lang="pt-BR" data-status="arcade">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Status — Rota do Código</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0d1117;color:#e6edf3;font:1rem/1.6 Arial,sans-serif}main,header,footer{max-width:1100px;margin:auto;padding:1rem}h1{line-height:1.2}h2{font-size:1.25rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr));gap:1rem}.card{overflow-wrap:anywhere;background:#161b22;border:1px solid #6e7681;border-radius:12px;padding:1rem;min-width:0}dt{font-weight:bold}dd{margin:.5rem 0;font-size:1.35rem}.note{font-size:.95rem;color:#c9d1d9}a{color:#91cbff;overflow-wrap:anywhere}button{background:#91cbff;color:#0d1117;border:2px solid transparent;border-radius:8px;padding:.8rem 1rem;font:inherit;cursor:pointer}button:disabled{opacity:.7;cursor:wait}:focus-visible{outline:3px solid #ffdf5d;outline-offset:4px}.skip{position:absolute;top:-100px;background:#0d1117;padding:1rem}.skip:focus{top:0}code{overflow-wrap:anywhere}.errors{border-left:4px solid #ffdf5d;padding-left:1rem}footer{font-size:.95rem}
+</style></head>
+<body><a class="skip" href="#main">Pular para os indicadores</a>
+<header><a href="../">Voltar ao jogo</a><h1>Status — Rota do Código</h1><p>Disponibilidade por amostragem, latência e entrega. Sem coleta de dados pessoais do jogador.</p><button id="refresh" type="button">Atualizar dados</button><p id="state" role="status" aria-live="polite">Consultando fontes públicas…</p></header>
+<main id="main" tabindex="-1" data-repository="luccalck/desafio-arcade">
+<h2>Produção · últimas 24 horas</h2><p id="period" class="note">Período ainda não consultado.</p>
+<div class="grid">
+<dl class="card"><dt>Disponibilidade observada</dt><dd id="availability">Indisponível</dd><dd id="samples" class="note">Nenhuma amostra validada.</dd></dl>
+<dl class="card"><dt>Latência média das respostas</dt><dd id="latency">Indisponível</dd><dd class="note">Média de tempos medidos; falha sem resposta não recebe tempo zero.</dd></dl>
+<dl class="card"><dt>Versão em produção</dt><dd id="version">Indisponível</dd><dd id="version-detail" class="note">Aguardando coleta formal e SHA coerente.</dd></dl>
+<dl class="card"><dt>Estado do rollout</dt><dd id="rollout">Indisponível</dd><dd class="note">Azul-verde mantém candidata com 0% de novas sessões até a virada.</dd></dl>
+</div>
+<h2>Quatro métricas DORA</h2><p class="note">Valores dependem de dados rastreáveis e do contrato da etapa 024. Ausência de dados não significa zero.</p><div id="dora" class="grid"></div>
+<h2>Origem e qualidade dos dados</h2><p id="updated">Última amostra: desconhecida.</p><p id="source">Fonte ainda não consultada.</p><ul id="errors" class="errors"></ul>
+<p class="note">Disponibilidade é a proporção de respostas HTTP200 entre as amostras com código conhecido, não um SLA de tempo contínuo. Coletas podem atrasar. O painel só atualiza ao abrir ou acionar o botão; não dispara deploy do jogo.</p>
+<noscript>Ative JavaScript para consultar as fontes. Nenhum indicador está confirmado sem a leitura dos dados.</noscript>
+</main><footer>Fontes: branch observabilidade e rollout público. Sem token no navegador, sem serviço pago ou backend do jogo.</footer><script type="module" src="./status.mjs"></script></body></html>

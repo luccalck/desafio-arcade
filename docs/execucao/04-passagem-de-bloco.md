@@ -22,6 +22,8 @@ Lucca faz002 e005 por conta própria: ambos agora estão no seu bloco. Não decl
 
 ## Davi → Miguel, depois do020
 
+Conferência de14/10/2026: [passagem técnica preparada](10-passagem-davi-miguel.md). Código/contratos dos dez passos registrados; produção/HML formais, revisão, monitoramento e gates ainda sem aceite. Documento não declara recebimento ou aprovação por Miguel e não autoriza avançar021 automaticamente.
+
 Entregar HML formal/E2E, release/artefato rastreável, rollout/sessão, produção aprovada, smoke/rollback básico, sondas/alertas e painel. Rollback automático precisa estar conectado antes de PRD no019; Miguel fortalece e comprova recuperação real no022/026.
 
 Painel mostra DORA indisponível enquanto faltam dados, sem zero/100% inventados. Contrato de consumo fica pronto; Miguel integra script/dados no024 e fecha I08-21. Davi não precisa voltar a programar o painel.
