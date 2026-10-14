@@ -42,5 +42,27 @@
   "formalDeployment": false,
   "realIncidentCreated": false,
   "reviewApproved": false,
-  "remote": null
+  "remote": {
+    "commit": "389b1b0da88432fc02e2689111785d6791964910",
+    "pr": 17,
+    "base": "feature/passos-013-014-conteudo-smoke",
+    "push": {
+      "run": 38504617087,
+      "conclusion": "success"
+    },
+    "pullRequest": {
+      "run": 38504677552,
+      "conclusion": "success"
+    },
+    "unitIntegration": 204,
+    "e2e": 28,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "bundleFiles": 157,
+    "artifactVerified": true,
+    "releaseExecuted": false,
+    "tagCreated": false,
+    "realIncidentCreated": false
+  }
 }

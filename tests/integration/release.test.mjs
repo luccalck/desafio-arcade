@@ -19,6 +19,7 @@ it('recusa tag leve, fora da main, sem proteção/aprovação e versão incoeren
 });
 it('preserva os bytes aprovados e exige notas com hash autorizado',()=>{
  const p=plan();expect(Object.keys(p.assets)).toEqual(['build.zip','build.zip.sha256','sbom.cdx.json','GDD.pdf','release-manifest.json']);
+ expect(JSON.parse(Buffer.from(p.assets['release-manifest.json']).toString()).runAttempt).toBe('1');
  expect(hash(p.assets['build.zip'])).toBe(hash(bundle()['build.zip']));
  expect(()=>planRelease({bundle:bundle(),sha,run,tag:'v0.6.0',version:'0.6.0',proof,notes,notesHash:'b'.repeat(64)})).toThrow(/notas/i);
  const bad=bundle();bad['build.zip'][0]^=1;expect(()=>planRelease({bundle:bad,sha,run,tag:'v0.6.0',version:'0.6.0',proof,notes,notesHash:hash(notes)})).toThrow(/integridade/);

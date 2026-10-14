@@ -10,13 +10,14 @@ export function validateTag({tag,sha,version,proof}){
  for(const key of ['annotated','integrated','protectedMain','approved'])if(proof?.[key]!==true)throw Error(`Proveniência recusada: ${key}.`);
  return true;
 }
-export function planRelease({bundle,sha,run,tag,version,proof,notes,notesHash}){
+export function planRelease({bundle,sha,run,attempt='1',tag,version,proof,notes,notesHash}){
  validateTag({tag,sha,version,proof});const manifest=verifyBundle(bundle,{sha,run});
+ if(!/^[1-9]\d*$/.test(String(attempt)))throw Error('Tentativa do artefato inválida.');
  if(manifest.version!==version)throw Error('Versão do artefato diverge da tag/package.json.');
  if(!notes?.includes(`## ${version}\n`)||hash(notes)!==notesHash)throw Error('Notas ausentes ou hash das notas não autorizado por revisão humana.');
  const assets=Object.fromEntries(['build.zip','build.zip.sha256','sbom.cdx.json','GDD.pdf'].map(n=>[n,bundle[n]]));
  const inventory=Object.fromEntries(Object.entries(assets).map(([n,b])=>[n,{sha256:hash(b),bytes:b.length}]));
- assets['release-manifest.json']=Buffer.from(JSON.stringify({schema:1,tag,sha,run:String(run),version,build:manifest.build,notesSha256:notesHash,files:inventory},null,2)+'\n');
+ assets['release-manifest.json']=Buffer.from(JSON.stringify({schema:1,tag,sha,run:String(run),runAttempt:String(attempt),version,build:manifest.build,notesSha256:notesHash,files:inventory},null,2)+'\n');
  return {tag,sha,notes,assets};
 }
 export async function publishRelease(plan,api){
@@ -99,7 +100,8 @@ async function main(){
  const proof=await proveTag({tag,sha,version,api});
  console.log(JSON.stringify({tag,sha,proof}));
  if(mode==='publish'){
-  const plan=planRelease({bundle:await tree(resolve(bundlePath)),sha,run:process.env.GITHUB_RUN_ID,tag,version,proof,notes:await readFile(notesPath,'utf8'),notesHash:process.env.RELEASE_NOTES_SHA256});
+  if(!/^[1-9]\d*$/.test(process.env.GITHUB_RUN_ATTEMPT||''))throw Error('Tentativa da execução ausente/inválida.');
+  const plan=planRelease({bundle:await tree(resolve(bundlePath)),sha,run:process.env.GITHUB_RUN_ID,attempt:process.env.GITHUB_RUN_ATTEMPT,tag,version,proof,notes:await readFile(notesPath,'utf8'),notesHash:process.env.RELEASE_NOTES_SHA256});
   console.log(JSON.stringify(await publishRelease(plan,api)));
  }
 }
