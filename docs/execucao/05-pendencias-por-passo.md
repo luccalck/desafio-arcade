@@ -187,11 +187,31 @@ Workflow e cron versionados no commit b3d5353b2110abf7703954ab919645943739a813; 
 
 ## Passo 013
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Revisão técnica executada após as entradas005/006/009 da candidata; alternativas/transferência verificadas em fonte, AST/HTML e CPython. [Evidência e protocolo021](../evidencias/aprendizagem-conteudo.md). Não houve playtest humano nem aceite de inovação/aprendizagem. I04-14/KIT-29 continuam condicionais não aplicáveis, pois não há conteúdoOpal/AIStudio.
+
+| O que falta | Motivo/dependência | Ação necessária |
+|---|---|---|
+| Playtest real e avaliação B-01/B-02 | A eficácia e o diferencial percebido não podem ser inferidos dos testes; sessão pertence à021 | Equipe/participante executam três minutos sem explicação, registram previsões/justificativas, intervenções e observações anônimas |
+| Revisão e integração | Dependências e MD1 ainda precisam de revisão humana; CIs do commit909ac53 verdes; conferir tambémHEAD documental final | Miguel revisa oPR doMD2; integrar somente com CI verde e dependências aprovadas, sem bypass |
+| Fontes externas P05/D02 | Caminhos citados não existem neste computador; contratos locais usados | Equipe disponibiliza originais para leitura/confronto; não alegar acesso ausente |
+| Gates G3/G5 e direitos coletivos | HML formal/ações humanas pendentes; preparação não libera gate | Equipe registra aceites/provas reais nas etapas próprias; preservar ausência de declarações fictícias |
+
+Publicação013/014 — 13/10/2026: commit próprio 909ac53a2f4d01c8d17493c9b2e27407a383bd8c, [PR#16](https://github.com/luccalck/desafio-arcade/pull/16), base temporária feature/passos-011-012-hml-sondas/PR#15. [CI push38502833358](https://github.com/luccalck/desafio-arcade/actions/runs/38502833358) e [CI PR38502867894](https://github.com/luccalck/desafio-arcade/actions/runs/38502867894): SUCCESS, incluindo ci agregado. Relatórios do pacote real conferidos:194testes e28E2E semfalhas/erros/ignorados; pacote157arquivos validado porSHA/run, PDF19pA4. Revisão de miguelsenai2024 solicitada, ainda semaprovação. Deploys ignorados; CI não comprova playtest/HML/PRD/rollback. Nenhuma etapa015+ executada.
 
 ## Passo 014
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Smoke compartilhado preparado depois da revisão013: raiz/candidata diferenciadas deHML, recursos/versão/SHA/erros fatais/controle testados com fixtures locais. [Contrato e evidências](../evidencias/smoke-prd.md). Projeto público executado contra CSS404 sintético retornouexit1 e produziu relatórios. Não houve smoke dePRD formal, deploy ou recuperação; I04-10 continua aberto.
+
+| O que falta | Motivo/dependência | Ação necessária |
+|---|---|---|
+| HML formal da011 | CI doMD1 passou, mas main/integração/aceites e publicação formal continuam pendentes | Equipe conclui as entradas documentadas noPasso011 e arquiva HML/E2E do mesmo artefato |
+| Smoke real pós-deploy e I04-10 | Produção ainda não entregue; depende de014/018/019 e aprovação humana | Na019, chamar release-smoke antes da promoção e prd-smoke depois, com URL/SHA reais e mesmo pacote, semrebuild |
+| Integração das chamadas e recuperação | scripts/promover.sh ainda ausente e rollback pertence a019/022; não antecipar essas etapas | Implementador019 consome exitcode, bloqueia promoção e restaura ponteiro se raiz falhar;022 valida recuperação comSHA restaurado |
+| Relatórios operacionais | Fixtures comprovam bloqueio local, não uma execução dePRD/rollback | Arquivar JUnit/HTML/JSON/screenshots/traces por invocação, inclusive falhas; manter relatórios de candidata e raiz distintos |
+| Revisão, integração e G4 | Dependências006/010 técnicas disponíveis; CIs909ac53 verdes, revisão humana e CI doHEAD final ainda a conferir; gates humanos não presumidos | Miguel revisa oPR; aguardar CI verde e entradas aprovadas antes do merge; registrar aprovação real |
+| Original D05 e equivalências | Roteiro externo não existe neste computador; contrato006 preservado consultado | Equipe disponibiliza original e confere aderência; não alegar leitura ausente |
+
+Publicação013/014 — 13/10/2026: commit próprio 909ac53a2f4d01c8d17493c9b2e27407a383bd8c, [PR#16](https://github.com/luccalck/desafio-arcade/pull/16), base temporária feature/passos-011-012-hml-sondas/PR#15. [CI push38502833358](https://github.com/luccalck/desafio-arcade/actions/runs/38502833358) e [CI PR38502867894](https://github.com/luccalck/desafio-arcade/actions/runs/38502867894): SUCCESS, incluindo ci agregado. Relatórios do pacote real conferidos:194testes e28E2E semfalhas/erros/ignorados; pacote157arquivos validado porSHA/run, PDF19pA4. Revisão de miguelsenai2024 solicitada, ainda semaprovação. Deploys ignorados; CI não comprova playtest/HML/PRD/rollback. Nenhuma etapa015+ executada.
 
 ## Passo 015
 

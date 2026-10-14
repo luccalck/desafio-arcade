@@ -1,6 +1,6 @@
 # Rota do Código — Game Design Document
 
-Versão do software: **{{VERSION}}**. Revisão do documento: **010 — 13/10/2026**. Mantemos a oficina de jogos aprovada, com desafios Python e preview web. Este documento descreve a candidata; sua data de revisão não representa data de submissão ou release final.
+Versão do software: **{{VERSION}}**. Revisão do documento: **013 — 13/10/2026**. Mantemos a oficina de jogos aprovada, com desafios Python e preview web. Este documento descreve a candidata; sua data de revisão não representa data de submissão ou release final.
 
 | Identificação | Situação verdadeira |
 |---|---|
@@ -206,6 +206,8 @@ Desenvolvemos o projeto para a atividade, com assistência de IA registrada em [
 Não incluímos CPF ou assinaturas nos arquivos públicos. A entrega acadêmica não autoriza inscrição ou aceite dos termos do concurso opcional; eventual documento privado segue a orientação real do professor.
 
 ## 12. Ideias adicionais e próximos passos
+
+[Revisão educativa013 e protocolo de playtest](evidencias/aprendizagem-conteudo.md): soluções alternativas verificadas em fonte/AST/exportação, casos de transferência e sessão sem explicação de três minutos preparada para021. Nenhum resultado de aprendizagem/diversão humana foi medido; mecânica e 23casos públicos preservados.
 
 Implementado na candidata 0.6.0: cinco missões Python/final, editor limitado/diagnósticos, testes públicos, minijogo real, menus/pausa/opções, 700 XP, fontes/vitórias persistentes, HTML exportável. Evidências em [jogo e testes](evidencias/python-pages.md), [baseline técnico](evidencias/baseline-tecnico.md) e [privacidade/segurança](evidencias/seguranca-inicial.md). Uma campanha ativa; versões anteriores recuperáveis no Git.
 
