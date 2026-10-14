@@ -4,7 +4,9 @@ import {resolve,join,dirname} from 'node:path';
 import {readFileSync} from 'node:fs';
 import {pathToFileURL} from 'node:url';
 import {unzipSync,strToU8,strFromU8} from 'fflate';
+import {normalizeRollout} from '../pages/rollout-contract.mjs';
 const LOADER=readFileSync(new URL('../pages/index.html',import.meta.url),'utf8');
+export const loaderFiles=()=>Object.fromEntries(['index.html','loader.mjs','rollout-contract.mjs'].map(name=>[name,strToU8(name==='index.html'?LOADER:readFileSync(new URL('../pages/'+name,import.meta.url),'utf8'))]));
 const REQUIRED=['index.html','style.css','game.js','version.json','LEIA-ME.txt','LICENSE.txt','THIRD_PARTY.txt'];
 const hash=bytes=>createHash('sha256').update(bytes).digest('hex');
 export function preparePages({zip,checksum,sha,existing={}}){
@@ -16,11 +18,13 @@ export function preparePages({zip,checksum,sha,existing={}}){
  const version=JSON.parse(strFromU8(site['version.json']));if(version.sha!==sha||!/^\d+\.\d+\.\d+$/.test(version.version)||!Number.isFinite(Date.parse(version.build)))throw Error('SHA/versão/data do artefato incoerentes.');
  const files={...existing},prefix=`releases/${sha}/`;
  for(const name of REQUIRED){const path=prefix+name;if(files[path]&&hash(files[path])!==hash(site[name]))throw Error(`Release imutável já existe com conteúdo diferente: ${sha}`);files[path]=site[name];files[`hml/${name}`]=site[name];}
- let previousSha=null;try{previousSha=JSON.parse(strFromU8(existing['rollout.json'])).activeSha;}catch{/* Primeira publicação. */}
+ let previousSha=null,formal=false;
+ if(existing['rollout.json']){const old=JSON.parse(strFromU8(existing['rollout.json']));previousSha=normalizeRollout(old).estavel;formal=Object.hasOwn(old,'estavel');}
  const rollout={strategy:'preview',activeSha:sha,previousSha:previousSha===sha?null:previousSha,version:version.version,build:version.build};
- files['rollout.json']=strToU8(JSON.stringify(rollout,null,2)+'\n');
+ // Preview não pode promover nem desfazer um controle formal já instalado.
+ if(!formal)files['rollout.json']=strToU8(JSON.stringify(rollout,null,2)+'\n');
  files['.nojekyll']=strToU8('');
- files['index.html']=strToU8(LOADER.replaceAll('{{SHA}}',sha));return files;
+ Object.assign(files,loaderFiles());return files;
 
 }
 async function readTree(root,relative=''){

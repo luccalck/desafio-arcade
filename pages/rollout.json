@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "strategy": "azul-verde",
+  "estavel": null,
+  "anterior": null,
+  "canario": null,
+  "percentual": 0,
+  "retiradas": []
+}

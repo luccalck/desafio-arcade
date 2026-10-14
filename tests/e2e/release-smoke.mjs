@@ -1,10 +1,13 @@
 import {expect} from '@playwright/test';
 import {missions} from './helpers.mjs';
 import {verifyBuild,evidence} from './regression.mjs';
+import {normalizeRollout} from '../../pages/rollout-contract.mjs';
+import {mkdir,writeFile} from 'node:fs/promises';
+import {dirname} from 'node:path';
 
 // Este contrato lança em qualquer falha: o runner devolve exit code !=0.
 // Não promove releases nem executa rollback; consumidores019/022 devem respeitar o código.
-export async function releaseSmoke(page,info,{url,sha,mode='root',timeout=10000}){
+export async function releaseSmoke(page,info,{url,sha,mode='root',timeout=10000,reportPath}){
  if(!/^[a-f0-9]{40}$/.test(sha||''))throw Error('SHA esperado inválido.');
  const base=new URL(url);if(!['http:','https:'].includes(base.protocol)||base.username||base.password||base.search||base.hash)throw Error('URL pública inválida.');
  base.pathname=base.pathname.replace(/\/?$/,'/');
@@ -26,7 +29,7 @@ export async function releaseSmoke(page,info,{url,sha,mode='root',timeout=10000}
    expect(pointer.status(),'HTTP do ponteiro').toBe(200);
    const rollout=await pointer.json();
    if(rollout.activeSha&&rollout.estavel&&rollout.activeSha!==rollout.estavel)throw Error('Ponteiro de produção ambíguo.');
-   expect(rollout.estavel||rollout.activeSha,'SHA do ponteiro ativo').toBe(sha);
+   expect(normalizeRollout(rollout).estavel,'SHA do ponteiro ativo').toBe(sha);
    release=new URL(`releases/${sha}/`,base).href;
   }
   const manifest=await page.request.get(new URL('version.json',release).href,{timeout});
@@ -55,7 +58,9 @@ export async function releaseSmoke(page,info,{url,sha,mode='root',timeout=10000}
   await page.locator('#pause-game').click({timeout});healthy();passed=true;
   return version;
  }finally{
-  await info.attach('smoke-diagnostico',{body:Buffer.from(JSON.stringify({date:new Date().toISOString(),mode,url:base.href,release,expectedSha:sha,version,passed,errors},null,2)),contentType:'application/json'});
+  const body=Buffer.from(JSON.stringify({date:new Date().toISOString(),run:process.env.GITHUB_RUN_ID??null,runAttempt:process.env.GITHUB_RUN_ATTEMPT??null,mode,url:base.href,release,expectedSha:sha,version,passed,errors},null,2));
+  if(reportPath){await mkdir(dirname(reportPath),{recursive:true});await writeFile(reportPath,body);}
+  await info.attach('smoke-diagnostico',{body,contentType:'application/json'});
   await evidence(page,info,passed?'smoke-aprovado':'smoke-bloqueado',version||{sha});
   page.off('pageerror',runtime);page.off('console',consoleError);page.off('requestfailed',failed);page.off('response',response);
  }
