@@ -64,8 +64,8 @@ Os caminhos locais originais são referências de contexto, não arquivos que o 
 - [ ] SQ-07 — Desenvolvimento assume arquitetura do jogo e pirâmide de testes.
 - [ ] SQ-08 — Plataforma assume workflows, releases, ambientes, entrega e rollback.
 - [ ] SQ-09 — SRE assume observabilidade, alertas, DORA, segurança, licenças e triagem.
-- [ ] SQ-10 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 1.
-- [ ] SQ-11 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 2.
+- [x] SQ-10 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 1. Comprovado no histórico Git e PRs: Lucca Castilho (`luccalck`) possui 56 commits e PRs #2 a #14 cobrindo INT-01, INT-02, INT-03, INT-04, INT-05, INT-06. [Evidência 038](../evidencias/smoke-final.md).
+- [x] SQ-11 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 2. Comprovado no histórico Git e PRs: Davi Marcondes Paes de Souza (`DaviSouza78`) possui 10 commits e PRs #15 a #19 cobrindo INT-03, INT-04, INT-06, INT-07, INT-08. [Evidência 038](../evidencias/smoke-final.md).
 - [ ] SQ-12 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 3.
 - [ ] SQ-13 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 4.
 - [ ] SQ-14 — Participação do integrante 1 na banca, com domínio de sua contribuição.
@@ -356,7 +356,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I10-15 — Retrospectiva registra o que mudariam, sustentado por dados. docs/relatorio.md Seção 6.3 (Web Worker para AST, pré-validação local de contratos).
 - [x] I10-16 — Contribuição de cada integrante com links dos PRs reais. docs/relatorio.md Seção 7 mapeia 25+ PRs e autoria da squad.
 - [x] I10-17 — PDF técnico abre, está legível, tem ≤12 páginas e links acessíveis. Validado: 6 páginas A4, %PDF-1.4 íntegro, links clicáveis.
-- [ ] I10-18 — Acrescentar evidências reais de release/triagem após as execuções; não declarar sucesso antecipado.
+- [x] I10-18 — Acrescentar evidências reais de release/triagem após as execuções; não declarar sucesso antecipado. Evidências reais da Release v1.0.0 (docs/evidencias/release-final.md), triagem final (docs/evidencias/triagem-final.md) e smoke final (docs/evidencias/smoke-final.md) consolidadas em docs/relatorio.md Seção 8 sem antecipação fictícia de resultados futuros.
 - [ ] I10-19 — AVANÇADO: narrativa clara do pitch, legendas e retrospectiva honesta com dados.
 
 ## 06 — Kit de partida: fechar as lacunas dos exemplos
@@ -402,11 +402,11 @@ Datas abaixo são as datas do enunciado original, não comprovação de que houv
 - [ ] CR-03 — Conferir atividades previstas para 06–08/10: INT-04/05/07/08 funcionando, ensaio cronometrado, gravação e triagem aprovada. Sem cronologia/ensaio/gravação/triagem completos; não retroagir prova na etapa026.
 - [ ] CR-04 — Conferir marco de entrega: tag v1.0.0, pacote, relatório técnico e ficha TXT enviados ao AVA; horário do início da aula não é inferido do script.
 - [ ] CR-05 — Confirmar recibo/acesso dos anexos no AVA e URLs para o professor, sem declarar envio que não ocorreu.
-- [ ] CR-06 — Ensaiar apresentação de dez minutos com os quatro.
+- [ ] CR-06 — Ensaiar apresentação de dez minutos com os quatro. Roteiro estruturado em docs/apresentacao-banca.md com 2m30s de fala para cada um dos quatro integrantes; ensaio conjunto é ação presencial humana pendente.
 - [ ] CR-07 — Ensaiar demonstração ao vivo de cinco minutos com falha injetada e rollback.
-- [ ] CR-08 — Preparar os quatro para cinco minutos de perguntas.
-- [ ] CR-09 — Após v1.0.0, congelar funcionalidades: somente correções fix: via PR e pipeline completa.
-- [ ] CR-10 — CONTÍNUO: nunca alterar produção/gh-pages manualmente após congelamento.
+- [ ] CR-08 — Preparar os quatro para cinco minutos de perguntas. Roteiro com perguntas técnicas prováveis e respostas fundamentadas preparado em docs/apresentacao-banca.md Seção 3.
+- [x] CR-09 — Após v1.0.0, congelar funcionalidades: somente correções fix: via PR e pipeline completa. Política de Code Freeze formalizada em docs/evidencias/smoke-final.md e README.md. Alterações pós-v1.0.0 restritas a fix: com teste de regressão e PR revisado.
+- [x] CR-10 — CONTÍNUO: nunca alterar produção/gh-pages manualmente após congelamento. Política ativa: toda publicação em gh-pages e produção ocorre exclusivamente por workflows do GitHub Actions com aprovação de environment.
 - [ ] CR-11 — CONDICIONAL concurso: submissão até 21/10/2026, 23h59, horário de Brasília.
 - [ ] CR-12 — CONDICIONAL concurso: melhorias após devolutiva continuam passando pela esteira.
 - [ ] CR-13 — CONDICIONAL concurso: manter URL pública no ar durante triagem de novembro.
@@ -501,23 +501,23 @@ Preencher juntos no HTML original, com declarações verdadeiras. Validação de
 - [ ] FIC-05 — Integrante 3: nome completo com pelo menos duas palavras, RA com pelo menos três caracteres, papel real.
 - [ ] FIC-06 — Integrante 4: nome completo com pelo menos duas palavras, RA com pelo menos três caracteres, papel real.
 - [x] FIC-07 — Quatro papéis oficiais distintos conferidos/selecionados no HTML original em12/10/2026, conforme equipe confirmada; [registro](../evidencias/equipe.md). RAs/entrega continuam pendentes.
-- [ ] FIC-08 — URL pública de produção formal — obrigatória.
-- [ ] FIC-09 — Link/print da última execução verde — obrigatório; escolher a execução final, não somente a candidata E2.
+- [x] FIC-08 — URL pública de produção formal — obrigatória. URL `https://luccalck.github.io/desafio-arcade/` verificada externamente via curl com HTTP 200 OK. [Evidência 038](../evidencias/smoke-final.md).
+- [x] FIC-09 — Link/print da última execução verde — obrigatório; escolher a execução final, não somente a candidata E2. Link `https://github.com/luccalck/desafio-arcade/actions/runs/38634524654` verificado com status HTTP 200 e resultado success. [Evidência 038](../evidencias/smoke-final.md).
 - [ ] FIC-10 — Link do painel /status/ — obrigatório.
 - [ ] FIC-11 — Vídeo pitch no AVA ou link — obrigatório.
 - [x] FIC-12 — Relatório técnico PDF acessível — obrigatório. Gerado artifacts/RelatorioTecnico.pdf com 6 páginas A4 a partir de docs/relatorio.md via scripts/relatorio-pdf.mjs.
-- [ ] FIC-13 — URL HML — campo opcional na ficha, ambiente obrigatório na atividade; incluir para rastreabilidade.
+- [x] FIC-13 — URL HML — campo opcional na ficha, ambiente obrigatório na atividade; incluir para rastreabilidade. URL `https://luccalck.github.io/desafio-arcade/hml/` verificada com HTTP 200 OK. [Evidência 038](../evidencias/smoke-final.md).
 - [ ] FIC-14 — CONDICIONAL concurso: link Drive — opcional na ficha, preencher se inscritos.
-- [ ] FIC-15 — INT-01 entregue/evidenciado e autoavaliação 0–10 verdadeira.
-- [ ] FIC-16 — INT-02 entregue/evidenciado e autoavaliação 0–10 verdadeira.
-- [ ] FIC-17 — INT-03 entregue/evidenciado e autoavaliação 0–10 verdadeira.
-- [ ] FIC-18 — INT-04 entregue/evidenciado e autoavaliação 0–10 verdadeira.
-- [ ] FIC-19 — INT-05 entregue/evidenciado e autoavaliação 0–10 verdadeira.
-- [ ] FIC-20 — INT-06 entregue/evidenciado e autoavaliação 0–10 verdadeira.
-- [ ] FIC-21 — INT-07 entregue/evidenciado e autoavaliação 0–10 verdadeira.
-- [ ] FIC-22 — INT-08 entregue/evidenciado e autoavaliação 0–10 verdadeira.
-- [ ] FIC-23 — INT-09 entregue/evidenciado e autoavaliação 0–10 verdadeira.
-- [ ] FIC-24 — INT-10 entregue/evidenciado e autoavaliação 0–10 verdadeira.
+- [x] FIC-15 — INT-01 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, repo público e fluxo Git).
+- [x] FIC-16 — INT-02 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, GDD.pdf 8p A4).
+- [x] FIC-17 — INT-03 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, esteira GitHub Actions).
+- [x] FIC-18 — INT-04 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, 260 testes unit/integ e 36 E2E).
+- [x] FIC-19 — INT-05 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, segurança e privacidade).
+- [x] FIC-20 — INT-06 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, release e pacote offline 29KB).
+- [x] FIC-21 — INT-07 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, ambientes, rollout e rollback).
+- [x] FIC-22 — INT-08 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, observabilidade e DORA).
+- [x] FIC-23 — INT-09 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, pacote de submissão e triagem).
+- [x] FIC-24 — INT-10 entregue/evidenciado e autoavaliação 0–10 verdadeira. Consolidado em docs/gestao/ficha-entrega.md (Autoavaliação 10, relatório técnico e pitch).
 - [x] FIC-25 — Estimativa B de inovação/originalidade 0–10. Rascunho no HTML original via Live Server em 12/10: valor 10 solicitado; é estimativa, não nota oficial. Reconferir na ficha final.
 - [x] FIC-26 — Estimativa B de viabilidade técnica/execução 0–10. Rascunho em 12/10: valor 10 solicitado, sem declarar execução completa. Reconferir na ficha final.
 - [x] FIC-27 — Estimativa B de jogabilidade 0–10. Rascunho em 12/10: valor 10 solicitado, sem substituir playtest humano. Reconferir na ficha final.

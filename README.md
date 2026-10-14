@@ -83,9 +83,9 @@ O projeto exportado pelo jogador é distinto do pacote acadêmico. A esteira for
 | `docs/images` | Mapas, telas, diagramas e arte do GDD |
 | `docs/historico` | Planos, especificações e evidências anteriores preservados |
 
-GitHub Flow: branch curta → PR para `main` → revisão de outro integrante → CI verde → merge. Usar Conventional Commits e tags anotadas após os aceites. `gh-pages` é escrito apenas pela pipeline.
+GitHub Flow: branch curta → PR para `main` → revisão de outro integrante → CI verde → merge. Usar Conventional Commits e tags anotadas após os aceites. `gh-pages` é escrito apenas pela pipeline. Após a versão candidata `v1.0.0`, vigora a política de **congelamento de código (Code Freeze - CR-09/CR-10)**: apenas correções com prefixo `fix:` via PR revisado e esteira CI completa são permitidas. Mudanças manuais em `gh-pages` continuam estritamente proibidas. Consulte os procedimentos de contingência em [operação de rollback](docs/operacao-rollback.md) e [evidência de smoke final](docs/evidencias/smoke-final.md).
 
-O professor exige pelo menos **dez PRs revisados por outro autor** e, para cada integrante, **commits e PRs aprovados em pelo menos três integráveis diferentes**, além da participação na banca. A equipe e a distribuição real estão pendentes em [SQUAD.md](SQUAD.md); os commits de um único autor não substituem o trabalho dos quatro.
+O professor exige pelo menos **dez PRs revisados por outro autor** e, para cada integrante, **commits e PRs aprovados em pelo menos três integráveis diferentes**, além da participação na banca. A equipe e a distribuição real estão registradas em [SQUAD.md](SQUAD.md); os commits de um único autor não substituem o trabalho dos quatro.
 
 Consulte [decisões de projeto](docs/gestao/design.md), [plano Python/Pages](docs/historico/planos/2026-10-12-python-pages.md), [backlog](docs/gestao/backlog.md), [segurança](SECURITY.md), [registro de IA](AI-USAGE.md) e [terceiros/licenças](THIRD_PARTY.md).
 
