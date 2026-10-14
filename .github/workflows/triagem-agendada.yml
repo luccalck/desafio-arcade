@@ -1,0 +1,105 @@
+name: Triagem Agendada
+on:
+  schedule:
+    - cron: '0 12 * * *'
+  workflow_dispatch:
+    inputs:
+      modo:
+        description: 'Modo de triagem (entrega ou vigilancia)'
+        required: false
+        default: 'vigilancia'
+        type: choice
+        options:
+          - vigilancia
+          - entrega
+      alertar:
+        description: 'Registrar alerta em caso de falha'
+        required: false
+        default: true
+        type: boolean
+permissions:
+  contents: read
+  issues: write
+concurrency:
+  group: triagem-agendada
+  cancel-in-progress: false
+jobs:
+  triagem-agendada:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - name: Instalar dependências de sistema (Poppler e FFmpeg)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y poppler-utils ffmpeg
+      - name: Executar triagem agendada
+        env:
+          PRAZO: ${{ vars.PRAZO }}
+          SITE_URL: ${{ vars.SITE_URL || 'https://luccalck.github.io/desafio-arcade' }}
+          EXPECTED_SHA: ${{ vars.EXPECTED_SHA || github.sha }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MODO: ${{ github.event.inputs.modo || 'vigilancia' }}
+          ALERTAR: ${{ github.event.inputs.alertar != false }}
+        shell: bash
+        run: |
+          mkdir -p submissao
+          # Se submissão já foi gerada na release/artefato, conferir integridade
+          FLAGS="--modo=$MODO"
+          if [ "$ALERTAR" = "true" ]; then
+            FLAGS="$FLAGS --alertar"
+          fi
+          if [ -d submissao ] && [ -f submissao/MANIFESTO.sha256 ]; then
+            node scripts/triagem.mjs submissao $FLAGS || {
+              echo "::warning::Inconformidade detectada na triagem agendada."
+              exit 1
+            }
+          else
+            echo "Pasta de submissão não empacotada neste checkout. Verificando URL de produção diretamente..."
+            # Validação direta da URL de produção se a pasta submissao não estiver versionada na branch
+            node -e "
+              const url = process.env.SITE_URL;
+              const res = await fetch(url);
+              if (res.status !== 200) {
+                console.error('URL pública indisponível:', res.status);
+                process.exit(1);
+              }
+              console.log('Produção online e respondendo HTTP 200:', url);
+            " || {
+              if [ "$ALERTAR" = "true" ]; then
+                node -e "
+                  import {notifyAlert} from './scripts/triagem.mjs';
+                  await notifyAlert({kind:'JogoForaDoAr',url:process.env.SITE_URL,reason:'Produção fora do ar na triagem agendada'});
+                "
+              fi
+              exit 1
+            }
+          fi
+      - name: Documentar execução agendada e atraso Actions
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p reports
+          node -e '
+            import {writeFile} from "node:fs/promises";
+            const report = {
+              timestamp: new Date().toISOString(),
+              runId: process.env.GITHUB_RUN_ID,
+              event: process.env.GITHUB_EVENT_NAME,
+              note: "GitHub Actions schedule pode apresentar atrasos operacionais de minutos a horas conforme carga dos runners."
+            };
+            await writeFile("reports/triagem-agendada-execucao.json", JSON.stringify(report, null, 2) + "\n");
+          '
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: triagem-agendada-${{ github.run_id }}
+          path: reports/
+          if-no-files-found: warn

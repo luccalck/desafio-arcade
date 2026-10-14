@@ -42,3 +42,26 @@ it('percorre o contrato completo com adaptadores e gera manifesto somente após 
   expect(result.approved).toBe(true);expect(smokeEnv.PAGES_URL).toBe('https://example.invalid/');expect(smokeEnv.EXPECTED_SHA).toBe('a'.repeat(40));expect(await readFile(join(directory,'MANIFESTO.sha256'),'utf8')).toContain('  pitch.mp4');
  }finally{await rm(directory,{recursive:true,force:true});}
 });
+
+it('modo vigilancia permite prazo passado e aciona alertApi em caso de indisponibilidade',async()=>{
+ const directory=await mkdtemp(join(tmpdir(),'triagem-vigilancia-fixture-')),files=Object.fromEntries(requiredAssets.map(name=>[name,strToU8(name)]));
+ files['build.zip']=bundle();files['GDD.pdf']=strToU8('pdf fixture');files['pitch.mp4']=strToU8('video fixture');files['LINK_DO_JOGO.txt']=strToU8('https://example.invalid/');
+ try{
+  for(const [name,bytes] of Object.entries(files))await writeFile(join(directory,name),bytes);
+  await writeFile(join(directory,'MANIFESTO.sha256'),makeManifest(files));
+
+  const base={directory,squadText:validSquad,env:{PRAZO:'2026-10-10T12:00:00Z',EXPECTED_SHA:'a'.repeat(40)},now:new Date('2026-10-14T00:00:00Z'),fetchImpl:async()=>({status:200}),runCommand:async(command)=>command==='pdftotext'?'Premissa e problema endereçado\nHigh concept\nGênero e plataforma\nMecânicas-core':'90.0'};
+  await expect(validateSubmission({...base,mode:'entrega'})).rejects.toThrow(/Prazo de submissão encerrado/);
+
+  const passed=await validateSubmission({...base,mode:'vigilancia'});
+  expect(passed.approved).toBe(true);
+  expect(passed.mode).toBe('vigilancia');
+
+  const alerts=[];
+  const mockAlertApi={notify:async(kind,url,reason)=>{alerts.push({kind,url,reason});}};
+  await expect(validateSubmission({...base,mode:'vigilancia',fetchImpl:async()=>({status:503}),alertApi:mockAlertApi,alertOnFailure:true})).rejects.toThrow(/HTTP 503/);
+  expect(alerts).toHaveLength(1);
+  expect(alerts[0].kind).toBe('JogoForaDoAr');
+  expect(alerts[0].url).toBe('https://example.invalid/');
+ }finally{await rm(directory,{recursive:true,force:true});}
+});
