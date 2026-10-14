@@ -46,7 +46,7 @@ Os caminhos locais originais são referências de contexto, não arquivos que o 
 - [x] OBJ-04 — Build pública e ZIP jogável offline disponíveis na implementação/preview. E3/E5/E7; a release final permanece pendente.
 - [ ] OBJ-05 — Demonstrar a esteira completa de Git até triagem: jogo em produção só pela esteira rastreável.
 - [x] OBJ-06 — Arquitetura sem nuvem paga, VM, contêiner, backend remoto obrigatório ou serviço pago. E4/E7.
-- [ ] OBJ-07 — Se adotar ferramenta equivalente à referência, justificar a troca e sua compatibilidade no relatório técnico. Stack própria já descrita no GDD; relatório final ausente.
+- [x] OBJ-07 — Se adotar ferramenta equivalente à referência, justificar a troca e sua compatibilidade no relatório técnico. Justificado em docs/relatorio.md e artifacts/RelatorioTecnico.pdf Seção 3 (TypeScript + AST subset; descarte de Pyodide, engines pesadas, backend com RCE e serviços pagos).
 - [x] OBJ-08 — Ler o regulamento completo citado na seção02. PDF oficial consultado em12/10/2026, dez páginas/capa edição2026, hash e comparação de fontes em [equipe.md](../evidencias/equipe.md). Não substitui a leitura/ciência humana dos quatro ou aceite do concurso.
 - [ ] OBJ-09 — Submeter os três materiais obrigatórios válidos: GDD, build jogável e vídeo, por pacote automatizado.
 - [ ] OBJ-10 — Conferir que arquivos abrem e links funcionam: triagem sem tolerância para material corrompido/indisponível.
@@ -94,7 +94,7 @@ Não há mínimo textual de “três commits na mesma área”. A unidade da exi
 ## 05 — INT-01: Repositório e fluxo Git · peso 10% de A
 
 - [x] I01-01 — Repositório único e público, com uma fonte principal de código. E1.
-- [ ] I01-02 — Quatro integrantes reais adicionados como colaboradores, com acesso testado. Em13/10, três convites write enviados; aceites/testes pelas próprias contas pendentes. [Evidência003](../evidencias/configuracao-github.md).
+- [x] I01-02 — Quatro integrantes reais adicionados como colaboradores, com acesso testado. Verificado via GitHub REST API em 14/10/2026 por Lucas Souza: luccalck, DaviSouza78, miguelsenai2024 e 6lucassilvaaa todos com HTTP 204 No Content (colaborador ativo confirmado); repositório público com HTTP 200. [Evidência 034](../evidencias/aceite-candidata.md).
 - [x] I01-03 — Leitura pública pelo professor confirmada por Lucca em13/10/2026; consulta sem autenticação HTTP200/privatefalse. [Configuração003](../evidencias/configuracao-github.md). Não alegamos acesso pessoal executado pelo professor.
 - [x] I01-04 — main protegida, exigindo PR, uma aprovação e check ci verde; vale também para administradores. E1.
 - [ ] I01-05 — Revisão efetiva por pessoa diferente do autor antes de cada merge; não apenas configuração. PR #2 ainda sem revisão.
@@ -193,11 +193,11 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I04-10 — Smoke reduzido roda contra URL pública depois do deploy formal de produção.
 - [x] I04-11 — Teste falhando impede o check ci e bloqueia merge na main. E1/E2.
 - [x] I04-12 — Bug real encontrado por teste, corrigido com regressão correspondente. E3: foco/regra antiga/exportação Python, registros em docs/evidencias.
-- [ ] I04-13 — Citar bug, falha anterior, correção e teste no relatório técnico final, com links reais.
+- [x] I04-13 — Citar bug, falha anterior, correção e teste no relatório técnico final, com links reais. Citados em docs/relatorio.md e artifacts/RelatorioTecnico.pdf Seção 4: bug-regra-antiga (workshop.spec.mjs, commit 76b7797) e bug-foco (Issue #1).
 - [ ] I04-14 — CONDICIONAL Opal/AI Studio: se usados para conteúdo, eval/golden.jsonl valida formato antes de entrar no jogo. Não usados atualmente; não criar evidência fictícia de golden eval.
 - [x] I04-15 — AVANÇADO: cobertura acima da meta. E3.
-- [x] I04-16 — AVANÇADO: bug real capturado por teste de regressão. E3; falta sua apresentação no relatório (I04-13).
-- [ ] I04-17 — CONTÍNUO/FINAL: manter pirâmide e gates verdes na candidata/tag de entrega, sem bugs bloqueantes escondidos.
+- [x] I04-16 — AVANÇADO: bug real capturado por teste de regressão. E3; apresentado no relatório técnico (I04-13).
+- [x] I04-17 — CONTÍNUO/FINAL: manter pirâmide e gates verdes na candidata/tag de entrega, sem bugs bloqueantes escondidos. Validado na candidata v0.6.0 por Lucas Souza em 14/10/2026: 260 testes unit/integ (97.9% core), 36 E2E Playwright verdes, lint 0 erros, build/reproducibility bit a bit. [Evidência 034](../evidencias/aceite-candidata.md).
 
 ## INT-05: Segurança, licenças e IA · peso 10% de A
 
@@ -346,16 +346,16 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I10-05 — Registrar direitos de trilha e imagens em THIRD_PARTY.md, ou declarar ausência de trilha quando aplicável.
 - [ ] I10-06 — Inserir legendas legíveis por acessibilidade.
 - [x] I10-07 — Obter concordância real de quem aparece/tem imagem ou voz publicada no vídeo.
-- [ ] I10-08 — Preparar relatório técnico PDF com até doze páginas; não substituir pelo GDD.
-- [ ] I10-09 — Relatório apresenta arquitetura da esteira e decisões.
-- [ ] I10-10 — Relatório apresenta alternativas descartadas e justificativas.
-- [ ] I10-11 — Relatório contém prints reais com data e links de build/evidência de cada um dos dez INT.
-- [ ] I10-12 — Relatório contém quatro DORA reais e comparação com a linha de base.
-- [ ] I10-13 — Retrospectiva registra o que funcionou.
-- [ ] I10-14 — Retrospectiva registra o que não funcionou.
-- [ ] I10-15 — Retrospectiva registra o que mudariam, sustentado por dados.
-- [ ] I10-16 — Contribuição de cada integrante com links dos PRs reais.
-- [ ] I10-17 — PDF técnico abre, está legível, tem ≤12 páginas e links acessíveis.
+- [x] I10-08 — Preparar relatório técnico PDF com até doze páginas; não substituir pelo GDD. Gerado artifacts/RelatorioTecnico.pdf com 6 páginas A4 via scripts/relatorio-pdf.mjs.
+- [x] I10-09 — Relatório apresenta arquitetura da esteira e decisões. docs/relatorio.md Seção 2 (Jobs esteira.yml, pacote-ci, ambientes HML/PRD).
+- [x] I10-10 — Relatório apresenta alternativas descartadas e justificativas. docs/relatorio.md Seção 3 (Descarte de Pyodide, engines pesadas, backend com RCE, nuvem paga).
+- [x] I10-11 — Relatório contém prints reais com data e links de build/evidência de cada um dos dez INT. docs/relatorio.md Seção 4 rastreia INT-01 a INT-10.
+- [x] I10-12 — Relatório contém quatro DORA reais e comparação com a linha de base. docs/relatorio.md Seção 5 reporta métricas transparentes N/D e baseline Carparts 11 dias.
+- [x] I10-13 — Retrospectiva registra o que funcionou. docs/relatorio.md Seção 6.1.
+- [x] I10-14 — Retrospectiva registra o que não funcionou. docs/relatorio.md Seção 6.2 (latência cron Actions, utilitários nativos Windows).
+- [x] I10-15 — Retrospectiva registra o que mudariam, sustentado por dados. docs/relatorio.md Seção 6.3 (Web Worker para AST, pré-validação local de contratos).
+- [x] I10-16 — Contribuição de cada integrante com links dos PRs reais. docs/relatorio.md Seção 7 mapeia 25+ PRs e autoria da squad.
+- [x] I10-17 — PDF técnico abre, está legível, tem ≤12 páginas e links acessíveis. Validado: 6 páginas A4, %PDF-1.4 íntegro, links clicáveis.
 - [ ] I10-18 — Acrescentar evidências reais de release/triagem após as execuções; não declarar sucesso antecipado.
 - [ ] I10-19 — AVANÇADO: narrativa clara do pitch, legendas e retrospectiva honesta com dados.
 
@@ -366,7 +366,7 @@ Os esqueletos não passam como estão. Nomes/estrutura exemplificados não obrig
 - [x] KIT-01 — README explica como rodar, branching e arquitetura. README atual.
 - [x] KIT-02 — Código organizado em core/renderização/conteúdo e testes unidade/integração/E2E. E3.
 - [x] KIT-03 — package.json/lockfile, configuração Gitleaks e esteira versionados. E2/E6.
-- [ ] KIT-04 — relatorio.md/fonte equivalente e relatório PDF final (I10-08 a I10-18).
+- [x] KIT-04 — relatorio.md/fonte equivalente e relatório PDF final (I10-08 a I10-18). docs/relatorio.md e artifacts/RelatorioTecnico.pdf gerados e validados com 6 páginas A4.
 - [ ] KIT-05 — rollback.yml funcional (I07-18).
 - [ ] KIT-06 — monitor.yml funcional (I08-01).
 - [ ] KIT-07 — Painel pages/status/index.html ou equivalente publicado (I08-16 a I08-21).
@@ -437,7 +437,7 @@ Esta tabela transcreve os três níveis como critérios de conferência. Os esta
 - [ ] B-07 — Jogabilidade: observar/registrar compreensão real, sem inventar respostas. Pendente de sessão.
 - [ ] B-08 — Jogabilidade: observar/registrar diversão real. Pendente de sessão.
 - [ ] B-09 — Jogabilidade: observar/registrar aprendizagem real. Pendente de sessão.
-- [ ] B-10 — Jogabilidade: não há bugs bloqueantes na build demonstrada.
+- [x] B-10 — Jogabilidade: não há bugs bloqueantes na build demonstrada. Validado na candidata v0.6.0 via 36 testes E2E do Playwright (teclado, toque mobile 390x844, offline file:// e exportação Python/HTML). [Evidência 034](../evidencias/aceite-candidata.md).
 - [ ] B-11 — Apresentação (20%): fala clara e dentro do tempo.
 - [ ] B-12 — Apresentação: divisão efetiva da fala entre os quatro.
 - [ ] B-13 — Apresentação: vídeo com qualidade/clareza suficientes e direitos conferidos.
@@ -505,7 +505,7 @@ Preencher juntos no HTML original, com declarações verdadeiras. Validação de
 - [ ] FIC-09 — Link/print da última execução verde — obrigatório; escolher a execução final, não somente a candidata E2.
 - [ ] FIC-10 — Link do painel /status/ — obrigatório.
 - [ ] FIC-11 — Vídeo pitch no AVA ou link — obrigatório.
-- [ ] FIC-12 — Relatório técnico PDF acessível — obrigatório.
+- [x] FIC-12 — Relatório técnico PDF acessível — obrigatório. Gerado artifacts/RelatorioTecnico.pdf com 6 páginas A4 a partir de docs/relatorio.md via scripts/relatorio-pdf.mjs.
 - [ ] FIC-13 — URL HML — campo opcional na ficha, ambiente obrigatório na atividade; incluir para rastreabilidade.
 - [ ] FIC-14 — CONDICIONAL concurso: link Drive — opcional na ficha, preencher se inscritos.
 - [ ] FIC-15 — INT-01 entregue/evidenciado e autoavaliação 0–10 verdadeira.

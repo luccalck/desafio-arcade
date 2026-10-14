@@ -416,11 +416,20 @@ Publicação MD1 Lucas — 14/10/2026: commits próprios `35b38f5` e `19ecb7c`, 
 
 ## Passo 033
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Relatório técnico profissional elaborado em 14/10/2026 por Lucas Souza (`6lucassilvaaa`) em `docs/relatorio.md` e compilado em `artifacts/RelatorioTecnico.pdf` via Playwright Chromium através do script `scripts/relatorio-pdf.mjs`. O documento possui 6 páginas A4 (limite regulamentar ≤ 12 páginas), contendo arquitetura da esteira, alternativas descartadas (Pyodide, engines pesadas, backend com RCE, serviços pagos), rastreabilidade dos 10 INTs com links reais, citação de bugs reais históricos com falha/regressão/correção (bug-regra-antiga e bug-foco), 4 métricas DORA reais transparentemente N/D com comparação honesta com a baseline Carparts (11 dias), retrospectiva técnica estruturada e quadro de contribuições da squad com 25+ PRs mapeados. Checks atendidos: OBJ-07, I04-13, I10-08, I10-09, I10-10, I10-11, I10-12, I10-13, I10-14, I10-15, I10-17, KIT-04, FIC-12.
+
+- [ ] **Consolidação final com tag v1.0.0 e vídeo (Passo 037).** O relatório é versão candidata preliminar; os links definitivos da release v1.0.0 e triagem final com vídeo demonstrativo serão consolidados na etapa 037 após as etapas 035 e 036. Dependências: Passos 035 e 036. Ação: consolidar links e hashes definitivos no encerramento.
+- [ ] **SQUAD.md e RA de Lucca.** O RA de Lucca Castilho permanece em branco; dado depende de fornecimento pelo próprio integrante. Dependência: ação humana de Lucca. Ação: preencher RA numérico no SQUAD.md antes da entrega acadêmica.
+- [ ] **Roteiros P07/S05 e fontes externas.** Roteiros externos e arquivo HTML original da ficha de avaliação não se encontram presentes no diretório local; contratos e documentações preservados foram estritamente seguidos. Dependência: acesso aos arquivos. Ação: confrontar quando fornecidos, sem declarar leitura prévia inexistente.
+- [ ] **Revisão humana cruzada.** PR deste par em rascunho aguarda revisão formal de Lucca Castilho (`luccalck`); CI verde obrigatório antes de qualquer merge. Dependência: revisão humana registrada no GitHub.
 
 ## Passo 034
 
-Execução ainda não realizada. Conferir ao final, conforme orientação de Lucca, aceite dos três convites e acesso real de cada integrante. Atualizar I01-02 e registro003 somente com prova. [MD034](<Lucas Souza/033-034-relatorio-aceite-candidata.md#etapa-034>). Ausência de acesso bloqueia aceite final; não marcar concluído só por convite.
+Estabilidade e aceite técnico da versão candidata v0.6.0 executados em 14/10/2026 por Lucas Souza (`6lucassilvaaa`). Suite completa de qualidade reexecutada com 100% de sucesso: `npm run lint` (0 erros), `npm run test:ci` (260 testes em 25 arquivos, 97.9% cobertura no core), Playwright E2E (36/36 testes aprovados, incluindo mobile 390x844 por toque, navegação via teclado, offline ZIP `file://`), reprodutibilidade determinística e empacotamento (`build.zip` com 29.003 bytes). Conferência final de acessos via GitHub REST API confirmou que todos os 4 integrantes (`luccalck`, `DaviSouza78`, `miguelsenai2024`, `6lucassilvaaa`) possuem status de colaborador ativo (HTTP 204 No Content) e repositório público com HTTP 200, fechando formalmente o check **I01-02**. Reconferência de privacidade (DIR-09) confirmou zero cookies e trackers; `npm audit` com 0 vulnerabilidades e Gitleaks limpo. Ausência de bugs bloqueantes confirmada (**B-10**, **I04-17**). Evidência arquivada em `docs/evidencias/aceite-candidata.md`.
+
+- [ ] **Publicação formal em produção (Passo 035).** A candidata v0.6.0 foi aceita tecnicamente; a publicação formal na branch principal com tag v1.0.0 e environment `producao` pertence à etapa 035. Dependência: etapa 035 e aprovação humana. Ação: executar rollout formal na tag final.
+- [ ] **Gravação humana do vídeo demonstrativo (Passos 029/031/036).** Falta o arquivo real de vídeo de até 90 segundos a ser gravado pela equipe. Motivo: gravação não pode ser gerada por IA. Dependência: squad gravar e fornecer `apresentacao.mp4`. Ação: validar duração fracionária e digest com `scripts/submissao.mjs` no passo 036.
+- [ ] **Revisão humana cruzada.** PR deste par aguarda aprovação de Lucca Castilho (`luccalck`); CI deve permanecer verde no commit do HEAD. Dependência: revisão humana no GitHub. Ação: manter revisão antes do merge.
 
 ## Passo 035
 
