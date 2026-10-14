@@ -113,6 +113,8 @@ Cada arquivo contém duas etapas completas. Execute os cinco MDs do integrante e
 
 ## Documentos de apoio
 
+- [Respostas persistentes para a ficha do professor](../gestao/ficha-entrega.md): nomes/RAs disponíveis, campos finais em branco e declarações/validadores; usar no037.
+
 - [Estrutura exata](01-estrutura-repositorio.md).
 - [Mapa de todos os checks](02-mapa-checks.md).
 - [Controle de execução](03-controle-execucao.md).

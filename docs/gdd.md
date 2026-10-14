@@ -1,6 +1,6 @@
 # Rota do Código — Game Design Document
 
-Versão do software: **{{VERSION}}**. Revisão do documento: **009 — 13/10/2026**. Mantemos a oficina de jogos aprovada, com desafios Python e preview web. Este documento descreve a candidata; sua data de revisão não representa data de submissão ou release final.
+Versão do software: **{{VERSION}}**. Revisão do documento: **010 — 13/10/2026**. Mantemos a oficina de jogos aprovada, com desafios Python e preview web. Este documento descreve a candidata; sua data de revisão não representa data de submissão ou release final.
 
 | Identificação | Situação verdadeira |
 |---|---|
@@ -20,12 +20,12 @@ Versão do software: **{{VERSION}}**. Revisão do documento: **009 — 13/10/202
 
 | Integrante | RA | Coordenação | GitHub |
 |---|---|---|---|
-| Lucca Castilho | A informar | Produto e Game Design | luccalck |
-| Davi Paes | A informar | Desenvolvimento e Qualidade | DaviSouza78 |
-| Miguel Oliveira | A informar | Plataforma e Release | miguelsenai2024 |
-| Lucas Souza | A informar | SRE e Segurança | 6lucassilvaaa |
+| Lucca Castilho | | Produto e Game Design | luccalck |
+| Davi Marcondes Paes de Souza | 26180842 | Desenvolvimento e Qualidade | DaviSouza78 |
+| Miguel Oliveira de Almeida | 26179933 | Plataforma e Release | miguelsenai2024 |
+| Lucas Souza da Silva | 26179875 | SRE e Segurança | 6lucassilvaaa |
 
-Papéis coordenam, sem exclusividade. Os RAs ficaram para preenchimento posterior por orientação do responsável; não representam identificação completa. Fonte dos dados: [SQUAD](../SQUAD.md).
+Papéis coordenam, sem exclusividade. Os nomes completos e RAs de três integrantes foram informados em13/10/2026. O RA de Lucca permanece em branco; a identificação ainda não está completa. Fonte dos dados: [SQUAD](../SQUAD.md).
 
 A aprovação de concepção não substitui revisão por outro integrante. CPF e assinaturas não integram Git ou artefatos públicos; eventual versão privada depende de orientação do professor. Identificação, declaração coletiva e links de release continuam pendentes. Capturas locais e testes automatizados não representam produção ou playtest humano.
 
