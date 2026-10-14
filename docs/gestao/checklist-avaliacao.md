@@ -240,9 +240,9 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I06-11 — Cada release anexa GDD.pdf.
 - [ ] I06-12 — Cada release possui notas de versão revisadas; se geradas por IA, registrar uso/revisão.
 - [x] I06-13 — ZIP descompactado permite jogar abrindo index.html, ou método offline documentado. E3/E7.
-- [x] I06-14 — Dois builds do mesmo commit têm conteúdo igual, exceto data em version.json. E3/E7.
+- [x] I06-14 — Dois builds do mesmo commit têm conteúdo igual, exceto data em version.json. E3/E7; revalidado localmente em14/10/2026 no SHA `92757b6` por `npm run reproducibility`; detalhes/limite de promoção em [release-integridade.md](../evidencias/release-integridade.md).
 - [ ] I06-15 — Hash do ZIP promovido à produção formal bate com o da GitHub Release.
-- [x] I06-16 — Build atual abaixo de 25 MB. E3: ZIP de cerca de 26 KB.
+- [x] I06-16 — Build atual abaixo de 25 MB. E3; revalidado localmente em14/10/2026: ZIP de29.022 bytes no SHA `92757b6`, ver [release-integridade.md](../evidencias/release-integridade.md). PRD/release final ainda não conferidos em I06-15/17.
 - [ ] I06-17 — CONTÍNUO/FINAL: conferir offline, tamanho, versão, SHA, data e integridade da release final.
 - [ ] I06-18 — AVANÇADO: reunir reprodutibilidade comprovada, notas revisadas e SBOM/GDD anexados na mesma release.
 
