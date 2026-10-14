@@ -1,0 +1,87 @@
+name: Entrada de Vídeo
+on:
+  workflow_dispatch:
+    inputs:
+      origem_tipo:
+        description: 'Origem do vídeo (run ou asset)'
+        required: true
+        default: 'run'
+        type: choice
+        options:
+          - run
+          - asset
+      origem_id:
+        description: 'ID da run de origem ou ID do asset autorizado'
+        required: true
+      sha_esperado:
+        description: 'SHA-256 esperado do arquivo MP4'
+        required: true
+      duracao_maxima:
+        description: 'Duração máxima em segundos'
+        required: false
+        default: '90'
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: entrada-video-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  validar-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - name: Instalar ffprobe
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+      - name: Baixar vídeo de origem autorizada
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          ORIGEM_TIPO: ${{ github.event.inputs.origem_tipo }}
+          ORIGEM_ID: ${{ github.event.inputs.origem_id }}
+          EXPECTED_DIGEST: ${{ github.event.inputs.sha_esperado }}
+        shell: bash
+        run: |
+          mkdir -p video-entrada
+          if [ "$ORIGEM_TIPO" = "run" ]; then
+            gh run download "$ORIGEM_ID" --name pitch-video --dir video-entrada || \
+            gh run download "$ORIGEM_ID" --dir video-entrada
+            find video-entrada -type f -name '*.mp4' -exec mv {} video-entrada/pitch.mp4 \;
+          else
+            gh api "repos/${GITHUB_REPOSITORY}/releases/assets/${ORIGEM_ID}" -H "Accept: application/octet-stream" > video-entrada/pitch.mp4
+          fi
+          test -s video-entrada/pitch.mp4 || { echo '::error::Vídeo não encontrado ou vazio'; exit 1; }
+          CALCULATED_HASH=$(sha256sum video-entrada/pitch.mp4 | awk '{print $1}')
+          if [ "$CALCULATED_HASH" != "$EXPECTED_DIGEST" ]; then
+            echo "::error::Digest divergente: esperado $EXPECTED_DIGEST, obtido $CALCULATED_HASH"
+            exit 1
+          fi
+      - name: Validar duração fracionária com ffprobe
+        env:
+          MAX_DURATION: ${{ github.event.inputs.duracao_maxima }}
+        shell: bash
+        run: |
+          DURATION=$(ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 video-entrada/pitch.mp4)
+          echo "Duração observada: ${DURATION}s (limite: ${MAX_DURATION}s)"
+          node -e "const d=Number('$DURATION'),max=Number('$MAX_DURATION');if(!Number.isFinite(d)||d<=0||d>max){console.error('Duração inválida ou excede limite:',d);process.exit(1);}"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: video-validado-${{ github.sha }}-${{ github.run_id }}
+          path: video-entrada/pitch.mp4
+          if-no-files-found: error
+          retention-days: 30
+      - name: Registrar resultado na Step Summary
+        shell: bash
+        run: |
+          echo "## Vídeo Humano Validado" >> $GITHUB_STEP_SUMMARY
+          echo "- **SHA-256:** ${{ github.event.inputs.sha_esperado }}" >> $GITHUB_STEP_SUMMARY
+          echo "- **Origem:** ${{ github.event.inputs.origem_tipo }} ID ${{ github.event.inputs.origem_id }}" >> $GITHUB_STEP_SUMMARY

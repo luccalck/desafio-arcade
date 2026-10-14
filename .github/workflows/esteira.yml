@@ -551,8 +551,62 @@ jobs:
           RELEASE_NOTES_SHA256: ${{ vars.RELEASE_NOTES_SHA256 }}
         run: node scripts/release.mjs publish pacote-ci docs/notas-versao.md
 
+  submissao:
+    needs: [ci, pacote-ci]
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v')) && vars.SUBMISSAO_ENABLED == 'true' && needs.ci.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: pacote-ci-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: pacote-ci
+      - name: Instalar dependências de triagem
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y poppler-utils ffmpeg
+      - name: Obter vídeo humano real validado
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          mkdir -p inputs-video
+          if gh run list --workflow entrada-video.yml --status success --limit 1 --json databaseId --jq '.[0].databaseId' | grep -q '^[0-9]'; then
+            RUN_ID=$(gh run list --workflow entrada-video.yml --status success --limit 1 --json databaseId --jq '.[0].databaseId')
+            gh run download "$RUN_ID" --dir inputs-video
+            find inputs-video -type f -name '*.mp4' -exec mv {} inputs-video/pitch.mp4 \;
+          fi
+          test -s inputs-video/pitch.mp4 || { echo '::error::Vídeo humano obrigatório não fornecido. Pacote de submissão bloqueado.'; exit 1; }
+      - name: Gerar pasta de submissão automatizada
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://luccalck.github.io/desafio-arcade' }}
+          EXPECTED_SHA: ${{ github.sha }}
+        run: node scripts/submissao.mjs create pacote-ci inputs-video/pitch.mp4 "$SITE_URL" submissao
+      - name: Executar triagem formal da submissão
+        env:
+          PRAZO: ${{ vars.PRAZO }}
+          EXPECTED_SHA: ${{ github.sha }}
+        run: bash scripts/triagem.sh submissao
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: submissao-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: submissao/
+          if-no-files-found: error
+          retention-days: 30
+
   notificar:
-    needs: [qualidade, seguranca, build, e2e, pacote-ci, ci, deploy-hml, deploy-prd, monitor-pos-producao, publicar-preview, release]
+    needs: [qualidade, seguranca, build, e2e, pacote-ci, ci, deploy-hml, deploy-prd, monitor-pos-producao, publicar-preview, release, submissao]
     if: always()
     runs-on: ubuntu-latest
     timeout-minutes: 2
