@@ -1,5 +1,5 @@
 import {it,expect} from 'vitest';
-import {makeHmlReceipt,verifyApproval,planProduction,ensurePipeline} from '../../scripts/promover.mjs';
+import {makeHmlReceipt,verifyApproval,planProduction,ensurePipeline,verifyRecoveredRelease,verifyFinalSmoke} from '../../scripts/promover.mjs';
 import {bundle,options,oldSha,newSha,site,tree,pointer,releases,version} from '../fixtures/pacote.mjs';
 const environment={id:7,name:'producao',can_admins_bypass:false,protection_rules:[{type:'required_reviewers',reviewers:[{type:'User',reviewer:{login:'revisor-fixture'}}]}]};
 const approvals=[{state:'approved',user:{login:'revisor-fixture',type:'User'},environments:[{id:7,name:'producao'}]}];
@@ -32,6 +32,32 @@ it('falha após virada restaura anterior e retira defeituosa; não mexe em impla
  const opened=planProduction('abrir',await approved()),promoted=planProduction('promover',{...options,transaction:opened.transaction,existing:opened.plan.files,smoke});
  const r=planProduction('recuperar',{...options,transaction:opened.transaction,existing:promoted.plan.files});expect(r.action).toBe('rollback');expect(r.sha).toBe(oldSha);expect(r.plan.rollout.estavel).toBe(oldSha);expect(r.plan.rollout.retiradas).toContain(newSha);
  expect(()=>planProduction('recuperar',{...options,transaction:opened.transaction,existing:tree(pointer('c'.repeat(40)))})).toThrow(/predecessor/);
+});
+it('recuperação recusa baseline alterada mesmo quando o ponteiro parece correto',async()=>{
+ const opened=planProduction('abrir',await approved()),corrupted={...opened.plan.files};
+ corrupted[`releases/${oldSha}/game.js`]=new TextEncoder().encode('bytes alterados');
+ expect(()=>planProduction('recuperar',{...options,transaction:opened.transaction,existing:corrupted})).toThrow(/baseline.*game\.js/i);
+});
+it('confirma os sete bytes da versão recuperada por HTTP, incluindo falha parcial',async()=>{
+ const opened=planProduction('abrir',await approved()),tx=opened.transaction;
+ const good=async url=>({ok:true,arrayBuffer:async()=>site(oldSha)[new URL(url).pathname.split('/').at(-1)]});
+ const verified=await verifyRecoveredRelease(tx,{fetcher:good});
+ expect(Object.keys(verified)).toHaveLength(7);
+ expect(verified['game.js']).toBe(tx.baselineFilesSha256['game.js']);
+ await expect(verifyRecoveredRelease(tx,{fetcher:async url=>({ok:true,arrayBuffer:async()=>new URL(url).pathname.endsWith('/game.js')?new Uint8Array([1]):site(oldSha)[new URL(url).pathname.split('/').at(-1)]})})).rejects.toThrow(/game\.js/);
+});
+it('smoke de recuperação falho ou de outra versão não gera aceite',async()=>{
+ const tx=planProduction('abrir',await approved()).transaction;
+ const root={date:new Date().toISOString(),passed:true,mode:'root',expectedSha:oldSha,version:version(oldSha),url:options.siteUrl,run:options.run,runAttempt:options.runAttempt,errors:[]};
+ expect(()=>verifyFinalSmoke(tx,options,root,{recovered:true})).not.toThrow();
+ for(const bad of [{...root,passed:false},{...root,errors:['HTTP 503']},{...root,expectedSha:newSha},{...root,version:{...root.version,version:'0.0.0'}}])expect(()=>verifyFinalSmoke(tx,options,bad,{recovered:true})).toThrow(/Smoke final/);
+});
+it('reexecução da recuperação não rebaixa de novo e preserva a retirada',async()=>{
+ const opened=planProduction('abrir',await approved()),promoted=planProduction('promover',{...options,transaction:opened.transaction,existing:opened.plan.files,smoke});
+ const recovered=planProduction('recuperar',{...options,transaction:opened.transaction,existing:promoted.plan.files});
+ const retry=planProduction('recuperar',{...options,transaction:opened.transaction,existing:recovered.plan.files});
+ expect(retry.action).toBeNull();
+ expect(JSON.parse(new TextDecoder().decode(retry.plan.files['rollout.json'])).retiradas).toContain(newSha);
 });
 it('contexto local, flags inativas, SHA/run divergentes ou ref não formal bloqueiam antes de mutação',()=>{
  const env={GITHUB_ACTIONS:'true',GITHUB_ACTOR:options.actor,GITHUB_SHA:newSha,GITHUB_RUN_ID:'123',GITHUB_RUN_ATTEMPT:'1',GITHUB_REF:'refs/heads/main',GITHUB_REPOSITORY:'fixture/arcade',FORMAL_HML_ENABLED:'true',FORMAL_PRD_ENABLED:'true',MONITOR_ENABLED:'true',ALERTS_ENABLED:'true'};

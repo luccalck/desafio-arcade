@@ -8,7 +8,30 @@ import {verifyBundle} from './ci-bundle.mjs';
 import {planRollout} from './rollout.mjs';
 import {normalizeRollout,validSha} from '../pages/rollout-contract.mjs';
 const hash=b=>createHash('sha256').update(b).digest('hex');
+const RELEASE_FILES=['index.html','style.css','game.js','version.json','LEIA-ME.txt','LICENSE.txt','THIRD_PARTY.txt'];
 function siteURL(value){const u=new URL(value);if(u.protocol!=='https:'||u.username||u.password||u.search||u.hash)throw Error('SITE_URL HTTPS sem credenciais exigida.');return u.href.replace(/\/?$/,'/');}
+function baselineHashes(existing,sha){
+ return Object.fromEntries(RELEASE_FILES.map(name=>{
+  const bytes=existing[`releases/${sha}/${name}`];if(!bytes)throw Error(`baseline incompleta: ${name}`);
+  return [name,hash(bytes)];
+ }));
+}
+export async function verifyRecoveredRelease(transaction,{fetcher=globalThis.fetch}={}){
+ if(!validSha(transaction?.baseline)||!transaction.baselineFilesSha256||RELEASE_FILES.some(name=>!/^[a-f0-9]{64}$/.test(transaction.baselineFilesSha256[name]??'')))throw Error('Hashes da baseline ausentes.');
+ const base=siteURL(transaction.siteUrl),observed={};
+ for(const name of RELEASE_FILES){
+  const url=new URL(`releases/${transaction.baseline}/${name}`,base);
+  const response=await fetcher(url,{cache:'no-store',redirect:'error',signal:AbortSignal.timeout(10000)});
+  if(!response.ok)throw Error(`Recuperação HTTP inválido: ${name}`);
+  const bytes=new Uint8Array(await response.arrayBuffer());observed[name]=hash(bytes);
+  if(observed[name]!==transaction.baselineFilesSha256[name])throw Error(`Recuperação diverge da baseline: ${name}`);
+  if(name==='version.json'){
+   const version=JSON.parse(Buffer.from(bytes).toString('utf8'));
+   if(version.sha!==transaction.baseline||version.version!==transaction.baselineVersion)throw Error('Versão recuperada divergente.');
+  }
+ }
+ return observed;
+}
 function identity(bundle,opts){const m=verifyBundle(bundle,opts);if(String(m.runAttempt)!==String(opts.runAttempt)||!/^[1-9]\d*$/.test(String(opts.runAttempt)))throw Error('Tentativa do pacote divergente.');return m;}
 export function verifyApproval(environment,history,actor){
  const reviewers=environment.protection_rules?.find(r=>r.type==='required_reviewers')?.reviewers?.filter(r=>r.type==='User').map(r=>r.reviewer.login)??[];
@@ -33,6 +56,11 @@ export function ensurePipeline(opts,env=process.env){
  if(env.GITHUB_ACTIONS!=='true'||!env.GITHUB_ACTOR||(env.GITHUB_TRIGGERING_ACTOR??env.GITHUB_ACTOR)!==opts.actor||env.GITHUB_SHA!==opts.sha||env.GITHUB_RUN_ID!==String(opts.run)||env.GITHUB_RUN_ATTEMPT!==String(opts.runAttempt)||!/^[-\w.]+\/[-\w.]+$/.test(env.GITHUB_REPOSITORY??'')||!(env.GITHUB_REF==='refs/heads/main'||/^refs\/tags\/v\d+\.\d+\.\d+$/.test(env.GITHUB_REF??'')))throw Error('Contexto da pipeline formal divergente.');
  for(const flag of ['FORMAL_HML_ENABLED','FORMAL_PRD_ENABLED','MONITOR_ENABLED','ALERTS_ENABLED'])if(env[flag]!=='true')throw Error(`Gate inativo: ${flag}`);
 }
+export function verifyFinalSmoke(transaction,opts,smoke,{recovered=false}={}){
+ const expectedSha=recovered?transaction.baseline:opts.sha;
+ const at=Date.parse(smoke?.date),openedAt=Date.parse(transaction.createdAt);
+ if(transaction.sha!==opts.sha||transaction.run!==String(opts.run)||transaction.runAttempt!==String(opts.runAttempt)||!Number.isFinite(at)||!Number.isFinite(openedAt)||at<openedAt||at>Date.now()+60000||smoke.passed!==true||smoke.mode!=='root'||smoke.expectedSha!==expectedSha||smoke.version?.sha!==expectedSha||(recovered&&smoke.version?.version!==transaction.baselineVersion)||smoke.url!==siteURL(opts.siteUrl)||smoke.run!==String(opts.run)||smoke.runAttempt!==String(opts.runAttempt)||!Array.isArray(smoke.errors)||smoke.errors.length)throw Error('Smoke final da raiz sem prova correspondente.');
+}
 export function planProduction(stage,{existing,bundle,receipt,environment,approvals,transaction,smoke,...opts}){
  const current=normalizeRollout(JSON.parse(strFromU8(existing['rollout.json']))),reason=`${stage}; execução ${opts.run}/${opts.runAttempt}`;
  if(stage==='abrir'){
@@ -40,9 +68,11 @@ export function planProduction(stage,{existing,bundle,receipt,environment,approv
   if(!current.estavel)throw Error('Baseline estável recuperável exigida antes de produção.');
   const plan=planRollout({...opts,action:'abrir',reason,existing,bundle});
   const baselineVersion=JSON.parse(strFromU8(existing[`releases/${current.estavel}/version.json`])).version;
-  return {action:'abrir',sha:opts.sha,plan,transaction:{schema:1,...opts,siteUrl:siteURL(opts.siteUrl),baseline:current.estavel,baselineVersion,zipSha256:receipt.zipSha256,approval,createdAt:new Date().toISOString()}};
+  return {action:'abrir',sha:opts.sha,plan,transaction:{schema:1,...opts,siteUrl:siteURL(opts.siteUrl),baseline:current.estavel,baselineVersion,baselineFilesSha256:baselineHashes(existing,current.estavel),zipSha256:receipt.zipSha256,approval,createdAt:new Date().toISOString()}};
  }
  if(transaction?.schema!==1||transaction.sha!==opts.sha||transaction.run!==String(opts.run)||transaction.runAttempt!==String(opts.runAttempt)||transaction.actor!==opts.actor||transaction.siteUrl!==siteURL(opts.siteUrl)||!validSha(transaction.baseline))throw Error('Transação de origem divergente.');
+ const actualBaseline=baselineHashes(existing,transaction.baseline);
+ for(const name of RELEASE_FILES)if(actualBaseline[name]!==transaction.baselineFilesSha256?.[name])throw Error(`baseline alterada: ${name}`);
  if(stage==='promover'){
   if(current.estavel!==transaction.baseline||current.canario!==opts.sha)throw Error('predecessor mudou antes de promover.');
   return {action:'promover',sha:opts.sha,plan:planRollout({...opts,action:'promover',reason,existing,smoke}),transaction};
@@ -75,8 +105,9 @@ async function main(){
  const checkpoint='reports/producao-transacao.json';
  if(['finalizar','confirmar-recuperacao'].includes(stage)){
   const tx=await json(checkpoint),recovered=stage==='confirmar-recuperacao',s=await json(recovered?'reports/recuperacao-smoke.json':'reports/producao-smoke.json'),sha=recovered?tx.baseline:opts.sha;
-  if(tx.sha!==opts.sha||tx.run!==opts.run||tx.runAttempt!==opts.runAttempt||s.passed!==true||s.mode!=='root'||s.expectedSha!==sha||s.version?.sha!==sha||s.url!==opts.siteUrl||s.run!==opts.run||s.runAttempt!==opts.runAttempt||s.errors?.length!==0)throw Error('Smoke final da raiz sem prova correspondente.');
-  await save(recovered?'reports/producao-recuperacao.json':'reports/producao.json',{schema:1,sha,run:opts.run,runAttempt:opts.runAttempt,zipSha256:recovered?null:tx.zipSha256,state:recovered?'recuperada':'publicada',approval:tx.approval,observedAt:new Date().toISOString()});
+  verifyFinalSmoke(tx,opts,s,{recovered});
+  const recoveredFilesSha256=recovered?await verifyRecoveredRelease(tx):undefined;
+  await save(recovered?'reports/producao-recuperacao.json':'reports/producao.json',{schema:1,sha,sourceSha:tx.sha,actor:tx.actor,run:opts.run,runAttempt:opts.runAttempt,zipSha256:tx.zipSha256,recoveredFilesSha256,state:recovered?'recuperada':'publicada',cause:recovered?'falha ou cancelamento do ciclo de produção; consultar logs da execução':undefined,approval:tx.approval,observedAt:new Date().toISOString()});
   if(process.env.GITHUB_STEP_SUMMARY)await appendFile(process.env.GITHUB_STEP_SUMMARY,`\nProdução ${recovered?'recuperada após falha (job permanece vermelho)':'verificada'}: ${sha}; execução ${opts.run}/${opts.runAttempt}.\n`);return;
  }
  if(!['abrir','promover','recuperar'].includes(stage))throw Error('Estágio desconhecido.');
