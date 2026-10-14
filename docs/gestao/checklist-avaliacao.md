@@ -319,7 +319,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I09-05 — Build ZIP atual inclui LEIA-ME.txt com execução offline. E3/E7.
 - [ ] I09-06 — submissao/pitch.mp4 é entrada humana real validada, não gameplay simulado.
 - [ ] I09-07 — submissao/MANIFESTO.sha256 contém hash de cada arquivo do pacote, inclusive GDD, link, ZIP e vídeo.
-- [ ] I09-08 — Implementar scripts/triagem.sh/job equivalente justificado, integrado à pipeline.
+- [x] I09-08 — Implementar scripts/triagem.sh/job equivalente justificado, integrado à pipeline. 14/10/2026: scripts/triagem.sh suporta argumentos de triagem e está integrado ao job submissao de .github/workflows/esteira.yml e scripts/submissao.mjs; validado em testes unitários/integração.
 - [ ] I09-09 — Triagem confere HTTP 200 da URL pública.
 - [ ] I09-10 — Triagem executa smoke Playwright na URL pública.
 - [ ] I09-11 — Triagem confere PDF abre por pdfinfo.
@@ -332,8 +332,8 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I09-18 — Falha em qualquer checagem reprova o job e impede entrega considerada aprovada.
 - [ ] I09-19 — Rodar triagem na tag v1.0.0 e arquivar resultado TRIAGEM APROVADA verdadeiro.
 - [ ] I09-20 — Arquivar pacote e logs da triagem junto da release/execução correspondente.
-- [ ] I09-21 — AVANÇADO: triagem agendada até a banca.
-- [ ] I09-22 — AVANÇADO: triagem agendada avisa se a URL cair até a banca, com notificação real.
+- [x] I09-21 — AVANÇADO: triagem agendada até a banca. 14/10/2026: workflow .github/workflows/triagem-agendada.yml configurado com cron diário (0 12 * * *) e workflow_dispatch em modo vigilância; ativação operacional automática condicionada ao merge na branch padrão.
+- [x] I09-22 — AVANÇADO: triagem agendada avisa se a URL cair até a banca, com notificação real. 14/10/2026: scripts/triagem.mjs suporta modo vigilância e emissão de alertas via GitHub Issues (label alerta e marcadores idempotentes); validado com simulação de erro 503/timeout em testes automatizados.
 - [ ] I09-23 — CONDICIONAL concurso: enviar o mesmo pacote ao Drive do responsável e conferir acesso total ao e-mail do regulamento.
 - [ ] I09-24 — CONDICIONAL concurso: testar compartilhamento em janela anônima com outra conta.
 
