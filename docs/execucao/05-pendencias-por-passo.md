@@ -255,6 +255,9 @@ Preparação executada em 14/10/2026 por DaviSouza78 com assistência Codex: rot
 - **Ensaio/gravação/G6:** faltam leitura cronometrada, sincronizaçãoSRT, capturas de produção/conclusão/exportação, MP4 e revisão deacessibilidade/direitos. Motivo: entrega humana e produçãoformal ainda ausentes. Dependências: 005/008/013 revisados, gates/HML/PRD e integrantes. Ação: ensaiar, gravar com consentimento, verificar duração<=90s e inventáriofinal; entregar vídeo antes datag035, relatório recebe provas de release/triagem depois. I10-05 exige reconferênciafinal.
 - **Fontes P06/P04 e revisão:** guias externos não disponíveis nestePC. Dependência: originais e revisor Miguel. Ação: disponibilizar e reconciliar fontes; revisar roteiro e PR com CIverde antes demerge. Aceites G0–G2/direitos prévios continuam abertos, não substituídos por este roteiro.
 
+
+Conferência publicada017 — 14/10/2026: 59b35f2/PR#18, autoriaGit/PR e ator do push confirmados pela API como DaviSouza78; CIpush38506934761/CIpr38506968459 SUCCESS. Roteiro/SRT validados estruturalmente:16cues sem sobreposição, máximo39caracteres/linha e14,6caracteres/s;80s e143palavras são planejamento, não leitura cronometrada. Revisão deMiguel solicitada e ainda ausente; gravação e demais entradas humanas acima continuam pendentes.
+
 ## Passo 018
 
 Preparação técnica executada em 14/10/2026, após 017, por DaviSouza78 com assistência Codex. [Contrato/provas](../evidencias/rollout.md): abrir/promover/rollback, migração do preview, sessão/retirada, falhas/storage, imutabilidade, CLI com ator/motivo e integração com publicador/sonda/smoke. Modelo pages/rollout.json tem referênciasnull: não é release implantada.218testes locais e33E2E passaram; cincoE2E novos do carregador também revalidados após relatório desmoke. Nenhum deploy ou ponteiro remoto alterado.
@@ -268,6 +271,9 @@ Preparação técnica executada em 14/10/2026, após 017, por DaviSouza78 com as
 | Fontes externas D04/D05 | Guias originais fora do clone não disponíveis nestePC | Equipe disponibiliza originais para leitura/confronto com contrato; HTMLoriginal/hash e fontes comuns reutilizados sem alegar acesso aos guias |
 
 Canário percentual é condicional não aplicável à estratégia escolhida: não houve distribuição probabilística nem marcação falsa desses checks. As pendências anteriores de011/014/015/016/G0–G4 continuam; este registro não encerra obrigações futuras019/022 ou revisão humana.
+
+
+Conferência publicada018 — 14/10/2026: mesmo59b35f2/PR#18 e duasCIs SUCCESS. Pacote real164arquivos verificado porSHA/run/tentativa;218testes/33E2E semfalhas/erros/ignorados. EnsaioCLI local preservou57arquivos, sete arquivos iguais aoZIP, estável/anterior conservadas e candidata0; semcommit/push/deploy doensaio. Prova em docs/evidencias/validacoes-017-018.json. CI resolvida para implementação; revisão e linhas operacionais acima permanecem abertas. Commit subsequente somente registra essas provas e também requerCI verde noHEAD final.
 
 ## Passo 019
 
