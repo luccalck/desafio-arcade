@@ -1,0 +1,61 @@
+name: monitoramento-jogo
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: observabilidade-sondas
+  cancel-in-progress: false
+jobs:
+  sondar:
+    if: github.ref == 'refs/heads/main' && vars.MONITOR_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+      - name: Recuperar exclusivamente a branch de dados
+        shell: bash
+        run: |
+          repo_url="https://github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote "$repo_url" refs/heads/observabilidade | grep -q refs/heads/observabilidade; then
+            git clone --branch observabilidade --single-branch "$repo_url" dados
+          else
+            mkdir dados
+            git -C dados init -b observabilidade
+            git -C dados remote add origin "$repo_url"
+          fi
+      - name: Sondar alvos e acumular dados reais
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          FORMAL_HML_ENABLED: ${{ vars.FORMAL_HML_ENABLED }}
+          FORMAL_PRD_ENABLED: ${{ vars.FORMAL_PRD_ENABLED }}
+        run: node scripts/sondar.mjs dados/status/sondas.csv reports/sondas.json
+      - name: Persistir amostras sem disparar Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          mkdir -p "dados/status/runs/${GITHUB_RUN_ID}"
+          cp reports/sondas.json "dados/status/runs/${GITHUB_RUN_ID}/${GITHUB_RUN_ATTEMPT}.json"
+          git -C dados config user.name 'github-actions[bot]'
+          git -C dados config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C dados add status/sondas.csv status/runs
+          git -C dados commit -m "chore: registrar sondas ${GITHUB_RUN_ID}/${GITHUB_RUN_ATTEMPT}"
+          git -C dados -c 'credential.helper=!f() { echo username=x-access-token; echo password="$GH_TOKEN"; }; f' push origin observabilidade
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: sondas-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            reports/sondas.json
+            dados/status/sondas.csv
+          if-no-files-found: warn

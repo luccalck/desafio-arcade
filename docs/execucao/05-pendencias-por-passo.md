@@ -137,11 +137,27 @@ Nenhum novo check geral fechado;115marcados/297abertos. Publicação010:c56df79/
 
 ## Passo 011
 
-Execução ainda não realizada. Encaminhamento003: implementar/executar deploy-hml/environmenthomologacao, migração coordenada Pages para origemgh-pages e regressão/HTTP/versão após propagação. [MD011](<Davi Paes/011-012-hml-sondas.md#etapa-011>). I07-01/KIT-12/ARQ-07/I03-15 dependem dessas provas, não de Settings ou plano.
+Implementação local preparada por DaviSouza78 em13/10/2026: publicadorHML sem recompilação/promoção, preservação de produção/releases/status e integração deploy-hml/Pages/regressão006. [Evidência](../evidencias/deploy-hml.md), [MD011](<Davi Paes/011-012-hml-sondas.md#etapa-011>). Não houve deploy formal ou aceiteG3.
+
+- [ ] Revisão de Miguel/miguelsenai2024 e CI do HEAD real; integrar dependências revisadas em main. Candidata e28fb1c contém010/consolidação; main permanece bootstrap. Não habilitar FORMAL_HML_ENABLED antes desses aceites.
+- [ ] G0/G1/G2 e UX humana; recebimento/compreensão pessoal do repasse010 ainda não registrado pelaIA. RAs já disponíveis emSQUAD não serão solicitados de novo.
+- [ ] Executar deploy-hml da main aprovada, environmenthomologacao, mesmo pacoteSHA/run/tentativa, HTTP/version/E2E/ZIPoffline e recuperação. ARQ-07/I03-15/16/I04-08/09/I07-04/KIT-15/G3 aguardam essas provas.
+- [ ] I07-01/KIT-12: origemliteralgh-pages ou equivalênciaPagesActions validada pelo professor; transição coordenada/configuração real ainda não executadas. BotGITHUB_TOKEN precisa de deployPages explícito; Settings isolado não basta.
+- [ ] I03-21/25: obter horário real do recebimento do push e medir atéHML/E2E. Relatório prepared usa createdAt do run como proxy, mantém pushToHmlSeconds=null; não prova prazo.
+- [ ] Originais R04/D05/S03 externos ao clone não disponíveis; contratos preservados noMD/006/007 usados, sem alegar leitura desses originais. HTML deDownloads localizado/hash confere; nenhum preenchimento/declaração/envio realizado.
+
+Autenticação da integraçãoGitHub confirmouDaviSouza78 e permissão push=true em nova consulta; porém create-tree retornou403 Resource not accessible by integration. Não houve publicação remota nessa tentativa. CLI autenticado posteriormente: ghapiuser confirmouDaviSouza78/id266862169, push=true, mainprotegida eSITE_URLreal; publicação segue pelo Git da própria conta. Não solicitar/expor token, nem usar credencial deLucca. Commit local usa nome/e-mail próprios conferidos; publicação/CI serão registrados após resultados reais.
 
 ## Passo 012
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Preparação independente executada após contrato011: monitor.yml/sondar.mjs/testes/CSVJSON, mantendo011formal como entrada pendente. [Evidência e contrato016/020](../evidencias/sondas.md). Consultas locais do preview tiveramHTTP200/versão0.6.0/SHA71933bf e horários reais; não são produçãoformal, workflow_dispatch ou dados já publicados naobservabilidade.
+
+- [ ] Revisão humanaMiguel/CI/integrar emmain; restaurar main como padrão após integração. Schedule roda somente na default e pode atrasar; documentação preserva esse limite.
+- [ ] Ativar MONITOR_ENABLED somente emG4, executar workflow_dispatch real e conferir observabilidade/status/sondas.csv/status/runs por run/tentativa, sem dispararPages. Inicialização é feita pela pipeline; não inserir fixtures como dados reais.
+- [ ] I08-02/03: sondar PRD/HML formais após011/019; até lá JSON diferenciaformalHml/formalPrd=false. I08-04–08/KIT-06/25/27 exigem amostras/persistência operacional reais, além dos testes locais.
+- [ ] I08-01 permanece pendente de publicação do arquivo versionado; cron/tests/actionlint preparados. Documentação de atraso não substitui relatório técnico finalI08-30.
+- [ ] Integrar consumidores016/020 respeitando codigo/tempo desconhecidos, versao desconhecida e erroJSON; compatibilizar esquema do ponteiro se018alterar rollout. Não executar alertas/painel/DORA nesta etapa.
+- [ ] G2/G4/aceites coletivos continuam abertos; 012não aceita dependência011 por mera implementação local.
 
 ## Passo 013
 

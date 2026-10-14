@@ -142,3 +142,7 @@ Originais preservados. Repositório/arquivo principal único; .contexto e acompa
 ## Encerramento técnico010 — 13/10/2026
 
 [ZIP offline/integridade](../evidencias/offline-integridade.md):clone limpo184testes/18E2E, PDF18p, reprodutibilidade e bloqueios locais comprovados. Nenhum novo check geral;115marcados/297abertos. [PassagemLucca→Davi](06-passagem-lucca-davi.md) preparada; G0/G1/G2 e ações humanas pendentes.
+
+## Preparação011–012 de Davi — 13/10/2026
+
+[PublicadorHML](../evidencias/deploy-hml.md) e [sondas/contrato](../evidencias/sondas.md) implementados na branch doMD1, respeitando011→012. Publicação formal/medição real/Pages/observabilidade/aceites permanecem no [registro único](05-pendencias-por-passo.md). Nenhum MD013–014 executado; revisão humana deMiguel obrigatória antes do merge.

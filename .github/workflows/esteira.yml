@@ -272,6 +272,7 @@ jobs:
       group: pages-publicacao
       cancel-in-progress: false
     permissions:
+      actions: read
       contents: write
       pages: write
       id-token: write
@@ -293,6 +294,9 @@ jobs:
           SOURCE_SHA: ${{ github.sha }}
           SOURCE_RUN: ${{ github.run_id }}
         run: node scripts/ci-bundle.mjs verify pacote-ci - "$SOURCE_SHA" "$SOURCE_RUN"
+      - name: Recuperar árvore vigente sem alterar produção
+        shell: bash
+        run: git clone --branch gh-pages --single-branch "https://github.com/${GITHUB_REPOSITORY}.git" pages-tree
       - name: Consumir contrato do passo011
         env:
           GH_TOKEN: ${{ github.token }}
@@ -303,6 +307,42 @@ jobs:
         run: |
           test -f scripts/publicar.sh || { echo '::error::Script do passo011 ainda ausente. Deploy bloqueado.'; exit 1; }
           bash scripts/publicar.sh --bundle pacote-ci --sha "$SOURCE_SHA" --run "$SOURCE_RUN" --site-url "$SITE_URL"
+      - name: Gravar somente a HML na árvore gh-pages pela pipeline
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          rm -rf pages-tree/hml
+          cp -a pages-site/hml pages-tree/hml
+          cp pages-site/.nojekyll pages-tree/.nojekyll
+          git -C pages-tree config user.name 'github-actions[bot]'
+          git -C pages-tree config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C pages-tree add hml .nojekyll
+          if ! git -C pages-tree diff --cached --quiet; then
+            git -C pages-tree commit -m "deploy: homologar ${GITHUB_SHA}"
+            git -C pages-tree -c 'credential.helper=!f() { echo username=x-access-token; echo password="$GH_TOKEN"; }; f' push origin gh-pages
+          fi
+      # GITHUB_TOKEN não dispara Pages por branch. Publicar explicitamente a
+      # mesma árvore via Actions; fonte literal gh-pages/equivalência requer aceite.
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: pages-site
+      - name: Publicar árvore preservada no Pages
+        id: hml-pages
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+      - name: Esperar propagação e executar regressão completa HML
+        env:
+          BASE_URL: ${{ vars.SITE_URL }}/hml/
+          EXPECTED_SHA: ${{ github.sha }}
+        run: npx playwright test --config playwright.public.config.mjs --project=hml-desktop --project=hml-toque
+      - name: Registrar duração observada sem inventar horário de push
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}" --jq '{sha: .head_sha, run: .id, createdAt: .created_at, event: .event}' > reports/hml-run.json
+          node --input-type=module -e 'import {readFile,writeFile} from "node:fs/promises";const r=JSON.parse(await readFile("reports/hml-run.json","utf8"));r.e2eFinishedAt=new Date().toISOString();r.runToHmlSeconds=(Date.parse(r.e2eFinishedAt)-Date.parse(r.createdAt))/1000;r.pushToHmlSeconds=null;r.limitSeconds=900;r.note="createdAt do run é proxy; horário real de recebimento do push ainda deve ser comprovado.";await writeFile("reports/hml-run.json",JSON.stringify(r,null,2));console.log(JSON.stringify(r));if(r.runToHmlSeconds>900)process.exitCode=1;'
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
         if: always()
         with:

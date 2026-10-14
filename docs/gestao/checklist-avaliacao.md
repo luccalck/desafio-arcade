@@ -598,3 +598,5 @@ Não adicionar metas de atividades antigas (Jenkins, Spring Boot, AWS, Docker/Ku
 Evidência009/I02-15 — 13/10/2026: [Stitch e UX](../evidencias/stitch-ux.md), seis telas reais exportadas desktop/celular e manifesto SHA-256; referencias de IA distintas de capturas. G1/revisão humana permanecem abertos.
 
 Revalidação010 — 13/10/2026: [offline/integridade](../evidencias/offline-integridade.md), clonec56df79 limpo com184testes/18E2E, ZIP28.581bytes/checksum/7arquivos, campanha e HTMLbaixado semrede, PDF18p e reprodutibilidade. I06-01–06/13/14/16 mantidos; G2 continua aberto pela sequência/aceites humanos, sem aceitar INT-06final.
+
+Preparação011–012 — 13/10/2026, DaviSouza78: [publicadorHML](../evidencias/deploy-hml.md) preserva produção/releases/status e consome pacote validado; [sondas](../evidencias/sondas.md) distinguem HTTP/rede/timeout/versão e guardamCSV/JSON. Testes locais e consultas ao preview são provas técnicas; não houve HML/PRDformal/aceiteG3/G4/monitoragendado. Checks formais continuam abertos; publicação/CI doHEAD serão conferidas no controle e no registro único.
