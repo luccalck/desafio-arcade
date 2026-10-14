@@ -122,12 +122,12 @@ Não há mínimo textual de “três commits na mesma área”. A unidade da exi
 - [x] I02-06 — Wireframes ou telas de menu, HUD e fim existentes. E4: desenhos próprios.
 - [x] I02-07 — Seção Esteira com diagrama e link real do repositório. E4.
 - [x] I02-08 — docs/gdd.md versionado e atualizado na branch candidata. E4.
-- [ ] I02-09 — GDD efetivamente revisado e aprovado por PR por outro integrante.
+- [ ] I02-09 — GDD efetivamente revisado e aprovado por PR por outro integrante. Revisão técnica local025 e PDF em `docs/evidencias/gdd-final.md`; aprovação cruzada pendente.
 - [x] I02-10 — Estágio da pipeline converte Markdown em GDD.pdf com ferramenta equivalente documentada. E2/E4.
 - [x] I02-11 — PDF arquivado como artefato do build. E2.
 - [x] I02-12 — PDF abre sem erro: pdfinfo passou e páginas foram inspecionadas. E3/E4.
 - [ ] I02-13 — Versão e data do GDD coerentes com a tag de release final. Não existe tag final.
-- [ ] I02-14 — AVANÇADO: GDD vivo, atualizado por PR revisado a cada mudança de mecânica.
+- [ ] I02-14 — AVANÇADO: GDD vivo, atualizado por PR revisado a cada mudança de mecânica. Revisão025 proposta sem mudança de mecânica; PR/aceite humano e mudanças futuras precisam de prova.
 - [x] I02-15 — AVANÇADO: telas do Stitch comprovadas. Desenhos próprios cumprem a alternativa mínima; não declarar que foram feitos no Stitch. Se propor equivalência, validar com professor.
 
 ### Complemento obrigatório do modelo GDD fornecido
@@ -146,7 +146,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] GDD-10 — Arte/referências/concept art com origem e direitos. E4/E6.
 - [x] GDD-11 — IA/terceiros, ferramentas, usos, componentes, licenças e direitos descritos. E4/E6.
 - [x] GDD-12 — Ideias adicionais/roadmap separados do implementado. E4.
-- [ ] GDD-13 — Identificação completa: squad, nomes, RAs e papéis reais.
+- [ ] GDD-13 — Identificação completa: squad, nomes, RAs e papéis reais. Na revisão025, RA de Lucca segue vazio; não preencher sem dado confirmado.
 - [ ] GDD-14 — Versão/data coerentes com release, links finais reais e acessíveis.
 - [ ] GDD-15 — Declaração de originalidade/direitos conferida pelos quatro, sem assinatura/CPF públicos; eventual versão privada conforme orientação.
 - [ ] GDD-16 — Revisão humana de texto, tabelas, declarações, mapas e legibilidade da versão final do PDF.
@@ -267,12 +267,12 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I07-17 — Rollback restaura estavel para anterior e retira canário defeituoso, sem recompilar. Hashes/HTTP da baseline testados localmente no022; falta prova no Pages.
 - [ ] I07-18 — rollback.yml com workflow_dispatch para recuperação manual pela pipeline. Código e testes locais da etapa023 em `docs/evidencias/rollback-manual.md`; dispatch protegido, recuperação/CI/revisão reais ainda pendentes.
 - [ ] I07-19 — Histórico gh-pages registra mudanças em rollout.json, quem disparou e por quê.
-- [ ] I07-20 — Ensaio com versão defeituosa proposital, controlado e rastreável.
-- [ ] I07-21 — Detecção da falha por alerta ou smoke, com evidência real.
-- [ ] I07-22 — Cronometrar recuperação <5 minutos, incluindo propagação Pages.
-- [ ] I07-23 — Demonstrar rollback sem a URL sair do ar.
+- [ ] I07-20 — Ensaio com versão defeituosa proposital, controlado e rastreável. Preflight/roteiro em `docs/evidencias/ensaio-recuperacao.md`; sem execução formal.
+- [ ] I07-21 — Detecção da falha por alerta ou smoke, com evidência real. Testes locais não substituem detecção operacional026.
+- [ ] I07-22 — Cronometrar recuperação <5 minutos, incluindo propagação Pages. Nenhum intervalo operacional medido026.
+- [ ] I07-23 — Demonstrar rollback sem a URL sair do ar. HTTP200 de preview em preflight não comprova continuidade durante rollback026.
 - [ ] I07-24 — Executar a demonstração cronometrada pedida pelo professor na banca.
-- [ ] I07-25 — AVANÇADO: comprovar rollback automático e recuperação <5 minutos na banca, sem indisponibilidade (I07-16/22/23/24).
+- [ ] I07-25 — AVANÇADO: comprovar rollback automático e recuperação <5 minutos na banca, sem indisponibilidade (I07-16/22/23/24). Ensaio/banca reais pendentes026.
 
 ## INT-08: Monitoramento, alertas e DORA · peso 10% de A
 
@@ -306,7 +306,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I08-28 — Tomar decisão de melhoria a partir dos dados reais.
 - [ ] I08-29 — Medir/documentar efeito da melhoria, sem fabricar ganho ou quantidade mínima de execuções.
 - [ ] I08-30 — Relatório registra possibilidade de atraso dos schedules do Actions em horários de pico. Limite documentado em `docs/relatorio.md` e `docs/evidencias/dora.md`; horários efetivos/relatório final ainda pendentes.
-- [ ] I08-31 — AVANÇADO: alerta realmente disparado e tratado, com histórico e recuperação.
+- [ ] I08-31 — AVANÇADO: alerta realmente disparado e tratado, com histórico e recuperação. Monitor/Issue/recuperação formais pendentes026.
 - [ ] I08-32 — AVANÇADO: melhoria orientada por métrica com resultado verificável.
 - [ ] I08-33 — CONDICIONAL: contagem anônima de partidas/fases, se adotada; sem identificar jogador, finalidade documentada.
 
@@ -399,7 +399,7 @@ Datas abaixo são as datas do enunciado original, não comprovação de que houv
 
 - [ ] CR-01 — Conferir marcos de 02/10: leitura do regulamento, formação, escolha do tema, SQUAD e repositório, primeiro PR com esqueleto.
 - [ ] CR-02 — Conferir prévia formativa de 05/10: v0.1.0, INT-01/02/03/06 e tela jogável na HML pela pipeline; guardar devolutiva real se houver. A prévia não compõe a nota.
-- [ ] CR-03 — Conferir atividades previstas para 06–08/10: INT-04/05/07/08 funcionando, ensaio cronometrado, gravação e triagem aprovada.
+- [ ] CR-03 — Conferir atividades previstas para 06–08/10: INT-04/05/07/08 funcionando, ensaio cronometrado, gravação e triagem aprovada. Sem cronologia/ensaio/gravação/triagem completos; não retroagir prova na etapa026.
 - [ ] CR-04 — Conferir marco de entrega: tag v1.0.0, pacote, relatório técnico e ficha TXT enviados ao AVA; horário do início da aula não é inferido do script.
 - [ ] CR-05 — Confirmar recibo/acesso dos anexos no AVA e URLs para o professor, sem declarar envio que não ocorreu.
 - [ ] CR-06 — Ensaiar apresentação de dez minutos com os quatro.
