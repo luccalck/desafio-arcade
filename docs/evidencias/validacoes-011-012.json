@@ -69,5 +69,39 @@
   "pushToHmlSeconds": null,
   "workflowDispatchExecuted": false,
   "observabilidadePublished": false,
-  "reviewHuman": null
+  "reviewHuman": null,
+  "remote": {
+    "account": "DaviSouza78",
+    "permission": "WRITE",
+    "commit": "b3d5353b2110abf7703954ab919645943739a813",
+    "pr": 15,
+    "base": "docs/ficha-entrega-dados-equipe",
+    "pushRun": {
+      "id": 38501135262,
+      "conclusion": "success"
+    },
+    "pullRequestRun": {
+      "id": 38501139202,
+      "conclusion": "success"
+    },
+    "tests": 192,
+    "e2e": 18,
+    "bundleFiles": 107,
+    "zipBytes": 28732,
+    "zipSha256": "90de3337d11844593e5a0e473710ff21b992c0876a8a659ca3079c4f5f8d1900",
+    "localHmlFromCi": {
+      "preservedFiles": 52,
+      "hmlFiles": 7,
+      "rebuilt": false,
+      "published": false
+    },
+    "reviewRequested": "miguelsenai2024",
+    "reviewApproved": false,
+    "dispatch": {
+      "executed": false,
+      "status": 404,
+      "reason": "monitor.yml ainda ausente na branch padrao"
+    },
+    "formalDeployment": false
+  }
 }

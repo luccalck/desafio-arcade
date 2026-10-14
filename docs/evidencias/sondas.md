@@ -19,3 +19,9 @@ Schedule opera apenas na branch padrão e pode atrasar/ser descartado sob carga:
 ## Pendências
 
 Executar workflow_dispatch real autorizado, conferir persistência na observabilidade e ausência de deploy; acumular amostras HML/PRD formais; obter revisão deMiguel/CI. A branch de dados será criada pela pipeline, sem inserir fixtures/manual de produção. I08-01/02–08,KIT-06/25/27 seguem abertos enquanto publicação/execução remota não forem comprovadas. I08-30 tem esta documentação do limite, sem alegar relatório técnico final. Nenhuma etapa013 ou alerta016/painel020 foi executada.
+
+## Publicação e limite operacional — 13/10/2026
+
+monitor.yml e as sondas estão versionados no commit b3d5353b2110abf7703954ab919645943739a813, PR#15. [CI push 38501135262](https://github.com/luccalck/desafio-arcade/actions/runs/38501135262) e [CI PR 38501139202](https://github.com/luccalck/desafio-arcade/actions/runs/38501139202): SUCCESS; seis testes de sondas e dois de publicação compõem os 192 testes. Revisão solicitada a miguelsenai2024, sem aprovação registrada. I08-01 comprova somente arquivo versionado e cron; ativação/execução/persistência continuam pendentes.
+
+A tentativa real de workflow_dispatch feita antes da passagem de controle entre os chats retornou 404; reconferência GET actions/workflows/monitor.yml também retornou 404. O workflow ainda não está na branch padrão. Não há run do monitor ou branch observabilidade criada por esta execução. Para resolver: integrar via revisão/CI, restaurar main como padrão e habilitar MONITOR_ENABLED apenas com as entradas de G4; então disparar o workflow, conferir CSV/JSON na branch de dados e ausência de deploy. Não mudamos a branch padrão nem contornamos esse gate. HML formal depende de011; PRD formal depende de019.

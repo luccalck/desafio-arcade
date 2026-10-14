@@ -276,7 +276,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 
 ## INT-08: Monitoramento, alertas e DORA · peso 10% de A
 
-- [ ] I08-01 — monitor.yml versionado com schedule a cada quinze minutos.
+- [x] I08-01 — monitor.yml versionado com schedule a cada quinze minutos. 13/10/2026, commit b3d5353/PR#15 e CIs38501135262/38501139202 SUCCESS; arquivo/cron comprovados, monitor ainda inativo e execução/persistência pendentes.
 - [ ] I08-02 — Sondar produção formal.
 - [ ] I08-03 — Sondar homologação formal.
 - [ ] I08-04 — Registrar código HTTP de cada alvo.

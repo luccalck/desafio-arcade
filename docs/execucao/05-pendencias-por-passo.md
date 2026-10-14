@@ -148,6 +148,19 @@ Implementação local preparada por DaviSouza78 em13/10/2026: publicadorHML sem 
 
 Autenticação da integraçãoGitHub confirmouDaviSouza78 e permissão push=true em nova consulta; porém create-tree retornou403 Resource not accessible by integration. Não houve publicação remota nessa tentativa. CLI autenticado posteriormente: ghapiuser confirmouDaviSouza78/id266862169, push=true, mainprotegida eSITE_URLreal; publicação segue pelo Git da própria conta. Não solicitar/expor token, nem usar credencial deLucca. Commit local usa nome/e-mail próprios conferidos; publicação/CI serão registrados após resultados reais.
 
+### Conferência publicada do MD1 — 13/10/2026
+
+Commit b3d5353b2110abf7703954ab919645943739a813, PR#15 pela própria conta DaviSouza78. [CI push 38501135262](https://github.com/luccalck/desafio-arcade/actions/runs/38501135262) e [CI PR 38501139202](https://github.com/luccalck/desafio-arcade/actions/runs/38501139202): SUCCESS. Login CLI/WRITE resolvidos; revisão solicitada a Miguel, ainda sem aprovação. O erro403 do conector permanece como histórico, superado para transporte pelo Git autenticado. Pacote real validado e ensaio local sem recompilar: 52 arquivos preservados e sete arquivos HML iguais ao ZIP.
+
+| O que falta | Motivo e dependência | Ação necessária / responsável |
+|---|---|---|
+| Aprovação e integração em main | Dependências003/006/007/010 e candidata ainda fora da main protegida; CI não substitui revisão | Miguel revisa PR#15; responsáveis integram a cadeia revisada, ajustam base doPR e restauram main como padrão |
+| G0/G1/G2, recebimento do repasse e UX humana | Aceites coletivos não podem ser concedidos pela IA | Davi/equipe registram compreensão, revisão e aceites reais |
+| HML formal, HTTP/SHA/E2E/ZIP e G3 | Falta main aprovada; FORMAL_HML_ENABLED não habilitada | Após entradas humanas, habilitar o job e publicar somente pela pipeline; arquivar artefato/run e regressão completa |
+| Origem Pages/equivalência e recuperação | Pages atual usa Actions; configuração de homologacao não prova execução aceita | Coordenar com Plataforma e professor; validar origem/equivalência, OIDC/environment e preservação/recuperação em execução real |
+| Tempo real push até HML <=15min | Não houve deploy formal; createdAt do run é apenas proxy | Obter horário real do evento push e medir até E2E concluído; manter pushToHmlSeconds=null sem essa prova |
+| Originais externos R04/D05/S03 | Caminhos citados não existem neste computador | Equipe disponibiliza originais para leitura/confronto; contratos preservados no MD006/007 não substituem acesso alegado |
+
 ## Passo 012
 
 Preparação independente executada após contrato011: monitor.yml/sondar.mjs/testes/CSVJSON, mantendo011formal como entrada pendente. [Evidência e contrato016/020](../evidencias/sondas.md). Consultas locais do preview tiveramHTTP200/versão0.6.0/SHA71933bf e horários reais; não são produçãoformal, workflow_dispatch ou dados já publicados naobservabilidade.
@@ -155,9 +168,22 @@ Preparação independente executada após contrato011: monitor.yml/sondar.mjs/te
 - [ ] Revisão humanaMiguel/CI/integrar emmain; restaurar main como padrão após integração. Schedule roda somente na default e pode atrasar; documentação preserva esse limite.
 - [ ] Ativar MONITOR_ENABLED somente emG4, executar workflow_dispatch real e conferir observabilidade/status/sondas.csv/status/runs por run/tentativa, sem dispararPages. Inicialização é feita pela pipeline; não inserir fixtures como dados reais.
 - [ ] I08-02/03: sondar PRD/HML formais após011/019; até lá JSON diferenciaformalHml/formalPrd=false. I08-04–08/KIT-06/25/27 exigem amostras/persistência operacional reais, além dos testes locais.
-- [ ] I08-01 permanece pendente de publicação do arquivo versionado; cron/tests/actionlint preparados. Documentação de atraso não substitui relatório técnico finalI08-30.
+- [x] I08-01: arquivo/cron publicados no commit b3d5353 e PR#15, com CI verde. Antes da publicação permanecia pendente; este fechamento é estrutural e não comprova ativação. Documentação de atraso não substitui relatório técnico finalI08-30.
 - [ ] Integrar consumidores016/020 respeitando codigo/tempo desconhecidos, versao desconhecida e erroJSON; compatibilizar esquema do ponteiro se018alterar rollout. Não executar alertas/painel/DORA nesta etapa.
 - [ ] G2/G4/aceites coletivos continuam abertos; 012não aceita dependência011 por mera implementação local.
+
+### Conferência publicada do MD1 — 13/10/2026
+
+Workflow e cron versionados no commit b3d5353b2110abf7703954ab919645943739a813; I08-01 comprovado por esse escopo, sem afirmar monitor ativo. [CI push 38501135262](https://github.com/luccalck/desafio-arcade/actions/runs/38501135262) e [CI PR 38501139202](https://github.com/luccalck/desafio-arcade/actions/runs/38501139202): SUCCESS. Revisão humana solicitada e não aprovada.
+
+| O que falta | Motivo e dependência | Ação necessária / responsável |
+|---|---|---|
+| Dispatch e schedule efetivos | Dispatch retornou404: monitor.yml ausente na branch padrão; gate exige main/MONITOR_ENABLED | Equipe integra após revisão, restaura main padrão; Davi ativa somente com entradas deG4 e executa workflow_dispatch |
+| observabilidade/status/sondas.csv e JSON por run | Sem execução remota do monitor, não há persistência operacional comprovada | A pipeline inicializa/escreve a branch; conferir amostras reais e garantir que nenhuma sonda dispara Pages |
+| Sondar HML/PRD formais (I08-02/03) | 011 não publicado formalmente; produção é entrada019; URLs atuais são preview | Após011/019, executar/arquivar amostras com SHA/versão e flags formais corretas, sem renomear preview como produção |
+| I08-04–08/KIT-06/25/27 e G4 | Testes locais e CI não comprovam histórico de monitor executado | Validar códigos/latências/versões, acumulação deCSV e isolamento da branch por runs reais |
+| Consumo por016/020 e compatibilidade018 | Alertas/painel/rollout formal pertencem a etapas posteriores | Responsáveis dessas etapas consomem JSON/CSV, respeitam erro/desconhecido e validam esquema do ponteiro; esteMD não executa essas etapas |
+| Relatório final do atraso do cron (I08-30) | Limite documentado aqui, mas relatório técnico final ainda futuro | Preservar aviso e registrar horários efetivos no relatório final, sem assumir frequência exata de15min |
 
 ## Passo 013
 
