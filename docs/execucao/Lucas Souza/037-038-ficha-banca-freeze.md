@@ -178,6 +178,10 @@ Ao terminar, informe objetivamente: passo/INT/checks realmente fechados, arquivo
 
 ---
 
+### Respostas persistentes para oHTML
+
+Antes da etapa037, ler e atualizar [docs/gestao/ficha-entrega.md](../../gestao/ficha-entrega.md). O arquivo reúne os49campos do formulário e as declarações/validadores reais doJavaScript, com dados já informados e espaços vazios para o que falta. Conferir nomes/RAs/papéis comSQUAD, atualizar links e evidências finais e somente então copiar tudo para oHTML original em uma rodada. Não gerar a ficha como se o rascunho ou uma nota estimada10 comprovassem entrega; manter oMD atualizado e registrarTXT/recibo somente quando existirem.
+
 ## Etapa 038
 
 ### Conferir URLs finais e congelamento de código

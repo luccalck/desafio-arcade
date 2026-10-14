@@ -16,7 +16,7 @@ Davi, Miguel e Lucas têm cinco MDs cada, mas este arquivo conserva as seções0
 
 Estado: preparação executada; identificação e aceites incompletos. [Evidências](../evidencias/equipe.md).
 
-- [ ] **RAs dos quatro integrantes:** adiados por orientação de Lucca. Quando fornecidos, completar SQUAD.md e ficha; reconferir SQ-02, I01-12 e FIC-03–06. Não preencher valores provisórios fictícios.
+- [ ] **RA de Lucca:** permanece adiado/em branco. Em13/10 recebemos nomes completos e RAs de Davi(26180842), Miguel(26179933) e Lucas(26179875), registrados emSQUAD/GDD e [ficha persistente](../gestao/ficha-entrega.md). Falta o RA deLucca e a conferência/preenchimento final doHTML; SQ-02/I01-12/FIC-03–06 não são aceitos automaticamente por registrar dados noMD.
 - [ ] **Acesso dos colegas ao repositório:** Lucca fará posteriormente; conferir no passo003 convites aceitos e permissões reais. Contas existentes não comprovam acesso.
 - [ ] **Histórico anterior registrado em 12/10:** precisamos anexar a referência ao GitHub principal anterior e registros reais do início em 03/10/2026 e da continuidade do trabalho. Registramos esse histórico no README; a comprovação continua pendente.
 - [ ] **Marcos de 02/10 e 05/10 (SQ-04, CR-01/02):** verificar se existem registros externos reais da formação, escolha/registro do squad e prévia jogável. Git consultado começa em07/10 e não possui tag/release v0.1.0. Se houver evidência fora do Git, registrar sua origem/data; se não houver, manter sem comprovação. Não fabricar ou retroagir commits/tags. É conferência histórica, não execução de duas novas tarefas com datas antigas.
@@ -254,3 +254,7 @@ Não executado. Preencher as pendências efetivamente encontradas ao encerrar es
 ## Passo 040
 
 Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+
+## Respostas persistentes da ficha — 13/10/2026
+
+[MDcompleto para preencher oHTML no fechamento](../gestao/ficha-entrega.md):49campos de entrada, quatro declarações e sete validadores conferidos noJavaScript original. Dados desconhecidos em branco; notas10 são somente estimativas solicitadas. Não houve geraçãoTXT, preenchimento final doHTML, envioAVA ou aceite de declaração. RAdeLucca e evidências finais permanecem pendentes; nenhum check fechado por esta preparação.

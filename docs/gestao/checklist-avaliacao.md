@@ -490,6 +490,8 @@ Esta tabela transcreve os três níveis como critérios de conferência. Os esta
 
 ## 10 — Ficha TXT: campos e validações reais do JavaScript
 
+[Respostas persistentes da ficha](ficha-entrega.md), atualizadas em13/10 com nomes completos e RAs de três integrantes; RAdeLucca em branco. Registrar dados nesteMD não equivale a preencher/entregar oHTML.
+
 Preencher juntos no HTML original, com declarações verdadeiras. Validação de formulário não verifica automaticamente a existência/qualidade das evidências. Não marcar os dez INT só para liberar o botão.
 
 - [x] FIC-01 — Aura67 preenchido no rascunho do HTML original/Live Server em12/10/2026; [registro](../evidencias/equipe.md). Reconferir ao gerar ficha final.

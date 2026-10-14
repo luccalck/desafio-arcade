@@ -163,3 +163,7 @@ Um agente de IA fez Reader Testing somente leitura conforme skilldoc-coauthoring
 ZIPoriginalStitch publicado como referência de design, com hash idêntico ao registro009 e scan sem achados; não foi modificado/importado ao jogo. GitHub permite consultar os exports, não editar a contaGoogle. Autoria da reorganização éLucca/IA, não execução ou autoria dos outros três. Nenhum check ou gate novo fechado; revisão humana/direitos/participação e demais evidências futuras permanecem abertos.
 
 Publicação da consolidação:8a3b7bb/PR#13draft sobre010, CIpush38448600323/PR38448755452verdes; pastas5MDs eZIPoriginal conferidos pelaAPI remota. [Validações estruturais e publicação](docs/execucao/09-consolidacao-validacoes.json). Nenhum merge/deploy/revisão humana ou check futuro aceito.
+
+## Respostas persistentes para a ficha — 13/10/2026
+
+Lucca forneceu nomes completos/RAs de DaviMarcondesPaesdeSouza26180842, MiguelOliveiradeAlmeida26179933 eLucasSouzadaSilva26179875 e pediuMDcompleto das respostas doHTML, deixando desconhecidos em branco. Codex conferiu barra superior/seção10/JavaScript, preparou docs/gestao/ficha-entrega.md com49controles/declarações/validadores, atualizouSQUAD/GDD e encaminhou ao037. RAdeLucca não inventado; autoavaliações10 são estimativas por solicitação anterior, não aceite. Nenhum preenchimento final/geraçãoTXT/envioAVA/declaração humana/nota oficial foi simulado. Originais preservados; nomes nas pastas de execução seguem aliases históricos.
