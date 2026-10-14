@@ -10,7 +10,7 @@ it('SQUAD ignora cabeçalho, exige quatro linhas completas e recusa RA vazio/nã
  expect(parseSquad(validSquad)).toHaveLength(4);expect(()=>parseSquad(validSquad.replace('123456',''))).toThrow(/vazio/);expect(()=>parseSquad(validSquad.replace('123456','ra-sei'))).toThrow(/dígitos/);expect(()=>parseSquad(validSquad.split('\n').slice(0,5).join('\n'))).toThrow(/exatamente quatro/);
 });
 it('prazo exige ISO com fuso e reprova somente depois do instante configurado',()=>{
- expect(()=>parseDeadline('09/10/2026 19:00')).toThrow(/ISO/);expect(()=>validateDeadline('2026-10-14T12:00:00-03:00',new Date('2026-10-14T15:00:01Z'))).toThrow(/encerrado/);expect(validateDeadline('2026-10-14T12:00:00-03:00',new Date('2026-10-14T15:00:00Z'))).toBe(true);
+ expect(()=>parseDeadline('09/10/2026 19:00')).toThrow(/ISO/);expect(()=>parseDeadline('2026-02-31T19:00:00Z')).toThrow(/calendário inválida/);expect(()=>validateDeadline('2026-10-14T12:00:00-03:00',new Date('2026-10-14T15:00:01Z'))).toThrow(/encerrado/);expect(validateDeadline('2026-10-14T12:00:00-03:00',new Date('2026-10-14T15:00:00Z'))).toBe(true);
 });
 it('GDD exige as quatro seções e rejeita PDF convertido sem seção',()=>{
  expect(checkGddSections('Premissa e problema endereçado\nHigh concept\nGênero e plataforma\nMecânicas-core')).toBe(true);expect(()=>checkGddSections('Premissa e problema endereçado\nHigh concept')).toThrow(/quatro seções/);

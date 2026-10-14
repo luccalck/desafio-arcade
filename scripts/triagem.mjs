@@ -11,6 +11,7 @@ const fail=message=>{throw new Error(message);};
 
 export function parseDeadline(value){
  if(!value||!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(value))fail('PRAZO deve ser uma data ISO 8601 completa com fuso horário.');
+ const day=new Date(`${value.slice(0,10)}T00:00:00Z`);if(!Number.isFinite(day.valueOf())||day.toISOString().slice(0,10)!==value.slice(0,10))fail('PRAZO contém uma data de calendário inválida.');
  const date=new Date(value);if(!Number.isFinite(date.valueOf()))fail('PRAZO não é uma data válida.');return date;
 }
 export function validateDeadline(value,now=new Date()){
