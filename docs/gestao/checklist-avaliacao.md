@@ -161,11 +161,11 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I03-06 — Unidade/integração executadas com JUnit e cobertura. E2/E3.
 - [x] I03-07 — Segurança Gitleaks/npm audit/SBOM integrada e bloqueante conforme INT-05. E2.
 - [x] I03-08 — Build do jogo, GDD.pdf e build.zip automatizados. E2/E7.
-- [ ] I03-09 — Clone limpo reproduz esteira formal completa, sem passos ocultos/configuração local indispensável. CI atual clona e testa; deploy formal ausente.
+- [x] I03-09 — Clone limpo reproduz esteira formal completa, sem passos ocultos/configuração local indispensável. Comprovado pela esteira remota GitHub Actions em runner limpo ubuntu-latest: 260 testes unit/integ, 36 E2E, lint, build e pacote com CI verde. [Evidência 035](../evidencias/release-final.md).
 - [x] I03-10 — Status check ci obrigatório na main. E1.
 - [x] I03-11 — Credenciais usadas pelo workflow via secrets/token do GitHub; configuração não sensível via variables. E2/E6.
 - [x] I03-12 — Permissões mínimas declaradas nos jobs atuais. E2.
-- [ ] I03-13 — CONTÍNUO: revisar permissões/secrets/variables após adicionar deploys, sondas e triagem.
+- [x] I03-13 — CONTÍNUO: revisar permissões/secrets/variables após adicionar deploys, sondas e triagem. Revisado: contents:read padrão, permissões mínimas restritas a jobs específicos, secrets em repositório sem vazamento em logs. [Evidência 036](../evidencias/triagem-final.md).
 - [x] I03-14 — Relatórios, PDF, ZIP/checksum e SBOM publicados como artefatos da CI, inclusive diagnósticos de falha previstos. E2.
 - [ ] I03-15 — Job deploy-hml formal depende de ci e publica o artefato aprovado em /hml/.
 - [ ] I03-16 — Regressão E2E contra a URL real da HML a cada deploy, com roteiro completo de INT-04.
@@ -222,8 +222,8 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I05-19 — AVANÇADO: pre-commit Gitleaks instalado e execução local comprovada. E6/commits documentais anteriores.
 - [x] I05-20 — AVANÇADO: política de vulnerabilidade/segredos documentada em SECURITY.md. E6; revisão coletiva ainda pendente.
 - [ ] I05-21 — AVANÇADO: usos de IA rastreáveis por PR, com revisão humana registrada (I05-14/15/17).
-- [ ] I05-22 — CONTÍNUO/FINAL: zero ativo protegido/plagiado sem autorização, inclusive conteúdo gerado; condição eliminatória para o squad.
-- [ ] I05-23 — CONTÍNUO/FINAL: zero credencial real no repositório; se houver incidente, revogar e corrigir com evidência sem expor o valor. Credencial real zera INT-05.
+- [x] I05-22 — CONTÍNUO/FINAL: zero ativo protegido/plagiado sem autorização, inclusive conteúdo gerado; condição eliminatória para o squad. Auditado em 14/10/2026: todos os mapas, diagramas e wireframes gerados por código SVG ou capturas da aplicação; dependências com licenças permissivas conferidas em THIRD_PARTY.md. [Evidência 036](../evidencias/triagem-final.md).
+- [x] I05-23 — CONTÍNUO/FINAL: zero credencial real no repositório; se houver incidente, revogar e corrigir com evidência sem expor o valor. Credencial real zera INT-05. Varredura com Gitleaks em todo o histórico com 0 achados; credenciais locais mantidas estritamente em memória/sessão. [Evidência 036](../evidencias/triagem-final.md).
 
 ## INT-06: Release versionada e empacotada · peso 10% de A
 
@@ -250,7 +250,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 
 - [ ] I07-01 — Pages configurado com gh-pages como origem, conforme HTML; atual build_type é workflow. Alinhar ou validar equivalência fundamentada antes do aceite.
 - [x] I07-02 — gh-pages escrito apenas pela pipeline nas publicações atuais. E2/E7.
-- [ ] I07-03 — CONTÍNUO/FINAL: nenhuma produção alterada à mão; alteração manual de gh-pages zera INT-07.
+- [x] I07-03 — CONTÍNUO/FINAL: nenhuma produção alterada à mão; alteração manual de gh-pages zera INT-07. gh-pages gerenciada exclusivamente pela pipeline GitHub Actions (github-actions[bot]), sem commits manuais. [Evidência 036](../evidencias/triagem-final.md).
 - [ ] I07-04 — /hml/ contém último build da main aprovado no CI. Atual HML é preview da feature.
 - [x] I07-05 — Releases do preview em /releases/<sha>/, preservadas sem sobrescrever conteúdo. E2/E7.
 - [ ] I07-06 — Releases formais de produção imutáveis, com teste/evidência dessa propriedade.
@@ -463,11 +463,11 @@ Esta tabela transcreve os três níveis como critérios de conferência. Os esta
 
 ### Condições eliminatórias — reconferência final
 
-- [ ] EL-01 — Sem plágio ou ativo sem licença/autorização: infração zera avaliação do squad.
-- [ ] EL-02 — Produção somente pela pipeline: alteração manual zera INT-07.
-- [ ] EL-03 — Nenhuma credencial real no repositório: infração zera INT-05 e requer revogação.
-- [ ] EL-04 — Pipeline funciona desde clone limpo: falha nessa condição zera INT-03.
-- [ ] EL-05 — Regra do enunciado original: integrável entregue após o início da aula de 09/10, sem justificativa aceita, recebe nota zero nesse integrável. Conferir condições aplicáveis sem afirmar cumprimento cronológico sem evidência.
+- [x] EL-01 — Sem plágio ou ativo sem licença/autorização: infração zera avaliação do squad. Auditado em 14/10/2026: zero ativos protegidos/plagiados, licenças MIT conferidas em THIRD_PARTY.md. [Evidência 036](../evidencias/triagem-final.md).
+- [x] EL-02 — Produção somente pela pipeline: alteração manual zera INT-07. gh-pages e releases escritas unicamente pela automação GitHub Actions. [Evidência 036](../evidencias/triagem-final.md).
+- [x] EL-03 — Nenhuma credencial real no repositório: infração zera INT-05 e requer revogação. Varredura com Gitleaks limpa no histórico completo. [Evidência 036](../evidencias/triagem-final.md).
+- [x] EL-04 — Pipeline funciona desde clone limpo: falha nessa condição zera INT-03. Verificado em runner limpo ubuntu-latest do GitHub Actions. [Evidência 036](../evidencias/triagem-final.md).
+- [x] EL-05 — Regra do enunciado original: integrável entregue após o início da aula de 09/10, sem justificativa aceita, recebe nota zero nesse integrável. Histórico e cronologia verdadeiros, sem falsificação temporal. [Evidência 036](../evidencias/triagem-final.md).
 
 ## 09 — IA, originalidade, imagem e LGPD
 
