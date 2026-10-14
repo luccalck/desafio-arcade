@@ -14,6 +14,8 @@ Em 14/10/2026, a API do repositório informou default branch `docs/ficha-entrega
 
 Não existe hash de ZIP HML/PRD formal ou release publicada para comparação com o pacote local. A versão de `package.json` permanece `0.6.0`. Não criei tag `v1.0.0`, não declarei candidata formal, não comparei bytes de ambientes diferentes e não publiquei nada. O MD condiciona a candidata 1.0.0 à aprovação de PR/CI/HML/PRD; essa entrada não está disponível.
 
+Publicação do trabalho: commit `430c1be` no [PR#23](https://github.com/luccalck/desafio-arcade/pull/23), base na branch do MD3. [CI de push 38541424956](https://github.com/luccalck/desafio-arcade/actions/runs/38541424956) e [CI do PR 38541450551](https://github.com/luccalck/desafio-arcade/actions/runs/38541450551) passaram, inclusive o agregado `ci`. Baixei o artefato `build-430c1be207bee2d3177f3db842deb94971e28c50-38541424956-1`: o `build.zip` tinha SHA-256 `59ee723985017f170af5a1f01f488be0f30c963ef6281acbbbefad4ad18a6eeb` e `dist/version.json` declara versão `0.6.0`/SHA `430c1be207bee2d3177f3db842deb94971e28c50`. É artefato da CI da branch, não promoção formal; jobs `deploy-hml`, `deploy-prd`, preview, monitor e release foram ignorados pelas condições do workflow. Lucas (`6lucassilvaaa`) foi solicitado para revisão; a API de reviews ainda não registra aprovação.
+
 ## Pendências
 
 As dependências de aprovação, ambientes, pacote promovido e release estão discriminadas em [Passo 027](../execucao/05-pendencias-por-passo.md#passo-027). I06-14 e I06-16 foram revalidados localmente para o SHA registrado; I06-15 e I06-17 permanecem abertos até comparação e reconferência da release real. [Controle](../execucao/03-controle-execucao.md) e checklist mantêm a distinção entre evidência local e promoção formal.
