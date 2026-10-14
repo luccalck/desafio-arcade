@@ -1,5 +1,5 @@
 import {it,expect} from 'vitest';
-import {makeHmlReceipt,verifyApproval,planProduction,ensurePipeline,verifyRecoveredRelease,verifyFinalSmoke} from '../../scripts/promover.mjs';
+import {makeHmlReceipt,verifyApproval,planProduction,planManualRollback,ensurePipeline,verifyRecoveredRelease,verifyFinalSmoke} from '../../scripts/promover.mjs';
 import {bundle,options,oldSha,newSha,site,tree,pointer,releases,version} from '../fixtures/pacote.mjs';
 const environment={id:7,name:'producao',can_admins_bypass:false,protection_rules:[{type:'required_reviewers',reviewers:[{type:'User',reviewer:{login:'revisor-fixture'}}]}]};
 const approvals=[{state:'approved',user:{login:'revisor-fixture',type:'User'},environments:[{id:7,name:'producao'}]}];
@@ -14,6 +14,16 @@ it('HML confere os sete arquivos servidos contra o ZIP aceito, sem recompilar',a
 it('aprovação de PR, próprio ator, bypass ou environment errado não autorizam produção',()=>{
  expect(verifyApproval(environment,approvals,options.actor).reviewer).toBe('revisor-fixture');
  for(const [e,h] of [[environment,[]],[{...environment,can_admins_bypass:true},approvals],[environment,[{...approvals[0],user:{login:options.actor,type:'User'}}]],[environment,[{...approvals[0],environments:[{id:8,name:'outro'}]}]]])expect(()=>verifyApproval(e,h,options.actor)).toThrow(/aprovação|proteção/);
+});
+it('rollback manual escolhe somente anterior existente com aprovação humana e preserva HML',()=>{
+ const existing=tree(pointer(newSha,oldSha));
+ const params={existing,environment,approvals,actor:options.actor,reason:'alerta-confirmado',run:'123',runAttempt:'1',siteUrl:options.siteUrl};
+ const result=planManualRollback(params);
+ expect(result.target).toBe(oldSha);expect(result.plan.rollout.estavel).toBe(oldSha);
+ expect(result.plan.files['hml/preservar.txt']).toEqual(existing['hml/preservar.txt']);
+ expect(()=>planManualRollback({...params,approvals:[]})).toThrow(/aprovação/);
+ expect(()=>planManualRollback({...params,existing:tree(pointer(newSha))})).toThrow(/anterior/);
+ expect(()=>planManualRollback({...params,reason:'ghp_segredo'})).toThrow(/Motivo/);
 });
 it('prepara candidata com a mesma HML e conserva estável/arquivos existentes',async()=>{
  const p=await approved(),result=planProduction('abrir',p);expect(result.plan.rollout.estavel).toBe(oldSha);expect(result.plan.rollout.canario).toBe(newSha);expect(result.transaction.zipSha256).toBe(p.receipt.zipSha256);expect(result.plan.files['hml/preservar.txt']).toEqual(p.existing['hml/preservar.txt']);

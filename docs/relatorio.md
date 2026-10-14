@@ -17,7 +17,7 @@ A CI atual usa GitHub Actions para qualidade, segurança, testes, build, PDF e e
 - [Matriz dos dez integráveis](gestao/matriz-atendimento.md).
 - [Checklist completo com estado de cada item](gestao/checklist-avaliacao.md).
 
-O relatório final deve incluir decisões/alternativas, evidências datadas dos dez INT, quatro métricas DORA reais e comparação com onze dias, melhoria medida, retrospectiva honesta e contribuição por PR de cada integrante. Esses resultados ainda não existem integralmente; não preencher com números ou capturas simulados.
+O relatório final deve incluir decisões/alternativas, evidências datadas dos dez INT, quatro métricas DORA reais e comparação com onze dias, melhoria medida, retrospectiva honesta e contribuição por PR de cada integrante. Esses resultados ainda não existem integralmente; não preencher com números ou capturas simulados. O `schedule` de quinze minutos do Actions pode atrasar ou ser descartado em horários de pico; comparar horários planejados e efetivos antes de interpretar lacunas no monitor, conforme [sondas](evidencias/sondas.md) e [DORA 024](evidencias/dora.md).
 
 ## Consolidação para entrega
 

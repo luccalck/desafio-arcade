@@ -40,6 +40,14 @@ export function verifyApproval(environment,history,actor){
  if(!approved)throw Error('aprovação humana de producao ausente.');
  return {environment:'producao',environmentId:environment.id,reviewer:approved.user.login,state:'approved'};
 }
+export function planManualRollback({existing,environment,approvals,actor,reason,run,runAttempt,siteUrl}){
+ verifyApproval(environment,approvals,actor);
+ if(!['smoke-falhou','alerta-confirmado','degradacao-confirmada','outro-incidente-validado'].includes(reason))throw Error('Motivo operacional inválido.');
+ const current=normalizeRollout(JSON.parse(strFromU8(existing['rollout.json'])));
+ if(!current.estavel||!current.anterior||current.estavel===current.anterior)throw Error('Versão anterior validada indisponível.');
+ const plan=planRollout({action:'rollback',existing,sha:current.anterior,actor,reason,run,runAttempt,siteUrl});
+ return {current:current.estavel,target:current.anterior,version:JSON.parse(strFromU8(existing[`releases/${current.anterior}/version.json`])).version,plan};
+}
 export async function makeHmlReceipt(bundle,{fetcher=globalThis.fetch,...opts}){
  identity(bundle,opts);const base=siteURL(opts.siteUrl),files=unzipSync(bundle['build.zip']),observed={};
  for(const [name,bytes] of Object.entries(files)){
@@ -102,6 +110,20 @@ async function main(){
   await save('reports/hml-aceite.json',await makeHmlReceipt(await tree(args.bundle),opts));return;
  }
  ensurePipeline(opts);
+ if(stage==='manual'){
+  if(process.env.GITHUB_EVENT_NAME!=='workflow_dispatch'||process.env.GITHUB_REF!=='refs/heads/main'||!process.env.MANUAL_REASON)throw Error('Rollback manual exige dispatch na main e motivo.');
+  const root=resolve('.publish/manual/tree'),output=resolve('.publish/manual/site');
+  await mkdir(dirname(root),{recursive:true});
+  execFileSync('git',['clone','--branch','gh-pages','--single-branch',`https://github.com/${process.env.GITHUB_REPOSITORY}.git`,root],{stdio:'pipe'});
+  const existing=await tree(root),api=path=>JSON.parse(execFileSync('gh',['api',path],{encoding:'utf8'}));
+  const result=planManualRollback({...opts,existing,reason:process.env.MANUAL_REASON,environment:api(`repos/${process.env.GITHUB_REPOSITORY}/environments/producao`),approvals:api(`repos/${process.env.GITHUB_REPOSITORY}/actions/runs/${opts.run}/approvals`)});
+  const flags=['--action','rollback','--existing',root,'--output',output,'--sha',result.target,'--actor',opts.actor,'--reason',process.env.MANUAL_REASON,'--commit','true'];
+  execFileSync(process.execPath,[resolve('scripts/rollout.mjs'),...flags],{stdio:'pipe'});
+  execFileSync('git',['-C',root,'-c','credential.helper=!f() { echo username=x-access-token; echo password="$GH_TOKEN"; }; f','push','origin','gh-pages'],{stdio:'pipe'});
+  await save('reports/rollback-manual.json',{schema:1,from:result.current,sha:result.target,baseline:result.target,baselineVersion:result.version,baselineFilesSha256:baselineHashes(existing,result.target),siteUrl:opts.siteUrl,actor:opts.actor,reason:process.env.MANUAL_REASON,run:opts.run,runAttempt:opts.runAttempt,at:new Date().toISOString()});
+  if(process.env.GITHUB_OUTPUT)await appendFile(process.env.GITHUB_OUTPUT,`path=${output}\nsha=${result.target}\nversion=${result.version}\n`);
+  return;
+ }
  const checkpoint='reports/producao-transacao.json';
  if(['finalizar','confirmar-recuperacao'].includes(stage)){
   const tx=await json(checkpoint),recovered=stage==='confirmar-recuperacao',s=await json(recovered?'reports/recuperacao-smoke.json':'reports/producao-smoke.json'),sha=recovered?tx.baseline:opts.sha;
