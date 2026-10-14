@@ -49,6 +49,7 @@ $env:npm_config_script_shell = (Get-Command pwsh).Source
 |---|---|
 | `npm run test:e2e` | Testar interação, campanha e exportação offline no navegador |
 | `npm run gdd:pdf` | Gerar `artifacts/GDD.pdf` |
+| `npm run relatorio:pdf` | Gerar `artifacts/RelatorioTecnico.pdf` |
 | `npm run package` | Gerar ZIP e checksum |
 | `npm run reproducibility` | Comparar builds, normalizando somente a data de version.json |
 | `npm run sbom` | Emitir SBOM CycloneDX |
