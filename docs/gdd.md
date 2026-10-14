@@ -1,6 +1,6 @@
 # Rota do Código — Game Design Document
 
-Versão do software: **{{VERSION}}**. Revisão do documento: **013 — 13/10/2026**. Mantemos a oficina de jogos aprovada, com desafios Python e preview web. Este documento descreve a candidata; sua data de revisão não representa data de submissão ou release final.
+Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do documento: **025 — 14/10/2026**. Mantemos a oficina de jogos aprovada, com desafios Python e preview web. Este documento descreve a candidata do código-fonte; sua data de revisão não representa data de submissão, tag ou release final. A versão/SHA do pacote final serão reconferidos após a etapa 035.
 
 | Identificação | Situação verdadeira |
 |---|---|
@@ -12,8 +12,8 @@ Versão do software: **{{VERSION}}**. Revisão do documento: **013 — 13/10/202
 | PR do primeiro ciclo | https://github.com/luccalck/desafio-arcade/pull/2; integração protegida ainda pendente |
 | Preview público do jogo | https://luccalck.github.io/desafio-arcade/ |
 | HML do preview | https://luccalck.github.io/desafio-arcade/hml/ |
-| CI de referência conferida | https://github.com/luccalck/desafio-arcade/actions/runs/38345466916 — candidata do passo004, sem deploy nesta execução |
-| Produção / homologação / vídeo / release | Preview Pages configurado; publicação/testes rastreados no workflow. Produção formal, vídeo e release final pendentes |
+| CI de referência conferida | https://github.com/luccalck/desafio-arcade/actions/runs/38515175960 — PR do MD 2 de Miguel, `success`, deploys formais ignorados |
+| Produção / homologação / vídeo / release | Preview e HML existentes; produção/HML formais da candidata, vídeo e release final pendentes |
 | Plataforma | WEB estática responsiva, mesma experiência no computador e celular |
 
 ### Equipe
@@ -26,6 +26,8 @@ Versão do software: **{{VERSION}}**. Revisão do documento: **013 — 13/10/202
 | Lucas Souza da Silva | 26179875 | SRE e Segurança | 6lucassilvaaa |
 
 Papéis coordenam, sem exclusividade. Os nomes completos e RAs de três integrantes foram informados em13/10/2026. O RA de Lucca permanece em branco; a identificação ainda não está completa. Fonte dos dados: [SQUAD](../SQUAD.md).
+
+Consulta pública em 14/10/2026: raiz e `/hml/` responderam HTTP 200, mas a HML servia a versão 0.6.0 do SHA `71933bfd4bd35f8c3ac8f5899a0e9af00db29f32`, anterior a este MD. `/status/` respondeu HTTP 404. Essas URLs não comprovam a candidata atual, produção formal ou painel publicado. O PR técnico mais recente antes desta revisão é [#21](https://github.com/luccalck/desafio-arcade/pull/21), com CI verde e revisão humana ainda pendente.
 
 A aprovação de concepção não substitui revisão por outro integrante. CPF e assinaturas não integram Git ou artefatos públicos; eventual versão privada depende de orientação do professor. Identificação, declaração coletiva e links de release continuam pendentes. Capturas locais e testes automatizados não representam produção ou playtest humano.
 
@@ -207,11 +209,11 @@ Não incluímos CPF ou assinaturas nos arquivos públicos. A entrega acadêmica 
 
 ## 12. Ideias adicionais e próximos passos
 
-[Revisão educativa013 e protocolo de playtest](evidencias/aprendizagem-conteudo.md): soluções alternativas verificadas em fonte/AST/exportação, casos de transferência e sessão sem explicação de três minutos preparada para021. Nenhum resultado de aprendizagem/diversão humana foi medido; mecânica e 23casos públicos preservados.
+[Revisão educativa013 e protocolo de playtest](evidencias/aprendizagem-conteudo.md): soluções alternativas verificadas em fonte/AST/exportação, casos de transferência e sessão sem explicação de três minutos preparada na etapa021. O [registro do playtest](evidencias/playtest.md) ainda não contém participante/resultado humano; nenhum ganho de aprendizagem ou diversão foi medido. Mecânica e 23 casos públicos preservados nesta revisão.
 
 Implementado na candidata 0.6.0: cinco missões Python/final, editor limitado/diagnósticos, testes públicos, minijogo real, menus/pausa/opções, 700 XP, fontes/vitórias persistentes, HTML exportável. Evidências em [jogo e testes](evidencias/python-pages.md), [baseline técnico](evidencias/baseline-tecnico.md) e [privacidade/segurança](evidencias/seguranca-inicial.md). Uma campanha ativa; versões anteriores recuperáveis no Git.
 
-Restam revisão/participação dos quatro, playtest educativo/acessibilidade humana, promoção PRD, recuperação/sondas/DORA medidos, vídeo, triagem e relatório. Novas funções, editor mais amplo, níveis e áudio são futuro. Não há resultados educativos/produção/colaboração simulados. GDD atualizado por PR quando mecânica muda.
+Restam revisão/participação dos quatro, playtest educativo/acessibilidade humana, promoção PRD, recuperação/sondas/DORA medidos, vídeo, triagem e relatório. Rollback manual e cálculo DORA foram preparados nas etapas023/024, mas não executados em produção; quatro métricas ficaram N/D na [consulta real](evidencias/dora.md). Novas funções, editor mais amplo, níveis e áudio são **roadmap futuro**, não funcionalidades da candidata. Não há resultados educativos/produção/colaboração simulados. O GDD será atualizado por PR revisado quando a mecânica mudar; esta revisão não altera mecânica.
 
 ## Esteira
 
