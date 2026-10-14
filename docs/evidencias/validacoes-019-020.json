@@ -9,7 +9,7 @@
   "local": {
     "unitIntegration": {
       "command": "npm run test:ci -- --maxWorkers=2",
-      "passed": 235,
+      "passed": 236,
       "failures": 0,
       "coreStatementsCoverage": 97.9
     },
@@ -130,11 +130,49 @@
     "mainSha": "c04b8fa4e83ae0f7246b7c00bf64f6d3865bc6dc",
     "formalFlagsEnabled": false
   },
-  "ci": null,
+  "ci": {
+    "implementationSha": "3ee8b5c3c5113b0fe14c240a140319ff64935ee4",
+    "push": {
+      "id": "38509445953",
+      "conclusion": "success",
+      "url": "https://github.com/luccalck/desafio-arcade/actions/runs/38509445953"
+    },
+    "pullRequest": {
+      "id": "38509479123",
+      "conclusion": "success",
+      "url": "https://github.com/luccalck/desafio-arcade/actions/runs/38509479123"
+    },
+    "verifiedArtifact": {
+      "inventoryFiles": 170,
+      "runAttempt": "1",
+      "unitIntegration": {
+        "tests": 235,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "e2e": {
+        "tests": 36,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      }
+    },
+    "note": "Correção subsequente de ator em rerun acrescentou1 teste local (236); CI doHEAD final será conferida separadamente."
+  },
   "productionDeployment": false,
   "environmentApproval": false,
   "operationalRecovery": false,
   "doraMeasured": false,
   "humanReviewApproved": false,
-  "handoffHumanAcknowledged": false
+  "handoffHumanAcknowledged": false,
+  "pr": {
+    "number": 19,
+    "url": "https://github.com/luccalck/desafio-arcade/pull/19",
+    "author": "DaviSouza78",
+    "base": "feature/passos-017-018-pitch-rollout",
+    "reviewerRequested": "miguelsenai2024",
+    "approved": false,
+    "merged": false
+  }
 }

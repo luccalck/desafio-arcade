@@ -51,7 +51,7 @@ async function tree(root,prefix=''){
 }
 export function commitPlan({root,files,message,env=process.env}){
  // Sem push/deploy: o job protegido consumidor deve publicar a árvore e medir o smoke.
- if(env.GITHUB_ACTIONS!=='true'||!env.GITHUB_ACTOR||!message.includes(`ator=${env.GITHUB_ACTOR};`))throw Error('Aplicação somente pela pipeline com ator correspondente.');
+ if(env.GITHUB_ACTIONS!=='true'||!env.GITHUB_ACTOR||!message.includes(`ator=${env.GITHUB_TRIGGERING_ACTOR??env.GITHUB_ACTOR};`))throw Error('Aplicação somente pela pipeline com ator correspondente.');
  const git=(...args)=>execFileSync('git',['-C',root,...args],{encoding:'utf8'}).trim();
  const canonical=path=>{const p=realpathSync.native(path);return process.platform==='win32'?p.toLowerCase():p;};
  if(canonical(git('rev-parse','--show-toplevel'))!==canonical(root)||git('branch','--show-current')!=='gh-pages'||git('status','--porcelain'))throw Error('Checkout gh-pages limpo exigido.');

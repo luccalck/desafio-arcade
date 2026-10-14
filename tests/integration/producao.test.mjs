@@ -42,3 +42,7 @@ it('checkpoint preserva SemVer anterior para smoke de recuperação entre versõ
  const opened=planProduction('abrir',params);expect(opened.transaction.baselineVersion).toBe('0.5.0');
  const workflow=(await import('node:fs')).readFileSync('.github/workflows/esteira.yml','utf8');expect(workflow).toContain('EXPECTED_VERSION: ${{ steps.recuperar.outputs.version }}');
 });
+it('reexecução registra quem a disparou, sem atribuir o ato ao autor do push original',()=>{
+ const env={GITHUB_ACTIONS:'true',GITHUB_ACTOR:options.actor,GITHUB_TRIGGERING_ACTOR:'reexec-fixture',GITHUB_SHA:newSha,GITHUB_RUN_ID:'123',GITHUB_RUN_ATTEMPT:'2',GITHUB_REF:'refs/heads/main',GITHUB_REPOSITORY:'fixture/arcade',FORMAL_HML_ENABLED:'true',FORMAL_PRD_ENABLED:'true',MONITOR_ENABLED:'true',ALERTS_ENABLED:'true'};
+ expect(()=>ensurePipeline({...options,runAttempt:'2',actor:'reexec-fixture'},env)).not.toThrow();expect(()=>ensurePipeline({...options,runAttempt:'2'},env)).toThrow(/Contexto/);
+});

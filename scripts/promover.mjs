@@ -30,7 +30,7 @@ function verifyReceipt(bundle,opts,r){
  if(r?.schema!==1||r.sha!==opts.sha||r.run!==String(opts.run)||r.runAttempt!==String(opts.runAttempt)||r.siteUrl!==siteURL(opts.siteUrl)||r.zipSha256!==hash(bundle['build.zip'])||!Number.isFinite(Date.parse(r.collectedAt))||Date.parse(r.collectedAt)>Date.now()+60000||Object.keys(r.files??{}).length!==Object.keys(files).length||Object.entries(files).some(([n,b])=>r.files[n]!==hash(b)))throw Error('Aceite HML de mesmo SHA/run/tentativa/URL/bytes exigido.');
 }
 export function ensurePipeline(opts,env=process.env){
- if(env.GITHUB_ACTIONS!=='true'||!env.GITHUB_ACTOR||env.GITHUB_ACTOR!==opts.actor||env.GITHUB_SHA!==opts.sha||env.GITHUB_RUN_ID!==String(opts.run)||env.GITHUB_RUN_ATTEMPT!==String(opts.runAttempt)||!/^[-\w.]+\/[-\w.]+$/.test(env.GITHUB_REPOSITORY??'')||!(env.GITHUB_REF==='refs/heads/main'||/^refs\/tags\/v\d+\.\d+\.\d+$/.test(env.GITHUB_REF??'')))throw Error('Contexto da pipeline formal divergente.');
+ if(env.GITHUB_ACTIONS!=='true'||!env.GITHUB_ACTOR||(env.GITHUB_TRIGGERING_ACTOR??env.GITHUB_ACTOR)!==opts.actor||env.GITHUB_SHA!==opts.sha||env.GITHUB_RUN_ID!==String(opts.run)||env.GITHUB_RUN_ATTEMPT!==String(opts.runAttempt)||!/^[-\w.]+\/[-\w.]+$/.test(env.GITHUB_REPOSITORY??'')||!(env.GITHUB_REF==='refs/heads/main'||/^refs\/tags\/v\d+\.\d+\.\d+$/.test(env.GITHUB_REF??'')))throw Error('Contexto da pipeline formal divergente.');
  for(const flag of ['FORMAL_HML_ENABLED','FORMAL_PRD_ENABLED','MONITOR_ENABLED','ALERTS_ENABLED'])if(env[flag]!=='true')throw Error(`Gate inativo: ${flag}`);
 }
 export function planProduction(stage,{existing,bundle,receipt,environment,approvals,transaction,smoke,...opts}){
@@ -66,7 +66,7 @@ async function main(){
  const [stage,...argv]=process.argv.slice(2),args={};
  for(let i=0;i<argv.length;i+=2){const k=argv[i]?.slice(2);if(!argv[i]?.startsWith('--')||!['bundle','sha','run','site-url','receipt'].includes(k)||!argv[i+1]||args[k])throw Error('Argumento inválido.');args[k]=argv[i+1];}
  for(const k of ['sha','run','site-url'])if(!args[k])throw Error(`Falta --${k}`);
- const opts={sha:args.sha,run:args.run,runAttempt:process.env.GITHUB_RUN_ATTEMPT,actor:process.env.GITHUB_ACTOR,siteUrl:siteURL(args['site-url'])};
+ const opts={sha:args.sha,run:args.run,runAttempt:process.env.GITHUB_RUN_ATTEMPT,actor:process.env.GITHUB_TRIGGERING_ACTOR??process.env.GITHUB_ACTOR,siteUrl:siteURL(args['site-url'])};
  if(stage==='hml'){
   if(process.env.GITHUB_ACTIONS!=='true'||opts.sha!==process.env.GITHUB_SHA||opts.run!==process.env.GITHUB_RUN_ID)throw Error('Recibo HML somente no job correspondente.');
   await save('reports/hml-aceite.json',await makeHmlReceipt(await tree(args.bundle),opts));return;

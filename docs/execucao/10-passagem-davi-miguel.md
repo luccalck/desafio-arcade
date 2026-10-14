@@ -6,7 +6,7 @@
 
 Clone utilizado: `C:/Users/Administrator/Documents/Codex/2026-10-13/sou-o-davi-e-aceitei-o/desafio-arcade`. Fonte única; não montar cópias separadas do jogo. Branch técnica mais recente deste bloco: feature/passos-019-020-producao-painel, sobre d6a72f6/MD4. Main ainda é bootstrap c04b8fa; a default permanece docs/ficha-entrega-dados-equipe. Não atualizar a partir de main presumindo código integrado.
 
-Miguel confere status/remotes/branch, preserva alterações e usa sua própria conta miguelsenai2024. A cadeia empilhada precisa de revisão humana e integração coordenada antes de publicação formal. Nenhum desses PRs estava aprovado na conferência; CI verde não substitui aprovação. Commits/PR/CI do MD5 serão vinculados após publicação, sem inventar números.
+Miguel confere status/remotes/branch, preserva alterações e usa sua própria conta miguelsenai2024. A cadeia empilhada precisa de revisão humana e integração coordenada antes de publicação formal. Nenhum desses PRs estava aprovado na conferência; CI verde não substitui aprovação. MD5 publicado no PR#19/3ee8b5c; provas deCI vinculadas abaixo. Correção de ator em reexecução segue no mesmoPR.
 
 | Etapas | Entrega / interface | Referência real |
 |---|---|---|
@@ -29,6 +29,8 @@ Miguel confere status/remotes/branch, preserva alterações e usa sua própria c
 
 G0–G4 e aceites finais continuam abertos no controle/checklist. HML/PRD formais, aprovação de deployment, observabilidade ativa, recuperação medida e URL do painel ainda não existem como provas. Originais externos R/P/D/S indisponíveis estão registrados por passo; não alegamos sua leitura. Consentimentos/Watch foram declarações reais de Davi identificadas nos arquivos; gravação/playtest/revisão/banca são ações humanas posteriores.
 
-Validações locais do MD5:235 testes de unidade/integração, cobertura de instruções core97,90%;36E2E completos, três do painel reconferidos após ajustes visuais; lint/build/actionlint sem ShellCheck. Capturas em docs/evidencias/imagens/passo020 são HTTP local com fontes sintéticas identificadas, nunca produção. CI remota e pacote serão conferidos após push.
+Validações locais do MD5:236 testes de unidade/integração, cobertura de instruções core97,90%;36E2E completos, três do painel reconferidos após ajustes visuais; lint/build/actionlint sem ShellCheck. Capturas em docs/evidencias/imagens/passo020 são HTTP local com fontes sintéticas identificadas, nunca produção. CI remota e pacote serão conferidos após push.
 
 Miguel começa seu MD1/5 (021/022) **somente quando solicitado**, conferindo este repasse e as entradas reais: playtest humano e fortalecimento de recuperação. Nenhuma etapa021+ executada por este chat. Recebimento/compreensão, revisão e base aprovada dependem de Miguel/equipe; não são assinados por Davi ou pela IA em nome dele.
+
+Publicação MD5 — 14/10/2026: commit próprio3ee8b5c3c5113b0fe14c240a140319ff64935ee4, [PR#19](https://github.com/luccalck/desafio-arcade/pull/19), base temporária MD4/PR#18. [CI push38509445953](https://github.com/luccalck/desafio-arcade/actions/runs/38509445953) e [CI PR38509479123](https://github.com/luccalck/desafio-arcade/actions/runs/38509479123): SUCCESS, inclusive ci agregado. Pacote real170 arquivos inventariados baixado/verificado por SHA/run/tentativa1; JUnit235 testes e36E2E sem falhas/erros/ignorados. Deploys, monitor operacional e release foram ignorados por condição; nenhuma produção/aprovação/recuperação real foi alegada. Identidade Git/PR/API confirmada como DaviSouza78; revisão miguelsenai2024 solicitada, ainda sem aprovação. [Provas estruturadas](../evidencias/validacoes-019-020.json). Passagem técnica entregue, recebimento humano pendente; nenhuma etapa021+ executada.
