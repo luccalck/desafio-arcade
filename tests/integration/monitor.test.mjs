@@ -34,3 +34,7 @@ it('CSV preserva histórico e cabeçalho, com campos desconhecidos explícitos',
  expect(second.split('\n').filter(Boolean)).toHaveLength(3);expect(first).toContain('desconhecido,desconhecido,desconhecida');
  expect(toCsv({...row,alvo:'teste,"local"'})).toContain('"teste,""local"""');expect(()=>appendCsv('outro\n',[row])).toThrow(/cabeçalho/);
 });
+it('sonda resolve contrato formal e rejeita versão retirada ou ponteiro ambíguo',async()=>{
+ const pointer={schema:1,strategy:'azul-verde',estavel:sha,anterior:null,canario:null,percentual:0,retiradas:[]};
+ for(const [p,ok] of [[pointer,true],[{...pointer,retiradas:[sha]},false],[{...pointer,activeSha:'b'.repeat(40)},false]])await server((req,res)=>res.end(req.url==='/rollout.json'?JSON.stringify(p):JSON.stringify({version:'0.6.0',sha})),async url=>{const r=await sondar({alvo:'producao',url,loader:true});expect(r.erro).toBe(ok?null:'ponteiro-invalido');});
+});

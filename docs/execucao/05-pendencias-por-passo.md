@@ -1,6 +1,6 @@
 # Pendências após cada passo
 
-Atualizado em 13/10/2026. Registro único das pendências encontradas durante a execução. Complementa o [controle](03-controle-execucao.md) e o [checklist da avaliação](../gestao/checklist-avaliacao.md), sem substituí-los.
+Atualizado em 14/10/2026. Registro único das pendências encontradas durante a execução. Complementa o [controle](03-controle-execucao.md) e o [checklist da avaliação](../gestao/checklist-avaliacao.md), sem substituí-los.
 
 Ao encerrar cada passo, atualizar sua seção com todas as pendências: requisito/check, motivo, responsável ou dependência, próximo passo e evidência necessária. Fechar um item apenas com evidência real, registrando arquivo, commit, execução ou ação humana. Diferenciar pendência de execução, aceite e obrigação futura. Passo não executado não significa ausência de pendências.
 
@@ -249,11 +249,25 @@ PublicaçãoMD3 — 14/10/2026: commit próprio 389b1b0da88432fc02e2689111785d67
 
 ## Passo 017
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Preparação executada em 14/10/2026 por DaviSouza78 com assistência Codex: roteiro de 80s planejados, quatro falas, capturas reais previstas, SRT preliminar e inventário sem trilha. Provas: docs/pitch-roteiro.md, docs/pitch-legendas.srt, docs/evidencias/video-direitos.md e THIRD_PARTY.md. Não há MP4 ou duração humana medida.
+
+- **I10-07/DIR-13 — concordâncias (resolvido por confirmação humana em 14/10):** inicialmente faltavam confirmações de imagem/voz; Davi respondeu à pergunta sobre os quatro: “todos concordamos, existe sim um registro”. Prova: declaração humana registrada em docs/evidencias/video-direitos.md. Não confundida comWatch016 e sem inspeção do documento privado pela IA. Reconferir com revisor o escopo/canais/data do registro privado antes depublicar; não incorporar dados sensíveis ao Git.
+- **Ensaio/gravação/G6:** faltam leitura cronometrada, sincronizaçãoSRT, capturas de produção/conclusão/exportação, MP4 e revisão deacessibilidade/direitos. Motivo: entrega humana e produçãoformal ainda ausentes. Dependências: 005/008/013 revisados, gates/HML/PRD e integrantes. Ação: ensaiar, gravar com consentimento, verificar duração<=90s e inventáriofinal; entregar vídeo antes datag035, relatório recebe provas de release/triagem depois. I10-05 exige reconferênciafinal.
+- **Fontes P06/P04 e revisão:** guias externos não disponíveis nestePC. Dependência: originais e revisor Miguel. Ação: disponibilizar e reconciliar fontes; revisar roteiro e PR com CIverde antes demerge. Aceites G0–G2/direitos prévios continuam abertos, não substituídos por este roteiro.
 
 ## Passo 018
 
-Não executado. Preencher as pendências efetivamente encontradas ao encerrar este passo, seguindo seu MD e critérios de aceite.
+Preparação técnica executada em 14/10/2026, após 017, por DaviSouza78 com assistência Codex. [Contrato/provas](../evidencias/rollout.md): abrir/promover/rollback, migração do preview, sessão/retirada, falhas/storage, imutabilidade, CLI com ator/motivo e integração com publicador/sonda/smoke. Modelo pages/rollout.json tem referênciasnull: não é release implantada.218testes locais e33E2E passaram; cincoE2E novos do carregador também revalidados após relatório desmoke. Nenhum deploy ou ponteiro remoto alterado.
+
+| O que falta | Motivo / dependência | Ação necessária / responsável |
+|---|---|---|
+| Aprovação da estratégia azul-verde e PR; G2 | Escolha técnica implementada, aceite de Plataforma/Miguel e integração da cadeia010/014/015 ausentes; CI não aprova estratégia coletiva | Miguel revisa contrato, código, caches e PR; integrar dependências revisadas na main protegida. I07-09 permanece aberto até essa conferência |
+| I07-08/I07-15/KIT-18/KIT-19 operacionais eG4 | Contrato/ações/carregador testados localmente, mas não houve rollout formal ou commit de controle em gh-pages pela pipeline | No019, consumir pacote mesmoSHA/run/tentativa, serializar todo abrir→publicar→smoke→promover e reconsultarpredecessor; arquivar ator/motivo/commit/run e repetir sessão/retirada/storage/HTTP reais. Não executar deploymanual |
+| Rollback observado, propagação/cache e recuperação | Simulações/CLI Git temporário não são incidente ou recuperação de produção; HTML antigo/CDN e abas já abertas têm limites descritos no contrato | Após019/G4, executar022 pela pipeline com aprovação; medir recuperação, reconferir cache/root e política para links diretos/abas existentes; arquivar smoke eURLs reais |
+| Pacote/tentativa e integração final | Abrir exige runAttempt no manifesto novo; artefatos legados sem campo não autorizam candidata formal. Job de produção 019 ainda não implementado nesteMD | Pipeline019 usa novo pacote/run/tentativa e relatório fresco de smoke com exit0; manter flags formais bloqueadas até gates; reconferir reruns035 |
+| Fontes externas D04/D05 | Guias originais fora do clone não disponíveis nestePC | Equipe disponibiliza originais para leitura/confronto com contrato; HTMLoriginal/hash e fontes comuns reutilizados sem alegar acesso aos guias |
+
+Canário percentual é condicional não aplicável à estratégia escolhida: não houve distribuição probabilística nem marcação falsa desses checks. As pendências anteriores de011/014/015/016/G0–G4 continuam; este registro não encerra obrigações futuras019/022 ou revisão humana.
 
 ## Passo 019
 

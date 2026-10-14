@@ -113,6 +113,8 @@ Cada arquivo contém duas etapas completas. Execute os cinco MDs do integrante e
 
 ## Documentos de apoio
 
+- [Roteiro017](../pitch-roteiro.md), [legendas preliminares](../pitch-legendas.srt), [direitos e consentimentos](../evidencias/video-direitos.md) e [contrato/provas de rollout018](../evidencias/rollout.md). Pendências separadas017/018 no registro único; gravação e rollout formal aguardam suas entradas humanas.
+
 - [Respostas persistentes para a ficha do professor](../gestao/ficha-entrega.md): nomes/RAs disponíveis, campos finais em branco e declarações/validadores; usar no037.
 
 - [Estrutura exata](01-estrutura-repositorio.md).

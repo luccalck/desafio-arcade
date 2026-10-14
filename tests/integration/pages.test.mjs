@@ -4,9 +4,13 @@ import {createHash} from 'node:crypto';
 import {preparePages} from '../../scripts/prepare-pages.mjs';
 const sha='a'.repeat(40),site=()=>({'index.html':strToU8('<html>Jogo</html>'),'game.js':strToU8('game'),'style.css':strToU8('style'),'version.json':strToU8(JSON.stringify({version:'0.6.0',sha,build:'2026-10-12T20:00:00Z'})),'LEIA-ME.txt':strToU8('Abra index.html offline'),'LICENSE.txt':strToU8('MIT'),'THIRD_PARTY.txt':strToU8('Terceiros')});
 const pack=(files=site())=>{const zip=zipSync(files);return {zip,checksum:createHash('sha256').update(zip).digest('hex'),sha};};
-it('cria HML/release e loader relativo a base do Pages',()=>{const files=preparePages({...pack(),existing:{}});expect(new TextDecoder().decode(files[`releases/${sha}/version.json`])).toContain(sha);expect(files['hml/game.js']).toEqual(site()['game.js']);expect(new TextDecoder().decode(files['index.html'])).toContain('./releases/');expect(files['.nojekyll']).toBeDefined();});
+it('cria HML/release e loader relativo a base do Pages',()=>{const files=preparePages({...pack(),existing:{}});expect(new TextDecoder().decode(files[`releases/${sha}/version.json`])).toContain(sha);expect(files['hml/game.js']).toEqual(site()['game.js']);expect(new TextDecoder().decode(files['loader.mjs'])).toContain('./releases/');expect(files['.nojekyll']).toBeDefined();});
 it('preserva release anterior e evita sobrescrever um SHA',()=>{const initial=preparePages({...pack(),existing:{}});expect(preparePages({...pack(),existing:initial})[`releases/${sha}/game.js`]).toEqual(initial[`releases/${sha}/game.js`]);const changed=site();changed['game.js']=strToU8('diferente');expect(()=>preparePages({...pack(changed),existing:initial})).toThrow(/imutável/);});
 it('checksum divergente bloqueia publicação',()=>expect(()=>preparePages({...pack(),checksum:'0'.repeat(64),existing:{}})).toThrow(/checksum/));
 it('SHA/versão incoerentes bloqueiam',()=>expect(()=>preparePages({...pack(),sha:'b'.repeat(40),existing:{}})).toThrow(/SHA/));
 it('entrada extra ou traversal não entra no site',()=>{const files=site();files['../segredo.txt']=strToU8('não publicar');expect(()=>preparePages({...pack(files),existing:{}})).toThrow(/arquivo/);});
 it('arquivo exigido ausente bloqueia',()=>{const files=site();delete files['LEIA-ME.txt'];expect(()=>preparePages({...pack(files),existing:{}})).toThrow(/sete/);});
+it('preview posterior não sobrescreve contrato formal nem promove candidato',()=>{
+ const pointer=strToU8(JSON.stringify({schema:1,strategy:'azul-verde',estavel:'b'.repeat(40),anterior:null,canario:null,percentual:0,retiradas:[]}));
+ const files=preparePages({...pack(),existing:{'rollout.json':pointer}});expect(files['rollout.json']).toEqual(pointer);expect(files['loader.mjs']).toBeDefined();expect(files['rollout-contract.mjs']).toBeDefined();
+});

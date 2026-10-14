@@ -29,7 +29,8 @@ function content(files,sha){
  if(json(files['sbom.cdx.json']).bomFormat!=='CycloneDX')throw Error('SBOM inválido.');
  return version;
 }
-export function createBundle(inputs,{sha,run}){
+export function createBundle(inputs,{sha,run,runAttempt=process.env.GITHUB_RUN_ATTEMPT??'1'}){
+ if(!/^[1-9]\d*$/.test(String(runAttempt)))throw Error('Tentativa inválida.');
  identity(sha,run);for(const name of Object.keys(inputs))safe(name);
  const files={};
  for(const [source,target] of Object.entries(required)){if(!inputs[source])throw Error(`Ausente: ${source}`);files[target]=inputs[source];}
@@ -38,7 +39,7 @@ export function createBundle(inputs,{sha,run}){
  }
  const version=content(files,sha),inventory={};
  for(const name of Object.keys(files).sort())inventory[name]={sha256:hash(files[name]),bytes:files[name].length};
- files['ci-manifest.json']=bytes({schema:1,sha,run:String(run),version:version.version,build:version.build,files:inventory});
+ files['ci-manifest.json']=bytes({schema:1,sha,run:String(run),runAttempt:String(runAttempt),version:version.version,build:version.build,files:inventory});
  verifyBundle(files,{sha,run});return files;
 }
 export function verifyBundle(files,{sha,run}){

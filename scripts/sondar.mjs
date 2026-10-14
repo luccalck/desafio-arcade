@@ -1,6 +1,7 @@
 import {readFile,writeFile,mkdir} from 'node:fs/promises';
 import {resolve,dirname} from 'node:path';
 import {pathToFileURL} from 'node:url';
+import {normalizeRollout} from '../pages/rollout-contract.mjs';
 const HEADER='data,alvo,codigo,tempo,versao';
 function target(value){const url=new URL(value);if(!['http:','https:'].includes(url.protocol)||url.username||url.password||url.search||url.hash)throw Error('URL HTTP(S) sem credenciais/query/fragmento exigida.');return new URL(url.href.replace(/\/?$/,'/'));}
 async function get(url,timeoutMs){
@@ -18,7 +19,7 @@ export async function sondar({alvo,url,loader=false,timeoutMs=10000}){
    const pointer=await get(new URL('rollout.json',base),timeoutMs);
    if(pointer.codigo!==200){r.erro='ponteiro-http';return r;}
    let rollout;try{rollout=JSON.parse(pointer.body);}catch{r.erro='ponteiro-invalido';return r;}
-   expectedSha=rollout.activeSha;
+   try{expectedSha=normalizeRollout(rollout).estavel;}catch{r.erro='ponteiro-invalido';return r;}
    if(!/^[a-f0-9]{40}$/.test(expectedSha||'')){r.erro='ponteiro-invalido';return r;}
   }
   r.versionUrl=new URL(expectedSha?`releases/${expectedSha}/version.json`:'version.json',base).href;

@@ -1,0 +1,77 @@
+1
+00:00:00,000 --> 00:00:05,000
+Aprender programação pode começar
+com uma ação visível.
+
+2
+00:00:05,000 --> 00:00:10,000
+Rota do Código é uma oficina Python
+com cinco missões e um desafio final.
+
+3
+00:00:10,000 --> 00:00:15,000
+Cada função conecta
+uma ideia de programação
+
+4
+00:00:15,000 --> 00:00:20,000
+a um objetivo do jogo.
+
+5
+00:00:20,000 --> 00:00:25,000
+O jogador lê o objetivo,
+edita o código e testa.
+
+6
+00:00:25,000 --> 00:00:30,000
+Aqui, mudamos o retorno da função:
+ao executar, o movimento da nave muda.
+
+7
+00:00:30,000 --> 00:00:35,000
+O feedback ajuda a experimentar
+outra solução,
+
+8
+00:00:35,000 --> 00:00:40,000
+sem exigir uma única resposta decorada.
+
+9
+00:00:40,000 --> 00:00:45,000
+O diferencial é ligar código,
+tentativa e efeito
+
+10
+00:00:45,000 --> 00:00:50,000
+em uma experiência curta.
+O jogo funciona no navegador
+
+11
+00:00:50,000 --> 00:00:55,000
+e o pacote também
+pode ser aberto offline.
+
+12
+00:00:55,000 --> 00:01:00,000
+Não é preciso instalar engine
+ou pagar por um serviço para jogar.
+
+13
+00:01:00,000 --> 00:01:05,000
+Ao concluir os desafios,
+o jogador pode exportar seu código
+
+14
+00:01:05,000 --> 00:01:10,000
+para continuar estudando.
+Nossa proposta é estimular prática
+
+15
+00:01:10,000 --> 00:01:15,000
+e raciocínio com feedback imediato.
+A avaliação da aprendizagem
+
+16
+00:01:15,000 --> 00:01:20,000
+será feita com pessoas; ainda não
+apresentamos resultados medidos.

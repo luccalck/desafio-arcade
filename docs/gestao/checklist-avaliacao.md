@@ -339,13 +339,13 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 
 ## INT-10: Vídeo e relatório · peso 5% de A
 
-- [ ] I10-01 — Roteiro do pitch explica proposta de gamificação.
-- [ ] I10-02 — Roteiro explica conceito e diferencial.
+- [x] I10-01 — Roteiro do pitch explica proposta de gamificação.
+- [x] I10-02 — Roteiro explica conceito e diferencial.
 - [ ] I10-03 — Gravar gameplay real da build de produção formal.
 - [ ] I10-04 — Gerar pitch.mp4 com duração ≤90 segundos verificada por ffprobe.
-- [ ] I10-05 — Registrar direitos de trilha e imagens em THIRD_PARTY.md, ou declarar ausência de trilha quando aplicável.
+- [x] I10-05 — Registrar direitos de trilha e imagens em THIRD_PARTY.md, ou declarar ausência de trilha quando aplicável.
 - [ ] I10-06 — Inserir legendas legíveis por acessibilidade.
-- [ ] I10-07 — Obter concordância real de quem aparece/tem imagem ou voz publicada no vídeo.
+- [x] I10-07 — Obter concordância real de quem aparece/tem imagem ou voz publicada no vídeo.
 - [ ] I10-08 — Preparar relatório técnico PDF com até doze páginas; não substituir pelo GDD.
 - [ ] I10-09 — Relatório apresenta arquitetura da esteira e decisões.
 - [ ] I10-10 — Relatório apresenta alternativas descartadas e justificativas.
@@ -483,7 +483,7 @@ Esta tabela transcreve os três níveis como critérios de conferência. Os esta
 - [ ] DIR-10 — CONDICIONAL ranking: só apelido escolhido na hora e guardado no navegador. Jogo atual não tem ranking.
 - [ ] DIR-11 — CONDICIONAL telemetria: somente anônima e agregada, com coleta/finalidade explicadas no README.
 - [x] DIR-12 — Ausência de telemetria explicitada no README em13/10/2026, com dados/chaves/reset; rede/código conferidos no [004](../evidencias/seguranca-inicial.md). Reconferência finalDIR-09 continua aberta.
-- [ ] DIR-13 — Concordância real de quem aparecer no vídeo (I10-07).
+- [x] DIR-13 — Concordância real de quem aparecer no vídeo (I10-07).
 - [ ] DIR-14 — Conferir declaração coletiva de propriedade/originalidade: na UC, protótipo pertence ao squad.
 - [ ] DIR-15 — Não publicar CPF/assinaturas/segredos em código, logs, capturas ou artefatos públicos; reconferência final complementar às orientações do projeto.
 - [ ] DIR-16 — CONDICIONAL concurso: decisão informada e conjunta sobre licença à Framework e uso de nome/imagem/voz; não aceitar termos automaticamente.
@@ -604,3 +604,5 @@ Preparação011–012 — 13/10/2026, DaviSouza78: [publicadorHML](../evidencias
 Revalidação013/014 — 13/10/2026: [conteúdo/aprendizagem](../evidencias/aprendizagem-conteudo.md) e [smokePRD](../evidencias/smoke-prd.md). Soluções alternativas e seis entradas de transferência coerentes entre fonte/AST/HTML/Python;194testes e cobertura core97,90%. Build com resultado inválido bloqueou e fonte foi restaurada byte a byte. Smoke local com falhas deSHA/carregador/recurso/runtime/console/controle e recusa deHML; runner público retornouexit1 emCSS404 sintético. I04-14/KIT-29 continuam condicionais não aplicáveis (Opal/AIStudio ausentes), B-01/B-02 aguardam avaliação humana021/banca, I04-10 permanece aberto até pós-deploy019. Nenhum novo check/gate fechado por essas preparações.
 
 Revalidação015/016 — 14/10/2026: tag/SemVer/proveniência/mesmoartefato/notas e imutabilidade de anexos testados localmente; alertas200/500/timeout/2,0/2,01/duplicação/recuperação/alvos independentes testados com mocks. I08-09/I08-15 fechados porAPI e confirmação humana identificadas acima. I01-10/I05-09/I06-07–12/I07-06/I08-10–14/KIT-26/gates continuam abertos até execução/aprovação real, não por existência de código.
+
+Preparação017/018 — 14/10/2026: [roteiro/legendas e concordâncias](../evidencias/video-direitos.md) e [rollout](../evidencias/rollout.md). I10-01/02/05 fechados por roteiro/inventário planejado sem trilha; I10-07/DIR-13 pela confirmação explícita de Davi sobre os quatro e registro privado, seminspeção desse documento pela IA. Reconferência de escopo/direitos do MP4 final obrigatória. I07-08/09/15/KIT-18/19 permanecem abertos até revisão de Plataforma/execução formal, embora contratos218testes e33E2E locais estejam verdes. Não houve G4/G6, produção ou recuperação operacional.

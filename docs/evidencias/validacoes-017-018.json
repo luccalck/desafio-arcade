@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-14",
+  "responsible": "DaviSouza78",
+  "baseSha": "1d4f710b6d254b6fcc052cac7d0116cfee8223e3",
+  "scope": [
+    17,
+    18
+  ],
+  "local": {
+    "unitIntegration": {
+      "command": "npm run test:ci -- --maxWorkers=2",
+      "passed": 218,
+      "failed": 0,
+      "statementsCoverage": 97.9
+    },
+    "e2eFull": {
+      "command": "playwright test --workers=1 --retries=0",
+      "passed": 33,
+      "failed": 0
+    },
+    "e2eRecheck": {
+      "command": "playwright test tests/e2e/rollout.spec.mjs --workers=1 --retries=0",
+      "passed": 5,
+      "failed": 0
+    },
+    "lint": true,
+    "build": true,
+    "actionlint": {
+      "passed": true,
+      "shellcheck": false
+    },
+    "srt": {
+      "cues": 16,
+      "plannedSeconds": 80,
+      "maxLineCharacters": 39,
+      "maxCharactersPerSecond": 14.6,
+      "words": 143,
+      "plannedWordsPerMinute": 107.25,
+      "humanTimedReading": false
+    }
+  },
+  "consent": {
+    "source": "Davi confirmou no chat em14/10/2026: todos concordamos, existe sim um registro",
+    "members": [
+      "Davi",
+      "Lucca",
+      "Miguel",
+      "Lucas"
+    ],
+    "privateRecordIndependentlyInspected": false
+  },
+  "productionDeployment": false,
+  "operationalRollback": false,
+  "humanReviewApproved": false,
+  "ci": null
+}

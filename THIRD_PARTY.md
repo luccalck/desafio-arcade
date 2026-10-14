@@ -1,5 +1,9 @@
 # Origem e licenças
 
+## Plano do vídeo017 — 14/10/2026
+
+O [roteiro](docs/pitch-roteiro.md) prevê capturas reais do próprio jogo e vozes dos quatro integrantes, condicionadas às concordâncias individuais. **Sem música, trilha, efeitos sonoros, imagens de banco ou logotipos externos.** UI e ativos próprios seguem o inventário008 abaixo; roteiro/legendas tiveram assistência Codex registrada em AI-USAGE. Nenhuma mídia nova foi produzida ou incorporada. [Inventário e situação dos consentimentos](docs/evidencias/video-direitos.md). Revalidar fontes, créditos e direitos no arquivo final antes de publicação; MIT do código não substitui consentimento de imagem/voz.
+
 Código, CSS, texto educativo, robô, mapas, concept art e wireframes foram criados para o projeto com assistência do Codex, descrita em AI-USAGE. Licença própria: MIT, em LICENSE. Revisão humana dos direitos pendente antes do merge. Fontes são as existentes no sistema do jogador; não há arquivos de fontes, imagens externas, música ou sons redistribuídos.
 
 A build incorpora somente código próprio e JSON local. As bibliotecas abaixo são ferramentas de construção/teste/documentação. O lockfile fixa versões e integridade; `npm sbom --sbom-format cyclonedx` produz o inventário transitivo na CI.
