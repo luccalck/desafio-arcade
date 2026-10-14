@@ -19,6 +19,7 @@ export function planRollout({action,existing={},bundle,sha,run,runAttempt,actor,
  if(typeof reason!=='string'||!reason.trim()||reason.length>240||[...reason].some(c=>c.charCodeAt(0)<32))throw Error('motivo inválido.');
  if(!validSha(sha))throw Error('SHA inválido.');
  const files={...existing},rollout=existing['rollout.json']?normalizeRollout(JSON.parse(strFromU8(existing['rollout.json']))):{...EMPTY,retiradas:[]};
+ const failedSha=action==='rollback'?rollout.estavel:null;
  // Recuperação não depende de a versão defeituosa ainda estar completa.
  for(const s of (action==='rollback'?[sha]:action==='abortar'?[rollout.estavel,rollout.anterior]:[rollout.estavel,rollout.anterior,rollout.canario]).filter(Boolean))assertRelease(files,s);
  if(action==='abrir'){
@@ -36,7 +37,7 @@ export function planRollout({action,existing={},bundle,sha,run,runAttempt,actor,
   rollout.anterior=rollout.estavel;rollout.estavel=sha;rollout.canario=null;
  }else if(action==='rollback'){
   if(rollout.anterior!==sha)throw Error('Destino de rollback não é anterior.');
-  rollout.retiradas=[...new Set([...rollout.retiradas,rollout.estavel])];
+  rollout.retiradas=[...new Set([...rollout.retiradas,rollout.estavel,rollout.canario].filter(Boolean))];
   rollout.estavel=sha;rollout.anterior=null;rollout.canario=null;
  }else if(action==='abortar'){
   if(rollout.canario!==sha||!rollout.estavel)throw Error('Candidata e estável recuperável exigidas.');
@@ -44,7 +45,7 @@ export function planRollout({action,existing={},bundle,sha,run,runAttempt,actor,
  }else throw Error('Ação deve ser abrir, promover, rollback ou abortar.');
  const validated=normalizeRollout(rollout);if(action!=='abortar')assertRelease(files,sha);
  files['rollout.json']=strToU8(JSON.stringify(validated,null,2)+'\n');Object.assign(files,loaderFiles());
- return {files,rollout:validated,message:`deploy: ${action} ${sha}; ator=${actor}; motivo=${reason.trim()}`};
+ return {files,rollout:validated,message:`deploy: ${action} ${sha};${failedSha?` falha=${failedSha};`:''} ator=${actor}; motivo=${reason.trim()}`};
 }
 async function tree(root,prefix=''){
  const files={};for(const e of await readdir(join(root,prefix),{withFileTypes:true})){if(e.name==='.git')continue;if(e.isSymbolicLink())throw Error('Link não permitido.');const name=prefix?`${prefix}/${e.name}`:e.name;if(e.isDirectory())Object.assign(files,await tree(root,name));else if(e.isFile())files[name]=await readFile(join(root,name));}return files;

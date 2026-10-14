@@ -38,6 +38,13 @@ it('rollback retira defeituosa, conserva bytes e recusa destino ausente',()=>{
  delete existing[`releases/${b}/index.html`];expect(planRollout({...opts,action:'rollback',sha:a,existing}).rollout.estavel).toBe(a);
  delete existing[`releases/${a}/index.html`];expect(()=>planRollout({...opts,action:'rollback',sha:a,existing})).toThrow(/release/i);
 });
+it('rollback manual retira também a candidata e preserva arquivos alheios',()=>{
+ const existing=tree(formal(b,a,c));Object.assign(existing,release(c));
+ const result=planRollout({...opts,action:'rollback',sha:a,existing});
+ expect(result.rollout.retiradas).toEqual([b,c]);
+ expect(result.rollout.canario).toBeNull();
+ expect(result.files['hml/preservar.txt']).toEqual(existing['hml/preservar.txt']);
+});
 it('não abre candidato com pacote sem proveniência nem aceita ator/motivo inválidos',()=>{
  expect(()=>planRollout({...opts,action:'abrir',existing:tree(formal()),bundle:{}})).toThrow();
  expect(()=>planRollout({...opts,actor:'outro\nator',action:'rollback',sha:a,existing:tree(formal(b,a))})).toThrow(/ator/);

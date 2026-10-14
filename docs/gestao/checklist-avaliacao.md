@@ -265,7 +265,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I07-15 — Validar manutenção de versão na sessão sob a estratégia formal, inclusive retirada da versão defeituosa e armazenamento indisponível.
 - [ ] I07-16 — Smoke de produção falhando dispara rollback automático pela pipeline. Contrato e testes locais reforçados no022 (`docs/evidencias/rollback-automatico.md`); falta execução formal observada.
 - [ ] I07-17 — Rollback restaura estavel para anterior e retira canário defeituoso, sem recompilar. Hashes/HTTP da baseline testados localmente no022; falta prova no Pages.
-- [ ] I07-18 — rollback.yml com workflow_dispatch para recuperação manual pela pipeline.
+- [ ] I07-18 — rollback.yml com workflow_dispatch para recuperação manual pela pipeline. Código e testes locais da etapa023 em `docs/evidencias/rollback-manual.md`; dispatch protegido, recuperação/CI/revisão reais ainda pendentes.
 - [ ] I07-19 — Histórico gh-pages registra mudanças em rollout.json, quem disparou e por quê.
 - [ ] I07-20 — Ensaio com versão defeituosa proposital, controlado e rastreável.
 - [ ] I07-21 — Detecção da falha por alerta ou smoke, com evidência real.
@@ -297,7 +297,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I08-19 — Painel mostra versão em produção.
 - [ ] I08-20 — Painel mostra percentual do canário/estado aplicável da estratégia.
 - [ ] I08-21 — Painel mostra métricas DORA.
-- [ ] I08-22 — scripts/dora.mjs calcula métricas do período com dados verificáveis do GitHub.
+- [ ] I08-22 — scripts/dora.mjs calcula métricas do período com dados verificáveis do GitHub. Script/fixtures da etapa024 e consulta real sem observações formais em `docs/evidencias/dora.md`; aguarda dados/CI/revisão.
 - [ ] I08-23 — Frequência de deploy: execuções reais de deploy-prd.
 - [ ] I08-24 — Lead time de mudança: commit até produção, com vínculo correto entre fontes e deploy.
 - [ ] I08-25 — Taxa de falha de mudança: deploys seguidos de rollback.
@@ -305,7 +305,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I08-27 — Comparar lead time medido com linha de base de onze dias da Carparts.
 - [ ] I08-28 — Tomar decisão de melhoria a partir dos dados reais.
 - [ ] I08-29 — Medir/documentar efeito da melhoria, sem fabricar ganho ou quantidade mínima de execuções.
-- [ ] I08-30 — Relatório registra possibilidade de atraso dos schedules do Actions em horários de pico.
+- [ ] I08-30 — Relatório registra possibilidade de atraso dos schedules do Actions em horários de pico. Limite documentado em `docs/relatorio.md` e `docs/evidencias/dora.md`; horários efetivos/relatório final ainda pendentes.
 - [ ] I08-31 — AVANÇADO: alerta realmente disparado e tratado, com histórico e recuperação.
 - [ ] I08-32 — AVANÇADO: melhoria orientada por métrica com resultado verificável.
 - [ ] I08-33 — CONDICIONAL: contagem anônima de partidas/fases, se adotada; sem identificar jogador, finalidade documentada.
