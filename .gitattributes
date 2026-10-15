@@ -3,3 +3,6 @@
 *.pdf binary
 *.mp4 binary
 *.zip binary
+
+# Preservar os bytes dos logs e capturas usados no manifesto de evidências.
+docs/evidencias/operacao-2026-10-15/* -text
