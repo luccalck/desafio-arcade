@@ -512,3 +512,11 @@ Inventário de28PRsautorais preservado. Snapshot inicial:28abertos/zeroreviews. 
 ### Validação local do fechamento — 14/10/2026
 
 PDF técnico revisado gerado e conferido:6páginas A4, doisprints reais com legendas/origens/datashistóricas e linksdos10INT. Gerador verificado com3casosnegativos(imagemausente, remota e fora dedocs), todos bloqueados comsaída1; ESLintdoscriptaprovado. Lint/tipagem/actionlint globais,270testesunidade/integração e36E2EdoHEADcorrigido passaram localmente; essasprovas não são publicaçãoCI/PRD. Manter I10-17/FIC-12pendentes até artefatoCIacessível e reconferência final.
+
+
+## Reconferência operacional —15/10/2026
+
+- [x] **001/003/040 — PR32 aprovado e integrado:** Lucas/6lucassilvaaa aprovou59dc830 em14/10/2026; integração773af17 em15/10/2026, main padrão, proteção/revisão/CI preservadas. I01-14tem15reviewsdoscolegas mais a revisãoexterna da consolidação; banca/fatoroficial não foram realizados.
+- [ ] **011/I03-21/G3 — corrigir coleta de tempo:** run38674290799 publicou HML0.7.0 e passou regressão pública, mas a ausência dePushEvent nofeed atrasado reprovou a coleta. Correção/testes em [medição HML](../evidencias/medicao-hml-2026-10-15.md), depende de novoPRrevisado e novaexecução. Não declarar jobintegral aprovado.
+- [ ] **019/G4 — produção:** bloqueada corretamente pela falhaHML; sempromoção, releasefinal, rollbacksoperacionais ou DORAmedido nesta execução.
+- [ ] **017/029/031/G6 — pitch:** continua pendente por orientação deLucca. Playtest, TXT/AVA/recibo e banca conservam suas exigências humanas.
