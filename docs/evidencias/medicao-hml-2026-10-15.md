@@ -18,3 +18,8 @@ O coletor usava exclusivamente o feed público Events. O feed consultado não co
 Acrescentamos trêsregressões decontrato: PRmain semfeed disponível; payload comrepo/ref/SHA/timestamp; tag anotada comobjeto remoto. Antes:3falhas e8passes. Depois:11passes, lint/tsc aprovados. Fixtures são sintéticas e não resultados deprodução. Logs antes/depois locais em .contexto/execucao-2026-10-15; falhaoperacional na run real acima. Nova execuçãoHML/PRD permanece pendente atéPRrevisado eCIverde.
 
 A aprovação existente doPR32 não cobre automaticamente novas alterações deste ajuste. Este fix precisa de novoPR e revisãoexterna sembypass.
+
+
+## Revisão de permissões — 15/10/2026
+
+Declaramos `pull-requests: read` somente no job deploy-hml, que passou a consultar PRs associados ao commit. O endpoint documenta essa permissão para tokens de integração; o restante dos jobs mantém seu escopo. Não foi observado erro403 na produção: este ajuste decorre da revisão do contrato da API e precisa da próxima execução formal. [Fonte oficial](https://docs.github.com/en/rest/commits/commits#list-pull-requests-associated-with-a-commit).
