@@ -1,0 +1,19 @@
+Title:           Rota do Código — GDD v0.6.0
+Creator:         Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) HeadlessChrome/155.0.0.0 Safari/537.36
+Producer:        Skia/PDF m155
+CreationDate:    Tue Oct 13 15:05:03 2026 E. South America Standard Time
+ModDate:         Tue Oct 13 15:05:03 2026 E. South America Standard Time
+Custom Metadata: no
+Metadata Stream: no
+Tagged:          no
+UserProperties:  no
+Suspects:        no
+Form:            none
+JavaScript:      no
+Pages:           18
+Encrypted:       no
+Page size:       595.92 x 842.88 pts (A4)
+Page rot:        0
+File size:       1366265 bytes
+Optimized:       no
+PDF version:     1.4

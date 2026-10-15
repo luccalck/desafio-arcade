@@ -1,0 +1,94 @@
+{
+  "date": "2026-10-13",
+  "sourceSha": "43cf1b3036e89c4e0a5d3cf6c7966716b267c277",
+  "npmComponents": 158,
+  "assets": 26,
+  "gitleaksFindings": 0,
+  "cpfMatchingPaths": [],
+  "humanReviews": [
+    {
+      "pr": 9,
+      "reviewCount": 0,
+      "state": "OPEN"
+    },
+    {
+      "pr": 8,
+      "reviewCount": 0,
+      "state": "OPEN"
+    },
+    {
+      "pr": 7,
+      "reviewCount": 0,
+      "state": "OPEN"
+    },
+    {
+      "pr": 6,
+      "reviewCount": 0,
+      "state": "OPEN"
+    },
+    {
+      "pr": 5,
+      "reviewCount": 0,
+      "state": "OPEN"
+    },
+    {
+      "pr": 4,
+      "reviewCount": 0,
+      "state": "OPEN"
+    },
+    {
+      "pr": 3,
+      "reviewCount": 0,
+      "state": "OPEN"
+    },
+    {
+      "pr": 2,
+      "reviewCount": 0,
+      "state": "OPEN"
+    }
+  ],
+  "fontsCI": [
+    {
+      "name": "AAAAAA+LiberationSans-Bold",
+      "version": "Version 2.1.5",
+      "fsType": 0,
+      "copyright": "Digitized data copyright (c) 2010 Google Corporation.\nCopyright (c) 2012 Red Hat, Inc."
+    },
+    {
+      "name": "BAAAAA+LiberationSans",
+      "version": "Version 2.1.5",
+      "fsType": 0,
+      "copyright": "Digitized data copyright (c) 2010 Google Corporation. \nCopyright (c) 2012 Red Hat, Inc."
+    }
+  ],
+  "originalHashes": {
+    "Avaliação.html": "19362485b3ec9534bdf31303ca0b92b6fe96de21bb87867977d37a7393565275",
+    "Modelo GDD Framework Arcade.docx": "2a67b417bad4b25e5b4a3362fad4e3db0281e548bee105fbd83f2d2443d6d5ff"
+  },
+  "creditsToConfirm": [
+    "@esbuild/win32-x64",
+    "@eslint/config-helpers",
+    "@rolldown/binding-win32-x64-msvc",
+    "argparse",
+    "lightningcss",
+    "lightningcss-win32-x64-msvc"
+  ],
+  "reviewRequest": {
+    "reviewer": "DaviSouza78",
+    "http": 422,
+    "registered": false,
+    "reason": "GitHub não reconheceu colaborador para requestreview"
+  },
+  "localGDD": {
+    "pages": 13,
+    "bytes": 363614,
+    "highConceptCharacters": 804,
+    "pdfinfoExit": 0,
+    "visuallyInspectedPages": [
+      1,
+      11,
+      12,
+      13
+    ]
+  }
+}

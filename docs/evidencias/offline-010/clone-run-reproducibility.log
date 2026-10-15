@@ -1,0 +1,9 @@
+
+> rota-do-codigo@0.6.0 reproducibility
+> node scripts/reproducibility.mjs
+
+Conteúdo válido: 6 missões; cinco referências passam e starters têm falhas observáveis.
+Build estática v0.6.0, SHA c56df79 → dist/
+Build estática v0.6.0, SHA c56df79 → dist/
+Build estática v0.6.0, SHA c56df79 → dist/
+Reprodutibilidade conferida: mesmos hashes, exceto data explicitamente normalizada.

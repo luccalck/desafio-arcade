@@ -1,0 +1,69 @@
+<testsuites id="" name="" tests="7" failures="1" skipped="0" errors="0" time="15.908216">
+<testsuite name="game.spec.mjs" timestamp="2026-10-07T12:01:30.023Z" hostname="" tests="6" failures="1" skipped="0" time="56.752" errors="0">
+<testcase name="regressão: primeira fase termina e avança para depuração" classname="game.spec.mjs" time="7.394">
+</testcase>
+<testcase name="regressão: derrota permite editar, corrigir e reiniciar" classname="game.spec.mjs" time="7.57">
+</testcase>
+<testcase name="campanha: repetir conclui o padrão e permite recomeçar" classname="game.spec.mjs" time="14.008">
+</testcase>
+<testcase name="mobile: sem overflow horizontal e ações alcançáveis" classname="game.spec.mjs" time="6.714">
+</testcase>
+<testcase name="offline: arquivo local completa primeira fase com rede desativada" classname="game.spec.mjs" time="8.907">
+</testcase>
+<testcase name="teclado: remover último comando preserva foco no editor" classname="game.spec.mjs" time="12.159">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\game-teclado-remover-último-comando-preserva-foco-no-editor\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\game-teclado-remover-último-comando-preserva-foco-no-editor\error-context.md]]
+
+[[ATTACHMENT|..\test-results\game-teclado-remover-último-comando-preserva-foco-no-editor\trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeFocused() failed" type="expect.toBeFocused">
+<![CDATA[  game.spec.mjs:52:1 › teclado: remover último comando preserva foco no editor ─────────────────────
+
+    Error: expect(locator).toBeFocused() failed
+
+    Locator:  locator('#add-advance')
+    Expected: focused
+    Received: inactive
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeFocused" locator('#add-advance') with timeout 5000ms
+      - waiting for locator('#add-advance')
+        14 × locator resolved to <button id="add-advance" data-action="add" data-kind="advance">…</button>
+           - unexpected value "inactive"
+
+
+      53 |   await start(page);await page.locator('#add-advance').focus();await page.keyboard.press('Enter');
+      54 |   const remove=page.getByRole('button',{name:'Remover comando 1',exact:true});await remove.focus();await page.keyboard.press('Enter');
+    > 55 |   await expect(page.locator('#add-advance')).toBeFocused();
+         |                                              ^
+      56 | });
+      57 |
+        at C:\dev\studies\senai\semester-2\devops\desafio-arcade\jogo-arcade\tests\e2e\game.spec.mjs:55:46
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\test-results\game-teclado-remover-último-comando-preserva-foco-no-editor\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\test-results\game-teclado-remover-último-comando-preserva-foco-no-editor\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\test-results\game-teclado-remover-último-comando-preserva-foco-no-editor\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\test-results\game-teclado-remover-último-comando-preserva-foco-no-editor\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+</testsuite>
+<testsuite name="smoke.spec.mjs" timestamp="2026-10-07T12:01:30.023Z" hostname="" tests="1" failures="0" skipped="0" time="8.021" errors="0">
+<testcase name="smoke: versão, início e entrega da primeira fase" classname="smoke.spec.mjs" time="8.021">
+</testcase>
+</testsuite>
+</testsuites>

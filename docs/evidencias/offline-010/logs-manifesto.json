@@ -1,0 +1,56 @@
+[
+  {
+    "file": "build-json-invalido.log",
+    "rawSha256": "396f62441f9ddea6ba545f91e73778d8ffc89ab32bb7d9e6ec331d82ee25d6ca",
+    "versionedSha256": "241584bd3d6bfa3980fc9c3c00d57276d044ba0b087c92197f6f5ccff99c359e",
+    "normalization": "UTF-8/LF e espaços finais; conteúdo das linhas de resultado preservado; bruto em.contexto/passo-010"
+  },
+  {
+    "file": "clone-ci.log",
+    "rawSha256": "df3b3522392f8219af13479770ee1c306e967d3a3c6d05b4830dd02a340a3a7a",
+    "versionedSha256": "2af8a0b6c5ee065ff37121058ff773f1d62992016d088fc94a3e09d9d5f68a27",
+    "normalization": "UTF-8/LF e espaços finais; conteúdo das linhas de resultado preservado; bruto em.contexto/passo-010"
+  },
+  {
+    "file": "clone-run-build.log",
+    "rawSha256": "de1505923e6843feb1f3cf558e125121c7a4c97b099b15fd9c3c4bb1b551e47d",
+    "versionedSha256": "8d6fa505140639e52f5176b80030001dea312fa1a69ce207709033f5fe176180",
+    "normalization": "UTF-8/LF e espaços finais; conteúdo das linhas de resultado preservado; bruto em.contexto/passo-010"
+  },
+  {
+    "file": "clone-run-gdd_pdf.log",
+    "rawSha256": "320ec3632075aee8b84534d498edbdf3767b50fad9913cc935480c953d75ca1e",
+    "versionedSha256": "557248616612920bc12563032d2fb99a0dc0f86eaa7f32de72fc6ddcc5cb5741",
+    "normalization": "UTF-8/LF e espaços finais; conteúdo das linhas de resultado preservado; bruto em.contexto/passo-010"
+  },
+  {
+    "file": "clone-run-lint.log",
+    "rawSha256": "16d010229e4822012e6abbcf969761929b00ab2ca5ff7fe52316512063aa7b6b",
+    "versionedSha256": "9950e03a69297079b5d3133e99b26f52f2cd16a4924365535bdfdda9824d3371",
+    "normalization": "UTF-8/LF e espaços finais; conteúdo das linhas de resultado preservado; bruto em.contexto/passo-010"
+  },
+  {
+    "file": "clone-run-package.log",
+    "rawSha256": "8c92e9d179a4f55c912e3bb9df367799bfe6d38b4a777ae85700de770eeba037",
+    "versionedSha256": "bee4653629c3ef39c05f484d4d167104561a77157ac8924e87c976edf9c70de9",
+    "normalization": "UTF-8/LF e espaços finais; conteúdo das linhas de resultado preservado; bruto em.contexto/passo-010"
+  },
+  {
+    "file": "clone-run-reproducibility.log",
+    "rawSha256": "f8c9f3bd90d69e390b9d289a95acefed50f16ed9e01ddc093aa7068a75cf5d1b",
+    "versionedSha256": "3fd51d1235698dceed19784379deaee7a6f9166ef458b09b59ac1c71c560b809",
+    "normalization": "UTF-8/LF e espaços finais; conteúdo das linhas de resultado preservado; bruto em.contexto/passo-010"
+  },
+  {
+    "file": "clone-run-test_ci.log",
+    "rawSha256": "12220c5761c0979cd9a78dcba5cdba0102d7628eba740b7e8f443fa0b50bbb63",
+    "versionedSha256": "e991c5f501b7defd2b6564092c3070fe373b41d6a7d85bea9d7f1b6662532212",
+    "normalization": "UTF-8/LF e espaços finais; conteúdo das linhas de resultado preservado; bruto em.contexto/passo-010"
+  },
+  {
+    "file": "clone-run-test_e2e------workers=1.log",
+    "rawSha256": "0ac42e09f20b274bf51ad8de166c1aa48eb48d6fa504c63040e9be625605554c",
+    "versionedSha256": "8c222c34ef74d7fccf30dec4593df51196b8d48896bef073a2715b7f9932814c",
+    "normalization": "UTF-8/LF e espaços finais; conteúdo das linhas de resultado preservado; bruto em.contexto/passo-010"
+  }
+]

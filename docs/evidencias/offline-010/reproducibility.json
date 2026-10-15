@@ -1,0 +1,22 @@
+{
+  "method": "duas builds; somente campo build de version.json normalizado",
+  "first": {
+    "LEIA-ME.txt": "8d42c317082085cfe53fbff06f8f47ae0f581805fd40bebc910eec27a68c89b8",
+    "LICENSE.txt": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb",
+    "THIRD_PARTY.txt": "8660b447aa26d5d5d3320682a8bc4009389cd955ab227b95934bcb20fabf6b33",
+    "game.js": "bbcf59d6d038717675a3494ec38e0fcaa8bf6c9108544594367d5cd15ed606d8",
+    "index.html": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282",
+    "style.css": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da",
+    "version.json": "b5a2e05974d6d425c814d47758235d39aafacb10a18fb0998042fccb08bc747d"
+  },
+  "second": {
+    "LEIA-ME.txt": "8d42c317082085cfe53fbff06f8f47ae0f581805fd40bebc910eec27a68c89b8",
+    "LICENSE.txt": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb",
+    "THIRD_PARTY.txt": "8660b447aa26d5d5d3320682a8bc4009389cd955ab227b95934bcb20fabf6b33",
+    "game.js": "bbcf59d6d038717675a3494ec38e0fcaa8bf6c9108544594367d5cd15ed606d8",
+    "index.html": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282",
+    "style.css": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da",
+    "version.json": "b5a2e05974d6d425c814d47758235d39aafacb10a18fb0998042fccb08bc747d"
+  },
+  "passed": true
+}

@@ -1,0 +1,77 @@
+name: Recuperação manual de produção
+on:
+  workflow_dispatch:
+    inputs:
+      reason:
+        description: Causa operacional observada; detalhar fatos nos logs do incidente
+        required: true
+        type: choice
+        options:
+          - smoke-falhou
+          - alerta-confirmado
+          - degradacao-confirmada
+          - outro-incidente-validado
+permissions:
+  contents: read
+concurrency:
+  group: pages-publicacao
+  cancel-in-progress: false
+jobs:
+  rollback:
+    if: github.ref == 'refs/heads/main' && vars.FORMAL_HML_ENABLED == 'true' && vars.FORMAL_PRD_ENABLED == 'true' && vars.MONITOR_ENABLED == 'true' && vars.ALERTS_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: producao
+      url: ${{ vars.SITE_URL }}/
+    permissions:
+      actions: write
+      contents: write
+      pages: write
+      id-token: write
+    env:
+      GH_TOKEN: ${{ github.token }}
+      SITE_URL: ${{ vars.SITE_URL }}
+      FORMAL_HML_ENABLED: ${{ vars.FORMAL_HML_ENABLED }}
+      FORMAL_PRD_ENABLED: ${{ vars.FORMAL_PRD_ENABLED }}
+      MONITOR_ENABLED: ${{ vars.MONITOR_ENABLED }}
+      ALERTS_ENABLED: ${{ vars.ALERTS_ENABLED }}
+      MANUAL_REASON: ${{ inputs.reason }}
+      PLAYWRIGHT_CHANNEL: chromium
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - run: npx playwright install --with-deps chromium
+      - name: Restaurar anterior validada sem caminho ou SHA fornecido pelo operador
+        id: restaurar
+        run: node scripts/promover.mjs manual --sha "$GITHUB_SHA" --run "$GITHUB_RUN_ID" --site-url "$SITE_URL"
+      - uses: ./.github/actions/publicar-pages
+        with:
+          name: pages-rollback-manual-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ steps.restaurar.outputs.path }}
+      - name: Confirmar propagação, versão e smoke da raiz
+        env:
+          PAGES_URL: ${{ vars.SITE_URL }}/
+          EXPECTED_SHA: ${{ steps.restaurar.outputs.sha }}
+          EXPECTED_VERSION: ${{ steps.restaurar.outputs.version }}
+          SMOKE_REPORT: reports/rollback-manual-smoke.json
+        run: |
+          node scripts/aguardar-versao.mjs "$PAGES_URL" "$EXPECTED_SHA" root
+          npx playwright test --config playwright.public.config.mjs --project=prd-smoke
+          node --input-type=module -e 'import {readFile} from "node:fs/promises";import {verifyManualRecovery} from "./scripts/promover.mjs";const r=JSON.parse(await readFile(process.env.SMOKE_REPORT,"utf8")),tx=JSON.parse(await readFile("reports/rollback-manual.json","utf8"));await verifyManualRecovery(tx,r);'
+      - name: Confirmar sondas e alertas em execução separada
+        env:
+          EXPECTED_SHA: ${{ steps.restaurar.outputs.sha }}
+        run: node scripts/observar-producao.mjs
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: rollback-manual-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reports/
+          if-no-files-found: warn

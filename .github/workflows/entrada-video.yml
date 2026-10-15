@@ -1,0 +1,119 @@
+name: Entrada de Vídeo
+on:
+  workflow_dispatch:
+    inputs:
+      origem_tipo:
+        description: 'Origem autorizada do vídeo'
+        required: true
+        default: 'run'
+        type: choice
+        options: [run, asset]
+      origem_id:
+        description: 'ID da run com artefato pitch-video ou ID do asset autorizado'
+        required: true
+      sha_esperado:
+        description: 'SHA-256 autorizado do MP4'
+        required: true
+      producao_sha:
+        description: 'SHA completo da produção realmente gravada'
+        required: true
+      producao_run:
+        description: 'Run da Esteira que publicou a produção gravada'
+        required: true
+      producao_tentativa:
+        description: 'Tentativa exata dessa execução de produção'
+        required: true
+      direitos_confirmados:
+        description: 'Confirme autoria/licenças e consentimentos reais necessários'
+        required: true
+        default: false
+        type: boolean
+      legendas_confirmadas:
+        description: 'Confirme legendas legíveis incorporadas e revisadas'
+        required: true
+        default: false
+        type: boolean
+permissions:
+  contents: read
+  actions: read
+concurrency:
+  group: entrada-video-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  validar-video:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      ORIGEM_TIPO: ${{ inputs.origem_tipo }}
+      ORIGEM_ID: ${{ inputs.origem_id }}
+      EXPECTED_DIGEST: ${{ inputs.sha_esperado }}
+      PRODUCTION_SHA: ${{ inputs.producao_sha }}
+      PRODUCTION_RUN: ${{ inputs.producao_run }}
+      PRODUCTION_ATTEMPT: ${{ inputs.producao_tentativa }}
+      RIGHTS_CONFIRMED: ${{ inputs.direitos_confirmados }}
+      CAPTIONS_CONFIRMED: ${{ inputs.legendas_confirmadas }}
+      SITE_URL: ${{ vars.SITE_URL }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - name: Instalar ffprobe
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+      - name: Baixar apenas a origem autorizada e a produção correspondente
+        shell: bash
+        run: |
+          [[ "$ORIGEM_ID" =~ ^[0-9]+$ && "$PRODUCTION_RUN" =~ ^[0-9]+$ && "$PRODUCTION_ATTEMPT" =~ ^[1-9][0-9]*$ && "$PRODUCTION_SHA" =~ ^[a-f0-9]{40}$ && "$EXPECTED_DIGEST" =~ ^[a-f0-9]{64}$ ]]
+          test "$RIGHTS_CONFIRMED" = true && test "$CAPTIONS_CONFIRMED" = true
+          mkdir -p video-entrada bundle-producao recibo-producao
+          gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${PRODUCTION_RUN}" > video-entrada/producao-run.json
+          node --input-type=module <<'NODE'
+          import {readFile} from 'node:fs/promises';
+          const r=JSON.parse(await readFile('video-entrada/producao-run.json','utf8'));
+          if(r.conclusion!=='success'||r.event!=='push'||r.path!=='.github/workflows/esteira.yml'||r.head_sha!==process.env.PRODUCTION_SHA||String(r.run_attempt)!==process.env.PRODUCTION_ATTEMPT)throw Error('Execução de produção não corresponde à origem declarada.');
+          NODE
+          gh run download "$PRODUCTION_RUN" --name "pacote-ci-${PRODUCTION_SHA}-${PRODUCTION_RUN}-${PRODUCTION_ATTEMPT}" --dir bundle-producao
+          gh run download "$PRODUCTION_RUN" --name "deploy-prd-${PRODUCTION_SHA}-${PRODUCTION_RUN}-${PRODUCTION_ATTEMPT}" --dir recibo-producao
+          if [ "$ORIGEM_TIPO" = run ]; then
+            gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${ORIGEM_ID}" --jq '.conclusion == "success"' | grep -qx true
+            gh run download "$ORIGEM_ID" --name pitch-video --dir video-entrada
+          else
+            gh api "repos/${GITHUB_REPOSITORY}/releases/assets/${ORIGEM_ID}" -H 'Accept: application/octet-stream' > video-entrada/pitch.mp4
+          fi
+          test -s video-entrada/pitch.mp4
+      - name: Validar digest, limite fixo de 90s e proveniência da produção
+        shell: bash
+        run: |
+          node --input-type=module <<'NODE'
+          import {readFile,writeFile} from 'node:fs/promises';
+          import {createHash} from 'node:crypto';
+          import {execFileSync} from 'node:child_process';
+          import {readBundleTree,verifyBundle} from './scripts/ci-bundle.mjs';
+          import {checkDuration} from './scripts/triagem.mjs';
+          import {validateProductionReceipt,verifyPublishedBuild} from './scripts/submissao.mjs';
+          const e=process.env,video=await readFile('video-entrada/pitch.mp4'),hash=b=>createHash('sha256').update(b).digest('hex');
+          if(hash(video)!==e.EXPECTED_DIGEST)throw Error('Digest do vídeo não autorizado.');
+          const duration=Number(execFileSync('ffprobe',['-v','error','-show_entries','format=duration','-of','default=noprint_wrappers=1:nokey=1','video-entrada/pitch.mp4'],{encoding:'utf8'}));checkDuration(duration);
+          const bundle=await readBundleTree('bundle-producao'),m=verifyBundle(bundle,{sha:e.PRODUCTION_SHA,run:e.PRODUCTION_RUN,runAttempt:e.PRODUCTION_ATTEMPT});
+          const receipt=JSON.parse(await readFile('recibo-producao/reports/producao.json','utf8')),smoke=JSON.parse(await readFile('recibo-producao/reports/producao-smoke.json','utf8'));
+          validateProductionReceipt(receipt,smoke,{sha:e.PRODUCTION_SHA,run:e.PRODUCTION_RUN,attempt:e.PRODUCTION_ATTEMPT,zipSha256:hash(bundle['build.zip']),siteUrl:e.SITE_URL});
+          await verifyPublishedBuild(bundle['build.zip'],e.PRODUCTION_SHA,e.SITE_URL);
+          const siteUrl=new URL(e.SITE_URL).href.replace(/\/?$/,'/');
+          const meta={schema:1,productionSha:e.PRODUCTION_SHA,version:m.version,build:m.build,zipSha256:hash(bundle['build.zip']),siteUrl,sha256:hash(video),bytes:video.length,duration,rightsConfirmed:e.RIGHTS_CONFIRMED==='true',captionsConfirmed:e.CAPTIONS_CONFIRMED==='true',origin:{type:e.ORIGEM_TIPO,id:e.ORIGEM_ID},production:{run:e.PRODUCTION_RUN,runAttempt:e.PRODUCTION_ATTEMPT},validation:{repository:e.GITHUB_REPOSITORY,workflow:'entrada-video.yml',run:e.GITHUB_RUN_ID,runAttempt:e.GITHUB_RUN_ATTEMPT,headSha:e.GITHUB_SHA,actor:e.GITHUB_ACTOR,at:new Date().toISOString()}};
+          await writeFile('video-entrada/video-provenance.json',JSON.stringify(meta,null,2)+'\n');
+          NODE
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: video-validado-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            video-entrada/pitch.mp4
+            video-entrada/video-provenance.json
+          if-no-files-found: error
+          retention-days: 90

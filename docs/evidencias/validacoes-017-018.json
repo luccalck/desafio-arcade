@@ -1,0 +1,120 @@
+{
+  "date": "2026-10-14",
+  "responsible": "DaviSouza78",
+  "baseSha": "1d4f710b6d254b6fcc052cac7d0116cfee8223e3",
+  "scope": [
+    17,
+    18
+  ],
+  "local": {
+    "unitIntegration": {
+      "command": "npm run test:ci -- --maxWorkers=2",
+      "passed": 218,
+      "failed": 0,
+      "statementsCoverage": 97.9
+    },
+    "e2eFull": {
+      "command": "playwright test --workers=1 --retries=0",
+      "passed": 33,
+      "failed": 0
+    },
+    "e2eRecheck": {
+      "command": "playwright test tests/e2e/rollout.spec.mjs --workers=1 --retries=0",
+      "passed": 5,
+      "failed": 0
+    },
+    "lint": true,
+    "build": true,
+    "actionlint": {
+      "passed": true,
+      "shellcheck": false
+    },
+    "srt": {
+      "cues": 16,
+      "plannedSeconds": 80,
+      "maxLineCharacters": 39,
+      "maxCharactersPerSecond": 14.6,
+      "words": 143,
+      "plannedWordsPerMinute": 107.25,
+      "humanTimedReading": false
+    }
+  },
+  "consent": {
+    "source": "Davi confirmou no chat em14/10/2026: todos concordamos, existe sim um registro",
+    "members": [
+      "Davi",
+      "Lucca",
+      "Miguel",
+      "Lucas"
+    ],
+    "privateRecordIndependentlyInspected": false
+  },
+  "productionDeployment": false,
+  "operationalRollback": false,
+  "humanReviewApproved": false,
+  "ci": {
+    "implementation": {
+      "sha": "59b35f2b74b6e9a84157ac0e666dc6d21b774234",
+      "push": {
+        "id": "38506934761",
+        "conclusion": "success",
+        "url": "https://github.com/luccalck/desafio-arcade/actions/runs/38506934761"
+      },
+      "pullRequest": {
+        "id": "38506968459",
+        "conclusion": "success",
+        "url": "https://github.com/luccalck/desafio-arcade/actions/runs/38506968459"
+      }
+    },
+    "verifiedArtifact": {
+      "sha": "59b35f2b74b6e9a84157ac0e666dc6d21b774234",
+      "run": "38506934761",
+      "runAttempt": "1",
+      "inventoryFiles": 164,
+      "unitIntegration": {
+        "tests": 218,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "e2e": {
+        "tests": 33,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0
+      },
+      "localCandidateOnly": {
+        "preservedFiles": 57,
+        "releaseFilesEqualToZip": 7,
+        "stableUnchanged": true,
+        "trafficPercent": 0,
+        "remoteMutation": false
+      },
+      "rootBefore": {
+        "strategy": "preview",
+        "activeSha": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+        "previousSha": "6f5c704665ee6c526571c5d66771f904d8627b59",
+        "version": "0.6.0",
+        "build": "2026-10-13T02:06:51.969Z"
+      },
+      "rootPlanned": {
+        "schema": 1,
+        "strategy": "azul-verde",
+        "estavel": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+        "anterior": "6f5c704665ee6c526571c5d66771f904d8627b59",
+        "canario": "59b35f2b74b6e9a84157ac0e666dc6d21b774234",
+        "percentual": 0,
+        "retiradas": []
+      }
+    }
+  },
+  "pr": {
+    "number": 18,
+    "url": "https://github.com/luccalck/desafio-arcade/pull/18",
+    "author": "DaviSouza78",
+    "base": "feature/passos-015-016-releases-alertas",
+    "reviewerRequested": "miguelsenai2024",
+    "approved": false,
+    "merged": false
+  }
+}

@@ -1,0 +1,12 @@
+<!doctype html>
+<html lang="pt-BR">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rota do Código</title>
+<style>body{margin:0;display:grid;place-items:center;min-height:100vh;background:#080f1a;color:#edf6ff;font-family:Arial}main{max-width:40rem;padding:2rem}a{color:#9be1ff}</style>
+<main><p id="loading" role="status">Abrindo Rota do Código…</p><a href="./">Tentar novamente</a><noscript>Ative JavaScript para abrir o jogo.</noscript></main>
+<script type="module">
+import {openRelease} from './loader.mjs';
+openRelease().catch(()=>{document.getElementById('loading').textContent='Não foi possível validar uma versão disponível. Tente novamente.';});
+</script>
+</html>

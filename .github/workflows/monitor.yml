@@ -1,0 +1,138 @@
+name: monitoramento-jogo
+run-name: ${{ inputs.parent_run && format('Sondas pós-produção {0}', inputs.parent_run) || 'Monitoramento agendado ou manual' }}
+on:
+  schedule:
+    - cron: '*/15 * * * *'
+  workflow_dispatch:
+    inputs:
+      parent_run:
+        description: Execução/tentativa de produção solicitante, quando aplicável
+        type: string
+        default: ''
+      expected_sha:
+        description: SHA esperado da produção para reconferência pós-deploy
+        type: string
+        default: ''
+permissions:
+  contents: read
+concurrency:
+  group: observabilidade-sondas
+  cancel-in-progress: false
+jobs:
+  sondar:
+    if: github.ref == 'refs/heads/main' && vars.MONITOR_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      actions: read
+      contents: write
+      issues: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+      - name: Recuperar exclusivamente a branch de dados
+        shell: bash
+        run: |
+          repo_url="https://github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote "$repo_url" refs/heads/observabilidade | grep -q refs/heads/observabilidade; then
+            git clone --branch observabilidade --single-branch "$repo_url" dados
+          else
+            mkdir dados
+            git -C dados init -b observabilidade
+            git -C dados remote add origin "$repo_url"
+          fi
+      - name: Sondar alvos e acumular dados reais
+        env:
+          SITE_URL: ${{ vars.SITE_URL }}
+          FORMAL_HML_ENABLED: ${{ vars.FORMAL_HML_ENABLED }}
+          FORMAL_PRD_ENABLED: ${{ vars.FORMAL_PRD_ENABLED }}
+        run: node scripts/sondar.mjs dados/status/sondas.csv reports/sondas.json
+      - name: Calcular DORA de 14 dias com eventos GitHub verificáveis
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          from="$(date -u -d '14 days ago' '+%Y-%m-%dT%H:%M:%SZ')"
+          to="$(date -u '+%Y-%m-%dT%H:%M:%SZ')"
+          node scripts/dora.mjs "$from" "$to" dados/status/dora.json
+      - name: Persistir amostras sem disparar Pages
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          mkdir -p "dados/status/runs/${GITHUB_RUN_ID}"
+          cp reports/sondas.json "dados/status/runs/${GITHUB_RUN_ID}/${GITHUB_RUN_ATTEMPT}.json"
+          cp reports/sondas.json dados/status/ultima.json
+          git -C dados config user.name 'github-actions[bot]'
+          git -C dados config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C dados add status/sondas.csv status/ultima.json status/runs status/dora.json
+          git -C dados commit -m "chore: registrar sondas ${GITHUB_RUN_ID}/${GITHUB_RUN_ATTEMPT}"
+          git -C dados -c 'credential.helper=!f() { echo username=x-access-token; echo password="$GH_TOKEN"; }; f' push origin observabilidade
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: sondas-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            reports/sondas.json
+            dados/status/sondas.csv
+            dados/status/dora.json
+          if-no-files-found: warn
+  validar-pos-producao:
+    needs: [sondar, alertar]
+    if: always() && inputs.expected_sha != ''
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions:
+      actions: read
+      contents: read
+    steps:
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: sondas-${{ github.run_id }}-${{ github.run_attempt }}
+          path: inputs
+      - name: Conferir sondas formais da versão e não apenas dispatch
+        env:
+          EXPECTED_SHA: ${{ inputs.expected_sha }}
+          SONDAR_RESULT: ${{ needs.sondar.result }}
+          ALERTAR_RESULT: ${{ needs.alertar.result }}
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs'),r=JSON.parse(fs.readFileSync('inputs/reports/sondas.json','utf8'));
+          if(process.env.SONDAR_RESULT!=='success'||process.env.ALERTAR_RESULT!=='success')throw Error('Sondas/alertas não executados com sucesso');
+          if(!/^[a-f0-9]{40}$/.test(process.env.EXPECTED_SHA)||r.formalHml!==true||r.formalPrd!==true)throw Error('Coleta formal ausente');
+          for(const target of ['hml','producao']){const s=r.samples.find(s=>s.alvo===target);if(!s||s.codigo!==200||s.erro!==null||!/^[a-f0-9]{40}$/.test(s.sha)||!/^\d+\.\d+\.\d+$/.test(s.versao)||(target==='producao'&&s.sha!==process.env.EXPECTED_SHA))throw Error('Sonda não confirmou '+target);}
+          NODE
+  alertar:
+    needs: sondar
+    if: github.ref == 'refs/heads/main' && vars.ALERTS_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      actions: read
+      issues: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: sondas-${{ github.run_id }}-${{ github.run_attempt }}
+          path: inputs
+      - name: Reconciliar Issues somente com sondas reais desta execução
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/alertas.mjs inputs/reports/sondas.json reports/alertas.json
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: alertas-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reports/alertas.json
+          if-no-files-found: warn

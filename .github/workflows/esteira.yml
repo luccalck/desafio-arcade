@@ -1,0 +1,657 @@
+name: Esteira
+on:
+  push:
+    branches: [main, 'feature/**', 'fix/**', 'docs/**', 'chore/**', 'dependabot/**']
+    tags: ['v*']
+  pull_request: {}
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
+env:
+  PLAYWRIGHT_CHANNEL: chrome
+jobs:
+  qualidade:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1 # v7.0.1 # v7.0.1 # v7.0.1 # v7.0.1
+        with:
+          persist-credentials: false
+          fetch-depth: 0
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0 # v7.1.0 # v7.1.0 # v7.1.0 # v7.1.0
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - name: Validar proveniência antes de aceitar tags
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/release.mjs provenance
+      - run: npm run lint
+      - run: npm run test:ci
+      - run: npm run content:check
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2
+        if: always()
+        with:
+          name: qualidade-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reports/
+          if-no-files-found: error
+  seguranca:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1 # v7.0.1 # v7.0.1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0 # v7.1.0 # v7.1.0 # v7.1.0
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - name: Gitleaks CLI verificado
+        shell: bash
+        run: |
+          mkdir -p reports "$RUNNER_TEMP/gitleaks"
+          cd "$RUNNER_TEMP/gitleaks"
+          curl --fail --silent --show-error --location -O https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_linux_x64.tar.gz
+          curl --fail --silent --show-error --location -O https://github.com/gitleaks/gitleaks/releases/download/v8.30.1/gitleaks_8.30.1_checksums.txt
+          grep ' gitleaks_8.30.1_linux_x64.tar.gz$' gitleaks_8.30.1_checksums.txt | sha256sum --check
+          tar -xzf gitleaks_8.30.1_linux_x64.tar.gz
+          cd "$GITHUB_WORKSPACE"
+          "$RUNNER_TEMP/gitleaks/gitleaks" git --redact --config .gitleaks.toml --report-format json --report-path reports/gitleaks.json
+      - name: Audit bloqueia vulnerabilidade crítica de produção
+        run: npm audit --omit=dev --audit-level=critical --json > reports/npm-audit.json
+      - name: SBOM CycloneDX
+        run: npm sbom --sbom-format cyclonedx > reports/sbom.cdx.json
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2
+        if: always()
+        with:
+          name: seguranca-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reports/
+          if-no-files-found: error
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1 # v7.0.1 # v7.0.1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0 # v7.1.0 # v7.1.0 # v7.1.0
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - run: npm run reproducibility
+      - name: Instalar validador de PDFs
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y poppler-utils
+      - run: npm run gdd:pdf
+      - run: npm run relatorio:pdf
+      - name: Verificação do PDF
+        run: |
+          mkdir -p reports
+          pdfinfo artifacts/GDD.pdf | tee reports/pdfinfo.txt
+          pdftotext artifacts/GDD.pdf reports/gdd-texto.txt
+          test -s reports/gdd-texto.txt
+          pdfinfo artifacts/RelatorioTecnico.pdf | tee reports/relatorio-pdfinfo.txt
+          pdftotext artifacts/RelatorioTecnico.pdf reports/relatorio-texto.txt
+          test -s reports/relatorio-texto.txt
+          node --input-type=module -e 'import {readFile} from "node:fs/promises";import {validateReportPages} from "./scripts/ci-bundle.mjs";validateReportPages(await readFile("reports/relatorio-pdfinfo.txt","utf8"));'
+      - run: npm run package
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2
+        with:
+          name: build-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            artifacts/build.zip
+            artifacts/build.zip.sha256
+            artifacts/GDD.pdf
+            artifacts/RelatorioTecnico.pdf
+            dist/version.json
+          if-no-files-found: error
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2
+        if: always()
+        with:
+          name: construcao-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reports/
+          if-no-files-found: error
+  e2e:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1 # v7.0.1 # v7.0.1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0 # v7.1.0 # v7.1.0 # v7.1.0
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - run: npm run build
+      - run: npm run test:e2e
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2
+        if: always()
+        with:
+          name: e2e-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            reports/
+            test-results/
+          if-no-files-found: error
+  pacote-ci:
+    needs: [qualidade, seguranca, build, e2e]
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: build-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: inputs/build
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: qualidade-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: inputs/qualidade
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: seguranca-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: inputs/seguranca
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: e2e-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: inputs/e2e
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: construcao-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: inputs/construcao
+      - name: Reunir o mesmo ZIP, GDD, SBOM e relatórios da execução
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+          SOURCE_RUN: ${{ github.run_id }}
+        run: node scripts/ci-bundle.mjs create inputs pacote-ci "$SOURCE_SHA" "$SOURCE_RUN"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: pacote-ci-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: pacote-ci/
+          if-no-files-found: error
+          retention-days: 30
+  ci:
+    runs-on: ubuntu-latest
+    needs: [qualidade, seguranca, build, e2e, pacote-ci]
+    if: always()
+    timeout-minutes: 2
+    steps:
+      - name: Aceite agregado obrigatório
+        env:
+          RESULTS: ${{ toJSON(needs) }}
+        run: |
+          node -e 'const n=JSON.parse(process.env.RESULTS);for(const [job,value] of Object.entries(n)){console.log(job,value.result);if(value.result!=="success")process.exitCode=1;}'
+  publicar-preview:
+    needs: [ci, build]
+    if: github.event_name == 'push' && github.ref == 'refs/heads/feature/primeiro-ciclo' && vars.PAGES_PREVIEW_ENABLED == 'true' && needs.ci.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: pages-publicacao
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1 # v7.0.1 # v7.0.1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0 # v7.1.0 # v7.1.0 # v7.1.0
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: build-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: artifacts-ci
+      - name: Recuperar árvore publicada
+        shell: bash
+        run: |
+          repo_url="https://github.com/${GITHUB_REPOSITORY}.git"
+          if git ls-remote "$repo_url" refs/heads/gh-pages | grep -q refs/heads/gh-pages; then
+            git clone --branch gh-pages --single-branch "$repo_url" pages-tree
+          else
+            git init -b gh-pages pages-tree
+            git -C pages-tree remote add origin "$repo_url"
+          fi
+      - name: Conferir ZIP e preservar releases imutáveis
+        run: node scripts/prepare-pages.mjs --zip artifacts-ci/artifacts/build.zip --checksum artifacts-ci/artifacts/build.zip.sha256 --sha "$GITHUB_SHA" --existing pages-tree --output pages-site
+      - name: Atualizar gh-pages somente pela pipeline
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          cp -a pages-site/. pages-tree/
+          git -C pages-tree config user.name 'github-actions[bot]'
+          git -C pages-tree config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C pages-tree add .
+          if ! git -C pages-tree diff --cached --quiet; then
+            git -C pages-tree commit -m "deploy: preview ${GITHUB_SHA}"
+            git -C pages-tree -c 'credential.helper=!f() { echo username=x-access-token; echo password="$GH_TOKEN"; }; f' push origin gh-pages
+          fi
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: pages-site
+      - name: Publicar o mesmo artefato no Pages
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+      - name: Regressão HML e smoke do preview público
+        env:
+          PAGES_URL: ${{ steps.deployment.outputs.page_url }}
+          EXPECTED_SHA: ${{ github.sha }}
+        run: npx playwright test --config playwright.public.config.mjs
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2 # v7.0.2
+        if: always()
+        with:
+          name: preview-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            reports/pages-smoke.xml
+            reports/screens/pages-*.png
+            test-results/
+          if-no-files-found: warn
+# Preview expressamente solicitado em12/10/2026. Não substitui revisão de outro autor,
+# aprovação em producao, rollout/rollback medidos ou aceites finais G0–G8.
+
+  deploy-hml:
+    needs: [ci, pacote-ci]
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v')) && vars.FORMAL_HML_ENABLED == 'true' && needs.ci.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    environment:
+      name: homologacao
+      url: ${{ vars.SITE_URL }}/hml/
+    concurrency:
+      group: pages-publicacao
+      cancel-in-progress: false
+    permissions:
+      actions: read
+      contents: write
+      pages: write
+      id-token: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: pacote-ci-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: pacote-ci
+      - name: Validar origem e integridade antes de consumir
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+          SOURCE_RUN: ${{ github.run_id }}
+        run: node scripts/ci-bundle.mjs verify pacote-ci - "$SOURCE_SHA" "$SOURCE_RUN"
+      - name: Recuperar árvore vigente sem alterar produção
+        shell: bash
+        run: git clone --branch gh-pages --single-branch "https://github.com/${GITHUB_REPOSITORY}.git" pages-tree
+      - name: Consumir contrato do passo011
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_SHA: ${{ github.sha }}
+          SOURCE_RUN: ${{ github.run_id }}
+          SITE_URL: ${{ vars.SITE_URL }}
+        shell: bash
+        run: |
+          test -f scripts/publicar.sh || { echo '::error::Script do passo011 ainda ausente. Deploy bloqueado.'; exit 1; }
+          bash scripts/publicar.sh --bundle pacote-ci --sha "$SOURCE_SHA" --run "$SOURCE_RUN" --site-url "$SITE_URL"
+      - name: Gravar somente a HML na árvore gh-pages pela pipeline
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          rm -rf pages-tree/hml
+          cp -a pages-site/hml pages-tree/hml
+          cp pages-site/.nojekyll pages-tree/.nojekyll
+          git -C pages-tree config user.name 'github-actions[bot]'
+          git -C pages-tree config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git -C pages-tree add hml .nojekyll
+          if ! git -C pages-tree diff --cached --quiet; then
+            git -C pages-tree commit -m "deploy: homologar ${GITHUB_SHA}"
+            git -C pages-tree -c 'credential.helper=!f() { echo username=x-access-token; echo password="$GH_TOKEN"; }; f' push origin gh-pages
+          fi
+      # GITHUB_TOKEN não dispara Pages por branch. Publicar explicitamente a
+      # mesma árvore via Actions; fonte literal gh-pages/equivalência requer aceite.
+      - uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6.0.0
+      - uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5.0.0
+        with:
+          path: pages-site
+      - name: Publicar árvore preservada no Pages
+        id: hml-pages
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5.0.1
+      - name: Esperar propagação e executar regressão completa HML
+        env:
+          BASE_URL: ${{ vars.SITE_URL }}/hml/
+          EXPECTED_SHA: ${{ github.sha }}
+        run: npx playwright test --config playwright.public.config.mjs --project=hml-desktop --project=hml-toque
+      - name: Comprovar horário de recebimento do push e limite até HML
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/ci-bundle.mjs hml-timing
+      - name: Conferir bytes servidos na HML aceita
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+          SOURCE_RUN: ${{ github.run_id }}
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: node scripts/promover.mjs hml --bundle pacote-ci --sha "$SOURCE_SHA" --run "$SOURCE_RUN" --site-url "$SITE_URL"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: aceite-hml-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reports/hml-aceite.json
+          if-no-files-found: error
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: deploy-hml-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            reports/
+            test-results/
+          if-no-files-found: warn
+
+  deploy-prd:
+    needs: [ci, pacote-ci, deploy-hml]
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || startsWith(github.ref, 'refs/tags/v')) && vars.FORMAL_PRD_ENABLED == 'true' && needs.deploy-hml.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    outputs:
+      recovered: ${{ steps.confirmar-recuperacao.outcome == 'success' }}
+      observed_sha: ${{ steps.confirmar-recuperacao.outcome == 'success' && steps.recuperar.outputs.sha || github.sha }}
+    environment:
+      name: producao
+      url: ${{ vars.SITE_URL }}/
+    concurrency:
+      group: pages-publicacao
+      cancel-in-progress: false
+    permissions:
+      actions: read
+      contents: write
+      pages: write
+      id-token: write
+    env:
+      SOURCE_SHA: ${{ github.sha }}
+      SOURCE_RUN: ${{ github.run_id }}
+      SITE_URL: ${{ vars.SITE_URL }}
+      FORMAL_HML_ENABLED: ${{ vars.FORMAL_HML_ENABLED }}
+      FORMAL_PRD_ENABLED: ${{ vars.FORMAL_PRD_ENABLED }}
+      MONITOR_ENABLED: ${{ vars.MONITOR_ENABLED }}
+      ALERTS_ENABLED: ${{ vars.ALERTS_ENABLED }}
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: pacote-ci-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: pacote-ci
+      - name: Validar origem e integridade antes de consumir
+        env:
+          SOURCE_SHA: ${{ github.sha }}
+          SOURCE_RUN: ${{ github.run_id }}
+        run: node scripts/ci-bundle.mjs verify pacote-ci - "$SOURCE_SHA" "$SOURCE_RUN"
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: aceite-hml-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: aceite-hml
+      - name: Abrir candidata sem tráfego após conferir aprovação e HML
+        id: abrir
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: bash scripts/promover.sh --bundle pacote-ci --sha "$SOURCE_SHA" --run "$SOURCE_RUN" --site-url "$SITE_URL"
+      - uses: ./.github/actions/publicar-pages
+        with:
+          name: pages-candidata-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ steps.abrir.outputs.path }}
+      - name: Esperar propagação e testar candidata antes da virada
+        env:
+          BASE_URL: ${{ vars.SITE_URL }}/hml/
+          RELEASE_URL: ${{ vars.SITE_URL }}/releases/${{ github.sha }}/
+          EXPECTED_SHA: ${{ github.sha }}
+          SMOKE_REPORT: reports/candidata-smoke.json
+        run: |
+          node scripts/aguardar-versao.mjs "$RELEASE_URL" "$EXPECTED_SHA" release
+          npx playwright test --config playwright.public.config.mjs --project=release-smoke
+      - name: Virar estável uma vez com smoke aprovado
+        id: promover
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/promover.mjs promover --sha "$SOURCE_SHA" --run "$SOURCE_RUN" --site-url "$SITE_URL"
+      - uses: ./.github/actions/publicar-pages
+        with:
+          name: pages-estavel-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ steps.promover.outputs.path }}
+      - name: Esperar propagação e testar raiz pública após virada
+        env:
+          BASE_URL: ${{ vars.SITE_URL }}/hml/
+          PAGES_URL: ${{ vars.SITE_URL }}/
+          EXPECTED_SHA: ${{ github.sha }}
+          SMOKE_REPORT: reports/producao-smoke.json
+        run: |
+          node scripts/aguardar-versao.mjs "$PAGES_URL" "$EXPECTED_SHA" root
+          npx playwright test --config playwright.public.config.mjs --project=prd-smoke
+          node scripts/promover.mjs finalizar --sha "$SOURCE_SHA" --run "$SOURCE_RUN" --site-url "$SITE_URL"
+      - name: Restaurar automaticamente após falha, sem ocultar job vermelho
+        id: recuperar
+        if: (failure() || cancelled()) && steps.abrir.outputs.recoverable == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/promover.mjs recuperar --sha "$SOURCE_SHA" --run "$SOURCE_RUN" --site-url "$SITE_URL"
+      - uses: ./.github/actions/publicar-pages
+        id: publicar-recuperacao
+        if: (failure() || cancelled()) && steps.recuperar.outcome == 'success'
+        with:
+          name: pages-recuperada-${{ github.run_id }}-${{ github.run_attempt }}
+          path: ${{ steps.recuperar.outputs.path }}
+      - name: Verificar versão recuperada na raiz
+        id: confirmar-recuperacao
+        if: (failure() || cancelled()) && steps.publicar-recuperacao.outcome == 'success'
+        env:
+          BASE_URL: ${{ vars.SITE_URL }}/hml/
+          PAGES_URL: ${{ vars.SITE_URL }}/
+          EXPECTED_SHA: ${{ steps.recuperar.outputs.sha }}
+          EXPECTED_VERSION: ${{ steps.recuperar.outputs.version }}
+          SMOKE_REPORT: reports/recuperacao-smoke.json
+        run: |
+          node scripts/aguardar-versao.mjs "$PAGES_URL" "$EXPECTED_SHA" root
+          npx playwright test --config playwright.public.config.mjs --project=prd-smoke
+          node scripts/promover.mjs confirmar-recuperacao --sha "$SOURCE_SHA" --run "$SOURCE_RUN" --site-url "$SITE_URL"
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: deploy-prd-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            reports/
+            test-results/
+          if-no-files-found: warn
+
+  monitor-pos-producao:
+    needs: deploy-prd
+    if: always() && vars.MONITOR_ENABLED == 'true' && (needs.deploy-prd.result == 'success' || needs.deploy-prd.outputs.recovered == 'true')
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    permissions:
+      contents: read
+      actions: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+      - name: Esperar sondas e alertas no workflow próprio, sem publicar o jogo
+        env:
+          GH_TOKEN: ${{ github.token }}
+          EXPECTED_SHA: ${{ needs.deploy-prd.outputs.observed_sha }}
+        run: node scripts/observar-producao.mjs
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: monitor-pos-producao-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reports/monitor-pos-producao.json
+          if-no-files-found: warn
+
+  release:
+    needs: [ci, pacote-ci, deploy-prd, monitor-pos-producao]
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') && vars.FORMAL_RELEASE_ENABLED == 'true' && needs.deploy-prd.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: release-${{ github.ref }}
+      cancel-in-progress: false
+    permissions:
+      contents: write
+      actions: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: pacote-ci-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: pacote-ci
+      - name: Anexar somente os bytes homologados e aprovados
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_NOTES_SHA256: ${{ vars.RELEASE_NOTES_SHA256 }}
+        run: node scripts/release.mjs publish pacote-ci docs/notas-versao.md
+
+  submissao:
+    needs: [ci, pacote-ci, deploy-prd, release]
+    if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags/v') && vars.SUBMISSAO_ENABLED == 'true' && needs.ci.result == 'success' && needs.deploy-prd.result == 'success' && needs.release.result == 'success'
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+      actions: read
+    env:
+      SITE_URL: ${{ vars.SITE_URL }}
+      EXPECTED_SHA: ${{ github.sha }}
+      VIDEO_VALIDATION_RUN: ${{ vars.VIDEO_VALIDATION_RUN }}
+      VIDEO_VALIDATION_ATTEMPT: ${{ vars.VIDEO_VALIDATION_ATTEMPT }}
+      VIDEO_VALIDATION_SHA: ${{ vars.VIDEO_VALIDATION_SHA }}
+      VIDEO_SHA256: ${{ vars.VIDEO_SHA256 }}
+      VIDEO_PROVENANCE_PATH: inputs-video/video-provenance.json
+      PRODUCTION_RECEIPT_DIR: producao/reports
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+          cache: npm
+      - run: npm ci
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: pacote-ci-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: pacote-ci
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: deploy-prd-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: producao
+      - name: Instalar dependências de triagem
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y poppler-utils ffmpeg
+      - name: Conferir origem fixada do vídeo humano validado
+        env:
+          GH_TOKEN: ${{ github.token }}
+        shell: bash
+        run: |
+          [[ "$VIDEO_VALIDATION_RUN" =~ ^[0-9]+$ && "$VIDEO_VALIDATION_ATTEMPT" =~ ^[1-9][0-9]*$ && "$VIDEO_VALIDATION_SHA" =~ ^[a-f0-9]{40}$ && "$VIDEO_SHA256" =~ ^[a-f0-9]{64}$ ]]
+          gh api "repos/${GITHUB_REPOSITORY}/actions/runs/${VIDEO_VALIDATION_RUN}" > video-run.json
+          node --input-type=module <<'NODE'
+          import {readFile} from 'node:fs/promises';
+          const r=JSON.parse(await readFile('video-run.json','utf8')),e=process.env;
+          if(r.path!=='.github/workflows/entrada-video.yml'||r.event!=='workflow_dispatch'||r.conclusion!=='success'||r.head_sha!==e.VIDEO_VALIDATION_SHA||String(r.run_attempt)!==e.VIDEO_VALIDATION_ATTEMPT)throw Error('Origem fixada do vídeo não corresponde à validação autorizada.');
+          NODE
+          gh run download "$VIDEO_VALIDATION_RUN" --name "video-validado-${VIDEO_VALIDATION_RUN}-${VIDEO_VALIDATION_ATTEMPT}" --dir inputs-video
+      - name: Gerar submissão só dos bytes homologados, publicados e verificados
+        run: node scripts/submissao.mjs create pacote-ci inputs-video/pitch.mp4 "$SITE_URL" submissao
+      - name: Executar e arquivar triagem formal na tag final
+        env:
+          PRAZO: ${{ vars.PRAZO }}
+        shell: bash
+        run: |
+          set -o pipefail
+          bash scripts/triagem.sh submissao | tee reports/triagem-final.log
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: submissao-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: submissao/
+          if-no-files-found: error
+          retention-days: 90
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: triagem-final-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
+          path: |
+            reports/triagem-final.log
+            reports/pages-smoke.xml
+            test-results/
+          if-no-files-found: warn
+
+  notificar:
+    needs: [qualidade, seguranca, build, e2e, pacote-ci, ci, deploy-hml, deploy-prd, monitor-pos-producao, publicar-preview, release, submissao]
+    if: always()
+    runs-on: ubuntu-latest
+    timeout-minutes: 2
+    permissions:
+      contents: read
+    steps:
+      - name: Resumo de falha, artefato e entrega no Actions
+        env:
+          RESULTS: ${{ toJSON(needs) }}
+          SHA: ${{ github.sha }}
+          RUN: ${{ github.run_id }}
+          ATTEMPT: ${{ github.run_attempt }}
+        run: |
+          node <<'NODE'
+          const fs=require('node:fs'),jobs=JSON.parse(process.env.RESULTS);
+          const rows=Object.entries(jobs).map(([name,value])=>`| ${name} | ${value.result} |`).join('\n');
+          const failed=Object.values(jobs).some(value=>value.result==='failure'||value.result==='cancelled');
+          const text=`## ${failed?'Esteira com falha: promoção bloqueada':'Resultado da esteira'}\n\nSHA: ${process.env.SHA} · execução: ${process.env.RUN} · tentativa: ${process.env.ATTEMPT}\n\n| Job | Resultado |\n|---|---|\n${rows}\n\nArtefato: pacote-ci-${process.env.SHA}-${process.env.RUN}-${process.env.ATTEMPT} (disponível somente se pacote-ci passou). Deploy ignorado não é entrega.\n`;
+          fs.appendFileSync(process.env.GITHUB_STEP_SUMMARY,text);
+          console.log(text);
+          NODE

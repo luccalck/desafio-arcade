@@ -1,0 +1,4 @@
+#!/bin/sh
+set -eu
+command -v gitleaks >/dev/null 2>&1 || { echo 'Gitleaks ausente: instalar conforme SECURITY.md.' >&2; exit 1; }
+gitleaks git --pre-commit --staged --redact --config .gitleaks.toml

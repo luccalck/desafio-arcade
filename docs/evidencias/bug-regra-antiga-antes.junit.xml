@@ -1,0 +1,56 @@
+<testsuites id="" name="" tests="1" failures="1" skipped="0" errors="0" time="8.037421">
+<testsuite name="workshop.spec.mjs" timestamp="2026-10-09T19:51:33.936Z" hostname="" tests="1" failures="1" skipped="0" time="6.411" errors="0">
+<testcase name="edição invalida teste e não permite retomar regra antiga" classname="workshop.spec.mjs" time="6.411">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|..\test-results\workshop-edição-invalida-t-3fa81-ermite-retomar-regra-antiga\test-failed-1.png]]
+
+[[ATTACHMENT|..\test-results\workshop-edição-invalida-t-3fa81-ermite-retomar-regra-antiga\error-context.md]]
+
+[[ATTACHMENT|..\test-results\workshop-edição-invalida-t-3fa81-ermite-retomar-regra-antiga\trace.zip]]
+]]>
+</system-out>
+<failure message="expect(locator).toBeDisabled() failed" type="expect.toBeDisabled">
+<![CDATA[  workshop.spec.mjs:5:1 › edição invalida teste e não permite retomar regra antiga ─────────────────
+
+    Error: expect(locator).toBeDisabled() failed
+
+    Locator:  locator('#pause-game')
+    Expected: disabled
+    Received: enabled
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeDisabled" locator('#pause-game') with timeout 5000ms
+      - waiting for locator('#pause-game')
+        14 × locator resolved to <button id="pause-game" aria-label="Pausar ou retomar partida">Ⅱ</button>
+           - unexpected value "enabled"
+
+
+      3 | import {resolve} from 'node:path';
+      4 | test('syntax: diagnóstico de linha sem executar APIs externas',async({page})=>{await enter(page);await page.locator('#code-editor').fill('function controlar(entrada) {\n fetch("https://example.com");\n return 0;\n}');await page.locator('#test-rules').click();await expect(page.locator('#test-summary')).toContainText('Linha 2');await expect(page.locator('#next-mission')).toBeHidden();await shot(page,'oficina-erro-codigo');await solve(page,0);});
+    > 5 | test('edição invalida teste e não permite retomar regra antiga',async({page})=>{await enter(page);await solve(page,0);await page.locator('#play-game').click();await page.locator('#code-editor').fill(missions[0].starter);await expect(page.locator('#test-summary')).toContainText('Código alterado');await expect(page.locator('#next-mission')).toBeHidden();await expect(page.locator('#pause-game')).toBeDisabled();});
+        |                                                                                                                                                                                                                                                                                                                                                                                                             ^
+      6 | test('movimento aplica operações e muda comportamento real',async({page})=>{await enter(page);await solve(page,0);await page.locator('#next-mission').click();await page.locator('#test-rules').click();await expect(page.locator('#test-summary')).not.toContainText('Tudo certo');await solve(page,1);await page.locator('#play-game').click();await page.keyboard.down('ArrowRight');await expect.poll(async()=>Number(await page.locator('#ship').getAttribute('data-x'))).toBeGreaterThan(280);await page.keyboard.up('ArrowRight');await page.locator('#pause-game').click();await shot(page,'oficina-movimento-desktop');});
+      7 | test('pausa conserva tick e nave, retoma sem recriar partida',async({page})=>{await enter(page);await solve(page,0);await page.locator('#play-game').click();await expect.poll(async()=>Number(await page.locator('#game-stage').getAttribute('data-tick'))).toBeGreaterThan(5);await page.locator('#pause-game').click();const tick=await page.locator('#game-stage').getAttribute('data-tick');await page.waitForTimeout(250);expect(await page.locator('#game-stage').getAttribute('data-tick')).toBe(tick);await page.locator('#pause-game').click();await expect.poll(async()=>Number(await page.locator('#game-stage').getAttribute('data-tick'))).toBeGreaterThan(Number(tick));});
+      8 | test('ajuda opcional, foco após restaurar código e preferências',async({page})=>{await enter(page);await page.locator('#help').click();await expect(page.locator('dialog')).toContainText('if significa');await page.getByRole('button',{name:'Fechar',exact:true}).click();await expect(page.locator('#help')).toBeFocused();await page.locator('#reset-code').click();await page.getByRole('button',{name:'Restaurar função',exact:true}).click();await expect(page.locator('#code-editor')).toBeFocused();await page.locator('.brand').click();await page.locator('#options').click();await page.locator('#large-text').check();await page.locator('#reduced-motion').check();await page.getByRole('button',{name:'Fechar',exact:true}).click();await expect(page.locator('html')).toHaveClass(/large-text/);await shot(page,'oficina-menu-desktop');await page.reload();await expect(page.locator('html')).toHaveClass(/reduced-motion/);});
+        at C:\dev\studies\senai\semester-2\devops\desafio-arcade\jogo-arcade\tests\e2e\workshop.spec.mjs:5:397
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\..\test-results\workshop-edição-invalida-t-3fa81-ermite-retomar-regra-antiga\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\..\test-results\workshop-edição-invalida-t-3fa81-ermite-retomar-regra-antiga\error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ..\..\test-results\workshop-edição-invalida-t-3fa81-ermite-retomar-regra-antiga\trace.zip
+    Usage:
+
+        npx playwright show-trace ..\..\test-results\workshop-edição-invalida-t-3fa81-ermite-retomar-regra-antiga\trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+]]>
+</failure>
+</testcase>
+</testsuite>
+</testsuites>

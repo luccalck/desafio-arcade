@@ -1,0 +1,64 @@
+{
+  "date": "2026-10-13",
+  "timezone": "America/Montevideo",
+  "account": "DaviSouza78",
+  "base": "9ce2522f876676be7db54ee8aeefc388983c6c14",
+  "scope": [
+    "013",
+    "014"
+  ],
+  "local": {
+    "unitIntegration": 194,
+    "core": {
+      "statements": 97.9,
+      "branches": 95.23,
+      "functions": 100,
+      "lines": 100
+    },
+    "fullE2e": 27,
+    "additionalUrlTest": 1,
+    "contentCheck": "passed",
+    "lint": "passed",
+    "build": "passed",
+    "invalidBuild": {
+      "exitCode": 1,
+      "sourceRestoredByteForByte": true
+    },
+    "publicRunnerAgainstLocalFault": {
+      "exitCode": 1,
+      "fault": "style.css HTTP404",
+      "junitFailures": 1
+    },
+    "syntheticCases": true
+  },
+  "humanPlaytest": false,
+  "formalHml": false,
+  "formalPrdSmoke": false,
+  "rollbackExecuted": false,
+  "reviewApproved": false,
+  "remote": {
+    "commit": "909ac53a2f4d01c8d17493c9b2e27407a383bd8c",
+    "pr": 16,
+    "base": "feature/passos-011-012-hml-sondas",
+    "push": {
+      "run": 38502833358,
+      "conclusion": "success"
+    },
+    "pullRequest": {
+      "run": 38502867894,
+      "conclusion": "success"
+    },
+    "unitIntegration": 194,
+    "e2e": 28,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "bundleFiles": 157,
+    "artifactVerified": true,
+    "pdfPages": 19,
+    "pdfFormat": "A4",
+    "reviewRequested": "miguelsenai2024",
+    "reviewApproved": false,
+    "formalDeploy": false
+  }
+}

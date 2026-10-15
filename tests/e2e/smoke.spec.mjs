@@ -1,0 +1,11 @@
+import {test,expect,enter,solve,shot} from './helpers.mjs';
+import {readFileSync} from 'node:fs';
+import {campaignRegression,restartRegression} from './regression.mjs';
+const sha=JSON.parse(readFileSync('dist/version.json','utf8')).sha;
+test('regressão HML preparada: primeira missão, campanha e encerramento pela UI',async({page,baseURL},info)=>campaignRegression(page,info,{url:new URL('./',baseURL).href,sha}));
+test('regressão HML preparada: reinício confirmado e bloqueio de missões',async({page,baseURL},info)=>restartRegression(page,info,{url:new URL('./',baseURL).href,sha}));
+
+test('smoke web: versão, editor e primeira função corrigida',async({page})=>{await page.goto('./');await expect(page.locator('.top-meta')).toContainText(`v${JSON.parse(readFileSync('package.json','utf8')).version}`);await enter(page);await expect(page.locator('#test-summary')).not.toContainText('Tudo certo');await solve(page,0);await expect(page.locator('#next-mission')).toBeVisible();});
+test('primeira missão: problema real, Python e correção',async({page})=>{
+ await enter(page);await page.locator('#test-rules').click();await expect(page.locator('#test-summary')).toContainText('1/4');await page.locator('#show-tests').click();await expect(page.locator('dialog')).toContainText('Obtido');await expect(page.locator('dialog')).toContainText('True');await expect(page.locator('dialog')).not.toContainText('false');await page.getByRole('button',{name:'Fechar',exact:true}).click();await solve(page,0);await page.locator('#play-game').click();await page.keyboard.down('ArrowLeft');await expect.poll(async()=>Number(await page.locator('#ship').getAttribute('data-x'))).toBeLessThan(200);await page.keyboard.up('ArrowLeft');await page.locator('#pause-game').click();await shot(page,'oficina-primeira-desktop');
+});

@@ -1,0 +1,15 @@
+import {readFile,writeFile,mkdir} from 'node:fs/promises';
+import {createHash} from 'node:crypto';
+import {zipSync,unzipSync} from 'fflate';
+const names=['index.html','style.css','game.js','version.json','LEIA-ME.txt','LICENSE.txt','THIRD_PARTY.txt'];
+const entries={};
+for(const name of names)entries[name]=[new Uint8Array(await readFile(`dist/${name}`)),{mtime:new Date('2026-01-01T00:00:00Z')}];
+const zipped=zipSync(entries,{level:9});
+if(zipped.length>=25*1024*1024)throw new Error('Build deve ser inferior a 25 MB.');
+const unpacked=unzipSync(zipped);
+for(const name of names)if(!Buffer.from(unpacked[name]).equals(Buffer.from(entries[name][0])))throw new Error(`ZIP alterou ${name}`);
+await mkdir('artifacts',{recursive:true});
+await writeFile('artifacts/build.zip',zipped);
+const hash=createHash('sha256').update(zipped).digest('hex');
+await writeFile('artifacts/build.zip.sha256',`${hash}  build.zip\n`);
+console.log(`build.zip: ${zipped.length} bytes; conteúdo conferido; SHA-256 ${hash}`);

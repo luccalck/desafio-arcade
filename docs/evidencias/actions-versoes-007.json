@@ -1,0 +1,86 @@
+[
+  {
+    "action": "actions/checkout",
+    "currentPin": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+    "latest": "v7.0.1",
+    "latestSha": "3d3c42e5aac5ba805825da76410c181273ba90b1",
+    "publishedAt": "2026-07-20T15:10:05Z",
+    "source": "https://github.com/actions/checkout/releases/tag/v7.0.1",
+    "runtime": [
+      "using: node24"
+    ],
+    "actionYamlSha": "5b0524f730db83f9513c18ab31a6c086c7239076"
+  },
+  {
+    "action": "actions/configure-pages",
+    "currentPin": "983d7736d9b0ae728b81ab479565c72886d7745b",
+    "latest": "v6.0.0",
+    "latestSha": "45bfe0192ca1faeb007ade9deae92b16b8254a0d",
+    "publishedAt": "2026-03-25T17:00:49Z",
+    "source": "https://github.com/actions/configure-pages/releases/tag/v6.0.0",
+    "runtime": [
+      "using: 'node24'"
+    ],
+    "actionYamlSha": "7ea02ee862bd1315b0be31625082750aa52ff896"
+  },
+  {
+    "action": "actions/deploy-pages",
+    "currentPin": "d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e",
+    "latest": "v5.0.1",
+    "latestSha": "368f82528645a54fb793d4d04e342629a3f51346",
+    "publishedAt": "2026-09-01T21:31:19Z",
+    "source": "https://github.com/actions/deploy-pages/releases/tag/v5.0.1",
+    "runtime": [
+      "using: 'node24'"
+    ],
+    "actionYamlSha": "9640517bb026e0790a53bd6d35fd13a94617c48e"
+  },
+  {
+    "action": "actions/download-artifact",
+    "currentPin": "634f93cb2916e3fdff6788551b99b062d0335ce0",
+    "latest": "v8.0.2",
+    "latestSha": "9000827ccba6bdab643e8b6fd33ac0654aef8333",
+    "publishedAt": "2026-10-07T10:09:51Z",
+    "source": "https://github.com/actions/download-artifact/releases/tag/v8.0.2",
+    "runtime": [
+      "using: 'node24'"
+    ],
+    "actionYamlSha": "8b8c65029ccad20750a29fecb438eca5a607fc57"
+  },
+  {
+    "action": "actions/setup-node",
+    "currentPin": "820762786026740c76f36085b0efc47a31fe5020",
+    "latest": "v7.1.0",
+    "latestSha": "949feb2413d6458794dcd2491c4babbbce0c15c1",
+    "publishedAt": "2026-10-08T02:52:34Z",
+    "source": "https://github.com/actions/setup-node/releases/tag/v7.1.0",
+    "runtime": [
+      "using: 'node24'"
+    ],
+    "actionYamlSha": "31057efa69b67281683c7b601a1d202329eaa3c1"
+  },
+  {
+    "action": "actions/upload-artifact",
+    "currentPin": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+    "latest": "v7.0.2",
+    "latestSha": "cf430e030ddbb5b0abf93d22962f4752f3646cd9",
+    "publishedAt": "2026-10-07T10:08:14Z",
+    "source": "https://github.com/actions/upload-artifact/releases/tag/v7.0.2",
+    "runtime": [
+      "using: 'node24'"
+    ],
+    "actionYamlSha": "7cb4d1e81db55320b41217e1a78a1a46e3d2baef"
+  },
+  {
+    "action": "actions/upload-pages-artifact",
+    "currentPin": "7b1f4a764d45c48632c6b24a0339c27f5614fb0b",
+    "latest": "v5.0.0",
+    "latestSha": "fc324d3547104276b827a68afc52ff2a11cc49c9",
+    "publishedAt": "2026-04-10T18:22:59Z",
+    "source": "https://github.com/actions/upload-pages-artifact/releases/tag/v5.0.0",
+    "runtime": [
+      "using: composite"
+    ],
+    "actionYamlSha": "82713b4cbb35ccf98dfa8f2e0deedc5e83b6d845"
+  }
+]

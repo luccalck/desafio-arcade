@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-13",
+  "localSuite": [
+    {
+      "name": "smoke.spec.mjs",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "workshop.spec.mjs",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "preview": [
+    {
+      "name": "pages.spec.mjs",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "pages.spec.mjs",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "pages.spec.mjs",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "files": {
+    "docs/evidencias/imagens/passo-006/preview-hml-desktop-encerramento.json": "f102a7d0c918f4d4c9d683d7320d158ea07aab2bbe98c863020f49b7a0c33c15",
+    "docs/evidencias/imagens/passo-006/preview-hml-desktop-encerramento.png": "fddf39320a864f26a4e94c6c72794b7cb1b6db33097c2b8d5a28330b60da62fa",
+    "docs/evidencias/imagens/passo-006/preview-hml-toque-encerramento.json": "e05a16e8d452d1edc066306e6e572af531b8d18789b9081621a95fa3110aa5f5",
+    "docs/evidencias/imagens/passo-006/preview-hml-toque-encerramento.png": "02e02c31aa3787e2127e5d145edb8ed4b6fc13fc1d1826f42370b16081d36da4"
+  }
+}

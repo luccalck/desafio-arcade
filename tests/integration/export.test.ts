@@ -1,0 +1,11 @@
+import {it,expect} from 'vitest';
+import data from '../../src/content/missions.json';
+import type {Mission} from '../../src/core/arcade-engine';
+import type {Sources} from '../../src/core/workshop-save';
+import {createProjectHTML,createPythonSource} from '../../src/scenes/export';
+const missions=data.missions as Mission[],sources=Object.fromEntries(missions.slice(0,5).map(m=>[m.functionName,m.reference])) as Sources;
+it('HTML exportado contém AST validada e player local',()=>{const html=createProjectHTML(sources,missions,'/* player confiável */','MIT License');expect(html).toContain('window.__RUN_PYTHON__');expect(html).toContain('window.__PROJECT_RULES__');expect(html).not.toContain('src="http');expect(html).toContain('licença MIT');});
+it('export bloqueia regra errada',()=>expect(()=>createProjectHTML({...sources,colidir:missions[2].starter},missions,'','MIT License')).toThrow(/Valide/));
+it('comentário não fecha script exportado',()=>{const html=createProjectHTML({...sources,controlar:'# </script><script>alert(1)</script>\n'+sources.controlar},missions,'','MIT License');expect((html.match(/<script>/g)||[]).length).toBe(1);expect(html).not.toContain('alert(1)');});
+it('arquivo Python contém cinco fontes reais e licença',()=>{const py=createPythonSource(sources,missions,'MIT License');expect(py).toContain('def controlar(entrada):');expect(py).toContain('for i in range(');expect(py).toContain('# MIT License');expect(py).not.toContain('function controlar');});
+it('arquivo Python também exige contratos corretos',()=>expect(()=>createPythonSource({...sources,mover:missions[1].starter},missions,'MIT')).toThrow(/Valide/));

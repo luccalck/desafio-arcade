@@ -1,0 +1,10 @@
+{
+  "kind": "ensaio local; string sintética pseudoaleatória com seed10, sem conta ou segredo emitido; não é incidente real",
+  "exitCode": 1,
+  "findings": 1,
+  "ruleIds": [
+    "github-pat"
+  ],
+  "redacted": true,
+  "firstAttempt": "sequência previsível não detectada; não usada como prova positiva"
+}

@@ -1,0 +1,6 @@
+{
+  "test": "JSON inválido na entrada de npm run build",
+  "exit": 1,
+  "expected": "nonzero",
+  "restored": true
+}
