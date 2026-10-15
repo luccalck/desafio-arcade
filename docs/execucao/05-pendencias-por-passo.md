@@ -564,3 +564,6 @@ Esta reconferência prevalece sobre observações históricas de monitor inativo
 - [x] Respostas persistentes atualizadas em [ficha-entrega.md](../gestao/ficha-entrega.md); quatro RAs confirmados, links conhecidos e situações parciais.
 - [ ] HTML original e TXT deixados para o último passo por orientação expressa de Lucca. Não houve preenchimento, aceite de declarações ou geração de TXT.
 - [ ] Declarações e direitos coletivos verdadeiros, marcos históricos comprováveis, definição do PRAZO real, envio no AVA e recibo, ensaio e participação dos quatro na banca continuam nos respectivos passos. Não inferir nota 100 nem fator individual máximo.
+
+
+Revisão complementar de15/10: o PR33 recebeu o commit770449b, que declara pull-requests:read somente no deploy-hml para a consulta de PR associado ao merge. A validação da lógica em78c367d continua histórica; o novo HEAD exige checks e revisão próprios. Runs de reconferência:38772409905(push) e38772414475(PR). A aprovação externa ainda não estava registrada ao preparar este documento. Não alteramos o limite de900s nem a proteção da main.

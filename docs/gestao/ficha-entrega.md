@@ -135,3 +135,6 @@ Mantivemos os 49 campos do HTML e os espaços de respostas desconhecidas. Não p
 | Tag/pacote/triagem | Não finalizados; pitch e demais entradas verdadeiras continuam obrigatórios. |
 
 Provas e limites: [operação15/10](../evidencias/operacao-2026-10-15.md). Próxima ação de ficha: atualizar estes dados após publicação, manter desconhecidos vazios e só preencher a seção10 do HTML no fechamento autorizado.
+
+
+Revisão complementar de15/10: o PR33 recebeu o commit770449b, que declara pull-requests:read somente no deploy-hml para a consulta de PR associado ao merge. A validação da lógica em78c367d continua histórica; o novo HEAD exige checks e revisão próprios. Runs de reconferência:38772409905(push) e38772414475(PR). A aprovação externa ainda não estava registrada ao preparar este documento. Não alteramos o limite de900s nem a proteção da main.
