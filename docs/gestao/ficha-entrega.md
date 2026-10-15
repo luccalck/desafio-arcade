@@ -1,6 +1,6 @@
 # Respostas para a ficha de entrega do professor
 
-Atualização: 14/10/2026. Este é o registro persistente para preencher o HTML original de uma vez, no fechamento. Não é a ficha TXT gerada pelo professor nem comprova entrega. Campos de resposta vazios ainda precisam ser completados; não substituir por dados fictícios. Os dados de Davi, Miguel e Lucas foram informados por Lucca em 13/10; Lucca confirmou seu nome completo e RA em 14/10/2026.
+Atualização: 15/10/2026. Este é o registro persistente para preencher o HTML original de uma vez, no fechamento. Não é a ficha TXT gerada pelo professor nem comprova entrega. Campos de resposta vazios ainda precisam ser completados; não substituir por dados fictícios. Os dados de Davi, Miguel e Lucas foram informados por Lucca em 13/10; Lucca confirmou seu nome completo e RA em 14/10/2026.
 
 Fonte: `C:/Users/user/Downloads/jogo/Avaliação.html`, barra superior e seção 10, incluindo os campos e validadores gerados por JavaScript. Mantemos o original sem alterações. Os papéis/contas estão em [SQUAD](../../SQUAD.md). Nome do jogo para referência: Rota do Código; o formulário não tem campo separado para esse título.
 
@@ -32,8 +32,8 @@ Os campos finais ficam vazios até comprovação da versão efetivamente entregu
 |---|---|---|---|
 | lkBuild — URL pública do jogo (produção) | Sim | | Preview HTTP 200 não comprova produção formal da candidata. |
 | lkHml — URL de homologação | Não | | Confirmar deploy formal e SHA servido, além do HTTP 200. |
-| lkCI — Última execução verde da pipeline (link ou print) | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/38649548723 | Referência auditada no SHA e71de72; deploys e submissão ignorados nesse run. Substituir no fechamento. |
-| lkGraf — Painel /status/ (link) | Sim | | Em 14/10, consulta da auditoria retornou 404; reconferir após publicação. |
+| lkCI — Última execução verde da pipeline (link ou print) | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/38674970174 | Candidata0.7.0/SHA78c367d:273 testes e36E2E; deploys ignorados por ser branch. Substituir pela execução final com deploy/triagem. |
+| lkGraf — Painel /status/ (link) | Sim | | Em15/10, painel público ainda404; reconferir após publicação formal. |
 | lkVideo — Vídeo pitch (arquivo no AVA ou link) | Sim | | Pendente por orientação de Lucca; não usar caminho inexistente como entrega. |
 | lkRel — Relatório técnico (PDF) | Sim | | Publicar PDF gerado pela CI e confirmar acesso; arquivo local não é link público. |
 | lkDrive — Pasta do Google Drive do concurso (se inscritos) | Não | | Concurso opcional, sem decisão coletiva/autorização comprovada. |
@@ -47,11 +47,11 @@ As notas 10 são estimativas solicitadas por Lucca, não resultados medidos ou n
 | INT-01 — Repositório e fluxo Git | 10% | | 10 | Registrar revisões reais, integrações e tags; autoria não equivale a aprovação. |
 | INT-02 — GDD como código | 8% | | 10 | 12 seções; PDF da CI auditada tem 18 páginas. Conferir revisão e versão final. |
 | INT-03 — Pipeline CI/CD no GitHub Actions | 15% | | 10 | CI verde comprovada; completar execução formal de HML/PRD e tempo de entrega. |
-| INT-04 — Testes automatizados | 12% | | 10 | CI auditada: 152 unidade, 108 integração, 36 E2E; falta provar HML/PRD formais. |
+| INT-04 — Testes automatizados | 12% | | 10 | CI78c367d:273 unidade/integração,36E2E. HML773af17:4/4; smokePRD formal pendente. |
 | INT-05 — Segurança, licenças e uso de IA | 10% | | 10 | Scanners CI sem achados; conferir inventários/revisão e materiais finais. |
-| INT-06 — Release versionada e empacotada | 10% | | 10 | ZIP CI 29.001 bytes; ausência de tag/release no snapshot auditado. |
+| INT-06 — Release versionada e empacotada | 10% | | 10 | ZIP HML38674290799:29.025 bytes; sete hashesHTTP e offline verificados. Tag/release formal pendente. |
 | INT-07 — Ambientes, entrega progressiva e rollback | 12% | | 10 | Preparação e testes não comprovam rollout ou recuperação real abaixo de 5 min. |
-| INT-08 — Monitoramento, alertas e métricas DORA | 10% | | 10 | Ativar e executar sondas/painel, alertas e medir DORA reais. |
+| INT-08 — Monitoramento, alertas e métricas DORA | 10% | | 10 | Três coletas reais/6amostras, com versão/HTTP/latência. Painel, incidentes tratados e DORA com eventos formais pendentes. |
 | INT-09 — Build pública e pacote de submissão | 8% | | 10 | Pacote final/triagem dependem de produção, vídeo real e prazo oficial. |
 | INT-10 — Vídeo pitch e relatório técnico | 5% | | 10 | Relatório em revisão; pitch e banca continuam pendentes. |
 
@@ -117,3 +117,21 @@ Checklist de conferência do JavaScript, ainda sem aceitar a ficha final:
 - Produção formal, painel/status, vídeo, relatório final, release/tag final e triagem continuam sujeitos às etapas responsáveis. Não preencher os campos finais com URLs presumidas.
 
 Este MD reúne os 49 controles de entrada da ficha: 2 do squad/repositório, 12 dos integrantes, 7 links, 20 dos INT (check + nota), 4 notas B e 4 declarações. Os 3 cálculos e 7 validadores são saídas automáticas/conferências, não novos campos. A preservação deste arquivo no Git permite recuperar as respostas mesmo que a aba do professor perca o preenchimento.
+
+
+## 10. Reconferência operacional — 15/10/2026
+
+Mantivemos os 49 campos do HTML e os espaços de respostas desconhecidas. Não preenchemos o HTML, não geramos TXT nem aceitamos declarações. As notas10 continuam estimativas solicitadas, não conclusões de cumprimento ou nota oficial.
+
+| Informação disponível para a conferência final | Situação e fonte |
+|---|---|
+| Homologação observada | https://luccalck.github.io/desafio-arcade/hml/ — HTTP200,0.7.0/SHA773af17; regressão4/4 e sete arquivos idênticos ao ZIP. Job formal ainda falhou na coleta de tempo, por isso não fixamos esta versão como resposta final de entrega. |
+| Última CI verde conferida da correção | Run38674970174, commit78c367d; não publicou produção. |
+| Produção | Raiz ainda preview0.6.0/SHA71933bf. Não copiar como produção formal aceita. |
+| Monitor | Runs38704560758,38744110194 e38770216623 concluídas; CSV6amostras. Painel404 e quatro DORA sem eventos elegíveis. |
+| Revisão/integração | PR32 aprovado por Lucas e integrado; PR33 ainda requer aprovação externa. A conta autora não pode autoaprovar. |
+| Relatório | Fonte ampliada nesta etapa; PDF local/candidato deve ser conferido e recuperado da nova CI antes de indicar link público final. |
+| Pitch | Pendente por orientação expressa de Lucca. Vídeos automatizados de testes não são pitch. |
+| Tag/pacote/triagem | Não finalizados; pitch e demais entradas verdadeiras continuam obrigatórios. |
+
+Provas e limites: [operação15/10](../evidencias/operacao-2026-10-15.md). Próxima ação de ficha: atualizar estes dados após publicação, manter desconhecidos vazios e só preencher a seção10 do HTML no fechamento autorizado.

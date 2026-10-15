@@ -1,6 +1,6 @@
 # Pendências após cada passo
 
-Atualizado em 14/10/2026. Registro único das pendências encontradas durante a execução. Complementa o [controle](03-controle-execucao.md) e o [checklist da avaliação](../gestao/checklist-avaliacao.md), sem substituí-los.
+Atualizado em 15/10/2026. Registro único das pendências encontradas durante a execução. Complementa o [controle](03-controle-execucao.md) e o [checklist da avaliação](../gestao/checklist-avaliacao.md), sem substituí-los.
 
 Ao encerrar cada passo, atualizar sua seção com todas as pendências: requisito/check, motivo, responsável ou dependência, próximo passo e evidência necessária. Fechar um item apenas com evidência real, registrando arquivo, commit, execução ou ação humana. Diferenciar pendência de execução, aceite e obrigação futura. Passo não executado não significa ausência de pendências.
 
@@ -520,3 +520,47 @@ PDF técnico revisado gerado e conferido:6páginas A4, doisprints reais com lege
 - [ ] **011/I03-21/G3 — corrigir coleta de tempo:** run38674290799 publicou HML0.7.0 e passou regressão pública, mas a ausência dePushEvent nofeed atrasado reprovou a coleta. Correção/testes em [medição HML](../evidencias/medicao-hml-2026-10-15.md), depende de novoPRrevisado e novaexecução. Não declarar jobintegral aprovado.
 - [ ] **019/G4 — produção:** bloqueada corretamente pela falhaHML; sempromoção, releasefinal, rollbacksoperacionais ou DORAmedido nesta execução.
 - [ ] **017/029/031/G6 — pitch:** continua pendente por orientação deLucca. Playtest, TXT/AVA/recibo e banca conservam suas exigências humanas.
+
+
+## Continuação operacional e relatório — 15/10/2026
+
+Esta reconferência prevalece sobre observações históricas de monitor inativo ou HML ainda em preview. Não apaga falhas nem fecha um passo inteiro por uma validação parcial. [Provas completas](../evidencias/operacao-2026-10-15.md).
+
+### Passos 001/003/040 — Git, autoria e revisão
+
+- [x] Identidades reais mantidas, inclusive Lucca Castilho Costa / 26179873. PRs 15–29 têm aprovação registrada por Lucca nos respectivos HEADs; PR32 recebeu aprovação real de Lucas e foi integrado por merge, preservando autoria.
+- [ ] PR33 / 78c367d exige aprovação externa e merge protegido; CI verde não permite autoaprovação. Solicitamos revisão a outro integrante. Novos registros e relatório também precisam de PR, CI e revisão antes da integração. Não há fator F oficial nem banca realizada.
+
+### Passos 006/011/014/019 — HML, produção, ZIP e smoke
+
+- [x] HML 0.7.0 / 773af17 publicamente testada: 4/4 cenários desktop e toque, campanha até vitória com 700 XP e reinício. Sete arquivos HTTP 200 têm hashes idênticos ao ZIP original da CI 38674290799/1.
+- [x] ZIP original de 29.025 bytes, SHA-256 cedfa3b16b12e09fd77beaf9d8f9963b7341a9504bde5467ae8e19d617ba6a70, validado offline: 1/1 cenário, cinco missões, 23 casos finais, downloads reais HTML/.py, HTML exportado jogável, zero HTTP e zero erros.
+- [ ] Aceite integral HML / G3: a primeira execução falhou no coletor; reconstrução histórica mede 191 s (3min11s), mas é necessária nova execução automática do código aprovado no PR33.
+- [x] Smoke funcional da raiz existente (preview 0.6.0 / 71933bf): 1/1 aprovado em 9,7 s, com editor, movimento e pausa reais. Não comprova publicação formal da candidata 0.7.0.
+- [ ] Produção formal / G4: após HML verde, aprovar deployment no environment producao, conferir sete hashes, mesmo ZIP, virada azul-verde, smoke da release e raiz, versão na sessão, painel e monitor pós-publicação. Não executado enquanto PR33 aguarda revisão.
+
+### Passos 012/016/024/026/027/028 — observabilidade e recuperação
+
+- [x] Duas coletas agendadas (38704560758 e 38744110194) e uma manual (38770216623) concluídas com sondas e alertas verdes; seis amostras reais persistidas em observabilidade/status/sondas.csv, com HTTP, latência e versão.
+- [x] 53/53 testes locais de contratos passaram; 14 arquivos das duas baselines de preview responderam 200 com hashes corretos. Não é ensaio real.
+- [ ] Painel /status/ ainda 404; raiz ainda preview 0.6.0 / 71933bf. Publicar e verificar após produção formal; não marcar PRD pela existência da flag formalPrd.
+- [ ] Alertas JogoForaDoAr e LatenciaAlta: nenhuma abertura, deduplicação ou fechamento de incidente foi observado; actions=[] nas três coletas. Exige ensaio verdadeiro identificado, sem Issue inventada.
+- [ ] Recuperação: estabelecer baseline formal e candidata nova; preparar injeção controlada explícita e medição falha → Pages/hashes/smoke, com amostras contínuas HTTP. O workflow atual não oferece modo de ensaio nem motivo ensaio-controlado manual; ainda há implementação necessária antes da demonstração. Não forçar adulteração ou cancelamento de publicação. Provar recuperação automática/manual <5 min e sem queda; a demonstração na banca continua separada.
+- [ ] DORA: cálculo real executado, quatro valores N/D por falta de eventos elegíveis; após produção e incidentes, medir as quatro métricas, comparar lead time com onze dias e comprovar efeito da melhoria. Cron */15 não é SLA: as duas runs agendadas observadas ficaram 5h19 separadas.
+
+### Passo 021 — teste com jogador
+
+- [x] Reconferência técnica automatizada pública em desktop e toque efetuada com vídeos e capturas reais; nenhuma falha bloqueante observada nos cenários.
+- [ ] Sessão de três minutos com colega iniciante de outra turma, sem explicação, autorização para registro anônimo e observações de compreensão, interesse e aprendizagem. Observar a IA jogar não substitui essa sessão. Protocolo em [playtest.md](../evidencias/playtest.md).
+
+### Passos 017/029/031/035/036 — pitch e submissão
+
+- [ ] Pitch permanece pendente: gravação real de produção, até 90 s, legendas, direitos/consentimentos e proveniência. Não há MP4 substitutivo.
+- [ ] Release técnica poderá ser publicada sem pitch somente após produção aprovada e tag anotada, SemVer, notas e CI. Pacote acadêmico completo, tag final v1.0.0 e TRIAGEM APROVADA dependem do pitch e demais entradas; manter flags de submissão e triagem final desabilitadas.
+
+### Passos 033/037/038/039/040 — relatório, ficha e encerramento
+
+- [ ] Relatório ampliado para 9–10 páginas desejadas, sem ultrapassar doze: gerar, renderizar e conferir todas as páginas, executar na CI e preservar artefato acessível. Acrescentar resultados operacionais posteriores quando reais; não concluir produção pela aprovação dos E2E locais.
+- [x] Respostas persistentes atualizadas em [ficha-entrega.md](../gestao/ficha-entrega.md); quatro RAs confirmados, links conhecidos e situações parciais.
+- [ ] HTML original e TXT deixados para o último passo por orientação expressa de Lucca. Não houve preenchimento, aceite de declarações ou geração de TXT.
+- [ ] Declarações e direitos coletivos verdadeiros, marcos históricos comprováveis, definição do PRAZO real, envio no AVA e recibo, ensaio e participação dos quatro na banca continuam nos respectivos passos. Não inferir nota 100 nem fator individual máximo.

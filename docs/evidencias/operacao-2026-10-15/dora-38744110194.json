@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-10-15T13:36:35.905Z",
+  "period": {
+    "from": "2026-10-01T13:36:27Z",
+    "to": "2026-10-15T13:36:27Z"
+  },
+  "metrics": {
+    "deploymentFrequency": {
+      "value": null,
+      "unit": "deploys/dia",
+      "samples": 0,
+      "source": null,
+      "reason": "Nenhum deploy-prd formal bem-sucedido na janela."
+    },
+    "leadTime": {
+      "value": null,
+      "unit": "horas",
+      "samples": 0,
+      "source": null,
+      "reason": "Sem vínculo completo commit → deploy-prd."
+    },
+    "changeFailureRate": {
+      "value": null,
+      "unit": "%",
+      "samples": 0,
+      "source": null,
+      "reason": "Sem deploy formal como denominador."
+    },
+    "mttr": {
+      "value": null,
+      "unit": "minutos",
+      "samples": 0,
+      "source": null,
+      "reason": "Sem Issue de alerta aberta e fechada na janela."
+    }
+  },
+  "baseline": {
+    "carpartsDays": 11,
+    "leadTimeDays": null
+  },
+  "evidence": {
+    "deploys": [],
+    "issues": [],
+    "rollbacks": []
+  },
+  "definitions": {
+    "deploymentFrequency": "Implantações formais bem-sucedidas / dias da janela",
+    "leadTime": "Média entre data do commit e término do deploy-prd aprovado; virada seguida de falha usa horário do commit de controle, sem afirmar confirmação CDN",
+    "changeFailureRate": "Implantações formais seguidas de rollback correlacionado / implantações formais",
+    "mttr": "Média da abertura ao fechamento de Issues de alerta"
+  }
+}

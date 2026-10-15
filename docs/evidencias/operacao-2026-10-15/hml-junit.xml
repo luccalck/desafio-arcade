@@ -1,0 +1,66 @@
+<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="62.008987999999995">
+<testsuite name="pages.spec.mjs" timestamp="2026-10-15T16:35:43.431Z" hostname="hml-desktop" tests="2" failures="0" skipped="0" time="29.135" errors="0">
+<testcase name="@hml campanha: primeira missão até vitória e encerramento" classname="pages.spec.mjs" time="21.192">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hml-playtest\pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-desktop\attachments\menu-e1aa633b36fb9396233f38a9273665042cae1a6a.png]]
+
+[[ATTACHMENT|hml-playtest\pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-desktop\attachments\menu-metadados-4990ff62d882226457f95dbeda919d73ba4993c9.json]]
+
+[[ATTACHMENT|hml-playtest\pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-desktop\attachments\primeira-missao-concluida-54fa2e8f9d7ad4cc2c3d0956ebe884076277222f.png]]
+
+[[ATTACHMENT|hml-playtest\pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-desktop\attachments\primeira-missao-concluida-metadados-c2ff4175b5b80d634f3b1e5518fefab6a63755bb.json]]
+
+[[ATTACHMENT|hml-playtest\pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-desktop\attachments\encerramento-real-180b29c0eea57b57918792a6fdf2cb868bdbd295.png]]
+
+[[ATTACHMENT|hml-playtest\pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-desktop\attachments\encerramento-real-metadados-5cf7e06898b42044dd8b37f308f2673ba7650c47.json]]
+
+[[ATTACHMENT|hml-playtest\pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="@hml reinício confirmado e progressão bloqueada" classname="pages.spec.mjs" time="7.943">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hml-playtest\pages--hml-reinício-confirmado-e-progressão-bloqueada-hml-desktop\attachments\reinicio-confirmado-d528a5944b42c1aac2898ac253b896eb0b251ff4.png]]
+
+[[ATTACHMENT|hml-playtest\pages--hml-reinício-confirmado-e-progressão-bloqueada-hml-desktop\attachments\reinicio-confirmado-metadados-bf6f6e36f617c363319656c9684c79c57b4f1b9d.json]]
+
+[[ATTACHMENT|hml-playtest\pages--hml-reinício-confirmado-e-progressão-bloqueada-hml-desktop\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="pages.spec.mjs" timestamp="2026-10-15T16:35:43.431Z" hostname="hml-toque" tests="2" failures="0" skipped="0" time="30.545" errors="0">
+<testcase name="@hml campanha: primeira missão até vitória e encerramento" classname="pages.spec.mjs" time="22.472">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hml-playtest\pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-toque\attachments\menu-eb6ba2811109357fc9b4f4d26aa17c77ab3e2496.png]]
+
+[[ATTACHMENT|hml-playtest\pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-toque\attachments\menu-metadados-548ed3b05dde4995fed73c1a07f929116401064c.json]]
+
+[[ATTACHMENT|hml-playtest\pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-toque\attachments\primeira-missao-concluida-c223989a392696d0f3ec7801683dcc7da27b59a7.png]]
+
+[[ATTACHMENT|hml-playtest\pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-toque\attachments\primeira-missao-concluida-metadados-af618ea02bbb7c98739d404535ba4570b53f333b.json]]
+
+[[ATTACHMENT|hml-playtest\pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-toque\attachments\encerramento-real-d02f131e3b7a76cc1a1839d2d3a304347ebf3b0d.png]]
+
+[[ATTACHMENT|hml-playtest\pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-toque\attachments\encerramento-real-metadados-006cdd461848a34493e446b2463300c01c40eb9e.json]]
+
+[[ATTACHMENT|hml-playtest\pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-toque\video.webm]]
+]]>
+</system-out>
+</testcase>
+<testcase name="@hml reinício confirmado e progressão bloqueada" classname="pages.spec.mjs" time="8.073">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|hml-playtest\pages--hml-reinício-confirmado-e-progressão-bloqueada-hml-toque\attachments\reinicio-confirmado-a9551fb598cac6e0c6526aa2f91cbf753293a442.png]]
+
+[[ATTACHMENT|hml-playtest\pages--hml-reinício-confirmado-e-progressão-bloqueada-hml-toque\attachments\reinicio-confirmado-metadados-364afee4d6ba6b1111461d17be71dff127dd640d.json]]
+
+[[ATTACHMENT|hml-playtest\pages--hml-reinício-confirmado-e-progressão-bloqueada-hml-toque\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

@@ -1,0 +1,15 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="9.726908">
+<testsuite name="pages.spec.mjs" timestamp="2026-10-15T16:47:11.362Z" hostname="prd-smoke" tests="1" failures="0" skipped="0" time="8.606" errors="0">
+<testcase name="@prd smoke reduzido: release do mesmo SHA, editor e movimento" classname="pages.spec.mjs" time="8.606">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|preview-smoke\pages--prd-smoke-reduzido--e8b5c-esmo-SHA-editor-e-movimento-prd-smoke\attachments\smoke-aprovado-7a098b969a33dbedf3a3550cb365b72472b6a29a.png]]
+
+[[ATTACHMENT|preview-smoke\pages--prd-smoke-reduzido--e8b5c-esmo-SHA-editor-e-movimento-prd-smoke\attachments\smoke-aprovado-metadados-253b8f63fb8e4d643118216a1b6be960fb23472d.json]]
+
+[[ATTACHMENT|preview-smoke\pages--prd-smoke-reduzido--e8b5c-esmo-SHA-editor-e-movimento-prd-smoke\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

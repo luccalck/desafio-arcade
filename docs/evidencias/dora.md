@@ -12,3 +12,10 @@ Consulta autenticada somente leitura em 14/10/2026 às 05:05 UTC, repositório `
 O script usa paginação, janela UTC com fim exclusivo, unidades e links de origem, e rejeita limite de páginas sem resultado completo. O contrato `status/dora.json` é alimentado pelo `monitor.yml` somente quando a branch padrão e `MONITOR_ENABLED` estiverem ativos; o painel lê o mesmo commit da branch observabilidade. Dados sem observações são `null`/indisponíveis. Cinco testes de cálculo, ausência, correlação e paginação passaram dentro dos 247 testes de CI local. A linha de base Carparts é **11 dias** conforme o MD e auditoria; sem lead time medido, diferença e comparação de resultado ficam N/D. Não existe mínimo de dez execuções na ficha. O agendamento `*/15` do GitHub Actions pode atrasar ou ser descartado sob carga, como já documentado em [sondas](sondas.md); horários efetivos precisam ser comparados antes de afirmar cadência. O relatório final deve preservar essa limitação.
 
 Pendências por requisito estão em [Passo 024](../execucao/05-pendencias-por-passo.md#passo-024). S05 e HTML original não estavam disponíveis neste computador para confronto direto.
+
+
+## Coleta real e limites — 15/10/2026
+
+O workflow calculou DORA com APIs reais nas runs38704560758,38744110194 e38770216623. Os quatro valores permanecem N/D: não houve deploy-prd formal bem-sucedido elegível, nem Issue de alerta aberta e fechada. Não substituímos denominadores ausentes por zero ou dados sintéticos. A comparação com onze dias e o efeito de uma melhoria continuam pendentes de eventos reais.
+
+As sondas acumularam seis amostras reais. As duas execuções agendadas observadas ficaram aproximadamente5h19 separadas, embora cron esteja configurado*/15; isso impede prometer observação efetiva a cada quinze minutos ou continuidade entre amostras. O disparo manual38770216623 foi registrado como manual. [Fontes, CSV e DORA preservados](operacao-2026-10-15.md).

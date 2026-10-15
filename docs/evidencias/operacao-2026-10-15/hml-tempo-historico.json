@@ -1,0 +1,49 @@
+{
+  "collectedAt": "2026-10-15T16:40:00.040Z",
+  "scope": "Reconstrução histórica com metadados GitHub; não altera a conclusão failure do job e não substitui nova execução do coletor aprovado",
+  "timing": {
+    "schema": 1,
+    "sha": "773af17db29bb9fc46bfe438c0cb9c8304fbd5f5",
+    "ref": "refs/heads/main",
+    "run": "38674290799",
+    "runAttempt": "1",
+    "pushReceivedAt": "2026-10-15T03:03:48Z",
+    "e2eFinishedAt": "2026-10-15T03:06:59Z",
+    "pushToHmlSeconds": 191,
+    "limitSeconds": 900,
+    "withinLimit": true,
+    "eventType": "PullRequestMerge",
+    "proof": {
+      "number": 32,
+      "baseRef": "main",
+      "merged": true,
+      "mergeCommitSha": "773af17db29bb9fc46bfe438c0cb9c8304fbd5f5",
+      "mergedAt": "2026-10-15T03:03:48Z",
+      "url": "https://github.com/luccalck/desafio-arcade/pull/32"
+    },
+    "source": "GitHub Pull Requests API merged_at; merge_commit_sha/base main conferidos"
+  },
+  "source": {
+    "pr": {
+      "base": {
+        "ref": "main",
+        "repo": "luccalck/desafio-arcade"
+      },
+      "html_url": "https://github.com/luccalck/desafio-arcade/pull/32",
+      "merge_commit_sha": "773af17db29bb9fc46bfe438c0cb9c8304fbd5f5",
+      "merged": true,
+      "merged_at": "2026-10-15T03:03:48Z",
+      "number": 32
+    },
+    "jobId": 116224720355,
+    "jobConclusion": "failure",
+    "step": {
+      "name": "Esperar propagação e executar regressão completa HML",
+      "status": "completed",
+      "conclusion": "success",
+      "number": 13,
+      "started_at": "2026-10-15T03:06:10Z",
+      "completed_at": "2026-10-15T03:06:59Z"
+    }
+  }
+}

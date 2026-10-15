@@ -21,3 +21,8 @@ Miguel Oliveira, 14/10/2026. **Nenhuma falha foi injetada e nenhum rollback oper
 | Depois | Comparar resultado com 5 minutos. Se exceder ou houver queda, investigar causa, corrigir por PR/revisão e repetir somente com nova janela. Preservar tentativa anterior e mostrar o histórico à banca. |
 
 O plano utiliza [recuperação automática](rollback-automatico.md), [operação manual](../operacao-rollback.md), [painel](painel-status.md) e [DORA](dora.md). I07-20–23/25, I08-31, CR-03 e G5 permanecem abertos; não há cronômetro, alerta, autocerramento ou demonstração na banca. [Pendências 026](../execucao/05-pendencias-por-passo.md#passo-026).
+
+
+## Reconferência — 15/10/2026
+
+Executamos 53/53 testes locais de oito suítes e conferimos os catorze hashes HTTP das duas baselines de preview. Flags e workflows agora existem na main, mas a raiz continua no preview0.6.0: nenhuma recuperação formal foi disparada. Falta integrar o PR33 revisado, publicar produção saudável e preparar o modo explícito de ensaio, relógio falha→confirmação pública e amostragem contínua da URL. O workflow manual atual admite motivos de incidente, sem categoria de ensaio; não classificamos um teste como incidente inexistente. Os limites somados das etapas também podem ultrapassar cinco minutos e precisam ser medidos. [Resultados, fontes e próximos aceites](operacao-2026-10-15.md). G5 e os checks de recuperação operacional continuam abertos.

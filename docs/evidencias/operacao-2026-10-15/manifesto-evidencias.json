@@ -1,0 +1,174 @@
+{
+  "collectedAt": "2026-10-15",
+  "scope": "Arquivos reais preservados nesta reconferência; não é manifesto de submissão final.",
+  "files": {
+    "alertas-38704560758.json": {
+      "bytes": 65,
+      "sha256": "1740effe8e0c72d6b3463530b37e3ffbd1db23f7c7cf3b0a3c974d11c32f2956"
+    },
+    "alertas-38744110194.json": {
+      "bytes": 65,
+      "sha256": "03638d3a0391078da587c290fca1c3ef372e95ed220e74027bfbb214683404b0"
+    },
+    "alertas-38770216623.json": {
+      "bytes": 65,
+      "sha256": "7cd32a6b69645c4a8a02922aecdbefe490c5e7832960c29dadeb47f23b6d9522"
+    },
+    "ci-coverage.json": {
+      "bytes": 2833,
+      "sha256": "7cacf0ba9a5e3a05e0a333a5ec459a1e26095303698251ff529879efb28f5a54"
+    },
+    "ci-e2e-junit.xml": {
+      "bytes": 11654,
+      "sha256": "f553ed9383dd54a9494ce68a400912a56f994d780c4782eb01408ffb9e287867"
+    },
+    "ci-gitleaks.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "ci-junit.xml": {
+      "bytes": 51698,
+      "sha256": "c87845b03a13a171c50f10f3d577b5d0fafe24ecb98bdf35574edd084749bfad"
+    },
+    "ci-npm-audit.json": {
+      "bytes": 364,
+      "sha256": "bb48b38b6510a6e99b7240ae7d9393d505cedcf102e4849772180fdf853a0242"
+    },
+    "dora-38704560758.json": {
+      "bytes": 1491,
+      "sha256": "c0a7e353de7c204313d310dad9db2ffa2a2d53c349f1a1e693acb912033c97db"
+    },
+    "dora-38744110194.json": {
+      "bytes": 1491,
+      "sha256": "9025394593a33499585d97e767847010a0eaf2e6a593c3696f57e25b7552ccb4"
+    },
+    "dora-38770216623.json": {
+      "bytes": 1491,
+      "sha256": "a096bea854868ca873a24ccc29415eed3abf7ef852044c1e6e6a748fb96ca68d"
+    },
+    "export-jogavel-offline.png": {
+      "bytes": 47692,
+      "sha256": "3ae646998bdecbd7404c6cbb1611e459af89fcb5b87ab2b429bdcf3357c89254"
+    },
+    "hml-desktop-campanha.webm": {
+      "bytes": 1846563,
+      "sha256": "34bf80a36801fd797f6453a777b4ec984d66c67fbe4423a1c262788d66db4e0e"
+    },
+    "hml-desktop-encerramento-real.json": {
+      "bytes": 425,
+      "sha256": "5488ca272e29a452c73bd77964080fe37fe962b02c4edf953ac5a3e0d294d2e4"
+    },
+    "hml-desktop-encerramento-real.png": {
+      "bytes": 190451,
+      "sha256": "ee5ea8a2af77872e8e8e2c807704268f6f8a9308652bb4c50a1adb8f83b8d397"
+    },
+    "hml-desktop-menu.json": {
+      "bytes": 425,
+      "sha256": "1e8337308db789a8027b223be6e167d7097b9fc1fe14e6285c508b12878b2f8e"
+    },
+    "hml-desktop-menu.png": {
+      "bytes": 281338,
+      "sha256": "38865ed8a413112741f879faea7fade2f1b3d8405207badae9ba2af39162f370"
+    },
+    "hml-desktop-primeira-missao-concluida.json": {
+      "bytes": 425,
+      "sha256": "bf541abc5192ffca4bfb6d31fcc18b3db218977ad97e7acd7535c643092b7434"
+    },
+    "hml-desktop-primeira-missao-concluida.png": {
+      "bytes": 147929,
+      "sha256": "0f802bbc30d7c93876f75c9498641aba3b7f7dfab53b25c33f15a02821c03c2a"
+    },
+    "hml-junit.xml": {
+      "bytes": 4446,
+      "sha256": "b2c2ed2d4b29ff2950c528c3f81acde533d2a22b61b2b99133ede603af555df6"
+    },
+    "hml-tempo-historico.json": {
+      "bytes": 1610,
+      "sha256": "755b6527a21e188a53e55b177903e8208f13a991e9a814c3593981f253313492"
+    },
+    "hml-toque-campanha.webm": {
+      "bytes": 1633510,
+      "sha256": "b012134deaa03eb3422964111c821462fb62ea1bed66acc16177b210c891ce3b"
+    },
+    "hml-toque-encerramento-real.json": {
+      "bytes": 420,
+      "sha256": "7849c4e2ee11894fee9e18392980d70bb5a4dcc3ef0637ea959dd9e2ae3ec45e"
+    },
+    "hml-toque-encerramento-real.png": {
+      "bytes": 110738,
+      "sha256": "7041d2b1cff1972c2e62f20b26ca4aafe02970abb5ad836a46d4c880258fce29"
+    },
+    "hml-toque-menu.json": {
+      "bytes": 420,
+      "sha256": "965321ba34be91d00eb8321ca1b40a70387a294517c2aee131d745298b5637fb"
+    },
+    "hml-toque-menu.png": {
+      "bytes": 102061,
+      "sha256": "e6c347b1daae86e3071fd2d51735c31242a4c25585d21d3dc2cb0923728bf744"
+    },
+    "hml-toque-primeira-missao-concluida.json": {
+      "bytes": 420,
+      "sha256": "8f887772271f0416bbb6d68bbb0ea006e678a0744ff1216968fe8e17a6111816"
+    },
+    "hml-toque-primeira-missao-concluida.png": {
+      "bytes": 89923,
+      "sha256": "6ba4a67b769dfa5bf08273881d46dab26df9fb7a08a5a7f0898a67bb67bcf1b3"
+    },
+    "hml-zip-http.json": {
+      "bytes": 2605,
+      "sha256": "3946f88caed3ed4160a609ec682a6161220cf79c9766f062c0c07d3e54917462"
+    },
+    "offline-vitoria.png": {
+      "bytes": 190563,
+      "sha256": "eb13a825506eaf057dcd4d3fcd9de89eebb8485182a13eb17d96f80baa73b41a"
+    },
+    "preview-smoke-junit.xml": {
+      "bytes": 907,
+      "sha256": "ed931f6d94bc80e25735abf9975e295951d1526d2aed84afe391de8662c75d4d"
+    },
+    "preview-smoke.json": {
+      "bytes": 493,
+      "sha256": "7d390d953f638267ff1ff7bc6071b218a26babdffdde48f3eb5188762fd8fbff"
+    },
+    "protection-agora.json": {
+      "bytes": 79,
+      "sha256": "d85dc2b200e296cdf209fa83f4383f5b6e792dd8ec53014666a9c85e898060ec"
+    },
+    "prs-revisoes-atual.json": {
+      "bytes": 19197,
+      "sha256": "1788834145bf035a0e9d75f3066a1c13c31c8cc17a312a02608e14cde55467a0"
+    },
+    "recuperacao-baselines.json": {
+      "bytes": 5370,
+      "sha256": "637cf3a18804ae4a894b6e093809e11d1052be7a9aa707ddc8777fe3a99f800d"
+    },
+    "recuperacao-local.json": {
+      "bytes": 3205,
+      "sha256": "8e40ac58c0c894fabb6123c6d79824d3d5927b7e03fc3ea9ea1043f5b149a57e"
+    },
+    "sondas-38704560758.json": {
+      "bytes": 929,
+      "sha256": "eed6517742f34caa08e45c1766b0fac478fdd155a11cb3e74c853e78c30937f9"
+    },
+    "sondas-38744110194.json": {
+      "bytes": 921,
+      "sha256": "5911824dcc6a56060193d40761946f4d73361ca8db3b99603ae4d56ae4c6c821"
+    },
+    "sondas-38770216623.json": {
+      "bytes": 921,
+      "sha256": "aa3a04c2b90f64103bae329c4ee399f35ea3c404c33ab75d4e4d6e6b176795f3"
+    },
+    "sondas.csv": {
+      "bytes": 383,
+      "sha256": "10652fe2729c3d3b33941b3306ec6aa7d29b368d4aa377d9c390bdee3c382f13"
+    },
+    "zip-ci-junit.xml": {
+      "bytes": 806,
+      "sha256": "4a5b1ead326899fd111f5d27aa5941b7ac30cc2ed072168512748400a0c05e87"
+    },
+    "zip-offline.json": {
+      "bytes": 872,
+      "sha256": "c52e7afc1f0cf2a751892b970306ba7fcb01320758bd283f70d3d8883917c940"
+    }
+  }
+}

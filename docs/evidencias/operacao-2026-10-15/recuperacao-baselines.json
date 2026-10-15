@@ -1,0 +1,142 @@
+{
+  "schema": 1,
+  "at": "2026-10-15T16:35:42.159Z",
+  "ghPagesCommit": "5bae1742383d009ecd55ab95b44be604ace121f7",
+  "pointer": {
+    "strategy": "preview",
+    "activeSha": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+    "previousSha": "6f5c704665ee6c526571c5d66771f904d8627b59",
+    "version": "0.6.0",
+    "build": "2026-10-13T02:06:51.969Z"
+  },
+  "checks": [
+    {
+      "sha": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+      "name": "index.html",
+      "status": 200,
+      "versionedStatus": 200,
+      "sha256": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282",
+      "versionedSha256": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282",
+      "matches": true
+    },
+    {
+      "sha": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+      "name": "game.js",
+      "status": 200,
+      "versionedStatus": 200,
+      "sha256": "8f5914943f6a87e4fc093c8c598bbf4072160643e2e8e61813bf49c75dfe1f2a",
+      "versionedSha256": "8f5914943f6a87e4fc093c8c598bbf4072160643e2e8e61813bf49c75dfe1f2a",
+      "matches": true
+    },
+    {
+      "sha": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+      "name": "style.css",
+      "status": 200,
+      "versionedStatus": 200,
+      "sha256": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da",
+      "versionedSha256": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da",
+      "matches": true
+    },
+    {
+      "sha": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+      "name": "version.json",
+      "status": 200,
+      "versionedStatus": 200,
+      "sha256": "ecc36d3cdd82ab43cb86730401149b54762576c6ffa30d0249c614c8ed20c7fa",
+      "versionedSha256": "ecc36d3cdd82ab43cb86730401149b54762576c6ffa30d0249c614c8ed20c7fa",
+      "matches": true
+    },
+    {
+      "sha": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+      "name": "LEIA-ME.txt",
+      "status": 200,
+      "versionedStatus": 200,
+      "sha256": "31f50fe9f495ee6ff8e2b214f1d4501106301de263c580fb0b01ae667ac912a4",
+      "versionedSha256": "31f50fe9f495ee6ff8e2b214f1d4501106301de263c580fb0b01ae667ac912a4",
+      "matches": true
+    },
+    {
+      "sha": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+      "name": "LICENSE.txt",
+      "status": 200,
+      "versionedStatus": 200,
+      "sha256": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb",
+      "versionedSha256": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb",
+      "matches": true
+    },
+    {
+      "sha": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+      "name": "THIRD_PARTY.txt",
+      "status": 200,
+      "versionedStatus": 200,
+      "sha256": "b9e00ead36cc6832b17ab59cf591bd694b9abf572b4010093388fa352fcdcf8a",
+      "versionedSha256": "b9e00ead36cc6832b17ab59cf591bd694b9abf572b4010093388fa352fcdcf8a",
+      "matches": true
+    },
+    {
+      "sha": "6f5c704665ee6c526571c5d66771f904d8627b59",
+      "name": "index.html",
+      "status": 200,
+      "versionedStatus": 200,
+      "sha256": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282",
+      "versionedSha256": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282",
+      "matches": true
+    },
+    {
+      "sha": "6f5c704665ee6c526571c5d66771f904d8627b59",
+      "name": "game.js",
+      "status": 200,
+      "versionedStatus": 200,
+      "sha256": "73a8fa5c799fc1b4b047c3e92a3aeee71f20ec9a14de4744faa8a13edbd7ab80",
+      "versionedSha256": "73a8fa5c799fc1b4b047c3e92a3aeee71f20ec9a14de4744faa8a13edbd7ab80",
+      "matches": true
+    },
+    {
+      "sha": "6f5c704665ee6c526571c5d66771f904d8627b59",
+      "name": "style.css",
+      "status": 200,
+      "versionedStatus": 200,
+      "sha256": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da",
+      "versionedSha256": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da",
+      "matches": true
+    },
+    {
+      "sha": "6f5c704665ee6c526571c5d66771f904d8627b59",
+      "name": "version.json",
+      "status": 200,
+      "versionedStatus": 200,
+      "sha256": "8cd2f3eb87ccc94fc62b9850687ffe82fe19abd730079cea58b6862c616dc772",
+      "versionedSha256": "8cd2f3eb87ccc94fc62b9850687ffe82fe19abd730079cea58b6862c616dc772",
+      "matches": true
+    },
+    {
+      "sha": "6f5c704665ee6c526571c5d66771f904d8627b59",
+      "name": "LEIA-ME.txt",
+      "status": 200,
+      "versionedStatus": 200,
+      "sha256": "5096916e8734008f04dd4c01382eaafa793509961fc89ae4d5a684208191dc37",
+      "versionedSha256": "5096916e8734008f04dd4c01382eaafa793509961fc89ae4d5a684208191dc37",
+      "matches": true
+    },
+    {
+      "sha": "6f5c704665ee6c526571c5d66771f904d8627b59",
+      "name": "LICENSE.txt",
+      "status": 200,
+      "versionedStatus": 200,
+      "sha256": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb",
+      "versionedSha256": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb",
+      "matches": true
+    },
+    {
+      "sha": "6f5c704665ee6c526571c5d66771f904d8627b59",
+      "name": "THIRD_PARTY.txt",
+      "status": 200,
+      "versionedStatus": 200,
+      "sha256": "b9e00ead36cc6832b17ab59cf591bd694b9abf572b4010093388fa352fcdcf8a",
+      "versionedSha256": "b9e00ead36cc6832b17ab59cf591bd694b9abf572b4010093388fa352fcdcf8a",
+      "matches": true
+    }
+  ],
+  "allMatch": true,
+  "scope": "Conferência HTTP/hash somente leitura; não comprova gameplay nem deploy/rollback."
+}

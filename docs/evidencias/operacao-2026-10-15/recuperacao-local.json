@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "startedAt": "2026-10-15T13:35:17.444498-03:00",
+  "completedAt": "2026-10-15T13:35:21.626662-03:00",
+  "head": "78c367d1ace0dc8b103cf6b02009dbf0d1616321",
+  "scope": "Testes locais com fixtures/servidores de teste; não são ensaio ou incidentes de produção",
+  "command": "npx vitest run tests/integration/producao.test.mjs tests/integration/rollout.test.mjs tests/integration/rollout-cli.test.mjs tests/integration/propagacao.test.mjs tests/integration/monitor.test.mjs tests/integration/alertas.test.mjs tests/integration/observacao.test.mjs tests/integration/dora.test.mjs --reporter=json --outputFile=.contexto/execucao-2026-10-15/recuperacao-vitest.json",
+  "exitCode": 0,
+  "stdout": "JSON report written to C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade/.contexto/fechamento/.contexto/execucao-2026-10-15/recuperacao-vitest.json\r\n",
+  "report": "recuperacao-vitest.json",
+  "productionDispatched": false,
+  "sourceEdited": false,
+  "testSummary": {
+    "suites": 8,
+    "failed": 0,
+    "tests": 53,
+    "passed": 53
+  },
+  "remoteReadOnly": {
+    "previewActive": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+    "hml": "773af17db29bb9fc46bfe438c0cb9c8304fbd5f5",
+    "formalProductionObserved": false,
+    "baselineReport": "recuperacao-baselines.json",
+    "allMatch": true,
+    "baselineChecks": 14,
+    "previewPrevious": "6f5c704665ee6c526571c5d66771f904d8627b59",
+    "ghPagesCommit": "5bae1742383d009ecd55ab95b44be604ace121f7"
+  },
+  "findings": [
+    "Não existe injeção controlada de falha ou modo ensaio no workflow atual; workflow_dispatch da Esteira não aciona os jobs formais que exigem push.",
+    "Rollback manual atual admite apenas motivos de incidente e restituiria uma prévia anterior; não caracteriza ensaio de recuperação de falha observada.",
+    "Recuperação automática exige transação aberta, baseline pública íntegra, mesma execução/tentativa/ator e antecessor sem mudança; após virada restaura baseline e retira candidata.",
+    "Revalidação main/tag do mesmo SHA gera recuperação sem troca; não pode ser usada para fingir rollback.",
+    "Não existe medição início-da-falha até confirmação pública/CDN nem observação contínua HTTP da janela. Os limites de deploy180s+propagação180s+smoke120s podem ultrapassar5min.",
+    "Cancelar execução ou adulterar release/ponteiro para forçar falha ameaça continuidade/imutabilidade; não foi feito.",
+    "Necessário integrar PR33 aprovado e estabelecer produção formal saudável antes do ensaio; conferir baseline e anterior com smoke, além dos hashes.",
+    "Proposta mínima a combinar: modo de ensaio explícito em main sob environment producao, falha controlada da verificação após smoke da nova virada saudável, relógio e amostragem HTTP contínua, recuperação normal e relatório real. Identificar como ensaio de falha de validação, nunca como indisponibilidade espontânea; nenhuma Issue de queda pode ser fabricada.",
+    "Após recuperação o SHA ensaiado fica retirado. A retomada exige nova candidata de outro SHA por PR/CI; não apagar retiradas ou sobrescrever releases."
+  ]
+}

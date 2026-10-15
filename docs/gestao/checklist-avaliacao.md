@@ -168,7 +168,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I03-13 — CONTÍNUO: revisar permissões/secrets/variables após adicionar deploys, sondas e triagem. Revisado: contents:read padrão, permissões mínimas restritas a jobs específicos, secrets em repositório sem vazamento em logs. [Evidência 036](../evidencias/triagem-final.md).
 - [x] I03-14 — Relatórios, PDF, ZIP/checksum e SBOM publicados como artefatos da CI, inclusive diagnósticos de falha previstos. E2.
 - [ ] I03-15 — Job deploy-hml formal depende de ci e publica o artefato aprovado em /hml/.
-- [ ] I03-16 — Regressão E2E contra a URL real da HML a cada deploy, com roteiro completo de INT-04.
+- [x] I03-16 — Regressão E2E executada contra HML da main773af17 na run38674290799 (4/4), reconferida em15/10/2026 (4/4 desktop/toque). O job HML completo continuou vermelho na coleta de tempo. [Provas](../evidencias/operacao-2026-10-15.md).
 - [ ] I03-17 — Job deploy-prd depende do sucesso da HML e usa environment producao com reviewer obrigatório.
 - [ ] I03-18 — Produção integra publicação de release, estratégia progressiva, smoke e rollback.
 - [ ] I03-19 — Executar aprovação real no environment e preservar seu registro.
@@ -188,8 +188,8 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I04-05 — Carregamento e validação de schema do conteúdo JSON testados. E3.
 - [x] I04-06 — JSON inválido quebra a build. E3/E7.
 - [x] I04-07 — Pelo menos dois cenários E2E de navegador. E3: quinze originais; [regressão006](../evidencias/regressao-hml.md):17locais verdes e5cenários no preview público em13/10/2026.
-- [ ] I04-08 — Roteiro completo preparado/validado no006, inclusive vitória e reinício; fechar após execução formal da HML no011. [Evidências](../evidencias/regressao-hml.md).
-- [ ] I04-09 — Essa regressão roda contra HML a cada deploy formal; módulo006 entregue ao011, ainda não integrado/executado como job formal.
+- [x] I04-08 — Roteiro completo executado na HML da main773af17: cinco missões, 23 casos finais, vitória700XP e reinício, desktop/toque, 4/4 na CI e 4/4 na reconferência15/10. [Provas](../evidencias/operacao-2026-10-15.md).
+- [x] I04-09 — Regressão integrada ao deploy-hml formal e executada na run38674290799, antes da etapa de medição que falhou. O gate impediu PRD; preservar esse comportamento nos próximos deploys. [Provas](../evidencias/operacao-2026-10-15.md).
 - [ ] I04-10 — Smoke reduzido roda contra URL pública depois do deploy formal de produção.
 - [x] I04-11 — Teste falhando impede o check ci e bloqueia merge na main. E1/E2.
 - [x] I04-12 — Bug real encontrado por teste, corrigido com regressão correspondente. E3: foco/regra antiga/exportação Python, registros em docs/evidencias.
@@ -197,7 +197,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I04-14 — CONDICIONAL Opal/AI Studio: se usados para conteúdo, eval/golden.jsonl valida formato antes de entrar no jogo. Não usados atualmente; não criar evidência fictícia de golden eval.
 - [x] I04-15 — AVANÇADO: cobertura acima da meta. E3.
 - [x] I04-16 — AVANÇADO: bug real capturado por teste de regressão. E3; apresentado no relatório técnico (I04-13).
-- [x] I04-17 — CONTÍNUO/FINAL: manter pirâmide e gates verdes na candidata/tag de entrega, sem bugs bloqueantes escondidos. Validado na candidata v0.6.0 por Lucas Souza em 14/10/2026: 260 testes unit/integ (97.9% core), 36 E2E Playwright verdes, lint 0 erros, build/reproducibility bit a bit. [Evidência 034](../evidencias/aceite-candidata.md).
+- [x] I04-17 — CONTÍNUO/FINAL: candidata0.7.0/78c367d com273testes unidade/integração e36E2E, lint/segurança/build/reprodutibilidade verdes na CI38674970174. Tag acadêmica final exige nova conferência; não há aceite antecipado. [Provas](../evidencias/operacao-2026-10-15.md).
 
 ## INT-05: Segurança, licenças e IA · peso 10% de A
 
@@ -251,7 +251,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I07-01 — Pages configurado com gh-pages como origem, conforme HTML; atual build_type é workflow. Alinhar ou validar equivalência fundamentada antes do aceite.
 - [x] I07-02 — gh-pages escrito apenas pela pipeline nas publicações atuais. E2/E7.
 - [x] I07-03 — CONTÍNUO: histórico gh-pages consultado na auditoria contém apenas publicação pelo bot deActions, sem alteração manual observada. Preservar esse controle e reconferir publicações formais/recuperação; não equivale a execução dePRD.
-- [ ] I07-04 — /hml/ contém último build da main aprovado no CI. Atual HML é preview da feature.
+- [x] I07-04 — /hml/ contém a build0.7.0 da main773af17 aprovada no CI; os sete arquivos HTTP são idênticos ao ZIP38674290799/1. Isso não declara aceite integral do job HML. Conferência15/10. [Provas](../evidencias/operacao-2026-10-15.md).
 - [x] I07-05 — Releases do preview em /releases/<sha>/, preservadas sem sobrescrever conteúdo. E2/E7.
 - [ ] I07-06 — Releases formais de produção imutáveis, com teste/evidência dessa propriedade.
 - [x] I07-07 — /index.html carrega controle de rollout e redireciona para versão. E5/E7.
@@ -278,12 +278,12 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 
 - [x] I08-01 — monitor.yml versionado com schedule a cada quinze minutos. 13/10/2026, commit b3d5353/PR#15 e CIs38501135262/38501139202 SUCCESS; arquivo/cron comprovados, monitor ainda inativo e execução/persistência pendentes.
 - [ ] I08-02 — Sondar produção formal.
-- [ ] I08-03 — Sondar homologação formal.
-- [ ] I08-04 — Registrar código HTTP de cada alvo.
-- [ ] I08-05 — Registrar tempo de resposta de cada alvo.
-- [ ] I08-06 — Registrar versão servida obtida de version.json.
-- [ ] I08-07 — Acumular resultados em status/sondas.csv, com data/alvo/código/tempo e versão registrada.
-- [ ] I08-08 — Dados na branch observabilidade; cada sonda não dispara publicação Pages.
+- [x] I08-03 — Sondar HML publicada da main: três execuções reais38704560758/38744110194/38770216623 confirmaramHTTP200,0.7.0/SHA773af17. Fonte formal de aprovação completa ainda aguarda nova run. [Provas](../evidencias/operacao-2026-10-15.md).
+- [x] I08-04 — CódigoHTTP real dos dois alvos registrado nas seis amostras de15/10; todos200. Raiz ainda preview, sem inferir produção formal. [CSV](../evidencias/operacao-2026-10-15/sondas.csv).
+- [x] I08-05 — Tempo real de resposta dos dois alvos registrado nas seis amostras de15/10,0,094492–0,338412s; não é garantia de latência futura. [CSV](../evidencias/operacao-2026-10-15/sondas.csv).
+- [x] I08-06 — Versão eSHA obtidos de version.json real: HML0.7.0/773af17 e raizpreview0.6.0/71933bf. [Sonda](../evidencias/operacao-2026-10-15/sondas-38770216623.json).
+- [x] I08-07 — CSV acumulado com seis amostras reais: data,alvo,codigo,tempo,versao. Três runs concluídas, sem preencher amostras entre execuções. [CSV](../evidencias/operacao-2026-10-15/sondas.csv).
+- [x] I08-08 — Dados persistidos pelo bot na branch observabilidade nas três coletas reais; monitor não publica Pages. [Execuções/fontes](../evidencias/operacao-2026-10-15.md).
 - [x] I08-09 — Criar label alerta nas Issues. 14/10/2026, contaDaviSouza78: criação e GET labels/alerta confirmados; corB60205/descrição operacional. [Evidência016](../evidencias/alertas.md). Não comprova incidente.
 - [ ] I08-10 — Abrir JogoForaDoAr quando resposta diferente de HTTP 200.
 - [ ] I08-11 — Abrir LatenciaAlta quando tempo ultrapassa dois segundos.
@@ -297,7 +297,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I08-19 — Painel mostra versão em produção.
 - [ ] I08-20 — Painel mostra percentual do canário/estado aplicável da estratégia.
 - [ ] I08-21 — Painel mostra métricas DORA.
-- [ ] I08-22 — scripts/dora.mjs calcula métricas do período com dados verificáveis do GitHub. Script/fixtures da etapa024 e consulta real sem observações formais em `docs/evidencias/dora.md`; aguarda dados/CI/revisão.
+- [x] I08-22 — scripts/dora.mjs executou com fontes GitHub nas três coletas; quatro métricas corretamente sem valores por ausência de deploy/alerta formal elegível. Isso valida coleta/cálculo, não I08-23–29. [JSON](../evidencias/operacao-2026-10-15/dora-38770216623.json).
 - [ ] I08-23 — Frequência de deploy: execuções reais de deploy-prd.
 - [ ] I08-24 — Lead time de mudança: commit até produção, com vínculo correto entre fontes e deploy.
 - [ ] I08-25 — Taxa de falha de mudança: deploys seguidos de rollback.
@@ -368,7 +368,7 @@ Os esqueletos não passam como estão. Nomes/estrutura exemplificados não obrig
 - [x] KIT-03 — package.json/lockfile, configuração Gitleaks e esteira versionados. E2/E6.
 - [ ] KIT-04 — Fonte docs/relatorio.md e gerador PDF disponíveis; validar/publicar relatório final e completar provas pendentes de I10-08 a I10-18.
 - [ ] KIT-05 — rollback.yml funcional (I07-18).
-- [ ] KIT-06 — monitor.yml funcional (I08-01).
+- [x] KIT-06 — monitor.yml executado com sondas e reconciliação de alertas verdes em38704560758,38744110194 e38770216623. Painel, incidentes tratados e métricas com denominadores continuam pendentes. [Provas](../evidencias/operacao-2026-10-15.md).
 - [ ] KIT-07 — Painel pages/status/index.html ou equivalente publicado (I08-16 a I08-21).
 - [ ] KIT-08 — Publicação, rollout, DORA e triagem implementados por scripts equivalentes aos exemplos; não copiar TODO como solução.
 - [x] KIT-09 — Actions revisadas em releases/refs/action.yml oficiais em13/10/2026, fixadas por SHA; CI38428808065 validou ferramentas ativas. [Revisão007](../evidencias/ci-formal.md); Pages ainda não executado neste passo.
@@ -387,9 +387,9 @@ Os esqueletos não passam como estão. Nomes/estrutura exemplificados não obrig
 - [ ] KIT-22 — Completar validação das seções do PDF que o exemplo triagem não implementa (I09-12).
 - [ ] KIT-23 — Medir duração real, sem truncar segundos para aceitar vídeo acima de 90 s (I09-13).
 - [ ] KIT-24 — Prazo configurado de forma verdadeira; 19:00 é exemplo, não horário confirmado (I09-16).
-- [ ] KIT-25 — Criar observabilidade/status/sondas.csv e cabeçalho data,alvo,codigo,tempo, registrando também versão (I08).
+- [x] KIT-25 — observabilidade/status/sondas.csv acumulou seis registros reais com cabeçalho data,alvo,codigo,tempo,versao. [Cópia verificada](../evidencias/operacao-2026-10-15/sondas.csv).
 - [ ] KIT-26 — Completar TODO de fechamento automático e alerta de latência do monitor (I08-11/13/14).
-- [ ] KIT-27 — Completar versão sondada, ausente no esqueleto do monitor (I08-06).
+- [x] KIT-27 — Versão sondada implementada e confirmada nas três execuções de15/10, sem confundir raizpreview comPRD formal. [Provas](../evidencias/operacao-2026-10-15.md).
 - [ ] KIT-28 — Registrar IA com todos os campos do modelo e declaração humana verdadeira; nomes/linhas de exemplo não são nossos integrantes (I05-14/15/16).
 - [ ] KIT-29 — CONDICIONAL: golden.jsonl se houver conteúdo Opal/AI Studio, conforme requisito específico I04-14; não impor eval a todo código produzido com IA.
 
@@ -608,3 +608,6 @@ Revalidação015/016 — 14/10/2026: tag/SemVer/proveniência/mesmoartefato/nota
 Preparação017/018 — 14/10/2026: [roteiro/legendas e concordâncias](../evidencias/video-direitos.md) e [rollout](../evidencias/rollout.md). I10-01/02/05 fechados por roteiro/inventário planejado sem trilha; I10-07/DIR-13 pela confirmação explícita de Davi sobre os quatro e registro privado, seminspeção desse documento pela IA. Reconferência de escopo/direitos do MP4 final obrigatória. I07-08/09/15/KIT-18/19 permanecem abertos até revisão de Plataforma/execução formal, embora contratos218testes e33E2E locais estejam verdes. Não houve G4/G6, produção ou recuperação operacional.
 
 Preparação019/020 — 14/10/2026, DaviSouza78: promoção por mesmo artefato/recibo HML/aprovação/azul-verde/recuperação e monitor pós-produção implementados; painel estático/contrato DORA funcionais localmente,235 testes/36E2E, core97,90%, lint/build/actionlint sem ShellCheck. /status/ e observabilidade públicos404, sem aprovação ou produção formal. [Produção](../evidencias/producao.md), [painel](../evidencias/painel-status.md) e [passagem](../execucao/10-passagem-davi-miguel.md). Nenhum check operacional019/020/G4 foi fechado por preparação, configuração ou fixture; conferir registro único antes de marcar. DORA024, recuperação observada022/026 e aceites humanos permanecem atribuídos.
+
+
+Reconferência operacional15/10/2026: fechados somente itens específicos com prova em [operação](../evidencias/operacao-2026-10-15.md). HML4/4 pública, ZIPoriginal offline1/1 e sete hashesHTTP confirmados; monitor3runs/6amostras. Produção formal, abertura/fechamento de alertas, recuperação medida<5min, painel, DORA com eventos, pitch e pacote final continuam abertos. O PR33 não tem revisão externa registrada nesta consulta.
