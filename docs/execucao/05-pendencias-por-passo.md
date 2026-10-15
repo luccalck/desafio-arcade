@@ -560,7 +560,8 @@ Esta reconferência prevalece sobre observações históricas de monitor inativo
 
 ### Passos 033/037/038/039/040 — relatório, ficha e encerramento
 
-- [ ] Relatório ampliado para 9–10 páginas desejadas, sem ultrapassar doze: gerar, renderizar e conferir todas as páginas, executar na CI e preservar artefato acessível. Acrescentar resultados operacionais posteriores quando reais; não concluir produção pela aprovação dos E2E locais.
+- [x] Relatório candidato ampliado e validado: dez páginas A4 na CI38772751460/1, fonteee8f2e4; PDF baixado, todas as páginas renderizadas e inspecionadas, três imagens e58links. [Verificação](../evidencias/operacao-2026-10-15/relatorio-ci-verificacao.json).
+- [ ] Acrescentar ao relatório resultados de produção, recuperação, DORA, release e triagem quando executados, preservando os limites atuais; arquivar a versão final na release aceita.
 - [x] Respostas persistentes atualizadas em [ficha-entrega.md](../gestao/ficha-entrega.md); quatro RAs confirmados, links conhecidos e situações parciais.
 - [ ] HTML original e TXT deixados para o último passo por orientação expressa de Lucca. Não houve preenchimento, aceite de declarações ou geração de TXT.
 - [ ] Declarações e direitos coletivos verdadeiros, marcos históricos comprováveis, definição do PRAZO real, envio no AVA e recibo, ensaio e participação dos quatro na banca continuam nos respectivos passos. Não inferir nota 100 nem fator individual máximo.

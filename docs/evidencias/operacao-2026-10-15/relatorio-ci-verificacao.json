@@ -1,0 +1,11 @@
+{
+  "sourceRun": "38772751460",
+  "sourceAttempt": "1",
+  "sourceSha": "ee8f2e4b7cfe7919a64f8167f0f631d66f5d8991",
+  "pages": 10,
+  "bytes": 583390,
+  "sha256": "74a77305a6a1d616bef73e30f1c540e8ef6f299d96230d0ee482ce134c2b164a",
+  "images": 3,
+  "links": 58,
+  "method": "PDF baixado da CI, aberto com PyMuPDF; dez páginas renderizadas para conferência visual; pdfinfo validado na etapa build da CI"
+}

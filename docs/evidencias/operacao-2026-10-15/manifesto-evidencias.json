@@ -146,6 +146,14 @@
       "bytes": 3205,
       "sha256": "8e40ac58c0c894fabb6123c6d79824d3d5927b7e03fc3ea9ea1043f5b149a57e"
     },
+    "relatorio-ci-pdfinfo.txt": {
+      "bytes": 628,
+      "sha256": "03147cf3a1078395b2fc32c85e841f01849d9043bea6154e8f8767a3a45ba7f4"
+    },
+    "relatorio-ci-verificacao.json": {
+      "bytes": 415,
+      "sha256": "02ef6b8c4dd7680dc7a3999f4570f9120c38fbed2749443506f7db343d925d10"
+    },
     "sondas-38704560758.json": {
       "bytes": 929,
       "sha256": "eed6517742f34caa08e45c1766b0fac478fdd155a11cb3e74c853e78c30937f9"

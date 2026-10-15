@@ -130,7 +130,7 @@ Mantivemos os 49 campos do HTML e os espaços de respostas desconhecidas. Não p
 | Produção | Raiz ainda preview0.6.0/SHA71933bf. Não copiar como produção formal aceita. |
 | Monitor | Runs38704560758,38744110194 e38770216623 concluídas; CSV6amostras. Painel404 e quatro DORA sem eventos elegíveis. |
 | Revisão/integração | PR32 aprovado por Lucas e integrado; PR33 ainda requer aprovação externa. A conta autora não pode autoaprovar. |
-| Relatório | Fonte ampliada nesta etapa; PDF local/candidato deve ser conferido e recuperado da nova CI antes de indicar link público final. |
+| Relatório | Relatório candidato gerado na CI38772751460/1, fonteee8f2e4: dez páginas, baixadas/renderizadas/inspecionadas. Artefato no Actions; link público da versão final aguarda release. |
 | Pitch | Pendente por orientação expressa de Lucca. Vídeos automatizados de testes não são pitch. |
 | Tag/pacote/triagem | Não finalizados; pitch e demais entradas verdadeiras continuam obrigatórios. |
 

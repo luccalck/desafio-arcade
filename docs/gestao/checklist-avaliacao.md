@@ -305,7 +305,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I08-27 — Comparar lead time medido com linha de base de onze dias da Carparts.
 - [ ] I08-28 — Tomar decisão de melhoria a partir dos dados reais.
 - [ ] I08-29 — Medir/documentar efeito da melhoria, sem fabricar ganho ou quantidade mínima de execuções.
-- [ ] I08-30 — Relatório registra possibilidade de atraso dos schedules do Actions em horários de pico. Limite documentado em `docs/relatorio.md` e `docs/evidencias/dora.md`; horários efetivos/relatório final ainda pendentes.
+- [x] I08-30 — Relatório registra atrasos reais dos schedules: duas execuções agendadas15/10 separadas por cerca de5h19 apesar de cron*/15. Não promete pontualidade/CDN contínua por cron. [Fontes](../evidencias/operacao-2026-10-15.md).
 - [ ] I08-31 — AVANÇADO: alerta realmente disparado e tratado, com histórico e recuperação. Monitor/Issue/recuperação formais pendentes026.
 - [ ] I08-32 — AVANÇADO: melhoria orientada por métrica com resultado verificável.
 - [ ] I08-33 — CONDICIONAL: contagem anônima de partidas/fases, se adotada; sem identificar jogador, finalidade documentada.
@@ -346,7 +346,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I10-05 — Registrar direitos de trilha e imagens em THIRD_PARTY.md, ou declarar ausência de trilha quando aplicável.
 - [ ] I10-06 — Inserir legendas legíveis por acessibilidade.
 - [x] I10-07 — Obter concordância real de quem aparece/tem imagem ou voz publicada no vídeo.
-- [ ] I10-08 — Gerar e validar relatório técnico revisado em artifacts/RelatorioTecnico.pdf pela pipeline, com até doze páginas; não substituir pelo GDD.
+- [x] I10-08 — Relatório técnico gerado e validado na CI38772751460, SHAee8f2e4:10páginas A4,583.390bytes, pdfinfo/texto aprovados. É relatório da candidata; evidências finais dePRD/release/triagem ainda pendentes. [Prova](../evidencias/operacao-2026-10-15/relatorio-ci-verificacao.json).
 - [x] I10-09 — Relatório apresenta arquitetura da esteira e decisões. docs/relatorio.md Seção 2 (Jobs esteira.yml, pacote-ci, ambientes HML/PRD).
 - [x] I10-10 — Relatório apresenta alternativas descartadas e justificativas. docs/relatorio.md Seção 3 (Descarte de Pyodide, engines pesadas, backend com RCE, nuvem paga).
 - [ ] I10-11 — Relatório contém prints reais com data e links de build/evidência de cada um dos dez INT. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
@@ -355,7 +355,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I10-14 — Retrospectiva registra o que não funcionou. docs/relatorio.md Seção7: antecipação de aceites e acúmulo dePRs semintegração.
 - [x] I10-15 — Retrospectiva registra o que mudariam, sustentado por dados. docs/relatorio.md Seção7: revisão de registros/proveniência, com base nos27checkscontestados e bundleauditado; efeitoDORAa medir.
 - [x] I10-16 — Contribuição de cada integrante com links dos PRs reais. docs/relatorio.md Seção7 e docs/contribuicoes.md mapeiam os28PRsautorais e os respectivos estados de revisão.
-- [ ] I10-17 — Validar o PDF técnico revisado: abrir/renderizar, conferir legibilidade, links e limite de doze páginas; publicar o artefato acessível.
+- [x] I10-17 — PDF da CI38772751460 baixado, aberto e com10páginas renderizadas/inspecionadas;3imagens e58links. Artefato build acessível no Actions; preservar PDF final na release quando aprovada. [Prova](../evidencias/operacao-2026-10-15/relatorio-ci-verificacao.json).
 - [ ] I10-18 — Acrescentar evidências reais de release/triagem após as execuções; não declarar sucesso antecipado. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [ ] I10-19 — AVANÇADO: narrativa clara do pitch, legendas e retrospectiva honesta com dados.
 
