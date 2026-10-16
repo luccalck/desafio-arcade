@@ -1,31 +1,31 @@
 {
   "schema": 1,
-  "generatedAt": "2026-10-15T23:34:35.066Z",
+  "generatedAt": "2026-10-16T00:32:21.547Z",
   "period": {
-    "from": "2026-10-01T23:34:26Z",
-    "to": "2026-10-15T23:34:26Z"
+    "from": "2026-10-02T00:32:13Z",
+    "to": "2026-10-16T00:32:13Z"
   },
   "metrics": {
     "deploymentFrequency": {
-      "value": null,
+      "value": 0.07142857142857142,
       "unit": "deploys/dia",
-      "samples": 0,
-      "source": null,
-      "reason": "Nenhum deploy-prd formal bem-sucedido na janela."
+      "samples": 1,
+      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
+      "reason": null
     },
     "leadTime": {
-      "value": null,
+      "value": 0.09083333333333334,
       "unit": "horas",
-      "samples": 0,
-      "source": null,
-      "reason": "Sem vínculo completo commit → deploy-prd."
+      "samples": 1,
+      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
+      "reason": null
     },
     "changeFailureRate": {
-      "value": null,
+      "value": 0,
       "unit": "%",
-      "samples": 0,
-      "source": null,
-      "reason": "Sem deploy formal como denominador."
+      "samples": 1,
+      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
+      "reason": null
     },
     "mttr": {
       "value": null,
@@ -37,10 +37,19 @@
   },
   "baseline": {
     "carpartsDays": 11,
-    "leadTimeDays": null
+    "leadTimeDays": 0.0037847222222222223
   },
   "evidence": {
-    "deploys": [],
+    "deploys": [
+      {
+        "sha": "88d533e31452036092cd8edef3efa3c0775241dc",
+        "at": "2026-10-16T00:31:49Z",
+        "url": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
+        "run": 38829484114,
+        "promotionUrl": "https://github.com/luccalck/desafio-arcade/commit/67ce33d24e7dc073894b989cada0a9c590865580",
+        "timing": "deploy-prd-concluido-com-smoke"
+      }
+    ],
     "issues": [],
     "rollbacks": []
   },
