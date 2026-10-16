@@ -1,0 +1,27 @@
+{
+  "scope": "Verificação de integridade de evidências existentes; não repetição de deploy/recuperação",
+  "checks": [
+    {
+      "manifest": "docs/evidencias/ensaio-2026-10-16/manifesto.json",
+      "filesVerified": 13,
+      "passed": true
+    },
+    {
+      "manifest": "docs/evidencias/operacao-release-2026-10-16/manifesto.json",
+      "filesVerified": 55,
+      "passed": true
+    },
+    {
+      "manifest": "docs/evidencias/fechamento-independente-2026-10-16/manifesto.json",
+      "filesVerified": 25,
+      "passed": true
+    },
+    {
+      "manifest": "docs/evidencias/reconferencia-final-2026-10-16/manifesto.json",
+      "filesVerified": 8,
+      "passed": true
+    }
+  ],
+  "professorHtmlSha256": "19362485b3ec9534bdf31303ca0b92b6fe96de21bb87867977d37a7393565275",
+  "professorHtmlUnmodified": true
+}

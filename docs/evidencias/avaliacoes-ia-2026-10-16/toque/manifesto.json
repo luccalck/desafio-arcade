@@ -1,0 +1,194 @@
+{
+  "files": [
+    {
+      "file": "01-menu.png",
+      "bytes": 102062,
+      "sha256": "33514f6538253dccd95aed95248925e70abc3a58f6f9e11108a32bbc76765e8c"
+    },
+    {
+      "file": "02-opcoes.png",
+      "bytes": 48306,
+      "sha256": "0b5d90e0d69306f51194f6b66185f8e36ccedd4ea0f89718dbef90ad75042183"
+    },
+    {
+      "file": "04-inicio.png",
+      "bytes": 87839,
+      "sha256": "0fe37b1c9723850cda4f8e78faa4fa5b3d883e59fa2c2705cabcd20da2b9b306"
+    },
+    {
+      "file": "05-ajuda.png",
+      "bytes": 61527,
+      "sha256": "a0bc24e3910af6b8df3a048b453cc166e35b06d1fd81abeb102d5933b550ea56"
+    },
+    {
+      "file": "06-fechar-ajuda.png",
+      "bytes": 87659,
+      "sha256": "7f27da3969cf4ce77294c1c0a45c43e997dbdf258afcf89ea8f622aaa9ef1ff0"
+    },
+    {
+      "file": "07-regra-inicial-reprovada.png",
+      "bytes": 87747,
+      "sha256": "89007a19701a450698f9b64dac01c2e5ee3307aee5f2316a72169c1d3edcae84"
+    },
+    {
+      "file": "08-testes.png",
+      "bytes": 76871,
+      "sha256": "03fbe099fb6a8e17752f49a78f750b6d83373b98ec398100439e561ee9727fb2"
+    },
+    {
+      "file": "09-fechar-testes.png",
+      "bytes": 87747,
+      "sha256": "89007a19701a450698f9b64dac01c2e5ee3307aee5f2316a72169c1d3edcae84"
+    },
+    {
+      "file": "10-correcao.png",
+      "bytes": 88088,
+      "sha256": "5396e90ad9c927cb92a4e137d19cf7ea051f8e2497c4bf7221ce9f096d048c69"
+    },
+    {
+      "file": "11-sucesso.png",
+      "bytes": 89886,
+      "sha256": "c25896356ee837fba5ea9151b742ba0478301887bafcc303846c5b9ca4a09c81"
+    },
+    {
+      "file": "12-jogar.png",
+      "bytes": 88106,
+      "sha256": "77dba42dfe9aef365ff22c4371edd5e9bac6ab0a531cca7bad14c3dfe64e7044"
+    },
+    {
+      "file": "13-esquerda.png",
+      "bytes": 88359,
+      "sha256": "8469c459bf4bff4263a294e8915e0189e3fe9d7a0d9793bc90adc253bcda2c36"
+    },
+    {
+      "file": "14-pausa.png",
+      "bytes": 90950,
+      "sha256": "9d7a3c60c19013c57d276d44b6c1b3f87d4077cd93f68115ef90a4c296f71530"
+    },
+    {
+      "file": "15-missao2.png",
+      "bytes": 91589,
+      "sha256": "14098717af3c5d59925be5907f8ed18b10947c7d77758bce5bac7c5ed8abea85"
+    },
+    {
+      "file": "16-ajuda2.png",
+      "bytes": 63066,
+      "sha256": "fc30458d9ee2559ea4dfa88fdd0434e9f28e88296ab127f6d94f34ee299c674f"
+    },
+    {
+      "file": "17-fechar-ajuda2.png",
+      "bytes": 91548,
+      "sha256": "89922f7013c4f32fdba91029bd725fdb67cb399ebdb9975ce69fef3eb9bc8215"
+    },
+    {
+      "file": "18-mover-codigo.png",
+      "bytes": 91247,
+      "sha256": "85c45679638c3254f36f47b0db0b0d99fdbab8d8992e50ef54f5677131a91c1c"
+    },
+    {
+      "file": "19-mover-sucesso.png",
+      "bytes": 93540,
+      "sha256": "92346132487a2606a7d1ce45b44c1f752c4d8ff7919adaf9ffc4c832ca97d4b3"
+    },
+    {
+      "file": "20-menu-retorno.png",
+      "bytes": 100876,
+      "sha256": "aa29d2aa7497cc631c3e1a25f4b35fd1d2178e9036ce9748b5d3bce688f1c17b"
+    },
+    {
+      "file": "21-opcoes.png",
+      "bytes": 48459,
+      "sha256": "da0721d75f1b014bd7514d68e490373e0e136ef9723e6bb076d29e533b296eb4"
+    },
+    {
+      "file": "22-texto-maior.png",
+      "bytes": 48815,
+      "sha256": "e98ed68c0da1e0d89c41e739a902a474ba49dbc39dc778b039ccc560d000ed73"
+    },
+    {
+      "file": "23-movimento-reduzido.png",
+      "bytes": 48927,
+      "sha256": "5b81e1709312a43ec9e4729f81b3d3ad8d08ca4344c49c0644e64e47ed136a89"
+    },
+    {
+      "file": "24-opcoes-fechar.png",
+      "bytes": 101471,
+      "sha256": "82c107e29198f57cd82c3c9b778c5957049a31eb2e912e8551c0e72e4f98ead7"
+    },
+    {
+      "file": "25-continuar.png",
+      "bytes": 100199,
+      "sha256": "7fc3fd190bf9571979edcdd121809511f89645d7388e9c1f241cf8b0b5f418cc"
+    },
+    {
+      "file": "26-sintaxe-invalida.png",
+      "bytes": 99727,
+      "sha256": "f71bf1cabeb0eb57d97861f14d451a63beda5277a3baff79eec75105e2159a18"
+    },
+    {
+      "file": "27-feedback-sintaxe.png",
+      "bytes": 142702,
+      "sha256": "89f729b4b14151dadbfbe1d59d9d65f2e90300cdb896fb7eef8a992d14f54f9d"
+    },
+    {
+      "file": "28-restaurar.png",
+      "bytes": 111508,
+      "sha256": "d32e4a7c5d33fcd157096880949c84c46db9ba6681e21e132a8302a061a14e36"
+    },
+    {
+      "file": "29-restauracao-confirmada.png",
+      "bytes": 99179,
+      "sha256": "087f33cb68949947f3042a144f89696ec95c3d37dd52535b9deb081ddb866e24"
+    },
+    {
+      "file": "30-testar-pos-restauracao.png",
+      "bytes": 100763,
+      "sha256": "b9cd550b80b7515f41db290889ed8a7395e70fd4b38dab01aa18bcf17bd37fc1"
+    },
+    {
+      "file": "31-retorno-final-menu.png",
+      "bytes": 101471,
+      "sha256": "82c107e29198f57cd82c3c9b778c5957049a31eb2e912e8551c0e72e4f98ead7"
+    },
+    {
+      "file": "32-mapa-progresso.png",
+      "bytes": 83168,
+      "sha256": "3791d696ef8ab514b822a597b0899907e0eb973e5bbcfbe4aa03d85fc108c7a5"
+    },
+    {
+      "file": "33-reabrir-missao-concluida.png",
+      "bytes": 98071,
+      "sha256": "a5a1181f3d8baef20b3f365233fe252ae698aee9dd9aba532114b9c101ff353f"
+    },
+    {
+      "file": "34-preservacao-confirmada.png",
+      "bytes": 99542,
+      "sha256": "f981ff86b97271ff857afaca57588508bc3a359861cfeb138de972e2283e74e4"
+    },
+    {
+      "file": "relatorio.md",
+      "bytes": 4212,
+      "sha256": "e4b0bb406f2c61144e63714b922f3e5b40f3cd06aa305218671ece0bce02b51e"
+    },
+    {
+      "file": "session.json",
+      "bytes": 8032,
+      "sha256": "899f12f15c8d9ed6ca2d88b428d48c6b4051d61c7dedaf5ed814f7af7c49d43f"
+    },
+    {
+      "file": "session.py",
+      "bytes": 2480,
+      "sha256": "e9b1962af43bb1ce7767cbd9c0458b04ae8fde2b0c055ffee2c861e90a95e529"
+    },
+    {
+      "file": "state.json",
+      "bytes": 1033,
+      "sha256": "59870e61a18798e3d6a116f4bcb98a1c9d2c2d884eeaab81939d6c29df68f922"
+    },
+    {
+      "file": "tooling-first-attempt.json",
+      "bytes": 1234,
+      "sha256": "09f5f16aed375d8b86514ac670ef7ccb8c1bebf7091b0d024849c33b04e634ae"
+    }
+  ]
+}

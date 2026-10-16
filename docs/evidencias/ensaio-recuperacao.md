@@ -1,5 +1,11 @@
 # Etapa 026 — preparação e limite do ensaio de recuperação
 
+## Estado atualizado —16/10/2026, após execução
+
+O texto de14–15/10 abaixo é histórico de preparação, não a pendência atual. Os ensaios foram executados após aprovação e integração do PR34. Recuperação manual:run38851754358,SUCCESS,80,662735s do dispatch ao smoke público, incluindo Pages;171amostrasHTTP200. Automática:run38851915984,17,166s da falha injetada no observador à recuperação pública,65amostrasHTTP200,sete hashes e smoke confirmados. A run automática permanece vermelha por injeção deliberada; as etapas de recuperação passaram. Não houve incidente espontâneo. [Provas e transações](operacao-release-2026-10-16.md). **O ensaio técnico de recuperação está concluído.** A demonstração presencial pedida pelo professor pertence ao tópico8 do quadro de fechamento e não exige reabrir esta execução.
+
+## Registro histórico preservado
+
 Miguel Oliveira, 14/10/2026. **Nenhuma falha foi injetada e nenhum rollback operacional foi disparado.** A etapa requer uma janela e controlador combinados com o squad, uma baseline saudável e uma candidata controlada na produção formal. Esses dados/aceites não estavam disponíveis. Não existe Issue de ensaio a vincular; criar uma agora representaria incidente inexistente.
 
 ## Preflight verificado

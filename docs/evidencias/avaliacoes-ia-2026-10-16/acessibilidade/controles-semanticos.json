@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-16T18:28:01.040763+00:00",
+  "help": "Pular para o jogo\n↱\nROTA DO CÓDIGO\nOFICINA DE JOGOS\n0 XP\nv0.7.0 · e9dd28c\nMISSÃO 01 / Eventos e decisões\nA nave obedece?\n\nCorrija os controles invertidos da nave.\n\n?\nÓRBITA / 0 pts\n♥ ♥ ♥\nONDA 01\nSeu jogo está aqui\nJogar para testar na prática\n←\nⅡ\n→\n◆ 10 pontos\n✦ 25 pontos\n☄ −1 vida\n\nTeste a regra no editor ou jogue para observar o problema.\n\n● ● ●\ncontrolar.py\nPY / INICIANTE\n1\n2\n3\n4\n5\n6\n7\nAltere a regra. Observe o resultado.\n↶\n✓ Testar regra\n▶ Jogar\n\nVocê pode experimentar antes de testar.\n\n↗ Ver testes\n×\nENTENDER / Eventos e decisões\nA nave obedece?\n\nentrada[\"esquerda\"] e entrada[\"direita\"] dizem quais teclas estão pressionadas. -1 move para esquerda; 1, para direita; 0 mantém parada. if significa “se”. Defina uma direção, teste cada tecla e devolva com return. Se ambas estiverem pressionadas, a direita tem prioridade. Blocos usam indentação.\n\ndef define função · if pergunta “se”\n\nreturn devolve o resultado · for repete\n\nO que o editor aceita?",
+  "help_focus": "<button class=\"dialog-close\" data-action=\"close\" aria-label=\"Fechar\">×</button>",
+  "focus_after_escape": "<button id=\"help\" data-action=\"help\" aria-label=\"Entender esta missão\">?</button>",
+  "tests": "Pular para o jogo\n↱\nROTA DO CÓDIGO\nOFICINA DE JOGOS\n0 XP\nv0.7.0 · e9dd28c\nMISSÃO 01 / Eventos e decisões\nA nave obedece?\n\nCorrija os controles invertidos da nave.\n\n?\nÓRBITA / 0 pts\n♥ ♥ ♥\nONDA 01\nSeu jogo está aqui\nJogar para testar na prática\n←\nⅡ\n→\n◆ 10 pontos\n✦ 25 pontos\n☄ −1 vida\n\nTeste a regra no editor ou jogue para observar o problema.\n\n● ● ●\ncontrolar.py\nPY / INICIANTE\n1\n2\n3\n4\n5\n6\n7\nAltere a regra. Observe o resultado.\n↶\n✓ Testar regra\n▶ Jogar\n\nVocê pode experimentar antes de testar.\n\n↗ Ver testes\n×\nSituações de teste\n\nUse Testar regra para comparar sua função com todas as entradas.",
+  "reset": "Pular para o jogo\n↱\nROTA DO CÓDIGO\nOFICINA DE JOGOS\n0 XP\nv0.7.0 · e9dd28c\nMISSÃO 01 / Eventos e decisões\nA nave obedece?\n\nCorrija os controles invertidos da nave.\n\n?\nÓRBITA / 0 pts\n♥ ♥ ♥\nONDA 01\nSeu jogo está aqui\nJogar para testar na prática\n←\nⅡ\n→\n◆ 10 pontos\n✦ 25 pontos\n☄ −1 vida\n\nTeste a regra no editor ou jogue para observar o problema.\n\n● ● ●\ncontrolar.py\nPY / INICIANTE\n1\n2\n3\n4\n5\n6\n7\nAltere a regra. Observe o resultado.\n↶\n✓ Testar regra\n▶ Jogar\n\nVocê pode experimentar antes de testar.\n\n↗ Ver testes\n×\nRestaurar esta função?\n\nVolta ao problema inicial desta missão. As outras funções ficam salvas.\n\nRestaurar função",
+  "buttons_after_reset": [
+    "↱ROTA DO CÓDIGOOFICINA DE JOGOS",
+    "?",
+    "←",
+    "Ⅱ",
+    "→",
+    "↶",
+    "✓ Testar regra",
+    "▶ Jogar",
+    "↗ Ver testes",
+    "Próxima missão →",
+    "×",
+    "Restaurar função"
+  ],
+  "outline": {
+    "tag": "BUTTON",
+    "outline": "rgb(237, 246, 255) none 3px"
+  }
+}

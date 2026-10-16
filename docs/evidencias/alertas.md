@@ -1,5 +1,11 @@
 # Etapa 016 — alertas e fechamento automático
 
+## Estado atualizado —16/10/2026
+
+A preparação abaixo foi seguida por execução real:run38847296363,Issues38/39,HTTP404 e atraso real2,2s em alvo temporário, deduplicação/autocerramento, média2s do ensaio. Ver ensaio-operacional-2026-10-16.md e ensaio-2026-10-16/alertas-ensaio-aprovado.json. O monitor normal38947239547 voltou a passar em16/10,18:25UTC, com HML/PRDHTTP200,ambos0.7.0,sem ações de incidente. Provas atuais em avaliacoes-ia-2026-10-16/monitor-*.json. A funcionalidade de alerta foi exercitada de verdade; as Issues do ensaio recebem labelensaio. Esse detalhe e MTTR operacionalnull continuam visíveis, sem alegar incidente espontâneo nem exigir queda pública não solicitada pelo professor.
+
+## Registro histórico preservado
+
 Davi Paes / DaviSouza78; validações em14/10/2026 (America/Montevideo), após preparação015 iniciada em13/10. Dependências008/012 técnicas disponíveis; operação formal012 e G4 ainda pendentes.
 
 ## Implementação

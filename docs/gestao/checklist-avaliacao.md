@@ -285,11 +285,11 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I08-07 — CSV acumulado com seis amostras reais: data,alvo,codigo,tempo,versao. Três runs concluídas, sem preencher amostras entre execuções. [CSV](../evidencias/operacao-2026-10-15/sondas.csv).
 - [x] I08-08 — Dados persistidos pelo bot na branch observabilidade nas três coletas reais; monitor não publica Pages. [Execuções/fontes](../evidencias/operacao-2026-10-15.md).
 - [x] I08-09 — Criar label alerta nas Issues. 14/10/2026, contaDaviSouza78: criação e GET labels/alerta confirmados; corB60205/descrição operacional. [Evidência016](../evidencias/alertas.md). Não comprova incidente.
-- [ ] I08-10 — Abrir JogoForaDoAr quando resposta diferente de HTTP 200.
-- [ ] I08-11 — Abrir LatenciaAlta quando tempo ultrapassa dois segundos.
-- [ ] I08-12 — Evitar duplicação de alerta já aberto para o mesmo incidente/alvo.
-- [ ] I08-13 — Fechar automaticamente JogoForaDoAr quando serviço volta ao normal.
-- [ ] I08-14 — Fechar automaticamente LatenciaAlta quando latência volta ao normal.
+- [x] I08-10 — Abertura automática exercitada com HTTP404 real no alvo temporário do ensaio38847296363,Issue38. Escopo ensaio/labelensaio; a exigência literal labelalerta permanece emI08-31.
+- [x] I08-11 — Abertura automática exercitada com atrasoHTTP real2,2s no ensaio38847296363,Issue39. Escopo ensaio/labelensaio; não afirma lentidão da produção.
+- [x] I08-12 — Ensaio38847296363 repetiu duas sondas por falha e não duplicouIssues38/39. Bug da primeira tentativa preservado/corrigido com regressão. Prova:ensaio-2026-10-16/alertas-ensaio-aprovado.json.
+- [x] I08-13 — Issue38 fechada automaticamente após retornoHTTP200 válido no ensaio38847296363;1s entre abertura/fechamento. Não é incidente da produção.
+- [x] I08-14 — Issue39 fechada automaticamente após latência/HTTP normalizados no ensaio38847296363;3s entre abertura/fechamento. Não é incidente da produção.
 - [x] I08-15 — Quatro integrantes assistem o repositório e verificam recebimento das notificações por e-mail/celular conforme seus canais. 14/10/2026: Davi respondeu nestechat “todos ja fizeram a validação” à pergunta explícita sobreWatch/recebimento pelosquatro. Confirmação humana, sem alegar inspeção pelaIA. [Evidência016](../evidencias/alertas.md).
 - [x] I08-16 — Painel público /status/ publicado pela pipeline, HTTP200; carregamento real no navegador e refresh aprovados, desktop/celular. [Prova](../evidencias/operacao-2026-10-15/painel-88-browser.json).
 - [x] I08-17 — Painel mostra100% entre sete amostras de códigos conhecidos da URL (inclui preview histórico); não demonstra SLA ou continuidade. [Prova](../evidencias/operacao-2026-10-15/painel-88-browser.json).
@@ -303,7 +303,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I08-25 — Taxa real0% com um deploy formal e nenhum rollback correlacionado na janela. Amostra pequena; não afirma confiabilidade futura. [DORA](../evidencias/operacao-2026-10-15/dora-38830013027.json).
 - [ ] I08-26 — Tempo de recuperação: abertura até fechamento das Issues de alerta.
 - [x] I08-27 — Lead time observado0,00378472dia comparado à linha de base fornecida de11dias; apenas uma amostra e ponto inicial definido no script, sem atribuir causalidade ou ganho garantido. [DORA](../evidencias/operacao-2026-10-15/dora-38830013027.json).
-- [ ] I08-28 — Tomar decisão de melhoria a partir dos dados reais.
+- [x] I08-28 — Em16/10,com2deploys/CFR50% incluindorollbackplanejado/leadmédio35min19s, registramos decisão de preservar a produção e separar evidências de ensaio ao avaliar UX, evitando novosdeploys apenas para gerar amostras. Ver melhoria-dora.md. Efeito de melhoria deDORA ainda não demonstrado(I08-29/32).
 - [ ] I08-29 — Medir/documentar efeito da melhoria, sem fabricar ganho ou quantidade mínima de execuções.
 - [x] I08-30 — Relatório registra atrasos reais dos schedules: duas execuções agendadas15/10 separadas por cerca de5h19 apesar de cron*/15. Não promete pontualidade/CDN contínua por cron. [Fontes](../evidencias/operacao-2026-10-15.md).
 - [ ] I08-31 — Dois alertas reais em alvo temporário de ensaio, abertura/deduplicação/autocerramento e recuperação preservados(Issues38/39). Critério literal de alertas operacionais com labelalerta não foi fechado por labelensaio; não confundir escopos.
@@ -388,7 +388,7 @@ Os esqueletos não passam como estão. Nomes/estrutura exemplificados não obrig
 - [ ] KIT-23 — Medir duração real, sem truncar segundos para aceitar vídeo acima de 90 s (I09-13).
 - [ ] KIT-24 — Prazo configurado de forma verdadeira; 19:00 é exemplo, não horário confirmado (I09-16).
 - [x] KIT-25 — observabilidade/status/sondas.csv acumulou seis registros reais com cabeçalho data,alvo,codigo,tempo,versao. [Cópia verificada](../evidencias/operacao-2026-10-15/sondas.csv).
-- [ ] KIT-26 — Completar TODO de fechamento automático e alerta de latência do monitor (I08-11/13/14).
+- [x] KIT-26 — Funcionalidades implementadas e executadas em ensaioHTTP real38847296363:latência e autocerramento dasIssues38/39. Limite literal de label do ensaio permanece emI08-31.
 - [x] KIT-27 — Versão sondada implementada e confirmada nas três execuções de15/10, sem confundir raizpreview comPRD formal. [Provas](../evidencias/operacao-2026-10-15.md).
 - [ ] KIT-28 — Registrar IA com todos os campos do modelo e declaração humana verdadeira; nomes/linhas de exemplo não são nossos integrantes (I05-14/15/16).
 - [ ] KIT-29 — CONDICIONAL: golden.jsonl se houver conteúdo Opal/AI Studio, conforme requisito específico I04-14; não impor eval a todo código produzido com IA.
@@ -622,3 +622,6 @@ Conciliação das pendências15/10: atualizados itens específicos com prova ope
 Reconferência16/10 após PR34: aprovação externa5543092743 e mergeacb03d8 confirmados. Manual38851754358:80,66 s/171HTTP200; automático38851915984:17,166 s/65HTTP200, recuperaçãoPages/hashes/smoke. Falha injetada somente no observador, não numa build defeituosa; I07-16/20/21 e banca mantêm seus critérios literais. Tagv0.7.0 existe; tentativa1 bloqueada na sonda anterior; tentativa2 passouCI/HML/PRD/monitor e falhou no publicador de draft. Cinco anexos+manifesto iguais à CI e offline1/1, mas Release ainda não publicada. Correção/retomada protegida aguardam revisão/merge/execução. [Registro](../evidencias/operacao-release-2026-10-16.md).
 
 Reconferência independente16/10:PR40 aprovado porLucas5543614682/HEADa190215, merge1e3dd3b. Main38939899867:HML178,827s/318testes/36E2E, PRDskipped para preservar a origem. Retomada38940532129 SUCCESS publicouReleasev0.7.0 sem rebuild; cinco anexos+manifesto iguais à origem e seis downloads públicos conferidos. Contribuição em trêsINT por pessoa e20PRs revisados comprovados, sem atribuir F/banca. Fonte:../evidencias/fechamento-independente-2026-10-16.md.
+
+
+Reconciliação dos tópicos1–4 em16/10: os registros históricos acima não reabrem execuções posteriores. Fechamos os checks funcionaisI08-10–14/KIT-26 pelo ensaioHTTPreal, com escopo expresso; o critério literal de label e métricas operacionais permanece separado emI08-26/31. I08-28 registra decisão atual, não uma melhoria causal já medida. O HTML situa a sessão de colega de outra turma na banca; três avaliações de agentes deIA não encerramB-06–09. Provas e resultado dos agentes em docs/evidencias/avaliacoes-ia-2026-10-16.md.

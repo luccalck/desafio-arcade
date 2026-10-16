@@ -1,0 +1,316 @@
+{
+  "agent": "IA com conhecimento prévio de programação; não humano ou estudante",
+  "started": "2026-10-16T18:26:36.748298+00:00",
+  "ended": "2026-10-16T18:29:47.325180+00:00",
+  "durationSeconds": 190.57800000000134,
+  "viewport": {
+    "width": 390,
+    "height": 844
+  },
+  "hasTouch": true,
+  "actions": [
+    {
+      "at": "2026-10-16T18:26:37.863861+00:00",
+      "action": "navigate",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "at": "2026-10-16T18:26:47.881676+00:00",
+      "action": {
+        "action": "tap",
+        "name": "Começar oficina",
+        "shot": "04-inicio"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:26:54.757692+00:00",
+      "action": {
+        "action": "tap",
+        "name": "?",
+        "shot": "05-ajuda"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:27:06.810748+00:00",
+      "action": {
+        "action": "tap",
+        "name": "×",
+        "shot": "06-fechar-ajuda"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:27:10.366422+00:00",
+      "action": {
+        "action": "tap",
+        "name": "Testar regra",
+        "shot": "07-regra-inicial-reprovada"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:27:18.529609+00:00",
+      "action": {
+        "action": "tap",
+        "name": "Ver testes",
+        "shot": "08-testes"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:27:26.425449+00:00",
+      "action": {
+        "action": "tap",
+        "name": "×",
+        "shot": "09-fechar-testes"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:27:30.863333+00:00",
+      "action": {
+        "action": "text",
+        "value": "def controlar(entrada):\n    direcao = 0\n    if entrada[\"esquerda\"]:\n        direcao = -1\n    if entrada[\"direita\"]:\n        direcao = 1\n    return direcao",
+        "shot": "10-correcao"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:27:34.467907+00:00",
+      "action": {
+        "action": "tap",
+        "name": "Testar regra",
+        "shot": "11-sucesso"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:27:47.050467+00:00",
+      "action": {
+        "action": "tap",
+        "name": "▶ Jogar",
+        "shot": "12-jogar"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:27:50.871982+00:00",
+      "action": {
+        "action": "tap",
+        "name": "←",
+        "shot": "13-esquerda"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:27:55.396490+00:00",
+      "action": {
+        "action": "tap",
+        "name": "Ⅱ",
+        "shot": "14-pausa"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:27:59.041544+00:00",
+      "action": {
+        "action": "tap",
+        "name": "Próxima missão",
+        "shot": "15-missao2"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:28:05.368156+00:00",
+      "action": {
+        "action": "tap",
+        "name": "?",
+        "shot": "16-ajuda2"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:28:13.140221+00:00",
+      "action": {
+        "action": "tap",
+        "name": "×",
+        "shot": "17-fechar-ajuda2"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:28:17.909466+00:00",
+      "action": {
+        "action": "text",
+        "value": "def mover(entrada):\n    return entrada[\"posicao\"] + entrada[\"direcao\"] * entrada[\"velocidade\"]",
+        "shot": "18-mover-codigo"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:28:23.919352+00:00",
+      "action": {
+        "action": "tap",
+        "name": "Testar regra",
+        "shot": "19-mover-sucesso"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:28:30.448996+00:00",
+      "action": {
+        "action": "tap",
+        "name": "ROTA DO CÓDIGO",
+        "shot": "20-menu-retorno"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:28:34.202792+00:00",
+      "action": {
+        "action": "tap",
+        "name": "Opções",
+        "shot": "21-opcoes"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:28:37.681226+00:00",
+      "action": {
+        "action": "check",
+        "name": "Texto maior",
+        "shot": "22-texto-maior"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:28:40.934320+00:00",
+      "action": {
+        "action": "check",
+        "name": "Movimento reduzido",
+        "shot": "23-movimento-reduzido"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:28:44.691745+00:00",
+      "action": {
+        "action": "tap",
+        "name": "×",
+        "shot": "24-opcoes-fechar"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:28:49.476658+00:00",
+      "action": {
+        "action": "tap",
+        "name": "Continuar",
+        "shot": "25-continuar"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:28:58.255950+00:00",
+      "action": {
+        "action": "text",
+        "value": "def colidir(entrada)\n    return True",
+        "shot": "26-sintaxe-invalida"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:29:01.776213+00:00",
+      "action": {
+        "action": "tap",
+        "name": "Testar regra",
+        "shot": "27-feedback-sintaxe"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:29:11.343460+00:00",
+      "action": {
+        "action": "tap",
+        "name": "↶",
+        "shot": "28-restaurar"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:29:17.128452+00:00",
+      "action": {
+        "action": "tap",
+        "name": "Restaurar função",
+        "shot": "29-restauracao-confirmada"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:29:20.910104+00:00",
+      "action": {
+        "action": "tap",
+        "name": "Testar regra",
+        "shot": "30-testar-pos-restauracao"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:29:24.204855+00:00",
+      "action": {
+        "action": "tap",
+        "name": "ROTA DO CÓDIGO",
+        "shot": "31-retorno-final-menu"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:29:27.729964+00:00",
+      "action": {
+        "action": "tap",
+        "name": "Missões",
+        "shot": "32-mapa-progresso"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:29:40.022440+00:00",
+      "action": {
+        "action": "tap",
+        "name": "A nave obedece?",
+        "shot": "33-reabrir-missao-concluida"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:29:43.551032+00:00",
+      "action": {
+        "action": "tap",
+        "name": "Testar regra",
+        "shot": "34-preservacao-confirmada"
+      },
+      "ok": true
+    },
+    {
+      "at": "2026-10-16T18:29:47.325180+00:00",
+      "action": {
+        "action": "finish"
+      },
+      "elapsed": 190.57800000000134
+    }
+  ],
+  "pageErrors": [],
+  "shaObservedInPublicUrl": "e9dd28ccee535e9b1259a710742482e44db47aed",
+  "versionObserved": "0.7.0",
+  "urlRequested": "https://luccalck.github.io/desafio-arcade/",
+  "limitations": [
+    "IA com conhecimento de programação, não participante humano ou iniciante de outra turma",
+    "hasTouch é emulação Chromium, não aparelho físico",
+    "textarea preenchido via UI fill; teclado virtual do sistema móvel não foi exercitado",
+    "Nenhum teste/helper/core/solução do repositório lido antes ou durante sessão",
+    "Três minutos incluem inspeção de UI e decisões entre ações, não três minutos de contato contínuo",
+    "Não comprova aprendizagem, consentimento, domínio de pessoas ou campanha completa"
+  ]
+}

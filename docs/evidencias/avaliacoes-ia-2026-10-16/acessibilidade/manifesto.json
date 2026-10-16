@@ -1,0 +1,177 @@
+[
+  {
+    "file": "01-opcoes.png",
+    "bytes": 129517,
+    "sha256": "f6640adacf438ecce3350080cdc83442ef12078b4cff94304dfc019ce85c177a"
+  },
+  {
+    "file": "02-missoes.png",
+    "bytes": 219545,
+    "sha256": "c693b3257657f2c48efc760777e50b23837a08c8d1819d0047f5e43e303ce073"
+  },
+  {
+    "file": "ajuda-real.png",
+    "bytes": 86118,
+    "sha256": "6998bda5c0a9229d6b4fec7ae911235682fae2d6813df3edbfd03df9e5295c99"
+  },
+  {
+    "file": "buttons.py",
+    "bytes": 587,
+    "sha256": "dabbc700c86554cc576bb5c383460df40e966ab75c37acaa942f69885f63353d"
+  },
+  {
+    "file": "complementar-01-opcoes.png",
+    "bytes": 129517,
+    "sha256": "f6640adacf438ecce3350080cdc83442ef12078b4cff94304dfc019ce85c177a"
+  },
+  {
+    "file": "complementar-02-missoes.png",
+    "bytes": 219545,
+    "sha256": "c693b3257657f2c48efc760777e50b23837a08c8d1819d0047f5e43e303ce073"
+  },
+  {
+    "file": "complementar-03-ajuda.png",
+    "bytes": 161576,
+    "sha256": "e484f3e93e0ecf6d5433bc638d16fd0da28d4698b78521de4bec24aa4efb5211"
+  },
+  {
+    "file": "complementar-04-feedback.png",
+    "bytes": 162299,
+    "sha256": "c1a973362a712c2dd0381b455b9421a0e0c206d1dbca148f601f9ae242d741c6"
+  },
+  {
+    "file": "complementar-05-erro-sintaxe.png",
+    "bytes": 215508,
+    "sha256": "b07d65ae689773cc1231aa0a19e5edcdf21faaf4583de3d5b3e724bb533a92fa"
+  },
+  {
+    "file": "complementar-06-zoom-200.png",
+    "bytes": 603691,
+    "sha256": "8b1c7d25390bb9dc5b88693174299bf228ab9473ee02b2db378af035bd343445"
+  },
+  {
+    "file": "complementar-07-final.png",
+    "bytes": 300849,
+    "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+  },
+  {
+    "file": "complementar-ciclo-12.png",
+    "bytes": 300849,
+    "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+  },
+  {
+    "file": "complementar-ciclo-18.png",
+    "bytes": 300849,
+    "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+  },
+  {
+    "file": "complementar-ciclo-24.png",
+    "bytes": 300849,
+    "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+  },
+  {
+    "file": "complementar-ciclo-30.png",
+    "bytes": 300849,
+    "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+  },
+  {
+    "file": "complementar-ciclo-36.png",
+    "bytes": 300849,
+    "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+  },
+  {
+    "file": "complementar-ciclo-42.png",
+    "bytes": 300849,
+    "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+  },
+  {
+    "file": "complementar-ciclo-6.png",
+    "bytes": 300849,
+    "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+  },
+  {
+    "file": "complementar.py",
+    "bytes": 6605,
+    "sha256": "e14683dea16476263e060f696af37e4f6d76881d503aa19c5c0defd2a43e9b1b"
+  },
+  {
+    "file": "controles-semanticos.json",
+    "bytes": 3172,
+    "sha256": "d836acc39b637982bee2144baeda41e41202a1e3394cf40e50ff6994aa09bfb1"
+  },
+  {
+    "file": "controles.py",
+    "bytes": 1577,
+    "sha256": "e04caf8ad5a4cbcb9a257dfdb1f2c2a6bc3731874820e392f5fb093c3918a663"
+  },
+  {
+    "file": "dialog.py",
+    "bytes": 577,
+    "sha256": "2723ecee24f9df9ec823adc3a2d01549512aca73988811fed8274624b73fd2f1"
+  },
+  {
+    "file": "finalizar.py",
+    "bytes": 2758,
+    "sha256": "836a5dbf1e6b266f15575187cfb55299ab631b3c83e430e0f6110f02bf5f32d4"
+  },
+  {
+    "file": "inicio.png",
+    "bytes": 161576,
+    "sha256": "e484f3e93e0ecf6d5433bc638d16fd0da28d4698b78521de4bec24aa4efb5211"
+  },
+  {
+    "file": "inicio.py",
+    "bytes": 656,
+    "sha256": "016e9e3859c3b654ebd154d2c2b34e5dec899deae586aa3bf9f8ee473e02b5f0"
+  },
+  {
+    "file": "persistencia-reproducao.json",
+    "bytes": 505,
+    "sha256": "1bfa05521ef8f186c20977ee85a2adb2dc0814122094225c27842790cc082af0"
+  },
+  {
+    "file": "persistencia-reproducao.png",
+    "bytes": 158308,
+    "sha256": "c15b3f9ca8d1235f71a4bbfbd11030d4b24ce2c0dcd735556ce39476574088c1"
+  },
+  {
+    "file": "persistencia.py",
+    "bytes": 1173,
+    "sha256": "05062168bfa6b5771874034a781b7b0bae1029b7536e936db27c054725627424"
+  },
+  {
+    "file": "recon.py",
+    "bytes": 602,
+    "sha256": "8db617d3ad3cdf19f8501e5733f9c520faaf28f9cfa062ec26895b9473f49618"
+  },
+  {
+    "file": "reconhecimento.png",
+    "bytes": 301192,
+    "sha256": "e2927af9241b08d859ab77d1bd5c0b6f487292ab91ce2d370976bd37e3548b94"
+  },
+  {
+    "file": "reinicio-real.png",
+    "bytes": 82992,
+    "sha256": "45bb2f961588bf9cfa24c3cbde2d1472989c1f517fc39772471f91948f8e0c32"
+  },
+  {
+    "file": "RELATORIO.md",
+    "bytes": 4211,
+    "sha256": "f147f630752fe3d030523101c13722885bc08366fc00911c656a90dadc3a9d3b"
+  },
+  {
+    "file": "sessao-complementar-metadados.json",
+    "bytes": 4033,
+    "sha256": "9a6a2e8ca2e76fea1a30a6c303c3782ccd2a99f9921c955d825e62dcf16fa0c8"
+  },
+  {
+    "file": "sessao.py",
+    "bytes": 6545,
+    "sha256": "f49034c338d17bac53730e7937d4b9f61261337902494d0107ca573356a1aeba"
+  },
+  {
+    "file": "testes-reais.png",
+    "bytes": 80539,
+    "sha256": "3bdcf440d2f13c2ec86c018338ef0fb1b1ac2114b63635b3bc9bfabf355f2e61"
+  }
+]

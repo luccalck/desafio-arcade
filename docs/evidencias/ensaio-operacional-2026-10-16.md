@@ -1,5 +1,11 @@
 # Ensaio operacional isolado —16/10/2026
 
+## Estado atualizado após execução e publicação —16/10/2026
+
+O preflight e o gate descritos no registro histórico abaixo foram superados. PR34 foi aprovado porLucas5543092743 e integrado emacb03d8. Os ensaios manual38851754358 e automático38851915984 comprovaram recuperação incluindoPages/hash/smoke em80,662735s e17,166s, com171+65HTTP200 observados. Release técnica v0.7.0 publicada pela retomada38940532129 após PR40 revisado/integrado. Fontes atuais:operacao-release-2026-10-16.md e fechamento-independente-2026-10-16.md. Não cobrar novamente revisãoPR34, publicação técnica ou execução da recuperação. PR41 é uma atualização documental diferente e permanece bloqueado sem aprovação. O escopo dos alertas/MTTR de ensaio continua explícito.
+
+## Registro histórico preservado
+
 Executamos sob autorização de Lucca, com assistência de IA e sem atribuir participação a outra pessoa. O [desenho aprovado](../superpowers/specs/2026-10-16-ensaio-operacional-design.md) separa alvos de ensaio da operação normal. Não há participante de playtest humano, pitch, TXT ou banca produzido por esta execução.
 
 ## Alertas reais, falha e correção

@@ -1,0 +1,418 @@
+{
+  "schema": 1,
+  "scope": "Avaliações reais de agentes de IA, não playtest humano; monitor e regressão locais identificados",
+  "files": {
+    "acessibilidade/01-opcoes.png": {
+      "bytes": 129517,
+      "sha256": "f6640adacf438ecce3350080cdc83442ef12078b4cff94304dfc019ce85c177a"
+    },
+    "acessibilidade/02-missoes.png": {
+      "bytes": 219545,
+      "sha256": "c693b3257657f2c48efc760777e50b23837a08c8d1819d0047f5e43e303ce073"
+    },
+    "acessibilidade/ajuda-real.png": {
+      "bytes": 86118,
+      "sha256": "6998bda5c0a9229d6b4fec7ae911235682fae2d6813df3edbfd03df9e5295c99"
+    },
+    "acessibilidade/buttons.py": {
+      "bytes": 587,
+      "sha256": "dabbc700c86554cc576bb5c383460df40e966ab75c37acaa942f69885f63353d"
+    },
+    "acessibilidade/complementar-01-opcoes.png": {
+      "bytes": 129517,
+      "sha256": "f6640adacf438ecce3350080cdc83442ef12078b4cff94304dfc019ce85c177a"
+    },
+    "acessibilidade/complementar-02-missoes.png": {
+      "bytes": 219545,
+      "sha256": "c693b3257657f2c48efc760777e50b23837a08c8d1819d0047f5e43e303ce073"
+    },
+    "acessibilidade/complementar-03-ajuda.png": {
+      "bytes": 161576,
+      "sha256": "e484f3e93e0ecf6d5433bc638d16fd0da28d4698b78521de4bec24aa4efb5211"
+    },
+    "acessibilidade/complementar-04-feedback.png": {
+      "bytes": 162299,
+      "sha256": "c1a973362a712c2dd0381b455b9421a0e0c206d1dbca148f601f9ae242d741c6"
+    },
+    "acessibilidade/complementar-05-erro-sintaxe.png": {
+      "bytes": 215508,
+      "sha256": "b07d65ae689773cc1231aa0a19e5edcdf21faaf4583de3d5b3e724bb533a92fa"
+    },
+    "acessibilidade/complementar-06-zoom-200.png": {
+      "bytes": 603691,
+      "sha256": "8b1c7d25390bb9dc5b88693174299bf228ab9473ee02b2db378af035bd343445"
+    },
+    "acessibilidade/complementar-07-final.png": {
+      "bytes": 300849,
+      "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+    },
+    "acessibilidade/complementar-ciclo-12.png": {
+      "bytes": 300849,
+      "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+    },
+    "acessibilidade/complementar-ciclo-18.png": {
+      "bytes": 300849,
+      "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+    },
+    "acessibilidade/complementar-ciclo-24.png": {
+      "bytes": 300849,
+      "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+    },
+    "acessibilidade/complementar-ciclo-30.png": {
+      "bytes": 300849,
+      "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+    },
+    "acessibilidade/complementar-ciclo-36.png": {
+      "bytes": 300849,
+      "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+    },
+    "acessibilidade/complementar-ciclo-42.png": {
+      "bytes": 300849,
+      "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+    },
+    "acessibilidade/complementar-ciclo-6.png": {
+      "bytes": 300849,
+      "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+    },
+    "acessibilidade/complementar.py": {
+      "bytes": 6605,
+      "sha256": "e14683dea16476263e060f696af37e4f6d76881d503aa19c5c0defd2a43e9b1b"
+    },
+    "acessibilidade/controles-semanticos.json": {
+      "bytes": 3172,
+      "sha256": "d836acc39b637982bee2144baeda41e41202a1e3394cf40e50ff6994aa09bfb1"
+    },
+    "acessibilidade/controles.py": {
+      "bytes": 1577,
+      "sha256": "e04caf8ad5a4cbcb9a257dfdb1f2c2a6bc3731874820e392f5fb093c3918a663"
+    },
+    "acessibilidade/dialog.py": {
+      "bytes": 577,
+      "sha256": "2723ecee24f9df9ec823adc3a2d01549512aca73988811fed8274624b73fd2f1"
+    },
+    "acessibilidade/finalizar.py": {
+      "bytes": 2758,
+      "sha256": "836a5dbf1e6b266f15575187cfb55299ab631b3c83e430e0f6110f02bf5f32d4"
+    },
+    "acessibilidade/inicio.png": {
+      "bytes": 161576,
+      "sha256": "e484f3e93e0ecf6d5433bc638d16fd0da28d4698b78521de4bec24aa4efb5211"
+    },
+    "acessibilidade/inicio.py": {
+      "bytes": 656,
+      "sha256": "016e9e3859c3b654ebd154d2c2b34e5dec899deae586aa3bf9f8ee473e02b5f0"
+    },
+    "acessibilidade/manifesto.json": {
+      "bytes": 5281,
+      "sha256": "e50056e37af24b835dc21c2a8e8e4516d501d3ac50ddd3bab39e724869916c97"
+    },
+    "acessibilidade/persistencia-reproducao.json": {
+      "bytes": 505,
+      "sha256": "1bfa05521ef8f186c20977ee85a2adb2dc0814122094225c27842790cc082af0"
+    },
+    "acessibilidade/persistencia-reproducao.png": {
+      "bytes": 158308,
+      "sha256": "c15b3f9ca8d1235f71a4bbfbd11030d4b24ce2c0dcd735556ce39476574088c1"
+    },
+    "acessibilidade/persistencia.py": {
+      "bytes": 1173,
+      "sha256": "05062168bfa6b5771874034a781b7b0bae1029b7536e936db27c054725627424"
+    },
+    "acessibilidade/recon.py": {
+      "bytes": 602,
+      "sha256": "8db617d3ad3cdf19f8501e5733f9c520faaf28f9cfa062ec26895b9473f49618"
+    },
+    "acessibilidade/reconhecimento.png": {
+      "bytes": 301192,
+      "sha256": "e2927af9241b08d859ab77d1bd5c0b6f487292ab91ce2d370976bd37e3548b94"
+    },
+    "acessibilidade/reinicio-real.png": {
+      "bytes": 82992,
+      "sha256": "45bb2f961588bf9cfa24c3cbde2d1472989c1f517fc39772471f91948f8e0c32"
+    },
+    "acessibilidade/RELATORIO.md": {
+      "bytes": 4211,
+      "sha256": "f147f630752fe3d030523101c13722885bc08366fc00911c656a90dadc3a9d3b"
+    },
+    "acessibilidade/sessao-complementar-metadados.json": {
+      "bytes": 4033,
+      "sha256": "9a6a2e8ca2e76fea1a30a6c303c3782ccd2a99f9921c955d825e62dcf16fa0c8"
+    },
+    "acessibilidade/sessao.py": {
+      "bytes": 6545,
+      "sha256": "f49034c338d17bac53730e7937d4b9f61261337902494d0107ca573356a1aeba"
+    },
+    "acessibilidade/testes-reais.png": {
+      "bytes": 80539,
+      "sha256": "3bdcf440d2f13c2ec86c018338ef0fb1b1ac2114b63635b3bc9bfabf355f2e61"
+    },
+    "desktop/01-menu.png": {
+      "bytes": 321923,
+      "sha256": "eb80811123738c587ce9bc85ebd083316653c34c62b74b5f51ce51a62766b456"
+    },
+    "desktop/02-missao1.png": {
+      "bytes": 184886,
+      "sha256": "13312f8d5835c3487110dc02bf3574dbef35e238630f8adaa14c2c754dca6cde"
+    },
+    "desktop/03-erro-e-testes.png": {
+      "bytes": 93977,
+      "sha256": "7830624b3a5ce68b8cd3c6b03011de69cf5f5cdd2ba539a395fdc39b7081a163"
+    },
+    "desktop/04-missao1-resolvida.png": {
+      "bytes": 184427,
+      "sha256": "d319ad4b9077e92dd8d585109744e7fc574a46511fd375cc0cffc484e4e859e2"
+    },
+    "desktop/05-ajuda-python.png": {
+      "bytes": 99941,
+      "sha256": "67429ef6795c01d07e01de43810fad76fb44c79237a9dc8cfe3116412ea1432c"
+    },
+    "desktop/06-erro-sintaxe.png": {
+      "bytes": 257492,
+      "sha256": "ba7144e2523ea0bee0287130973936f912568e59c5d607edce4642e6af937ec2"
+    },
+    "desktop/07-mapa-progresso.png": {
+      "bytes": 209799,
+      "sha256": "3fff130281f70cdd8cb6e845948640b5cba5f77967f661dc173453a5d7532c1c"
+    },
+    "desktop/08-opcoes.png": {
+      "bytes": 132667,
+      "sha256": "c655d8d492dcc338e5d3cbb72621a4f6ab6e5bbde670c1d337b5703d7cd7ca24"
+    },
+    "desktop/09-final.png": {
+      "bytes": 196632,
+      "sha256": "86ec531b451dc109fa0a4d1f978e9f0c4954a2be188156b2b72c89e89e4275c1"
+    },
+    "desktop/10-reinicio-status-residual.png": {
+      "bytes": 191996,
+      "sha256": "e47d515ca8d5f6bc4fde5ddbd8ec0e2d53d7ede742fac53e835c52d7ca2f3b7c"
+    },
+    "desktop/partida-0.png": {
+      "bytes": 184654,
+      "sha256": "54019c7e2c0da4ca1a88984d66a2e2438e24cdd63566aaae279c53ec6f89f5d2"
+    },
+    "desktop/partida-100.png": {
+      "bytes": 187686,
+      "sha256": "3ac26c36fe8b0015315986d8cfb79841394c233ba774f75e68a6746c9b6d7fba"
+    },
+    "desktop/partida-120.png": {
+      "bytes": 187686,
+      "sha256": "3ac26c36fe8b0015315986d8cfb79841394c233ba774f75e68a6746c9b6d7fba"
+    },
+    "desktop/partida-20.png": {
+      "bytes": 186672,
+      "sha256": "662f79b3c497b5345941a7f32637aee9afee6fa6d1b7f4215c51ff03342242f8"
+    },
+    "desktop/partida-40.png": {
+      "bytes": 187999,
+      "sha256": "96359f651be78b9927ad64a6c52be0fb48be87c8287800074680a8dae40e91fb"
+    },
+    "desktop/partida-60.png": {
+      "bytes": 187686,
+      "sha256": "3ac26c36fe8b0015315986d8cfb79841394c233ba774f75e68a6746c9b6d7fba"
+    },
+    "desktop/partida-80.png": {
+      "bytes": 187686,
+      "sha256": "3ac26c36fe8b0015315986d8cfb79841394c233ba774f75e68a6746c9b6d7fba"
+    },
+    "desktop/RELATORIO.md": {
+      "bytes": 4891,
+      "sha256": "c679207dece6a86f66cd8c98edc2b9ade0c360e3f2239e6b4d1d050490b21dc1"
+    },
+    "desktop/sessao.json": {
+      "bytes": 15385,
+      "sha256": "17287d660775ac402b0abd2cfde3c1ff49ab237d8706d50ac0edd97478bdbb96"
+    },
+    "desktop/session.py": {
+      "bytes": 1077,
+      "sha256": "371577d197207448be127c8b8263a02001885f2c9f7ff4ee387dd9ba98605148"
+    },
+    "integridade.json": {
+      "bytes": 823,
+      "sha256": "727031a3e4ad1e00ad82b80ecada6a229dcbb70033accbc15849c283077cd74b"
+    },
+    "monitor-alertas.json": {
+      "bytes": 65,
+      "sha256": "7ccb23a4739bc976de27b868179159cfa7a3b7635cdc2ea0ec0bf2e03c9a26a2"
+    },
+    "monitor-dora.json": {
+      "bytes": 2938,
+      "sha256": "c6c4a0151cd52acc4def405b1ba1e42dd35da7c6a5104cbe533132cba81c89c9"
+    },
+    "monitor-run.json": {
+      "bytes": 264,
+      "sha256": "6be6d3fbd367d5787146985c528cbb71dd704abe930a839cfbc6cf09af5e30cc"
+    },
+    "monitor-sondas.json": {
+      "bytes": 912,
+      "sha256": "4b5d29eea67c9a94229d7f7dc8ca185b3464b81c41ff1fd80389a44b61d8a128"
+    },
+    "replay-antes.json": {
+      "bytes": 9441,
+      "sha256": "9dc7a8b6d5e56f9fa92ee47bce88c02a6e1bc0db9d469aae309a7af3a70f7efd"
+    },
+    "replay-depois.json": {
+      "bytes": 3309,
+      "sha256": "96e260528fc9d09590948477b5792dd7bd6b945ad6b3411ba0a96b98ac373ae9"
+    },
+    "toque/01-menu.png": {
+      "bytes": 102062,
+      "sha256": "33514f6538253dccd95aed95248925e70abc3a58f6f9e11108a32bbc76765e8c"
+    },
+    "toque/02-opcoes.png": {
+      "bytes": 48306,
+      "sha256": "0b5d90e0d69306f51194f6b66185f8e36ccedd4ea0f89718dbef90ad75042183"
+    },
+    "toque/04-inicio.png": {
+      "bytes": 87839,
+      "sha256": "0fe37b1c9723850cda4f8e78faa4fa5b3d883e59fa2c2705cabcd20da2b9b306"
+    },
+    "toque/05-ajuda.png": {
+      "bytes": 61527,
+      "sha256": "a0bc24e3910af6b8df3a048b453cc166e35b06d1fd81abeb102d5933b550ea56"
+    },
+    "toque/06-fechar-ajuda.png": {
+      "bytes": 87659,
+      "sha256": "7f27da3969cf4ce77294c1c0a45c43e997dbdf258afcf89ea8f622aaa9ef1ff0"
+    },
+    "toque/07-regra-inicial-reprovada.png": {
+      "bytes": 87747,
+      "sha256": "89007a19701a450698f9b64dac01c2e5ee3307aee5f2316a72169c1d3edcae84"
+    },
+    "toque/08-testes.png": {
+      "bytes": 76871,
+      "sha256": "03fbe099fb6a8e17752f49a78f750b6d83373b98ec398100439e561ee9727fb2"
+    },
+    "toque/09-fechar-testes.png": {
+      "bytes": 87747,
+      "sha256": "89007a19701a450698f9b64dac01c2e5ee3307aee5f2316a72169c1d3edcae84"
+    },
+    "toque/10-correcao.png": {
+      "bytes": 88088,
+      "sha256": "5396e90ad9c927cb92a4e137d19cf7ea051f8e2497c4bf7221ce9f096d048c69"
+    },
+    "toque/11-sucesso.png": {
+      "bytes": 89886,
+      "sha256": "c25896356ee837fba5ea9151b742ba0478301887bafcc303846c5b9ca4a09c81"
+    },
+    "toque/12-jogar.png": {
+      "bytes": 88106,
+      "sha256": "77dba42dfe9aef365ff22c4371edd5e9bac6ab0a531cca7bad14c3dfe64e7044"
+    },
+    "toque/13-esquerda.png": {
+      "bytes": 88359,
+      "sha256": "8469c459bf4bff4263a294e8915e0189e3fe9d7a0d9793bc90adc253bcda2c36"
+    },
+    "toque/14-pausa.png": {
+      "bytes": 90950,
+      "sha256": "9d7a3c60c19013c57d276d44b6c1b3f87d4077cd93f68115ef90a4c296f71530"
+    },
+    "toque/15-missao2.png": {
+      "bytes": 91589,
+      "sha256": "14098717af3c5d59925be5907f8ed18b10947c7d77758bce5bac7c5ed8abea85"
+    },
+    "toque/16-ajuda2.png": {
+      "bytes": 63066,
+      "sha256": "fc30458d9ee2559ea4dfa88fdd0434e9f28e88296ab127f6d94f34ee299c674f"
+    },
+    "toque/17-fechar-ajuda2.png": {
+      "bytes": 91548,
+      "sha256": "89922f7013c4f32fdba91029bd725fdb67cb399ebdb9975ce69fef3eb9bc8215"
+    },
+    "toque/18-mover-codigo.png": {
+      "bytes": 91247,
+      "sha256": "85c45679638c3254f36f47b0db0b0d99fdbab8d8992e50ef54f5677131a91c1c"
+    },
+    "toque/19-mover-sucesso.png": {
+      "bytes": 93540,
+      "sha256": "92346132487a2606a7d1ce45b44c1f752c4d8ff7919adaf9ffc4c832ca97d4b3"
+    },
+    "toque/20-menu-retorno.png": {
+      "bytes": 100876,
+      "sha256": "aa29d2aa7497cc631c3e1a25f4b35fd1d2178e9036ce9748b5d3bce688f1c17b"
+    },
+    "toque/21-opcoes.png": {
+      "bytes": 48459,
+      "sha256": "da0721d75f1b014bd7514d68e490373e0e136ef9723e6bb076d29e533b296eb4"
+    },
+    "toque/22-texto-maior.png": {
+      "bytes": 48815,
+      "sha256": "e98ed68c0da1e0d89c41e739a902a474ba49dbc39dc778b039ccc560d000ed73"
+    },
+    "toque/23-movimento-reduzido.png": {
+      "bytes": 48927,
+      "sha256": "5b81e1709312a43ec9e4729f81b3d3ad8d08ca4344c49c0644e64e47ed136a89"
+    },
+    "toque/24-opcoes-fechar.png": {
+      "bytes": 101471,
+      "sha256": "82c107e29198f57cd82c3c9b778c5957049a31eb2e912e8551c0e72e4f98ead7"
+    },
+    "toque/25-continuar.png": {
+      "bytes": 100199,
+      "sha256": "7fc3fd190bf9571979edcdd121809511f89645d7388e9c1f241cf8b0b5f418cc"
+    },
+    "toque/26-sintaxe-invalida.png": {
+      "bytes": 99727,
+      "sha256": "f71bf1cabeb0eb57d97861f14d451a63beda5277a3baff79eec75105e2159a18"
+    },
+    "toque/27-feedback-sintaxe.png": {
+      "bytes": 142702,
+      "sha256": "89f729b4b14151dadbfbe1d59d9d65f2e90300cdb896fb7eef8a992d14f54f9d"
+    },
+    "toque/28-restaurar.png": {
+      "bytes": 111508,
+      "sha256": "d32e4a7c5d33fcd157096880949c84c46db9ba6681e21e132a8302a061a14e36"
+    },
+    "toque/29-restauracao-confirmada.png": {
+      "bytes": 99179,
+      "sha256": "087f33cb68949947f3042a144f89696ec95c3d37dd52535b9deb081ddb866e24"
+    },
+    "toque/30-testar-pos-restauracao.png": {
+      "bytes": 100763,
+      "sha256": "b9cd550b80b7515f41db290889ed8a7395e70fd4b38dab01aa18bcf17bd37fc1"
+    },
+    "toque/31-retorno-final-menu.png": {
+      "bytes": 101471,
+      "sha256": "82c107e29198f57cd82c3c9b778c5957049a31eb2e912e8551c0e72e4f98ead7"
+    },
+    "toque/32-mapa-progresso.png": {
+      "bytes": 83168,
+      "sha256": "3791d696ef8ab514b822a597b0899907e0eb973e5bbcfbe4aa03d85fc108c7a5"
+    },
+    "toque/33-reabrir-missao-concluida.png": {
+      "bytes": 98071,
+      "sha256": "a5a1181f3d8baef20b3f365233fe252ae698aee9dd9aba532114b9c101ff353f"
+    },
+    "toque/34-preservacao-confirmada.png": {
+      "bytes": 99542,
+      "sha256": "f981ff86b97271ff857afaca57588508bc3a359861cfeb138de972e2283e74e4"
+    },
+    "toque/manifesto.json": {
+      "bytes": 6075,
+      "sha256": "83a3ea6b6bf89336af30869fb0715b7a7400e3c3933325c8f2adffeeafcc516f"
+    },
+    "toque/relatorio.md": {
+      "bytes": 4212,
+      "sha256": "e4b0bb406f2c61144e63714b922f3e5b40f3cd06aa305218671ece0bce02b51e"
+    },
+    "toque/response.json": {
+      "bytes": 144,
+      "sha256": "48d3b42fbe67c076a3ba450fe293cd9a5f5428d05c9bffc379948142a85b8fbb"
+    },
+    "toque/session.json": {
+      "bytes": 8032,
+      "sha256": "899f12f15c8d9ed6ca2d88b428d48c6b4051d61c7dedaf5ed814f7af7c49d43f"
+    },
+    "toque/session.py": {
+      "bytes": 2480,
+      "sha256": "e9b1962af43bb1ce7767cbd9c0458b04ae8fde2b0c055ffee2c861e90a95e529"
+    },
+    "toque/state.json": {
+      "bytes": 1033,
+      "sha256": "59870e61a18798e3d6a116f4bcb98a1c9d2c2d884eeaab81939d6c29df68f922"
+    },
+    "toque/tooling-first-attempt.json": {
+      "bytes": 1234,
+      "sha256": "09f5f16aed375d8b86514ac670ef7ccb8c1bebf7091b0d024849c33b04e634ae"
+    }
+  }
+}

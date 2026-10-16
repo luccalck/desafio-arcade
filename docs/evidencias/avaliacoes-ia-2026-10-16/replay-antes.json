@@ -1,0 +1,155 @@
+{
+  "config": {
+    "argv": [
+      "C:\\Program Files\\nodejs\\node.exe",
+      "C:\\dev\\studies\\senai\\semester-2\\devops\\desafio-arcade\\jogo-arcade\\.contexto\\fechamento\\node_modules\\@playwright\\test\\cli.js",
+      "test",
+      "tests/e2e/replay-feedback.spec.mjs",
+      "--workers=1",
+      "--reporter=json"
+    ],
+    "configFile": "C:\\dev\\studies\\senai\\semester-2\\devops\\desafio-arcade\\jogo-arcade\\.contexto\\fechamento\\playwright.config.mjs",
+    "rootDir": "C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade/.contexto/fechamento/tests/e2e",
+    "failOnFlakyTests": false,
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade/.contexto/fechamento/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "",
+        "name": "",
+        "testDir": "C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade/.contexto/fechamento/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 120000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "json"
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.63.0",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "replay-feedback.spec.mjs",
+      "file": "replay-feedback.spec.mjs",
+      "column": 0,
+      "line": 0,
+      "specs": [
+        {
+          "title": "reiniciar após derrota anuncia a partida atual, sem aviso residual",
+          "ok": false,
+          "tags": [],
+          "tests": [
+            {
+              "timeout": 120000,
+              "annotations": [],
+              "expectedStatus": "passed",
+              "projectId": "",
+              "projectName": "",
+              "results": [
+                {
+                  "workerIndex": 0,
+                  "parallelIndex": 0,
+                  "status": "failed",
+                  "duration": 19148,
+                  "error": {
+                    "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#run-message')\nExpected substring: \u001b[32m\"\u001b[7mP\u001b[27martida \u001b[7mem and\u001b[27mament\u001b[7mo\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mA p\u001b[27martida \u001b[7macabou. Você pode jogar nov\u001b[27mament\u001b[7me.\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('#run-message') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#run-message')\u001b[22m\n\u001b[2m    14 × locator resolved to <p role=\"status\" id=\"run-message\" class=\"run-message\">A partida acabou. Você pode jogar novamente.</p>\u001b[22m\n\u001b[2m       - unexpected value \"A partida acabou. Você pode jogar novamente.\"\u001b[22m\n",
+                    "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#run-message')\nExpected substring: \u001b[32m\"\u001b[7mP\u001b[27martida \u001b[7mem and\u001b[27mament\u001b[7mo\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mA p\u001b[27martida \u001b[7macabou. Você pode jogar nov\u001b[27mament\u001b[7me.\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('#run-message') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#run-message')\u001b[22m\n\u001b[2m    14 × locator resolved to <p role=\"status\" id=\"run-message\" class=\"run-message\">A partida acabou. Você pode jogar novamente.</p>\u001b[22m\n\u001b[2m       - unexpected value \"A partida acabou. Você pode jogar novamente.\"\u001b[22m\n\n    at C:\\dev\\studies\\senai\\semester-2\\devops\\desafio-arcade\\jogo-arcade\\.contexto\\fechamento\\tests\\e2e\\replay-feedback.spec.mjs:19:45",
+                    "location": {
+                      "file": "C:\\dev\\studies\\senai\\semester-2\\devops\\desafio-arcade\\jogo-arcade\\.contexto\\fechamento\\tests\\e2e\\replay-feedback.spec.mjs",
+                      "column": 45,
+                      "line": 19
+                    },
+                    "snippet": "  17 |  await expect(page.locator('#game-lives')).toHaveText('♥ ♥ ♥');\n  18 |  await expect(page.locator('#game-score')).toHaveText('0');\n> 19 |  await expect(page.locator('#run-message')).toContainText('Partida em andamento');\n     |                                             ^\n  20 |  await expect(page.locator('#run-message')).not.toContainText('A partida acabou');\n  21 | });\n  22 |"
+                  },
+                  "errors": [
+                    {
+                      "location": {
+                        "file": "C:\\dev\\studies\\senai\\semester-2\\devops\\desafio-arcade\\jogo-arcade\\.contexto\\fechamento\\tests\\e2e\\replay-feedback.spec.mjs",
+                        "column": 45,
+                        "line": 19
+                      },
+                      "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#run-message')\nExpected substring: \u001b[32m\"\u001b[7mP\u001b[27martida \u001b[7mem and\u001b[27mament\u001b[7mo\u001b[27m\"\u001b[39m\nReceived string:    \u001b[31m\"\u001b[7mA p\u001b[27martida \u001b[7macabou. Você pode jogar nov\u001b[27mament\u001b[7me.\u001b[27m\"\u001b[39m\nTimeout: 5000ms\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" locator('#run-message') with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#run-message')\u001b[22m\n\u001b[2m    14 × locator resolved to <p role=\"status\" id=\"run-message\" class=\"run-message\">A partida acabou. Você pode jogar novamente.</p>\u001b[22m\n\u001b[2m       - unexpected value \"A partida acabou. Você pode jogar novamente.\"\u001b[22m\n\n\n  17 |  await expect(page.locator('#game-lives')).toHaveText('♥ ♥ ♥');\n  18 |  await expect(page.locator('#game-score')).toHaveText('0');\n> 19 |  await expect(page.locator('#run-message')).toContainText('Partida em andamento');\n     |                                             ^\n  20 |  await expect(page.locator('#run-message')).not.toContainText('A partida acabou');\n  21 | });\n  22 |\n    at C:\\dev\\studies\\senai\\semester-2\\devops\\desafio-arcade\\jogo-arcade\\.contexto\\fechamento\\tests\\e2e\\replay-feedback.spec.mjs:19:45"
+                    }
+                  ],
+                  "stdout": [],
+                  "stderr": [],
+                  "retry": 0,
+                  "startTime": "2026-10-16T18:31:43.723Z",
+                  "annotations": [],
+                  "attachments": [
+                    {
+                      "name": "screenshot",
+                      "contentType": "image/png",
+                      "path": "C:\\dev\\studies\\senai\\semester-2\\devops\\desafio-arcade\\jogo-arcade\\.contexto\\fechamento\\test-results\\replay-feedback-reiniciar--fc173-da-atual-sem-aviso-residual\\test-failed-1.png"
+                    },
+                    {
+                      "name": "error-context",
+                      "contentType": "text/markdown",
+                      "path": "C:\\dev\\studies\\senai\\semester-2\\devops\\desafio-arcade\\jogo-arcade\\.contexto\\fechamento\\test-results\\replay-feedback-reiniciar--fc173-da-atual-sem-aviso-residual\\error-context.md"
+                    },
+                    {
+                      "name": "trace",
+                      "contentType": "application/zip",
+                      "path": "C:\\dev\\studies\\senai\\semester-2\\devops\\desafio-arcade\\jogo-arcade\\.contexto\\fechamento\\test-results\\replay-feedback-reiniciar--fc173-da-atual-sem-aviso-residual\\trace.zip"
+                    }
+                  ],
+                  "errorLocation": {
+                    "file": "C:\\dev\\studies\\senai\\semester-2\\devops\\desafio-arcade\\jogo-arcade\\.contexto\\fechamento\\tests\\e2e\\replay-feedback.spec.mjs",
+                    "column": 45,
+                    "line": 19
+                  }
+                }
+              ],
+              "status": "unexpected"
+            }
+          ],
+          "id": "6076e5ea43f0b669c19d-f70de626cb3d3d29f671",
+          "file": "replay-feedback.spec.mjs",
+          "line": 3,
+          "column": 1
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-10-16T18:31:43.048Z",
+    "duration": 21130.655,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  }
+}

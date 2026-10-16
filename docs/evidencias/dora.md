@@ -1,5 +1,11 @@
 # Etapa 024 — DORA e linha de base
 
+## Estado atualizado —16/10/2026, após publicação técnica
+
+As consultas de14–15/10 abaixo são baselines históricas, não o estado atual. A coleta38940593792 confirma dois deploys em14dias:frequência0,142857/dia,lead time médio35min19s,CFR50% com rollback planejado correlacionado,MTTR operacionalnull/zeroIssues elegíveis. As Issues38/39 têm abertura/fechamento reais e média2s **do ensaio**, separada do MTTR operacional. [Dados atuais](fechamento-independente-2026-10-16/monitor-atual-dora.json) e [interpretação/correção da contagem de deploys](fechamento-independente-2026-10-16.md). Os três valores numéricos e o null têm fontes; não afirmar ausência atual de painel/deploys nem substituir null por zero.
+
+## Registro histórico preservado
+
 Consulta autenticada somente leitura em 14/10/2026 às 05:05 UTC, repositório `luccalck/desafio-arcade`, janela **01/10/2026 00:00 UTC a 14/10/2026 05:02 UTC**. Comando: `node scripts/dora.mjs 2026-10-01T00:00:00Z 2026-10-14T05:02:40Z reports/dora-md2.json`. A [exportação redigida](dora-consulta-024.json) guarda horário, janela e resultado, sem token; não é dado publicado. Foram percorridas as páginas da API de [execuções da esteira](https://github.com/luccalck/desafio-arcade/actions/workflows/esteira.yml), [Issues com etiqueta alerta](https://github.com/luccalck/desafio-arcade/issues?q=label%3Aalerta) e histórico `gh-pages` quando disponível. A API da branch `observabilidade` retornou **404** na mesma consulta; nenhum `status/dora.json` foi publicado.
 
 | Métrica | Resultado | Denominador/unidade | Fonte e regra |

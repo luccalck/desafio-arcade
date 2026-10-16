@@ -50,7 +50,7 @@ O ciclo é editar, testar entradas, observar a partida e corrigir. Nas primeiras
 
 **Figura 1.** HML pública capturada em 15/10/2026, 21:29:25, America/Sao_Paulo; versão 0.7.0, SHA 88d533e, viewport 1280×900. Origem/tempo/versão em hml-88-menu.json, produzidos pelo navegador durante a regressão real.
 
-A mesma experiência WEB atende computador e celular. Teclado/toque e foco visível ajudam a navegação; o código é editável e os testes indicam a situação que falhou. A validação pública completou campanhas desktop e toque, com vitória e 700 XP, mas isso não mede aprendizagem. O playtest humano de três minutos com colega de outra turma ainda precisa observar clareza, dificuldades e transferência do conceito. Não atribuímos resultados a pessoas inexistentes.
+A experiência WEB atende computador e celular. Em16/10, três agentes deIA exploraram desktop,toque e acessibilidade pelaUI. A avaliação desktop encontrou aviso de derrota após reiniciar; corrigimos e verificamos regressão antes/depois na branch, sem publicação (Issue42). Toque não encontrou bloqueante; acessibilidade preservou capturas/verificações separadas, mas perdeu o log completo por erro da ferramenta. [Provas e limites](evidencias/avaliacoes-ia-2026-10-16.md). Esses agentes conhecem programação e não comprovam aprendizagem/diversão humana. A sessão de colega de outra turma na banca continua sem evidência.
 
 <div style="break-before: page;"></div>
 
