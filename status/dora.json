@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "generatedAt": "2026-10-16T04:41:25.783Z",
+  "generatedAt": "2026-10-16T04:47:30.450Z",
   "period": {
-    "from": "2026-10-02T04:41:16Z",
-    "to": "2026-10-16T04:41:16Z"
+    "from": "2026-10-02T04:47:22Z",
+    "to": "2026-10-16T04:47:22Z"
   },
   "metrics": {
     "deploymentFrequency": {
@@ -52,6 +52,11 @@
     ],
     "issues": [],
     "rollbacks": [
+      {
+        "sha": "acb03d8b018227cabbbeb47242cc5c097a3c0df1",
+        "at": "2026-10-16T04:46:36Z",
+        "url": "https://github.com/luccalck/desafio-arcade/commit/71ac80c51d417e0d5422ed1aea97e0c51c820d12"
+      },
       {
         "sha": "88d533e31452036092cd8edef3efa3c0775241dc",
         "at": "2026-10-16T04:40:39Z",
