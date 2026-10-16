@@ -31,3 +31,25 @@ it('tempo push→HML usa evento exato; run criado e commit datado não substitue
  expect(()=>hmlTiming({events:[{...event,payload:{ref,head:'b'.repeat(40)}}],sha,ref,finishedAt,run})).toThrow(/PushEvent/);
  expect(()=>hmlTiming({events:[],sha,ref,finishedAt,run})).toThrow(/PushEvent/);
 });
+
+it('merge comprovado na main mede a publicação sem depender da API de eventos atrasada',()=>{
+ const ref='refs/heads/main',finishedAt='2026-10-15T03:10:00Z';
+ const mergeProof={number:32,baseRef:'main',merged:true,mergeCommitSha:sha,mergedAt:'2026-10-15T03:03:48Z',url:'https://github.com/equipe/jogo/pull/32'};
+ const result=hmlTiming({events:[],sha,ref,finishedAt,run,runAttempt:'1',mergeProof});
+ expect(result.pushToHmlSeconds).toBe(372);expect(result.withinLimit).toBe(true);expect(result.source).toContain('merged_at');
+ for(const changed of [{...mergeProof,merged:false},{...mergeProof,baseRef:'feature/x'},{...mergeProof,mergeCommitSha:'b'.repeat(40)},{...mergeProof,mergedAt:null}])expect(()=>hmlTiming({events:[],sha,ref,finishedAt,run,mergeProof:changed})).toThrow();
+});
+it('payload imutável do push exige repositório, ref, SHA e timestamp verdadeiros',()=>{
+ const ref='refs/heads/main',finishedAt='2026-10-15T03:10:00Z',repository='equipe/jogo';
+ const pushPayload={ref,after:sha,deleted:false,repository:{full_name:repository,pushed_at:Date.parse('2026-10-15T03:05:00Z')/1000}};
+ const result=hmlTiming({events:[],sha,ref,finishedAt,run,repository,pushPayload});
+ expect(result.pushToHmlSeconds).toBe(300);expect(result.source).toContain('repository.pushed_at');
+ for(const changed of [{...pushPayload,after:'b'.repeat(40)},{...pushPayload,ref:'refs/heads/outra'},{...pushPayload,deleted:true},{...pushPayload,repository:{...pushPayload.repository,full_name:'outra/equipe'}},{...pushPayload,repository:{...pushPayload.repository,pushed_at:null}}])expect(()=>hmlTiming({events:[],sha,ref,finishedAt,run,repository,pushPayload:changed})).toThrow();
+});
+it('push de tag anotada confere objeto remoto antes de usar timestamp do payload',()=>{
+ const ref='refs/tags/v0.7.0',repository='equipe/jogo',objectSha='c'.repeat(40),finishedAt='2026-10-15T03:10:00Z';
+ const pushPayload={ref,after:objectSha,repository:{full_name:repository,pushed_at:'2026-10-15T03:05:00Z'}};
+ const args={events:[],sha,ref,finishedAt,run,repository,pushPayload,tagProof:{ref,sha,objectSha}};
+ expect(hmlTiming(args).pushToHmlSeconds).toBe(300);
+ expect(()=>hmlTiming({...args,tagProof:{ref,sha,objectSha:'d'.repeat(40)}})).toThrow();
+});

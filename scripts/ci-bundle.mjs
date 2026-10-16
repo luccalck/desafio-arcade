@@ -67,35 +67,76 @@ export function validateReportPages(pdfinfo){
  if(!Number.isInteger(count)||count<1||count>12)throw Error('Relatório técnico deve abrir por pdfinfo e conter de 1 a 12 páginas.');
  return count;
 }
-export function hmlTiming({events,sha,ref,finishedAt,run,runAttempt,tagProof}){
+export function hmlTiming({events=[],sha,ref,finishedAt,run,runAttempt,tagProof,mergeProof,pushPayload,repository}){
  identity(sha,run);
- const matches=events.filter(e=>(e.type==='PushEvent'&&e.payload?.ref===ref&&(e.payload?.head===sha||e.payload?.after===sha))||(ref.startsWith('refs/tags/')&&tagProof?.sha===sha&&tagProof?.ref===ref&&e.type==='CreateEvent'&&e.payload?.ref_type==='tag'&&e.payload.ref===ref.slice(10)));
- const event=matches.sort((a,b)=>Date.parse(b.created_at)-Date.parse(a.created_at))[0];
- if(!event?.id||!Number.isFinite(Date.parse(event.created_at)))throw Error('PushEvent verificável de mesmo SHA/ref ausente; tempo de criação do run não comprova push.');
- const seconds=(Date.parse(finishedAt)-Date.parse(event.created_at))/1000;
+ let receivedAt,source,eventType,pushEventId,proof;
+ // merged_at é o horário persistido pelo GitHub para a publicação do merge na main.
+ // Conferir o merge_commit_sha impede confundir a aprovação de uma feature com sua integração.
+ if(ref==='refs/heads/main'&&mergeProof?.merged===true&&mergeProof.baseRef==='main'&&mergeProof.mergeCommitSha===sha&&Number.isInteger(mergeProof.number)&&mergeProof.number>0&&typeof mergeProof.mergedAt==='string'&&Number.isFinite(Date.parse(mergeProof.mergedAt))){
+  receivedAt=mergeProof.mergedAt;source='GitHub Pull Requests API merged_at; merge_commit_sha/base main conferidos';eventType='PullRequestMerge';proof=mergeProof;
+ }
+ const payloadMatches=pushPayload?.ref===ref&&pushPayload.deleted!==true&&repository&&pushPayload.repository?.full_name===repository&&(pushPayload.after===sha||(tagProof?.ref===ref&&tagProof.sha===sha&&tagProof.objectSha===pushPayload.after));
+ if(!receivedAt&&payloadMatches){
+  const value=pushPayload.repository.pushed_at;
+  const date=typeof value==='number'&&Number.isFinite(value)&&value>0?new Date(value*1000):typeof value==='string'&&/^\d{4}-\d\d-\d\dT/.test(value)?new Date(value):null;
+  if(date&&Number.isFinite(date.valueOf())){receivedAt=date.toISOString();source='GitHub Actions push payload repository.pushed_at; repositório/ref/after conferidos';eventType='ActionsPushPayload';proof={repository,ref,after:pushPayload.after};}
+ }
+ if(!receivedAt){
+  const matches=events.filter(e=>(e.type==='PushEvent'&&e.payload?.ref===ref&&(e.payload?.head===sha||e.payload?.after===sha))||(ref.startsWith('refs/tags/')&&tagProof?.sha===sha&&tagProof?.ref===ref&&e.type==='CreateEvent'&&e.payload?.ref_type==='tag'&&e.payload.ref===ref.slice(10)));
+  const event=matches.sort((a,b)=>Date.parse(b.created_at)-Date.parse(a.created_at))[0];
+  if(event?.id&&Number.isFinite(Date.parse(event.created_at))){receivedAt=event.created_at;source='GitHub repository Events API created_at; SHA/ref conferidos';eventType=event.type;pushEventId=String(event.id);proof=event.type==='CreateEvent'?tagProof:undefined;}
+ }
+ if(!receivedAt)throw Error('PushEvent, payload ou merge comprovado de mesmo SHA/ref ausente; criação do run e data do commit não substituem publicação.');
+ const seconds=(Date.parse(finishedAt)-Date.parse(receivedAt))/1000;
  if(!Number.isFinite(seconds)||seconds<0)throw Error('Cronologia push/HML inválida.');
- return {schema:1,sha,ref,run:String(run),runAttempt:String(runAttempt),pushEventId:String(event.id),pushReceivedAt:event.created_at,e2eFinishedAt:finishedAt,pushToHmlSeconds:seconds,limitSeconds:900,withinLimit:seconds<=900,eventType:event.type,tagProof:event.type==='CreateEvent'?tagProof:undefined,source:'GitHub repository Events API created_at; PushEvent head SHA/ref ou criação de tag com ref remota conferida'};
+ return {schema:1,sha,ref,run:String(run),runAttempt:String(runAttempt),pushEventId,pushReceivedAt:receivedAt,e2eFinishedAt:finishedAt,pushToHmlSeconds:seconds,limitSeconds:900,withinLimit:seconds<=900,eventType,proof,source};
 }
 export async function collectHmlTiming(env=process.env){
  const {GITHUB_REPOSITORY:repo,GITHUB_SHA:sha,GITHUB_REF:ref,GITHUB_RUN_ID:run,GITHUB_RUN_ATTEMPT:runAttempt,GH_TOKEN:token}=env;
  if(!/^[\w.-]+\/[\w.-]+$/.test(repo??'')||!token)throw Error('Repositório/token de leitura exigidos para comprovar push.');
  const finishedAt=new Date().toISOString();
- async function api(path){const r=await fetch(`https://api.github.com/repos/${repo}/${path}`,{headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json'},cache:'no-store',signal:AbortSignal.timeout(15000)});if(!r.ok)throw Error(`Eventos GitHub: HTTP ${r.status}.`);return r.json();}
- let tagProof;
+ async function api(path){
+  let r;
+  try{r=await fetch(`https://api.github.com/repos/${repo}/${path}`,{headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json'},cache:'no-store',signal:AbortSignal.timeout(15000)});}catch{throw Error('API GitHub: falha de transporte ou tempo limite.');}
+  if(!r.ok)throw Error(`API GitHub: HTTP ${r.status}.`);
+  try{return await r.json();}catch{throw Error('API GitHub: resposta JSON inválida.');}
+ }
+ let tagProof,mergeProof,pushPayload,prSourceError;
  if(ref.startsWith('refs/tags/')){
-  let object=(await api(`git/ref/tags/${ref.slice(10)}`)).object;
+  let object=(await api(`git/ref/tags/${ref.slice(10)}`)).object;const objectSha=object.sha;
   if(object.type==='tag')object=(await api(`git/tags/${object.sha}`)).object;
   if(object.type!=='commit'||object.sha!==sha)throw Error('Tag remota não aponta ao commit do deploy.');
-  tagProof={ref,sha:object.sha,source:`https://api.github.com/repos/${repo}/git/ref/tags/${ref.slice(10)}`};
+  tagProof={ref,sha:object.sha,objectSha,source:`https://api.github.com/repos/${repo}/git/ref/tags/${ref.slice(10)}`};
  }
+ if(ref==='refs/heads/main'){
+  let prs;
+  try{
+   prs=await api(`commits/${sha}/pulls?per_page=100`);
+   if(!Array.isArray(prs))throw Error('API GitHub: lista de PRs inválida.');
+  }catch(e){prSourceError=`Fonte de PRs indisponível: ${e.message}`;}
+  if(Array.isArray(prs)){
+   const pr=prs.find(p=>p?.merged_at&&p.base?.ref==='main'&&p.base?.repo?.full_name===repo&&p.merge_commit_sha===sha);
+   if(pr)mergeProof={number:pr.number,baseRef:pr.base.ref,merged:true,mergeCommitSha:pr.merge_commit_sha,mergedAt:pr.merged_at,url:pr.html_url};
+  }
+ }
+ if(env.GITHUB_EVENT_NAME==='push'&&env.GITHUB_EVENT_PATH)pushPayload=JSON.parse(await readFile(env.GITHUB_EVENT_PATH,'utf8'));
  let report,error;
- for(let retry=0;retry<6;retry++){
-  const events=[];for(let page=1;page<=3;page++){const batch=await api(`events?per_page=100&page=${page}`);events.push(...batch);if(batch.length<100)break;}
-  try{report=hmlTiming({events,sha,ref,finishedAt,run,runAttempt,tagProof});break;}catch(e){error=e;}
-  if(retry<5)await new Promise(resolve=>setTimeout(resolve,10000));
+ const params={sha,ref,finishedAt,run,runAttempt,tagProof,mergeProof,pushPayload,repository:repo};
+ try{report=hmlTiming(params);}catch(e){error=e;}
+ // O feed público é somente fonte complementar: pode atrasar até seis horas.
+ // Nunca aumentar a janela de15min nem substituir a fonte por created_at do run.
+ for(let retry=0;!report&&retry<2;retry++){
+  const events=[];for(let page=1;page<=3;page++){
+   let batch;
+   try{batch=await api(`events?per_page=100&page=${page}`);}catch(e){throw Error([`Fonte de eventos indisponível: ${e.message}`,prSourceError].filter(Boolean).join(' '),{cause:e});}
+   events.push(...batch);if(batch.length<100)break;
+  }
+  try{report=hmlTiming({...params,events});}catch(e){error=e;}
+  if(!report&&retry<1)await new Promise(resolve=>setTimeout(resolve,60000));
  }
- if(!report)throw error;
- report.apiUrl=`https://api.github.com/repos/${repo}/events`;report.collectedAt=new Date().toISOString();
+ if(!report)throw Error([error.message,prSourceError].filter(Boolean).join(' '));
+ if(prSourceError)report.sourceWarnings=[prSourceError];
+ report.apiUrl=mergeProof?.url??`https://api.github.com/repos/${repo}/events`;report.collectedAt=new Date().toISOString();
  await mkdir('reports',{recursive:true});await writeFile('reports/hml-run.json',JSON.stringify(report,null,2)+'\n');
  if(!report.withinLimit)throw Error(`Push→HML ${report.pushToHmlSeconds}s excede 900s.`);
  return report;

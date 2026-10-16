@@ -103,6 +103,12 @@ Revisão por outro autor/participação e aceites gerais permanecem antes do mer
 
 ## Passo008 — Inventário e rastreabilidade preparados
 
+### Uso de IA na correção do P2 do PR33 — 15/10/2026
+
+Miguel Oliveira de Almeida (`miguelsenai2024`) solicitou a correção após a revisão do [PR33](https://github.com/luccalck/desafio-arcade/pull/33). Codex auxiliou a reprodução, implementação, testes e documentação; Miguel confirmou sua identidade. Conta autenticada do conector e da credencial HTTPS do Git conferidas como `miguelsenai2024`. Autoria Git local configurada como Miguel Oliveira de Almeida, com endereço privado `228007835+miguelsenai2024@users.noreply.github.com`; a configuração global com e-mail placeholder foi preservada. Não houve simulação de revisão humana nem de execução operacional. Registro complementar em [AI-USAGE](../../AI-USAGE.md).
+
+- [ ] **I05-14/15/21 — revisão externa desta correção:** outro integrante precisa conferir o código, os testes e os resultados da CI do novo HEAD. A assistência de IA e a autorização de Miguel não são aprovação do próprio PR.
+
 - [x] Inventário158componentes/26ativos com licenças/créditos/URLs/hashes/fontesGit; arte e fatos educativos conferidos tecnicamente.
 - [x] Matriz das etapasIA conhecidas ligada a commits/PRs reais, sem atribuir trabalho aos colegas ou aprovação fictícia.
 - [x] Termos oficiais consultados; scannerGit53commits/0achados, formatosCPF analisados sem candidatos; fontesPDF daCI identificadas. Limites nas [evidências](../evidencias/direitos.md).
@@ -140,6 +146,18 @@ Escopo técnico validado em13/10/2026: fontec56df79/clone limpo,184testes/18E2E 
 Nenhum novo check geral fechado;115marcados/297abertos. Publicação010:c56df79/0f0104c; PR#12draft sobre009, CIpush38444743006/PR38444831221 verdes; semmerge/deploy/revisão presumidos.
 
 ## Passo 011
+
+### Correção local do P2 da medição push→HML — 15/10/2026
+
+Base atualizada por `git fetch origin`: `770449bd7f1151a9dc36e3a84ab5fd6ae90c68ad`, branch `origin/fix/medicao-hml-verificavel` do [PR33](https://github.com/luccalck/desafio-arcade/pull/33). Criada a branch própria `fix/miguel-fallback-medicao-hml`; o clone estava limpo e nenhuma alteração local preexistente foi descartada. Não havia `AGENTS.md` aplicável no clone ou nos diretórios ancestrais consultados.
+
+- [x] **Reprodução antes da correção:** novo teste de `collectHmlTiming` com HTTP 503 simulado na consulta de PRs e payload de push válido falhou com `Eventos GitHub: HTTP 503`; os 11 testes anteriores passaram. Nenhuma requisição real ou espera prolongada no teste.
+- [x] **Correção técnica do P2:** indisponibilidade da fonte de PRs permite tentar o payload e o feed existentes; diagnóstico da fonte é arquivado em `sourceWarnings` quando há medição válida e incluído na falha final quando não há prova. Erros de transporte/JSON usam mensagens controladas, sem corpo HTTP ou credenciais. A consulta obrigatória da tag remota permanece bloqueante.
+- [x] **Contratos preservados:** preferência pelo merge comprovado; conferência de repositório/ref/SHA; resolução da tag anotada; rejeição de cronologia inválida; aceitação em 900s e reprovação em 901s. Merge antigo não é trocado por payload recente. O horário final é capturado antes do polling, e o intervalo existente de 60s permanece, com relógio simulado nos testes.
+- [x] **Validação local real:** 37/37 testes focais (11 existentes + 26 novos do coletor), 299/299 testes de unidade/integração com cobertura, `npm run lint` (ESLint e TypeScript), `npm run content:check` e `git diff --check` passaram em Node 24.19.0. O primeiro lint apontou ausência de `cause` no erro encapsulado do feed; isso foi corrigido antes da validação final. Os testes simulam HTTP, arquivos e relógio, incluindo ausência de provas, divergências, falhas de rede/timeout/JSON e sigilo dos diagnósticos.
+- [x] **CI do commit publicado:** o [PR35](https://github.com/luccalck/desafio-arcade/pull/35), aberto pela conta `miguelsenai2024` sobre `fix/medicao-hml-verificavel`, publicou `b3257d3e9bfa002a11ae5168fe2bbe9aab03199e`. A [run 38775876005](https://github.com/luccalck/desafio-arcade/actions/runs/38775876005) concluiu com sucesso: `qualidade`, `seguranca`, `e2e`, `build`, `pacote-ci` e check agregado `ci` verdes; `deploy-hml`, `deploy-prd`, `release` e `submissao` ficaram `skipped`. Isso não comprova nova HML.
+- [ ] **Revisão externa do novo HEAD:** obter revisão de outro integrante antes de integrar a correção na base `fix/medicao-hml-verificavel` e reconferir os checks do HEAD após esta atualização documental. A futura integração altera o HEAD do PR33, exigindo nova CI e nova revisão externa; o PR33 não foi aprovado por esta correção.
+- [ ] **I03-21/25 e G3 — comprovação operacional:** após integração autorizada, executar novamente a HML formal e arquivar run/SHA/ref/horários e regressão pública. Os testes locais não são deploy, medição real de HML ou produção. A falha histórica da run38674290799 permanece; produção, proteções e merges não foram alterados.
 
 Implementação local preparada por DaviSouza78 em13/10/2026: publicadorHML sem recompilação/promoção, preservação de produção/releases/status e integração deploy-hml/Pages/regressão006. [Evidência](../evidencias/deploy-hml.md), [MD011](<Davi Paes/011-012-hml-sondas.md#etapa-011>). Não houve deploy formal ou aceiteG3.
 
@@ -512,3 +530,11 @@ Inventário de28PRsautorais preservado. Snapshot inicial:28abertos/zeroreviews. 
 ### Validação local do fechamento — 14/10/2026
 
 PDF técnico revisado gerado e conferido:6páginas A4, doisprints reais com legendas/origens/datashistóricas e linksdos10INT. Gerador verificado com3casosnegativos(imagemausente, remota e fora dedocs), todos bloqueados comsaída1; ESLintdoscriptaprovado. Lint/tipagem/actionlint globais,270testesunidade/integração e36E2EdoHEADcorrigido passaram localmente; essasprovas não são publicaçãoCI/PRD. Manter I10-17/FIC-12pendentes até artefatoCIacessível e reconferência final.
+
+
+## Reconferência operacional —15/10/2026
+
+- [x] **001/003/040 — PR32 aprovado e integrado:** Lucas/6lucassilvaaa aprovou59dc830 em14/10/2026; integração773af17 em15/10/2026, main padrão, proteção/revisão/CI preservadas. I01-14tem15reviewsdoscolegas mais a revisãoexterna da consolidação; banca/fatoroficial não foram realizados.
+- [ ] **011/I03-21/G3 — corrigir coleta de tempo:** run38674290799 publicou HML0.7.0 e passou regressão pública, mas a ausência dePushEvent nofeed atrasado reprovou a coleta. Correção/testes em [medição HML](../evidencias/medicao-hml-2026-10-15.md), depende de novoPRrevisado e novaexecução. Não declarar jobintegral aprovado.
+- [ ] **019/G4 — produção:** bloqueada corretamente pela falhaHML; sempromoção, releasefinal, rollbacksoperacionais ou DORAmedido nesta execução.
+- [ ] **017/029/031/G6 — pitch:** continua pendente por orientação deLucca. Playtest, TXT/AVA/recibo e banca conservam suas exigências humanas.
