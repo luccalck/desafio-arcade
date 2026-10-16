@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "generatedAt": "2026-10-16T03:52:03.130Z",
+  "generatedAt": "2026-10-16T04:41:25.783Z",
   "period": {
-    "from": "2026-10-02T03:51:53Z",
-    "to": "2026-10-16T03:51:53Z"
+    "from": "2026-10-02T04:41:16Z",
+    "to": "2026-10-16T04:41:16Z"
   },
   "metrics": {
     "deploymentFrequency": {
@@ -21,7 +21,7 @@
       "reason": null
     },
     "changeFailureRate": {
-      "value": 0,
+      "value": 100,
       "unit": "%",
       "samples": 1,
       "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
@@ -51,7 +51,13 @@
       }
     ],
     "issues": [],
-    "rollbacks": []
+    "rollbacks": [
+      {
+        "sha": "88d533e31452036092cd8edef3efa3c0775241dc",
+        "at": "2026-10-16T04:40:39Z",
+        "url": "https://github.com/luccalck/desafio-arcade/commit/4fd98eb49fdde749288d55d4da76471ba74b4a41"
+      }
+    ]
   },
   "definitions": {
     "deploymentFrequency": "Implantações formais bem-sucedidas / dias da janela",
