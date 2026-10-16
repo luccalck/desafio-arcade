@@ -378,3 +378,8 @@ Utilizamos IA para executar smoke/campanhas automatizadas por teclado e toque, r
 ### Três subagentes e correção de feedback —16/10/2026
 
 Lucca solicitou três subagentes para avaliação externa. Utilizamos avaliacao_ia_desktop,avaliacao_ia_toque e avaliacao_ia_acessibilidade em navegadores reais, identificados comoIA; não substituímos pessoas, revisãoGitHub de outro integrante ou banca. Sessões e falhas da automação preservadas em docs/evidencias/avaliacoes-ia-2026-10-16/. A avaliação desktop revelou aviso residual de derrota; a assistência implementou correção restrita em app.ts e regressãoE2E, que falhou antes e passou depois. Sem merge/deploy ou alteração de proteção. Reconciliamos documentos antigos e checks com escopos de ensaio, mantendo direitos/humanos/MTTR/efeitoDORA não comprovados. Revisão técnica assistida não é aprovação humana externa.
+
+
+### Compatibilidade de labels dos alertas de ensaio —16/10/2026
+
+A pedido de Lucca,corrigimos a classificação dos novos alertas do ensaio autorizado:alerta+ensaio, mantendo o marcador que separa DORA operacional e a listagem/recuperação por escopo. O teste da classificação falhou antes;20testes focais passaram depois,assim como lint/tipagem. A separação do MTTR não foi removida para produzir número operacional fictício. Execução real e proveniência serão registradas com seus resultados,sem revisão humana ou pitch inventados.

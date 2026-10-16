@@ -33,3 +33,8 @@ PR34 HEAD95bdd7a com CI verde ainda não tem aprovação externa. Código novo s
 Detalhe de isolamento: os dois alertas serão exercitados com servidor HTTP temporário no próprio runner, respostas404 e atraso real de2,2s, sem backend do produto ou indisponibilidade pública. Isso é ensaio de detecção/reconciliação real, não incidente da produção. Marcadores e MTTR de ensaio separados impedem contaminar o painel operacional.
 
 Proteção adicional: Issues do ensaio recebem label ensaio, não alerta. Assim o coletor antigo já em produção também não as absorve como incidentes antes da integração do filtro novo. Isso não será declarado como atendimento literal do requisito de incidentes operacionais com label alerta.
+
+
+## Compatibilidade de classificação após integração do filtro —16/10/2026
+
+Na implementação inicial, a labelexclusivaensaio protegia o coletor antigo antes da integração do filtro por marcador. Esse filtro já está na main1e3dd3b. Ao corrigir a pendência de classificação solicitada por Lucca, novos alertas do ensaio passam a receber alerta+ensaio automaticamente, conservando título,marcador,alvo temporário e MTTR de ensaio separados. A listagem de ensaio continua usandoensaio; a listagem operacional usaalerta,mas só fecha o marcador operacional. DORA continua excluindo o marcadorensaio. Não alterar labels antigas para simular como foram criadas nem misturar incidentes e ensaios. A regressão de classificação falha antes e passa depois; isolamento/deduplicação/DORA permanecem testados. Esta é correção de compatibilidade do ensaio já autorizado, sem nova estratégia de falha, backend ou impacto de produção.

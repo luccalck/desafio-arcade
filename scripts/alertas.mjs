@@ -23,11 +23,12 @@ export async function reconcileAlerts(report,api,{repo='luccalck/desafio-arcade'
  validate(report);
  const active=report.samples.filter(s=>report.scope==='ensaio'||(s.alvo==='hml'?report.formalHml:report.formalPrd)),actions=[];
  if(!active.length)return {actions,skipped:'Somente preview; sem recuperação/alerta formal.'};
- await api.ensureLabel(report.scope==='ensaio'?'ensaio':'alerta');const open=await api.listOpen(report.scope==='ensaio'?'ensaio':'alerta');
+ const labels=report.scope==='ensaio'?['alerta','ensaio']:['alerta'];
+ for(const label of labels)await api.ensureLabel(label);const open=await api.listOpen(report.scope==='ensaio'?'ensaio':'alerta');
  for(const s of active)for(const kind of kinds){
   const state=alertStates(s)[kind],key=marker(kind,s.alvo,report),matches=open.filter(i=>!i.pull_request&&!i.closed&&i.body?.includes(key));
   if(state==='open'&&!matches.length){
-   const issue=await api.create({title:`${report.scope==='ensaio'?`[Ensaio ${report.exerciseId}] `:''}${kind}: ${s.alvo}`,labels:[report.scope==='ensaio'?'ensaio':'alerta'],body:`${key}\n\n${report.scope==='ensaio'?'ENSAIO CONTROLADO: alvo temporário do runner; não é incidente da produção.\n\n':''}Sonda real em ${s.data}.\n\nAlvo: ${s.url}\nHTTP: ${s.codigo??'desconhecido'}; segundos: ${s.tempo??'desconhecido'}; versão: ${s.versao??'desconhecida'}; SHA: ${s.sha??'desconhecido'}; erro: ${s.erro??'nenhum'}.\n\nOrigem: https://github.com/${repo}/actions/runs/${report.run} (tentativa ${report.runAttempt}).\n\nSem resposta/timeout não é recuperação; este alerta fecha somente com amostra válida normalizada.`});
+   const issue=await api.create({title:`${report.scope==='ensaio'?`[Ensaio ${report.exerciseId}] `:''}${kind}: ${s.alvo}`,labels,body:`${key}\n\n${report.scope==='ensaio'?'ENSAIO CONTROLADO: alvo temporário do runner; não é incidente da produção.\n\n':''}Sonda real em ${s.data}.\n\nAlvo: ${s.url}\nHTTP: ${s.codigo??'desconhecido'}; segundos: ${s.tempo??'desconhecido'}; versão: ${s.versao??'desconhecida'}; SHA: ${s.sha??'desconhecido'}; erro: ${s.erro??'nenhum'}.\n\nOrigem: https://github.com/${repo}/actions/runs/${report.run} (tentativa ${report.runAttempt}).\n\nSem resposta/timeout não é recuperação; este alerta fecha somente com amostra válida normalizada.`});
    open.push(issue);actions.push({kind,target:s.alvo,action:'opened',issue:issue.html_url});
   }else if(state==='close')for(const issue of matches){await api.close(issue);issue.closed=true;actions.push({kind,target:s.alvo,action:'closed',issue:issue.html_url});}
   else actions.push({kind,target:s.alvo,action:state==='hold'?'unknown-preserved':'already-open',issues:matches.map(i=>i.html_url)});
