@@ -46,14 +46,14 @@ As notas 10 são estimativas solicitadas por Lucca, não resultados medidos ou n
 |---|---:|---|---:|---|
 | INT-01 — Repositório e fluxo Git | 10% | | 10 | Registrar revisões reais, integrações e tags; autoria não equivale a aprovação. |
 | INT-02 — GDD como código | 8% | | 10 | 12 seções; PDF da CI auditada tem 18 páginas. Conferir revisão e versão final. |
-| INT-03 — Pipeline CI/CD no GitHub Actions | 15% | | 10 | CI verde comprovada; completar execução formal de HML/PRD e tempo de entrega. |
-| INT-04 — Testes automatizados | 12% | | 10 | CI78c367d:273 unidade/integração,36E2E. HML773af17:4/4; smokePRD formal pendente. |
+| INT-03 — Pipeline CI/CD no GitHub Actions | 15% | | 10 | Run38829484114: CI→HML→PRD→monitor verdes; HML216,414s. Release e recuperação finais permanecem nos respectivosINT. |
+| INT-04 — Testes automatizados | 12% | | 10 | CI88d533e:299 unidade/integração,36E2E; HML4/4 e smokePRD formal aprovados. Reconferir a versão final. |
 | INT-05 — Segurança, licenças e uso de IA | 10% | | 10 | Scanners CI sem achados; conferir inventários/revisão e materiais finais. |
-| INT-06 — Release versionada e empacotada | 10% | | 10 | ZIP HML38674290799:29.025 bytes; sete hashesHTTP e offline verificados. Tag/release formal pendente. |
-| INT-07 — Ambientes, entrega progressiva e rollback | 12% | | 10 | Preparação e testes não comprovam rollout ou recuperação real abaixo de 5 min. |
-| INT-08 — Monitoramento, alertas e métricas DORA | 10% | | 10 | Três coletas reais/6amostras, com versão/HTTP/latência. Painel, incidentes tratados e DORA com eventos formais pendentes. |
+| INT-06 — Release versionada e empacotada | 10% | | 10 | ZIP88d533e:29.000bytes; HML/PRD com14hashesHTTP iguais e ZIP original offline aprovado. GitHub Release por tag ainda pendente. |
+| INT-07 — Ambientes, entrega progressiva e rollback | 12% | | 10 | Rollout azul-verde formal e smoke comprovados. Recuperação automática/manual<5min e continuidade ainda sem ensaio completo. |
+| INT-08 — Monitoramento, alertas e métricas DORA | 10% | | 10 | Sondas formais e painel publicados/testados. Três métricas DORA com uma implantação; MTTR, alerta tratado e melhoria medida pendentes. |
 | INT-09 — Build pública e pacote de submissão | 8% | | 10 | Pacote final/triagem dependem de produção, vídeo real e prazo oficial. |
-| INT-10 — Vídeo pitch e relatório técnico | 5% | | 10 | Relatório em revisão; pitch e banca continuam pendentes. |
+| INT-10 — Vídeo pitch e relatório técnico | 5% | | 10 | Relatório de10páginas gerado/inspecionado na CI9494224; atualizaçãoPR34 exige revisão externa. Pitch, evidências finais e banca pendentes. |
 
 ## 5. Banca — estimativa B
 
@@ -111,33 +111,12 @@ Checklist de conferência do JavaScript, ainda sem aceitar a ficha final:
 
 ## 10. Referências atuais que ainda não são respostas finais
 
-- Preview do jogo: https://luccalck.github.io/desafio-arcade/ .
-- HML do preview: https://luccalck.github.io/desafio-arcade/hml/ .
+- Produção formal do jogo: https://luccalck.github.io/desafio-arcade/ .
+- Homologação formal: https://luccalck.github.io/desafio-arcade/hml/ .
 - Nome do squad: Aura 67.
-- Produção formal, painel/status, vídeo, relatório final, release/tag final e triagem continuam sujeitos às etapas responsáveis. Não preencher os campos finais com URLs presumidas.
+- Produção/HML/painel estão comprovados; vídeo, relatório final publicado na Release, tag e triagem ainda sujeitos às etapas responsáveis. Não inventar links finais.
 
 Este MD reúne os 49 controles de entrada da ficha: 2 do squad/repositório, 12 dos integrantes, 7 links, 20 dos INT (check + nota), 4 notas B e 4 declarações. Os 3 cálculos e 7 validadores são saídas automáticas/conferências, não novos campos. A preservação deste arquivo no Git permite recuperar as respostas mesmo que a aba do professor perca o preenchimento.
-
-
-## 10. Reconferência operacional — 15/10/2026
-
-Mantivemos os 49 campos do HTML e os espaços de respostas desconhecidas. Não preenchemos o HTML, não geramos TXT nem aceitamos declarações. As notas10 continuam estimativas solicitadas, não conclusões de cumprimento ou nota oficial.
-
-| Informação disponível para a conferência final | Situação e fonte |
-|---|---|
-| Homologação observada | https://luccalck.github.io/desafio-arcade/hml/ — HTTP200,0.7.0/SHA773af17; regressão4/4 e sete arquivos idênticos ao ZIP. Job formal ainda falhou na coleta de tempo, por isso não fixamos esta versão como resposta final de entrega. |
-| Última CI verde conferida da correção | Run38674970174, commit78c367d; não publicou produção. |
-| Produção | Raiz ainda preview0.6.0/SHA71933bf. Não copiar como produção formal aceita. |
-| Monitor | Runs38704560758,38744110194 e38770216623 concluídas; CSV6amostras. Painel404 e quatro DORA sem eventos elegíveis. |
-| Revisão/integração | PR32 aprovado por Lucas e integrado; PR33 ainda requer aprovação externa. A conta autora não pode autoaprovar. |
-| Relatório | Relatório candidato gerado na CI38772751460/1, fonteee8f2e4: dez páginas, baixadas/renderizadas/inspecionadas. Artefato no Actions; link público da versão final aguarda release. |
-| Pitch | Pendente por orientação expressa de Lucca. Vídeos automatizados de testes não são pitch. |
-| Tag/pacote/triagem | Não finalizados; pitch e demais entradas verdadeiras continuam obrigatórios. |
-
-Provas e limites: [operação15/10](../evidencias/operacao-2026-10-15.md). Próxima ação de ficha: atualizar estes dados após publicação, manter desconhecidos vazios e só preencher a seção10 do HTML no fechamento autorizado.
-
-
-Revisão complementar de15/10: o PR33 recebeu o commit770449b, que declara pull-requests:read somente no deploy-hml para a consulta de PR associado ao merge. A validação da lógica em78c367d continua histórica; o novo HEAD exige checks e revisão próprios. Runs de reconferência:38772409905(push) e38772414475(PR). A aprovação externa ainda não estava registrada ao preparar este documento. Não alteramos o limite de900s nem a proteção da main.
 
 
 ## 11. Produção formal confirmada — 15/10/2026
@@ -145,3 +124,9 @@ Revisão complementar de15/10: o PR33 recebeu o commit770449b, que declara pull-
 A aprovação de Lucas no PR33 foi conferida no HEADf38f6d9; merge88d533e. Run38829484114/1 concluiu com CI299/36, HML4/4 em216,414s, aprovação real no environmentproducao, promoção azul-verde e smoke da candidata/raiz. Bundle172arquivos, ZIP29.000bytes/hash84105e76a4bd55b5064d466340cb377ea27d49092bae984f65ebdeb7d0d0f937, sete arquivos idênticos emHML/PRD, offline1/1 semrede/erros. Sondas38830013027 confirmam0.7.0/SHA88emambos. Atualizamos somente links agora conhecidos; não marcamos dez integráveis ou declarações finais como atendidos.
 
 DORA: uma implantação em14dias; frequência0,0714286/dia, leadtime5min27s, taxa de falha0% nessa amostra; MTTRsemvalor. Pacote final, pitch, relatório final publicado emrelease, triagem, melhoria/recuperação e ações humanas continuam pendentes. O HTML original e o TXT não foram preenchidos ou gerados.
+
+## 12. O que falta para gerar a ficha verdadeira
+
+Dados de squad, integrantes/RAs/papéis, URLs de produção/HML/CI/painel e estimativas já estão disponíveis neste MD. Faltam o vídeo e o link acessível do relatório final, a conclusão/evidência dos dezINT, a conferência coletiva das quatro declarações (incluindo composição desde02/10 e TRIAGEM APROVADA na v1.0.0) e, por último, transcrição/validação/geração doTXT no HTML. Drive é opcional e só se houver inscrição autorizada.
+
+Relatório candidato mais recente: CI38831325010, SHA9494224, dez páginas,558.832bytes,SHA256d6c866a2c2ef6e9387e0e835e4448180f1c1747d54ef58f7d2809be196a491ae. Arquivado no Actions, ainda não é o link público da versão final da Release. Atualizar oSHA/CI após novas alterações e revisão; não considerar estimativas10 como comprovação dosINT.

@@ -16,7 +16,7 @@ Ao completar um item, trocar somente seu `[ ]` por `[x]` e acrescentar data, SHA
 
 Os identificadores abaixo são estáveis. Não renumerar ao concluir. Não inferir nota pela quantidade de checks: **nota = (0,7 × A + 0,3 × B) × F**, atribuída pelo professor.
 
-## Fontes e evidências desta marcação inicial
+## Fontes e evidências desta marcação inicial — histórico
 
 | ID | Evidência / alcance |
 |---|---|
@@ -85,9 +85,9 @@ Não há mínimo textual de “três commits na mesma área”. A unidade da exi
 - [ ] ARQ-03 — Caminho demonstrável: branch curta → PR → revisão → CI → main → artefato imutável → HML/E2E → aprovação producao → release/rollout → smoke → promoção/rollback → monitoramento/feedback → triagem.
 - [x] ARQ-04 — Jobs existentes usam runners GitHub `ubuntu-latest`. E2.
 - [x] ARQ-05 — Build é construído uma vez e o preview baixa o mesmo ZIP/checksum da CI. E2/E7.
-- [ ] ARQ-06 — Promover esse mesmo artefato da HML aprovada para produção, sem recompilar.
-- [ ] ARQ-07 — Ambiente homologacao integrado ao deploy formal /hml/.
-- [ ] ARQ-08 — Environment producao integrado ao deploy formal, com reviewer obrigatório e aprovação registrada. Configuração existe, deploy ainda não a usa.
+- [x] ARQ-06 — Promover esse mesmo artefato da HML aprovada para produção, sem recompilar. Conciliação15/10: Mesmo ZIP aprovado em HML e produção na run38829484114; catorze hashes HTTP correspondentes, sem recompilar.
+- [x] ARQ-07 — Ambiente homologacao integrado ao deploy formal /hml/. Conciliação15/10: Environment homologacao usado no deploy-hml formal; regressão4/4 e recibo preservados.
+- [x] ARQ-08 — Environment producao integrado ao deploy formal, com reviewer obrigatório e aprovação registrada. Conciliação15/10: Environment producao usado no deploy-prd formal; aprovação real e recibo arquivados na run38829484114.
 - [ ] ARQ-09 — Alertas/métricas retornam ao backlog e orientam mudança real pela esteira.
 - [ ] ARQ-10 — CONDICIONAL Godot: se substituir a stack por export Web, usar configuração sem threads compatível com Pages. Não se aplica à stack atual.
 
@@ -110,7 +110,7 @@ Não há mínimo textual de “três commits na mesma área”. A unidade da exi
 - [ ] I01-15 — Conferir commits de cada pessoa em três ou mais INT e seus PRs aprovados (SQ-10 a SQ-13). Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [ ] I01-16 — `git log --oneline v0.1.0..v1.0.0` conta uma história legível, com tags existentes e autoria real. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [ ] I01-17 — AVANÇADO: histórico exemplar e contribuição equilibrada dos quatro, além de Conventional Commits. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
-- [ ] I01-18 — Restaurar main como branch padrão após merge revisado; até lá apontar PRs explicitamente para main. Preparação interna para a mudança temporária de visualização.
+- [x] I01-18 — Restaurar main como branch padrão após merge revisado. Conciliação15/10: main restaurada como branch padrão, reconferida pela API nesta conciliação; PR32/33 integrados com revisão e CI.
 
 ## INT-02: GDD como código · peso 8% de A
 
@@ -122,7 +122,7 @@ Não há mínimo textual de “três commits na mesma área”. A unidade da exi
 - [x] I02-06 — Wireframes ou telas de menu, HUD e fim existentes. E4: desenhos próprios.
 - [x] I02-07 — Seção Esteira com diagrama e link real do repositório. E4.
 - [x] I02-08 — docs/gdd.md versionado e atualizado na branch candidata. E4.
-- [ ] I02-09 — GDD efetivamente revisado e aprovado por PR por outro integrante. Revisão técnica local025 e PDF em `docs/evidencias/gdd-final.md`; aprovação cruzada pendente.
+- [x] I02-09 — GDD efetivamente revisado e aprovado por PR por outro integrante; novas revisões continuam sujeitas a aprovação. Conciliação15/10: GDD integrado pela consolidaçãoPR32, aprovada porLucas no HEAD59dc830. A revisão027 atualizada no PR34 ainda precisa de nova revisão externa; item é contínuo.
 - [x] I02-10 — Estágio da pipeline converte Markdown em GDD.pdf com ferramenta equivalente documentada. E2/E4.
 - [x] I02-11 — PDF arquivado como artefato do build. E2.
 - [x] I02-12 — PDF abre sem erro: pdfinfo passou e páginas foram inspecionadas. E3/E4.
@@ -375,11 +375,11 @@ Os esqueletos não passam como estão. Nomes/estrutura exemplificados não obrig
 - [x] KIT-10 — Cache npm e checkout com histórico para scanner nos jobs atuais. E2.
 - [x] KIT-11 — Corrigir lacuna SemVer no version.json do exemplo. E5/E7: version 0.6.0 presente.
 - [ ] KIT-12 — Configurar Settings Pages com origem conforme requisito ou equivalência validada (I07-01).
-- [ ] KIT-13 — Integrar homologacao e producao nos jobs; producao com reviewer obrigatório (ARQ-07/08).
+- [x] KIT-13 — Integrar homologacao e producao nos jobs; producao com reviewer obrigatório (ARQ-07/08). Conciliação15/10: Environments integrados e usados na execução formal38829484114, com reviewer obrigatório e aprovação registrada em producao.
 - [x] KIT-14 — SITE_URL pública configurada em13/10/2026 com https://luccalck.github.io/desafio-arcade e destinos derivados documentados/verificados no [passo003](../evidencias/configuracao-github.md). Integração nos jobs formais/sondas/triagem permanece nos respectivos checks.
-- [ ] KIT-15 — Esperar propagação do Pages com tentativa limitada antes dos E2E formais de HML.
+- [x] KIT-15 — Esperar propagação do Pages com tentativa limitada antes dos E2E formais de HML. Conciliação15/10: Espera limitada de propagação executada no deploy-hml formal, seguida de quatro cenários públicos aprovados.
 - [x] KIT-16 — Publicação atual não cancela um deploy em andamento: grupo pages-preview cancel-in-progress false. E2.
-- [ ] KIT-17 — Preservar essa proteção de concorrência no deploy/rollout formal; serializar mudanças de ponteiro.
+- [x] KIT-17 — Preservar essa proteção de concorrência no deploy/rollout formal; serializar mudanças de ponteiro. Conciliação15/10: Concorrência de publicação/rollout serializada no workflow integrado e usada no deploy formal; ensaio de colisão/falha parcial ainda pertence à recuperação.
 - [ ] KIT-18 — Implementar ações canario/promover/rollback ou equivalentes da estratégia escolhida, com commit ator/motivo (I07).
 - [ ] KIT-19 — Carregador formal trata versão retirada, falha de leitura e armazenamento indisponível; reconferir sob rollout real.
 - [ ] KIT-20 — Completar promoção após observação e notificação de falha: TODO do workflow (I03-24/I07).
@@ -559,8 +559,8 @@ Este checklist não substitui entradas → ações → saídas → aceites dos r
 - [ ] G0 — Preparação: equipe registrada, acessos funcionando, estratégia Git e proteção preparadas. **Primeiro aceite incompleto.**
 - [ ] G1 — Definição: mecânica/aprendizagem/fluxo/stack definidos e backlog compreendido pelos quatro.
 - [ ] G2 — Base: clone limpo gera jogo/PDF; checks bloqueiam erros e segredos; ciclo jogável e ativos integrados.
-- [ ] G3 — Homologação: /hml/ formal funciona, regressão completa passa e pacote offline é jogável.
-- [ ] G4 — Produção controlada: mesma build, aprovação registrada, monitoramento ativo e versão verificável.
+- [x] G3 — Homologação: /hml/ formal funciona, regressão completa passa e pacote offline é jogável. Conciliação15/10: Homologação formal da candidata88d533e: HML4/4,216,414s, ZIP original offline e recibo de aceite. Conferência final da tag permanece obrigatória.
+- [x] G4 — Produção controlada: mesma build, aprovação registrada, monitoramento ativo e versão verificável. Conciliação15/10: Produção controlada da candidata88d533e: mesmo ZIP, aprovação registrada, smoke, monitor pós-produção e versão verificável; recuperação é G5.
 - [ ] G5 — Recuperação/dados: rollback comprovado, Issues tratadas, DORA real, bug/regressão e playtest documentados.
 - [ ] G6 — Comunicação: vídeo válido/legendado, documentos completos, componentes prontos para tag final.
 - [ ] G7 — Fechamento: release final executada, hashes conferidos, triagem aprovada na tag.
@@ -610,7 +610,9 @@ Preparação017/018 — 14/10/2026: [roteiro/legendas e concordâncias](../evide
 Preparação019/020 — 14/10/2026, DaviSouza78: promoção por mesmo artefato/recibo HML/aprovação/azul-verde/recuperação e monitor pós-produção implementados; painel estático/contrato DORA funcionais localmente,235 testes/36E2E, core97,90%, lint/build/actionlint sem ShellCheck. /status/ e observabilidade públicos404, sem aprovação ou produção formal. [Produção](../evidencias/producao.md), [painel](../evidencias/painel-status.md) e [passagem](../execucao/10-passagem-davi-miguel.md). Nenhum check operacional019/020/G4 foi fechado por preparação, configuração ou fixture; conferir registro único antes de marcar. DORA024, recuperação observada022/026 e aceites humanos permanecem atribuídos.
 
 
-Reconferência operacional15/10/2026: fechados somente itens específicos com prova em [operação](../evidencias/operacao-2026-10-15.md). HML4/4 pública, ZIPoriginal offline1/1 e sete hashesHTTP confirmados; monitor3runs/6amostras. Produção formal, abertura/fechamento de alertas, recuperação medida<5min, painel, DORA com eventos, pitch e pacote final continuam abertos. O PR33 não tem revisão externa registrada nesta consulta.
+Registro histórico anterior à produção formal, superado pela reconferência seguinte. Reconferência operacional15/10/2026: fechados somente itens específicos com prova em [operação](../evidencias/operacao-2026-10-15.md). HML4/4 pública, ZIPoriginal offline1/1 e sete hashesHTTP confirmados; monitor3runs/6amostras. Produção formal, abertura/fechamento de alertas, recuperação medida<5min, painel, DORA com eventos, pitch e pacote final continuam abertos. O PR33 não tem revisão externa registrada nesta consulta.
 
 
 Reconferência após produção —15/10/2026: run38829484114/1 integralmente verde, HML216,414s, PRDazul-verde aprovada e smoke/14hashesHTTP, ZIPoriginal88offline1/1, monitorpósPRD38830013027 e painel reais. MTTR, alertas tratados, recuperação<5min, melhoria medida, tag/release/submissão e ações humanas seguem pendentes. Provas emoperacao-2026-10-15; não confundir essa implantação com entrega acadêmica final.
+
+Conciliação das pendências15/10: atualizados itens específicos com prova operacional e revisão/integração. Consulte [estado vigente dos40passos](../execucao/05-pendencias-por-passo.md) e [lacunas do HTML porINT](../evidencias/conciliacao-pendencias-2026-10-15.md). Condicionais não adotados não são trabalho obrigatório faltante; direitos, release final, recuperação/alertas e ações humanas mantêm seus critérios próprios.

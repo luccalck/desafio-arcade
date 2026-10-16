@@ -340,3 +340,7 @@ Usamos Codex, sob orientação de Lucca, para conferir a aprovação real de Luc
 ## Publicação e documentação baseada em evidências — 15/10/2026
 
 Usamos Codex sob orientação de Lucca para verificar a aprovação de Lucas no PR33, integrar sem bypass, acompanhar CI/HML e aprovar a implantação em producao conforme autorização prévia. A run38829484114 publicou SHA88d533e; conferimos smoke, catorze hashes HTTP, ZIP original offline, sondas38830013027 e painel real. Registramos dados brutos e limites no GDD, checklist, ficha persistente, relatório de dez páginas e pendências. Três métricas DORA têm uma amostra; MTTR, recuperação completa, alertas reais e playtest humano não foram inventados. Pitch permanece pendente. O PR34 precisa de revisão externa no novo HEAD; não houve autoaprovação ou preenchimento do HTML final.
+
+## Conciliação do estado das pendências — 15/10/2026
+
+Lucca apontou checks desatualizados e pediu confronto com o HTML inteiro. Usamos Codex para reler conteúdo instrucional e JavaScript da ficha, reconferir colaboradores/main/Pages/reviews/tags/releases e CIs na API e comparar evidências preservadas. Reorganizamos as mesmas quarenta etapas com estado vigente e arquivamos integralmente o histórico anterior, sem apagar falhas ou criar revisões. Atualizamos dez checks específicos com provas existentes e corrigimos a ficha persistente; não marcamos recuperação, alertas, pitch, release, triagem, banca ou nota sem evidência. O HTML original permaneceu intacto. Esta atualização no PR34 altera o HEAD e exige revisão externa da versão nova.
