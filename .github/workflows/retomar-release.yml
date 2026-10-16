@@ -1,0 +1,95 @@
+name: Retomar publicação de Release homologada
+on:
+  workflow_dispatch:
+    inputs:
+      source_run:
+        description: Run original da esteira com CI/HML/PRD/monitor aprovados
+        required: true
+        type: string
+      source_attempt:
+        description: Tentativa exata do bundle homologado
+        required: true
+        type: string
+      source_tag:
+        description: Tag anotada original, sem mover ou recriar
+        required: true
+        type: string
+      source_sha:
+        description: SHA original aprovado e atualmente em produção
+        required: true
+        type: string
+permissions:
+  contents: read
+concurrency:
+  group: release-${{ inputs.source_tag }}
+  cancel-in-progress: false
+env:
+  SOURCE_RUN: ${{ inputs.source_run }}
+  SOURCE_ATTEMPT: ${{ inputs.source_attempt }}
+  SOURCE_TAG: ${{ inputs.source_tag }}
+  SOURCE_SHA: ${{ inputs.source_sha }}
+jobs:
+  validar:
+    if: github.ref == 'refs/heads/main' && vars.FORMAL_RELEASE_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      actions: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+      - run: npm ci
+      - name: Recusar origem sem gates integralmente aprovados
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: node scripts/retomar-release.mjs validar
+  publicar:
+    needs: validar
+    if: github.ref == 'refs/heads/main' && needs.validar.result == 'success'
+    environment: producao
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: read
+      pull-requests: read
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7.1.0
+        with:
+          node-version: '24.15.0'
+      - run: npm ci
+      - name: Checkout exato da origem, separado do publicador revisado
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          ref: ${{ inputs.source_sha }}
+          path: origem
+          fetch-depth: 0
+          persist-credentials: false
+      - name: Consumir exclusivamente o bundle original
+        uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8.0.2
+        with:
+          name: pacote-ci-${{ inputs.source_sha }}-${{ inputs.source_run }}-${{ inputs.source_attempt }}
+          run-id: ${{ inputs.source_run }}
+          github-token: ${{ github.token }}
+          path: pacote-original
+      - name: Publicar somente anexos já homologados, sem build ou deploy
+        working-directory: origem
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_NOTES_SHA256: ${{ vars.RELEASE_NOTES_SHA256 }}
+          SITE_URL: ${{ vars.SITE_URL }}
+        run: node ../scripts/retomar-release.mjs publicar ../pacote-original
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always()
+        with:
+          name: retomada-release-${{ github.run_id }}-${{ github.run_attempt }}
+          path: reports/retomada-release.json
+          if-no-files-found: warn
