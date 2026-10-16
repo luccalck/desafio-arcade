@@ -21,7 +21,7 @@ on:
 permissions:
   contents: read
 concurrency:
-  group: release-${{ inputs.source_tag }}
+  group: release-refs/tags/${{ inputs.source_tag }}
   cancel-in-progress: false
 env:
   SOURCE_RUN: ${{ inputs.source_run }}
