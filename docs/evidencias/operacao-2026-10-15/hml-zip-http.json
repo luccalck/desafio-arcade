@@ -1,0 +1,67 @@
+{
+  "date": "2026-10-15T16:37:29.394Z",
+  "sourceRun": "38674290799",
+  "sourceAttempt": "1",
+  "sourceSha": "773af17db29bb9fc46bfe438c0cb9c8304fbd5f5",
+  "zipBytes": 29025,
+  "zipSha256": "cedfa3b16b12e09fd77beaf9d8f9963b7341a9504bde5467ae8e19d617ba6a70",
+  "comparisons": [
+    {
+      "file": "index.html",
+      "url": "https://luccalck.github.io/desafio-arcade/hml/index.html",
+      "http": 200,
+      "zipSha256": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282",
+      "httpSha256": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282",
+      "equal": true
+    },
+    {
+      "file": "style.css",
+      "url": "https://luccalck.github.io/desafio-arcade/hml/style.css",
+      "http": 200,
+      "zipSha256": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da",
+      "httpSha256": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da",
+      "equal": true
+    },
+    {
+      "file": "game.js",
+      "url": "https://luccalck.github.io/desafio-arcade/hml/game.js",
+      "http": 200,
+      "zipSha256": "8d72a14e6d5c62506401c6ae977a8c58177039828d6356cc5f4f4dfead28258e",
+      "httpSha256": "8d72a14e6d5c62506401c6ae977a8c58177039828d6356cc5f4f4dfead28258e",
+      "equal": true
+    },
+    {
+      "file": "version.json",
+      "url": "https://luccalck.github.io/desafio-arcade/hml/version.json",
+      "http": 200,
+      "zipSha256": "b0136499683e4495955c22dd3fac2500f2da8a7f874978a8ebaee9815cbc0b26",
+      "httpSha256": "b0136499683e4495955c22dd3fac2500f2da8a7f874978a8ebaee9815cbc0b26",
+      "equal": true
+    },
+    {
+      "file": "LEIA-ME.txt",
+      "url": "https://luccalck.github.io/desafio-arcade/hml/LEIA-ME.txt",
+      "http": 200,
+      "zipSha256": "3f142d31d6128d5d7c107232d678896d3e38e622ddfe325a6bd8310b2fdc1bd9",
+      "httpSha256": "3f142d31d6128d5d7c107232d678896d3e38e622ddfe325a6bd8310b2fdc1bd9",
+      "equal": true
+    },
+    {
+      "file": "LICENSE.txt",
+      "url": "https://luccalck.github.io/desafio-arcade/hml/LICENSE.txt",
+      "http": 200,
+      "zipSha256": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb",
+      "httpSha256": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb",
+      "equal": true
+    },
+    {
+      "file": "THIRD_PARTY.txt",
+      "url": "https://luccalck.github.io/desafio-arcade/hml/THIRD_PARTY.txt",
+      "http": 200,
+      "zipSha256": "f8ccfd58801d41bab1cb27568d0ff04a5006b580e97437defe58c189930d6013",
+      "httpSha256": "f8ccfd58801d41bab1cb27568d0ff04a5006b580e97437defe58c189930d6013",
+      "equal": true
+    }
+  ],
+  "passed": true
+}

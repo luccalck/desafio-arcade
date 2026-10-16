@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-10-16T03:52:03.130Z",
+  "period": {
+    "from": "2026-10-02T03:51:53Z",
+    "to": "2026-10-16T03:51:53Z"
+  },
+  "metrics": {
+    "deploymentFrequency": {
+      "value": 0.07142857142857142,
+      "unit": "deploys/dia",
+      "samples": 1,
+      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
+      "reason": null
+    },
+    "leadTime": {
+      "value": 0.09083333333333334,
+      "unit": "horas",
+      "samples": 1,
+      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
+      "reason": null
+    },
+    "changeFailureRate": {
+      "value": 0,
+      "unit": "%",
+      "samples": 1,
+      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
+      "reason": null
+    },
+    "mttr": {
+      "value": null,
+      "unit": "minutos",
+      "samples": 0,
+      "source": null,
+      "reason": "Sem Issue de alerta aberta e fechada na janela."
+    }
+  },
+  "baseline": {
+    "carpartsDays": 11,
+    "leadTimeDays": 0.0037847222222222223
+  },
+  "evidence": {
+    "deploys": [
+      {
+        "sha": "88d533e31452036092cd8edef3efa3c0775241dc",
+        "at": "2026-10-16T00:31:49Z",
+        "url": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
+        "run": 38829484114,
+        "promotionUrl": "https://github.com/luccalck/desafio-arcade/commit/67ce33d24e7dc073894b989cada0a9c590865580",
+        "timing": "deploy-prd-concluido-com-smoke"
+      }
+    ],
+    "issues": [],
+    "rollbacks": []
+  },
+  "definitions": {
+    "deploymentFrequency": "Implantações formais bem-sucedidas / dias da janela",
+    "leadTime": "Média entre data do commit e término do deploy-prd aprovado; virada seguida de falha usa horário do commit de controle, sem afirmar confirmação CDN",
+    "changeFailureRate": "Implantações formais seguidas de rollback correlacionado / implantações formais",
+    "mttr": "Média da abertura ao fechamento de Issues de alerta"
+  }
+}

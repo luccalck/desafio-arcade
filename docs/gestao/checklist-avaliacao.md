@@ -16,7 +16,7 @@ Ao completar um item, trocar somente seu `[ ]` por `[x]` e acrescentar data, SHA
 
 Os identificadores abaixo são estáveis. Não renumerar ao concluir. Não inferir nota pela quantidade de checks: **nota = (0,7 × A + 0,3 × B) × F**, atribuída pelo professor.
 
-## Fontes e evidências desta marcação inicial
+## Fontes e evidências desta marcação inicial — histórico
 
 | ID | Evidência / alcance |
 |---|---|
@@ -85,9 +85,9 @@ Não há mínimo textual de “três commits na mesma área”. A unidade da exi
 - [ ] ARQ-03 — Caminho demonstrável: branch curta → PR → revisão → CI → main → artefato imutável → HML/E2E → aprovação producao → release/rollout → smoke → promoção/rollback → monitoramento/feedback → triagem.
 - [x] ARQ-04 — Jobs existentes usam runners GitHub `ubuntu-latest`. E2.
 - [x] ARQ-05 — Build é construído uma vez e o preview baixa o mesmo ZIP/checksum da CI. E2/E7.
-- [ ] ARQ-06 — Promover esse mesmo artefato da HML aprovada para produção, sem recompilar.
-- [ ] ARQ-07 — Ambiente homologacao integrado ao deploy formal /hml/.
-- [ ] ARQ-08 — Environment producao integrado ao deploy formal, com reviewer obrigatório e aprovação registrada. Configuração existe, deploy ainda não a usa.
+- [x] ARQ-06 — Promover esse mesmo artefato da HML aprovada para produção, sem recompilar. Conciliação15/10: Mesmo ZIP aprovado em HML e produção na run38829484114; catorze hashes HTTP correspondentes, sem recompilar.
+- [x] ARQ-07 — Ambiente homologacao integrado ao deploy formal /hml/. Conciliação15/10: Environment homologacao usado no deploy-hml formal; regressão4/4 e recibo preservados.
+- [x] ARQ-08 — Environment producao integrado ao deploy formal, com reviewer obrigatório e aprovação registrada. Conciliação15/10: Environment producao usado no deploy-prd formal; aprovação real e recibo arquivados na run38829484114.
 - [ ] ARQ-09 — Alertas/métricas retornam ao backlog e orientam mudança real pela esteira.
 - [ ] ARQ-10 — CONDICIONAL Godot: se substituir a stack por export Web, usar configuração sem threads compatível com Pages. Não se aplica à stack atual.
 
@@ -110,7 +110,7 @@ Não há mínimo textual de “três commits na mesma área”. A unidade da exi
 - [ ] I01-15 — Conferir commits de cada pessoa em três ou mais INT e seus PRs aprovados (SQ-10 a SQ-13). Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [ ] I01-16 — `git log --oneline v0.1.0..v1.0.0` conta uma história legível, com tags existentes e autoria real. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [ ] I01-17 — AVANÇADO: histórico exemplar e contribuição equilibrada dos quatro, além de Conventional Commits. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
-- [ ] I01-18 — Restaurar main como branch padrão após merge revisado; até lá apontar PRs explicitamente para main. Preparação interna para a mudança temporária de visualização.
+- [x] I01-18 — Restaurar main como branch padrão após merge revisado. Conciliação15/10: main restaurada como branch padrão, reconferida pela API nesta conciliação; PR32/33 integrados com revisão e CI.
 
 ## INT-02: GDD como código · peso 8% de A
 
@@ -122,7 +122,7 @@ Não há mínimo textual de “três commits na mesma área”. A unidade da exi
 - [x] I02-06 — Wireframes ou telas de menu, HUD e fim existentes. E4: desenhos próprios.
 - [x] I02-07 — Seção Esteira com diagrama e link real do repositório. E4.
 - [x] I02-08 — docs/gdd.md versionado e atualizado na branch candidata. E4.
-- [ ] I02-09 — GDD efetivamente revisado e aprovado por PR por outro integrante. Revisão técnica local025 e PDF em `docs/evidencias/gdd-final.md`; aprovação cruzada pendente.
+- [x] I02-09 — GDD efetivamente revisado e aprovado por PR por outro integrante; novas revisões continuam sujeitas a aprovação. Conciliação15/10: GDD integrado pela consolidaçãoPR32, aprovada porLucas no HEAD59dc830. A revisão027 atualizada no PR34 ainda precisa de nova revisão externa; item é contínuo.
 - [x] I02-10 — Estágio da pipeline converte Markdown em GDD.pdf com ferramenta equivalente documentada. E2/E4.
 - [x] I02-11 — PDF arquivado como artefato do build. E2.
 - [x] I02-12 — PDF abre sem erro: pdfinfo passou e páginas foram inspecionadas. E3/E4.
@@ -161,23 +161,23 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I03-06 — Unidade/integração executadas com JUnit e cobertura. E2/E3.
 - [x] I03-07 — Segurança Gitleaks/npm audit/SBOM integrada e bloqueante conforme INT-05. E2.
 - [x] I03-08 — Build do jogo, GDD.pdf e build.zip automatizados. E2/E7.
-- [ ] I03-09 — Clone limpo reproduz esteira formal completa, sem passos ocultos/configuração local indispensável. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [x] I03-09 — Checkout limpo dos jobs da run38829484114/1 executou CI→HML→PRD e monitor com sucesso, consumindo bundle verificado e configuração versionada/variables. Aprovação de produção registrada. Reconferir na tag final. [Provas](../evidencias/operacao-2026-10-15.md).
 - [x] I03-10 — Status check ci obrigatório na main. E1.
 - [x] I03-11 — Credenciais usadas pelo workflow via secrets/token do GitHub; configuração não sensível via variables. E2/E6.
 - [x] I03-12 — Permissões mínimas declaradas nos jobs atuais. E2.
 - [x] I03-13 — CONTÍNUO: revisar permissões/secrets/variables após adicionar deploys, sondas e triagem. Revisado: contents:read padrão, permissões mínimas restritas a jobs específicos, secrets em repositório sem vazamento em logs. [Evidência 036](../evidencias/triagem-final.md).
 - [x] I03-14 — Relatórios, PDF, ZIP/checksum e SBOM publicados como artefatos da CI, inclusive diagnósticos de falha previstos. E2.
-- [ ] I03-15 — Job deploy-hml formal depende de ci e publica o artefato aprovado em /hml/.
-- [ ] I03-16 — Regressão E2E contra a URL real da HML a cada deploy, com roteiro completo de INT-04.
-- [ ] I03-17 — Job deploy-prd depende do sucesso da HML e usa environment producao com reviewer obrigatório.
+- [x] I03-15 — deploy-hml formal passou na run38829484114, SHA88d533e, após ci verde, publicando o mesmo ZIP verificado e recibo de sete hashes. [Recibo](../evidencias/operacao-2026-10-15/hml-88-aceite.json).
+- [x] I03-16 — Regressão E2E executada contra HML da main773af17 na run38674290799 (4/4), reconferida em15/10/2026 (4/4 desktop/toque). O job HML completo continuou vermelho na coleta de tempo. [Provas](../evidencias/operacao-2026-10-15.md).
+- [x] I03-17 — deploy-prd executou após HML bem-sucedida e aprovação real do environmentproducao, mantendo reviewer e proteção. [Prova](../evidencias/operacao-2026-10-15/prd-88-recibo.json).
 - [ ] I03-18 — Produção integra publicação de release, estratégia progressiva, smoke e rollback.
-- [ ] I03-19 — Executar aprovação real no environment e preservar seu registro.
-- [ ] I03-20 — Esteira formal automática, sem passo manual além da aprovação de produção; não confundir workflow_dispatch de rollback com produção manual.
-- [ ] I03-21 — Medir tempo real de push até HML formal ≤15 minutos; registrar horários/execução.
+- [x] I03-19 — Aprovação real de luccalck no environmentproducao da run38829484114/1 registrada, conforme política existente; sem bypass ou mudança de regras. [API](../evidencias/operacao-2026-10-15/aprovacoes-38829484114.json).
+- [x] I03-20 — Push do merge33 na main disparou CI→HML→PRD→monitor automaticamente; única aprovação manual prevista emproducao. Run38829484114 integralmente verde; release por tag e submissão final continuam separadas. [Jobs](../evidencias/operacao-2026-10-15/jobs-38829484114.json).
+- [x] I03-21 — Push→HML formal medido em216,414s, abaixo de900s, run38829484114/1 SHA88d533e. Fonte merged_at do merge exato e conclusão da regressão, sem usar created_at do run. [Medição](../evidencias/operacao-2026-10-15/hml-88-tempo.json).
 - [x] I03-22 — AVANÇADO: estágios independentes paralelos na CI. E2: qualidade/segurança/build/E2E.
 - [x] I03-23 — AVANÇADO: cache de dependências configurado e utilizado pela CI. E2/setup-node.
 - [ ] I03-24 — AVANÇADO: notificações da esteira implementadas e recebimento comprovado.
-- [ ] I03-25 — AVANÇADO: prazo ≤15 minutos comprovado na esteira formal (mesmo item I03-21, não satisfeito pelo preview).
+- [x] I03-25 — AVANÇADO: prazo HML comprovado em216,414s na esteira formal38829484114, com regressão, recibo e hashes aprovados. [Medição](../evidencias/operacao-2026-10-15/hml-88-tempo.json).
 
 ## INT-04: Testes automatizados · peso 12% de A
 
@@ -188,16 +188,16 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I04-05 — Carregamento e validação de schema do conteúdo JSON testados. E3.
 - [x] I04-06 — JSON inválido quebra a build. E3/E7.
 - [x] I04-07 — Pelo menos dois cenários E2E de navegador. E3: quinze originais; [regressão006](../evidencias/regressao-hml.md):17locais verdes e5cenários no preview público em13/10/2026.
-- [ ] I04-08 — Roteiro completo preparado/validado no006, inclusive vitória e reinício; fechar após execução formal da HML no011. [Evidências](../evidencias/regressao-hml.md).
-- [ ] I04-09 — Essa regressão roda contra HML a cada deploy formal; módulo006 entregue ao011, ainda não integrado/executado como job formal.
-- [ ] I04-10 — Smoke reduzido roda contra URL pública depois do deploy formal de produção.
+- [x] I04-08 — Roteiro completo executado na HML da main773af17: cinco missões, 23 casos finais, vitória700XP e reinício, desktop/toque, 4/4 na CI e 4/4 na reconferência15/10. [Provas](../evidencias/operacao-2026-10-15.md).
+- [x] I04-09 — Regressão integrada ao deploy-hml formal e executada na run38674290799, antes da etapa de medição que falhou. O gate impediu PRD; preservar esse comportamento nos próximos deploys. [Provas](../evidencias/operacao-2026-10-15.md).
+- [x] I04-10 — Smoke público da candidata e da raiz executados antes/depois da virada azul-verde, run38829484114/1; fonte88d533e,0.7.0, passou sem erros. [Smoke](../evidencias/operacao-2026-10-15/prd-88-smoke.json).
 - [x] I04-11 — Teste falhando impede o check ci e bloqueia merge na main. E1/E2.
 - [x] I04-12 — Bug real encontrado por teste, corrigido com regressão correspondente. E3: foco/regra antiga/exportação Python, registros em docs/evidencias.
 - [x] I04-13 — Citar bug, falha anterior, correção e teste no relatório técnico final, com links reais. Citados em docs/relatorio.md e artifacts/RelatorioTecnico.pdf Seção 4: bug-regra-antiga (workshop.spec.mjs, commit 76b7797) e bug-foco (Issue #1).
 - [ ] I04-14 — CONDICIONAL Opal/AI Studio: se usados para conteúdo, eval/golden.jsonl valida formato antes de entrar no jogo. Não usados atualmente; não criar evidência fictícia de golden eval.
 - [x] I04-15 — AVANÇADO: cobertura acima da meta. E3.
 - [x] I04-16 — AVANÇADO: bug real capturado por teste de regressão. E3; apresentado no relatório técnico (I04-13).
-- [x] I04-17 — CONTÍNUO/FINAL: manter pirâmide e gates verdes na candidata/tag de entrega, sem bugs bloqueantes escondidos. Validado na candidata v0.6.0 por Lucas Souza em 14/10/2026: 260 testes unit/integ (97.9% core), 36 E2E Playwright verdes, lint 0 erros, build/reproducibility bit a bit. [Evidência 034](../evidencias/aceite-candidata.md).
+- [x] I04-17 — CONTÍNUO/FINAL: candidata0.7.0/78c367d com273testes unidade/integração e36E2E, lint/segurança/build/reprodutibilidade verdes na CI38674970174. Tag acadêmica final exige nova conferência; não há aceite antecipado. [Provas](../evidencias/operacao-2026-10-15.md).
 
 ## INT-05: Segurança, licenças e IA · peso 10% de A
 
@@ -248,25 +248,25 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 
 ## INT-07: Ambientes, entrega e rollback · peso 12% de A
 
-- [ ] I07-01 — Pages configurado com gh-pages como origem, conforme HTML; atual build_type é workflow. Alinhar ou validar equivalência fundamentada antes do aceite.
+- [x] I07-01 — Publicação por equivalência técnica declarada: PagesActions publica a árvore gh-pages escrita pela pipeline, preservando mesmos bytes, ambientes e gates; configuração é build_type=workflow e não a opção literal Deploy from a branch. Justificativa e validação em [Pages](../evidencias/pages-equivalencia-2026-10-16.md).
 - [x] I07-02 — gh-pages escrito apenas pela pipeline nas publicações atuais. E2/E7.
 - [x] I07-03 — CONTÍNUO: histórico gh-pages consultado na auditoria contém apenas publicação pelo bot deActions, sem alteração manual observada. Preservar esse controle e reconferir publicações formais/recuperação; não equivale a execução dePRD.
-- [ ] I07-04 — /hml/ contém último build da main aprovado no CI. Atual HML é preview da feature.
+- [x] I07-04 — /hml/ contém a build0.7.0 da main773af17 aprovada no CI; os sete arquivos HTTP são idênticos ao ZIP38674290799/1. Isso não declara aceite integral do job HML. Conferência15/10. [Provas](../evidencias/operacao-2026-10-15.md).
 - [x] I07-05 — Releases do preview em /releases/<sha>/, preservadas sem sobrescrever conteúdo. E2/E7.
-- [ ] I07-06 — Releases formais de produção imutáveis, com teste/evidência dessa propriedade.
+- [x] I07-06 — Release formal /releases/88d533e preservada nas etapas candidata/virada; contratos de imutabilidade testados na CI e sete hashes públicos iguais ao ZIP. Não equivale a GitHub Release por tag. [Prova](../evidencias/operacao-2026-10-15/hashes-88-publicos.json).
 - [x] I07-07 — /index.html carrega controle de rollout e redireciona para versão. E5/E7.
-- [ ] I07-08 — rollout.json formal contém estavel, anterior, canario e percentual. Preview usa activeSha/previousSha/strategy.
-- [ ] I07-09 — Escolher/documentar uma estratégia formal: canário OU azul-verde.
+- [x] I07-08 — rollout formal público contém estavel88d533e, anterior71933bf, canario=null e percentual=0, strategyazul-verde. [Ponteiro](../evidencias/operacao-2026-10-15/rollout-88-publico.json).
+- [x] I07-09 — Estratégia azul-verde documentada e executada na run38829484114, com smoke da candidata antes da virada e da raiz depois. [Jobs](../evidencias/operacao-2026-10-15/jobs-38829484114.json).
 - [ ] I07-10 — CONDICIONAL canário: distribuir aproximadamente 10% das sessões à nova versão.
 - [ ] I07-11 — CONDICIONAL canário: smoke e período de observação comprovados antes de promover a 100%.
-- [ ] I07-12 — CONDICIONAL azul-verde: publicar/testar versão nova em sua pasta antes da troca.
-- [ ] I07-13 — CONDICIONAL azul-verde: virar estavel de uma vez, mantendo referência à anterior; percentual 0 durante preparação.
+- [x] I07-12 — CONDICIONAL azul-verde aplicado: candidata publicada em sua pasta imutável e testada antes da troca. [Smoke](../evidencias/operacao-2026-10-15/prd-88-candidata-smoke.json).
+- [x] I07-13 — CONDICIONAL azul-verde aplicado: estavel passou para88d533e, anterior71933bf mantida, candidata sem tráfego durante preparação e canario retirado após promoção. [Ponteiro](../evidencias/operacao-2026-10-15/rollout-88-publico.json).
 - [x] I07-14 — Preview preserva versão do jogador durante a sessão quando ainda válida. E7/testes Pages.
 - [ ] I07-15 — Validar manutenção de versão na sessão sob a estratégia formal, inclusive retirada da versão defeituosa e armazenamento indisponível.
 - [ ] I07-16 — Smoke de produção falhando dispara rollback automático pela pipeline. Contrato e testes locais reforçados no022 (`docs/evidencias/rollback-automatico.md`); falta execução formal observada.
 - [ ] I07-17 — Rollback restaura estavel para anterior e retira canário defeituoso, sem recompilar. Hashes/HTTP da baseline testados localmente no022; falta prova no Pages.
 - [ ] I07-18 — rollback.yml com workflow_dispatch para recuperação manual pela pipeline. Código e testes locais da etapa023 em `docs/evidencias/rollback-manual.md`; dispatch protegido, recuperação/CI/revisão reais ainda pendentes.
-- [ ] I07-19 — Histórico gh-pages registra mudanças em rollout.json, quem disparou e por quê.
+- [x] I07-19 — Histórico gh-pages registra ator/motivo/run da promoção: commit67ce33d, bot Actions, atorluccalck, motivo promover, execução38829484114/1. Fonte ligada no DORA real. [Evidência](../evidencias/operacao-2026-10-15/dora-38830013027.json).
 - [ ] I07-20 — Ensaio com versão defeituosa proposital, controlado e rastreável. Preflight/roteiro em `docs/evidencias/ensaio-recuperacao.md`; sem execução formal.
 - [ ] I07-21 — Detecção da falha por alerta ou smoke, com evidência real. Testes locais não substituem detecção operacional026.
 - [ ] I07-22 — Cronometrar recuperação <5 minutos, incluindo propagação Pages. Nenhum intervalo operacional medido026.
@@ -277,13 +277,13 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 ## INT-08: Monitoramento, alertas e DORA · peso 10% de A
 
 - [x] I08-01 — monitor.yml versionado com schedule a cada quinze minutos. 13/10/2026, commit b3d5353/PR#15 e CIs38501135262/38501139202 SUCCESS; arquivo/cron comprovados, monitor ainda inativo e execução/persistência pendentes.
-- [ ] I08-02 — Sondar produção formal.
-- [ ] I08-03 — Sondar homologação formal.
-- [ ] I08-04 — Registrar código HTTP de cada alvo.
-- [ ] I08-05 — Registrar tempo de resposta de cada alvo.
-- [ ] I08-06 — Registrar versão servida obtida de version.json.
-- [ ] I08-07 — Acumular resultados em status/sondas.csv, com data/alvo/código/tempo e versão registrada.
-- [ ] I08-08 — Dados na branch observabilidade; cada sonda não dispara publicação Pages.
+- [x] I08-02 — Sonda pós-produção38830013027 verificou PRD formal0.7.0/SHA88d533e, HTTP200,0,033560s e sem erro; gate pós-produção passou. [Sonda](../evidencias/operacao-2026-10-15/sondas-38830013027.json).
+- [x] I08-03 — Sondar HML publicada da main: três execuções reais38704560758/38744110194/38770216623 confirmaramHTTP200,0.7.0/SHA773af17. Fonte formal de aprovação completa ainda aguarda nova run. [Provas](../evidencias/operacao-2026-10-15.md).
+- [x] I08-04 — CódigoHTTP real dos dois alvos registrado nas seis amostras de15/10; todos200. Raiz ainda preview, sem inferir produção formal. [CSV](../evidencias/operacao-2026-10-15/sondas.csv).
+- [x] I08-05 — Tempo real de resposta dos dois alvos registrado nas seis amostras de15/10,0,094492–0,338412s; não é garantia de latência futura. [CSV](../evidencias/operacao-2026-10-15/sondas.csv).
+- [x] I08-06 — Versão eSHA obtidos de version.json real: HML0.7.0/773af17 e raizpreview0.6.0/71933bf. [Sonda](../evidencias/operacao-2026-10-15/sondas-38770216623.json).
+- [x] I08-07 — CSV acumulado com seis amostras reais: data,alvo,codigo,tempo,versao. Três runs concluídas, sem preencher amostras entre execuções. [CSV](../evidencias/operacao-2026-10-15/sondas.csv).
+- [x] I08-08 — Dados persistidos pelo bot na branch observabilidade nas três coletas reais; monitor não publica Pages. [Execuções/fontes](../evidencias/operacao-2026-10-15.md).
 - [x] I08-09 — Criar label alerta nas Issues. 14/10/2026, contaDaviSouza78: criação e GET labels/alerta confirmados; corB60205/descrição operacional. [Evidência016](../evidencias/alertas.md). Não comprova incidente.
 - [ ] I08-10 — Abrir JogoForaDoAr quando resposta diferente de HTTP 200.
 - [ ] I08-11 — Abrir LatenciaAlta quando tempo ultrapassa dois segundos.
@@ -291,21 +291,21 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I08-13 — Fechar automaticamente JogoForaDoAr quando serviço volta ao normal.
 - [ ] I08-14 — Fechar automaticamente LatenciaAlta quando latência volta ao normal.
 - [x] I08-15 — Quatro integrantes assistem o repositório e verificam recebimento das notificações por e-mail/celular conforme seus canais. 14/10/2026: Davi respondeu nestechat “todos ja fizeram a validação” à pergunta explícita sobreWatch/recebimento pelosquatro. Confirmação humana, sem alegar inspeção pelaIA. [Evidência016](../evidencias/alertas.md).
-- [ ] I08-16 — Publicar painel /status/ no Pages.
-- [ ] I08-17 — Painel mostra disponibilidade.
-- [ ] I08-18 — Painel mostra latência.
-- [ ] I08-19 — Painel mostra versão em produção.
-- [ ] I08-20 — Painel mostra percentual do canário/estado aplicável da estratégia.
-- [ ] I08-21 — Painel mostra métricas DORA.
-- [ ] I08-22 — scripts/dora.mjs calcula métricas do período com dados verificáveis do GitHub. Script/fixtures da etapa024 e consulta real sem observações formais em `docs/evidencias/dora.md`; aguarda dados/CI/revisão.
-- [ ] I08-23 — Frequência de deploy: execuções reais de deploy-prd.
-- [ ] I08-24 — Lead time de mudança: commit até produção, com vínculo correto entre fontes e deploy.
-- [ ] I08-25 — Taxa de falha de mudança: deploys seguidos de rollback.
+- [x] I08-16 — Painel público /status/ publicado pela pipeline, HTTP200; carregamento real no navegador e refresh aprovados, desktop/celular. [Prova](../evidencias/operacao-2026-10-15/painel-88-browser.json).
+- [x] I08-17 — Painel mostra100% entre sete amostras de códigos conhecidos da URL (inclui preview histórico); não demonstra SLA ou continuidade. [Prova](../evidencias/operacao-2026-10-15/painel-88-browser.json).
+- [x] I08-18 — Painel mostrou latência média110ms das amostras existentes, com origem/período explícitos. Não é tempo garantido. [Prova](../evidencias/operacao-2026-10-15/painel-88-browser.json).
+- [x] I08-19 — Painel mostrou0.7.0/SHA88d533e coerente com produção formal e sonda atual. [Prova](../evidencias/operacao-2026-10-15/painel-88-browser.json).
+- [x] I08-20 — Painel mostrou Azul-verde, candidata ausente e0% de novas sessões na candidata. Estável atual servida no smoke real. [Prova](../evidencias/operacao-2026-10-15/painel-88-browser.json).
+- [x] I08-21 — Quatro cards DORA renderizados com três números reais e MTTRIndisponível por falta de alerta fechado. Não inventar o quarto valor. [Prova](../evidencias/operacao-2026-10-15/painel-88-browser.json).
+- [x] I08-22 — scripts/dora.mjs executou com fontes GitHub nas três coletas; quatro métricas corretamente sem valores por ausência de deploy/alerta formal elegível. Isso valida coleta/cálculo, não I08-23–29. [JSON](../evidencias/operacao-2026-10-15/dora-38770216623.json).
+- [x] I08-23 — Frequência real1/14=0,0714286deploys/dia na janela de14dias, uma implantação formal com fonte GitHub. [DORA](../evidencias/operacao-2026-10-15/dora-38830013027.json).
+- [x] I08-24 — Lead time real0,0908333h=5min27s entre commitmain88d533e e fim do deploy-prd com smoke; uma observação. [DORA](../evidencias/operacao-2026-10-15/dora-38830013027.json).
+- [x] I08-25 — Taxa real0% com um deploy formal e nenhum rollback correlacionado na janela. Amostra pequena; não afirma confiabilidade futura. [DORA](../evidencias/operacao-2026-10-15/dora-38830013027.json).
 - [ ] I08-26 — Tempo de recuperação: abertura até fechamento das Issues de alerta.
-- [ ] I08-27 — Comparar lead time medido com linha de base de onze dias da Carparts.
+- [x] I08-27 — Lead time observado0,00378472dia comparado à linha de base fornecida de11dias; apenas uma amostra e ponto inicial definido no script, sem atribuir causalidade ou ganho garantido. [DORA](../evidencias/operacao-2026-10-15/dora-38830013027.json).
 - [ ] I08-28 — Tomar decisão de melhoria a partir dos dados reais.
 - [ ] I08-29 — Medir/documentar efeito da melhoria, sem fabricar ganho ou quantidade mínima de execuções.
-- [ ] I08-30 — Relatório registra possibilidade de atraso dos schedules do Actions em horários de pico. Limite documentado em `docs/relatorio.md` e `docs/evidencias/dora.md`; horários efetivos/relatório final ainda pendentes.
+- [x] I08-30 — Relatório registra atrasos reais dos schedules: duas execuções agendadas15/10 separadas por cerca de5h19 apesar de cron*/15. Não promete pontualidade/CDN contínua por cron. [Fontes](../evidencias/operacao-2026-10-15.md).
 - [ ] I08-31 — AVANÇADO: alerta realmente disparado e tratado, com histórico e recuperação. Monitor/Issue/recuperação formais pendentes026.
 - [ ] I08-32 — AVANÇADO: melhoria orientada por métrica com resultado verificável.
 - [ ] I08-33 — CONDICIONAL: contagem anônima de partidas/fases, se adotada; sem identificar jogador, finalidade documentada.
@@ -346,7 +346,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I10-05 — Registrar direitos de trilha e imagens em THIRD_PARTY.md, ou declarar ausência de trilha quando aplicável.
 - [ ] I10-06 — Inserir legendas legíveis por acessibilidade.
 - [x] I10-07 — Obter concordância real de quem aparece/tem imagem ou voz publicada no vídeo.
-- [ ] I10-08 — Gerar e validar relatório técnico revisado em artifacts/RelatorioTecnico.pdf pela pipeline, com até doze páginas; não substituir pelo GDD.
+- [x] I10-08 — Relatório técnico gerado e validado na CI38772751460, SHAee8f2e4:10páginas A4,583.390bytes, pdfinfo/texto aprovados. É relatório da candidata; evidências finais dePRD/release/triagem ainda pendentes. [Prova](../evidencias/operacao-2026-10-15/relatorio-ci-verificacao.json).
 - [x] I10-09 — Relatório apresenta arquitetura da esteira e decisões. docs/relatorio.md Seção 2 (Jobs esteira.yml, pacote-ci, ambientes HML/PRD).
 - [x] I10-10 — Relatório apresenta alternativas descartadas e justificativas. docs/relatorio.md Seção 3 (Descarte de Pyodide, engines pesadas, backend com RCE, nuvem paga).
 - [ ] I10-11 — Relatório contém prints reais com data e links de build/evidência de cada um dos dez INT. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
@@ -355,7 +355,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I10-14 — Retrospectiva registra o que não funcionou. docs/relatorio.md Seção7: antecipação de aceites e acúmulo dePRs semintegração.
 - [x] I10-15 — Retrospectiva registra o que mudariam, sustentado por dados. docs/relatorio.md Seção7: revisão de registros/proveniência, com base nos27checkscontestados e bundleauditado; efeitoDORAa medir.
 - [x] I10-16 — Contribuição de cada integrante com links dos PRs reais. docs/relatorio.md Seção7 e docs/contribuicoes.md mapeiam os28PRsautorais e os respectivos estados de revisão.
-- [ ] I10-17 — Validar o PDF técnico revisado: abrir/renderizar, conferir legibilidade, links e limite de doze páginas; publicar o artefato acessível.
+- [x] I10-17 — PDF da CI38772751460 baixado, aberto e com10páginas renderizadas/inspecionadas;3imagens e58links. Artefato build acessível no Actions; preservar PDF final na release quando aprovada. [Prova](../evidencias/operacao-2026-10-15/relatorio-ci-verificacao.json).
 - [ ] I10-18 — Acrescentar evidências reais de release/triagem após as execuções; não declarar sucesso antecipado. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [ ] I10-19 — AVANÇADO: narrativa clara do pitch, legendas e retrospectiva honesta com dados.
 
@@ -368,18 +368,18 @@ Os esqueletos não passam como estão. Nomes/estrutura exemplificados não obrig
 - [x] KIT-03 — package.json/lockfile, configuração Gitleaks e esteira versionados. E2/E6.
 - [ ] KIT-04 — Fonte docs/relatorio.md e gerador PDF disponíveis; validar/publicar relatório final e completar provas pendentes de I10-08 a I10-18.
 - [ ] KIT-05 — rollback.yml funcional (I07-18).
-- [ ] KIT-06 — monitor.yml funcional (I08-01).
-- [ ] KIT-07 — Painel pages/status/index.html ou equivalente publicado (I08-16 a I08-21).
+- [x] KIT-06 — monitor.yml executado com sondas e reconciliação de alertas verdes em38704560758,38744110194 e38770216623. Painel, incidentes tratados e métricas com denominadores continuam pendentes. [Provas](../evidencias/operacao-2026-10-15.md).
+- [x] KIT-07 — Painel status publicado e verificado em navegador desktop/celular, com versão, amostragem, rollout e DORA sem preencher lacunas. [Prova](../evidencias/operacao-2026-10-15/painel-88-browser.json).
 - [ ] KIT-08 — Publicação, rollout, DORA e triagem implementados por scripts equivalentes aos exemplos; não copiar TODO como solução.
 - [x] KIT-09 — Actions revisadas em releases/refs/action.yml oficiais em13/10/2026, fixadas por SHA; CI38428808065 validou ferramentas ativas. [Revisão007](../evidencias/ci-formal.md); Pages ainda não executado neste passo.
 - [x] KIT-10 — Cache npm e checkout com histórico para scanner nos jobs atuais. E2.
 - [x] KIT-11 — Corrigir lacuna SemVer no version.json do exemplo. E5/E7: version 0.6.0 presente.
-- [ ] KIT-12 — Configurar Settings Pages com origem conforme requisito ou equivalência validada (I07-01).
-- [ ] KIT-13 — Integrar homologacao e producao nos jobs; producao com reviewer obrigatório (ARQ-07/08).
+- [x] KIT-12 — Equivalência PagesActions/gh-pages fundamentada e tecnicamente validada; ver I07-01. Não pressupõe nota ou aceite antecipado do professor.
+- [x] KIT-13 — Integrar homologacao e producao nos jobs; producao com reviewer obrigatório (ARQ-07/08). Conciliação15/10: Environments integrados e usados na execução formal38829484114, com reviewer obrigatório e aprovação registrada em producao.
 - [x] KIT-14 — SITE_URL pública configurada em13/10/2026 com https://luccalck.github.io/desafio-arcade e destinos derivados documentados/verificados no [passo003](../evidencias/configuracao-github.md). Integração nos jobs formais/sondas/triagem permanece nos respectivos checks.
-- [ ] KIT-15 — Esperar propagação do Pages com tentativa limitada antes dos E2E formais de HML.
+- [x] KIT-15 — Esperar propagação do Pages com tentativa limitada antes dos E2E formais de HML. Conciliação15/10: Espera limitada de propagação executada no deploy-hml formal, seguida de quatro cenários públicos aprovados.
 - [x] KIT-16 — Publicação atual não cancela um deploy em andamento: grupo pages-preview cancel-in-progress false. E2.
-- [ ] KIT-17 — Preservar essa proteção de concorrência no deploy/rollout formal; serializar mudanças de ponteiro.
+- [x] KIT-17 — Preservar essa proteção de concorrência no deploy/rollout formal; serializar mudanças de ponteiro. Conciliação15/10: Concorrência de publicação/rollout serializada no workflow integrado e usada no deploy formal; ensaio de colisão/falha parcial ainda pertence à recuperação.
 - [ ] KIT-18 — Implementar ações canario/promover/rollback ou equivalentes da estratégia escolhida, com commit ator/motivo (I07).
 - [ ] KIT-19 — Carregador formal trata versão retirada, falha de leitura e armazenamento indisponível; reconferir sob rollout real.
 - [ ] KIT-20 — Completar promoção após observação e notificação de falha: TODO do workflow (I03-24/I07).
@@ -387,9 +387,9 @@ Os esqueletos não passam como estão. Nomes/estrutura exemplificados não obrig
 - [ ] KIT-22 — Completar validação das seções do PDF que o exemplo triagem não implementa (I09-12).
 - [ ] KIT-23 — Medir duração real, sem truncar segundos para aceitar vídeo acima de 90 s (I09-13).
 - [ ] KIT-24 — Prazo configurado de forma verdadeira; 19:00 é exemplo, não horário confirmado (I09-16).
-- [ ] KIT-25 — Criar observabilidade/status/sondas.csv e cabeçalho data,alvo,codigo,tempo, registrando também versão (I08).
+- [x] KIT-25 — observabilidade/status/sondas.csv acumulou seis registros reais com cabeçalho data,alvo,codigo,tempo,versao. [Cópia verificada](../evidencias/operacao-2026-10-15/sondas.csv).
 - [ ] KIT-26 — Completar TODO de fechamento automático e alerta de latência do monitor (I08-11/13/14).
-- [ ] KIT-27 — Completar versão sondada, ausente no esqueleto do monitor (I08-06).
+- [x] KIT-27 — Versão sondada implementada e confirmada nas três execuções de15/10, sem confundir raizpreview comPRD formal. [Provas](../evidencias/operacao-2026-10-15.md).
 - [ ] KIT-28 — Registrar IA com todos os campos do modelo e declaração humana verdadeira; nomes/linhas de exemplo não são nossos integrantes (I05-14/15/16).
 - [ ] KIT-29 — CONDICIONAL: golden.jsonl se houver conteúdo Opal/AI Studio, conforme requisito específico I04-14; não impor eval a todo código produzido com IA.
 
@@ -559,8 +559,8 @@ Este checklist não substitui entradas → ações → saídas → aceites dos r
 - [ ] G0 — Preparação: equipe registrada, acessos funcionando, estratégia Git e proteção preparadas. **Primeiro aceite incompleto.**
 - [ ] G1 — Definição: mecânica/aprendizagem/fluxo/stack definidos e backlog compreendido pelos quatro.
 - [ ] G2 — Base: clone limpo gera jogo/PDF; checks bloqueiam erros e segredos; ciclo jogável e ativos integrados.
-- [ ] G3 — Homologação: /hml/ formal funciona, regressão completa passa e pacote offline é jogável.
-- [ ] G4 — Produção controlada: mesma build, aprovação registrada, monitoramento ativo e versão verificável.
+- [x] G3 — Homologação: /hml/ formal funciona, regressão completa passa e pacote offline é jogável. Conciliação15/10: Homologação formal da candidata88d533e: HML4/4,216,414s, ZIP original offline e recibo de aceite. Conferência final da tag permanece obrigatória.
+- [x] G4 — Produção controlada: mesma build, aprovação registrada, monitoramento ativo e versão verificável. Conciliação15/10: Produção controlada da candidata88d533e: mesmo ZIP, aprovação registrada, smoke, monitor pós-produção e versão verificável; recuperação é G5.
 - [ ] G5 — Recuperação/dados: rollback comprovado, Issues tratadas, DORA real, bug/regressão e playtest documentados.
 - [ ] G6 — Comunicação: vídeo válido/legendado, documentos completos, componentes prontos para tag final.
 - [ ] G7 — Fechamento: release final executada, hashes conferidos, triagem aprovada na tag.
@@ -608,3 +608,13 @@ Revalidação015/016 — 14/10/2026: tag/SemVer/proveniência/mesmoartefato/nota
 Preparação017/018 — 14/10/2026: [roteiro/legendas e concordâncias](../evidencias/video-direitos.md) e [rollout](../evidencias/rollout.md). I10-01/02/05 fechados por roteiro/inventário planejado sem trilha; I10-07/DIR-13 pela confirmação explícita de Davi sobre os quatro e registro privado, seminspeção desse documento pela IA. Reconferência de escopo/direitos do MP4 final obrigatória. I07-08/09/15/KIT-18/19 permanecem abertos até revisão de Plataforma/execução formal, embora contratos218testes e33E2E locais estejam verdes. Não houve G4/G6, produção ou recuperação operacional.
 
 Preparação019/020 — 14/10/2026, DaviSouza78: promoção por mesmo artefato/recibo HML/aprovação/azul-verde/recuperação e monitor pós-produção implementados; painel estático/contrato DORA funcionais localmente,235 testes/36E2E, core97,90%, lint/build/actionlint sem ShellCheck. /status/ e observabilidade públicos404, sem aprovação ou produção formal. [Produção](../evidencias/producao.md), [painel](../evidencias/painel-status.md) e [passagem](../execucao/10-passagem-davi-miguel.md). Nenhum check operacional019/020/G4 foi fechado por preparação, configuração ou fixture; conferir registro único antes de marcar. DORA024, recuperação observada022/026 e aceites humanos permanecem atribuídos.
+
+
+Registro histórico anterior à produção formal, superado pela reconferência seguinte. Reconferência operacional15/10/2026: fechados somente itens específicos com prova em [operação](../evidencias/operacao-2026-10-15.md). HML4/4 pública, ZIPoriginal offline1/1 e sete hashesHTTP confirmados; monitor3runs/6amostras. Produção formal, abertura/fechamento de alertas, recuperação medida<5min, painel, DORA com eventos, pitch e pacote final continuam abertos. O PR33 não tem revisão externa registrada nesta consulta.
+
+
+Reconferência após produção —15/10/2026: run38829484114/1 integralmente verde, HML216,414s, PRDazul-verde aprovada e smoke/14hashesHTTP, ZIPoriginal88offline1/1, monitorpósPRD38830013027 e painel reais. MTTR, alertas tratados, recuperação<5min, melhoria medida, tag/release/submissão e ações humanas seguem pendentes. Provas emoperacao-2026-10-15; não confundir essa implantação com entrega acadêmica final.
+
+Conciliação das pendências15/10: atualizados itens específicos com prova operacional e revisão/integração. Consulte [estado vigente dos40passos](../execucao/05-pendencias-por-passo.md) e [lacunas do HTML porINT](../evidencias/conciliacao-pendencias-2026-10-15.md). Condicionais não adotados não são trabalho obrigatório faltante; direitos, release final, recuperação/alertas e ações humanas mantêm seus critérios próprios.
+
+16/10: ensaio de alertas real passou com Issues38/39 e dados separados; recuperaçãoPages não executada e playtest humano/pitch/tag/triagem/TXT não inventados. Não fechar I08-10–14/26/31 como incidente de produção pela demonstração em alvo temporário,labelensaio.

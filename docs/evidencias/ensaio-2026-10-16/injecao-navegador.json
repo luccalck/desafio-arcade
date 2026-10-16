@@ -1,0 +1,27 @@
+{
+  "source": "Execução local real em Playwright; sem rollback ou modificação do site",
+  "before": {
+    "schema": 1,
+    "strategy": "azul-verde",
+    "estavel": "88d533e31452036092cd8edef3efa3c0775241dc",
+    "anterior": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+    "canario": null,
+    "percentual": 0,
+    "retiradas": []
+  },
+  "result": {
+    "injectionObserved": true,
+    "blockedRequests": 1,
+    "finalUrl": "https://luccalck.github.io/desafio-arcade/releases/88d533e31452036092cd8edef3efa3c0775241dc/index.html",
+    "observedAt": "2026-10-16T03:51:24.102Z"
+  },
+  "after": {
+    "schema": 1,
+    "strategy": "azul-verde",
+    "estavel": "88d533e31452036092cd8edef3efa3c0775241dc",
+    "anterior": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+    "canario": null,
+    "percentual": 0,
+    "retiradas": []
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "schema": 1,
+  "sha": "88d533e31452036092cd8edef3efa3c0775241dc",
+  "ref": "refs/heads/main",
+  "run": "38829484114",
+  "runAttempt": "1",
+  "pushReceivedAt": "2026-10-16T00:26:22Z",
+  "e2eFinishedAt": "2026-10-16T00:29:58.414Z",
+  "pushToHmlSeconds": 216.414,
+  "limitSeconds": 900,
+  "withinLimit": true,
+  "eventType": "PullRequestMerge",
+  "proof": {
+    "number": 33,
+    "baseRef": "main",
+    "merged": true,
+    "mergeCommitSha": "88d533e31452036092cd8edef3efa3c0775241dc",
+    "mergedAt": "2026-10-16T00:26:22Z",
+    "url": "https://github.com/luccalck/desafio-arcade/pull/33"
+  },
+  "source": "GitHub Pull Requests API merged_at; merge_commit_sha/base main conferidos",
+  "apiUrl": "https://github.com/luccalck/desafio-arcade/pull/33",
+  "collectedAt": "2026-10-16T00:29:58.812Z"
+}

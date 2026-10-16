@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-15T16:36:36.570Z",
+  "url": "https://luccalck.github.io/desafio-arcade/hml/",
+  "version": {
+    "version": "0.7.0",
+    "sha": "773af17db29bb9fc46bfe438c0cb9c8304fbd5f5",
+    "build": "2026-10-15T03:03:48.000Z"
+  },
+  "scenario": "@hml campanha: primeira missão até vitória e encerramento",
+  "project": "hml-toque",
+  "input": "toque",
+  "viewport": {
+    "width": 390,
+    "height": 844
+  }
+}

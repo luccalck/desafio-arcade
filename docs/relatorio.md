@@ -1,12 +1,12 @@
 # Relatório Técnico — Desafio Arcade
 
-**Rota do Código · Squad Aura 67 · Candidata {{VERSION}} · 14/10/2026**
+**Rota do Código · Squad Aura 67 · Candidata {{VERSION}} · 16/10/2026**
 
-Construímos uma oficina WEB de programação em que o jogador corrige cinco funções Python e usa suas próprias regras num minijogo de nave. O produto atravessa uma esteira de integração, teste, segurança e entrega estática no GitHub. Este relatório distingue o que foi implementado, o que executamos e as provas ainda pendentes.
+## 1. Síntese, identificação e alcance
 
-**Repositório:** [luccalck/desafio-arcade](https://github.com/luccalck/desafio-arcade). **Referência técnica auditada:** [CI 38649548723](https://github.com/luccalck/desafio-arcade/actions/runs/38649548723), SHA `e71de729219028ee314fb52949e1ee28ffeeb678`, versão 0.6.0. A candidata {{VERSION}} corrige o fechamento; não é declarada como entrega acadêmica final v1.0.0. Dados da referência não são atribuídos automaticamente ao novo código ou a uma publicação posterior.
+Construímos uma oficina educativa WEB em que o jogador corrige cinco funções Python, testa diferentes entradas e usa suas regras num minijogo de nave. O produto é estático, responsivo, exportável e jogável offline pelo método documentado. A avaliação de DevOps exige que esse produto atravesse Git, testes, segurança, homologação, aprovação, produção e acompanhamento com rastreabilidade.
 
-## 1. Equipe, autoria e problema educativo
+**Repositório:** [luccalck/desafio-arcade](https://github.com/luccalck/desafio-arcade). **Estado desta revisão:** a versão 0.7.0 do SHA 88d533e chegou à homologação e à produção formal pela mesma execução, com revisão, aprovação do environment, regressão e smokes aprovados. O tempo push→HML foi 216,414 s. O painel público responde HTTP 200, e a primeira amostra de produção alimenta três métricas DORA; MTTR, alertas reais, recuperação, vídeo e entrega acadêmica final permanecem pendentes. Este relatório atualizado ainda é candidato no PR34; a sua revisão/publicação documental não está concluída.
 
 | Integrante | RA | Coordenação | GitHub |
 |---|---|---|---|
@@ -15,122 +15,267 @@ Construímos uma oficina WEB de programação em que o jogador corrige cinco fun
 | Miguel Oliveira de Almeida | 26179933 | Plataforma e Release | miguelsenai2024 |
 | Lucas Souza da Silva | 26179875 | SRE e Segurança | 6lucassilvaaa |
 
-Os papéis organizam a coordenação; todos participam das áreas. O nome completo e RA de Lucca foram confirmados pelo próprio integrante em 14/10. Não incluímos CPF, assinaturas ou credenciais públicas.
+Os papéis coordenam o trabalho, sem exclusividade de área. Preservamos a autoria dos commits; os quatro precisam defender suas contribuições na banca. O nome completo e RA de Lucca foram fornecidos pelo próprio integrante em 14/10. Não incluímos CPF, assinaturas ou credenciais.
 
-O problema educativo é memorizar comandos sem compreender como uma regra muda um programa. O público é iniciante em programação, com leitura básica em português e familiaridade com teclado ou toque. Cada missão apresenta um defeito, um editor curto e uma arena para experimentar. Comparar entradas e saídas fornece feedback observável; o final integra as cinco funções, exige 100 pontos com três vidas e permite exportar HTML jogável offline e fontes .py.
+### Marcos e fontes de referência
 
-| Missão | Conceito praticado | Critério verificável |
+|Marco|Fonte verificável|Resultado e alcance|
 |---|---|---|
-| Controlar | Eventos e decisões | -1/0/1 conforme teclas; direita tem prioridade |
-| Mover | Operações e parâmetros | Posição + direção × velocidade |
-| Colidir | Comparação e fronteira | Distância menor ou igual ao raio |
-| Pontuar | Estado e condições | Preservar acumulado; cristal +10, estrela +25 |
-| Criar onda | Listas e repetição | Quantidade exata, início 40, intervalo 80 |
-| Projeto final | Integração e depuração | 23 casos e vitória no jogo construído |
+|Auditoria 0.6.0|[CI 38649548723](https://github.com/luccalck/desafio-arcade/actions/runs/38649548723), e71de72|260 testes/36 E2E; histórico anterior aos deploys|
+|Primeira HML 0.7.0|[Run 38674290799](https://github.com/luccalck/desafio-arcade/actions/runs/38674290799),773af17|HML 4/4; falha real do coletor; 191 s reconstruídos depois|
+|Correções revisadas|[PR35](https://github.com/luccalck/desafio-arcade/pull/35), [PR33](https://github.com/luccalck/desafio-arcade/pull/33)|Dois commits de Miguel preservados; revisão de Lucca; Lucas aprovou a consolidação|
+|Entrega técnica formal|[Run 38829484114](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114),88d533e|299 testes/36 E2E; HML 4/4; 216,414 s; PRD aprovada e smoke verde|
+|Sondas pós-produção|[Run 38830013027](https://github.com/luccalck/desafio-arcade/actions/runs/38830013027)|HML/PRD 200, ambas 0.7.0/SHA 88; DORA com uma amostra|
 
-Ações e resultados são reais no navegador, mas XP, testes aprovados e vitória não medem aprendizagem por si. O playtest de três minutos com colega de outra turma ainda precisa ocorrer. Não atribuímos resultados a usuários inexistentes.
+Datas deste relatório seguem America/Sao_Paulo: a produção foi observada em 15/10, 21:31:47 (16/10, 00:31:47 UTC). O pitch permanece pendente por orientação de Lucca. Não há declaração de nota, F, playtest humano, AVA ou banca realizados. A entrega técnica atual não equivale ao pacote acadêmico completo.
 
-## 2. Arquitetura e decisões
+<div style="break-before: page;"></div>
 
-O site estático usa TypeScript, HTML/CSS/SVG e esbuild. Regras puras ficam em `src/core`, separadas da apresentação e do conteúdo JSON validado por contrato. O interpretador lê uma AST de um subconjunto explícito de Python: funções, condições, operações, listas e repetição limitada. Não é CPython completo e não executa imports ou bibliotecas arbitrárias. Limites de nós, passos e iterações reduzem o risco de travamento; não usamos eval/Function para executar a fonte do jogador.
+## 2. Produto educativo e experiência do jogador
 
-A oficina e a exportação compartilham a semântica do interpretador e as regras do motor. Preferências/progresso usam armazenamento local, sem conta ou backend. O método offline documentado é descompactar build.zip e abrir index.html no navegador. A experiência móvel é o mesmo site responsivo; editar código em tela pequena continua sendo uma limitação a avaliar com pessoas.
+O problema é memorizar comandos sem compreender como uma regra altera um programa. O público é iniciante em programação, com leitura básica em português e familiaridade com teclado ou toque. O objetivo é construir, testar e depurar funções que resolvem um comportamento observável, em vez de apenas seguir uma sequência de cliques.
 
-| Decisão | Motivo | Alternativa e limite da decisão |
+| Missão | Conceito | Ação e condição de conclusão |
 |---|---|---|
-| DOM/SVG e TypeScript | Interface acessível por teclado, escopo pequeno e regras testáveis | Engine web poderia ser válida; acrescentaria integração e dependências sem necessidade demonstrada |
-| Subconjunto Python local | Operação offline e regras curtas de cinco missões | CPython/WASM ampliaria compatibilidade, mas não foi necessário; não fizemos benchmark comparativo |
-| Site estático no Pages | Build publicável sem backend, VM ou nuvem paga | Execução remota exigiria infraestrutura e quebraria o método offline |
-| Vitest e Playwright | Testar regras, contratos, navegador, toque e exportação | Contagens/cobertura não substituem playtest ou revisão humana |
-| Azul-verde | Preservar versão estável, candidata e rota de recuperação | Canário é alternativa permitida; não é preciso implementar as duas |
+|1 — Controlar|Eventos e decisões|Corrigir direção conforme teclas; quatro casos públicos|
+|2 — Mover|Operações e parâmetros|Posição + direção × velocidade; cinco casos|
+|3 — Colidir|Comparação e fronteira|Distância ≤ raio, incluindo igualdade; cinco casos|
+|4 — Pontuar|Estado e condições|Conservar acumulado e somar valor do item; cinco casos|
+|5 — Criar onda|Lista e repetição|Quantidade exata, início 40 e intervalo 80; quatro casos|
+|Final — Órbita|Integração e depuração|Aplicar cinco funções, passar 23 casos e atingir 100 pontos com três vidas|
 
-A build da CI de referência tem 29.001 bytes compactados, abaixo de 25 MB. Esse tamanho é uma medida do artefato auditado, não previsão de tempo de carga, desempenho em dispositivo antigo ou tamanho de outra versão.
+O ciclo é editar, testar entradas, observar a partida e corrigir. Nas primeiras missões, funções auxiliares corretas isolam o conceito. O final combina as cinco fontes do jogador. Ajuda e detalhes dos testes ficam sob demanda; menus, progresso e XP organizam a campanha. Repetir missão não duplica recompensa.
 
-## 3. Esteira e cadeia de confiança
+![Menu real da HML](evidencias/operacao-2026-10-15/hml-88-menu.png)
+
+**Figura 1.** HML pública capturada em 15/10/2026, 21:29:25, America/Sao_Paulo; versão 0.7.0, SHA 88d533e, viewport 1280×900. Origem/tempo/versão em hml-88-menu.json, produzidos pelo navegador durante a regressão real.
+
+A mesma experiência WEB atende computador e celular. Teclado/toque e foco visível ajudam a navegação; o código é editável e os testes indicam a situação que falhou. A validação pública completou campanhas desktop e toque, com vitória e 700 XP, mas isso não mede aprendizagem. O playtest humano de três minutos com colega de outra turma ainda precisa observar clareza, dificuldades e transferência do conceito. Não atribuímos resultados a pessoas inexistentes.
+
+<div style="break-before: page;"></div>
+
+## 3. Arquitetura do jogo e funcionamento offline
+
+A aplicação usa TypeScript, HTML/CSS/SVG e esbuild. A camada visual não decide as regras pedagógicas: o núcleo recebe entradas e devolve resultados, permitindo testar lógica e contratos sem depender da tela. O conteúdo JSON é validado antes de compilar; conteúdo inválido precisa interromper a build.
+
+| Componente | Responsabilidade | Fronteira verificável |
+|---|---|---|
+|src/core|Estado, regras, compilação/interpretação e contratos|Entradas, saídas, fronteiras e limites testáveis|
+|src/scenes|Menu, editor, arena, feedback e navegação|E2E por teclado/toque; regras fora da apresentação|
+|src/content|Conteúdo educativo e missões|JSON validado e contratos de aprendizagem|
+|pages|Carregador e contrato de rollout|Seleção de release e versão preservada na sessão|
+|scripts|Build, empacotamento, publicação e observação|Contratos e falhas separados do produto|
+|tests|Unidade, integração e E2E|JUnit/cobertura e artefatos por execução|
+
+### Python pedagógico e limites
+
+O jogador escreve funções Python dentro de um subconjunto delimitado. O analisador produz AST; o interpretador executa condições, operações, listas, atribuições e repetição limitada. Não é CPython completo: imports, classes, bibliotecas arbitrárias e acesso ao DOM/rede não fazem parte do contrato. Não usamos eval/Function para executar a fonte do jogador.
+
+Há limites de fonte, nós, profundidade, passos e iterações. Saídas inválidas interrompem a partida com diagnóstico. Editar pausa e invalida o aceite da regra anterior; retomar exige aplicar a fonte nova. Vitória/derrota são estados finais tratados pelo motor. Esses controles reduzem falhas previsíveis sem prometer segurança absoluta de qualquer entrada.
+
+### Exportação e alternativas técnicas
+
+Concluir o projeto permite baixar HTML independente e funções .py. O HTML inclui motor/AST e compartilha semântica com a oficina. O arquivo .py é estudável num Python convencional; alterá-lo não recompila automaticamente o HTML exportado. Preferências/progresso ficam no navegador, sem conta ou backend. O jogador não precisa instalar Python ou engine.
+
+| Escolha | Justificativa | Alternativa considerada e limite |
+|---|---|---|
+|DOM/SVG e TypeScript|Escopo pequeno, UI navegável e regras testáveis|Engine web seria válida, mas acrescentaria integração sem necessidade demonstrada|
+|Subconjunto Python local|Cinco funções curtas, operação offline e sem execução remota|CPython/WASM ampliaria compatibilidade; não houve benchmark comparativo|
+|Site estático Pages|Sem backend, VM ou nuvem paga; ZIP distribuível|Execução remota exigiria infraestrutura e impediria o método offline|
+|Vitest/Playwright|Regras, contratos, navegador e exportação|Cobertura/contagens não substituem revisão e playtest|
+
+O método offline é descompactar o ZIP original e abrir index.html, conforme LEIA-ME.txt. Não há API de IA em runtime, cadastro ou telemetria. Os testes offline atuais são apresentados com origem e hash na página seguinte.
+
+<div style="break-before: page;"></div>
+
+## 4. Proveniência, ZIP promovido e teste offline
+
+A [run 38829484114](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114), tentativa 1, produziu o bundle do SHA 88d533e31452036092cd8edef3efa3c0775241dc. Conferimos 172 arquivos pelo manifesto. O mesmo ZIP foi aceito em HML e consumido na promoção PRD; os recibos preservam SHA/run/tentativa e checksum. Não recompilamos o jogo entre ambientes.
+
+**Pacote promovido:** 29.000 bytes, SHA-256 `84105e76a4bd55b5064d466340cb377ea27d49092bae984f65ebdeb7d0d0f937`, abaixo de 25 MB. hml-88-aceite.json registra os hashes dos sete arquivos do jogo; prd-88-recibo.json repete o checksum do ZIP e registra state=publicada, aprovação e observação pública. A conferência final de 14/14 arquivos HTTP, nos dois ambientes, retornou HTTP 200 e hashes iguais ao ZIP original: hashes-88-publicos.json.
+
+O teste offline usa o ZIP original do SHA 88, já desconectado antes de abrir index.html. Passou 1/1 em 14,5 s: cinco missões, 23 casos finais, vitória 700 XP, downloads HTML/Python e HTML exportado jogável. remoteRequests=[] e pageErrors=[]. Fonte: zip-88-offline.json/zip-88-junit.xml,16/10 às 00:31:52,989 UTC, equivalente a 15/10 às 21:31:52 local.
+
+![Vitória offline do ZIP promovido](evidencias/operacao-2026-10-15/zip-88-offline-vitoria.png)
+
+**Figura 2.** Vitória capturada durante execução file:// do ZIP original do SHA 88, versão 0.7.0, em 15/10/2026, 21:31:52, America/Sao_Paulo. A prova pertence ao mesmo pacote entregue; não é uma build refeita para apresentar resultado.
+
+O bundle associa SHA/run/tentativa ao inventário e verifica nomes, tamanhos, SHA-256 e version.json externo contra o empacotado. Reexecuções não podem misturar tentativas. A data de origem é estável para o mesmo SHA; horários reais ficam no Actions/recibos. Na referência anterior 773af17, o ZIP original e os sete arquivos HTTP também foram conferidos; esse histórico é preservado, mas os hashes antigos não são atribuídos à produção do SHA 88.
+
+<div style="break-before: page;"></div>
+
+## 5. Esteira CI/CD e governança dos estágios
+
+O fluxo mantém uma cadeia entre mudança, aprovação, artefato e versão observada. A fronteira operacional avançou para produção formal aprovada; falta completar recuperação, alertas/melhoria e submissão acadêmica. A falha temporal anterior foi corrigida por PR revisado, sem ignorar o gate.
 
 ```text
-branch curta → PR → revisão de outro autor → CI → main protegida
-  → pacote único + manifesto → /hml/ + E2E
-  → environment producao aprovado → /releases/<sha>/ + smoke
-  → promoção azul-verde ou rollback → sondas + Issues + /status/
-  → vídeo real como entrada → submissão + triagem → AVA e banca
+branch → PR/revisão/CI → main protegida
+  → build/ZIP + PDFs + SBOM/relatórios + manifesto
+  → /hml/ + E2E + medição temporal
+  → aprovação environment producao → release imutável
+  → smoke → promoção azul-verde ou recuperação
+  → sondas/Issues/status/DORA → vídeo validado → submissão/triagem
 ```
 
-A CI distribui qualidade, segurança, build e E2E em jobs independentes no runner ubuntu-latest. Usa lockfile/npm ci, lint/tipagem, validação de conteúdo, testes/cobertura, Gitleaks bloqueante, auditoria de produção contra vulnerabilidades críticas, SBOM, build, PDF e checksum. O gate `ci` depende dos resultados; o bundle consolida os arquivos e seus hashes para impedir mistura de execuções.
-
-O contrato de entrega é compilar uma vez e promover o mesmo ZIP. HML precisa executar regressão real; produção exige aprovação no environment, release imutável, smoke e promoção. A sessão mantém a versão válida para evitar troca no meio da partida. Recuperação automática/manual deve preservar o serviço e ser medida incluindo propagação Pages. Proteções e CI permanecem; autorização de Lucca não permite simular revisão de outro autor nos próprios PRs.
-
-A reconferência identificou lacunas: relatório fora do bundle, pacote concorrente com produção, proveniência insuficiente, seleção de vídeo só por execução recente, triagem agendada sem recuperar o pacote e inconsistência entre versão/tag. Corrigimos os registros para tornar essas lacunas explícitas. A execução dos scripts e testes corrigidos precisa gerar novas provas; a existência do código não valida implantação.
-
-## 4. Qualidade, segurança e evidências visuais
-
-Na CI de referência, os JUnit confirmam **152 testes de unidade + 108 de integração = 260**, além de **36 E2E**, sem falhas ou skips. A cobertura ponderada de `src/core` é **97,91% das instruções, 100% das linhas, 100% das funções e 95,24% das ramificações**. Supera os mínimos de 15/3/2 testes e 70% do core nessa execução. A medição deve ser refeita no HEAD final; cenários de adaptadores não provam eventos de produção. No fechamento da candidata {{VERSION}}, a reexecução local passou em **270 testes de unidade/integração**; lint/tipagem e actionlint também passaram. Esses resultados locais, informados pela execução de fechamento, ainda não são CI remota nem deploy. A suíte local E2E do HEAD corrigido também passou: **36/36 em 53 s**, com servidor isolado na porta4187 e dois workers. Essas execuções revalidam os testes da candidata, preservando a distinção da referência histórica; não comprovam HML ou PRD.
-
-Baixamos o bundle real da CI e conferimos 170 arquivos por tamanho/SHA-256 sem divergência. O ZIP tem SHA-256 `3bfb09573d93a58d34e72c3379ae6a6386202dbb40047d151ea106cbc3754a87`; contém LEIA-ME.txt e metadados. O E2E offline faz parte da suíte aprovada. O GDD PDF abre via pdfinfo e tem 18 páginas A4. O limite de doze páginas é deste relatório, não do GDD.
-
-Gitleaks não reportou achados e npm audit de produção não reportou vulnerabilidades no bundle consultado. SBOM e registros de IA/terceiros existem. Esses resultados têm alcance limitado à execução e ao inventário: não garantem direitos de todo ativo ou ausência absoluta de segredos. Revalidar tag, artefatos e vídeo; nunca introduzir segredo real para testar detecção. Ativos do Stitch são referências identificadas, não capturas de execução.
-
-### Capturas reais da aplicação
-
-![Menu real da oficina](images/menu-real-009.png)
-
-**Figura 1.** Menu capturado em 13/10/2026 às 14:38:06, America/Sao_Paulo. Origem: localhost:4173, versão 0.6.0, SHA b94469ee; metadados preservados em docs/evidencias/menu-real-009.json. É prova histórica local da interface, não produção da candidata atual.
-
-![Missão real com editor e arena](images/hud-real-009.png)
-
-**Figura 2.** Primeira missão capturada em 13/10/2026 às 14:38:07, America/Sao_Paulo, mesma origem/versão, viewport 1280×900; metadados em docs/evidencias/hud-real-009.json. Mostra a regra editada e feedback 4/4; não comprova playtest humano nem aprendizagem.
-
-### Bug real e regressão
-
-O registro histórico de D06 documenta a retomada de regra antiga após editar código durante a partida: a ação de retomar podia executar a compilação anterior. A correção invalida o aceite/fingerprint ao editar e exige nova aplicação da fonte. O cenário E2E de regressão permanece em tests/e2e/workshop.spec.mjs; falha anterior, JUnit e captura estão em docs/evidencias/bug-regra-antiga.md e arquivos associados. Não criamos bug fictício para cumprir rubrica. [PR da regressão e contexto](https://github.com/luccalck/desafio-arcade/pull/8).
-
-## 5. Rastreabilidade dos dez integráveis
-
-Cada linha traz uma fonte acessível, um resultado conhecido e o limite do aceite. Os links são de PRs ou execuções reais, não certificação de que tudo foi integrado.
-
-| INT / peso em A | Fonte e evidência | Estado e pendência de aceite |
+| Etapa | Contrato implementado | Prova exigida |
 |---|---|---|
-| INT-01 /10% | [PR14](https://github.com/luccalck/desafio-arcade/pull/14), [PR29](https://github.com/luccalck/desafio-arcade/pull/29); SQUAD/contribuições | Quatro autores/colaboradores;15 reviews de Lucca nos PRs 15–29 confirmados após autorização. PRs próprios exigem outro revisor; integração/banca a conferir |
-| INT-02 /8% | [CI auditada](https://github.com/luccalck/desafio-arcade/actions/runs/38649548723), [PR22](https://github.com/luccalck/desafio-arcade/pull/22) | GDD completo, PDF 18p; revisar a versão/identificação atualizada e coerência com a release efetiva |
-| INT-03 /15% | [CI auditada](https://github.com/luccalck/desafio-arcade/actions/runs/38649548723), [PR15](https://github.com/luccalck/desafio-arcade/pull/15) | CI verde; HML/PRD ignorados naquele run. Execução formal e push→HML≤15min precisam de prova |
-| INT-04 /12% | [CI auditada](https://github.com/luccalck/desafio-arcade/actions/runs/38649548723), [PR16](https://github.com/luccalck/desafio-arcade/pull/16) | 260 + 36 testes e cobertura comprovados; revalidar HEAD e E2E/smoke dos ambientes reais |
-| INT-05 /10% | [PR10](https://github.com/luccalck/desafio-arcade/pull/10), [CI auditada](https://github.com/luccalck/desafio-arcade/actions/runs/38649548723) | Scanners/SBOM/inventários; revisar direitos de componentes e materiais finais |
-| INT-06 /10% | [PR17](https://github.com/luccalck/desafio-arcade/pull/17), [PR23](https://github.com/luccalck/desafio-arcade/pull/23) | ZIP/checksum/offline; tag/release e equivalência comPRD precisam de execução |
-| INT-07 /12% | [PR19](https://github.com/luccalck/desafio-arcade/pull/19), [PR21](https://github.com/luccalck/desafio-arcade/pull/21) | Contratos/testes de azul-verde e rollback; medir operação < 5 min e continuidade real |
-| INT-08 /10% | [PR19](https://github.com/luccalck/desafio-arcade/pull/19), [PR23](https://github.com/luccalck/desafio-arcade/pull/23) | Scripts/painel/coletor; publicar status, executar sondas/Issues/DORA e comprovar melhoria |
-| INT-09 /8% | [PR24](https://github.com/luccalck/desafio-arcade/pull/24), [PR25](https://github.com/luccalck/desafio-arcade/pull/25) | Automação preparada; pacote/triagem finais bloqueados porpitch e demais verificações |
-| INT-10 /5% | [PR26](https://github.com/luccalck/desafio-arcade/pull/26), [PR28](https://github.com/luccalck/desafio-arcade/pull/28) | Fonte/gerador do relatório e roteiros; publicar PDF revisado, pitch, ensaio e banca pendentes |
+|Qualidade|npm ci, lint/tipagem, conteúdo, Vitest/cobertura|Logs, JUnit, cobertura e falha bloqueante|
+|Segurança|Gitleaks, audit de produção, SBOM|Relatórios do mesmo SHA/run/tentativa|
+|Build|Estático, reprodutibilidade, GDD/relatório PDF, ZIP|Version.json, checksum, pdfinfo/texto|
+|E2E|Campanha, teclado/toque, exportação/offline|JUnit, capturas e arquivos reais|
+|Pacote CI|Consolidar identidade e inventário|ci-manifest.json com tamanhos/hashes|
+|HML/PRD|Consumir bundle sem recompilar|Recibos, aprovação, E2E/smoke e hashes HTTP|
+|Submissão|Aguardar produção/release e vídeo fixado|Pacote completo e triagem real na tag correta|
 
-A raiz [Pages](https://luccalck.github.io/desafio-arcade/) e [HML](https://luccalck.github.io/desafio-arcade/hml/) responderam200 na consulta da auditoria; HML/rollout apontavam para o preview 71933bf. `/status/` respondeu404. Não chamamos essas respostas de produção formal da candidata e não preenchemos a ficha com URLs finais presumidas.
+Qualidade, segurança, build e E2E executam em jobs independentes de ubuntu-latest; o gate CI depende de seus resultados. Há lockfile e cache npm. GDD.pdf e RelatorioTecnico.pdf entram no bundle; pdfinfo/pdftotext verificam abertura/texto e o relatório deve ter de 1 a 12 páginas. A fonte continua versionada para revisão, sem substituir o GDD completo pelo relatório.
 
-## 6. Operação, DORA e recuperação
+A consolidação corrigiu lacunas reais: relatório antes fora da CI, submissão concorrente com produção, proveniência insuficiente, seleção de vídeo pela última execução e triagem agendada sem recuperar pacote. Agora o vídeo é fixado por SHA/run/tentativa/digest, e o pacote depende de produção/release. Um HTTP 200 isolado não pode substituir a validação de ZIP, PDF, vídeo e manifesto.
 
-| Métrica | Definição adotada | Situação do snapshot auditado |
+Azul-verde separa candidata e estável; o carregador preserva uma versão válida por sessão. Gh-pages é escrita pela pipeline, sem edição manual para contornar a falha. Environments mantêm aprovação/políticas de refs/tags. PagesActions publica a árvore gh-pages preservada, sem recompilar: equivalência técnica justificada e validada por hashes/smoke, declarada frente à origem literal do exemplo. Uma aprovação de PR não substitui a de produção nem se transfere para HEAD alterado.
+
+O PR32 recebeu revisão externa de Lucas no HEAD 59dc830 e foi integrado. O PR35 incorporou dois commits autorais de Miguel, revisados por Lucca; Lucas aprovou a consolidação f38 no PR33 antes do merge 88. A aprovação do environment producao por Lucca foi registrada conforme a política existente. Não simulamos outro revisor, não autoaprovamos PRs de Lucca e não removemos as proteções.
+
+<div style="break-before: page;"></div>
+
+## 6. Qualidade, testes e correção de defeitos
+
+Os resultados pertencem ao SHA e à execução indicada. Uma suíte local/CI não comprova implantação. Mantemos regras separadas da renderização, testes de fronteira/contratos inválidos e integridade do pacote.
+
+| Fonte | Unidade/integração | E2E | Alcance |
+|---|---:|---:|---|
+|[CI 38649548723](https://github.com/luccalck/desafio-arcade/actions/runs/38649548723), e71de72|260=152+108|36|Referência 0.6.0; bundle auditado|
+|[Run 38674290799](https://github.com/luccalck/desafio-arcade/actions/runs/38674290799),773af17|270|36|CI 0.7.0 verde; HML depois falhou na medição|
+|[CI 38674970174](https://github.com/luccalck/desafio-arcade/actions/runs/38674970174),78c367d|273|36|Push da correção PR33; sucesso|
+|[CI 38674975441](https://github.com/luccalck/desafio-arcade/actions/runs/38674975441), PR33|273|36|Validação de PR, sem deploy formal|
+|[CI 38829484114](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114),88d533e|299|36|HML 4/4, PRD formal e smokes aprovados|
+|Histórico773: HML pública em 15/10|—|4|Desktop/toque, campanha e reinício; 62,009 s|
+
+No bundle do SHA 88, ci-88-coverage.json mede src/core: 468/478 instruções (**97,90%**), 128/128 linhas (**100%**), 54/54 funções (**100%**) e 320/336 ramificações (**95,23%**). Os JUnit confirmam 299 testes sem falhas em 2,580 s e 36 E2E sem falhas em 67,838 s. A regressão HML 4/4 levou 67,882 s; o smoke PRD 1/1 também passou. Supera os mínimos 15/3/2 e 70% do core com origem remota identificada. Os 53testes locais de recuperação/alertas continuam provas de contratos, não ensaio real.
+
+![Smoke real de produção](evidencias/operacao-2026-10-15/prd-88-tela.png)
+
+**Figura 3.** Smoke real da produção em 15/10/2026, 21:31:47, America/Sao_Paulo; 0.7.0, SHA 88d533e. O navegador abriu a release do SHA correto e verificou editor, movimento e pausa; prd-88-tela.json preserva origem, horário e viewport. É teste automatizado, não playtest humano.
+
+O bug histórico de regra antiga permitia retomar usando compilação anterior após editar. A correção invalida aceite/fingerprint e exige aplicar fonte nova; existem captura, JUnit da falha e regressão em docs/evidencias/bug-regra-antiga.md e tests/e2e/workshop.spec.mjs. [PR de contexto](https://github.com/luccalck/desafio-arcade/pull/8). O defeito temporal HML também gerou três regressões: antes 3 falhas/8 passes; depois 11 passes. Não criamos bug ou incidente fictício para atender rubrica.
+
+<div style="break-before: page;"></div>
+
+## 7. Homologação medida e produção formal aprovada
+
+A correção percorreu revisão real: o PR35 preservou dois commits de Miguel e recebeu aprovação de Lucca. Lucas aprovou o HEAD f38f6d9 da consolidação no [PR33](https://github.com/luccalck/desafio-arcade/pull/33), integrado na main como 88d533e31452036092cd8edef3efa3c0775241dc. A [run 38829484114](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114) concluiu com sucesso, incluindo CI, HML e produção. A política de aprovação e as proteções foram preservadas.
+
+|Marco / fonte|Registro verificável|Resultado|
 |---|---|---|
-| Frequência de implantação | Deploys formais de produção bem-sucedidos por janela | N/D; previews não usados como produção |
-| Lead time de mudanças | Intervalo verificável da mudança até produção | N/D; comparar amostras futuras com a linha de base de 11 dias |
-| Taxa de falha de mudança | Deploys formais com falha/incidente sobre deploys da janela | N/D; ausência de amostra não é0% |
-| Tempo de recuperação | Do início de falha registrada até recuperação validada | N/D; testes de fixtures não são incidente real |
+|Merge PR33 / API|16/10, 00:26:22 UTC = 15/10, 21:26:22 local|SHA 88 e base main conferidos|
+|E2E HML / hml-88-tempo.json|00:29:58,414 UTC|4/4 cenários; 216,414 s após publicação do merge|
+|Aceite HML / hml-88-aceite.json|00:29:59,167 UTC|Sete hashes e ZIP vinculado a SHA/run/tentativa|
+|Aprovação / prd-88-recibo.json|Environment producao; revisor luccalck; approved|Aprovação real conforme política existente|
+|Smoke candidata|00:31:28,612 UTC; passed=true; errors=[]|Release88 testada antes da promoção|
+|Smoke raiz e recibo|00:31:47,097/460 UTC; state=publicada|Raiz redireciona à release88 e passa smoke|
 
-O coletor deve usar timestamps de deploys/PRs/Issues e explicitar janela, IDs, denominadores e ausências. A linha de base de 11 dias é referência do enunciado, não uma medida já obtida no jogo. Não há mínimo inventado de dez execuções. Uma hipótese de melhoria é reduzir retrabalho pela verificação de proveniência antes da publicação; somente dados reais de antes/depois permitem afirmar efeito.
+### Origem temporal e limite de quinze minutos
 
-As sondas previstas a cada 15 min registram HTTP, latência e versão. Issues JogoForaDoAr e LatenciaAlta usam limiar > 2 s, idempotência e fechamento automático. O painel deve mostrar ausência de amostra como indisponível. Ensaios controlados devem ser identificados como tal e distinguir janela/timestamps, propagação Pages, alertas e disponibilidade contínua. Não registramos recuperação < 5 min ou ganho DORA sem medição.
+O coletor agora usa o merged_at do PR integrado, exigindo merged=true, base main e merge_commit_sha exato. Confere payload de push e objeto remoto de tags quando aplicável; Events é complementar. Data do commit do desenvolvedor e criação do run não substituem publicação. O recibo atual registra **216,414 segundos — 3 min 36,414 s**, abaixo de 900 s, com fonte GitHub, SHA e run/tentativa identificados.
 
-## 7. Colaboração, retrospectiva e próximos aceites
+A primeira execução 773af17 continua registrada como falha do coletor: a regressão passou, mas o feed Events atrasado não trouxe o PushEvent na janela. A reconstrução histórica de 191 s não alterou aquela conclusão. O GitHub documenta latência de 30 segundos a 6 horas nesse feed. [Fonte oficial](https://docs.github.com/en/rest/activity/events#list-repository-events). O novo sucesso decorre de correção revisada e execução posterior, sem ignorar o gate.
 
-| Integrante | PRs autorais de referência | Escopo de contribuição |
+### Promoção e fronteira do aceite
+
+O deploy-prd usou o mesmo ZIP aceito em HML, SHA-256 84105e76…d0d0f937. O recibo identifica ator luccalck, run 38829484114/1 e estado publicada às 21:31:47 de 15/10, horário de São Paulo. A URL imutável `/releases/ 88d533e31452036092cd8edef3efa3c0775241dc/` e a raiz foram testadas; `/status/` responde HTTP 200. Isso comprova produção técnica, não rollback, GitHub Release acadêmica, pitch ou triagem final.
+
+O relatório completo desta branch é uma atualização candidata no PR34; o pacote de produção foi gerado com a fonte documental anterior. Sua versão revisada precisa de aprovação/CI e publicação documental próprias.
+
+<div style="break-before: page;"></div>
+
+## 8. Sondas pós-produção e primeira amostra DORA
+
+A execução [38830013027](https://github.com/luccalck/desafio-arcade/actions/runs/38830013027) concluiu o monitoramento pós-produção. Diferentemente das sondas antigas da raiz preview, agora os dois alvos confirmam a versão formal 0.7.0 e o SHA 88. A coleta começou em 16/10, 00:32:13 UTC, 15/10, 21:32:13 em São Paulo.
+
+|Alvo|HTTP|Latência registrada|Identidade e erro|
+|---|---:|---:|---|
+|HML|200|0,091823904 s|0.7.0 / 88d533e; erro=null|
+|Produção|200|0,033559691 s|0.7.0 / 88d533e; erro=null|
+
+A latência mede o documento HTTP principal, com consumo do corpo; não representa a jornada completa ou todos os fetches de versão. Uma amostra não caracteriza percentis/SLA. As flags formalHml/formalPrd, sozinhas, não comprovam deploy; aqui a identidade das sondas coincide com os recibos formais de HML/PRD. As duas execuções agendadas anteriores e uma manual estão preservadas como histórico. O cron é de 15 min, mas sua execução pontual a cada 15 min continua sem garantia observada.
+
+O painel /status/ foi aberto no navegador em 15/10, 21:36:59 local: HTTP 200, versão 0.7.0/SHA 88, azul-verde e quatro cartões DORA, com MTTR “Indisponível”. Atualizar passou; não houve erro de página nem overflow em 390 px. O painel mostrou 100,0% de disponibilidade e 110 ms de latência nas sete amostras exibidas, incluindo histórico de preview; esses valores amostrais não são SLA ou disponibilidade formal de toda a janela. Fonte: painel-88-browser.json.
+
+### Medições reais e limites da comparação
+
+O dora-38830013027.json usa a janela 02/10, 00:32:13 UTC a 16/10, 00:32:13 UTC, exatamente 14 dias. Um deploy formal foi concluído às 00:31:49 UTC, com vínculo ao commit, promoção, job e smoke.
+
+|Métrica|Valor observado|Denominador / interpretação|
 |---|---|---|
-| Lucca | [#2](https://github.com/luccalck/desafio-arcade/pull/2) a [#14](https://github.com/luccalck/desafio-arcade/pull/14) | Produto, GDD, jogoPython, segurança,CI eoffline |
-| Davi | [#15](https://github.com/luccalck/desafio-arcade/pull/15) a [#19](https://github.com/luccalck/desafio-arcade/pull/19) | HML, conteúdo/testes, release,alertas,produção/painel |
-| Miguel | [#20](https://github.com/luccalck/desafio-arcade/pull/20) a [#24](https://github.com/luccalck/desafio-arcade/pull/24) | Playtest preparado, recuperação,DORA,GDD,integridade,triagem |
-| Lucas | [#25](https://github.com/luccalck/desafio-arcade/pull/25) a [#29](https://github.com/luccalck/desafio-arcade/pull/29) | Submissão,relatório,candidata,release/ficha/banca eautoria |
+|Frequência|0,0714286 deploy/dia|1 deploy formal ÷ 14 dias|
+|Lead time|0,0908333 h = 5 min 27 s|1 vínculo commit→deploy-prd concluído|
+|Taxa de falha de mudança|0%|1 deploy formal, sem rollback correlacionado|
+|MTTR|N/D; samples=0|Nenhuma Issue de alerta aberta e fechada|
 
-No snapshot inicial,28 PRs estavam abertos sem reviews. Após Lucca afirmar que revisou o trabalho dos colegas e autorizar o registro, a API confirmou15 aprovações suas nos PRs 15–29, nos HEADs correspondentes. Isso cumpre o mínimo numérico de dezreviews por outro autor nesse recorte, mas não aprova os própriosPRs, não comprova merge e não determina F. Nenhuma revisão foi atribuída a outra pessoa. A nota depende de(0,7×A+0,3×B)×F e da banca; as autoavaliações10na ficha permanecem estimativas solicitadas.
+O lead time equivale a 0,00378472 dias, frente à linha de base de 11 dias fornecida no enunciado. Essa diferença é descritiva: uma amostra não comprova causalidade, melhoria sustentada ou comparação estatisticamente equivalente. Falta medir o efeito de uma mudança com antes/depois verificáveis no projeto. Zero por cento com denominador 1 não significa ausência histórica ou futura de falhas.
 
-**O que funcionou:** regras separadas da interface permitiram testar comportamento e exportação; a CI detecta contratos inválidos e arquiva provas; o bundle com manifesto permitiu conferir170 arquivos sem divergência. **O que falhou no processo:** documentos anteciparam aceites sem eventos correspondentes; acumularPRsabertos e gates ignorados gerou aparência de entrega completa. A auditoria reabriu27checks contestados e separou preparação de execução.
+### Ensaio real de alertas —16/10 e limite operacional
 
-**O que mudamos:** identificação real completa, ficha com campos finais vazios, conclusões limitadas à prova e correção da cadeia de automação. **O que medir adiante:** tempo real de entrega, recuperação e efeito de uma melhoria DORA. Não usamos supostas falhas de cron, benchmarks ou consentimentos não observados para sustentar a retrospectiva.
+No ensaio isolado 38847296363, Issues #38/#39 abriram e fecharam automaticamente: JogoForaDoAr em 1 s e LatenciaAlta em 3 s; média 2 s. O servidor temporário no runner respondeu 404 e atrasou 2,2 s, medidos por HTTP. Duas sondas por falha não duplicaram Issues. Labels/marcadores ensaio separam esses ciclos de incidentes e do MTTR de produção, ainda N/D.
 
-O pitch real permanece pendente por orientação de Lucca. Sem esse vídeo não há pacote acadêmico final completo nem triagem final aprovável. Ainda precisam ocorrer playtest humano, preenchimento verdadeiro do HTML/TXT, envio/reciboAVA, ensaio10min+5min e banca com os quatro. Concurso externo é opcional, sem inscrição ou decisão coletiva comprovada; nenhum termo é aceito automaticamente.
+A primeira tentativa 38846941358 falhou: a listagem GitHub atrasada gerou duas Issues. Uma regressão reproduziu o problema; manter escrituras confirmadas no adaptador eliminou a duplicata na repetição (2 → 1 Issue por duas sondas, no ciclo HTTP). Isso é melhoria medida no ensaio, sem alegar ganho sustentado de DORA. Relatórios, Issues e limites: [ensaio operacional](https://github.com/luccalck/desafio-arcade/actions/runs/38847296363).
 
-**Fontes locais de acompanhamento:** docs/execucao/05-pendencias-por-passo.md, docs/gestao/checklist-avaliacao.md, docs/evidencias/reconferencia-registros.md e docs/contribuicoes.md. Os resultados operacionais posteriores devem acrescentar run/SHA/hashes/horários reais a este relatório antes da versão de entrega; até lá, não é relatório de encerramento integral.
+O caminho de recuperação controlada está implementado/testado e a injeção foi observada num navegador local, com ponteiro público preservado. Falta revisão externa/integração e rollback real pela pipeline, cronômetro incluindo Pages e observações de continuidade. Testes locais, ensaio de alertas e preflight não substituem essa demonstração nem playtest humano.
+
+<div style="break-before: page;"></div>
+
+## 9. Rastreabilidade dos dez integráveis
+
+Cada fonte identifica execução ou PR real. A matriz separa aceite técnico comprovado de atividades finais: produção verde não significa aprovação de todos os integráveis ou entrega acadêmica completa.
+
+|INT / peso A|Fonte verificável|Implementado ou executado|Aceite ainda necessário|
+|---|---|---|---|
+|INT-01 /10%|[PR33](https://github.com/luccalck/desafio-arcade/pull/33), [PR35](https://github.com/luccalck/desafio-arcade/pull/35)|Quatro autores/RAs; 15 reviews históricos; revisão e merges preservados|Tags finais, conferência individual e banca/F|
+|INT-02 /8%|[CI main](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114), [PR22](https://github.com/luccalck/desafio-arcade/pull/22)|GDD completo com 12 seções/Esteira; PDF automático; dados reais|Versão/data/links/direitos da release acadêmica final|
+|INT-03 /15%|[Esteira verde](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114)|CI/HML/PRD aprovados; 216,414 s push→HML; aprovação registrada|Revalidar futuras alterações; pacote/triagem finais|
+|INT-04 /12%|[CI 299/36](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114), [PR8](https://github.com/luccalck/desafio-arcade/pull/8)|299 testes + 36 E2E; HML 4/4; smokes candidata/raiz; offline 1/1|Playtest humano e regressão de futuros HEADs|
+|INT-05 /10%|[PR10](https://github.com/luccalck/desafio-arcade/pull/10), [CI](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114)|Scanners, SBOM, inventários, hook e revisão|Direitos/licenças finais e vídeo/tag/artefatos|
+|INT-06 /10%|[CI/bundle](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114)|ZIP 29.000 B, 172 arquivos no bundle; checksum comum HML/PRD; offline|Tag/GitHub Release com assets finais|
+|INT-07 /12%|[Produção](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301)|Aprovação, azul-verde, release por SHA e smoke públicos|Recuperação manual/automática < 5 min com URL contínua|
+|INT-08 /10%|[Sondas/DORA](https://github.com/luccalck/desafio-arcade/actions/runs/38830013027)|HML/PRD 200, mesmo SHA; status 200; três DORA com 1 amostra|Incidentes/MTTR operacionais; ensaio e melhoria observados à parte|
+|INT-09 /8%|[PR25](https://github.com/luccalck/desafio-arcade/pull/25), [Esteira](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114)|Empacotador/triagem e origem imutável implementados|Pitch, pacote completo e TRIAGEM APROVADA na tag final|
+|INT-10 /5%|[PR34](https://github.com/luccalck/desafio-arcade/pull/34), [PR28](https://github.com/luccalck/desafio-arcade/pull/28)|Relatório candidato atualizado, prints atuais, roteiro/legendas|Revisão/publicação deste PDF, pitch, ensaio e banca|
+
+### Segurança, direitos e origens
+
+Gitleaks bloqueante no histórico, audit de produção, Dependabot e SBOM acompanham a CI. No bundle do SHA 88, ci-88-gitleaks.json registra zero achados, e ci-88-npm-audit.json registra zero vulnerabilidades, inclusive críticas. Scanner sem achados não garante direitos ou ausência absoluta de qualquer segredo. Reconferir tag, vídeo/logs e ativos finais, sem introduzir segredo real para testar detecção. LICENSE, THIRD_PARTY e AI-USAGE registram origens/usos; bibliotecas conservam suas licenças.
+
+Os três prints atuais vieram do navegador HML/PRD/file:// do SHA 88, com metadados; não são mockups Stitch. O conjunto operacional tem manifesto próprio, separado do pacote acadêmico. O checklist integral e as pendências por passo continuam nos respectivos MDs. O relatório atualizado do PR34 precisa de revisão/CI e acesso público efetivo; não se presume incluído no bundle do SHA 88 já promovido.
+
+<div style="break-before: page;"></div>
+
+## 10. Colaboração, retrospectiva e fechamento
+
+|Integrante|PRs autorais de referência|Escopo documentado|
+|---|---|---|
+|Lucca|[#2](https://github.com/luccalck/desafio-arcade/pull/2) a [#14](https://github.com/luccalck/desafio-arcade/pull/14), [#32](https://github.com/luccalck/desafio-arcade/pull/32), [#33](https://github.com/luccalck/desafio-arcade/pull/33)|Produto, GDD, jogo Python, CI, segurança, offline, consolidação|
+|Davi|[#15](https://github.com/luccalck/desafio-arcade/pull/15) a [#19](https://github.com/luccalck/desafio-arcade/pull/19)|HML, conteúdo/testes, release, alertas, produção/painel|
+|Miguel|[#20](https://github.com/luccalck/desafio-arcade/pull/20) a [#24](https://github.com/luccalck/desafio-arcade/pull/24), [#35](https://github.com/luccalck/desafio-arcade/pull/35)|Recuperação, DORA, GDD, integridade/triagem e fallback HML|
+|Lucas|[#25](https://github.com/luccalck/desafio-arcade/pull/25) a [#29](https://github.com/luccalck/desafio-arcade/pull/29)|Submissão, relatório, candidata, release/ficha/banca, revisões de consolidação|
+
+Os dois commits novos de Miguel e sua autoria foram preservados; Lucca revisou seu PR35 e Lucas aprovou a consolidação PR33 antes do merge 88. Não simulamos identidades nem autoaprovamos PRs de Lucca. A aprovação do environment por Lucca seguiu a política existente, mantendo visíveis ator/ambiente/recibo. Contribuições aprovadas em integráveis e domínio na banca são condições individuais; nota/F são atribuições do professor.
+
+### Retrospectiva baseada em resultados
+
+**Funcionou:** separar regras da UI, testar campanha pública/offline e promover os mesmos bytes. A execução do SHA 88 comprovou HML ≤ 15 min, smoke da candidata, promoção e smoke da raiz, com aprovação real. A primeira amostra pós-produção habilitou frequência, lead time e taxa de falha calculados de eventos verificáveis.
+
+**Falhou e foi corrigido:** registros anteciparam aceites; reabrimos 27 checks contestados. A dependência exclusiva de Events causou falha real HML. Correções revisadas, incluindo fallback de Miguel, permitiram 216,414 s medidos em nova execução. Preservamos a falha anterior, sem transformá-la em sucesso retroativo. **Ainda não resolvido:** não há alerta/MTTR, modo de ensaio e recuperação real < 5 min; cron não oferece cadência pontual demonstrada.
+
+**O que medir adiante:** ensaio controlado de recuperação com baseline validada e HTTP contínuo, métricas antes/depois de uma melhoria e playtest humano. O lead time de 5 min 27 s é uma primeira amostra frente à referência de 11 dias, sem inferir ganho causal ou maturidade sustentada. Defeitos futuros só serão chamados reais com reprodução/evidência, não por necessidade da rubrica.
+
+### Critérios restantes de fechamento
+
+|Ação necessária|Evidência para concluir|
+|---|---|
+|Revisar/publicar PR34|Outro revisor, CI e PDF atualizado acessível; sem confundir com PDF antigo|
+|Recuperação/alertas|Ensaio manual/automático real, tempos/URL contínua, Issues e autocerramento|
+|Melhoria DORA|Origem/janela/denominadores e antes/depois; MTTR quando houver evento|
+|Pitch e playtest|Vídeo real ≤ 90 s, legendas/direitos; registro humano de 3 min|
+|Tag/release/submissão|SemVer compatível, assets/manifestos, triagem real na tag final|
+|Ficha, AVA, banca|TXT verdadeiro pelo HTML, recibo, ensaio e defesa dos quatro|
+
+O pitch segue pendente por orientação de Lucca. Davi informou consentimento dos quatro e registro privado; conferir escopo/canais com o vídeo final, sem publicar dados pessoais. A apresentação prevista é 10 min + 5 min de demonstração + 5 min de perguntas; não ocorreu nesta automação. Concurso externo é opcional e sem inscrição autorizada. Produção técnica verde é avanço comprovado; G8 e entrega acadêmica completa continuam dependentes das provas finais.

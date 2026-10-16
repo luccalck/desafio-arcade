@@ -1,6 +1,6 @@
 # Respostas para a ficha de entrega do professor
 
-Atualização: 14/10/2026. Este é o registro persistente para preencher o HTML original de uma vez, no fechamento. Não é a ficha TXT gerada pelo professor nem comprova entrega. Campos de resposta vazios ainda precisam ser completados; não substituir por dados fictícios. Os dados de Davi, Miguel e Lucas foram informados por Lucca em 13/10; Lucca confirmou seu nome completo e RA em 14/10/2026.
+Atualização: 15/10/2026. Este é o registro persistente para preencher o HTML original de uma vez, no fechamento. Não é a ficha TXT gerada pelo professor nem comprova entrega. Campos de resposta vazios ainda precisam ser completados; não substituir por dados fictícios. Os dados de Davi, Miguel e Lucas foram informados por Lucca em 13/10; Lucca confirmou seu nome completo e RA em 14/10/2026.
 
 Fonte: `C:/Users/user/Downloads/jogo/Avaliação.html`, barra superior e seção 10, incluindo os campos e validadores gerados por JavaScript. Mantemos o original sem alterações. Os papéis/contas estão em [SQUAD](../../SQUAD.md). Nome do jogo para referência: Rota do Código; o formulário não tem campo separado para esse título.
 
@@ -30,10 +30,10 @@ Os campos finais ficam vazios até comprovação da versão efetivamente entregu
 
 | Campo HTML / rótulo literal | Obrigatório no formulário? | Resposta para copiar | Conferência antes de gerar |
 |---|---|---|---|
-| lkBuild — URL pública do jogo (produção) | Sim | | Preview HTTP 200 não comprova produção formal da candidata. |
-| lkHml — URL de homologação | Não | | Confirmar deploy formal e SHA servido, além do HTTP 200. |
-| lkCI — Última execução verde da pipeline (link ou print) | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/38649548723 | Referência auditada no SHA e71de72; deploys e submissão ignorados nesse run. Substituir no fechamento. |
-| lkGraf — Painel /status/ (link) | Sim | | Em 14/10, consulta da auditoria retornou 404; reconferir após publicação. |
+| lkBuild — URL pública do jogo (produção) | Sim | https://luccalck.github.io/desafio-arcade/ | Produção formal0.7.0/SHA88d533e, run38829484114, smoke aprovado. Reconferir na tag final. |
+| lkHml — URL de homologação | Não | https://luccalck.github.io/desafio-arcade/hml/ | Formal0.7.0/SHA88d533e, regressão/recibo aprovados,216,414s atéHML. |
+| lkCI — Última execução verde da pipeline (link ou print) | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/38829484114 | CI→HML→PRD→monitor aprovados. Release/tag e submissão foram ignoradas neste pushmain. Substituir pela execução final aplicável. |
+| lkGraf — Painel /status/ (link) | Sim | https://luccalck.github.io/desafio-arcade/status/ | HTTP200 e renderização real conferidos; três DORA com números, MTTR indisponível. |
 | lkVideo — Vídeo pitch (arquivo no AVA ou link) | Sim | | Pendente por orientação de Lucca; não usar caminho inexistente como entrega. |
 | lkRel — Relatório técnico (PDF) | Sim | | Publicar PDF gerado pela CI e confirmar acesso; arquivo local não é link público. |
 | lkDrive — Pasta do Google Drive do concurso (se inscritos) | Não | | Concurso opcional, sem decisão coletiva/autorização comprovada. |
@@ -46,14 +46,14 @@ As notas 10 são estimativas solicitadas por Lucca, não resultados medidos ou n
 |---|---:|---|---:|---|
 | INT-01 — Repositório e fluxo Git | 10% | | 10 | Registrar revisões reais, integrações e tags; autoria não equivale a aprovação. |
 | INT-02 — GDD como código | 8% | | 10 | 12 seções; PDF da CI auditada tem 18 páginas. Conferir revisão e versão final. |
-| INT-03 — Pipeline CI/CD no GitHub Actions | 15% | | 10 | CI verde comprovada; completar execução formal de HML/PRD e tempo de entrega. |
-| INT-04 — Testes automatizados | 12% | | 10 | CI auditada: 152 unidade, 108 integração, 36 E2E; falta provar HML/PRD formais. |
+| INT-03 — Pipeline CI/CD no GitHub Actions | 15% | | 10 | Run38829484114: CI→HML→PRD→monitor verdes; HML216,414s. Release e recuperação finais permanecem nos respectivosINT. |
+| INT-04 — Testes automatizados | 12% | | 10 | CI88d533e:299 unidade/integração,36E2E; HML4/4 e smokePRD formal aprovados. Reconferir a versão final. |
 | INT-05 — Segurança, licenças e uso de IA | 10% | | 10 | Scanners CI sem achados; conferir inventários/revisão e materiais finais. |
-| INT-06 — Release versionada e empacotada | 10% | | 10 | ZIP CI 29.001 bytes; ausência de tag/release no snapshot auditado. |
-| INT-07 — Ambientes, entrega progressiva e rollback | 12% | | 10 | Preparação e testes não comprovam rollout ou recuperação real abaixo de 5 min. |
-| INT-08 — Monitoramento, alertas e métricas DORA | 10% | | 10 | Ativar e executar sondas/painel, alertas e medir DORA reais. |
+| INT-06 — Release versionada e empacotada | 10% | | 10 | ZIP88d533e:29.000bytes; HML/PRD com14hashesHTTP iguais e ZIP original offline aprovado. GitHub Release por tag ainda pendente. |
+| INT-07 — Ambientes, entrega progressiva e rollback | 12% | | 10 | Rollout azul-verde formal e smoke comprovados. Recuperação automática/manual<5min e continuidade ainda sem ensaio completo. |
+| INT-08 — Monitoramento, alertas e métricas DORA | 10% | | 10 | Sondas formais e painel publicados/testados. Três métricas DORA com uma implantação; MTTR, alerta tratado e melhoria medida pendentes. |
 | INT-09 — Build pública e pacote de submissão | 8% | | 10 | Pacote final/triagem dependem de produção, vídeo real e prazo oficial. |
-| INT-10 — Vídeo pitch e relatório técnico | 5% | | 10 | Relatório em revisão; pitch e banca continuam pendentes. |
+| INT-10 — Vídeo pitch e relatório técnico | 5% | | 10 | Relatório de10páginas gerado/inspecionado na CI9494224; atualizaçãoPR34 exige revisão externa. Pitch, evidências finais e banca pendentes. |
 
 ## 5. Banca — estimativa B
 
@@ -111,9 +111,22 @@ Checklist de conferência do JavaScript, ainda sem aceitar a ficha final:
 
 ## 10. Referências atuais que ainda não são respostas finais
 
-- Preview do jogo: https://luccalck.github.io/desafio-arcade/ .
-- HML do preview: https://luccalck.github.io/desafio-arcade/hml/ .
+- Produção formal do jogo: https://luccalck.github.io/desafio-arcade/ .
+- Homologação formal: https://luccalck.github.io/desafio-arcade/hml/ .
 - Nome do squad: Aura 67.
-- Produção formal, painel/status, vídeo, relatório final, release/tag final e triagem continuam sujeitos às etapas responsáveis. Não preencher os campos finais com URLs presumidas.
+- Produção/HML/painel estão comprovados; vídeo, relatório final publicado na Release, tag e triagem ainda sujeitos às etapas responsáveis. Não inventar links finais.
 
 Este MD reúne os 49 controles de entrada da ficha: 2 do squad/repositório, 12 dos integrantes, 7 links, 20 dos INT (check + nota), 4 notas B e 4 declarações. Os 3 cálculos e 7 validadores são saídas automáticas/conferências, não novos campos. A preservação deste arquivo no Git permite recuperar as respostas mesmo que a aba do professor perca o preenchimento.
+
+
+## 11. Produção formal confirmada — 15/10/2026
+
+A aprovação de Lucas no PR33 foi conferida no HEADf38f6d9; merge88d533e. Run38829484114/1 concluiu com CI299/36, HML4/4 em216,414s, aprovação real no environmentproducao, promoção azul-verde e smoke da candidata/raiz. Bundle172arquivos, ZIP29.000bytes/hash84105e76a4bd55b5064d466340cb377ea27d49092bae984f65ebdeb7d0d0f937, sete arquivos idênticos emHML/PRD, offline1/1 semrede/erros. Sondas38830013027 confirmam0.7.0/SHA88emambos. Atualizamos somente links agora conhecidos; não marcamos dez integráveis ou declarações finais como atendidos.
+
+DORA: uma implantação em14dias; frequência0,0714286/dia, leadtime5min27s, taxa de falha0% nessa amostra; MTTRsemvalor. Pacote final, pitch, relatório final publicado emrelease, triagem, melhoria/recuperação e ações humanas continuam pendentes. O HTML original e o TXT não foram preenchidos ou gerados.
+
+## 12. O que falta para gerar a ficha verdadeira
+
+Dados de squad, integrantes/RAs/papéis, URLs de produção/HML/CI/painel e estimativas já estão disponíveis neste MD. Faltam o vídeo e o link acessível do relatório final, a conclusão/evidência dos dezINT, a conferência coletiva das quatro declarações (incluindo composição desde02/10 e TRIAGEM APROVADA na v1.0.0) e, por último, transcrição/validação/geração doTXT no HTML. Drive é opcional e só se houver inscrição autorizada.
+
+Relatório candidato mais recente: CI38831325010, SHA9494224, dez páginas,558.832bytes,SHA256d6c866a2c2ef6e9387e0e835e4448180f1c1747d54ef58f7d2809be196a491ae. Arquivado no Actions, ainda não é o link público da versão final da Release. Atualizar oSHA/CI após novas alterações e revisão; não considerar estimativas10 como comprovação dosINT.

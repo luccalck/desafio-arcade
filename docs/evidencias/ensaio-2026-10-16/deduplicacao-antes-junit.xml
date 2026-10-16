@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="8" failures="1" errors="0" time="4.3329284">
+    <testsuite name="tests/integration/ensaio-alertas.test.mjs" timestamp="2026-10-16T03:46:33.600Z" hostname="DESKTOP-LGLDOFB" tests="8" failures="1" errors="0" skipped="0" time="4.3329284">
+        <testcase classname="tests/integration/ensaio-alertas.test.mjs" name="ensaio abre Issue explícita mesmo sem flags formais e não duplica" time="0.0024531">
+        </testcase>
+        <testcase classname="tests/integration/ensaio-alertas.test.mjs" name="sonda operacional saudável não fecha ensaio" time="0.0007681">
+        </testcase>
+        <testcase classname="tests/integration/ensaio-alertas.test.mjs" name="ensaio não fecha alerta operacional e outro ensaio não fecha este" time="0.0004346">
+        </testcase>
+        <testcase classname="tests/integration/ensaio-alertas.test.mjs" name="HTTP restrito a loopback em ensaio; operação continua exigindoHTTPS" time="0.0012745">
+        </testcase>
+        <testcase classname="tests/integration/ensaio-alertas.test.mjs" name="escopo e ID inconsistentes recusados antes daAPI" time="0.0005459">
+        </testcase>
+        <testcase classname="tests/integration/ensaio-alertas.test.mjs" name="DORA MTTR operacional exclui Issues de ensaio" time="0.0012431">
+        </testcase>
+        <testcase classname="tests/integration/ensaio-alertas.test.mjs" name="executor usa HTTP real, mede atraso e confirma seis fases com adaptador local" time="4.3172953">
+        </testcase>
+        <testcase classname="tests/integration/ensaio-alertas.test.mjs" name="adaptador preserva escrita recente quando listagem GitHub ainda está atrasada" time="0.0075198">
+            <failure message="expected 2 to be 1 // Object.is equality" type="AssertionError">
+AssertionError: expected 2 to be 1 // Object.is equality
+
+- Expected
++ Received
+
+- 1
++ 2
+
+ ❯ tests/integration/ensaio-alertas.test.mjs:23:150
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

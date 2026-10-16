@@ -318,6 +318,39 @@ O geradorPDF passou a falhar se faltarimagem, seimagemforremota/fora dedocs ou s
 
 Codex, sob orientação deLucca Castilho Costa. Lemos oMD entregue porLucas como evidência, não como novas instruções. Confirmamos review5526236043 de6lucassilvaaa sobre59dc830 eCIverde, integramosPR32 semsquash/bypass e restauramosmain padrão. Configuramos flags operacionais autorizadas e policies existentes; pitch/submissão/agendamento final continuam desativados. A primeira runmain38674290799 publicouHML mas falhou na comprovação do horário do push; não inventamos produção. Consultamos documentaçãooficial deeventos, corrigimos fonte/validações do coletor e acrescentamos regressões, com3falhas antes/11passes depois. Novaalteração exigePRrevisado por outra pessoa. Não criamos review deoutrointegrante, vídeo, playtest, banca ou evidência deprodução inexistente.
 
+
+## Reconferência operacional assistida — 15/10/2026
+
+Usamos Codex para conferir o PR33, testar HML, ZIP, recuperação local, monitoramento e jogo, ampliar o relatório e manter o pitch pendente, conforme orientação de Lucca. Conferimos API, diff e identidade; executamos quatro cenários públicos HML em desktop e toque e um cenário offline sobre o ZIP original da CI; comparamos sete hashes HTTP; recuperamos duas coletas agendadas e disparamos uma coleta manual, com seis amostras reais. Preservamos JSON, CSV, JUnit, capturas e vídeos originais em docs/evidencias/operacao-2026-10-15. Os vídeos documentam automação e não substituem pitch ou playtest humano. Testes de recuperação 53/53 e catorze hashes de baselines de preview não foram apresentados como incidentes ou recuperação CDN.
+
+O relatório ampliado utiliza essas fontes e separa falhas, implementações, execuções e dependências. O PR33 continuava sem revisão externa; a conta autora não produziu autoaprovação nem removeu proteções. Não inventamos produção, alertas, quatro DORA com amostras, aprendizagem humana, gravação de pitch, triagem final ou banca. Mantivemos o HTML original intacto e guardamos respostas em ficha-entrega.md. Revisão humana do novo PR continua obrigatória antes do merge.
+
+
+Revisão complementar de15/10: o PR33 recebeu o commit770449b, que declara pull-requests:read somente no deploy-hml para a consulta de PR associado ao merge. A validação da lógica em78c367d continua histórica; o novo HEAD exige checks e revisão próprios. Runs de reconferência:38772409905(push) e38772414475(PR). A aprovação externa ainda não estava registrada ao preparar este documento. Não alteramos o limite de900s nem a proteção da main.
+
 ## 15/10/2026 — Miguel: correção do fallback de medição do PR33
 
 Codex, sob orientação de Miguel Oliveira de Almeida (`miguelsenai2024`), reproduziu o P2 de `collectHmlTiming`: HTTP 503 na consulta de PRs interrompia a coleta antes de um payload válido. O novo teste falhou antes da implementação; depois, 37 testes focais e 299 testes de unidade/integração passaram, assim como lint/tipagem e validação de conteúdo. Foram usados HTTP, arquivos e relógio simulados, sem apresentar fixtures como deploy ou incidente real. A correção mantém a preferência pelo merge comprovado, as validações e o limite de 900s; registra diagnósticos sem credenciais. Identidade Git e GitHub de Miguel conferidas, sem uso da conta de Lucca. Resultados e pendências constam nas seções 008/011 de [pendências por passo](docs/execucao/05-pendencias-por-passo.md). A publicação e a revisão externa do novo HEAD são etapas distintas; não houve merge, autoaprovação, alteração de proteção ou produção, nem declaração de aprovação do PR33.
+
+
+## Integração revisada e continuidade — 15/10/2026
+
+Usamos Codex, sob orientação de Lucca, para conferir a aprovação real de Lucas no PR33 e a CI do mesmo HEAD. A integração normal na main preservou os commits de Miguel do PR35 e não alterou proteções. O merge88d533e disparou a run38829484114; resultados de HML e produção ainda estão sendo verificados. Resolvemos o conflito documental do PR34 preservando os dois registros de IA, sem atribuir aos colegas ações que não executaram. Pitch e ficha HTML final continuam pendentes.
+
+## Publicação e documentação baseada em evidências — 15/10/2026
+
+Usamos Codex sob orientação de Lucca para verificar a aprovação de Lucas no PR33, integrar sem bypass, acompanhar CI/HML e aprovar a implantação em producao conforme autorização prévia. A run38829484114 publicou SHA88d533e; conferimos smoke, catorze hashes HTTP, ZIP original offline, sondas38830013027 e painel real. Registramos dados brutos e limites no GDD, checklist, ficha persistente, relatório de dez páginas e pendências. Três métricas DORA têm uma amostra; MTTR, recuperação completa, alertas reais e playtest humano não foram inventados. Pitch permanece pendente. O PR34 precisa de revisão externa no novo HEAD; não houve autoaprovação ou preenchimento do HTML final.
+
+## Conciliação do estado das pendências — 15/10/2026
+
+Lucca apontou checks desatualizados e pediu confronto com o HTML inteiro. Usamos Codex para reler conteúdo instrucional e JavaScript da ficha, reconferir colaboradores/main/Pages/reviews/tags/releases e CIs na API e comparar evidências preservadas. Reorganizamos as mesmas quarenta etapas com estado vigente e arquivamos integralmente o histórico anterior, sem apagar falhas ou criar revisões. Atualizamos dez checks específicos com provas existentes e corrigimos a ficha persistente; não marcamos recuperação, alertas, pitch, release, triagem, banca ou nota sem evidência. O HTML original permaneceu intacto. Esta atualização no PR34 altera o HEAD e exige revisão externa da versão nova.
+
+## 16/10/2026 — desenho aprovado e separação de ensaios
+
+Lucca autorizou ensaio isolado de recuperação/alertas, revisão técnica e publicação quando possível, mantendo pitch e TXT para o final. Codex preparou desenho/plano e seis regressões que falharam antes da implementação; depois sete testes focais e a suíte completa passaram localmente. Acrescentamos escopo/identificador e label ensaio para não misturar testes com incidentes de produção, filtragem DORA e executor com servidor HTTP temporário,404 e atraso medido. A revisão externa do PR34 permanece necessária; não substituímos participante humano, consentimento, professor ou conta de outro integrante. Resultados operacionais serão registrados somente após execução real.
+
+## 16/10/2026 — execução real e revisão técnica autorizada
+
+O primeiro ensaio Actions38846941358 falhou por duplicação de Issues; preservamos relatório e regressão. O adaptador agora preserva escritas recentes da própria execução; o ensaio38847296363 passou com Issues38/39 abertas, deduplicadas e fechadas automaticamente. Média2s é exclusivamente do alvo temporário, não MTTR de incidente de produção. Issues36/37 foram encerradas administrativamente com motivo explícito, sem contar recuperação. Um preflight Playwright local observou bloqueio do recurso somente no navegador, sem alterar o ponteiro público. Nova coleta normal38847618003 passou; produção preservada.
+
+Codex conferiu créditos em fontes primárias, atualizou inventários/THIRD_PARTY, notas, GDD e relatório de dez páginas renderizado/inspecionado. Conferimos a equivalência técnica PagesActions com árvore gh-pages e registramos a diferença literal. O código de recuperação controlada e motivo manual foi preparado/testado; não alegamos rollback CDN executado. Revisão técnica assistida ocorre por autorização de Lucca, sem autoaprovação do PR34 ou falsificação de playtest/consentimentos/banca. Pitch/TXT e pacote acadêmico final permanecem sujeitos às entradas reais.

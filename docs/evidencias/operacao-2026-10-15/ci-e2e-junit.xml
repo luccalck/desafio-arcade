@@ -1,0 +1,195 @@
+<testsuites id="" name="" tests="36" failures="0" skipped="0" errors="0" time="51.08146000000001">
+<testsuite name="offline-package.spec.mjs" timestamp="2026-10-15T03:11:51.176Z" hostname="" tests="1" failures="0" skipped="0" time="14.852" errors="0">
+<testcase name="ZIP offline: campanha completa e downloads reais sem rede" classname="offline-package.spec.mjs" time="14.852">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/offline-package-ZIP-offlin-969d7--e-downloads-reais-sem-rede/attachments/offline-integridade-1162987f0bd48a21113593fea02ffe2ef99d2878.json]]
+]]>
+</system-out>
+<system-err>
+</system-err>
+</testcase>
+</testsuite>
+<testsuite name="rollout.spec.mjs" timestamp="2026-10-15T03:11:51.176Z" hostname="" tests="5" failures="0" skipped="0" time="6.262" errors="0">
+<testcase name="carregador real mantém sessão na promoção e retira versão defeituosa após rollback" classname="rollout.spec.mjs" time="1.681">
+</testcase>
+<testcase name="carregador funciona com storage bloqueado e não envia novas sessões à candidata" classname="rollout.spec.mjs" time="0.719">
+</testcase>
+<testcase name="JSON e rede inválidos ficam no erro recuperável sem redirecionamento inventado" classname="rollout.spec.mjs" time="0.799">
+</testcase>
+<testcase name="release sem index não recebe navegação; anterior válida é alternativa" classname="rollout.spec.mjs" time="0.806">
+</testcase>
+<testcase name="smoke014 valida gameplay através do carregador e contrato formal reais" classname="rollout.spec.mjs" time="2.257">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/rollout-smoke014-valida-ga-ebed9-dor-e-contrato-formal-reais/attachments/smoke-aprovado-27083dd1a8bff00bb07431c9f4afcebc959c26a2.png]]
+
+[[ATTACHMENT|../test-results/rollout-smoke014-valida-ga-ebed9-dor-e-contrato-formal-reais/attachments/smoke-aprovado-metadados-f53aabf2af76245f7dafd26d82f47ad7eb33dbcb.json]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="smoke-contract.spec.mjs" timestamp="2026-10-15T03:11:51.176Z" hostname="" tests="10" failures="0" skipped="0" time="15.469" errors="0">
+<testcase name="contrato smoke aceita raiz com carregador e release correta" classname="smoke-contract.spec.mjs" time="2.123">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/smoke-contract-contrato-sm-cc019-arregador-e-release-correta/attachments/smoke-aprovado-07ecf4f5afc6a4f4fc64e658692279cb4a70dec0.png]]
+
+[[ATTACHMENT|../test-results/smoke-contract-contrato-sm-cc019-arregador-e-release-correta/attachments/smoke-aprovado-metadados-ac7d2159237eb3eec9d56d7bdffa8404a658643e.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="contrato smoke aceita candidata direta sem promover ponteiro" classname="smoke-contract.spec.mjs" time="1.465">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/smoke-contract-contrato-sm-5dda0-ireta-sem-promover-ponteiro/attachments/smoke-aprovado-960488fb967bdd5f7aca8e9e7bcf701f2ef2de3c.png]]
+
+[[ATTACHMENT|../test-results/smoke-contract-contrato-sm-5dda0-ireta-sem-promover-ponteiro/attachments/smoke-aprovado-metadados-8a62a228b03bc9cd364bf6b76ba66143b04b7002.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="contrato smoke recusa HML como produção e candidata de outro SHA" classname="smoke-contract.spec.mjs" time="0.304">
+</testcase>
+<testcase name="contrato smoke bloqueia pointer" classname="smoke-contract.spec.mjs" time="0.504">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/smoke-contract-contrato-smoke-bloqueia-pointer/attachments/smoke-bloqueado-f77b29c515644220b6ee57c60f5edb21b00cef2a.png]]
+
+[[ATTACHMENT|../test-results/smoke-contract-contrato-smoke-bloqueia-pointer/attachments/smoke-bloqueado-metadados-478f5700afea0ca98a94bc864889a085bf762f60.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="contrato smoke bloqueia sha" classname="smoke-contract.spec.mjs" time="0.349">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/smoke-contract-contrato-smoke-bloqueia-sha/attachments/smoke-bloqueado-0315deb0b1665905228ed47a1984a65ef52b32fd.png]]
+
+[[ATTACHMENT|../test-results/smoke-contract-contrato-smoke-bloqueia-sha/attachments/smoke-bloqueado-metadados-8118da8ada9399e04bc21b5bd6b1662b7fb48a2d.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="contrato smoke bloqueia loader" classname="smoke-contract.spec.mjs" time="3.631">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/smoke-contract-contrato-smoke-bloqueia-loader/attachments/smoke-bloqueado-053e53a351d35b66c753ca0c013d6d0e7917b464.png]]
+
+[[ATTACHMENT|../test-results/smoke-contract-contrato-smoke-bloqueia-loader/attachments/smoke-bloqueado-metadados-0c4b33ddbd576733347d05d22be538dfe96f49ac.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="contrato smoke bloqueia asset" classname="smoke-contract.spec.mjs" time="0.582">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/smoke-contract-contrato-smoke-bloqueia-asset/attachments/smoke-bloqueado-4cd2bf988fcdb95dfbab83347bc37df07f8e9c50.png]]
+
+[[ATTACHMENT|../test-results/smoke-contract-contrato-smoke-bloqueia-asset/attachments/smoke-bloqueado-metadados-44e483aadc306d61b1593f9901a51b15cfcb8ee7.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="contrato smoke bloqueia runtime" classname="smoke-contract.spec.mjs" time="1.224">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/smoke-contract-contrato-smoke-bloqueia-runtime/attachments/smoke-bloqueado-1f7e5b9e0ccfb802d074dbc06177842fc1b275ac.png]]
+
+[[ATTACHMENT|../test-results/smoke-contract-contrato-smoke-bloqueia-runtime/attachments/smoke-bloqueado-metadados-557a7686a6d9c66a50b33d4cfe2df9f8b12f5254.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="contrato smoke bloqueia console" classname="smoke-contract.spec.mjs" time="1.323">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/smoke-contract-contrato-smoke-bloqueia-console/attachments/smoke-bloqueado-1af8b2884210f3df0ae0d5d5c621733b529b0e45.png]]
+
+[[ATTACHMENT|../test-results/smoke-contract-contrato-smoke-bloqueia-console/attachments/smoke-bloqueado-metadados-1b510131843dc5b59583002afe8a2899f7ef7776.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="contrato smoke bloqueia control" classname="smoke-contract.spec.mjs" time="3.964">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/smoke-contract-contrato-smoke-bloqueia-control/attachments/smoke-bloqueado-cecee0d6429c5e8ddfeaa4033b181f4d9780032e.png]]
+
+[[ATTACHMENT|../test-results/smoke-contract-contrato-smoke-bloqueia-control/attachments/smoke-bloqueado-metadados-18c367c74786e99385d00e27ee18085243452a90.json]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="smoke.spec.mjs" timestamp="2026-10-15T03:11:51.176Z" hostname="" tests="4" failures="0" skipped="0" time="17.685" errors="0">
+<testcase name="regressão HML preparada: primeira missão, campanha e encerramento pela UI" classname="smoke.spec.mjs" time="13.527">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI/attachments/menu-6a74d9b6f41f060b5792f7a45937b7f0fcebb16e.png]]
+
+[[ATTACHMENT|../test-results/smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI/attachments/menu-metadados-8f994de33be4f2772eaa700314bf68307cf17fc7.json]]
+
+[[ATTACHMENT|../test-results/smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI/attachments/primeira-missao-concluida-f553261c056c70fe03d22db4448748f308a774d3.png]]
+
+[[ATTACHMENT|../test-results/smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI/attachments/primeira-missao-concluida-metadados-4a0fe6806510ef45a71bed2e410912a75cee8914.json]]
+
+[[ATTACHMENT|../test-results/smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI/attachments/encerramento-real-20a182083f643970616cdb2bc4611629045745ce.png]]
+
+[[ATTACHMENT|../test-results/smoke-regressão-HML-prepar-1cb34-anha-e-encerramento-pela-UI/attachments/encerramento-real-metadados-f9155f0dff9319245c7b40634720d219268b29e8.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="regressão HML preparada: reinício confirmado e bloqueio de missões" classname="smoke.spec.mjs" time="1.672">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/smoke-regressão-HML-prepar-cd98a-rmado-e-bloqueio-de-missões/attachments/reinicio-confirmado-cd6d3e3e17e83cab31aea71946f0c4d4b098875c.png]]
+
+[[ATTACHMENT|../test-results/smoke-regressão-HML-prepar-cd98a-rmado-e-bloqueio-de-missões/attachments/reinicio-confirmado-metadados-76b72b18bb92d9aba7152a6b50340f2bc335b153.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="smoke web: versão, editor e primeira função corrigida" classname="smoke.spec.mjs" time="0.881">
+</testcase>
+<testcase name="primeira missão: problema real, Python e correção" classname="smoke.spec.mjs" time="1.605">
+</testcase>
+</testsuite>
+<testsuite name="status.spec.mjs" timestamp="2026-10-15T03:11:51.176Z" hostname="" tests="3" failures="0" skipped="0" time="2.202" errors="0">
+<testcase name="painel real local em celular expõe ausência sem números fictícios e funciona por teclado" classname="status.spec.mjs" time="0.795">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/status-painel-real-local-e-33afe-cios-e-funciona-por-teclado/attachments/painel-local-sem-dados-mobile-39b88bcb722a5e4ae417ad269c79b875f03255a9.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="painel renderiza fontes sintéticas com SHA/período e não interpreta conteúdo como HTML" classname="status.spec.mjs" time="0.792">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/status-painel-renderiza-fo-f829d-terpreta-conteúdo-como-HTML/attachments/painel-local-dados-sinteticos-desktop-7f242441976148076f691cac747a39a65b37de12.png]]
+]]>
+</system-out>
+</testcase>
+<testcase name="CSV inválido conserva estado desconhecido e explicita a causa" classname="status.spec.mjs" time="0.615">
+</testcase>
+</testsuite>
+<testsuite name="workshop.spec.mjs" timestamp="2026-10-15T03:11:51.176Z" hostname="" tests="13" failures="0" skipped="0" time="40.689" errors="0">
+<testcase name="syntax: diagnóstico de linha sem executar APIs externas" classname="workshop.spec.mjs" time="1.065">
+</testcase>
+<testcase name="edição invalida teste e não permite retomar regra antiga" classname="workshop.spec.mjs" time="1.071">
+</testcase>
+<testcase name="movimento aplica operações e muda comportamento real" classname="workshop.spec.mjs" time="1.688">
+</testcase>
+<testcase name="pausa conserva tick e nave, retoma sem recriar partida" classname="workshop.spec.mjs" time="1.517">
+</testcase>
+<testcase name="ajuda opcional, foco após restaurar código e preferências" classname="workshop.spec.mjs" time="1.644">
+</testcase>
+<testcase name="código e vitórias persistem; replay não duplica XP; reset próprio" classname="workshop.spec.mjs" time="1.475">
+</testcase>
+<testcase name="campanha final: pilotagem real, 700XP e HTML exportado offline" classname="workshop.spec.mjs" time="13.925">
+</testcase>
+<testcase name="mobile390x844: campanha por toque e vitória real sem overflow" classname="workshop.spec.mjs" time="13.911">
+</testcase>
+<testcase name="arquivo do projeto principal offline: editar e testar sem rede" classname="workshop.spec.mjs" time="0.85">
+</testcase>
+<testcase name="storage indisponível mantém fontes e campanha na sessão" classname="workshop.spec.mjs" time="1.107">
+</testcase>
+<testcase name="campanha anterior não desbloqueia oficina" classname="workshop.spec.mjs" time="0.715">
+</testcase>
+<testcase name="editor Python: Tab e Enter indentam; Escape permite sair" classname="workshop.spec.mjs" time="0.924">
+</testcase>
+<testcase name="JavaScript antigo preservado sem desbloquear campanha Python" classname="workshop.spec.mjs" time="0.797">
+</testcase>
+</testsuite>
+</testsuites>

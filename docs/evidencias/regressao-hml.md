@@ -71,3 +71,8 @@ Commit próprio `1e0b4b56464af2b3d762a8292f513449197ebc87`, identidade Git/GitHu
 Baixamos o artefato e2e do SHA acima e conferimos seu JUnit:17testes,0falhas,0erros,0ignorados. O jogo local/CI e o preview público têm SHAs diferentes explicitamente registrados; não afirmamos que a candidata006 foi implantada. Relatórios originais em `.contexto/passo-006/ci-38348580349/`.
 
 Por autorização persistente, a branch padrão foi atualizada para `feature/passo-006-regressao-hml` após a CI verde. API confirmou main protegida por ci/uma aprovação/incluindo administradores. Isso atualiza rastreamento; não faz merge, revisão humana ou deploy. Registros documentais posteriores acionam CI própria a conferir pelo HEAD.
+
+
+## Execução contra HML da main — 15/10/2026
+
+O deploy-hml da run38674290799 publicou773af17/0.7.0 e executou4/4cenários públicos antes de falhar no coletor de tempo. Repetimos a regressão pública:4/4passaram em62,01s, incluindo campanha até vitória700XP e reinício emdesktop1280×900 e toque390×844. Sete arquivosHTTP foram comparados ao ZIP original da CI e todos tiveram hashes iguais. I04-08/I04-09/I03-16 foram fechados somente por essas evidências específicas; o aceite integralG3 continua dependente da nova run com a correçãoPR33 revisada. [Resultados/JUnit/vídeos](operacao-2026-10-15.md).

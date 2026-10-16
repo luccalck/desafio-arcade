@@ -28,3 +28,10 @@ Revisão técnica prévia: as cinco missões ligam decisões, operações, front
 | Interpretação, limites de uma sessão e melhoria priorizada | Pendente |
 
 B-06 a B-09 e G5 permanecem abertos até haver sessão e registro autorizados. Se surgir defeito real, abrir Issue, reproduzir com teste significativo antes da correção e vincular o PR. A avaliação da banca e revisão por outro integrante continuam separadas.
+
+
+## Reconferência técnica — 15/10/2026
+
+Executamos a campanha pública de HML0.7.0/SHA773af17 por teclado e toque, até vitória e700XP; também reiniciamos e conferimos bloqueio de progressão. Quatro cenários passaram, com vídeos/capturas e sem erro de página nas campanhas. O ZIP original da CI completou a campanha e exportações offline em um cenário aprovado, sem rede nem erro de página. [Provas](operacao-2026-10-15.md).
+
+São sessões automatizadas de verificação funcional, usando soluções conhecidas. Não preenchem a tabela de sessão humana acima, não medem diversão ou aprendizagem e não substituem colega iniciante de outra turma jogando por três minutos sem explicação. Mantemos B-06 a B-09 e o aceite humano de G5 pendentes.

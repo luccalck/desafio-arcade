@@ -1,0 +1,84 @@
+{
+  "date": "2026-10-16",
+  "scope": "Conferência técnica assistida por IA, autorizada por Lucca; não substitui declaração dos demais integrantes.",
+  "components": [
+    {
+      "name": "@esbuild/win32-x64",
+      "version": "0.28.2",
+      "licenses": [
+        "MIT"
+      ],
+      "credit": "Evan Wallace",
+      "source": "https://github.com/evanw/esbuild/blob/main/LICENSE.md",
+      "excerpt": "Copyright (c) 2020 Evan Wallace",
+      "localEvidence": "node_modules/esbuild/LICENSE.md",
+      "localSha256": "b40ec5baec7bb34fa5b1c09521fa3cd52d5fad7adafed74932a2010d3612a681",
+      "limitation": "Crédito de projeto/site não é declaração de titularidade exclusiva de todo código; conservar licença de origem."
+    },
+    {
+      "name": "@eslint/config-helpers",
+      "version": "0.7.0",
+      "licenses": [
+        "Apache-2.0"
+      ],
+      "credit": "Nicholas C. Zakas",
+      "source": "https://github.com/eslint/rewrite/blob/main/packages/config-helpers/src/define-config.js",
+      "excerpt": "@author Nicholas C. Zakas",
+      "localEvidence": "node_modules/@eslint/config-helpers/dist/esm/index.js",
+      "localSha256": "0b525cffa0bcb512fef24f9e3b901301e5f0579d4194751bc0afaf1a9c1c6b3d",
+      "limitation": "Crédito de projeto/site não é declaração de titularidade exclusiva de todo código; conservar licença de origem."
+    },
+    {
+      "name": "@rolldown/binding-win32-x64-msvc",
+      "version": "1.2.12",
+      "licenses": [
+        "MIT"
+      ],
+      "credit": "VoidZero Inc. & Contributors",
+      "source": "https://github.com/rolldown/rolldown/blob/main/LICENSE",
+      "excerpt": "Copyright (c) 2024-present VoidZero Inc. & Contributors",
+      "localEvidence": "node_modules/rolldown/LICENSE",
+      "localSha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734",
+      "limitation": "Crédito de projeto/site não é declaração de titularidade exclusiva de todo código; conservar licença de origem."
+    },
+    {
+      "name": "argparse",
+      "version": "3.0.2",
+      "licenses": [
+        "PSF-2.0"
+      ],
+      "credit": "Python Software Foundation; argparse.js authors",
+      "source": "https://github.com/nodeca/argparse/blob/master/lib/argparse.js",
+      "excerpt": "Copyright (C) 2020 argparse.js authors",
+      "localEvidence": "node_modules/argparse/lib/argparse.js",
+      "localSha256": "35aa3cc53e43e24633990700b0cdca10695a4c744780a3db112d9115738c850e",
+      "limitation": "Crédito de projeto/site não é declaração de titularidade exclusiva de todo código; conservar licença de origem."
+    },
+    {
+      "name": "lightningcss",
+      "version": "1.33.0",
+      "licenses": [
+        "MPL-2.0"
+      ],
+      "credit": "Devon Govett e Parcel Contributors (crédito do site oficial do projeto)",
+      "source": "https://lightningcss.dev/",
+      "excerpt": "Copyright © 2024 Devon Govett and Parcel Contributors.",
+      "localEvidence": "node_modules/lightningcss/LICENSE",
+      "localSha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e",
+      "limitation": "Crédito de projeto/site não é declaração de titularidade exclusiva de todo código; conservar licença de origem."
+    },
+    {
+      "name": "lightningcss-win32-x64-msvc",
+      "version": "1.33.0",
+      "licenses": [
+        "MPL-2.0"
+      ],
+      "credit": "Devon Govett e Parcel Contributors (crédito do projeto de origem)",
+      "source": "https://lightningcss.dev/",
+      "excerpt": "Copyright © 2024 Devon Govett and Parcel Contributors.",
+      "localEvidence": "node_modules/lightningcss-win32-x64-msvc/LICENSE",
+      "localSha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e",
+      "limitation": "Crédito de projeto/site não é declaração de titularidade exclusiva de todo código; conservar licença de origem."
+    }
+  ]
+}
