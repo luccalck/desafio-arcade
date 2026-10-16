@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "scope": "Ensaios reais, limites operacionais e bloqueio comprovado do pacote sem vídeo; não é submissão final",
+  "files": {
+    "alertas-antes.json": {
+      "bytes": 3384,
+      "sha256": "dc72edaa47d78ffbf158a83c8479b5cc84e6e041a8eb29c999bc062e0bb3c650"
+    },
+    "alertas-depois.json": {
+      "bytes": 6898,
+      "sha256": "4b5ce486443814da0f3f13a2cc161563f1c6f707510c40e03521a788d107634a"
+    },
+    "aprovacao-recusada.json": {
+      "bytes": 409,
+      "sha256": "2eb597048f10a31f3aefc95641265d2551eef174a46d0d625874b8f0cd702f64"
+    },
+    "bloqueio-pacote-sem-pitch.txt": {
+      "bytes": 106,
+      "sha256": "033925fdcd4b8aba8a0b28fce9de2ac86abcab4b4e0e6b1368609f85f2f67a59"
+    },
+    "ensaio-alertas.json": {
+      "bytes": 7333,
+      "sha256": "f288565d1479c9da110ea7a5f9b2dd072521064d17c592cb2f54f85f246c5566"
+    },
+    "issue43.json": {
+      "bytes": 4714,
+      "sha256": "7ff15e8d0c88c965646352b964c41b3e1a94b0e40cc04f88357a000e2fe037c0"
+    },
+    "issue44.json": {
+      "bytes": 4728,
+      "sha256": "baf29dec040042f133b035f32c6d77d0a831ca8ce2daace48ec2884219d70763"
+    },
+    "monitor-alertas.json": {
+      "bytes": 65,
+      "sha256": "d0d183c70fc4dd0da318eeb8b0975565f6cc1f26e1cd8ed3470cbb53f7a74eb4"
+    },
+    "monitor-dora.json": {
+      "bytes": 2938,
+      "sha256": "f144ce555b6adf67df2e828d90e597ca9ca237ae054aa6e2371f3664d8bf8925"
+    },
+    "monitor-sondas.json": {
+      "bytes": 929,
+      "sha256": "0137db211cbf974510ab7bc06984405fd12b768e783a3d74b4416b5a55295390"
+    },
+    "pr41.json": {
+      "bytes": 252,
+      "sha256": "f4d0b55d0126ffd4729d10def8e1cc18f8df9e5e8f8145c9e70e7544015b8c47"
+    },
+    "run-ensaio.json": {
+      "bytes": 776,
+      "sha256": "4363c0c6781b67460d1e083b21622cce27f64910d0742da2214db7d8857a54fc"
+    }
+  }
+}

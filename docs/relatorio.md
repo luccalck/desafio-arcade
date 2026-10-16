@@ -1,12 +1,12 @@
 # Relatório Técnico — Desafio Arcade
 
-**Rota do Código · Squad Aura 67 · Candidata {{VERSION}} · 16/10/2026**
+**Rota do Código · Squad Aura 67 · Fechamento operacional {{VERSION}} · 16/10/2026**
 
 ## 1. Síntese, identificação e alcance
 
 Construímos uma oficina educativa WEB em que o jogador corrige cinco funções Python, testa diferentes entradas e usa suas regras num minijogo de nave. O produto é estático, responsivo, exportável e jogável offline pelo método documentado. A avaliação de DevOps exige que esse produto atravesse Git, testes, segurança, homologação, aprovação, produção e acompanhamento com rastreabilidade.
 
-**Repositório:** [luccalck/desafio-arcade](https://github.com/luccalck/desafio-arcade). **Estado desta revisão:** a Release técnica v0.7.0 foi publicada pela retomada 38940532129, após aprovação de Lucas no PR40 e merge 1e3dd3b. Os seis anexos públicos foram baixados sem autenticação e conferidos; o ZIP preserva os bytes homologados do SHA e9dd28c. CI atual: 318 testes e 36 E2E; HML da main em 178,827 s. Recuperações manual e automática foram medidas em 80,66 s e 17,166 s. Pitch, playtest humano, pacote acadêmico, TXT, declarações finais e banca continuam pendentes. Esta atualização documental posterior à publicação ainda requer sua própria revisão.
+**Repositório:** [luccalck/desafio-arcade](https://github.com/luccalck/desafio-arcade). **Estado desta revisão:** a Release técnica v0.7.0 foi publicada pela retomada 38940532129, após aprovação de Lucas no PR40 e merge 1e3dd3b. Os seis anexos públicos foram baixados sem autenticação e conferidos; o ZIP preserva os bytes homologados do SHA e9dd28c. CI da branch 432eb57: 318 testes e 37 E2E; HML da main 1e3dd3b em 178,827 s. Recuperações manual e automática foram medidas em 80,66 s e 17,166 s. Pitch, playtest humano, pacote acadêmico, TXT, declarações finais e banca continuam pendentes. O PR41 permanece bloqueado: o GitHub recusou autoaprovação pela conta autora. Esta revisão registra o fechamento operacional comprovado, sem declarar a submissão acadêmica concluída.
 
 | Integrante | RA | Coordenação | GitHub |
 |---|---|---|---|
@@ -50,7 +50,7 @@ O ciclo é editar, testar entradas, observar a partida e corrigir. Nas primeiras
 
 **Figura 1.** HML pública capturada em 15/10/2026, 21:29:25, America/Sao_Paulo; versão 0.7.0, SHA 88d533e, viewport 1280×900. Origem/tempo/versão em hml-88-menu.json, produzidos pelo navegador durante a regressão real.
 
-A experiência WEB atende computador e celular. Em16/10, três agentes deIA exploraram desktop,toque e acessibilidade pelaUI. A avaliação desktop encontrou aviso de derrota após reiniciar; corrigimos e verificamos regressão antes/depois na branch, sem publicação (Issue42). Toque não encontrou bloqueante; acessibilidade preservou capturas/verificações separadas, mas perdeu o log completo por erro da ferramenta. [Provas e limites](evidencias/avaliacoes-ia-2026-10-16.md). Esses agentes conhecem programação e não comprovam aprendizagem/diversão humana. A sessão de colega de outra turma na banca continua sem evidência.
+A experiência WEB atende computador e celular. Em 16/10, três agentes de IA exploraram desktop, toque e acessibilidade pelainterface. A avaliação desktop encontrou aviso de derrota após reiniciar; corrigimos e verificamos regressão antes/depois na branch, sem publicação (Issue 42). Toque não encontrou bloqueante; acessibilidade preservou capturas e verificações separadas, mas perdeu o log completo por erro da ferramenta. [Provas e limites](evidencias/avaliacoes-ia-2026-10-16.md). Esses agentes conhecem programação e não comprovam aprendizagem/diversão humana. A sessão de colega de outra turma na banca continua sem evidência.
 
 <div style="break-before: page;"></div>
 
@@ -191,7 +191,7 @@ A [retomada 38940532129](https://github.com/luccalck/desafio-arcade/actions/runs
 
 ## 8. Sondas, alertas, recuperação e DORA
 
-O [monitor 38940593792](https://github.com/luccalck/desafio-arcade/actions/runs/38940593792) confirmou HML/PRD HTTP 200 após o merge e a retomada. O painel abriu em 16/10, às 14:35 local: 15 amostras, 100% dos códigos conhecidos, latência média 80 ms, produção 0.7.0/e9 e quatro cartões DORA. Desktop, 390 px, atalho para conteúdo e atualização por Enter passaram, sem erros ou overflow. Não é auditoria completa de acessibilidade ou SLA. A latência mede o documento HTTP, incluindo corpo; o cron de 15 minutos pode atrasar.
+O [monitor 38940593792](https://github.com/luccalck/desafio-arcade/actions/runs/38940593792) confirmou HML/PRD HTTP 200 após o merge e a retomada. O painel abriu em 16/10, às 14:35 local: 15 amostras, 100% dos códigos conhecidos, latência média 80 ms, produção 0.7.0/e9 e quatro cartões DORA. Desktop, 390 px, atalho para conteúdo e atualização por Enter passaram, sem erros ou overflow. Não é auditoria completa de acessibilidade ou SLA. A latência mede o documento HTTP, incluindo corpo; o cron de 15 minutos pode atrasar. O monitor pós-ensaio 38950747724 confirmou HML/PRD 200 e MTTR operacional sem amostra, sem absorver as Issues de ensaio.
 
 |DORA / janela de 14 dias até 16/10, 17:33:40 UTC|Valor observado|Denominador / limite|
 |---|---|---|
@@ -203,7 +203,7 @@ O [monitor 38940593792](https://github.com/luccalck/desafio-arcade/actions/runs/
 A fonte é monitor-atual-dora.json em evidencias/fechamento-independente-2026-10-16/. O coletor conta deploy-prd confirmado mesmo se a publicação de anexos falhar depois; esse erro não desfaz o deploy. O rollback planejado altera a taxa bruta sem ser incidente espontâneo. O lead time médio equivale a 0,0245255 dias diante dos 11 dias do enunciado. A primeira amostra era 5 min 27 s; a média aumentou com a segunda mudança. Não ocultamos a piora nem inferimos causalidade, maturidade ou melhoria sustentada.
 ### Dois alertas reais em ensaio isolado
 
-[Run 38847296363](https://github.com/luccalck/desafio-arcade/actions/runs/38847296363): servidor temporário no runner respondeu 404 e atrasou 2,2 s por HTTP. Issues 38/39 abriram e fecharam automaticamente em 1 s/3 s, média de 2 s do ensaio. Duas sondas por falha não duplicaram Issues. Labels/marcadores próprios separam esses ciclos do MTTR de produção.
+[Run 38847296363](https://github.com/luccalck/desafio-arcade/actions/runs/38847296363): servidor temporário no runner respondeu 404 e atrasou 2,2 s por HTTP. Issues 38/39 abriram e fecharam automaticamente em 1 s/3 s, média de 2 s do ensaio. Duas sondas por falha não duplicaram Issues. Labels/marcadores próprios separam esses ciclos do MTTR de produção. Na execução posterior 38950333359, correção 432eb57, as Issues 43/44 receberam automaticamente alerta + ensaio, sem duplicação, e fecharam em 2 s/4 s: média de 3 s no ensaio. A classificação completa passou de 0/2 para 2/2. O tempo anterior era 2 s; não houve ganho de velocidade comprovado. O filtro por marcador preserva MTTR operacional N/D.
 
 Na primeira tentativa, 38846941358, a listagem GitHub atrasada duplicou Issues. Regressão reproduziu o bug; preservar escritas confirmadas no adaptador reduziu 2 → 1 Issue por duas sondas na repetição real. Melhoria medida no ensaio, sem alegar ganho sustentado de DORA ou esconder a tentativa falha.
 
@@ -249,7 +249,7 @@ Os três prints atuais vieram do navegador HML/PRD/file:// do SHA 88, com metada
 |Miguel|[#20](https://github.com/luccalck/desafio-arcade/pull/20) a [#24](https://github.com/luccalck/desafio-arcade/pull/24), [#35](https://github.com/luccalck/desafio-arcade/pull/35)|Recuperação, DORA, GDD, integridade/triagem e fallback HML|
 |Lucas|[#25](https://github.com/luccalck/desafio-arcade/pull/25) a [#29](https://github.com/luccalck/desafio-arcade/pull/29)|Submissão, relatório, candidata, release/ficha/banca, revisões de consolidação|
 
-Os dois commits novos de Miguel e sua autoria foram preservados; Lucca revisou seu PR35 e Lucas aprovou a consolidação PR33 antes do merge 88. Não simulamos identidades nem autoaprovamos PRs de Lucca. A aprovação do environment por Lucca seguiu a política existente, mantendo visíveis ator/ambiente/recibo. A auditoria atual encontrou commit próprio/arquivo e PR aprovado em três INT por pessoa; presença e domínio na banca permanecem pendentes; nota/F são atribuições do professor.
+Preservamos autoria, aprovações e recibos reais. A matriz comprova contribuição própria e PR aprovado em três INT por pessoa, sem simular identidades ou autoaprovação. Presença/domínio na banca e nota/F são avaliados pelo professor.
 
 ### Retrospectiva baseada em resultados
 
@@ -257,17 +257,19 @@ Os dois commits novos de Miguel e sua autoria foram preservados; Lucca revisou s
 
 **Falhou e foi corrigido:** registros anteciparam aceites; reabrimos 27 checks contestados. A dependência exclusiva de Events causou falha real HML. Correções revisadas, incluindo fallback de Miguel, permitiram 216,414 s medidos em nova execução. Preservamos a falha anterior, sem transformá-la em sucesso retroativo. **Limites atuais:** alertas/tempos demonstrados pertencem ao ensaio, sem incidente espontâneo/MTTR operacional. Recuperação real passou nos dois modos; cron não oferece cadência pontual demonstrada. A sonda pós-tag bloqueou a primeira tentativa; na repetição, sondas passaram e surgiu falha no publicador de draft. Correção aprovada no PR40 e retomada concluída; nenhuma falha foi apagada.
 
+**Conferência do pacote:** o bundleCI anterior 02712f1/38948501087 validou 173 arquivos. Os seis anexos da Release v0.7.0 foram baixados novamente e os cinco arquivos do inventário tiveram hashes/tamanhos conferidos. O empacotador acadêmico foi executado sem pitch e rejeitou a criação antes de escrever o destino. Não há pacote completo/triagem aprovada sem o vídeo.
+
 **O que medir adiante:** propagação do ponteiro entre observadores, métricas antes/depois de melhorias e playtest humano. O lead time médio atual de 35 min 19 s usa duas amostras frente à referência de 11 dias, sem inferir ganho causal ou maturidade sustentada. Defeitos futuros só serão chamados reais com reprodução/evidência, não por necessidade da rubrica.
 
-### Critérios restantes de fechamento
+### Entradas e limites da entrega acadêmica
 
 |Ação necessária|Evidência para concluir|
 |---|---|
 |Documentação posterior à publicação|PR34/40 aprovados e integrados; revisar esta atualização e gerar PDF correspondente|
-|Recuperação/alertas|Ensaios executados; demonstrar na banca e manter escopos separados de incidentes|
+|Recuperação|Ensaio técnico concluído; demonstração presencial permanece na banca|
 |Melhoria DORA|Origem/janela/denominadores e antes/depois; MTTR quando houver evento|
-|Pitch e playtest|Vídeo real ≤ 90 s, legendas/direitos; registro humano de 3 min|
+|Pitch e banca|Vídeo real ≤90s,legendas/direitos; critério humano da banca sem comprovação|
 |Tag/release/submissão|SemVer compatível, assets/manifestos, triagem real na tag final|
 |Ficha, AVA, banca|TXT verdadeiro pelo HTML, recibo, ensaio e defesa dos quatro|
 
-O pitch segue pendente por orientação de Lucca. Davi informou consentimento dos quatro e registro privado; conferir escopo/canais com o vídeo final, sem publicar dados pessoais. A apresentação prevista é 10 min + 5 min de demonstração + 5 min de perguntas; não ocorreu nesta automação. Concurso externo é opcional e sem inscrição autorizada. Produção técnica verde é avanço comprovado; G8 e entrega acadêmica completa continuam dependentes das provas finais.
+Pitch e ficha TXT seguem adiados por Lucca. Consentimentos informados por Davi exigem conferir escopo do vídeo final, sem publicar dados pessoais. A banca de 10 + 5 + 5 min não ocorreu nesta automação; concurso é opcional. G8 e submissão acadêmica não estão concluídos.

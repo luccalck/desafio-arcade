@@ -383,3 +383,6 @@ Lucca solicitou três subagentes para avaliação externa. Utilizamos avaliacao_
 ### Compatibilidade de labels dos alertas de ensaio —16/10/2026
 
 A pedido de Lucca,corrigimos a classificação dos novos alertas do ensaio autorizado:alerta+ensaio, mantendo o marcador que separa DORA operacional e a listagem/recuperação por escopo. O teste da classificação falhou antes;20testes focais passaram depois,assim como lint/tipagem. A separação do MTTR não foi removida para produzir número operacional fictício. Execução real e proveniência serão registradas com seus resultados,sem revisão humana ou pitch inventados.
+
+
+Resultado do ensaio de classificação38950333359:Issues43/44 comalerta+ensaio,HTTP404 e atraso real,autocerramento2s/4s,média3s. Os valores são deensaio e não substituemMTTRoperacional. Lucca solicitou encerramento sem terceiros; tentativa de autoaprovação foi recusada peloGitHub,sem revisão fictícia ou alteração de proteção. A submissão acadêmica foi tentada semvídeo e corretamente recusada; artefatos originais daCI/Release e relatório são disponibilizados com escopo técnico explícito. Nenhuma sessão foi atribuída aLucca como jogador observado.

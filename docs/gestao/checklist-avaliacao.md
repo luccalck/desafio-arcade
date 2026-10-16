@@ -301,12 +301,12 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I08-23 — Frequência real1/14=0,0714286deploys/dia na janela de14dias, uma implantação formal com fonte GitHub. [DORA](../evidencias/operacao-2026-10-15/dora-38830013027.json).
 - [x] I08-24 — Lead time real0,0908333h=5min27s entre commitmain88d533e e fim do deploy-prd com smoke; uma observação. [DORA](../evidencias/operacao-2026-10-15/dora-38830013027.json).
 - [x] I08-25 — Taxa real0% com um deploy formal e nenhum rollback correlacionado na janela. Amostra pequena; não afirma confiabilidade futura. [DORA](../evidencias/operacao-2026-10-15/dora-38830013027.json).
-- [ ] I08-26 — Tempo de recuperação: abertura até fechamento das Issues de alerta.
+- [x] I08-26 — Issues43/44 com labelalerta+ensaio criadas/fechadas automaticamente em38950333359:2s/4s,média3s calculada dos timestampsGitHub. Tempo real do ensaio; MTTR operacional continuaN/D por exclusão explícita de ensaios. Prova:fechamento-entregaveis-2026-10-16/ensaio-alertas.json.
 - [x] I08-27 — Lead time observado0,00378472dia comparado à linha de base fornecida de11dias; apenas uma amostra e ponto inicial definido no script, sem atribuir causalidade ou ganho garantido. [DORA](../evidencias/operacao-2026-10-15/dora-38830013027.json).
 - [x] I08-28 — Em16/10,com2deploys/CFR50% incluindorollbackplanejado/leadmédio35min19s, registramos decisão de preservar a produção e separar evidências de ensaio ao avaliar UX, evitando novosdeploys apenas para gerar amostras. Ver melhoria-dora.md. Efeito de melhoria deDORA ainda não demonstrado(I08-29/32).
 - [ ] I08-29 — Medir/documentar efeito da melhoria, sem fabricar ganho ou quantidade mínima de execuções.
 - [x] I08-30 — Relatório registra atrasos reais dos schedules: duas execuções agendadas15/10 separadas por cerca de5h19 apesar de cron*/15. Não promete pontualidade/CDN contínua por cron. [Fontes](../evidencias/operacao-2026-10-15.md).
-- [ ] I08-31 — Dois alertas reais em alvo temporário de ensaio, abertura/deduplicação/autocerramento e recuperação preservados(Issues38/39). Critério literal de alertas operacionais com labelalerta não foi fechado por labelensaio; não confundir escopos.
+- [x] I08-31 — EnsaioHTTP real38950333359:Issues43/44 abriram com labelalerta+ensaio,sem duplicação,e fecharam automaticamente após normalização,em2s/4s. Classificação corrigida sem alterar Issues antigas nem contaminar DORA operacional. É demonstração controlada de detecção/tratamento, não queda espontânea da aplicação; fontes/limites no fechamento-entregaveis-2026-10-16.md.
 - [ ] I08-32 — AVANÇADO: melhoria orientada por métrica com resultado verificável.
 - [ ] I08-33 — CONDICIONAL: contagem anônima de partidas/fases, se adotada; sem identificar jogador, finalidade documentada.
 
@@ -625,3 +625,6 @@ Reconferência independente16/10:PR40 aprovado porLucas5543614682/HEADa190215, m
 
 
 Reconciliação dos tópicos1–4 em16/10: os registros históricos acima não reabrem execuções posteriores. Fechamos os checks funcionaisI08-10–14/KIT-26 pelo ensaioHTTPreal, com escopo expresso; o critério literal de label e métricas operacionais permanece separado emI08-26/31. I08-28 registra decisão atual, não uma melhoria causal já medida. O HTML situa a sessão de colega de outra turma na banca; três avaliações de agentes deIA não encerramB-06–09. Provas e resultado dos agentes em docs/evidencias/avaliacoes-ia-2026-10-16.md.
+
+
+Fechamento operacional16/10: o ensaio38950333359 comprova labelalerta+ensaio automático e tempo2s/4s,média3s. I08-26/31 fechados no escopo de demonstração controlada; quatroDORAoperacionais continuam comMTTRsemamostra. I08-29/32 não recebem aceite de melhoria causal fictícia. A média do ensaio anterior era2s; a nova3s não será chamada de ganho de velocidade.
