@@ -6,7 +6,7 @@
 
 Construímos uma oficina educativa WEB em que o jogador corrige cinco funções Python, testa diferentes entradas e usa suas regras num minijogo de nave. O produto é estático, responsivo, exportável e jogável offline pelo método documentado. A avaliação de DevOps exige que esse produto atravesse Git, testes, segurança, homologação, aprovação, produção e acompanhamento com rastreabilidade.
 
-**Repositório:** [luccalck/desafio-arcade](https://github.com/luccalck/desafio-arcade). **Estado desta revisão:** a Release técnica v0.7.0 foi publicada pela retomada 38940532129, após aprovação de Lucas no PR40 e merge 1e3dd3b. Os seis anexos públicos foram baixados sem autenticação e conferidos; o ZIP preserva os bytes homologados do SHA e9dd28c. CI da branch 432eb57: 318 testes e 37 E2E; HML da main 1e3dd3b em 178,827 s. Recuperações manual e automática foram medidas em 80,66 s e 17,166 s. Pitch, playtest humano, pacote acadêmico, TXT, declarações finais e banca continuam pendentes. O PR41 permanece bloqueado: o GitHub recusou autoaprovação pela conta autora. Esta revisão registra o fechamento operacional comprovado, sem declarar a submissão acadêmica concluída.
+**Repositório:** [luccalck/desafio-arcade](https://github.com/luccalck/desafio-arcade). **Estado desta revisão:** a Release técnica v0.7.0 foi publicada pela retomada 38940532129, após aprovação de Lucas no PR40 e merge 1e3dd3b. Os seis anexos públicos foram baixados sem autenticação e conferidos; o ZIP preserva os bytes homologados do SHA e9dd28c. CI da branch 9c22698: 322 testes e 37 E2E; HML da main 1e3dd3b em 178,827 s. Recuperações manual e automática foram medidas em 80,66 s e 17,166 s. Pitch, playtest humano, pacote acadêmico, TXT, declarações finais e banca continuam pendentes. O PR41 permanece bloqueado: o GitHub recusou autoaprovação pela conta autora. Esta revisão registra o fechamento operacional comprovado, sem declarar a submissão acadêmica concluída.
 
 | Integrante | RA | Coordenação | GitHub |
 |---|---|---|---|
@@ -203,7 +203,7 @@ O [monitor 38940593792](https://github.com/luccalck/desafio-arcade/actions/runs/
 A fonte é monitor-atual-dora.json em evidencias/fechamento-independente-2026-10-16/. O coletor conta deploy-prd confirmado mesmo se a publicação de anexos falhar depois; esse erro não desfaz o deploy. O rollback planejado altera a taxa bruta sem ser incidente espontâneo. O lead time médio equivale a 0,0245255 dias diante dos 11 dias do enunciado. A primeira amostra era 5 min 27 s; a média aumentou com a segunda mudança. Não ocultamos a piora nem inferimos causalidade, maturidade ou melhoria sustentada.
 ### Dois alertas reais em ensaio isolado
 
-[Run 38847296363](https://github.com/luccalck/desafio-arcade/actions/runs/38847296363): servidor temporário no runner respondeu 404 e atrasou 2,2 s por HTTP. Issues 38/39 abriram e fecharam automaticamente em 1 s/3 s, média de 2 s do ensaio. Duas sondas por falha não duplicaram Issues. Labels/marcadores próprios separam esses ciclos do MTTR de produção. Na execução posterior 38950333359, correção 432eb57, as Issues 43/44 receberam automaticamente alerta + ensaio, sem duplicação, e fecharam em 2 s/4 s: média de 3 s no ensaio. A classificação completa passou de 0/2 para 2/2. O tempo anterior era 2 s; não houve ganho de velocidade comprovado. O filtro por marcador preserva MTTR operacional N/D.
+[Run 38847296363](https://github.com/luccalck/desafio-arcade/actions/runs/38847296363): servidor temporário no runner respondeu 404 e atrasou 2,2 s por HTTP. Issues 38/39 abriram e fecharam automaticamente em 1 s/3 s, média de 2 s do ensaio. Duas sondas por falha não duplicaram Issues. Labels/marcadores próprios separam esses ciclos do MTTR de produção. Na execução posterior 38950333359, correção 432eb57, as Issues 43/44 receberam automaticamente alerta + ensaio, sem duplicação, e fecharam em 2 s/4 s: média de 3 s no ensaio. A classificação completa passou de 0/2 para 2/2. O tempo anterior era 2 s; não houve ganho de velocidade comprovado. O filtro por marcador preserva MTTR operacional N/D. A partir da média de 3 s, retiramos consultas redundantes de labels: 12 no teste anterior contra 2 no contador real. No ensaio 38953734834, Issues 45/46 fecharam em 1 s/4 s, média 2,5 s, redução observada de 16,7%. São duas amostras por execução, com resolução de 1 s e variação de runners/API; sem generalização para produção. [Fontes e método](evidencias/melhoria-mttr-2026-10-16.md).
 
 Na primeira tentativa, 38846941358, a listagem GitHub atrasada duplicou Issues. Regressão reproduziu o bug; preservar escritas confirmadas no adaptador reduziu 2 → 1 Issue por duas sondas na repetição real. Melhoria medida no ensaio, sem alegar ganho sustentado de DORA ou esconder a tentativa falha.
 
@@ -259,7 +259,7 @@ Preservamos autoria, aprovações e recibos reais. A matriz comprova contribuiç
 
 **Conferência do pacote:** o bundleCI anterior 02712f1/38948501087 validou 173 arquivos. Os seis anexos da Release v0.7.0 foram baixados novamente e os cinco arquivos do inventário tiveram hashes/tamanhos conferidos. O empacotador acadêmico foi executado sem pitch e rejeitou a criação antes de escrever o destino. Não há pacote completo/triagem aprovada sem o vídeo.
 
-**O que medir adiante:** propagação do ponteiro entre observadores, métricas antes/depois de melhorias e playtest humano. O lead time médio atual de 35 min 19 s usa duas amostras frente à referência de 11 dias, sem inferir ganho causal ou maturidade sustentada. Defeitos futuros só serão chamados reais com reprodução/evidência, não por necessidade da rubrica.
+**O que medir adiante:** propagação do ponteiro entre observadores, a persistência do efeito observado no MTTR e playtest humano. O lead time médio atual de 35 min 19 s usa duas amostras frente à referência de 11 dias, sem inferir ganho causal ou maturidade sustentada. Defeitos futuros só serão chamados reais com reprodução/evidência, não por necessidade da rubrica.
 
 ### Entradas e limites da entrega acadêmica
 
@@ -267,7 +267,7 @@ Preservamos autoria, aprovações e recibos reais. A matriz comprova contribuiç
 |---|---|
 |Documentação posterior à publicação|PR34/40 aprovados e integrados; revisar esta atualização e gerar PDF correspondente|
 |Recuperação|Ensaio técnico concluído; demonstração presencial permanece na banca|
-|Melhoria DORA|Origem/janela/denominadores e antes/depois; MTTR quando houver evento|
+|Melhoria MTTR|Ensaio medido 3 s→2,5 s; integração do PR41 pendente, sem amostra operacional|
 |Pitch e banca|Vídeo real ≤90s,legendas/direitos; critério humano da banca sem comprovação|
 |Tag/release/submissão|SemVer compatível, assets/manifestos, triagem real na tag final|
 |Ficha, AVA, banca|TXT verdadeiro pelo HTML, recibo, ensaio e defesa dos quatro|

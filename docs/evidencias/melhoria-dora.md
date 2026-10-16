@@ -1,6 +1,14 @@
 # Etapa 028 — decisão de melhoria orientada por DORA
 
-## Estado atualizado —16/10/2026
+## Resultado atual — melhoria medida em16/10/2026
+
+A decisão passou a ter uma intervenção e medição próprias: usamos o MTTR de3s do ensaio38950333359 para retirar consultas repetidas de labels antes do fechamento. O commit9c22698 confirmou labels por instância apenas após sucesso. A execução38953734834 fechou as Issues45/46 em1s/4s,média2,5s:redução observada16,7%. O contador real registrou2consultas de metadados,contra12reproduzidas com o adaptador anterior no teste das seis fases,83,3% a menos.
+
+[Hipótese,método,resultados,limites e fontes](melhoria-mttr-2026-10-16.md). Os dois tempos continuam identificados como ensaio; DORA operacional não foi alterado e permanece sem amostra deMTTR. Há duas Issues por execução,timestamps de1s e variação entre runners: não afirmar causalidade integral ou ganho sustentado. LatenciaAlta ficou em4s nas duas execuções. A melhoria técnica foi implementada e medida; sua integração segue no PR41,sem aprovação antecipada.
+
+## Registros anteriores preservados
+
+## Estado anterior —16/10/2026
 
 A ausência de métricas descrita em14/10 abaixo foi superada. [Coleta real posterior](fechamento-independente-2026-10-16/monitor-atual-dora.json):dois deploys/14dias,lead time médio35min19s,CFR50% com rollback planejado,MTTR operacionalnull. A média inicial de5min27s subiu com a segunda amostra; não declarar redução ou causalidade favorável. O resultado real da correção do publicador foi falha na origem38852413982/2 seguida de publicação bem-sucedida na retomada38940532129, sem rebuild. É melhoria técnica comprovada, mas não foi escolhida originalmente a partir de DORA e não será renomeada retroativamente como tal.
 

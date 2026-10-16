@@ -303,11 +303,11 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I08-25 — Taxa real0% com um deploy formal e nenhum rollback correlacionado na janela. Amostra pequena; não afirma confiabilidade futura. [DORA](../evidencias/operacao-2026-10-15/dora-38830013027.json).
 - [x] I08-26 — Issues43/44 com labelalerta+ensaio criadas/fechadas automaticamente em38950333359:2s/4s,média3s calculada dos timestampsGitHub. Tempo real do ensaio; MTTR operacional continuaN/D por exclusão explícita de ensaios. Prova:fechamento-entregaveis-2026-10-16/ensaio-alertas.json.
 - [x] I08-27 — Lead time observado0,00378472dia comparado à linha de base fornecida de11dias; apenas uma amostra e ponto inicial definido no script, sem atribuir causalidade ou ganho garantido. [DORA](../evidencias/operacao-2026-10-15/dora-38830013027.json).
-- [x] I08-28 — Em16/10,com2deploys/CFR50% incluindorollbackplanejado/leadmédio35min19s, registramos decisão de preservar a produção e separar evidências de ensaio ao avaliar UX, evitando novosdeploys apenas para gerar amostras. Ver melhoria-dora.md. Efeito de melhoria deDORA ainda não demonstrado(I08-29/32).
-- [ ] I08-29 — Medir/documentar efeito da melhoria, sem fabricar ganho ou quantidade mínima de execuções.
+- [x] I08-28 — Decisão orientada pelo MTTR de3s do ensaio38950333359:retirar consultas repetidas de labels no caminho de fechamento,com hipótese e plano antes da medição. Implementação9c22698 no PR41. Ver melhoria-mttr-2026-10-16.md.
+- [x] I08-29 — Antes/depois real:MTTR do ensaio3s→2,5s (16,7% menor),Issues43/44→45/46; consultas de metadados12no teste do adaptador anterior→2no contador real posterior (83,3% menos). Duas Issues por run,sem generalização causal; fontes/limites em melhoria-mttr-2026-10-16.md.
 - [x] I08-30 — Relatório registra atrasos reais dos schedules: duas execuções agendadas15/10 separadas por cerca de5h19 apesar de cron*/15. Não promete pontualidade/CDN contínua por cron. [Fontes](../evidencias/operacao-2026-10-15.md).
 - [x] I08-31 — EnsaioHTTP real38950333359:Issues43/44 abriram com labelalerta+ensaio,sem duplicação,e fecharam automaticamente após normalização,em2s/4s. Classificação corrigida sem alterar Issues antigas nem contaminar DORA operacional. É demonstração controlada de detecção/tratamento, não queda espontânea da aplicação; fontes/limites no fechamento-entregaveis-2026-10-16.md.
-- [ ] I08-32 — AVANÇADO: melhoria orientada por métrica com resultado verificável.
+- [x] I08-32 — Melhoria orientada por métrica com resultado verificável no ensaio controlado:baseline38950333359,hipótese/cache9c22698,execução38953734834 e monitor38954187844. MTTR operacional continuaN/D; efeito observado não equivale a ganho sustentado de produção ou nota antecipada. Integração do PR41 depende de review válida.
 - [ ] I08-33 — CONDICIONAL: contagem anônima de partidas/fases, se adotada; sem identificar jogador, finalidade documentada.
 
 ## INT-09: Build pública, pacote e triagem · peso 8% de A
@@ -628,3 +628,6 @@ Reconciliação dos tópicos1–4 em16/10: os registros históricos acima não r
 
 
 Fechamento operacional16/10: o ensaio38950333359 comprova labelalerta+ensaio automático e tempo2s/4s,média3s. I08-26/31 fechados no escopo de demonstração controlada; quatroDORAoperacionais continuam comMTTRsemamostra. I08-29/32 não recebem aceite de melhoria causal fictícia. A média do ensaio anterior era2s; a nova3s não será chamada de ganho de velocidade.
+
+
+Atualização da melhoria em16/10: I08-28/29/32 têm decisão,intervenção e efeito observado no escopo do ensaio de recuperação. Os comentários anteriores sobre ausência de medição descrevem estados históricos. Não alteramos os números do DORA operacional ou atribuímos um incidente a produção. Aprovação/integração da mudança é o gate do PR41,registrado no tópico1.

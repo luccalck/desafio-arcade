@@ -1,0 +1,276 @@
+{
+  "schema": 1,
+  "scope": "ensaio",
+  "exerciseId": "38950333359-1",
+  "startedAt": "2026-10-16T18:51:59.632Z",
+  "injection": "HTTP404 e atraso real no servidor temporário127.0.0.1; não é produção",
+  "phases": [
+    {
+      "name": "fora-do-ar",
+      "report": {
+        "schema": 1,
+        "scope": "ensaio",
+        "exerciseId": "38950333359-1",
+        "run": "38950333359",
+        "runAttempt": "1",
+        "formalHml": false,
+        "formalPrd": false,
+        "samples": [
+          {
+            "data": "2026-10-16T18:51:59.637Z",
+            "alvo": "hml",
+            "url": "http://127.0.0.1:39829/",
+            "codigo": 404,
+            "tempo": 0.012835675000000001,
+            "versao": "desconhecida",
+            "sha": null,
+            "versionUrl": null,
+            "erro": "http"
+          }
+        ]
+      },
+      "alerts": {
+        "run": "38950333359",
+        "runAttempt": "1",
+        "actions": [
+          {
+            "kind": "JogoForaDoAr",
+            "target": "hml",
+            "action": "opened",
+            "issue": "https://github.com/luccalck/desafio-arcade/issues/43"
+          },
+          {
+            "kind": "LatenciaAlta",
+            "target": "hml",
+            "action": "unknown-preserved",
+            "issues": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "deduplicacao-fora",
+      "report": {
+        "schema": 1,
+        "scope": "ensaio",
+        "exerciseId": "38950333359-1",
+        "run": "38950333359",
+        "runAttempt": "1",
+        "formalHml": false,
+        "formalPrd": false,
+        "samples": [
+          {
+            "data": "2026-10-16T18:52:00.939Z",
+            "alvo": "hml",
+            "url": "http://127.0.0.1:39829/",
+            "codigo": 404,
+            "tempo": 0.0012504360000000362,
+            "versao": "desconhecida",
+            "sha": null,
+            "versionUrl": null,
+            "erro": "http"
+          }
+        ]
+      },
+      "alerts": {
+        "run": "38950333359",
+        "runAttempt": "1",
+        "actions": [
+          {
+            "kind": "JogoForaDoAr",
+            "target": "hml",
+            "action": "already-open",
+            "issues": [
+              "https://github.com/luccalck/desafio-arcade/issues/43"
+            ]
+          },
+          {
+            "kind": "LatenciaAlta",
+            "target": "hml",
+            "action": "unknown-preserved",
+            "issues": []
+          }
+        ]
+      }
+    },
+    {
+      "name": "recuperacao-http",
+      "report": {
+        "schema": 1,
+        "scope": "ensaio",
+        "exerciseId": "38950333359-1",
+        "run": "38950333359",
+        "runAttempt": "1",
+        "formalHml": false,
+        "formalPrd": false,
+        "samples": [
+          {
+            "data": "2026-10-16T18:52:01.546Z",
+            "alvo": "hml",
+            "url": "http://127.0.0.1:39829/",
+            "codigo": 200,
+            "tempo": 0.0012002999999999701,
+            "versao": "0.7.0",
+            "sha": "432eb57d93a54ac50a2284e8c8c3f706164ad538",
+            "versionUrl": "http://127.0.0.1:39829/version.json",
+            "erro": null
+          }
+        ]
+      },
+      "alerts": {
+        "run": "38950333359",
+        "runAttempt": "1",
+        "actions": [
+          {
+            "kind": "JogoForaDoAr",
+            "target": "hml",
+            "action": "closed",
+            "issue": "https://github.com/luccalck/desafio-arcade/issues/43"
+          }
+        ]
+      }
+    },
+    {
+      "name": "latencia-alta",
+      "report": {
+        "schema": 1,
+        "scope": "ensaio",
+        "exerciseId": "38950333359-1",
+        "run": "38950333359",
+        "runAttempt": "1",
+        "formalHml": false,
+        "formalPrd": false,
+        "samples": [
+          {
+            "data": "2026-10-16T18:52:03.272Z",
+            "alvo": "hml",
+            "url": "http://127.0.0.1:39829/",
+            "codigo": 200,
+            "tempo": 2.200800874,
+            "versao": "0.7.0",
+            "sha": "432eb57d93a54ac50a2284e8c8c3f706164ad538",
+            "versionUrl": "http://127.0.0.1:39829/version.json",
+            "erro": null
+          }
+        ]
+      },
+      "alerts": {
+        "run": "38950333359",
+        "runAttempt": "1",
+        "actions": [
+          {
+            "kind": "LatenciaAlta",
+            "target": "hml",
+            "action": "opened",
+            "issue": "https://github.com/luccalck/desafio-arcade/issues/44"
+          }
+        ]
+      }
+    },
+    {
+      "name": "deduplicacao-latencia",
+      "report": {
+        "schema": 1,
+        "scope": "ensaio",
+        "exerciseId": "38950333359-1",
+        "run": "38950333359",
+        "runAttempt": "1",
+        "formalHml": false,
+        "formalPrd": false,
+        "samples": [
+          {
+            "data": "2026-10-16T18:52:06.829Z",
+            "alvo": "hml",
+            "url": "http://127.0.0.1:39829/",
+            "codigo": 200,
+            "tempo": 2.201175479999999,
+            "versao": "0.7.0",
+            "sha": "432eb57d93a54ac50a2284e8c8c3f706164ad538",
+            "versionUrl": "http://127.0.0.1:39829/version.json",
+            "erro": null
+          }
+        ]
+      },
+      "alerts": {
+        "run": "38950333359",
+        "runAttempt": "1",
+        "actions": [
+          {
+            "kind": "LatenciaAlta",
+            "target": "hml",
+            "action": "already-open",
+            "issues": [
+              "https://github.com/luccalck/desafio-arcade/issues/44"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "recuperacao-latencia",
+      "report": {
+        "schema": 1,
+        "scope": "ensaio",
+        "exerciseId": "38950333359-1",
+        "run": "38950333359",
+        "runAttempt": "1",
+        "formalHml": false,
+        "formalPrd": false,
+        "samples": [
+          {
+            "data": "2026-10-16T18:52:09.666Z",
+            "alvo": "hml",
+            "url": "http://127.0.0.1:39829/",
+            "codigo": 200,
+            "tempo": 0.000954992000000857,
+            "versao": "0.7.0",
+            "sha": "432eb57d93a54ac50a2284e8c8c3f706164ad538",
+            "versionUrl": "http://127.0.0.1:39829/version.json",
+            "erro": null
+          }
+        ]
+      },
+      "alerts": {
+        "run": "38950333359",
+        "runAttempt": "1",
+        "actions": [
+          {
+            "kind": "LatenciaAlta",
+            "target": "hml",
+            "action": "closed",
+            "issue": "https://github.com/luccalck/desafio-arcade/issues/44"
+          }
+        ]
+      }
+    }
+  ],
+  "issues": [
+    {
+      "number": 43,
+      "url": "https://github.com/luccalck/desafio-arcade/issues/43",
+      "kind": "JogoForaDoAr",
+      "labels": [
+        "alerta",
+        "ensaio"
+      ],
+      "openedAt": "2026-10-16T18:52:00Z",
+      "closedAt": "2026-10-16T18:52:02Z",
+      "recoveryMinutes": 0.03333333333333333
+    },
+    {
+      "number": 44,
+      "url": "https://github.com/luccalck/desafio-arcade/issues/44",
+      "kind": "LatenciaAlta",
+      "labels": [
+        "alerta",
+        "ensaio"
+      ],
+      "openedAt": "2026-10-16T18:52:06Z",
+      "closedAt": "2026-10-16T18:52:10Z",
+      "recoveryMinutes": 0.06666666666666667
+    }
+  ],
+  "completed": true,
+  "exerciseMttrMinutes": 0.05,
+  "finishedAt": "2026-10-16T18:52:11.528Z"
+}

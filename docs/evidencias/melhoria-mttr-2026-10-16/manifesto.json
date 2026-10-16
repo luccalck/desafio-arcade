@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "scope": "Evidências reais e testes de melhoria no MTTR do ensaio",
+  "files": {
+    "baseline-38950333359.json": {
+      "bytes": 7333,
+      "sha256": "f288565d1479c9da110ea7a5f9b2dd072521064d17c592cb2f54f85f246c5566"
+    },
+    "comparacao.json": {
+      "bytes": 1277,
+      "sha256": "8b27ef36e8f30d941facf8af2c509fb11af83ab2f82f8df7b60e40057373ee60"
+    },
+    "depois-38953734834.json": {
+      "bytes": 7435,
+      "sha256": "8e37dbe164c0472668f234091d53b9200bad8e652c755f6ed70fd5b1892faa1b"
+    },
+    "issue-45.json": {
+      "bytes": 4714,
+      "sha256": "14b6d1f21b4f7b0ed38c1a9e977c6631d163f01cc5fc8a53e1ba2b9eb7ed1472"
+    },
+    "issue-46.json": {
+      "bytes": 4728,
+      "sha256": "39dbf4696fe4b79a9a1d6d0ece79c73fdf1528541ffd3f2e587e11a96f585b2b"
+    },
+    "monitor-dora.json": {
+      "bytes": 2938,
+      "sha256": "1668f7d293d77c7d2471dff9d6371cdee956d7c93ad1cd417294f10a7c1b065c"
+    },
+    "monitor-sondas.json": {
+      "bytes": 929,
+      "sha256": "270c14467f7a592f6070e38eef1be25edaf3027793f6d82a76875753a0c2d7ce"
+    },
+    "run-depois.json": {
+      "bytes": 776,
+      "sha256": "9dad210cf45574e5e1c7c71946407e14a7ef8fe2dc3db13fa391bc91330b322b"
+    },
+    "testes-antes.json": {
+      "bytes": 3764,
+      "sha256": "9567f06381498303066807cefaa01fbdeb5d2b7dfe52d4e1a91d2ff8adc02e98"
+    },
+    "testes-depois.json": {
+      "bytes": 8338,
+      "sha256": "9a0e8c574316f2aa48f0602f562549d579d73f56c6c4559eb0f70354c81945c6"
+    }
+  }
+}

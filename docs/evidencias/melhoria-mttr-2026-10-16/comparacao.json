@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "scope": "MTTR de ensaio controlado; não é MTTR operacional",
+  "before": {
+    "run": "38950333359",
+    "sha": "432eb57d93a54ac50a2284e8c8c3f706164ad538",
+    "issues": [
+      43,
+      44
+    ],
+    "seconds": [
+      2.0,
+      4.0
+    ],
+    "meanSeconds": 3.0,
+    "metadataRequests": 12,
+    "requestCountSource": "Contagem reproduzida pelo adaptador anterior no teste de seis fases; baseline real não tinha contador embutido"
+  },
+  "after": {
+    "run": "38953734834",
+    "sha": "9c226981a10788eefcffb7fe09717261eaed9bea",
+    "issues": [
+      45,
+      46
+    ],
+    "seconds": [
+      1.0,
+      4.0
+    ],
+    "meanSeconds": 2.5,
+    "metadataRequests": 2,
+    "requestCountSource": "Contador da execução real"
+  },
+  "observedMttrReductionPercent": 16.666666666666668,
+  "metadataRequestsReductionPercent": 83.33333333333333,
+  "limitations": [
+    "Duas Issues por execução; tipos diferentes, não amostra de confiabilidade de produção",
+    "Timestamps GitHub têm resolução de um segundo",
+    "Runners,latência deAPI e filas podem variar; não demonstra causalidade integral ou ganho sustentado",
+    "MTTR operacional permanece separado/sem amostra; thresholds,atraso2,2s e caminho de fechamento não foram encurtados"
+  ]
+}

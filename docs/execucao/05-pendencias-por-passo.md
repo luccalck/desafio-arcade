@@ -17,14 +17,15 @@ Mantemos os mesmos oito tópicos da solicitação de fechamento de Lucca. Não s
 
 | Nº fixo | Tópico | Comprovado | O que impede o fechamento integral |
 |---|---|---|---|
-| 1 | Fechamento documental e revisões | PR32/33/34/35/40 revisados; PR40 integrado; matriz individual com três INT por integrante e vinte PRs revisados; documentação atualizada na branch | PR41 documental está sem aprovação, com CI verde no HEAD3819177 anterior a esta atualização. A main exige uma aprovação e aprovação do último push. Lucca determinou não solicitar novas revisões: nenhuma nova solicitação será enviada. Registrar bloqueio de integração sem remover a proteção ou inventar aprovação. Direitos coletivos, marcos e confirmações sem fonte continuam sem declaração final. |
-| 3 | Dois alertas, MTTR e execução | Dois alertas reais de ensaio, Issues38/39, deduplicação/autocerramento;1s/3s, média2s do ensaio. Monitor38947239547 passou com HML/PRDHTTP200; checks funcionaisI08-10–14/KIT-26 conciliados | Novas Issues43/44 cumpriram labelalerta+ensaio,abertura/deduplicação/autocerramento e média3s no ensaio38950333359. MTTR operacional permaneceN/D por filtro explícito. Efeito de melhoria emDORA operacional ainda não comprovado; nenhum incidente ou ganho é inventado. |
+| 1 | Fechamento documental e revisões | PR32/33/34/35/40 revisados; PR40 integrado; matriz individual com três INT por integrante e vinte PRs revisados; documentação atualizada na branch | PR41 contém correções de interface/alertas e o fechamento documental,com CI no HEAD conferido pelo GitHub. A main exige uma aprovação de outro autor e do último push. Lucca solicitou agora um prompt para outro integrante validar o PR41; preparar conferência e aprovação real do HEAD final. Registrar bloqueio de integração sem remover a proteção ou inventar aprovação. Direitos coletivos, marcos e confirmações sem fonte continuam sem declaração final. |
 | 5 | Pitch | Roteiro e entrada automatizada preparados | **Adiado expressamente por Lucca:** vídeo real de produção, até90s, legendas e direitos/consentimentos aplicáveis. |
 | 6 | Release e pacote | **Release técnica v0.7.0 concluída**, seis anexos públicos conferidos, ZIP29.265bytes, mesmo artefato homologado e publicado, offline validado | Pacote acadêmico final/tag/triagem aguardam vídeo e entradas verdadeiras. Seguir docs/pacote-submissao.md; não gerar pacote manual ou pitch fictício. |
 | 7 | Conferências e relatório | Relatório operacional de10páginas gerado/inspecionado na CI38948501087 e atualizado com o novo ensaio; GDD completo; segurança, autoria, smoke, hashes e responsividade verificados | Atualizar a conferência final somente depois do vídeo/pacote/triagem reais. O PDF posterior tem fonte documental própria; não sobrescrever anexos imutáveis da Release técnica. |
 | 8 | Ficha/TXT, envio e banca | MD persistente com49campos e dados conhecidos; roteiro de apresentação/demonstração/perguntas preparado | **Ficha/TXT por último**, conforme Lucca. Faltam entradas finais verdadeiras, envio/reciboAVA e apresentação dos quatro, incluindo demonstração pedida pelo professor. Datas históricas e prazo oficial não são inventados. |
 
 ### Atividades concluídas — fora da lista de pendências
+
+**Tópico3:** melhoria orientada pelo MTTR do ensaio implementada e medida:3s→2,5s,redução observada16,7%; consultas de labels12→2. Fontes/limites em ../evidencias/melhoria-mttr-2026-10-16.md; operação permanece sem amostra deMTTR. Integração da mudança pertence exclusivamente ao tópico1.
 
 **Tópico2:** ensaio técnico de recuperação concluído:manual80,662735s e automático17,166s, incluindo Pages/hashes/smoke. **Tópico4:** três avaliações técnicas porIA executadas, com registros/limites e regressão do aviso de reinício; publicação da correção permanece exclusivamente no tópico1. Não renumeramos os demais IDs. Estes dois tópicos não devem reaparecer na lista resumida de pendências.
 
@@ -307,7 +308,8 @@ INT-06/07/03.
 INT-08/03/09.
 
 - [x] Dados operacionais agora existem e têm limites documentados; três números DORA não são mais N/D.
-- [ ] ARQ-09/I08-28/29/32: escolher gargalo observado, registrar hipótese, fazer mudança por PR revisado e medir efeito antes/depois com fontes/janelas comparáveis. Uma implantação não demonstra melhoria causal. Melhoria técnica no ensaio já medida:duplicatas2→1, com bug reproduzido/corrigido e nova execução real; não substitui DORA antes/depois comparáveis. Responsável:squad/SRE.
+- [x] ARQ-09/I08-28/29/32:baseline deMTTR3s,hipótese de consultas redundantes,cache por instância9c22698,regressões e novo ensaio38953734834:MTTR2,5s/−16,7%,consultas12→2. Comparação e limitações explícitas em melhoria-mttr-2026-10-16.md; sem afirmar melhoria causal sustentada ou MTTR de incidente da produção.
+- [ ] Integrar/publicar a mudança somente após revisão válida do HEAD final do PR41. Esta é a dependência já listada no tópico1,não uma nova tarefa de melhoria.
 
 <a id="passo-029"></a>
 
@@ -468,3 +470,8 @@ Recuperação técnica segue concluída; documentos antigos foram contextualizad
 ## Entregáveis operacionais e ensaio com classificação completa —16/10/2026
 
 Correção432eb57 e execução38950333359 concluídas:Issues43/44comalerta+ensaio,2s/4s,média3s,semduplicatas,autocerradas; não houve novo deploy. A recuperação e as avaliações técnicas continuam fora da lista ativa, com seus resultados preservados. A contaLucca tentou aprovarPR41; GitHub recusou autoaprovação. Não houve review/merge/bypass. O pacoteCI é gerado e verificável; o empacotador acadêmico recusou o pitch inexistente e não criou uma submissão incompleta. Downloads originais da pipeline/Release e o relatório operacional serão disponibilizados em entregaveis/2026-10-16 na pasta de contexto. Provas:../evidencias/fechamento-entregaveis-2026-10-16.md. Pitch e fichaTXT seguem adiados. Sessões solicitadas porLucca foram executadas porIA, sem atribuir ações humanas.
+
+
+## Melhoria orientada por MTTR —16/10/2026
+
+A comparação passou a existir no ensaio controlado:baseline38950333359,mudança9c22698,run38953734834,Issues45/46 e contador real de2consultas. O tópico3 saiu da lista ativa com resultado técnico e limites preservados. Aprovação/integração continuam exclusivamente no tópico1. O prompt será fornecido com o HEAD final; não presumimos revisão externa anterior nem pedimos revisão de SHA superado.

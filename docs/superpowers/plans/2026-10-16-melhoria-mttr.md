@@ -11,9 +11,14 @@ Escopo autorizado por Lucca: melhoria DORA e preparação do PR41 para validaç�
 - [x] Reproduzir desperdício com teste que conta chamadas reais ao adaptador usando fetch controlado:seis fases/duaslabels,esperado2GETs.
 - [x] Cobrir falha503 seguida de sucesso,criação após404,erro de criação,instâncias independentes e rótulo inválido; não usar segredo real.
 - [x] Implementar cache de confirmações; executar suítes focais e lint.
-- [ ] Commit/push com identidadeLucca confirmada e Gitleaks; aguardarCI no HEAD.
-- [ ] Executar um novo ensaioHTTP/GitHub pelo workflow existente, sem deploy; preservar resultado favorável ou desfavorável, sem repetir para escolher o melhor.
-- [ ] Comparar timestamps e chamadas antes/depois. Reportar escopo,arredondamento de segundos e variação entre runners; não afirmar ganho causal sustentado ou alteração doMTTR operacional sem incidente.
-- [ ] Atualizar evidências/checks/relatório/pendências e CI documental; preparar prompt com HEAD exato para Davi/Miguel/Lucas revisar o diff completo e aprovar somente após conferência humana própria.
+- [x] Commit/push com identidadeLucca confirmada e Gitleaks; aguardarCI no HEAD.
+- [x] Executar um novo ensaioHTTP/GitHub pelo workflow existente, sem deploy; preservar resultado favorável ou desfavorável, sem repetir para escolher o melhor.
+- [x] Comparar timestamps e chamadas antes/depois. Reportar escopo,arredondamento de segundos e variação entre runners; não afirmar ganho causal sustentado ou alteração doMTTR operacional sem incidente.
+- [x] Atualizar as fontes de evidências/checks/relatório/pendências e preparar instruções de revisão. O HEAD exato e os checks serão conferidos ao encaminhar o prompt; a conclusão da CI documental fica no GitHub e acompanhamento local, sem criar outro commit apenas para registrar a própria CI.
 
 A melhoria de metadados alcança toda reconciliação que reutiliza a mesma instância. No monitor normal, hoje há uma única reconciliação por processo: não alegar redução de chamadas desse fluxo sem medição correspondente. O efeito operacional após integração depende de novo evento real; o ensaio continua identificado separadamente.
+
+
+## Resultado observado
+
+Run38953734834/SHA9c22698,SUCCESS:Issues45/46 fecharam automaticamente em1s/4s,média2,5s. Baseline:2s/4s,média3s. Redução observada16,7%,sem generalizar além desse ensaio. Contador real confirmou2consultas de metadados para duaslabels; o adaptador anterior reproduziu12consultas em seis fases,83,3% a menos. Foram preservados atraso2,2s,limiares,marcadores e fechamentos. Variação deAPI/runners e resolução de1s impedem atribuir todo o ganho ao cache. Fontes:docs/evidencias/melhoria-mttr-2026-10-16/.
