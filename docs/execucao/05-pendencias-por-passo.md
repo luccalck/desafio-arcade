@@ -11,12 +11,26 @@ O [histórico anterior](../evidencias/pendencias-historico-2026-10-15.md) preser
 - [Revisões dos colegas](../evidencias/revisoes-confirmadas-2026-10-14.md), [contribuições](../contribuicoes.md) e [conciliação documental](../evidencias/conciliacao-pendencias-2026-10-15.md).
 - [Ficha persistente](../gestao/ficha-entrega.md): atualizar respostas disponíveis; HTML/TXT ficam para o último passo, conforme orientação vigente.
 
-## Ordem restante do fechamento
+## Quadro único de fechamento — os oito tópicos solicitados
 
-1. PR34/40 aprovados e integrados; Release técnica v0.7.0 publicada e conferida. Revisar atualização documental posterior, confirmar direitos/marcos/notificações.
-2. Ensaios de recuperação/alertas/sessão executados; fechar critérios literais restantes de monitoramento/métricas e realizar playtest humano.
-3. Pitch real (mantido pendente), notas/GDD/PDF finais e tag/release/pacote/triagem/agendamento pela pipeline.
-4. FichaHTML/TXT, envioAVA/recibo e ensaio/banca dos quatro. Conferência histórica e prazo oficial dependem de informações verdadeiras; não criar datas fictícias.
+Mantemos os mesmos oito tópicos da solicitação de fechamento de Lucca. Não somamos subtarefas, limites da evidência, checks repetidos por passo ou ações futuras como novas pendências independentes. As seções 001–040 abaixo detalham este quadro; não são outra contagem. Não reabrimos trabalho concluído por mudança de agrupamento. Um requisito realmente descoberto depois deve ser associado ao tópico existente, com fonte e motivo explícitos.
+
+| Nº fixo | Tópico | Comprovado | O que impede o fechamento integral |
+|---|---|---|---|
+| 1 | Fechamento documental e revisões | PR32/33/34/35/40 revisados; PR40 integrado; matriz individual com três INT por integrante e vinte PRs revisados; documentação atualizada na branch | PR41 documental está sem aprovação, com CI verde no HEAD0302819. A main exige uma aprovação e aprovação do último push. Lucca determinou não solicitar novas revisões: nenhuma nova solicitação será enviada. Registrar bloqueio de integração sem remover a proteção ou inventar aprovação. Direitos coletivos, marcos e confirmações sem fonte continuam sem declaração final. |
+| 2 | Teste de recuperação | **Ensaio técnico concluído:** manual80,663s e automático17,166s, incluindo Pages, hashes e smoke;171+65 respostasHTTP200 observadas | Não há novo teste técnico de recuperação exigido neste fechamento. A demonstração literal de versão defeituosa na banca continua no tópico8; a injeção no observador não é apresentada como defeito espontâneo. |
+| 3 | Dois alertas, MTTR e execução | Dois alertas reais de ensaio, Issues38/39, deduplicação/autocerramento;1s/3s, média2s do ensaio. Sondas, painel e quatro campos DORA executados | MTTR operacional permanece null/zero incidentes elegíveis; labelensaio não satisfaz literalmente labelalerta. Melhoria DORA antes/depois não comprovada. São limites conhecidos de INT-08, não novos serviços a construir nem motivo para fabricar incidentes. |
+| 4 | Playtest | Teste técnico da campanha por teclado e toque, cinco missões/final,23casos e700XP; reconferência pública de16/10 passou | Falta sessão real de três minutos com iniciante de outra turma e registro autorizado. Usar docs/evidencias/playtest.md; não atribuir respostas, consentimento ou aprendizagem a uma pessoa que não jogou. |
+| 5 | Pitch | Roteiro e entrada automatizada preparados | **Adiado expressamente por Lucca:** vídeo real de produção, até90s, legendas e direitos/consentimentos aplicáveis. |
+| 6 | Release e pacote | **Release técnica v0.7.0 concluída**, seis anexos públicos conferidos, ZIP29.265bytes, mesmo artefato homologado e publicado, offline validado | Pacote acadêmico final/tag/triagem aguardam vídeo e entradas verdadeiras. Seguir docs/pacote-submissao.md; não gerar pacote manual ou pitch fictício. |
+| 7 | Conferências e relatório | Relatório operacional de10páginas gerado/inspecionado na CI38942395482; GDD completo; segurança, autoria, smoke, hashes e responsividade verificados | Atualizar a conferência final somente depois do vídeo/pacote/triagem reais. O PDF posterior tem fonte documental própria; não sobrescrever anexos imutáveis da Release técnica. |
+| 8 | Ficha/TXT, envio e banca | MD persistente com49campos e dados conhecidos; roteiro de apresentação/demonstração/perguntas preparado | **Ficha/TXT por último**, conforme Lucca. Faltam entradas finais verdadeiras, envio/reciboAVA e apresentação dos quatro, incluindo demonstração pedida pelo professor. Datas históricas e prazo oficial não são inventados. |
+
+### Regra de encerramento
+
+Não chamamos o pacote acadêmico de completo enquanto faltarem vídeo e triagem, nem atribuímos nota ou fator individual. A ausência de nova solicitação de revisão não transforma PR41 em integrado. Quando houver uma evidência real nova, atualizamos o tópico correspondente e seus checks existentes, sem criar outra lista numerada no chat.
+
+Reconferência executada em16/10/2026,18:15–18:16UTC: smoke público e campanhas desktop/toque passaram; HML1e3dd3b e produçãoe9dd28c responderamHTTP200. [Resultados e capturas](../evidencias/reconferencia-final-2026-10-16.md). Não houve novo build, promoção, rollback ou modificação de proteção.
 
 Concurso, canário (usamos azul-verde), Godot, telemetria e golden eval Opal/AIStudio são condicionais, não funcionalidades obrigatórias faltantes da stack adotada. Mantemos as condições no checklist integral sem contabilizá-las como implementação obrigatória. Não prometemos nota ou fator individual máximo.
 
