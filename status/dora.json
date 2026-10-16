@@ -1,29 +1,29 @@
 {
   "schema": 1,
-  "generatedAt": "2026-10-16T04:52:59.696Z",
+  "generatedAt": "2026-10-16T04:57:02.507Z",
   "period": {
-    "from": "2026-10-02T04:52:51Z",
-    "to": "2026-10-16T04:52:51Z"
+    "from": "2026-10-02T04:56:53Z",
+    "to": "2026-10-16T04:56:53Z"
   },
   "metrics": {
     "deploymentFrequency": {
-      "value": 0.14285714285714285,
+      "value": 0.07142857142857142,
       "unit": "deploys/dia",
-      "samples": 2,
+      "samples": 1,
       "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
       "reason": null
     },
     "leadTime": {
-      "value": 0.5159722222222223,
+      "value": 0.09083333333333334,
       "unit": "horas",
-      "samples": 2,
+      "samples": 1,
       "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
       "reason": null
     },
     "changeFailureRate": {
-      "value": 50,
+      "value": 100,
       "unit": "%",
-      "samples": 2,
+      "samples": 1,
       "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
       "reason": null
     },
@@ -37,7 +37,7 @@
   },
   "baseline": {
     "carpartsDays": 11,
-    "leadTimeDays": 0.021498842592592594
+    "leadTimeDays": 0.0037847222222222223
   },
   "evidence": {
     "deploys": [
@@ -47,14 +47,6 @@
         "url": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
         "run": 38829484114,
         "promotionUrl": "https://github.com/luccalck/desafio-arcade/commit/67ce33d24e7dc073894b989cada0a9c590865580",
-        "timing": "deploy-prd-concluido-com-smoke"
-      },
-      {
-        "sha": "e9dd28ccee535e9b1259a710742482e44db47aed",
-        "at": "2026-10-16T04:52:27Z",
-        "url": "https://github.com/luccalck/desafio-arcade/actions/runs/38852413982/job/116817178856",
-        "run": 38852413982,
-        "promotionUrl": "https://github.com/luccalck/desafio-arcade/commit/e9d4b674f1e4deb7b29f33e1cfd6b36b51cc3481",
         "timing": "deploy-prd-concluido-com-smoke"
       }
     ],
