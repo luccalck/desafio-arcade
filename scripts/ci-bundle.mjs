@@ -95,8 +95,13 @@ export async function collectHmlTiming(env=process.env){
  const {GITHUB_REPOSITORY:repo,GITHUB_SHA:sha,GITHUB_REF:ref,GITHUB_RUN_ID:run,GITHUB_RUN_ATTEMPT:runAttempt,GH_TOKEN:token}=env;
  if(!/^[\w.-]+\/[\w.-]+$/.test(repo??'')||!token)throw Error('Repositório/token de leitura exigidos para comprovar push.');
  const finishedAt=new Date().toISOString();
- async function api(path){const r=await fetch(`https://api.github.com/repos/${repo}/${path}`,{headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json'},cache:'no-store',signal:AbortSignal.timeout(15000)});if(!r.ok)throw Error(`Eventos GitHub: HTTP ${r.status}.`);return r.json();}
- let tagProof,mergeProof,pushPayload;
+ async function api(path){
+  let r;
+  try{r=await fetch(`https://api.github.com/repos/${repo}/${path}`,{headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json'},cache:'no-store',signal:AbortSignal.timeout(15000)});}catch{throw Error('API GitHub: falha de transporte ou tempo limite.');}
+  if(!r.ok)throw Error(`API GitHub: HTTP ${r.status}.`);
+  try{return await r.json();}catch{throw Error('API GitHub: resposta JSON inválida.');}
+ }
+ let tagProof,mergeProof,pushPayload,prSourceError;
  if(ref.startsWith('refs/tags/')){
   let object=(await api(`git/ref/tags/${ref.slice(10)}`)).object;const objectSha=object.sha;
   if(object.type==='tag')object=(await api(`git/tags/${object.sha}`)).object;
@@ -104,9 +109,15 @@ export async function collectHmlTiming(env=process.env){
   tagProof={ref,sha:object.sha,objectSha,source:`https://api.github.com/repos/${repo}/git/ref/tags/${ref.slice(10)}`};
  }
  if(ref==='refs/heads/main'){
-  const prs=await api(`commits/${sha}/pulls?per_page=100`);
-  const pr=prs.find(p=>p.merged_at&&p.base?.ref==='main'&&p.base?.repo?.full_name===repo&&p.merge_commit_sha===sha);
-  if(pr)mergeProof={number:pr.number,baseRef:pr.base.ref,merged:true,mergeCommitSha:pr.merge_commit_sha,mergedAt:pr.merged_at,url:pr.html_url};
+  let prs;
+  try{
+   prs=await api(`commits/${sha}/pulls?per_page=100`);
+   if(!Array.isArray(prs))throw Error('API GitHub: lista de PRs inválida.');
+  }catch(e){prSourceError=`Fonte de PRs indisponível: ${e.message}`;}
+  if(Array.isArray(prs)){
+   const pr=prs.find(p=>p?.merged_at&&p.base?.ref==='main'&&p.base?.repo?.full_name===repo&&p.merge_commit_sha===sha);
+   if(pr)mergeProof={number:pr.number,baseRef:pr.base.ref,merged:true,mergeCommitSha:pr.merge_commit_sha,mergedAt:pr.merged_at,url:pr.html_url};
+  }
  }
  if(env.GITHUB_EVENT_NAME==='push'&&env.GITHUB_EVENT_PATH)pushPayload=JSON.parse(await readFile(env.GITHUB_EVENT_PATH,'utf8'));
  let report,error;
@@ -115,11 +126,16 @@ export async function collectHmlTiming(env=process.env){
  // O feed público é somente fonte complementar: pode atrasar até seis horas.
  // Nunca aumentar a janela de15min nem substituir a fonte por created_at do run.
  for(let retry=0;!report&&retry<2;retry++){
-  const events=[];for(let page=1;page<=3;page++){const batch=await api(`events?per_page=100&page=${page}`);events.push(...batch);if(batch.length<100)break;}
+  const events=[];for(let page=1;page<=3;page++){
+   let batch;
+   try{batch=await api(`events?per_page=100&page=${page}`);}catch(e){throw Error([`Fonte de eventos indisponível: ${e.message}`,prSourceError].filter(Boolean).join(' '),{cause:e});}
+   events.push(...batch);if(batch.length<100)break;
+  }
   try{report=hmlTiming({...params,events});}catch(e){error=e;}
   if(!report&&retry<1)await new Promise(resolve=>setTimeout(resolve,60000));
  }
- if(!report)throw error;
+ if(!report)throw Error([error.message,prSourceError].filter(Boolean).join(' '));
+ if(prSourceError)report.sourceWarnings=[prSourceError];
  report.apiUrl=mergeProof?.url??`https://api.github.com/repos/${repo}/events`;report.collectedAt=new Date().toISOString();
  await mkdir('reports',{recursive:true});await writeFile('reports/hml-run.json',JSON.stringify(report,null,2)+'\n');
  if(!report.withinLimit)throw Error(`Push→HML ${report.pushToHmlSeconds}s excede 900s.`);

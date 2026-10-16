@@ -103,6 +103,12 @@ Revisão por outro autor/participação e aceites gerais permanecem antes do mer
 
 ## Passo008 — Inventário e rastreabilidade preparados
 
+### Uso de IA na correção do P2 do PR33 — 15/10/2026
+
+Miguel Oliveira de Almeida (`miguelsenai2024`) solicitou a correção após a revisão do [PR33](https://github.com/luccalck/desafio-arcade/pull/33). Codex auxiliou a reprodução, implementação, testes e documentação; Miguel confirmou sua identidade. Conta autenticada do conector e da credencial HTTPS do Git conferidas como `miguelsenai2024`. Autoria Git local configurada como Miguel Oliveira de Almeida, com endereço privado `228007835+miguelsenai2024@users.noreply.github.com`; a configuração global com e-mail placeholder foi preservada. Não houve simulação de revisão humana nem de execução operacional. Registro complementar em [AI-USAGE](../../AI-USAGE.md).
+
+- [ ] **I05-14/15/21 — revisão externa desta correção:** outro integrante precisa conferir o código, os testes e os resultados da CI do novo HEAD. A assistência de IA e a autorização de Miguel não são aprovação do próprio PR.
+
 - [x] Inventário158componentes/26ativos com licenças/créditos/URLs/hashes/fontesGit; arte e fatos educativos conferidos tecnicamente.
 - [x] Matriz das etapasIA conhecidas ligada a commits/PRs reais, sem atribuir trabalho aos colegas ou aprovação fictícia.
 - [x] Termos oficiais consultados; scannerGit53commits/0achados, formatosCPF analisados sem candidatos; fontesPDF daCI identificadas. Limites nas [evidências](../evidencias/direitos.md).
@@ -140,6 +146,18 @@ Escopo técnico validado em13/10/2026: fontec56df79/clone limpo,184testes/18E2E 
 Nenhum novo check geral fechado;115marcados/297abertos. Publicação010:c56df79/0f0104c; PR#12draft sobre009, CIpush38444743006/PR38444831221 verdes; semmerge/deploy/revisão presumidos.
 
 ## Passo 011
+
+### Correção local do P2 da medição push→HML — 15/10/2026
+
+Base atualizada por `git fetch origin`: `770449bd7f1151a9dc36e3a84ab5fd6ae90c68ad`, branch `origin/fix/medicao-hml-verificavel` do [PR33](https://github.com/luccalck/desafio-arcade/pull/33). Criada a branch própria `fix/miguel-fallback-medicao-hml`; o clone estava limpo e nenhuma alteração local preexistente foi descartada. Não havia `AGENTS.md` aplicável no clone ou nos diretórios ancestrais consultados.
+
+- [x] **Reprodução antes da correção:** novo teste de `collectHmlTiming` com HTTP 503 simulado na consulta de PRs e payload de push válido falhou com `Eventos GitHub: HTTP 503`; os 11 testes anteriores passaram. Nenhuma requisição real ou espera prolongada no teste.
+- [x] **Correção técnica do P2:** indisponibilidade da fonte de PRs permite tentar o payload e o feed existentes; diagnóstico da fonte é arquivado em `sourceWarnings` quando há medição válida e incluído na falha final quando não há prova. Erros de transporte/JSON usam mensagens controladas, sem corpo HTTP ou credenciais. A consulta obrigatória da tag remota permanece bloqueante.
+- [x] **Contratos preservados:** preferência pelo merge comprovado; conferência de repositório/ref/SHA; resolução da tag anotada; rejeição de cronologia inválida; aceitação em 900s e reprovação em 901s. Merge antigo não é trocado por payload recente. O horário final é capturado antes do polling, e o intervalo existente de 60s permanece, com relógio simulado nos testes.
+- [x] **Validação local real:** 37/37 testes focais (11 existentes + 26 novos do coletor), 299/299 testes de unidade/integração com cobertura, `npm run lint` (ESLint e TypeScript), `npm run content:check` e `git diff --check` passaram em Node 24.19.0. O primeiro lint apontou ausência de `cause` no erro encapsulado do feed; isso foi corrigido antes da validação final. Os testes simulam HTTP, arquivos e relógio, incluindo ausência de provas, divergências, falhas de rede/timeout/JSON e sigilo dos diagnósticos.
+- [x] **CI do commit publicado:** o [PR35](https://github.com/luccalck/desafio-arcade/pull/35), aberto pela conta `miguelsenai2024` sobre `fix/medicao-hml-verificavel`, publicou `b3257d3e9bfa002a11ae5168fe2bbe9aab03199e`. A [run 38775876005](https://github.com/luccalck/desafio-arcade/actions/runs/38775876005) concluiu com sucesso: `qualidade`, `seguranca`, `e2e`, `build`, `pacote-ci` e check agregado `ci` verdes; `deploy-hml`, `deploy-prd`, `release` e `submissao` ficaram `skipped`. Isso não comprova nova HML.
+- [ ] **Revisão externa do novo HEAD:** obter revisão de outro integrante antes de integrar a correção na base `fix/medicao-hml-verificavel` e reconferir os checks do HEAD após esta atualização documental. A futura integração altera o HEAD do PR33, exigindo nova CI e nova revisão externa; o PR33 não foi aprovado por esta correção.
+- [ ] **I03-21/25 e G3 — comprovação operacional:** após integração autorizada, executar novamente a HML formal e arquivar run/SHA/ref/horários e regressão pública. Os testes locais não são deploy, medição real de HML ou produção. A falha histórica da run38674290799 permanece; produção, proteções e merges não foram alterados.
 
 Implementação local preparada por DaviSouza78 em13/10/2026: publicadorHML sem recompilação/promoção, preservação de produção/releases/status e integração deploy-hml/Pages/regressão006. [Evidência](../evidencias/deploy-hml.md), [MD011](<Davi Paes/011-012-hml-sondas.md#etapa-011>). Não houve deploy formal ou aceiteG3.
 
@@ -568,3 +586,13 @@ Esta reconferência prevalece sobre observações históricas de monitor inativo
 
 
 Revisão complementar de15/10: o PR33 recebeu o commit770449b, que declara pull-requests:read somente no deploy-hml para a consulta de PR associado ao merge. A validação da lógica em78c367d continua histórica; o novo HEAD exige checks e revisão próprios. Runs de reconferência:38772409905(push) e38772414475(PR). A aprovação externa ainda não estava registrada ao preparar este documento. Não alteramos o limite de900s nem a proteção da main.
+
+
+## Integração das correções — 15/10/2026
+
+- [x] PR35 revisado por solicitação de Lucca e integrado em f38f6d9, preservando os dois commits de Miguel. Validação independente:37/37 focais,299/299 unidade/integração, lint/tipagem/conteúdo; aprovação5541381443 registrada na conta luccalck com uso de IA explícito.
+- [x] Lucas/6lucassilvaaa aprovou o HEADf38f6d9 do PR33. CIs38827261706/38827265169 verdes; merge protegido88d533e na main realizado sem bypass.
+- [ ] Run38829484114: aguardar CI/HML, fonte temporal, hashes e recibo, aprovação real no environmentproducao, promoção/smoke e monitor. Não declarar publicação concluída antes desses resultados.
+- [x] Conflito de AI-USAGE no PR34 resolvido preservando registros de ambos os lados; conteúdo da main incorporado na branch documental.
+- [ ] PR34 ainda precisa de CI própria e revisão externa do novo HEAD antes de merge. Resolver conflito não equivale a aprovação.
+- [ ] Recuperação real com relógio/CDN/continuidade, alertas tratados, DORA com eventos e melhoria, playtest humano, pitch, pacote/triagem final, ficha/TXT/AVA/recibo/banca e direitos finais continuam nos respectivos passos.

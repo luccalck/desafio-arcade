@@ -327,3 +327,12 @@ O relatório ampliado utiliza essas fontes e separa falhas, implementações, ex
 
 
 Revisão complementar de15/10: o PR33 recebeu o commit770449b, que declara pull-requests:read somente no deploy-hml para a consulta de PR associado ao merge. A validação da lógica em78c367d continua histórica; o novo HEAD exige checks e revisão próprios. Runs de reconferência:38772409905(push) e38772414475(PR). A aprovação externa ainda não estava registrada ao preparar este documento. Não alteramos o limite de900s nem a proteção da main.
+
+## 15/10/2026 — Miguel: correção do fallback de medição do PR33
+
+Codex, sob orientação de Miguel Oliveira de Almeida (`miguelsenai2024`), reproduziu o P2 de `collectHmlTiming`: HTTP 503 na consulta de PRs interrompia a coleta antes de um payload válido. O novo teste falhou antes da implementação; depois, 37 testes focais e 299 testes de unidade/integração passaram, assim como lint/tipagem e validação de conteúdo. Foram usados HTTP, arquivos e relógio simulados, sem apresentar fixtures como deploy ou incidente real. A correção mantém a preferência pelo merge comprovado, as validações e o limite de 900s; registra diagnósticos sem credenciais. Identidade Git e GitHub de Miguel conferidas, sem uso da conta de Lucca. Resultados e pendências constam nas seções 008/011 de [pendências por passo](docs/execucao/05-pendencias-por-passo.md). A publicação e a revisão externa do novo HEAD são etapas distintas; não houve merge, autoaprovação, alteração de proteção ou produção, nem declaração de aprovação do PR33.
+
+
+## Integração revisada e continuidade — 15/10/2026
+
+Usamos Codex, sob orientação de Lucca, para conferir a aprovação real de Lucas no PR33 e a CI do mesmo HEAD. A integração normal na main preservou os commits de Miguel do PR35 e não alterou proteções. O merge88d533e disparou a run38829484114; resultados de HML e produção ainda estão sendo verificados. Resolvemos o conflito documental do PR34 preservando os dois registros de IA, sem atribuir aos colegas ações que não executaram. Pitch e ficha HTML final continuam pendentes.
