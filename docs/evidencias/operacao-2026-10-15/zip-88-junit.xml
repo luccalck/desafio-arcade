@@ -1,0 +1,15 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="14.511155">
+<testsuite name="zip-88.spec.mjs" timestamp="2026-10-16T00:31:38.982Z" hostname="" tests="1" failures="0" skipped="0" time="13.406" errors="0">
+<testcase name="ZIP offline: campanha completa e downloads reais sem rede" classname="zip-88.spec.mjs" time="13.406">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|zip-88-offline\zip-88-ZIP-offline-campanh-133d9--e-downloads-reais-sem-rede\attachments\offline-integridade-de338f4e88f059b4f20bcceed4e151b630f75146.json]]
+
+[[ATTACHMENT|zip-88-offline\zip-88-ZIP-offline-campanh-133d9--e-downloads-reais-sem-rede\video-1.webm]]
+
+[[ATTACHMENT|zip-88-offline\zip-88-ZIP-offline-campanh-133d9--e-downloads-reais-sem-rede\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

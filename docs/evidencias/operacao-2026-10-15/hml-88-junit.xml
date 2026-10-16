@@ -1,0 +1,58 @@
+<testsuites id="" name="" tests="4" failures="0" skipped="0" errors="0" time="67.882405">
+<testsuite name="pages.spec.mjs" timestamp="2026-10-16T00:28:50.497Z" hostname="hml-desktop" tests="2" failures="0" skipped="0" time="24.383" errors="0">
+<testcase name="@hml campanha: primeira missão até vitória e encerramento" classname="pages.spec.mjs" time="22.523">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-desktop/attachments/menu-96e8fa176c43fafa5d5e06bdeeec317ad5f08f54.png]]
+
+[[ATTACHMENT|../test-results/pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-desktop/attachments/menu-metadados-9dcb2a48fba9fd0781d241fb6e6295cef2881d57.json]]
+
+[[ATTACHMENT|../test-results/pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-desktop/attachments/primeira-missao-concluida-7da9c22f87342031f6bf69de631d9442ae6f37f4.png]]
+
+[[ATTACHMENT|../test-results/pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-desktop/attachments/primeira-missao-concluida-metadados-e670705ab8ec86874f78f1258472cf240cd43858.json]]
+
+[[ATTACHMENT|../test-results/pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-desktop/attachments/encerramento-real-e1be75f4dae373759a7d6b1e5edee40691785e86.png]]
+
+[[ATTACHMENT|../test-results/pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-desktop/attachments/encerramento-real-metadados-ee825075a9cfcc560108db8918e92debe46ba9b4.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="@hml reinício confirmado e progressão bloqueada" classname="pages.spec.mjs" time="1.86">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/pages--hml-reinício-confirmado-e-progressão-bloqueada-hml-desktop/attachments/reinicio-confirmado-c954e98f35adaa45a1de25e6253590cb2d53bc78.png]]
+
+[[ATTACHMENT|../test-results/pages--hml-reinício-confirmado-e-progressão-bloqueada-hml-desktop/attachments/reinicio-confirmado-metadados-5ee8b31160f45e18fdcefe04133be930d85fef4c.json]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+<testsuite name="pages.spec.mjs" timestamp="2026-10-16T00:28:50.497Z" hostname="hml-toque" tests="2" failures="0" skipped="0" time="16.417" errors="0">
+<testcase name="@hml campanha: primeira missão até vitória e encerramento" classname="pages.spec.mjs" time="14.862">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-toque/attachments/menu-697746637d10f317ab11ecd5b0288c4adb37d53e.png]]
+
+[[ATTACHMENT|../test-results/pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-toque/attachments/menu-metadados-f594415a3d6995c571e25dd5b650216dce128777.json]]
+
+[[ATTACHMENT|../test-results/pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-toque/attachments/primeira-missao-concluida-193e80d6644cc9fe622dc578af55f379cae718b6.png]]
+
+[[ATTACHMENT|../test-results/pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-toque/attachments/primeira-missao-concluida-metadados-bf61ef1333c673ee9732eb2f53a189f7c016c30c.json]]
+
+[[ATTACHMENT|../test-results/pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-toque/attachments/encerramento-real-5aba93067b72294f5eb8f468f71777b13c1565d3.png]]
+
+[[ATTACHMENT|../test-results/pages--hml-campanha-primei-ecc9a--até-vitória-e-encerramento-hml-toque/attachments/encerramento-real-metadados-8a0dafc13a4cd47ef67865403084333fbfafbfa0.json]]
+]]>
+</system-out>
+</testcase>
+<testcase name="@hml reinício confirmado e progressão bloqueada" classname="pages.spec.mjs" time="1.555">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|../test-results/pages--hml-reinício-confirmado-e-progressão-bloqueada-hml-toque/attachments/reinicio-confirmado-e0cab1c483257fb4e8e118ea6a30fcd715cfa728.png]]
+
+[[ATTACHMENT|../test-results/pages--hml-reinício-confirmado-e-progressão-bloqueada-hml-toque/attachments/reinicio-confirmado-metadados-350e3e66e9485a31c7afb3218b571293cfe2cb47.json]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

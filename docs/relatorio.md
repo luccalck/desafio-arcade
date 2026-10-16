@@ -6,7 +6,7 @@
 
 Construímos uma oficina educativa WEB em que o jogador corrige cinco funções Python, testa diferentes entradas e usa suas regras num minijogo de nave. O produto é estático, responsivo, exportável e jogável offline pelo método documentado. A avaliação de DevOps exige que esse produto atravesse Git, testes, segurança, homologação, aprovação, produção e acompanhamento com rastreabilidade.
 
-**Repositório:** [luccalck/desafio-arcade](https://github.com/luccalck/desafio-arcade). **Estado desta revisão:** a consolidação foi integrada na main e a versão 0.7.0 chegou à HML pública. Quatro cenários públicos de regressão passaram, mas o primeiro job HML falhou ao coletar a origem temporal do push. Uma correção está no PR33, com CI aprovada e revisão humana pendente. Produção formal, recuperação e entrega acadêmica final ainda não foram comprovadas.
+**Repositório:** [luccalck/desafio-arcade](https://github.com/luccalck/desafio-arcade). **Estado desta revisão:** a versão 0.7.0 do SHA 88d533e chegou à homologação e à produção formal pela mesma execução, com revisão, aprovação do environment, regressão e smokes aprovados. O tempo push→HML foi 216,414 s. O painel público responde HTTP 200, e a primeira amostra de produção alimenta três métricas DORA; MTTR, alertas reais, recuperação, vídeo e entrega acadêmica final permanecem pendentes. Este relatório atualizado ainda é candidato no PR34; a sua revisão/publicação documental não está concluída.
 
 | Integrante | RA | Coordenação | GitHub |
 |---|---|---|---|
@@ -19,15 +19,15 @@ Os papéis coordenam o trabalho, sem exclusividade de área. Preservamos a autor
 
 ### Marcos e fontes de referência
 
-| Marco | Fonte verificável | Resultado e alcance |
+|Marco|Fonte verificável|Resultado e alcance|
 |---|---|---|
-| Auditoria 0.6.0 | [CI 38649548723](https://github.com/luccalck/desafio-arcade/actions/runs/38649548723), e71de72 | 260 testes e 36 E2E; deploys ignorados; origem histórica |
-| Integração 0.7.0 | [PR32](https://github.com/luccalck/desafio-arcade/pull/32), merge 773af17 | Aprovação externa de Lucas no HEAD 59dc830; main atualizada |
-| Primeira HML | [Run 38674290799](https://github.com/luccalck/desafio-arcade/actions/runs/38674290799) | CI 270/36; HML 4/4; falha na medição; PRD ignorada |
-| Correção temporal | [PR33](https://github.com/luccalck/desafio-arcade/pull/33), 78c367d | CI 273/36 aprovada; revisão e integração pendentes |
-| Validação pública | [HML](https://luccalck.github.io/desafio-arcade/hml/), evidências de 15/10 | 4/4 E2E, ZIP original offline e sete arquivos HTTP conferidos |
+|Auditoria 0.6.0|[CI 38649548723](https://github.com/luccalck/desafio-arcade/actions/runs/38649548723), e71de72|260 testes/36 E2E; histórico anterior aos deploys|
+|Primeira HML 0.7.0|[Run 38674290799](https://github.com/luccalck/desafio-arcade/actions/runs/38674290799),773af17|HML 4/4; falha real do coletor; 191 s reconstruídos depois|
+|Correções revisadas|[PR35](https://github.com/luccalck/desafio-arcade/pull/35), [PR33](https://github.com/luccalck/desafio-arcade/pull/33)|Dois commits de Miguel preservados; revisão de Lucca; Lucas aprovou a consolidação|
+|Entrega técnica formal|[Run 38829484114](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114),88d533e|299 testes/36 E2E; HML 4/4; 216,414 s; PRD aprovada e smoke verde|
+|Sondas pós-produção|[Run 38830013027](https://github.com/luccalck/desafio-arcade/actions/runs/38830013027)|HML/PRD 200, ambas 0.7.0/SHA 88; DORA com uma amostra|
 
-As páginas seguintes separam resultados históricos, execução atual e próximos aceites. O pitch permanece pendente por orientação de Lucca. Não há declaração de nota, fator individual, playtest humano, AVA ou banca realizados. A versão 0.7.0 é candidata técnica; não substitui o pacote acadêmico final.
+Datas deste relatório seguem America/Sao_Paulo: a produção foi observada em 15/10, 21:31:47 (16/10, 00:31:47 UTC). O pitch permanece pendente por orientação de Lucca. Não há declaração de nota, F, playtest humano, AVA ou banca realizados. A entrega técnica atual não equivale ao pacote acadêmico completo.
 
 <div style="break-before: page;"></div>
 
@@ -46,9 +46,9 @@ O problema é memorizar comandos sem compreender como uma regra altera um progra
 
 O ciclo é editar, testar entradas, observar a partida e corrigir. Nas primeiras missões, funções auxiliares corretas isolam o conceito. O final combina as cinco fontes do jogador. Ajuda e detalhes dos testes ficam sob demanda; menus, progresso e XP organizam a campanha. Repetir missão não duplica recompensa.
 
-![Menu real da HML](evidencias/operacao-2026-10-15/hml-desktop-menu.png)
+![Menu real da HML](evidencias/operacao-2026-10-15/hml-88-menu.png)
 
-**Figura 1.** HML pública capturada em 15/10/2026, 13:35:51, America/Sao_Paulo; versão 0.7.0, SHA 773af17, viewport 1280×900. Origem, horário e versão em hml-desktop-menu.json; captura produzida pelo navegador durante E2E real.
+**Figura 1.** HML pública capturada em 15/10/2026, 21:29:25, America/Sao_Paulo; versão 0.7.0, SHA 88d533e, viewport 1280×900. Origem/tempo/versão em hml-88-menu.json, produzidos pelo navegador durante a regressão real.
 
 A mesma experiência WEB atende computador e celular. Teclado/toque e foco visível ajudam a navegação; o código é editável e os testes indicam a situação que falhou. A validação pública completou campanhas desktop e toque, com vitória e 700 XP, mas isso não mede aprendizagem. O playtest humano de três minutos com colega de outra turma ainda precisa observar clareza, dificuldades e transferência do conceito. Não atribuímos resultados a pessoas inexistentes.
 
@@ -88,25 +88,25 @@ O método offline é descompactar o ZIP original e abrir index.html, conforme LE
 
 <div style="break-before: page;"></div>
 
-## 4. Proveniência, ZIP original e teste offline
+## 4. Proveniência, ZIP promovido e teste offline
 
-A promoção precisa usar os bytes validados em HML. Recuperamos o bundle original da [run 38674290799](https://github.com/luccalck/desafio-arcade/actions/runs/38674290799), tentativa 1, SHA 773af17. O manifesto desse bundle foi verificado; a conferência da correção PR33, run 38674970174, também validou 173 arquivos por tamanho/SHA-256. Cada resultado pertence à sua origem; os pacotes não foram misturados.
+A [run 38829484114](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114), tentativa 1, produziu o bundle do SHA 88d533e31452036092cd8edef3efa3c0775241dc. Conferimos 172 arquivos pelo manifesto. O mesmo ZIP foi aceito em HML e consumido na promoção PRD; os recibos preservam SHA/run/tentativa e checksum. Não recompilamos o jogo entre ambientes.
 
-**ZIP original da HML:** 29.025 bytes, SHA-256 `cedfa3b16b12e09fd77beaf9d8f9963b7341a9504bde5467ae8e19d617ba6a70`. Abaixo de 25 MB. Às 13:37:29 de 15/10, sete arquivos HTTP da HML responderam HTTP 200 com hashes iguais aos extraídos do ZIP: index.html, style.css, game.js, version.json, LEIA-ME.txt, LICENSE.txt e THIRD_PARTY.txt. Fonte: hml-zip-http.json.
+**Pacote promovido:** 29.000 bytes, SHA-256 `84105e76a4bd55b5064d466340cb377ea27d49092bae984f65ebdeb7d0d0f937`, abaixo de 25 MB. hml-88-aceite.json registra os hashes dos sete arquivos do jogo; prd-88-recibo.json repete o checksum do ZIP e registra state=publicada, aprovação e observação pública. A conferência final de 14/14 arquivos HTTP, nos dois ambientes, retornou HTTP 200 e hashes iguais ao ZIP original: hashes-88-publicos.json.
 
-O teste independente offline abriu esse ZIP já desconectado, passou cinco missões e 23 casos finais, venceu com 700 XP, baixou HTML/Python e abriu o HTML exportado. Passou 1/1 em 14,9 s; não houve requisição HTTP nem erro de página. Fonte: zip-offline.json e zip-ci-junit.xml, com origem 773af17 e horário 16:37:45,660 UTC. Esse resultado comprova o método documentado; não é uma nova build feita para a demonstração.
+O teste offline usa o ZIP original do SHA 88, já desconectado antes de abrir index.html. Passou 1/1 em 14,5 s: cinco missões, 23 casos finais, vitória 700 XP, downloads HTML/Python e HTML exportado jogável. remoteRequests=[] e pageErrors=[]. Fonte: zip-88-offline.json/zip-88-junit.xml,16/10 às 00:31:52,989 UTC, equivalente a 15/10 às 21:31:52 local.
 
-![Vitória real no ZIP original offline](evidencias/operacao-2026-10-15/offline-vitoria.png)
+![Vitória offline do ZIP promovido](evidencias/operacao-2026-10-15/zip-88-offline-vitoria.png)
 
-**Figura 2.** Captura da execução file:// do ZIP original em 15/10/2026, 13:37:45, America/Sao_Paulo; 0.7.0, SHA 773af17. A partida e a exportação foram testadas com contexto offline antes de abrir. Nenhuma interface foi desenhada para simular o resultado.
+**Figura 2.** Vitória capturada durante execução file:// do ZIP original do SHA 88, versão 0.7.0, em 15/10/2026, 21:31:52, America/Sao_Paulo. A prova pertence ao mesmo pacote entregue; não é uma build refeita para apresentar resultado.
 
-O bundle CI associa SHA/run/tentativa aos arquivos e ao manifesto. Seu verificador compara inventário, tamanho e SHA-256 e confere version.json externo contra o empacotado. Reexecuções não podem misturar tentativas. A data de origem é estável para o mesmo SHA; horários reais ficam no Actions. HML→PRD deve consumir esse pacote, sem recompilar o jogo. A igualdade HML↔ZIP está comprovada acima; a igualdade com PRD ainda depende de publicação formal.
+O bundle associa SHA/run/tentativa ao inventário e verifica nomes, tamanhos, SHA-256 e version.json externo contra o empacotado. Reexecuções não podem misturar tentativas. A data de origem é estável para o mesmo SHA; horários reais ficam no Actions/recibos. Na referência anterior 773af17, o ZIP original e os sete arquivos HTTP também foram conferidos; esse histórico é preservado, mas os hashes antigos não são atribuídos à produção do SHA 88.
 
 <div style="break-before: page;"></div>
 
 ## 5. Esteira CI/CD e governança dos estágios
 
-O fluxo mantém uma cadeia entre mudança, aprovação, artefato e versão observada. A fronteira operacional atual está na HML e na correção da coleta temporal; produção continua protegida pelo gate que falhou.
+O fluxo mantém uma cadeia entre mudança, aprovação, artefato e versão observada. A fronteira operacional avançou para produção formal aprovada; falta completar recuperação, alertas/melhoria e submissão acadêmica. A falha temporal anterior foi corrigida por PR revisado, sem ignorar o gate.
 
 ```text
 branch → PR/revisão/CI → main protegida
@@ -129,11 +129,11 @@ branch → PR/revisão/CI → main protegida
 
 Qualidade, segurança, build e E2E executam em jobs independentes de ubuntu-latest; o gate CI depende de seus resultados. Há lockfile e cache npm. GDD.pdf e RelatorioTecnico.pdf entram no bundle; pdfinfo/pdftotext verificam abertura/texto e o relatório deve ter de 1 a 12 páginas. A fonte continua versionada para revisão, sem substituir o GDD completo pelo relatório.
 
-A consolidação corrigiu lacunas reais: relatório antes fora da CI, submissão concorrente com produção, proveniência insuficiente, seleção de vídeo pela última execução e triagem agendada sem recuperar pacote. Agora o vídeo é fixado por SHA/run/tentativa/digest, e o pacote depende de produção/release. Um HTTP200 isolado não pode substituir a validação de ZIP, PDF, vídeo e manifesto.
+A consolidação corrigiu lacunas reais: relatório antes fora da CI, submissão concorrente com produção, proveniência insuficiente, seleção de vídeo pela última execução e triagem agendada sem recuperar pacote. Agora o vídeo é fixado por SHA/run/tentativa/digest, e o pacote depende de produção/release. Um HTTP 200 isolado não pode substituir a validação de ZIP, PDF, vídeo e manifesto.
 
 Azul-verde separa candidata e estável; o carregador preserva uma versão válida por sessão. Gh-pages é escrita pela pipeline, sem edição manual para contornar a falha. Environments mantêm aprovação/políticas de refs/tags. Uma aprovação de PR não substitui a de produção nem se transfere para HEAD alterado.
 
-O PR32 recebeu revisão externa de Lucas no HEAD 59dc830 e foi integrado. O PR33 altera a medição e requer nova revisão; não autoaprovamos PRs de Lucca ou atribuímos reviews aos colegas. A autorização para publicar não elimina essa dependência real.
+O PR32 recebeu revisão externa de Lucas no HEAD 59dc830 e foi integrado. O PR35 incorporou dois commits autorais de Miguel, revisados por Lucca; Lucas aprovou a consolidação f38 no PR33 antes do merge 88. A aprovação do environment producao por Lucca foi registrada conforme a política existente. Não simulamos outro revisor, não autoaprovamos PRs de Lucca e não removemos as proteções.
 
 <div style="break-before: page;"></div>
 
@@ -147,99 +147,100 @@ Os resultados pertencem ao SHA e à execução indicada. Uma suíte local/CI nã
 |[Run 38674290799](https://github.com/luccalck/desafio-arcade/actions/runs/38674290799),773af17|270|36|CI 0.7.0 verde; HML depois falhou na medição|
 |[CI 38674970174](https://github.com/luccalck/desafio-arcade/actions/runs/38674970174),78c367d|273|36|Push da correção PR33; sucesso|
 |[CI 38674975441](https://github.com/luccalck/desafio-arcade/actions/runs/38674975441), PR33|273|36|Validação de PR, sem deploy formal|
-|HML pública em 15/10, JUnit arquivado|—|4|Desktop/toque, campanha e reinício; 62,009 s|
+|[CI 38829484114](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114),88d533e|299|36|HML 4/4, PRD formal e smokes aprovados|
+|Histórico773: HML pública em 15/10|—|4|Desktop/toque, campanha e reinício; 62,009 s|
 
-No bundle do PR33, SHA 78c367d, ci-coverage.json mede apenas src/core: 468/478 instruções (**97,90%**), 128/128 linhas (**100%**), 54/54 funções (**100%**) e 320/336 ramificações (**95,23%**). Os JUnit confirmam 273 testes sem falhas em 2,635s e 36 E2E sem falhas em 51,081s. Supera os mínimos 15/3/2 e 70% do core, com origem remota identificada. Em 15/10, 53 testes locais de oito suítes de recuperação/alerta/monitor/DORA também passaram; são fixtures, não ensaio de produção.
+No bundle do SHA 88, ci-88-coverage.json mede src/core: 468/478 instruções (**97,90%**), 128/128 linhas (**100%**), 54/54 funções (**100%**) e 320/336 ramificações (**95,23%**). Os JUnit confirmam 299 testes sem falhas em 2,580 s e 36 E2E sem falhas em 67,838 s. A regressão HML 4/4 levou 67,882 s; o smoke PRD 1/1 também passou. Supera os mínimos 15/3/2 e 70% do core com origem remota identificada. Os 53testes locais de recuperação/alertas continuam provas de contratos, não ensaio real.
 
-![Vitória real da campanha na HML](evidencias/operacao-2026-10-15/hml-desktop-encerramento-real.png)
+![Smoke real de produção](evidencias/operacao-2026-10-15/prd-88-tela.png)
 
-**Figura 3.** HML pública em 15/10/2026, 13:36:05, America/Sao_Paulo; 0.7.0, SHA 773af17, teclado 1280×900. Metadados em hml-desktop-encerramento-real.json. A campanha mobile por toque também concluiu às 13:36:36, com capturas/vídeo próprios; são testes automatizados, não aprendizagem medida.
+**Figura 3.** Smoke real da produção em 15/10/2026, 21:31:47, America/Sao_Paulo; 0.7.0, SHA 88d533e. O navegador abriu a release do SHA correto e verificou editor, movimento e pausa; prd-88-tela.json preserva origem, horário e viewport. É teste automatizado, não playtest humano.
 
 O bug histórico de regra antiga permitia retomar usando compilação anterior após editar. A correção invalida aceite/fingerprint e exige aplicar fonte nova; existem captura, JUnit da falha e regressão em docs/evidencias/bug-regra-antiga.md e tests/e2e/workshop.spec.mjs. [PR de contexto](https://github.com/luccalck/desafio-arcade/pull/8). O defeito temporal HML também gerou três regressões: antes 3 falhas/8 passes; depois 11 passes. Não criamos bug ou incidente fictício para atender rubrica.
 
 <div style="break-before: page;"></div>
 
-## 7. Homologação: falha observada e medição histórica
+## 7. Homologação medida e produção formal aprovada
 
-O [PR32](https://github.com/luccalck/desafio-arcade/pull/32) foi aprovado por Lucas (`6lucassilvaaa`) no HEAD 59dc830. O merge 773af17db29bb9fc46bfe438c0cb9c8304fbd5f5 chegou à main em 15/10/2026, 03:03:48 UTC, 00:03:48 em America/Sao_Paulo. A [run 38674290799](https://github.com/luccalck/desafio-arcade/actions/runs/38674290799) publicou HML 0.7.0 e passou os quatro cenários públicos, mas falhou ao comprovar a hora do push. PRD/release/submissão ficaram ignoradas. O gate não foi contornado.
+A correção percorreu revisão real: o PR35 preservou dois commits de Miguel e recebeu aprovação de Lucca. Lucas aprovou o HEAD f38f6d9 da consolidação no [PR33](https://github.com/luccalck/desafio-arcade/pull/33), integrado na main como 88d533e31452036092cd8edef3efa3c0775241dc. A [run 38829484114](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114) concluiu com sucesso, incluindo CI, HML e produção. A política de aprovação e as proteções foram preservadas.
 
-| Prova | Resultado observado | Interpretação |
+|Marco / fonte|Registro verificável|Resultado|
 |---|---|---|
-|/hml/version.json|HTTP 200; 0.7.0; SHA 773af17|Jogo integrado servido em HML|
-|Regressão HML na execução|4/4 cenários aprovados|Interação pública real, distinta de E2E local|
-|/rollout.json|HTTP 200; preview; SHA 71933bf; 0.6.0|Raiz ainda é preview anterior, não PRD formal 0.7.0|
-|/status/|HTTP 404 na consulta preservada|Painel público ainda não comprovado|
-|Medição pelo coletor original|Falha por PushEvent ausente|Job HML integral reprovado|
-|Reconstrução histórica posterior|191 s, fonte PR/API e etapa E2E|Prazo histórico verificável, sem mudar o estado do job|
+|Merge PR33 / API|16/10, 00:26:22 UTC = 15/10, 21:26:22 local|SHA 88 e base main conferidos|
+|E2E HML / hml-88-tempo.json|00:29:58,414 UTC|4/4 cenários; 216,414 s após publicação do merge|
+|Aceite HML / hml-88-aceite.json|00:29:59,167 UTC|Sete hashes e ZIP vinculado a SHA/run/tentativa|
+|Aprovação / prd-88-recibo.json|Environment producao; revisor luccalck; approved|Aprovação real conforme política existente|
+|Smoke candidata|00:31:28,612 UTC; passed=true; errors=[]|Release88 testada antes da promoção|
+|Smoke raiz e recibo|00:31:47,097/460 UTC; state=publicada|Raiz redireciona à release88 e passa smoke|
 
-Um smoke real da raiz em 15/10, 13:47:20, America/Sao_Paulo, passou 1/1 em 9,7 s: conferiu ponteiro, assets, versão, redirecionamento, editor, movimento e pausa, sem erros. A fonte preview-smoke.json identifica **preview 0.6.0, SHA 71933bf**; esse resultado não é produção formal 0.7.0.
+### Origem temporal e limite de quinze minutos
 
-### Causa e correção proposta
+O coletor agora usa o merged_at do PR integrado, exigindo merged=true, base main e merge_commit_sha exato. Confere payload de push e objeto remoto de tags quando aplicável; Events é complementar. Data do commit do desenvolvedor e criação do run não substituem publicação. O recibo atual registra **216,414 segundos — 3 min 36,414 s**, abaixo de 900 s, com fonte GitHub, SHA e run/tentativa identificados.
 
-O coletor dependia exclusivamente do feed público Events. A API de PR confirmava merged_at e merge_commit_sha, mas o feed não continha PushEvent durante a janela. O GitHub documenta latência de 30 segundos a 6 horas e desaconselha esse feed em casos de tempo real. [Documentação oficial](https://docs.github.com/en/rest/activity/events#list-repository-events).
+A primeira execução 773af17 continua registrada como falha do coletor: a regressão passou, mas o feed Events atrasado não trouxe o PushEvent na janela. A reconstrução histórica de 191 s não alterou aquela conclusão. O GitHub documenta latência de 30 segundos a 6 horas nesse feed. [Fonte oficial](https://docs.github.com/en/rest/activity/events#list-repository-events). O novo sucesso decorre de correção revisada e execução posterior, sem ignorar o gate.
 
-A correção do [PR33](https://github.com/luccalck/desafio-arcade/pull/33) usa merged_at do PR integrado, exigindo merged=true, base main e merge_commit_sha exato. Para payload Actions, confere repositório/ref/after e repository.pushed_at, quando presente. Tags anotadas conferem objeto remoto e commit. Events passa a ser complementar. Mantemos limite 900 s e falha sem fonte válida; data de commit e criação do run não substituem publicação.
+### Promoção e fronteira do aceite
 
-### Medição histórica, sem reclassificar a execução
+O deploy-prd usou o mesmo ZIP aceito em HML, SHA-256 84105e76…d0d0f937. O recibo identifica ator luccalck, run 38829484114/1 e estado publicada às 21:31:47 de 15/10, horário de São Paulo. A URL imutável `/releases/ 88d533e31452036092cd8edef3efa3c0775241dc/` e a raiz foram testadas; `/status/` responde HTTP 200. Isso comprova produção técnica, não rollback, GitHub Release acadêmica, pitch ou triagem final.
 
-O registro posterior hml-tempo-historico.json cruza o merge PR32 às 03:03:48 UTC com completed_at 03:06:59 UTC da etapa pública de regressão HML aprovada. Identidade SHA/main conferida: intervalo 191 segundos, 3 min 11 s, inferior a 900 s. As funções da correção validaram as fontes, preservadas no JSON.
-
-Esse dado comprova o intervalo histórico observado; não torna verde o job que falhou nem substitui nova execução do coletor após revisão/merge do fix. O HEAD 78c367d tem inspeção técnica e testes concluídos, CI 273/36 verde e três regressões de contrato; a aprovação exigida de outro integrante segue pendente, sem autoaprovação. A aprovação do PR32 não cobre automaticamente a alteração PR33; a validação formal completa continua pendente.
+O relatório completo desta branch é uma atualização candidata no PR34; o pacote de produção foi gerado com a fonte documental anterior. Sua versão revisada precisa de aprovação/CI e publicação documental próprias.
 
 <div style="break-before: page;"></div>
 
-## 8. Monitoramento, alertas, DORA e recuperação
+## 8. Sondas pós-produção e primeira amostra DORA
 
-O monitor tem cron de 15 min, execução manual e persistência na branch observabilidade. Duas execuções agendadas reais passaram: [38704560758](https://github.com/luccalck/desafio-arcade/actions/runs/38704560758) e [38744110194](https://github.com/luccalck/desafio-arcade/actions/runs/38744110194). A execução manual [38770216623](https://github.com/luccalck/desafio-arcade/actions/runs/38770216623) passou durante a validação atual. Os artefatos preservam seis amostras:
+A execução [38830013027](https://github.com/luccalck/desafio-arcade/actions/runs/38830013027) concluiu o monitoramento pós-produção. Diferentemente das sondas antigas da raiz preview, agora os dois alvos confirmam a versão formal 0.7.0 e o SHA 88. A coleta começou em 16/10, 00:32:13 UTC, 15/10, 21:32:13 em São Paulo.
 
-|15/10 — São Paulo|Alvo|HTTP|Latência registrada|Versão|
-|---|---|---:|---:|---|
-|05:17:16|HML|200|0,1670 s|0.7.0|
-|05:17:16|Raiz|200|0,1035 s|0.6.0|
-|10:36:26|HML|200|0,1718 s|0.7.0|
-|10:36:26|Raiz|200|0,0945 s|0.6.0|
-|13:35:19|HML|200|0,3384 s|0.7.0|
-|13:35:19|Raiz|200|0,1956 s|0.6.0|
+|Alvo|HTTP|Latência registrada|Identidade e erro|
+|---|---:|---:|---|
+|HML|200|0,091823904 s|0.7.0 / 88d533e; erro=null|
+|Produção|200|0,033559691 s|0.7.0 / 88d533e; erro=null|
 
-formalHml/formalPrd=true representam flags configuradas, não certificação de deploy. A raiz segue preview 71933bf. A latência é do documento HTTP principal, incluindo consumo do corpo; não mede jornada completa ou todas as consultas de versão. Três execuções não caracterizam percentis/SLA. O intervalo de 5 h 19 min entre as agendadas não comprova cadência pontual de 15 min.
+A latência mede o documento HTTP principal, com consumo do corpo; não representa a jornada completa ou todos os fetches de versão. Uma amostra não caracteriza percentis/SLA. As flags formalHml/formalPrd, sozinhas, não comprovam deploy; aqui a identidade das sondas coincide com os recibos formais de HML/PRD. As duas execuções agendadas anteriores e uma manual estão preservadas como histórico. O cron é de 15 min, mas sua execução pontual a cada 15 min continua sem garantia observada.
 
-Os três arquivos alertas.json têm actions=[]. Logo, nenhuma abertura/fechamento de alerta foi observado nessas execuções. Os limiares previstos são indisponibilidade e latência>2 s, com Issues JogoForaDoAr/LatenciaAlta, idempotência e fechamento automático. Testes com adaptadores não são alertas reais.
+O painel /status/ foi aberto no navegador em 15/10, 21:36:59 local: HTTP 200, versão 0.7.0/SHA 88, azul-verde e quatro cartões DORA, com MTTR “Indisponível”. Atualizar passou; não houve erro de página nem overflow em 390 px. O painel mostrou 100,0% de disponibilidade e 110 ms de latência nas sete amostras exibidas, incluindo histórico de preview; esses valores amostrais não são SLA ou disponibilidade formal de toda a janela. Fonte: painel-88-browser.json.
 
-|DORA / unidade|Definição implementada|Resultado no JSON atual|
+### Medições reais e limites da comparação
+
+O dora-38830013027.json usa a janela 02/10, 00:32:13 UTC a 16/10, 00:32:13 UTC, exatamente 14 dias. Um deploy formal foi concluído às 00:31:49 UTC, com vínculo ao commit, promoção, job e smoke.
+
+|Métrica|Valor observado|Denominador / interpretação|
 |---|---|---|
-|Frequência / deploys-dia|Produções formais bem-sucedidas ÷ dias da janela|N/D:nenhum deploy-prd formal|
-|Lead time / horas|Commit até deploy-prd aceito; fonte de tempo explicitada|N/D:sem vínculo completo commit→PRD|
-|Falha de mudança / %|Deploys seguidos de rollback correlacionado ÷ deploys|N/D:sem denominador formal|
-|Recuperação / minutos|Abertura até fechamento de Issues de alerta|N/D:nenhuma Issue aberta/fechada|
+|Frequência|0,0714286 deploy/dia|1 deploy formal ÷ 14 dias|
+|Lead time|0,0908333 h = 5 min 27 s|1 vínculo commit→deploy-prd concluído|
+|Taxa de falha de mudança|0%|1 deploy formal, sem rollback correlacionado|
+|MTTR|N/D; samples=0|Nenhuma Issue de alerta aberta e fechada|
 
-A coleta manual usa janela 01/10/2026, 16:35:20 UTC a 15/10/2026, 16:35:20 UTC, gerada às 16:35:27,818 UTC; quatro valores null e zero amostras. A linha de base de 11 dias é fornecida no enunciado. Não há melhoria medida nem quantidade mínima inventada de dez execuções DORA.
+O lead time equivale a 0,00378472 dias, frente à linha de base de 11 dias fornecida no enunciado. Essa diferença é descritiva: uma amostra não comprova causalidade, melhoria sustentada ou comparação estatisticamente equivalente. Falta medir o efeito de uma mudança com antes/depois verificáveis no projeto. Zero por cento com denominador 1 não significa ausência histórica ou futura de falhas.
 
-A validação local passou 53 testes e conferiu 14 arquivos HTTP das duas baselines antigas. Não houve rollback despachado, injeção de falha ou observação contínua de produção. Revalidar tag/main do mesmo SHA não troca versão e não pode fingir recuperação. Limites separados de deploy/propagação/smoke podem exceder 5 min; ainda falta ensaio controlado com baseline saudável, relógio real, continuidade HTTP e publicação protegida.
+### Alertas e recuperação ainda pendentes
+
+O arquivo alertas-38830013027.json mantém actions=[]. Não foram observadas abertura e resolução reais de JogoForaDoAr/LatenciaAlta. Os 53 testes locais e 14 checagens de baselines antigas são provas de contratos, não ensaio de recuperação. Ainda falta modo de ensaio controlado, baseline saudável, relógio real, monitor HTTP contínuo e recuperação pelos workflows protegidos. Limites separados de deploy/propagação/smoke podem ultrapassar 5 min; MTTR e recuperação < 5 min não recebem aceite sem medição, mesmo com PRD saudável.
 
 <div style="break-before: page;"></div>
 
 ## 9. Rastreabilidade dos dez integráveis
 
-As fontes levam a PRs ou execuções reais. A coluna final delimita o aceite completo, sem transformar testes, implementação ou flags em produção/entrega. Os documentos e artefatos locais preservam comandos, fontes, hashes e origens.
+Cada fonte identifica execução ou PR real. A matriz separa aceite técnico comprovado de atividades finais: produção verde não significa aprovação de todos os integráveis ou entrega acadêmica completa.
 
-|INT / peso A|Fonte verificável|Implementado ou executado|Falta para aceite completo|
+|INT / peso A|Fonte verificável|Implementado ou executado|Aceite ainda necessário|
 |---|---|---|---|
-|INT-01 /10%|[PR #32](https://github.com/luccalck/desafio-arcade/pull/32), [PR #29](https://github.com/luccalck/desafio-arcade/pull/29)|Quatro autores/RAs; 15 reviews dos colegas e consolidação revisada/integrada|Revisão do fix, tags, conferência de contribuição e banca/F|
-|INT-02 /8%|[PR #22](https://github.com/luccalck/desafio-arcade/pull/22), [CI main](https://github.com/luccalck/desafio-arcade/actions/runs/38674290799)|GDD 12 seções/Esteira, PDF automático e identificação real|Versão/data/links/direitos da release efetiva|
-|INT-03 /15%|[CI/HML](https://github.com/luccalck/desafio-arcade/actions/runs/38674290799), [PR #33](https://github.com/luccalck/desafio-arcade/pull/33)|CI verde; HML publicada; 191 s históricos verificados; falha do coletor protegida|Nova HML integral verde, aprovação e PRD|
-|INT-04 /12%|[CI PR33](https://github.com/luccalck/desafio-arcade/actions/runs/38674975441), [PR #8](https://github.com/luccalck/desafio-arcade/pull/8)|273 testes+36 E2E; HML 4/4; offline original 1/1; bugs/regressões|Revalidar HEAD integrado e smoke PRD formal|
-|INT-05 /10%|[PR #10](https://github.com/luccalck/desafio-arcade/pull/10), [PR #32](https://github.com/luccalck/desafio-arcade/pull/32)|Scanners, SBOM, inventários, hook e governança|Direitos/licenças finais; vídeo/tag/artefatos|
-|INT-06 /10%|[PR #17](https://github.com/luccalck/desafio-arcade/pull/17), [PR #23](https://github.com/luccalck/desafio-arcade/pull/23)|ZIP 29.025 B; hashes 7/7 HML; offline e proveniência|Tag/release imutável com assets e equivalência hash PRD|
-|INT-07 /12%|[PR #19](https://github.com/luccalck/desafio-arcade/pull/19), [PR #21](https://github.com/luccalck/desafio-arcade/pull/21)|Loader/azul-verde/rollback preparados; HML publicada|PRD aprovada, promoção/smoke e recuperação<5 min/URL contínua|
-|INT-08 /10%|[Monitor](https://github.com/luccalck/desafio-arcade/actions/runs/38770216623), [PR #23](https://github.com/luccalck/desafio-arcade/pull/23)|Duas agendadas e um manual reais; CSV/DORA; alertas sem ações|Painel/alertas reais, DORA com amostras e melhoria|
-|INT-09 /8%|[PR #24](https://github.com/luccalck/desafio-arcade/pull/24), [PR #25](https://github.com/luccalck/desafio-arcade/pull/25)|Empacotamento/triagem, origem imutável e vínculo de vídeo|Pitch real, pacote e TRIAGEM APROVADA na tag final|
-|INT-10 /5%|[PR #26](https://github.com/luccalck/desafio-arcade/pull/26), [PR #28](https://github.com/luccalck/desafio-arcade/pull/28)|Relatório, prints atuais datados, roteiro/legendas e divisão de banca|Pitch ≤ 90 s, provas finais, ensaio e apresentação|
+|INT-01 /10%|[PR33](https://github.com/luccalck/desafio-arcade/pull/33), [PR35](https://github.com/luccalck/desafio-arcade/pull/35)|Quatro autores/RAs; 15 reviews históricos; revisão e merges preservados|Tags finais, conferência individual e banca/F|
+|INT-02 /8%|[CI main](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114), [PR22](https://github.com/luccalck/desafio-arcade/pull/22)|GDD completo com 12 seções/Esteira; PDF automático; dados reais|Versão/data/links/direitos da release acadêmica final|
+|INT-03 /15%|[Esteira verde](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114)|CI/HML/PRD aprovados; 216,414 s push→HML; aprovação registrada|Revalidar futuras alterações; pacote/triagem finais|
+|INT-04 /12%|[CI 299/36](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114), [PR8](https://github.com/luccalck/desafio-arcade/pull/8)|299 testes + 36 E2E; HML 4/4; smokes candidata/raiz; offline 1/1|Playtest humano e regressão de futuros HEADs|
+|INT-05 /10%|[PR10](https://github.com/luccalck/desafio-arcade/pull/10), [CI](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114)|Scanners, SBOM, inventários, hook e revisão|Direitos/licenças finais e vídeo/tag/artefatos|
+|INT-06 /10%|[CI/bundle](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114)|ZIP 29.000 B, 172 arquivos no bundle; checksum comum HML/PRD; offline|Tag/GitHub Release com assets finais|
+|INT-07 /12%|[Produção](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301)|Aprovação, azul-verde, release por SHA e smoke públicos|Recuperação manual/automática < 5 min com URL contínua|
+|INT-08 /10%|[Sondas/DORA](https://github.com/luccalck/desafio-arcade/actions/runs/38830013027)|HML/PRD 200, mesmo SHA; status 200; três DORA com 1 amostra|Alertas/fechamento, MTTR, melhoria antes/depois|
+|INT-09 /8%|[PR25](https://github.com/luccalck/desafio-arcade/pull/25), [Esteira](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114)|Empacotador/triagem e origem imutável implementados|Pitch, pacote completo e TRIAGEM APROVADA na tag final|
+|INT-10 /5%|[PR34](https://github.com/luccalck/desafio-arcade/pull/34), [PR28](https://github.com/luccalck/desafio-arcade/pull/28)|Relatório candidato atualizado, prints atuais, roteiro/legendas|Revisão/publicação deste PDF, pitch, ensaio e banca|
 
-### Segurança, direitos e origens das evidências
+### Segurança, direitos e origens
 
-Gitleaks bloqueante no histórico, npm audit de produção, Dependabot e SBOM acompanham a CI. No bundle do PR33, ci-gitleaks.json tem zero achados e ci-npm-audit.json reporta zero vulnerabilidades, inclusive críticas. Um scanner sem achados não garante direitos ou ausência absoluta de segredo; reconferir tag,vídeo/logs e ativos finais, sem introduzir segredo real para testar detecção. LICENSE, THIRD_PARTY e AI-USAGE registram origens/usos; bibliotecas conservam suas licenças.
+Gitleaks bloqueante no histórico, audit de produção, Dependabot e SBOM acompanham a CI. No bundle do SHA 88, ci-88-gitleaks.json registra zero achados, e ci-88-npm-audit.json registra zero vulnerabilidades, inclusive críticas. Scanner sem achados não garante direitos ou ausência absoluta de qualquer segredo. Reconferir tag, vídeo/logs e ativos finais, sem introduzir segredo real para testar detecção. LICENSE, THIRD_PARTY e AI-USAGE registram origens/usos; bibliotecas conservam suas licenças.
 
-Os prints deste relatório vieram do navegador em HML/file:// com metadados; não são mockups Stitch. O conjunto atual possui manifesto-evidencias.json com hashes dos arquivos preservados. Docs/gestao/checklist-avaliacao.md e docs/execucao/05-pendencias-por-passo.md mantêm o inventário completo. O bundle CI fornece PDFs/JUnit/SBOM; a entrega final deve garantir retenção/acesso do professor, além de links de Actions.
+Os três prints atuais vieram do navegador HML/PRD/file:// do SHA 88, com metadados; não são mockups Stitch. O conjunto operacional tem manifesto próprio, separado do pacote acadêmico. O checklist integral e as pendências por passo continuam nos respectivos MDs. O relatório atualizado do PR34 precisa de revisão/CI e acesso público efetivo; não se presume incluído no bundle do SHA 88 já promovido.
 
 <div style="break-before: page;"></div>
 
@@ -247,30 +248,30 @@ Os prints deste relatório vieram do navegador em HML/file:// com metadados; nã
 
 |Integrante|PRs autorais de referência|Escopo documentado|
 |---|---|---|
-|Lucca|[#2](https://github.com/luccalck/desafio-arcade/pull/2) a [#14](https://github.com/luccalck/desafio-arcade/pull/14), [#32](https://github.com/luccalck/desafio-arcade/pull/32)|Produto, GDD, jogo Python, CI, segurança, offline, consolidação|
+|Lucca|[#2](https://github.com/luccalck/desafio-arcade/pull/2) a [#14](https://github.com/luccalck/desafio-arcade/pull/14), [#32](https://github.com/luccalck/desafio-arcade/pull/32), [#33](https://github.com/luccalck/desafio-arcade/pull/33)|Produto, GDD, jogo Python, CI, segurança, offline, consolidação|
 |Davi|[#15](https://github.com/luccalck/desafio-arcade/pull/15) a [#19](https://github.com/luccalck/desafio-arcade/pull/19)|HML, conteúdo/testes, release, alertas, produção/painel|
-|Miguel|[#20](https://github.com/luccalck/desafio-arcade/pull/20) a [#24](https://github.com/luccalck/desafio-arcade/pull/24)|Playtest preparado, recuperação, DORA, GDD, integridade/triagem|
-|Lucas|[#25](https://github.com/luccalck/desafio-arcade/pull/25) a [#29](https://github.com/luccalck/desafio-arcade/pull/29)|Submissão, relatório, candidata, release/ficha/banca, revisão PR32|
+|Miguel|[#20](https://github.com/luccalck/desafio-arcade/pull/20) a [#24](https://github.com/luccalck/desafio-arcade/pull/24), [#35](https://github.com/luccalck/desafio-arcade/pull/35)|Recuperação, DORA, GDD, integridade/triagem e fallback HML|
+|Lucas|[#25](https://github.com/luccalck/desafio-arcade/pull/25) a [#29](https://github.com/luccalck/desafio-arcade/pull/29)|Submissão, relatório, candidata, release/ficha/banca, revisões de consolidação|
 
-Lucca declarou revisão dos colegas e autorizou 15 aprovações reais nos HEADs dos PRs 15–29; o PR32 recebeu revisão externa de Lucas. Não simulamos identidades nem autoaprovamos PRs de Lucca. Participação em três integráveis com commits/PRs aprovados e domínio na banca são requisitos individuais; a nota/fator F são atribuídos pelo professor. Estimativas 10 na ficha não são aceites de entrega.
+Os dois commits novos de Miguel e sua autoria foram preservados; Lucca revisou seu PR35 e Lucas aprovou a consolidação PR33 antes do merge 88. Não simulamos identidades nem autoaprovamos PRs de Lucca. A aprovação do environment por Lucca seguiu a política existente, mantendo visíveis ator/ambiente/recibo. Contribuições aprovadas em integráveis e domínio na banca são condições individuais; nota/F são atribuições do professor.
 
 ### Retrospectiva baseada em resultados
 
-**Funcionou:** regras separadas da UI, E2E público desktop/toque e validação do ZIP original/offline. A comparação dos sete arquivos HTTP demonstrou o artefato servido. O gate impediu produção após faltar prova temporal, embora HML publicada/regressão verde. A revisão externa e o merge protegido integraram autoria real dos quatro.
+**Funcionou:** separar regras da UI, testar campanha pública/offline e promover os mesmos bytes. A execução do SHA 88 comprovou HML ≤ 15 min, smoke da candidata, promoção e smoke da raiz, com aprovação real. A primeira amostra pós-produção habilitou frequência, lead time e taxa de falha calculados de eventos verificáveis.
 
-**Falhou:** registros anteciparam aceites sem eventos correspondentes; reabrimos 27 checks contestados. O coletor dependia de um feed atrasado; a execução real falhou. Cron configurado e sondas verdes não demonstram cadência pontual, painel, alertas ou DORA medido. Os 53 testes de recuperação não medem rollback/CDN real.
+**Falhou e foi corrigido:** registros anteciparam aceites; reabrimos 27 checks contestados. A dependência exclusiva de Events causou falha real HML. Correções revisadas, incluindo fallback de Miguel, permitiram 216,414 s medidos em nova execução. Preservamos a falha anterior, sem transformá-la em sucesso retroativo. **Ainda não resolvido:** não há alerta/MTTR, modo de ensaio e recuperação real < 5 min; cron não oferece cadência pontual demonstrada.
 
-**Mudamos:** identificação, ficha com campos finais vazios, relatório no bundle, proveniência e ordem de submissão. PR33 adiciona fonte de merge/payload e três regressões sem aumentar 900 s. A medição histórica 191 s usa eventos reais, mas mantém o job falho identificado. **Próxima medida:** nova HML, PRD e recuperação com timestamps/HTTP contínuo; DORA antes/depois de uma melhoria; playtest humano para priorizar dificuldades observadas.
+**O que medir adiante:** ensaio controlado de recuperação com baseline validada e HTTP contínuo, métricas antes/depois de uma melhoria e playtest humano. O lead time de 5 min 27 s é uma primeira amostra frente à referência de 11 dias, sem inferir ganho causal ou maturidade sustentada. Defeitos futuros só serão chamados reais com reprodução/evidência, não por necessidade da rubrica.
 
-### Critérios de fechamento restantes
+### Critérios restantes de fechamento
 
 |Ação necessária|Evidência para concluir|
 |---|---|
-|Revisar/integrar PR33 e executar HML|Outro autor, CI/HML verdes e recibo temporal válido|
-|Produção e recuperação|Mesmo ZIP aprovado, smoke, aprovação, relógio/URL contínua|
-|Observabilidade/melhoria|Status público, alertas/fechamento, DORA com fontes e comparação|
-|Pitch e playtest|Vídeo real ≤ 90 s/legendas/direitos; registro humano de 3 min|
+|Revisar/publicar PR34|Outro revisor, CI e PDF atualizado acessível; sem confundir com PDF antigo|
+|Recuperação/alertas|Ensaio manual/automático real, tempos/URL contínua, Issues e autocerramento|
+|Melhoria DORA|Origem/janela/denominadores e antes/depois; MTTR quando houver evento|
+|Pitch e playtest|Vídeo real ≤ 90 s, legendas/direitos; registro humano de 3 min|
 |Tag/release/submissão|SemVer compatível, assets/manifestos, triagem real na tag final|
 |Ficha, AVA, banca|TXT verdadeiro pelo HTML, recibo, ensaio e defesa dos quatro|
 
-O pitch continua pendente por orientação de Lucca. Davi informou consentimento dos quatro e registro privado; conferir escopo/canais com o vídeo final, sem publicar documentos pessoais. A apresentação prevista é 10 min + 5 min de demonstração + 5 min de perguntas; não ocorreu nesta automação. Concurso externo é opcional, sem inscrição ou decisão coletiva comprovada. Este relatório deverá receber os resultados finais antes da entrega, preservando SHA/run/data e as falhas reais desta iteração.
+O pitch segue pendente por orientação de Lucca. Davi informou consentimento dos quatro e registro privado; conferir escopo/canais com o vídeo final, sem publicar dados pessoais. A apresentação prevista é 10 min + 5 min de demonstração + 5 min de perguntas; não ocorreu nesta automação. Concurso externo é opcional e sem inscrição autorizada. Produção técnica verde é avanço comprovado; G8 e entrega acadêmica completa continuam dependentes das provas finais.

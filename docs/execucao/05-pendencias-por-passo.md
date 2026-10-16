@@ -596,3 +596,21 @@ Revisão complementar de15/10: o PR33 recebeu o commit770449b, que declara pull-
 - [x] Conflito de AI-USAGE no PR34 resolvido preservando registros de ambos os lados; conteúdo da main incorporado na branch documental.
 - [ ] PR34 ainda precisa de CI própria e revisão externa do novo HEAD antes de merge. Resolver conflito não equivale a aprovação.
 - [ ] Recuperação real com relógio/CDN/continuidade, alertas tratados, DORA com eventos e melhoria, playtest humano, pitch, pacote/triagem final, ficha/TXT/AVA/recibo/banca e direitos finais continuam nos respectivos passos.
+
+
+## Resultado operacional da run38829484114 — 15/10/2026
+
+Esta seção atualiza os estados anteriores de produção e painel ainda ausentes; não apaga a falha da primeira tentativa.
+
+- [x] Passos011/014/019: CI→HML→PRD→monitor integralmente verdes. HML216,414s; produção0.7.0/SHA88d533e aprovada no environment, candidata e raiz com smoke. Mesmo ZIP29.000bytes/hash84105e76a4bd55b5064d466340cb377ea27d49092bae984f65ebdeb7d0d0f937;172arquivos de bundle verificados;14hashesHTTP (seteHML/setePRD) iguais ao ZIP.
+- [x] Passo010: ZIP original88 offline1/1 em14,5s, cinco missões/23casos/vitória700XP/exportaçõesHTML/.py, zeroHTTP e erros.
+- [x] Passos012/027/028: sondas pós-produção38830013027 verdes e painel publicado/testado no navegador desktop/celular, refresh e ausência de overflow.
+- [x] Passo024: três valores DORA reais e comparação com onze dias, com apenas uma implantação: frequência1/14dia, leadtime5min27s, taxa de falha0%.
+- [ ] Passos016/022/023/026: alertas reais abertos/tratados/fechados, recuperação automática/manual<5min com propagação e continuidade. Ainda requer preparar o ensaio controlado e estabelecer medições; os jobs de recuperação ficaram skipped neste deploy saudável.
+- [ ] Passos024/028: MTTR continua sem dado (nenhumaIssue de alerta fechada); melhoria com efeito mensurado permanece pendente. Não transformar uma amostra ou fixtures em prova de recuperação ou resultado estatístico.
+- [ ] Passo021: playtest humano de três minutos com iniciante de outra turma e registro autorizado. Automação não o substitui.
+- [ ] Passos033/037: incorporar estas provas no relatório candidato e novaCI/PR34; revisão externa do novoHEAD antes de merge. MD da ficha atualizado; HTML/TXT reservados ao fechamento.
+- [ ] Passos015/031/035/036: tag anotada compatível, release com PDFs completos e artefatos imutáveis, pacote/triagem final. Pitch permanece pendente por orientação expressa; não gerar MP4fictício ou TRIAGEMAPROVADAsementrada real.
+- [ ] Direitos/licenças e declarações finais verdadeiras, marcos históricos, PRAZOoficial, AVA/recibo, ensaio/banca dos quatro e eventual decisão opcional de concurso continuam nos respectivos registros. Não declarar nota ou fator máximo.
+
+Provas: [operação15/10](../evidencias/operacao-2026-10-15.md), [recibo produção](../evidencias/operacao-2026-10-15/prd-88-recibo.json), [DORA](../evidencias/operacao-2026-10-15/dora-38830013027.json), [painel real](../evidencias/operacao-2026-10-15/painel-88-browser.json).

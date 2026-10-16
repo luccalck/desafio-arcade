@@ -1,0 +1,123 @@
+{
+  "date": "2026-10-16T00:36:56.980Z",
+  "sha": "88d533e31452036092cd8edef3efa3c0775241dc",
+  "run": "38829484114",
+  "attempt": "1",
+  "zipBytes": 29000,
+  "zipSha256": "84105e76a4bd55b5064d466340cb377ea27d49092bae984f65ebdeb7d0d0f937",
+  "checks": [
+    {
+      "target": "hml/",
+      "file": "index.html",
+      "http": 200,
+      "zipSha256": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282",
+      "httpSha256": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282",
+      "equal": true
+    },
+    {
+      "target": "hml/",
+      "file": "style.css",
+      "http": 200,
+      "zipSha256": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da",
+      "httpSha256": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da",
+      "equal": true
+    },
+    {
+      "target": "hml/",
+      "file": "game.js",
+      "http": 200,
+      "zipSha256": "742424776eee6f5e1fb867768149c15b0a7134caf878ffc57f5f9ee100b0510c",
+      "httpSha256": "742424776eee6f5e1fb867768149c15b0a7134caf878ffc57f5f9ee100b0510c",
+      "equal": true
+    },
+    {
+      "target": "hml/",
+      "file": "version.json",
+      "http": 200,
+      "zipSha256": "66e7171c080f8595e5b794ab1a9a73f49a6c7b364c2e9ff8257fc0a78848d041",
+      "httpSha256": "66e7171c080f8595e5b794ab1a9a73f49a6c7b364c2e9ff8257fc0a78848d041",
+      "equal": true
+    },
+    {
+      "target": "hml/",
+      "file": "LEIA-ME.txt",
+      "http": 200,
+      "zipSha256": "93f065914dbce08f3e0f3f8990cd7948dfbda84b39c761950f75dc422bd8d7af",
+      "httpSha256": "93f065914dbce08f3e0f3f8990cd7948dfbda84b39c761950f75dc422bd8d7af",
+      "equal": true
+    },
+    {
+      "target": "hml/",
+      "file": "LICENSE.txt",
+      "http": 200,
+      "zipSha256": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb",
+      "httpSha256": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb",
+      "equal": true
+    },
+    {
+      "target": "hml/",
+      "file": "THIRD_PARTY.txt",
+      "http": 200,
+      "zipSha256": "f8ccfd58801d41bab1cb27568d0ff04a5006b580e97437defe58c189930d6013",
+      "httpSha256": "f8ccfd58801d41bab1cb27568d0ff04a5006b580e97437defe58c189930d6013",
+      "equal": true
+    },
+    {
+      "target": "releases/88d533e31452036092cd8edef3efa3c0775241dc/",
+      "file": "index.html",
+      "http": 200,
+      "zipSha256": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282",
+      "httpSha256": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282",
+      "equal": true
+    },
+    {
+      "target": "releases/88d533e31452036092cd8edef3efa3c0775241dc/",
+      "file": "style.css",
+      "http": 200,
+      "zipSha256": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da",
+      "httpSha256": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da",
+      "equal": true
+    },
+    {
+      "target": "releases/88d533e31452036092cd8edef3efa3c0775241dc/",
+      "file": "game.js",
+      "http": 200,
+      "zipSha256": "742424776eee6f5e1fb867768149c15b0a7134caf878ffc57f5f9ee100b0510c",
+      "httpSha256": "742424776eee6f5e1fb867768149c15b0a7134caf878ffc57f5f9ee100b0510c",
+      "equal": true
+    },
+    {
+      "target": "releases/88d533e31452036092cd8edef3efa3c0775241dc/",
+      "file": "version.json",
+      "http": 200,
+      "zipSha256": "66e7171c080f8595e5b794ab1a9a73f49a6c7b364c2e9ff8257fc0a78848d041",
+      "httpSha256": "66e7171c080f8595e5b794ab1a9a73f49a6c7b364c2e9ff8257fc0a78848d041",
+      "equal": true
+    },
+    {
+      "target": "releases/88d533e31452036092cd8edef3efa3c0775241dc/",
+      "file": "LEIA-ME.txt",
+      "http": 200,
+      "zipSha256": "93f065914dbce08f3e0f3f8990cd7948dfbda84b39c761950f75dc422bd8d7af",
+      "httpSha256": "93f065914dbce08f3e0f3f8990cd7948dfbda84b39c761950f75dc422bd8d7af",
+      "equal": true
+    },
+    {
+      "target": "releases/88d533e31452036092cd8edef3efa3c0775241dc/",
+      "file": "LICENSE.txt",
+      "http": 200,
+      "zipSha256": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb",
+      "httpSha256": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb",
+      "equal": true
+    },
+    {
+      "target": "releases/88d533e31452036092cd8edef3efa3c0775241dc/",
+      "file": "THIRD_PARTY.txt",
+      "http": 200,
+      "zipSha256": "f8ccfd58801d41bab1cb27568d0ff04a5006b580e97437defe58c189930d6013",
+      "httpSha256": "f8ccfd58801d41bab1cb27568d0ff04a5006b580e97437defe58c189930d6013",
+      "equal": true
+    }
+  ],
+  "passed": true
+}

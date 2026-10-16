@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-16T00:31:52.989Z",
+  "source": "88d533e31452036092cd8edef3efa3c0775241dc",
+  "version": {
+    "version": "0.7.0",
+    "sha": "88d533e31452036092cd8edef3efa3c0775241dc",
+    "build": "2026-10-16T00:26:22.000Z"
+  },
+  "method": "ZIP descompactado; file://; contexto offline antes de abrir; campanha via editor e pilotagem por teclado",
+  "zipBytes": 29000,
+  "zipSha256": "84105e76a4bd55b5064d466340cb377ea27d49092bae984f65ebdeb7d0d0f937",
+  "files": [
+    "LEIA-ME.txt",
+    "LICENSE.txt",
+    "THIRD_PARTY.txt",
+    "game.js",
+    "index.html",
+    "style.css",
+    "version.json"
+  ],
+  "missions": 5,
+  "finalCases": 23,
+  "xp": 700,
+  "remoteRequests": [],
+  "pageErrors": [],
+  "pythonSha256": "0749c1f65d8e0883faa30499f50079f7be9c341011c9d68505d9fd351aac0dbb",
+  "htmlSha256": "2b9a5adc71c686429046d84e94c669392e0d6edbc707138cbfe4911f6c81ceac"
+}

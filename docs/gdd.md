@@ -1,6 +1,6 @@
 # Rota do Código — Game Design Document
 
-Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do documento: **026 — 14/10/2026**. Mantemos a oficina de jogos aprovada, com desafios Python e preview web. Este documento descreve a candidata do código-fonte; sua data de revisão não representa data de submissão, tag ou release final. A versão/SHA do pacote final serão reconferidos após a etapa 035.
+Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do documento: **027 — 15/10/2026 (America/Sao_Paulo)**. Mantemos a oficina de jogos aprovada, com desafios Python e produção web validada. Este documento descreve a candidata do código-fonte; sua data de revisão não representa data de submissão, tag ou release final. A versão/SHA do pacote final serão reconferidos após a etapa 035.
 
 | Identificação | Situação verdadeira |
 |---|---|
@@ -9,11 +9,11 @@ Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do doc
 | Coordenação de Produto | Lucca Castilho Costa; participação dos quatro em todas as áreas |
 | Data de submissão | Ainda não houve submissão final registrada; preencher na entrega real |
 | Repositório | https://github.com/luccalck/desafio-arcade |
-| PR do primeiro ciclo | https://github.com/luccalck/desafio-arcade/pull/2; integração protegida ainda pendente |
-| Preview público do jogo | https://luccalck.github.io/desafio-arcade/ |
-| HML do preview | https://luccalck.github.io/desafio-arcade/hml/ |
-| CI de referência conferida | https://github.com/luccalck/desafio-arcade/actions/runs/38515175960 — PR do MD 2 de Miguel, `success`, deploys formais ignorados |
-| Produção / homologação / vídeo / release | Preview e HML existentes; produção/HML formais da candidata, vídeo e release final pendentes |
+| PR do primeiro ciclo | https://github.com/luccalck/desafio-arcade/pull/2; histórico do primeiro ciclo, sucedido pelas integrações revisadas #32 e #33 |
+| Produção pública do jogo | https://luccalck.github.io/desafio-arcade/ |
+| Homologação formal | https://luccalck.github.io/desafio-arcade/hml/ |
+| CI de referência conferida | https://github.com/luccalck/desafio-arcade/actions/runs/38829484114 — CI, HML, produção e sondas pós-produção concluídos com sucesso |
+| Produção / homologação / vídeo / release | Produção e HML formais 0.7.0 / 88d533e; vídeo e GitHub Release final pendentes |
 | Plataforma | WEB estática responsiva, mesma experiência no computador e celular |
 
 ### Equipe
@@ -27,9 +27,11 @@ Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do doc
 
 Papéis coordenam, sem exclusividade. Os nomes completos e RAs de três integrantes foram informados em13/10/2026. Lucca informou seu nome completo e RA 26179873 em 14/10/2026; a tabela contém os quatro RAs reais. Fonte dos dados: [SQUAD](../SQUAD.md).
 
-Consulta pública em 14/10/2026: raiz e `/hml/` responderam HTTP 200, mas a HML servia a versão 0.6.0 do SHA `71933bfd4bd35f8c3ac8f5899a0e9af00db29f32`, anterior a este MD. `/status/` respondeu HTTP 404. Essas URLs não comprovam a candidata atual, produção formal ou painel publicado. O PR técnico mais recente antes desta revisão é [#21](https://github.com/luccalck/desafio-arcade/pull/21), com CI verde e revisão humana ainda pendente.
+Registro histórico, superado pela implantação formal abaixo. Consulta pública em 14/10/2026: raiz e `/hml/` responderam HTTP 200, mas a HML servia a versão 0.6.0 do SHA `71933bfd4bd35f8c3ac8f5899a0e9af00db29f32`, anterior a este MD. `/status/` respondeu HTTP 404. Essas URLs não comprovam a candidata atual, produção formal ou painel publicado. O PR técnico mais recente antes desta revisão é [#21](https://github.com/luccalck/desafio-arcade/pull/21), com CI verde e revisão humana ainda pendente.
 
-A aprovação de concepção não substitui revisão por outro integrante. CPF e assinaturas não integram Git ou artefatos públicos; eventual versão privada depende de orientação do professor. Declaração coletiva e links de release continuam pendentes. Capturas locais e testes automatizados não representam produção ou playtest humano.
+Em 15/10/2026, após aprovação real de Lucas no PR33, integramos o SHA `88d533e31452036092cd8edef3efa3c0775241dc`. A execução 38829484114 validou 299 testes, 36 E2E, quatro cenários HML e promoção azul-verde com aprovação registrada em `producao`. HML ficou pronta em 216,414 segundos. ZIP original de 29.000 bytes validado offline; catorze comparações HTTP de sete arquivos em HML e produção confirmaram os mesmos bytes. `/status/` respondeu 200. [Evidências operacionais e limites](evidencias/operacao-2026-10-15.md). Esta revisão documental ainda depende de revisão externa no PR34.
+
+A aprovação de concepção não substitui revisão por outro integrante. CPF e assinaturas não integram Git ou artefatos públicos; eventual versão privada depende de orientação do professor. Declaração coletiva e links de release continuam pendentes. Capturas históricas locais não representam produção. Capturas atuais de HML/produção estão identificadas nas evidências; testes automatizados não substituem playtest humano.
 
 ## 1. Premissa e problema endereçado
 
@@ -190,7 +192,7 @@ Referências técnicas: [esbuild](https://esbuild.github.io/api/#format), [Vites
 
 | Ferramenta / componente | Uso efetivo | Licença / condição |
 |---|---|---|
-| Codex | Requisitos/concepção/código/conteúdo/testes/arte vetorial/documentação | AI-USAGE; revisão por outro humano antes do merge pendente |
+| Codex | Requisitos/concepção/código/conteúdo/testes/arte vetorial/documentação | AI-USAGE; PR32 e PR33 revisados por Lucas; esta revisão documental no PR34 ainda exige revisão externa |
 | Google Stitch | Referências menu/HUD/fim desktop/celular; export real sem integração ao jogo | Termos Google/IA; revisão humana pendente; THIRD_PARTY |
 | TypeScript / esbuild | Tipos/empacotamento | Apache-2.0 / MIT |
 | Ajv / Vitest / Playwright | Schema/regras/navegador | MIT / MIT / Apache-2.0 |
@@ -203,7 +205,7 @@ Transitividade/versões no THIRD_PARTY/lockfile/SBOM. Nenhuma dependência nova.
 
 ### Originalidade e direitos
 
-Desenvolvemos o projeto para a atividade, com assistência de IA registrada em [AI-USAGE](../AI-USAGE.md) e componentes/ativos inventariados em [THIRD_PARTY](../THIRD_PARTY.md). O código próprio e o HTML exportado incluem a licença MIT. A confirmação coletiva de direitos e a revisão por outro integrante continuam pendentes antes do merge/entrega; não afirmamos que os quatro assinaram ou aprovaram esta versão.
+Desenvolvemos o projeto para a atividade, com assistência de IA registrada em [AI-USAGE](../AI-USAGE.md) e componentes/ativos inventariados em [THIRD_PARTY](../THIRD_PARTY.md). O código próprio e o HTML exportado incluem a licença MIT. A confirmação coletiva de direitos e a revisão desta versão documental por outro integrante continuam pendentes antes do merge/entrega; não afirmamos que os quatro assinaram ou aprovaram esta versão.
 
 Não incluímos CPF ou assinaturas nos arquivos públicos. A entrega acadêmica não autoriza inscrição ou aceite dos termos do concurso opcional; eventual documento privado segue a orientação real do professor.
 
@@ -211,20 +213,20 @@ Não incluímos CPF ou assinaturas nos arquivos públicos. A entrega acadêmica 
 
 [Revisão educativa013 e protocolo de playtest](evidencias/aprendizagem-conteudo.md): soluções alternativas verificadas em fonte/AST/exportação, casos de transferência e sessão sem explicação de três minutos preparada na etapa021. O [registro do playtest](evidencias/playtest.md) ainda não contém participante/resultado humano; nenhum ganho de aprendizagem ou diversão foi medido. Mecânica e 23 casos públicos preservados nesta revisão.
 
-Implementado na candidata 0.6.0: cinco missões Python/final, editor limitado/diagnósticos, testes públicos, minijogo real, menus/pausa/opções, 700 XP, fontes/vitórias persistentes, HTML exportável. Evidências em [jogo e testes](evidencias/python-pages.md), [baseline técnico](evidencias/baseline-tecnico.md) e [privacidade/segurança](evidencias/seguranca-inicial.md). Uma campanha ativa; versões anteriores recuperáveis no Git.
+Implementado e mantido na versão 0.7.0: cinco missões Python/final, editor limitado/diagnósticos, testes públicos, minijogo real, menus/pausa/opções, 700 XP, fontes/vitórias persistentes, HTML exportável. Evidências em [jogo e testes](evidencias/python-pages.md), [baseline técnico](evidencias/baseline-tecnico.md) e [privacidade/segurança](evidencias/seguranca-inicial.md). Uma campanha ativa; versões anteriores recuperáveis no Git.
 
-Restam revisão/participação dos quatro, playtest educativo/acessibilidade humana, promoção PRD, recuperação/sondas/DORA medidos, vídeo, triagem e relatório. Rollback manual e cálculo DORA foram preparados nas etapas023/024, mas não executados em produção; quatro métricas ficaram N/D na [consulta real](evidencias/dora.md). Novas funções, editor mais amplo, níveis e áudio são **roadmap futuro**, não funcionalidades da candidata. Não há resultados educativos/produção/colaboração simulados. O GDD será atualizado por PR revisado quando a mecânica mudar; esta revisão não altera mecânica.
+Restam consolidação da participação verificável dos quatro, revisão deste documento, playtest educativo/acessibilidade humana, ensaio de recuperação incluindo Pages em menos de cinco minutos, ciclo real de alertas, MTTR e melhoria medida, pitch, release, pacote e triagem. Produção, sondas e painel já foram executados e conferidos; três métricas DORA têm uma amostra, enquanto MTTR permanece sem amostra. Novas funções, editor mais amplo, níveis e áudio são **roadmap futuro**. Nenhum resultado educativo ou incidente foi simulado como evidência. Esta revisão não altera a mecânica.
 
 ## Esteira
 
-![CI e preview automatizados; etapas finais planejadas](images/esteira.svg)
+![Desenho da esteira; resultados executados descritos abaixo](images/esteira.svg)
 
-Repositório: https://github.com/luccalck/desafio-arcade . A branch padrão acompanha temporariamente a candidata mais recente com CI verde; main continua protegida. Isso facilita rastreamento e não representa promoção em produção. GitHub Flow/Conventional Commits, main protegida, PR com ci/revisão por outra pessoa. Actions push/PR: ubuntu-latest/npm ci/lockfile, lint, unidade/integração/conteúdo, E2E, Gitleaks, audit produção, SBOM, reprodutibilidade, GDD/pdfinfo/texto, ZIP/checksum/artefatos. Mapas regenerados ao converter GDD. CI não comprova implantação ou revisão humana.
+Repositório: https://github.com/luccalck/desafio-arcade . Main é a branch padrão protegida; PR exige CI e revisão por outra pessoa. Actions push/PR usa ubuntu-latest, npm ci/lockfile, lint, unidade/integração/conteúdo, E2E, Gitleaks, audit de produção, SBOM, reprodutibilidade, GDD/pdfinfo, relatório e ZIP/checksum. Mapas são regenerados ao converter o GDD. CI verde, isoladamente, não comprova implantação ou revisão humana.
 
-Preview autorizado: job publicar-preview depois de ci recupera o mesmo ZIP/checksum; publica /hml/, /releases/<sha>/ imutáveis, loader e rollout.json em gh-pages escrito apenas pela pipeline. Pages Actions publica esse diretório e testa HTTP/versão/edição/movimento em HML e release pública. URL configurada: https://luccalck.github.io/desafio-arcade/ . Resultado de implantação e evidências devem ser conferidos na execução, não inferidos dos arquivos. Main mantém proteção e revisão de outro autor. Ainda planejado para produção formal: mesmo artefato até PRD, aprovação em producao, rollout e recuperação medidos. Azul-verde: validar nova pasta, aprovação registrada em producao, promover ponteiro, smoke, recuperação automática/manual. Sessão deve manter versão válida. Recuperação <5 minutos incluindo Pages exige ensaio real, ainda não realizado.
+Na execução [38829484114](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114), a cadeia ci → deploy-hml → aprovação em producao → deploy-prd → monitor-pos-producao terminou com sucesso. Publicamos o mesmo ZIP em `/hml/` e `/releases/88d533e31452036092cd8edef3efa3c0775241dc/`, sem recompilar entre ambientes. O aceite HML registrou 216,414 s desde o merge comprovado; sete hashes HTTP por ambiente coincidiram com o ZIP original. A pipeline escreveu gh-pages e promoveu o ponteiro azul-verde após smoke da candidata; o smoke da raiz também passou. URL: https://luccalck.github.io/desafio-arcade/ . SHA-256 do ZIP: `84105e76a4bd55b5064d466340cb377ea27d49092bae984f65ebdeb7d0d0f937`.
 
-[Configuração GitHub e ambientes](evidencias/configuracao-github.md): homologacao/producao estão limitados à main, produção exige reviewer e não permite bypass administrativo. Jobs formais/migração Pages são trabalho dos007/011/019; a existência dos environments não comprova deploy ou aprovação.
+[Configuração GitHub e ambientes](evidencias/configuracao-github.md): homologacao/producao estão limitados à main; produção exige reviewer e não permite bypass administrativo. Aprovação da implantação e revisão do PR são registros distintos. Sessão fixada é coberta por testes; sua preservação entre duas implantações reais ainda exige evidência. Recuperação automática/manual existe no código, mas o ensaio completo com relógio e disponibilidade pública em menos de cinco minutos permanece pendente.
 
-Sondas HTTP/latência/versão a cada 15 minutos, CSV, Issues JogoForaDoAr/LatenciaAlta, fechamento automático, /status/ e quatro DORA reais com comparação ao lead time de 11 dias/melhoria medida permanecem pendentes. Cron pode atrasar; demonstração exige execução observável.
+O monitor [38830013027](https://github.com/luccalck/desafio-arcade/actions/runs/38830013027) confirmou HTTP 200, latência e SHA em HML/PRD; CSV foi preservado em observabilidade e o painel https://luccalck.github.io/desafio-arcade/status/ foi validado em desktop/celular. Cron configurado em quinze minutos não garante pontualidade observada. Nenhum alerta real abriu/fechou: ciclo JogoForaDoAr/LatenciaAlta e MTTR continuam pendentes. Uma implantação em janela de catorze dias produz frequência de 0,0714286/dia, lead time de 5min27s e CFR 0%; uma amostra não demonstra melhoria causal frente à referência de onze dias.
 
-Pipeline da tag final: submissao/GDD.pdf, LINK_DO_JOGO.txt, build.zip com LEIA-ME, pitch.mp4 humano e MANIFESTO.sha256, seguidos de triagem real. Vídeo de produção entra antes da tag final; relatório recebe evidências depois de release/triagem. Data/versão/identificação/URLs devem ser reconciliadas com release real; preview não é tag ou entrega final. Prazo 09/10/2026 até início da aula, horário não confirmado; prévia não retroagida. Nenhum aceite de publicação/pacote/nota/banca declarado nesta candidata.
+Pipeline da tag final: submissao/GDD.pdf, LINK_DO_JOGO.txt, build.zip com LEIA-ME, pitch.mp4 humano e MANIFESTO.sha256, seguidos de triagem real. O pitch permanece pendente e impede chamar o pacote de final. Vídeo de produção entra antes da tag final; relatório recebe evidências de release/triagem depois dessas execuções. Data/versão/identificação/URLs devem ser reconciliadas com a release real. Prazo original 09/10/2026 até início da aula, horário não confirmado; prévia não retroagida. A publicação formal está validada; pacote final, nota e banca não são declarados aceitos.

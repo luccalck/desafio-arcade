@@ -336,3 +336,7 @@ Codex, sob orientação de Miguel Oliveira de Almeida (`miguelsenai2024`), repro
 ## Integração revisada e continuidade — 15/10/2026
 
 Usamos Codex, sob orientação de Lucca, para conferir a aprovação real de Lucas no PR33 e a CI do mesmo HEAD. A integração normal na main preservou os commits de Miguel do PR35 e não alterou proteções. O merge88d533e disparou a run38829484114; resultados de HML e produção ainda estão sendo verificados. Resolvemos o conflito documental do PR34 preservando os dois registros de IA, sem atribuir aos colegas ações que não executaram. Pitch e ficha HTML final continuam pendentes.
+
+## Publicação e documentação baseada em evidências — 15/10/2026
+
+Usamos Codex sob orientação de Lucca para verificar a aprovação de Lucas no PR33, integrar sem bypass, acompanhar CI/HML e aprovar a implantação em producao conforme autorização prévia. A run38829484114 publicou SHA88d533e; conferimos smoke, catorze hashes HTTP, ZIP original offline, sondas38830013027 e painel real. Registramos dados brutos e limites no GDD, checklist, ficha persistente, relatório de dez páginas e pendências. Três métricas DORA têm uma amostra; MTTR, recuperação completa, alertas reais e playtest humano não foram inventados. Pitch permanece pendente. O PR34 precisa de revisão externa no novo HEAD; não houve autoaprovação ou preenchimento do HTML final.

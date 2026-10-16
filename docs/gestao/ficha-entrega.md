@@ -30,10 +30,10 @@ Os campos finais ficam vazios até comprovação da versão efetivamente entregu
 
 | Campo HTML / rótulo literal | Obrigatório no formulário? | Resposta para copiar | Conferência antes de gerar |
 |---|---|---|---|
-| lkBuild — URL pública do jogo (produção) | Sim | | Preview HTTP 200 não comprova produção formal da candidata. |
-| lkHml — URL de homologação | Não | | Confirmar deploy formal e SHA servido, além do HTTP 200. |
-| lkCI — Última execução verde da pipeline (link ou print) | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/38674970174 | Candidata0.7.0/SHA78c367d:273 testes e36E2E; deploys ignorados por ser branch. Substituir pela execução final com deploy/triagem. |
-| lkGraf — Painel /status/ (link) | Sim | | Em15/10, painel público ainda404; reconferir após publicação formal. |
+| lkBuild — URL pública do jogo (produção) | Sim | https://luccalck.github.io/desafio-arcade/ | Produção formal0.7.0/SHA88d533e, run38829484114, smoke aprovado. Reconferir na tag final. |
+| lkHml — URL de homologação | Não | https://luccalck.github.io/desafio-arcade/hml/ | Formal0.7.0/SHA88d533e, regressão/recibo aprovados,216,414s atéHML. |
+| lkCI — Última execução verde da pipeline (link ou print) | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/38829484114 | CI→HML→PRD→monitor aprovados. Release/tag e submissão foram ignoradas neste pushmain. Substituir pela execução final aplicável. |
+| lkGraf — Painel /status/ (link) | Sim | https://luccalck.github.io/desafio-arcade/status/ | HTTP200 e renderização real conferidos; três DORA com números, MTTR indisponível. |
 | lkVideo — Vídeo pitch (arquivo no AVA ou link) | Sim | | Pendente por orientação de Lucca; não usar caminho inexistente como entrega. |
 | lkRel — Relatório técnico (PDF) | Sim | | Publicar PDF gerado pela CI e confirmar acesso; arquivo local não é link público. |
 | lkDrive — Pasta do Google Drive do concurso (se inscritos) | Não | | Concurso opcional, sem decisão coletiva/autorização comprovada. |
@@ -138,3 +138,10 @@ Provas e limites: [operação15/10](../evidencias/operacao-2026-10-15.md). Próx
 
 
 Revisão complementar de15/10: o PR33 recebeu o commit770449b, que declara pull-requests:read somente no deploy-hml para a consulta de PR associado ao merge. A validação da lógica em78c367d continua histórica; o novo HEAD exige checks e revisão próprios. Runs de reconferência:38772409905(push) e38772414475(PR). A aprovação externa ainda não estava registrada ao preparar este documento. Não alteramos o limite de900s nem a proteção da main.
+
+
+## 11. Produção formal confirmada — 15/10/2026
+
+A aprovação de Lucas no PR33 foi conferida no HEADf38f6d9; merge88d533e. Run38829484114/1 concluiu com CI299/36, HML4/4 em216,414s, aprovação real no environmentproducao, promoção azul-verde e smoke da candidata/raiz. Bundle172arquivos, ZIP29.000bytes/hash84105e76a4bd55b5064d466340cb377ea27d49092bae984f65ebdeb7d0d0f937, sete arquivos idênticos emHML/PRD, offline1/1 semrede/erros. Sondas38830013027 confirmam0.7.0/SHA88emambos. Atualizamos somente links agora conhecidos; não marcamos dez integráveis ou declarações finais como atendidos.
+
+DORA: uma implantação em14dias; frequência0,0714286/dia, leadtime5min27s, taxa de falha0% nessa amostra; MTTRsemvalor. Pacote final, pitch, relatório final publicado emrelease, triagem, melhoria/recuperação e ações humanas continuam pendentes. O HTML original e o TXT não foram preenchidos ou gerados.
