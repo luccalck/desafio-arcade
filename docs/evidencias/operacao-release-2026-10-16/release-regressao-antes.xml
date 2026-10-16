@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuites name="vitest tests" tests="6" failures="1" errors="0" time="0.0606859">
+    <testsuite name="tests/integration/release.test.mjs" timestamp="2026-10-16T05:04:25.572Z" hostname="DESKTOP-LGLDOFB" tests="6" failures="1" errors="0" skipped="0" time="0.0606859">
+        <testcase classname="tests/integration/release.test.mjs" name="recusa tag leve, fora da main, sem proteção/aprovação e versão incoerente" time="0.0037358">
+        </testcase>
+        <testcase classname="tests/integration/release.test.mjs" name="preserva os bytes aprovados e exige notas com hash autorizado" time="0.0230723">
+        </testcase>
+        <testcase classname="tests/integration/release.test.mjs" name="cria draft, anexa tudo e publica somente depois; repetição é idempotente" time="0.0039581">
+        </testcase>
+        <testcase classname="tests/integration/release.test.mjs" name="recusa sobrescrita antes de qualquer escrita e não repara release publicada incompleta" time="0.0077982">
+        </testcase>
+        <testcase classname="tests/integration/release.test.mjs" name="não publica outro attempt sob inventário da primeira tentativa" time="0.0060978">
+        </testcase>
+        <testcase classname="tests/integration/release.test.mjs" name="confere draft por ID mesmo quando endpoint por tag só retorna releases publicadas" time="0.0140307">
+            <failure message="Draft incompleto antes da publicação." type="Error">
+Error: Draft incompleto antes da publicação.
+ ❯ publishRelease scripts/release.mjs:39:98
+ ❯ tests/integration/release.test.mjs:59:2
+            </failure>
+        </testcase>
+    </testsuite>
+</testsuites>

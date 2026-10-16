@@ -1,0 +1,21 @@
+release	Anexar somente os bytes homologados e aprovados	﻿2026-10-16T05:02:45.2995499Z ##[group]Run node scripts/release.mjs publish pacote-ci docs/notas-versao.md
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:45.2996027Z ^[[36;1mnode scripts/release.mjs publish pacote-ci docs/notas-versao.md^[[0m
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:45.3051839Z shell: /usr/bin/bash -e {0}
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:45.3052061Z env:
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:45.3052238Z   PLAYWRIGHT_CHANNEL: chrome
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:45.3054573Z   GH_TOKEN: ***
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:45.3055058Z   RELEASE_NOTES_SHA256: 060d5a27852f6c9de832e9d05e5bebf999596ff3dc472fc7339ddad74dcff4ad
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:45.3055415Z ##[endgroup]
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:46.8958974Z {"tag":"v0.7.0","sha":"e9dd28ccee535e9b1259a710742482e44db47aed","proof":{"annotated":true,"integrated":true,"protectedMain":true,"approved":true,"approvals":[{"pr":34,"review":"https://github.com/luccalck/desafio-arcade/pull/34#pullrequestreview-5543092743"}]}}
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:52.7508138Z file:///home/runner/work/desafio-arcade/desafio-arcade/scripts/release.mjs:39
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:52.7510226Z   if(uploaded?.body!==plan.notes||uploaded.assets.length!==Object.keys(plan.assets).length)throw Error('Draft incompleto antes da publicação.');
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:52.7511344Z                                                                                                  ^
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:52.7511655Z 
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:52.7511971Z Error: Draft incompleto antes da publicação.
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:52.7512757Z     at publishRelease (file:///home/runner/work/desafio-arcade/desafio-arcade/scripts/release.mjs:39:98)
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:52.7513620Z     at process.processTicksAndRejections (node:internal/process/task_queues:104:5)
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:52.7514411Z     at async main (file:///home/runner/work/desafio-arcade/desafio-arcade/scripts/release.mjs:105:30)
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:52.7515233Z     at async file:///home/runner/work/desafio-arcade/desafio-arcade/scripts/release.mjs:108:84
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:52.7515649Z 
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:52.7515762Z Node.js v24.15.0
+release	Anexar somente os bytes homologados e aprovados	2026-10-16T05:02:52.7578700Z ##[error]Process completed with exit code 1.

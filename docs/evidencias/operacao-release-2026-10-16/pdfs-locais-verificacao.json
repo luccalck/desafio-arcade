@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-16T05:12:12.523731+00:00",
+  "scope": "PDFs locais candidatos, sem substituir anexos imutáveis do draft e sem comprovar publicação",
+  "report": {
+    "pages": 10,
+    "bytes": 597698,
+    "sha256": "0108fabc4d0baac0848de2fcd7510a1a5637de0a69b5e451ba7c07fe9c616c6a",
+    "sourceSha256": "6b2f54123f9e51149dc7a8d8c93861ac865aad3eb2c9dea812e3b99e27a8af28"
+  },
+  "gdd": {
+    "pages": 18,
+    "bytes": 1387578,
+    "sha256": "f7635ae761db091fb6816a76431790cd5a26cdbb98facbd3fcb33ad42286352c",
+    "sourceSha256": "6b931c72f583392aee5ed6ed5d4889e4d10da5299e6f715a41b51f9531553379"
+  },
+  "localGddFirstAttempt": "Falhou por CRLF na fonte local; normalizamos docs/gdd.md para LF, mesma convenção do Git/CI; segunda geração passou, high concept804caracteres."
+}

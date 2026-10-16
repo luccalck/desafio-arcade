@@ -122,7 +122,7 @@ Não há mínimo textual de “três commits na mesma área”. A unidade da exi
 - [x] I02-06 — Wireframes ou telas de menu, HUD e fim existentes. E4: desenhos próprios.
 - [x] I02-07 — Seção Esteira com diagrama e link real do repositório. E4.
 - [x] I02-08 — docs/gdd.md versionado e atualizado na branch candidata. E4.
-- [x] I02-09 — GDD efetivamente revisado e aprovado por PR por outro integrante; novas revisões continuam sujeitas a aprovação. Conciliação15/10: GDD integrado pela consolidaçãoPR32, aprovada porLucas no HEAD59dc830. A revisão027 atualizada no PR34 ainda precisa de nova revisão externa; item é contínuo.
+- [x] I02-09 — GDD efetivamente revisado e aprovado por PR por outro integrante; novas revisões continuam sujeitas a aprovação. Conciliação15/10: GDD integrado pela consolidaçãoPR32, aprovada porLucas no HEAD59dc830. A atualização do PR34 foi aprovada porLucas na revisão5543092743, HEADe9dd28c; item contínuo para mudanças posteriores.
 - [x] I02-10 — Estágio da pipeline converte Markdown em GDD.pdf com ferramenta equivalente documentada. E2/E4.
 - [x] I02-11 — PDF arquivado como artefato do build. E2.
 - [x] I02-12 — PDF abre sem erro: pdfinfo passou e páginas foram inspecionadas. E3/E4.
@@ -262,15 +262,15 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I07-12 — CONDICIONAL azul-verde aplicado: candidata publicada em sua pasta imutável e testada antes da troca. [Smoke](../evidencias/operacao-2026-10-15/prd-88-candidata-smoke.json).
 - [x] I07-13 — CONDICIONAL azul-verde aplicado: estavel passou para88d533e, anterior71933bf mantida, candidata sem tráfego durante preparação e canario retirado após promoção. [Ponteiro](../evidencias/operacao-2026-10-15/rollout-88-publico.json).
 - [x] I07-14 — Preview preserva versão do jogador durante a sessão quando ainda válida. E7/testes Pages.
-- [ ] I07-15 — Validar manutenção de versão na sessão sob a estratégia formal, inclusive retirada da versão defeituosa e armazenamento indisponível.
+- [x] I07-15 — Versão preservada em sessão real durante promoções; versão retirada volta à baseline, sessão nova e storage indisponível escolhem e9dd28c. Evidência: operacao-release-2026-10-16/sessao-promocao.json e manual-verificacao.json.
 - [ ] I07-16 — Smoke de produção falhando dispara rollback automático pela pipeline. Contrato e testes locais reforçados no022 (`docs/evidencias/rollback-automatico.md`); falta execução formal observada.
-- [ ] I07-17 — Rollback restaura estavel para anterior e retira canário defeituoso, sem recompilar. Hashes/HTTP da baseline testados localmente no022; falta prova no Pages.
-- [ ] I07-18 — rollback.yml com workflow_dispatch para recuperação manual pela pipeline. Código e testes locais da etapa023 em `docs/evidencias/rollback-manual.md`; dispatch protegido, recuperação/CI/revisão reais ainda pendentes.
+- [x] I07-17 — Rollback real restaurou estavel para anterior, retirou candidata e conferiu sete hashes sem recompilar; runs38851754358 e38851915984. Estratégia azul-verde, não canário.
+- [x] I07-18 — rollback.yml executado por dispatch ensaio-controlado, com aprovação do environment, Pages e smoke; run38851754358 SUCCESS; 80,66 s do dispatch ao smoke.
 - [x] I07-19 — Histórico gh-pages registra ator/motivo/run da promoção: commit67ce33d, bot Actions, atorluccalck, motivo promover, execução38829484114/1. Fonte ligada no DORA real. [Evidência](../evidencias/operacao-2026-10-15/dora-38830013027.json).
 - [ ] I07-20 — Ensaio com versão defeituosa proposital, controlado e rastreável. Preflight/roteiro em `docs/evidencias/ensaio-recuperacao.md`; sem execução formal.
 - [ ] I07-21 — Detecção da falha por alerta ou smoke, com evidência real. Testes locais não substituem detecção operacional026.
-- [ ] I07-22 — Cronometrar recuperação <5 minutos, incluindo propagação Pages. Nenhum intervalo operacional medido026.
-- [ ] I07-23 — Demonstrar rollback sem a URL sair do ar. HTTP200 de preview em preflight não comprova continuidade durante rollback026.
+- [x] I07-22 — Recuperação automática medida em17,166 s, incluindo Pages, sete hashes e smoke; run38851915984. Manual80,66 s até smoke. Escopo ensaio, sem incidente espontâneo.
+- [x] I07-23 — Observação HTTP durante recuperação:65 amostras automáticas e171 manuais, todas200. Continuidade demonstrada na janela amostrada; não garante os intervalos entre consultas.
 - [ ] I07-24 — Executar a demonstração cronometrada pedida pelo professor na banca. Roteiro estruturado de 5 minutos (commit→produção, falha→alerta→rollback em < 5 min sem queda de URL e modo offline) documentado em docs/evidencias/entrega-banca.md Seção 3; demonstração ao vivo aguarda a banca presencial.
 - [ ] I07-25 — AVANÇADO: comprovar rollback automático e recuperação <5 minutos na banca, sem indisponibilidade (I07-16/22/23/24). Ensaio/banca reais pendentes026.
 
@@ -367,7 +367,7 @@ Os esqueletos não passam como estão. Nomes/estrutura exemplificados não obrig
 - [x] KIT-02 — Código organizado em core/renderização/conteúdo e testes unidade/integração/E2E. E3.
 - [x] KIT-03 — package.json/lockfile, configuração Gitleaks e esteira versionados. E2/E6.
 - [ ] KIT-04 — Fonte docs/relatorio.md e gerador PDF disponíveis; validar/publicar relatório final e completar provas pendentes de I10-08 a I10-18.
-- [ ] KIT-05 — rollback.yml funcional (I07-18).
+- [x] KIT-05 — rollback.yml executado com sucesso pela pipeline; run38851754358, aprovação, Pages, hashes e smoke verificados (I07-18).
 - [x] KIT-06 — monitor.yml executado com sondas e reconciliação de alertas verdes em38704560758,38744110194 e38770216623. Painel, incidentes tratados e métricas com denominadores continuam pendentes. [Provas](../evidencias/operacao-2026-10-15.md).
 - [x] KIT-07 — Painel status publicado e verificado em navegador desktop/celular, com versão, amostragem, rollout e DORA sem preencher lacunas. [Prova](../evidencias/operacao-2026-10-15/painel-88-browser.json).
 - [ ] KIT-08 — Publicação, rollout, DORA e triagem implementados por scripts equivalentes aos exemplos; não copiar TODO como solução.
@@ -381,7 +381,7 @@ Os esqueletos não passam como estão. Nomes/estrutura exemplificados não obrig
 - [x] KIT-16 — Publicação atual não cancela um deploy em andamento: grupo pages-preview cancel-in-progress false. E2.
 - [x] KIT-17 — Preservar essa proteção de concorrência no deploy/rollout formal; serializar mudanças de ponteiro. Conciliação15/10: Concorrência de publicação/rollout serializada no workflow integrado e usada no deploy formal; ensaio de colisão/falha parcial ainda pertence à recuperação.
 - [ ] KIT-18 — Implementar ações canario/promover/rollback ou equivalentes da estratégia escolhida, com commit ator/motivo (I07).
-- [ ] KIT-19 — Carregador formal trata versão retirada, falha de leitura e armazenamento indisponível; reconferir sob rollout real.
+- [x] KIT-19 — Carregador formal observado em sessões reais nas promoções/retirada e storage indisponível; sessão-promocao.json e manual-verificacao.json no registro16/10.
 - [ ] KIT-20 — Completar promoção após observação e notificação de falha: TODO do workflow (I03-24/I07).
 - [ ] KIT-21 — Ajustar validação SQUAD ao formato real; corrigir contagem de cabeçalho do exemplo (I09-15).
 - [ ] KIT-22 — Completar validação das seções do PDF que o exemplo triagem não implementa (I09-12).
@@ -618,3 +618,5 @@ Reconferência após produção —15/10/2026: run38829484114/1 integralmente ve
 Conciliação das pendências15/10: atualizados itens específicos com prova operacional e revisão/integração. Consulte [estado vigente dos40passos](../execucao/05-pendencias-por-passo.md) e [lacunas do HTML porINT](../evidencias/conciliacao-pendencias-2026-10-15.md). Condicionais não adotados não são trabalho obrigatório faltante; direitos, release final, recuperação/alertas e ações humanas mantêm seus critérios próprios.
 
 16/10: ensaio de alertas real passou com Issues38/39 e dados separados; recuperaçãoPages não executada e playtest humano/pitch/tag/triagem/TXT não inventados. Não fechar I08-10–14/26/31 como incidente de produção pela demonstração em alvo temporário,labelensaio.
+
+Reconferência16/10 após PR34: aprovação externa5543092743 e mergeacb03d8 confirmados. Manual38851754358:80,66 s/171HTTP200; automático38851915984:17,166 s/65HTTP200, recuperaçãoPages/hashes/smoke. Falha injetada somente no observador, não numa build defeituosa; I07-16/20/21 e banca mantêm seus critérios literais. Tagv0.7.0 existe; tentativa1 bloqueada na sonda anterior; tentativa2 passouCI/HML/PRD/monitor e falhou no publicador de draft. Cinco anexos+manifesto iguais à CI e offline1/1, mas Release ainda não publicada. Correção/retomada protegida aguardam revisão/merge/execução. [Registro](../evidencias/operacao-release-2026-10-16.md).

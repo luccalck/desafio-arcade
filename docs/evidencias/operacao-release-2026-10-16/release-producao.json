@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "sha": "e9dd28ccee535e9b1259a710742482e44db47aed",
+  "sourceSha": "e9dd28ccee535e9b1259a710742482e44db47aed",
+  "actor": "luccalck",
+  "run": "38852413982",
+  "runAttempt": "2",
+  "zipSha256": "6517fa79749c4bea490acc36eb197ce19a95617a24a5cba56d2edb40c6fabe9f",
+  "revalidation": true,
+  "state": "publicada",
+  "approval": {
+    "environment": "producao",
+    "environmentId": 23679240392,
+    "reviewer": "luccalck",
+    "state": "approved"
+  },
+  "observedAt": "2026-10-16T05:01:07.200Z"
+}
