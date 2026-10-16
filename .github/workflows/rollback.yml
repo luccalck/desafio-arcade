@@ -11,6 +11,7 @@ on:
           - alerta-confirmado
           - degradacao-confirmada
           - outro-incidente-validado
+          - ensaio-controlado
 permissions:
   contents: read
 concurrency:

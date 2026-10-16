@@ -16,3 +16,9 @@ it('executor usa HTTP real, mede atraso e confirma seis fases com adaptador loca
  const a=api(),create=a.create,close=a.close;a.create=async input=>{const i=await create(input);i.state='open';i.created_at=new Date().toISOString();return i;};a.close=async i=>{await close(i);i.state='closed';i.closed_at=new Date().toISOString();};a.get=async i=>a.issues.find(x=>x.number===i.number);
  try{const r=await exerciseAlerts({api:a,run:'12',attempt:'1',sha:'a'.repeat(40),version:'0.7.0',output:join(dir,'resultado.json'),delayMs:2100});expect(r.completed).toBe(true);expect(r.phases).toHaveLength(6);expect(r.issues).toHaveLength(2);expect(r.phases[3].report.samples[0].tempo).toBeGreaterThan(2);expect(JSON.parse(await readFile(join(dir,'resultado.json'),'utf8')).scope).toBe('ensaio');}finally{await rm(dir,{recursive:true,force:true});}
 },15000);
+
+it('adaptador preserva escrita recente quando listagem GitHub ainda está atrasada',async()=>{
+ const {github}=await import('../../scripts/alertas.mjs');const {vi}=await import('vitest');let creates=0;const remote=[];
+ vi.stubGlobal('fetch',async(url,opts)=>{const u=new URL(url);let body={};if(opts.method==='POST'&&u.pathname.endsWith('/issues')){body={number:++creates,body:JSON.parse(opts.body).body,html_url:'https://example.test/issues/'+creates};remote.push(body);}else if(u.pathname.endsWith('/issues')&&opts.method==='GET')body=[];return {ok:true,status:200,json:async()=>body};});
+ try{const a=github('luccalck/desafio-arcade','token-sintetico');await reconcileAlerts(report(),a);await reconcileAlerts(report(),a);expect(creates).toBe(1);await reconcileAlerts(report('ensaio','12',{...s,codigo:200,erro:null}),a);expect(remote).toHaveLength(1);}finally{vi.unstubAllGlobals();}
+});

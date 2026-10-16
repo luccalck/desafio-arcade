@@ -1,0 +1,11 @@
+import {it,expect} from 'vitest';
+import {validateExercise,summarizeRecovery} from '../../scripts/ensaio-recuperacao.mjs';
+const sha='a'.repeat(40),baseline='b'.repeat(40),site='https://example.test/jogo/';
+const env={GITHUB_ACTIONS:'true',GITHUB_EVENT_NAME:'workflow_dispatch',GITHUB_REF:'refs/heads/main',ENSAIO_SCOPE:'recuperacao',GITHUB_SHA:sha,GITHUB_RUN_ID:'123',GITHUB_RUN_ATTEMPT:'1',SITE_URL:site};
+const fault={scope:'ensaio',run:'123',attempt:'1',sha,baseline,faultStartedAt:'2026-10-16T12:00:01Z',injectionObserved:true};
+const tx={schema:1,sha:baseline,sourceSha:sha,run:'123',runAttempt:'1',state:'recuperada',observedAt:'2026-10-16T12:01:00Z',recoveredFilesSha256:Object.fromEntries(['index.html','game.js','style.css','version.json','LEIA-ME.txt','LICENSE.txt','THIRD_PARTY.txt'].map(x=>[x,'c'.repeat(64)]))};
+const observations={samples:Array.from({length:62},(_,i)=>({at:new Date(Date.parse('2026-10-16T12:00:00Z')+i*1000).toISOString(),codigo:200}))};
+it('contexto explícito main/dispatch obrigatório',()=>{expect(validateExercise(env)).toBe(site);for(const [k,v] of Object.entries({GITHUB_ACTIONS:'false',GITHUB_EVENT_NAME:'push',GITHUB_REF:'refs/heads/feature/x',ENSAIO_SCOPE:'nenhum',GITHUB_SHA:'falso',GITHUB_RUN_ID:'-1',SITE_URL:'http://example.test/'}))expect(()=>validateExercise({...env,[k]:v})).toThrow();});
+it('mede59s com hashes e observação200 antes/depois',()=>{expect(summarizeRecovery({fault,receipt:tx,observations}).seconds).toBe(59);});
+it('rejeita queda, evidência ausente ou recorte da janela',()=>{for(const o of [{samples:[]},{samples:observations.samples.slice(2)},{samples:[observations.samples[0]]},{samples:[observations.samples[0],{...observations.samples[1],codigo:503}]}])expect(()=>summarizeRecovery({fault,receipt:tx,observations:o})).toThrow();});
+it('não aceita299,999 como300 nem confunde hash/versão/ensaio',()=>{expect(()=>summarizeRecovery({fault,receipt:{...tx,observedAt:'2026-10-16T12:05:01Z'},observations:{samples:[observations.samples[0],{at:'2026-10-16T12:05:02Z',codigo:200}]}})).toThrow();for(const r of [{...tx,sourceSha:baseline},{...tx,sha},{...tx,state:'publicada'},{...tx,recoveredFilesSha256:{}}])expect(()=>summarizeRecovery({fault,receipt:r,observations})).toThrow();expect(()=>summarizeRecovery({fault:{...fault,injectionObserved:false},receipt:tx,observations})).toThrow();});

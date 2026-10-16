@@ -4,6 +4,7 @@ import {pathToFileURL} from 'node:url';
 import {execFileSync} from 'node:child_process';
 import {createHash} from 'node:crypto';
 import {unzipSync,strFromU8} from 'fflate';
+import {validateExercise} from './ensaio-recuperacao.mjs';
 import {verifyBundle} from './ci-bundle.mjs';
 import {planRollout,verifyCandidateSmoke} from './rollout.mjs';
 import {normalizeRollout,validSha} from '../pages/rollout-contract.mjs';
@@ -48,7 +49,7 @@ export async function verifyManualRecovery(transaction,smoke,opts){
 }
 export function planManualRollback({existing,environment,approvals,actor,reason,run,runAttempt,siteUrl}){
  verifyApproval(environment,approvals,actor);
- if(!['smoke-falhou','alerta-confirmado','degradacao-confirmada','outro-incidente-validado'].includes(reason))throw Error('Motivo operacional inválido.');
+ if(!['smoke-falhou','alerta-confirmado','degradacao-confirmada','outro-incidente-validado','ensaio-controlado'].includes(reason))throw Error('Motivo operacional inválido.');
  const current=normalizeRollout(JSON.parse(strFromU8(existing['rollout.json'])));
  if(!current.estavel||!current.anterior||current.estavel===current.anterior)throw Error('Versão anterior validada indisponível.');
  const plan=planRollout({action:'rollback',existing,sha:current.anterior,actor,reason,run,runAttempt,siteUrl});
@@ -163,6 +164,7 @@ async function main(){
   // Nova conferência evita promover HML ultrapassada enquanto aguardava aprovação.
   verifyReceipt(bundle,opts,receipt);await makeHmlReceipt(bundle,opts);
   result=planProduction(stage,{...opts,existing,bundle,receipt,environment:api(`repos/${process.env.GITHUB_REPOSITORY}/environments/producao`),approvals:api(`repos/${process.env.GITHUB_REPOSITORY}/actions/runs/${opts.run}/approvals`)});
+  if(process.env.ENSAIO_SCOPE==='recuperacao'){validateExercise(process.env);if(result.transaction.revalidation)throw Error('Ensaio exige candidata distinta da estável; nenhuma publicação efetuada.');}
   // A primeira implantação formal também precisa de baseline pública íntegra.
   await verifyRecoveredRelease(result.transaction);
   await save(checkpoint,result.transaction);
