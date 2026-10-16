@@ -37,15 +37,18 @@ export async function reconcileAlerts(report,api,{repo='luccalck/desafio-arcade'
 }
 export function github(repo,token){
  if(!/^[\w.-]+\/[\w.-]+$/.test(repo||'')||!token)throw Error('Configure GITHUB_REPOSITORY/GH_TOKEN.');
- const base=`https://api.github.com/repos/${repo}`,written=new Map(),closed=new Set();
+ const base=`https://api.github.com/repos/${repo}`,written=new Map(),closed=new Set(),confirmedLabels=new Set();
+ let labelMetadataRequests=0;
  async function request(path,{method='GET',body,missing=false}={}){
+  if(path==='/labels'||path.startsWith('/labels/'))labelMetadataRequests++;
   const response=await fetch(base+path,{method,headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json','Content-Type':'application/json','X-GitHub-Api-Version':'2022-11-28'},body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(10000)});
   if(missing&&response.status===404)return null;
   if(!response.ok)throw Error(`GitHub ${method}: HTTP${response.status}; credencial omitida.`);
   return response.status===204?null:response.json();
  }
  return {
-  ensureLabel:async(name='alerta')=>{if(!['alerta','ensaio'].includes(name))throw Error('Label inválida.');if(!await request(`/labels/${name}`,{missing:true}))await request('/labels',{method:'POST',body:{name,color:name==='ensaio'?'5319E7':'B60205',description:name==='ensaio'?'Ensaio controlado; não é incidente operacional':'Alertas operacionais do jogo, por alvo e incidente'}});},
+  ensureLabel:async(name='alerta')=>{if(!['alerta','ensaio'].includes(name))throw Error('Label inválida.');if(confirmedLabels.has(name))return;if(!await request(`/labels/${name}`,{missing:true}))await request('/labels',{method:'POST',body:{name,color:name==='ensaio'?'5319E7':'B60205',description:name==='ensaio'?'Ensaio controlado; não é incidente operacional':'Alertas operacionais do jogo, por alvo e incidente'}});confirmedLabels.add(name);},
+  diagnostics:()=>({labelMetadataRequests,confirmedLabels:confirmedLabels.size}),
   listOpen:async(label='alerta')=>{if(!['alerta','ensaio'].includes(label))throw Error('Label inválida.');const result=[];for(let p=1;p<=20;p++){const part=await request(`/issues?state=open&labels=${label}&per_page=100&page=${p}`);result.push(...part);if(part.length<100){const merged=new Map(result.map(i=>[i.number,i]));for(const [number,i] of written)if(i.labels?.some(l=>(typeof l==='string'?l:l.name)===label))merged.set(number,i);return [...merged.values()].filter(i=>!closed.has(i.number));}}throw Error('Paginação excedida; nenhum fechamento inferido.');},
   create:async body=>{const issue=await request('/issues',{method:'POST',body});written.set(issue.number,{...issue,labels:body.labels});return issue;},
   get:i=>request(`/issues/${i.number}`),

@@ -25,7 +25,7 @@ export async function exerciseAlerts({api,run,attempt,sha,version,output='report
    if(!labels.includes('alerta')||!labels.includes('ensaio'))throw Error('Issue de ensaio sem classificação alerta/ensaio.');
    result.issues.push({number,url:issue.html_url,kind:action.kind,labels,openedAt:issue.created_at,closedAt:issue.closed_at,recoveryMinutes:(Date.parse(issue.closed_at)-Date.parse(issue.created_at))/60000});
   }
-  result.exerciseMttrMinutes=result.issues.reduce((sum,i)=>sum+i.recoveryMinutes,0)/result.issues.length;result.completed=true;
+  result.exerciseMttrMinutes=result.issues.reduce((sum,i)=>sum+i.recoveryMinutes,0)/result.issues.length;result.completed=true;if(typeof api.diagnostics==='function')result.apiDiagnostics=api.diagnostics();
  }catch(error){result.error=error.message;throw error;}
  finally{
   // Somente o alvo e marcador deste ensaio são restaurados; nenhum incidente operacional é fechado.

@@ -386,3 +386,8 @@ A pedido de Lucca,corrigimos a classificação dos novos alertas do ensaio autor
 
 
 Resultado do ensaio de classificação38950333359:Issues43/44 comalerta+ensaio,HTTP404 e atraso real,autocerramento2s/4s,média3s. Os valores são deensaio e não substituemMTTRoperacional. Lucca solicitou encerramento sem terceiros; tentativa de autoaprovação foi recusada peloGitHub,sem revisão fictícia ou alteração de proteção. A submissão acadêmica foi tentada semvídeo e corretamente recusada; artefatos originais daCI/Release e relatório são disponibilizados com escopo técnico explícito. Nenhuma sessão foi atribuída aLucca como jogador observado.
+
+
+### Melhoria de MTTR orientada pelo ensaio —16/10/2026
+
+Lucca solicitou melhoriaDORA e prompt para outro integrante validarPR41. A baseline do ensaio38950333359 temMTTRmédio3s. Identificamos consultas redundantes de metadados de labels antes do fechamento; a assistência implementou cache por instância apenas de confirmações bem-sucedidas,com regressões de falha503/criação403/404/isolamento. Acrescentamos contador não sensível de consultas no recibo de ensaio. Antes,quatro novos testes falharam;depois,24testes focais e lint passaram. O novo resultado real será preservado mesmo sem redução deMTTR; não trocar oMTTRoperacionalnull por amostras deensaio,nem afirmar melhoria de leadtime/CFR sem evento. Revisão externa continua com outro integrante,sem autoaprovação ou proteção removida.
