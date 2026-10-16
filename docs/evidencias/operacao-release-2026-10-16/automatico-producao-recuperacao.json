@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "sha": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+  "sourceSha": "acb03d8b018227cabbbeb47242cc5c097a3c0df1",
+  "actor": "luccalck",
+  "run": "38851915984",
+  "runAttempt": "1",
+  "zipSha256": "618dfde4759a91ed431b6a3fae188463265dc8929e9aa75f8713e96791fda84b",
+  "revalidation": false,
+  "recoveredFilesSha256": {
+    "index.html": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282",
+    "style.css": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da",
+    "game.js": "8f5914943f6a87e4fc093c8c598bbf4072160643e2e8e61813bf49c75dfe1f2a",
+    "version.json": "ecc36d3cdd82ab43cb86730401149b54762576c6ffa30d0249c614c8ed20c7fa",
+    "LEIA-ME.txt": "31f50fe9f495ee6ff8e2b214f1d4501106301de263c580fb0b01ae667ac912a4",
+    "LICENSE.txt": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb",
+    "THIRD_PARTY.txt": "b9e00ead36cc6832b17ab59cf591bd694b9abf572b4010093388fa352fcdcf8a"
+  },
+  "state": "recuperada",
+  "cause": "falha ou cancelamento do ciclo de produção; consultar logs da execução",
+  "approval": {
+    "environment": "producao",
+    "environmentId": 23679240392,
+    "reviewer": "luccalck",
+    "state": "approved"
+  },
+  "observedAt": "2026-10-16T04:46:51.236Z"
+}

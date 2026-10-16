@@ -35,7 +35,7 @@ export async function publishRelease(plan,api){
  if(!release)release=await api.createDraft(plan);
  for(const [name,bytes] of missing)await api.uploadAsset(release,name,bytes);
  if(release.draft){
-  const uploaded=await api.getRelease(plan.tag);
+  const uploaded=await api.getReleaseById(release.id);
   if(uploaded?.body!==plan.notes||uploaded.assets.length!==Object.keys(plan.assets).length)throw Error('Draft incompleto antes da publicação.');
   for(const [name,bytes] of Object.entries(plan.assets)){
    const matches=uploaded.assets.filter(a=>a.name===name);
@@ -45,18 +45,27 @@ export async function publishRelease(plan,api){
  }
  return {tag:plan.tag,sha:plan.sha,assets:Object.keys(plan.assets),unchanged:missing.length===0&&!release.draft};
 }
-function github(repo,token){
+export function github(repo,token,{fetchImpl=fetch}={}){
  if(!/^[\w.-]+\/[\w.-]+$/.test(repo||'')||!token)throw Error('Configure GITHUB_REPOSITORY e GH_TOKEN.');
  const base=`https://api.github.com/repos/${repo}`;
  async function request(url,{method='GET',body,raw=false,missing=false}={}){
-  const response=await fetch(url,{method,headers:{Authorization:`Bearer ${token}`,Accept:raw?'application/octet-stream':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28',...(body?{'Content-Type':Buffer.isBuffer(body)||body instanceof Uint8Array?'application/octet-stream':'application/json'}:{})},body:body?(Buffer.isBuffer(body)||body instanceof Uint8Array?body:JSON.stringify(body)):undefined,signal:AbortSignal.timeout(30000)});
+  const response=await fetchImpl(url,{method,headers:{Authorization:`Bearer ${token}`,Accept:raw?'application/octet-stream':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28',...(body?{'Content-Type':Buffer.isBuffer(body)||body instanceof Uint8Array?'application/octet-stream':'application/json'}:{})},body:body?(Buffer.isBuffer(body)||body instanceof Uint8Array?body:JSON.stringify(body)):undefined,signal:AbortSignal.timeout(30000)});
   if(missing&&response.status===404)return null;
   if(!response.ok)throw Error(`GitHub ${method}: HTTP${response.status}; nenhuma credencial incluída neste erro.`);
   return raw?Buffer.from(await response.arrayBuffer()):response.status===204?null:response.json();
  }
  const get=p=>request(base+p);
  async function all(p){const rows=[];for(let page=1;page<=20;page++){const part=await get(`${p}${p.includes('?')?'&':'?'}per_page=100&page=${page}`);rows.push(...part);if(part.length<100)return rows;}throw Error('Paginação excedida; aprovação não inferida.');}
- return {get,all,getRelease:tag=>request(`${base}/releases/tags/${tag}`,{missing:true}),
+ async function getRelease(tag){
+  const published=await request(`${base}/releases/tags/${encodeURIComponent(tag)}`,{missing:true});
+  if(published)return published;
+  // O endpoint por tag retorna releases publicadas. Rascunhos exigem listagem autenticada.
+  const drafts=(await all('/releases')).filter(r=>r.draft===true&&r.tag_name===tag);
+  if(drafts.length>1)throw Error('Rascunhos ambíguos para a tag; publicação bloqueada.');
+  return drafts[0]??null;
+ }
+ return {get,all,getRelease,
+  getReleaseById:id=>{if(!Number.isSafeInteger(id)||id<1)throw Error('ID de release inválido.');return get(`/releases/${id}`);},
   createDraft:p=>request(`${base}/releases`,{method:'POST',body:{tag_name:p.tag,target_commitish:p.sha,name:p.tag,body:p.notes,draft:true,make_latest:'false'}}),
   downloadAsset:a=>request(`${base}/releases/assets/${a.id}`,{raw:true}),
   uploadAsset:(r,name,bytes)=>request(`https://uploads.github.com/repos/${repo}/releases/${r.id}/assets?name=${encodeURIComponent(name)}`,{method:'POST',body:bytes}),

@@ -1,0 +1,8 @@
+{
+  "mainMerge": "acb03d8b018227cabbbeb47242cc5c097a3c0df1",
+  "reviewedHead": "e9dd28ccee535e9b1259a710742482e44db47aed",
+  "mainTree": "b56d84f393e492ebb0fcbd93ecba99dce2e7f355",
+  "reviewedTree": "b56d84f393e492ebb0fcbd93ecba99dce2e7f355",
+  "equalTrees": true,
+  "reason": "Tag técnica aponta para HEAD aprovado integrado na main; evita reutilizar SHA retirado pelo ensaio, preservando exatamente a mesma árvore de código."
+}

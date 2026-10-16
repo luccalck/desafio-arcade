@@ -1,0 +1,13 @@
+{
+  "scope": "ensaio",
+  "run": "38851915984",
+  "attempt": "1",
+  "sha": "acb03d8b018227cabbbeb47242cc5c097a3c0df1",
+  "baseline": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+  "faultStartedAt": "2026-10-16T04:46:34.070Z",
+  "injection": "Bloqueio de game.js apenas no contexto Playwright deste ensaio",
+  "injectionObserved": true,
+  "blockedRequests": 1,
+  "finalUrl": "https://luccalck.github.io/desafio-arcade/releases/acb03d8b018227cabbbeb47242cc5c097a3c0df1/index.html",
+  "observedAt": "2026-10-16T04:46:35.584Z"
+}

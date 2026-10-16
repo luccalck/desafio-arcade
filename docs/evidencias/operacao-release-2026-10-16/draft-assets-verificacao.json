@@ -1,0 +1,44 @@
+{
+  "scope": "Rascunho privado, NÃO Release publicada",
+  "draftId": 414556376,
+  "tag": "v0.7.0",
+  "sourceRun": "38852413982",
+  "sourceAttempt": "2",
+  "files": [
+    {
+      "name": "build.zip",
+      "bytes": 29265,
+      "sha256": "6517fa79749c4bea490acc36eb197ce19a95617a24a5cba56d2edb40c6fabe9f",
+      "matchesManifest": true,
+      "matchesOriginalCi": true
+    },
+    {
+      "name": "build.zip.sha256",
+      "bytes": 76,
+      "sha256": "7ca9c93354afb620045ef802a0661a98b005564b2ef01b69d14647e05ab019dd",
+      "matchesManifest": true,
+      "matchesOriginalCi": true
+    },
+    {
+      "name": "sbom.cdx.json",
+      "bytes": 206452,
+      "sha256": "6fa635aa95e9730fdf31d04116fc2a57fcff1e3d0ce617578a4d0329670e0f9d",
+      "matchesManifest": true,
+      "matchesOriginalCi": true
+    },
+    {
+      "name": "GDD.pdf",
+      "bytes": 1346671,
+      "sha256": "f730ad81c4f5fe46982d5ae23dc3125658c9151024427d838676e5804fcb4030",
+      "matchesManifest": true,
+      "matchesOriginalCi": true
+    },
+    {
+      "name": "RelatorioTecnico.pdf",
+      "bytes": 560650,
+      "sha256": "285e6e9305422c1f8d13768bc3bb830dc256b84b8ae3de4404ae86189d8ee4bd",
+      "matchesManifest": true,
+      "matchesOriginalCi": true
+    }
+  ]
+}

@@ -130,3 +130,9 @@ DORA: uma implantação em14dias; frequência0,0714286/dia, leadtime5min27s, tax
 Dados de squad, integrantes/RAs/papéis, URLs de produção/HML/CI/painel e estimativas já estão disponíveis neste MD. Faltam o vídeo e o link acessível do relatório final, a conclusão/evidência dos dezINT, a conferência coletiva das quatro declarações (incluindo composição desde02/10 e TRIAGEM APROVADA na v1.0.0) e, por último, transcrição/validação/geração doTXT no HTML. Drive é opcional e só se houver inscrição autorizada.
 
 Relatório candidato mais recente: CI38831325010, SHA9494224, dez páginas,558.832bytes,SHA256d6c866a2c2ef6e9387e0e835e4448180f1c1747d54ef58f7d2809be196a491ae. Arquivado no Actions, ainda não é o link público da versão final da Release. Atualizar oSHA/CI após novas alterações e revisão; não considerar estimativas10 como comprovação dosINT.
+
+## 13. Atualização operacional —16/10/2026
+
+PR34 aprovado porLucas, revisão5543092743 no HEADe9dd28c; mergeacb03d8. Main:311testes/36E2E, HML182,361s. Recuperação manual38851754358:80,66s e171HTTP200. Automática38851915984:17,166s e65HTTP200, com Pages/hashes/smoke; run vermelha pela injeção deliberada, recuperação passou. Alertas38/39 são ensaio isolado e não incidentes espontâneos. Fontes em docs/evidencias/operacao-release-2026-10-16.md.
+
+Tag técnica v0.7.0/SHAe9 existe; a primeira tentativa38852413982/1 bloqueou Release por sonda recebendo versão anterior, apesar de smoke correto. Reconferência38853203550 passou; tentativa2 confirmouCI/HML/PRD/monitor mas falhou ao reencontrar draft pelo endpoint por tag. Draft414556376 contém cinco anexos+manifesto iguais à CI; correção e retomada protegida aguardam revisão/merge/execução. Não é Release publicada. Não preencher HTML/TXT agora nem declarações finais. Relatório atualizado com ensaios tem10páginas localmente, ainda candidato a revisão/publicação. Pitch, playtest humano, pacote acadêmico/triagemv1.0.0, AVA e banca continuam pendentes.

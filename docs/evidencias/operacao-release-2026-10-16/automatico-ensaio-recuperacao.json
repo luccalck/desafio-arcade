@@ -1,0 +1,11 @@
+{
+  "schema": 1,
+  "scope": "ensaio",
+  "seconds": 17.166,
+  "withinLimit": true,
+  "baseline": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+  "candidate": "acb03d8b018227cabbbeb47242cc5c097a3c0df1",
+  "httpSamples": 65,
+  "observedHttpFailures": 0,
+  "limitation": "Amostras HTTP não garantem disponibilidade entre observações; falha foi injetada apenas no navegador do ensaio."
+}

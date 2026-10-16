@@ -1,0 +1,15 @@
+<testsuites id="" name="" tests="1" failures="0" skipped="0" errors="0" time="16.177646">
+<testsuite name="zip-release.spec.mjs" timestamp="2026-10-16T05:05:31.236Z" hostname="" tests="1" failures="0" skipped="0" time="14.727" errors="0">
+<testcase name="ZIP offline: campanha completa e downloads reais sem rede" classname="zip-release.spec.mjs" time="14.727">
+<system-out>
+<![CDATA[
+[[ATTACHMENT|zip-release-offline\zip-release-ZIP-offline-ca-49bfd--e-downloads-reais-sem-rede\attachments\offline-integridade-9c72090a5f1a9f5930a8a48532e68b0c20e46e64.json]]
+
+[[ATTACHMENT|zip-release-offline\zip-release-ZIP-offline-ca-49bfd--e-downloads-reais-sem-rede\video-1.webm]]
+
+[[ATTACHMENT|zip-release-offline\zip-release-ZIP-offline-ca-49bfd--e-downloads-reais-sem-rede\video.webm]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>

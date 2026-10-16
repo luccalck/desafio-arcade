@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "sha": "e9dd28ccee535e9b1259a710742482e44db47aed",
+  "ref": "refs/tags/v0.7.0",
+  "run": "38852413982",
+  "runAttempt": "2",
+  "pushReceivedAt": "2026-10-16T04:47:18.000Z",
+  "e2eFinishedAt": "2026-10-16T04:59:43.303Z",
+  "pushToHmlSeconds": 745.303,
+  "limitSeconds": 900,
+  "withinLimit": true,
+  "eventType": "ActionsPushPayload",
+  "proof": {
+    "repository": "luccalck/desafio-arcade",
+    "ref": "refs/tags/v0.7.0",
+    "after": "8efdf59a0f3a707e51431f98a49603ba6b3ea035"
+  },
+  "source": "GitHub Actions push payload repository.pushed_at; repositório/ref/after conferidos",
+  "apiUrl": "https://api.github.com/repos/luccalck/desafio-arcade/events",
+  "collectedAt": "2026-10-16T04:59:43.927Z"
+}

@@ -2,7 +2,7 @@
 
 Conciliação em 15/10/2026 (America/Sao_Paulo). Este é o estado atual dos passos 001–040. Corrigimos checks históricos superados em vez de acrescentar outra lista contraditória. `[x]` indica escopo comprovado; `[ ]` indica trabalho/aceite ainda necessário. Uma etapa pode estar parcialmente concluída. O [checklist integral do HTML](../gestao/checklist-avaliacao.md) conserva todos os códigos e critérios; não considerar um INT inteiro aceito por um check parcial.
 
-O [histórico anterior](../evidencias/pendencias-historico-2026-10-15.md) preserva integralmente diagnósticos, comandos, falhas, publicações e motivos originais. “RAs ausentes”, “acessos não aceitos”, “main bootstrap”, “produção não publicada” e “painel404” são situações antigas, não cobranças atuais. Não exigimos cada revisão planejada nominalmente quando já houve revisão real da consolidação; a revisão do PR34 atual continua obrigatória.
+O [histórico anterior](../evidencias/pendencias-historico-2026-10-15.md) preserva integralmente diagnósticos, comandos, falhas, publicações e motivos originais. “RAs ausentes”, “acessos não aceitos”, “main bootstrap”, “produção não publicada” e “painel404” são situações antigas, não cobranças atuais. Não exigimos cada revisão planejada nominalmente quando já houve revisão real da consolidação; o PR34 foi aprovado porLucas no HEADe9dd28c e integrado; atualizações posteriores precisam de sua própria revisão.
 
 ## Evidências de referência
 
@@ -13,8 +13,8 @@ O [histórico anterior](../evidencias/pendencias-historico-2026-10-15.md) preser
 
 ## Ordem restante do fechamento
 
-1. Revisão externa e integração da documentação atual PR34; confirmação de direitos/marcos/notificações e equivalênciaPages.
-2. Ensaio controlado de recuperação/alertas/sessão, métricas completas e melhoria medida; playtest humano.
+1. PR34 aprovado/integrado; revisar a atualização posterior aos ensaios, confirmar direitos/marcos/notificações. EquivalênciaPages tecnicamente documentada.
+2. Ensaios de recuperação/alertas/sessão executados; fechar critérios literais restantes de monitoramento/métricas e realizar playtest humano.
 3. Pitch real (mantido pendente), notas/GDD/PDF finais e tag/release/pacote/triagem/agendamento pela pipeline.
 4. FichaHTML/TXT, envioAVA/recibo e ensaio/banca dos quatro. Conferência histórica e prazo oficial dependem de informações verdadeiras; não criar datas fictícias.
 
@@ -67,7 +67,8 @@ INT-02/01.
 
 - [x] Quatro RAs completos; todas as doze seções do modelo, identificação, declarações e Esteira presentes. High concept: 804 caracteres.
 - [x] GDD revisão027 convertido automaticamente; PDF de 18 páginas validado por pdfinfo e renderização. O limite de 12 páginas é do relatório técnico.
-- [ ] Revisão externa da atualização documental no PR34 e alinhamento do GDD com a tag/release final. Responsável: outro integrante/Plataforma; ver 025/035.
+- [x] Revisão externa do PR34:Lucas aprovou HEADe9dd28c; mergeacb03d8.
+- [ ] Alinhar GDD à release acadêmica final e rever mudanças posteriores. Responsável: outro integrante/Plataforma; ver 025/035.
 
 <a id="passo-006"></a>
 
@@ -114,7 +115,8 @@ INT-02/04/05.
 INT-06/04.
 
 - [x] ZIP original da produção88d533e validado offline por file://: campanha, 23 casos, vitória, .py/HTML e HTML exportado, sem rede/erros. Tamanho29.000bytes e checksum confirmados.
-- [ ] Repetir a conferência para os artefatos finais da tag/release, e comparar hash da Release com HML/PRD em027/035. Não exigir nova build entre ambientes.
+- [x] Tagv0.7.0:e9/2, ZIPoriginal baixado do draft passou offline1/1 e hashes14/14 emHML/PRD iguais.
+- [ ] Após publicar de fato a Release, conferir acesso/anexos públicos e novamente na release acadêmica final; sem rebuild entre ambientes.
 
 <a id="passo-011"></a>
 
@@ -234,7 +236,8 @@ INT-07/04/03.
 INT-07/03.
 
 - [x] rollback.yml e contratos/testes disponíveis na main.
-- [ ] I07-18: executar dispatch protegido em ensaio claramente identificado, com motivo factual e aprovação real; comprovar ator, ponteiro, commit, publicação Pages, smoke/sondas e tempo. Preparar modo/motivo de ensaio sem rotular teste como incidente inexistente; validar concorrência e falha parcial de forma controlada.
+- [x] I07-18: dispatch38851754358, motivoensaio-controlado, aprovação real, Pages/hashes/smoke e sondas confirmados;80,66 s e171HTTP200.
+- [ ] Ensaio específico de colisão concorrente/falha parcial não foi executado; não confundir serialização implementada com demonstração de todas as falhas.
 
 <a id="passo-024"></a>
 
@@ -252,7 +255,8 @@ INT-08/10.
 INT-02/10/06.
 
 - [x] GDD completo revisado, RAs preenchidos, fontes originais disponíveis no fechamento e PDF automático validado. Não cobrar originais indisponíveis nos computadores antigos.
-- [ ] Outro integrante revisar atualização atual no PR34, incluindo texto/mapas/tabelas/PDF; reconciliar versão/data/URLs com release final e confirmação coletiva de direitos. Não atribuir leitura passada aos colegas.
+- [x] Lucas aprovou atualização do PR34 no HEADe9dd28c, incluindo GDD/PDF; mergeacb03d8.
+- [ ] Reconciliar versão/data/URLs e direitos na release acadêmica final; revisar documentos alterados depois da aprovação.
 
 <a id="passo-026"></a>
 
@@ -261,7 +265,8 @@ INT-02/10/06.
 INT-07/04/08.
 
 - [x] Baseline formal saudável agora publicada; scripts/testes/roteiro disponíveis.
-- [ ] I07-20–23: preparar e executar falha deliberada rastreável em candidata nova, controlador/janela/aborto; medir desde falha até Pages/hashes/smoke saudável, menos de5min e URL sem queda. Amostrar HTTP durante toda a janela; preservar inclusive tentativa que exceder o limite.
+- [x] I07-22/23: run38851915984 executou falha no observador e recuperação real de candidataacb, Pages/sete hashes/smoke em17,166s,65HTTP200. Manual38851754358 em80,66s/171HTTP200.
+- [ ] I07-20/21: critério literal de versão defeituosa e vínculo falha→alerta/smoke deve ser demonstrado no escopo pedido; o jogo não foi alterado para falhar e o smoke normal passou antes da injeção no observador.
 - [ ] Ligar detecção real a smoke/alerta, abertura/fechamento automático e observabilidade; provar automático/manual sem edição manual de gh-pages. Reconferir estabilidade/concorrência e limites de timeout; ensaio não substitui demonstração na banca.
 
 <a id="passo-027"></a>
@@ -271,7 +276,7 @@ INT-07/04/08.
 INT-06/07/03.
 
 - [x] Mesmo ZIP0.7.0/SHA88 em HML/PRD, hash e tamanho/versão/offline confirmados; resultado não é mais preview.
-- [ ] I06-15/17,GDD-14: comparar download da GitHub Release final com ZIP aceito em HML/PRD; conferir UI/SemVer/SHA/data/GDD/tag/avisos. Hoje não existe Release para comparação.
+- [ ] I06-15/17,GDD-14: comparar download da GitHub Release final com ZIP aceito em HML/PRD; conferir UI/SemVer/SHA/data/GDD/tag/avisos. Draftv0.7.0 tem anexos iguais ao bundle original e offline testado; falta publicação e comparação pelo acesso público, seguida da release acadêmica final.
 
 <a id="passo-028"></a>
 
@@ -280,7 +285,7 @@ INT-06/07/03.
 INT-08/03/09.
 
 - [x] Dados operacionais agora existem e têm limites documentados; três números DORA não são mais N/D.
-- [ ] ARQ-09/I08-28/29/32: escolher gargalo observado, registrar hipótese, fazer mudança por PR revisado e medir efeito antes/depois com fontes/janelas comparáveis. Uma implantação não demonstra melhoria causal. Responsável: squad/SRE.
+- [ ] ARQ-09/I08-28/29/32: escolher gargalo observado, registrar hipótese, fazer mudança por PR revisado e medir efeito antes/depois com fontes/janelas comparáveis. Uma implantação não demonstra melhoria causal. Melhoria técnica no ensaio já medida:duplicatas2→1, com bug reproduzido/corrigido e nova execução real; não substitui DORA antes/depois comparáveis. Responsável:squad/SRE.
 
 <a id="passo-029"></a>
 
@@ -324,7 +329,8 @@ INT-09/08.
 INT-10/02/08/04.
 
 - [x] Fonte profissional atualizada com produção/HML/smoke/ZIP/sondas/DORA e limites; PDF original da CI9494224 com10páginas baixado, renderizado e inspecionado. Runs 38831325010/38831330483 verdes.
-- [ ] Revisão externa/merge da atualização atual PR34, acrescentar ensaio, alerta/MTTR, melhoria, playtest, release/triagem conforme ocorram; publicar PDF final acessível na Release. Não usar relatório candidato como prova dos eventos ainda não realizados.
+- [x] PR34 aprovado/integrado porLucas no HEADe9dd28c; PDF original da CI com10páginas.
+- [ ] Atualização posterior aos ensaios com10páginas e fontes reais precisa de revisão/CI/publicação própria. MTTR operacional/playtest/release/triagem só entram como concluídos após provas correspondentes.
 
 <a id="passo-034"></a>
 
@@ -333,7 +339,8 @@ INT-10/02/08/04.
 INT-04/06/07.
 
 - [x] Candidata formal:299 testes/36E2E, cobertura acima da meta, HML4/4,smoke/ZIPoffline e acessos verificados; revisão32/33 e integrações feitas.
-- [ ] Revisar PR34 no HEAD atual com CI verde; revalidar apenas alterações/falhas novas e aceite da versão final. Playtest humano/direitos permanecem independentes; não afirmar ausência absoluta de bugs.
+- [x] PR34 aprovado porLucas no HEADe9dd28c com CIverde; integradoacb03d8.
+- [ ] Revalidar novas alterações/falhas e aceite da versão final; playtest humano/direitos permanecem independentes.
 
 <a id="passo-035"></a>
 
@@ -394,7 +401,7 @@ INT-01/05/10.
 
 ## Checkpoints e códigos preservados
 
-C01/C02, P01–P07, D01–D07, R01–R07 e S01–S06 continuam nos roteiros e mapa; não renumeramos tarefas. G0–G2 têm preparação/base técnica implementada, mas confirmação coletiva/histórica e direitos permanecem nos001/008/009; não atribuir aceite humano retroativo. G3 e G4 têm execução operacional comprovada da candidata88d533e. G5 permanece parcial por recuperação/alertas/MTTR/melhoria/playtest; G6 por pitch/documentos finais; G7 por tag/release/pacote/triagem; G8 por TXT/AVA/banca. Preparações disponíveis não exigem refazer o que já foi executado.
+C01/C02, P01–P07, D01–D07, R01–R07 e S01–S06 continuam nos roteiros e mapa; não renumeramos tarefas. G0–G2 têm preparação/base técnica implementada, mas confirmação coletiva/histórica e direitos permanecem nos001/008/009; não atribuir aceite humano retroativo. G3 e G4 têm execução operacional comprovada da candidata88d533e. G5 tem recuperação técnica/ensaios executados e permanece parcial por critérios literais de alertas/MTTR/melhoria/playtest/banca; G6 por pitch/documentos finais; G7 por tag/release/pacote/triagem; G8 por TXT/AVA/banca. Preparações disponíveis não exigem refazer o que já foi executado.
 
 ## Avanço16/10/2026 — estado específico dos ensaios
 
@@ -402,8 +409,18 @@ C01/C02, P01–P07, D01–D07, R01–R07 e S01–S06 continuam nos roteiros e ma
 - [x] Equivalência técnica PagesActions/árvore gh-pages justificada e validada por implantação/hashes/smoke; diferença de configuração declarada em pages-equivalencia-2026-10-16.md. A nota continua do professor.
 - [x] Dois alertas demonstrados em alvoHTTP real temporário do runner: run38847296363, Issues38/39 com deduplicação e autocerramento; tempos1s/3s, média2s do ensaio. Bug de listagem atrasada reproduzido, corrigido e repetição passou.
 - [x] Injeção de falha observada em navegador local contra release pública, com ponteiro preservado; preparo do caminho automático e motivo manual ensaio-controlado implementados/testados.
-- [ ] Executar recuperação completa incluindo Pages após revisão externa do novoHEAD/merge protegido. Alertas/MTTR de produção e critério literal labelalerta não são substituídos pelas Issueslabelensaio; resultados de teste têm escopo explícito.
+- [x] Recuperação real incluindo Pages/hashes/smoke após aprovação/merge:manual80,66 s e automática17,166 s;65+171HTTP200.
+- [ ] Alertas/MTTR de produção e critério literal labelalerta não são substituídos pelas Issueslabelensaio; resultados de teste têm escopo explícito.
 - [ ] Playtest humano continua sem participante; autorização para a IA executar testes não cria pessoa de outra turma, consentimento, aprendizado ou presença na banca.
-- [ ] Release técnica/tag pela pipeline aguarda versão integrada/revisada e notas/hash/políticas válidas. Pacote acadêmico completo/triagem final exige pitch real; não gerar pacote final incompleto nem TXT agora.
+- [x] Tag anotadav0.7.0 do HEADe9 aprovado, CI/HML/PRD/monitor da tentativa2 passaram; draft414556376 tem cinco anexos+manifesto iguais à CI.
+- [ ] Finalizar publicação da Release pela pipeline após correção revisada do publicador; draft não é Release publicada. Pacote acadêmico/triagem exigem pitch e entradas verdadeiras; TXT permanece para o final.
 
 Provas: [ensaio operacional16/10](../evidencias/ensaio-operacional-2026-10-16.md). Estas linhas não fecham um INT inteiro nem apagam a primeira tentativa que falhou.
+
+## Operação16/10 após aprovação do PR34
+
+- [x] Aprovação Lucas5543092743, mergeacb03d8,311testes/36E2E e HML182,361 s.
+- [x] Recuperação manual38851754358 e automática38851915984 realmente executadas, incluindo Pages/hashes/smoke; registro operacao-release-2026-10-16.md. Sessão persistente/nova e storage indisponível conferidos.
+- [x] Tentativa2:CI/HML/PRD/monitor passaram, HML745,303s desdepush original, ZIPoriginal/draft offline1/1,14hashesHTTP conferidos.
+- [ ] Release38852413982/2 bloqueada pelo endpoint publicado por tag que não retorna draft. Correção+workflow protegido de retomada preparados/testados; precisam de revisão/merge/execução real. Não usar rerun de tag com horário fictício, publicar manualmente ou alterar anexos homologados.
+- [ ] Atualização documental posterior aos ensaios precisa de CI/revisão/publicação; pitch, playtest humano, TXT, triagemv1.0.0, AVA e banca preservados.

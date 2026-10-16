@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-16T05:06:17.326Z",
+  "mode": "Somente leitura; NÃO publicação",
+  "draftId": 414556376,
+  "draft": true,
+  "assets": [
+    {
+      "name": "build.zip",
+      "bytes": 29265
+    },
+    {
+      "name": "build.zip.sha256",
+      "bytes": 76
+    },
+    {
+      "name": "GDD.pdf",
+      "bytes": 1346671
+    },
+    {
+      "name": "RelatorioTecnico.pdf",
+      "bytes": 560650
+    },
+    {
+      "name": "release-manifest.json",
+      "bytes": 974
+    },
+    {
+      "name": "sbom.cdx.json",
+      "bytes": 206452
+    }
+  ],
+  "result": "Consulta corrigida encontrou draft pela listagem autenticada e pelo ID"
+}
