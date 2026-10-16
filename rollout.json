@@ -1,7 +1,9 @@
 {
-  "strategy": "preview",
-  "activeSha": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
-  "previousSha": "6f5c704665ee6c526571c5d66771f904d8627b59",
-  "version": "0.6.0",
-  "build": "2026-10-13T02:06:51.969Z"
+  "schema": 1,
+  "strategy": "azul-verde",
+  "estavel": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+  "anterior": "6f5c704665ee6c526571c5d66771f904d8627b59",
+  "canario": "88d533e31452036092cd8edef3efa3c0775241dc",
+  "percentual": 0,
+  "retiradas": []
 }
