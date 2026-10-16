@@ -1,0 +1,105 @@
+{
+  "at": "2026-10-16T17:35:10.201Z",
+  "scope": "Release técnica pública; não é pacote acadêmico final",
+  "url": "https://github.com/luccalck/desafio-arcade/releases/tag/v0.7.0",
+  "publishedAt": "2026-10-16T17:33:57Z",
+  "source": {
+    "sha": "e9dd28ccee535e9b1259a710742482e44db47aed",
+    "run": "38852413982",
+    "attempt": "2"
+  },
+  "files": [
+    {
+      "name": "build.zip",
+      "bytes": 29265,
+      "sha256": "6517fa79749c4bea490acc36eb197ce19a95617a24a5cba56d2edb40c6fabe9f",
+      "matchesOriginalBundle": true
+    },
+    {
+      "name": "build.zip.sha256",
+      "bytes": 76,
+      "sha256": "7ca9c93354afb620045ef802a0661a98b005564b2ef01b69d14647e05ab019dd",
+      "matchesOriginalBundle": true
+    },
+    {
+      "name": "sbom.cdx.json",
+      "bytes": 206452,
+      "sha256": "6fa635aa95e9730fdf31d04116fc2a57fcff1e3d0ce617578a4d0329670e0f9d",
+      "matchesOriginalBundle": true
+    },
+    {
+      "name": "GDD.pdf",
+      "bytes": 1346671,
+      "sha256": "f730ad81c4f5fe46982d5ae23dc3125658c9151024427d838676e5804fcb4030",
+      "matchesOriginalBundle": true
+    },
+    {
+      "name": "RelatorioTecnico.pdf",
+      "bytes": 560650,
+      "sha256": "285e6e9305422c1f8d13768bc3bb830dc256b84b8ae3de4404ae86189d8ee4bd",
+      "matchesOriginalBundle": true
+    }
+  ],
+  "publicSamples": [
+    {
+      "at": "2026-10-16T17:35:08.531Z",
+      "name": "build.zip",
+      "url": "https://github.com/luccalck/desafio-arcade/releases/download/v0.7.0/build.zip",
+      "http": 200,
+      "sha256": "6517fa79749c4bea490acc36eb197ce19a95617a24a5cba56d2edb40c6fabe9f",
+      "matched": true
+    },
+    {
+      "at": "2026-10-16T17:35:08.980Z",
+      "name": "build.zip.sha256",
+      "url": "https://github.com/luccalck/desafio-arcade/releases/download/v0.7.0/build.zip.sha256",
+      "http": 200,
+      "sha256": "7ca9c93354afb620045ef802a0661a98b005564b2ef01b69d14647e05ab019dd",
+      "matched": true
+    },
+    {
+      "at": "2026-10-16T17:35:09.279Z",
+      "name": "GDD.pdf",
+      "url": "https://github.com/luccalck/desafio-arcade/releases/download/v0.7.0/GDD.pdf",
+      "http": 200,
+      "sha256": "f730ad81c4f5fe46982d5ae23dc3125658c9151024427d838676e5804fcb4030",
+      "matched": true
+    },
+    {
+      "at": "2026-10-16T17:35:09.511Z",
+      "name": "RelatorioTecnico.pdf",
+      "url": "https://github.com/luccalck/desafio-arcade/releases/download/v0.7.0/RelatorioTecnico.pdf",
+      "http": 200,
+      "sha256": "285e6e9305422c1f8d13768bc3bb830dc256b84b8ae3de4404ae86189d8ee4bd",
+      "matched": true
+    },
+    {
+      "at": "2026-10-16T17:35:09.730Z",
+      "name": "release-manifest.json",
+      "url": "https://github.com/luccalck/desafio-arcade/releases/download/v0.7.0/release-manifest.json",
+      "http": 200,
+      "sha256": "92c3278c725dbcf273b8fe12a80ae5c09f032c932ef01344db95e10b40351a61",
+      "matched": true
+    },
+    {
+      "at": "2026-10-16T17:35:10.006Z",
+      "name": "sbom.cdx.json",
+      "url": "https://github.com/luccalck/desafio-arcade/releases/download/v0.7.0/sbom.cdx.json",
+      "http": 200,
+      "sha256": "6fa635aa95e9730fdf31d04116fc2a57fcff1e3d0ce617578a4d0329670e0f9d",
+      "matched": true
+    }
+  ],
+  "rollout": {
+    "schema": 1,
+    "strategy": "azul-verde",
+    "estavel": "e9dd28ccee535e9b1259a710742482e44db47aed",
+    "anterior": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+    "canario": null,
+    "percentual": 0,
+    "retiradas": [
+      "88d533e31452036092cd8edef3efa3c0775241dc",
+      "acb03d8b018227cabbbeb47242cc5c097a3c0df1"
+    ]
+  }
+}

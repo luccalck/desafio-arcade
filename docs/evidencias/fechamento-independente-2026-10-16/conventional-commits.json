@@ -1,0 +1,553 @@
+{
+  "at": "2026-10-16T17:34:14.092939+00:00",
+  "scope": "Commits sem merge da main1e3dd3b; verificação de prefixo, não de idioma/qualidade semântica",
+  "count": 109,
+  "matching": 109,
+  "commits": [
+    {
+      "sha": "a190215fbb048cd7b12d08da28e18ad8e2d5e121",
+      "subject": "fix(release): serializar retomada com publicaÃ§Ã£o original",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "fd5743515f63582b9f1e10c2f6c2ccdb7c89b47b",
+      "subject": "docs: aprimorar leitura dos resultados operacionais no relatÃ³rio",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "777af709dde4dde519de3c2a77c60da205051d22",
+      "subject": "docs: comprovar recuperaÃ§Ãµes e atualizar relatÃ³rio e pendÃªncias",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "d71bb4ec9eab569df67ef87ff72831cad2851f46",
+      "subject": "fix(release): conferir rascunho por ID e permitir retomada validada",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "e9dd28ccee535e9b1259a710742482e44db47aed",
+      "subject": "docs: comprovar ensaio de alertas e atualizar fechamento tÃ©cnico",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "27aab6d3baf7d1832c5cf5850a5babb6c8e619f7",
+      "subject": "fix: garantir deduplicaÃ§Ã£o e preparar recuperaÃ§Ã£o controlada",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "73a32591fa3937b521d43a38911decbe0ce5c750",
+      "subject": "feat: isolar ensaio real de alertas e preservar mÃ©tricas de produÃ§Ã£o",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "95bdd7a416aa875e5c9db2b023e502fad7a38684",
+      "subject": "docs: conciliar pendÃªncias com evidÃªncias e HTML completo",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "9494224760b4bffef166976eb6e1d5e8ffbac71a",
+      "subject": "docs: comprovar produÃ§Ã£o e consolidar relatÃ³rio operacional",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "1f641f0a1885f8ed1c74eaba31ffd2622006c649",
+      "subject": "docs: registrar CI da correÃ§Ã£o da mediÃ§Ã£o HML",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "b3257d3e9bfa002a11ae5168fe2bbe9aab03199e",
+      "subject": "fix: preservar fontes alternativas na mediÃ§Ã£o de HML",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "9c3062b5baaef8dc4806a44f01bdaac80987fd8b",
+      "subject": "docs: registrar validaÃ§Ã£o do relatÃ³rio de dez pÃ¡ginas na CI",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "ee8f2e4b7cfe7919a64f8167f0f631d66f5d8991",
+      "subject": "docs: registrar revisÃ£o das permissÃµes do PR 33",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "ef787f4184e6fd2f91ca00c03f81dc302d97f169",
+      "subject": "fix: preservar bytes originais do manifesto de evidÃªncias",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "2af1557218e842635a82235312e67741494b7c25",
+      "subject": "docs: comprovar HML e offline e ampliar relatÃ³rio tÃ©cnico",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "770449bd7f1151a9dc36e3a84ab5fd6ae90c68ad",
+      "subject": "ci: declarar leitura de PRs na mediÃ§Ã£o de homologaÃ§Ã£o",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "78c367d1ace0dc8b103cf6b02009dbf0d1616321",
+      "subject": "fix: comprovar tempo da HML sem depender do feed de eventos",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "59dc830f6129c6d7b6a062d4c4f490924a232b20",
+      "subject": "fix: corrigir esteira e registros com evidÃªncias verificÃ¡veis",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "e71de729219028ee314fb52949e1ee28ffeeb678",
+      "subject": "fix(ci): ignorar semver-major do typescript no dependabot para preservar compatibilidade",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "56330595b415b5fd226523438e5026be2036641d",
+      "subject": "docs: registrar CI verde e PR 29 do MD5",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "7738910757211000feba71a40e9982b18c008b3f",
+      "subject": "docs: auditar fator individual e condicionais restantes",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "3e02f86e523c9f00add01268624e7d5e407a4bb0",
+      "subject": "docs: confirmar entrega e demonstrar esteira na banca",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "b04300107e98523fbe528e9b265eb2186b84664f",
+      "subject": "docs: registrar CI verde e PR 28 do MD4",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "55c91189d05feebc7e9c7c68f7899748a39fc4c6",
+      "subject": "test: conferir urls finais e congelamento de cÃ³digo",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "3b880b94f920ac882645375b8907f81f310fb602",
+      "subject": "docs: consolidar relatÃ³rio, ficha e apresentaÃ§Ã£o",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "00116680a180a1c460b714323301684482f515ed",
+      "subject": "docs: executar triagem final e auditoria eliminatÃ³ria",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "d97e8daec010d7312df8af3a72ff4d40d280a3fa",
+      "subject": "ci: criar tag final e executar release formal",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "c0a017affd9b4a0b2791e14102cf4a659171bbe0",
+      "subject": "test: executar estabilidade e revisÃ£o da candidata",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "9c58791eb58fc3fb594d71dfafd4e7c3efecaf3f",
+      "subject": "docs: escrever relatÃ³rio tÃ©cnico com evidÃªncias reais",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "77184d8c539440e0508d4a483bad4eb93d507701",
+      "subject": "docs: registrar CI e PR do MD1",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "19ecb7c2b69499ac17b646dc88308ffe0a0bc63a",
+      "subject": "ci: agendar triagem e alertas atÃ© banca",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "35b38f53601e867016a39c1e247fc7492d603f8b",
+      "subject": "ci: automatizar pacote com vÃ­deo como entrada humana",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "3f309ddebce450274c6db6787e724ae4306f86a0",
+      "subject": "docs: registrar CI e pendencias do MD5",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "12e826b290a2a81e7045f711fbac5874aed35a9d",
+      "subject": "fix: rejeitar data invÃ¡lida no prazo da triagem",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "90fa2dec7dae91a9462c0d0248fe82b3bc975316",
+      "subject": "feat: implementar triagem automatizada da entrega",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "7c29f2a7b29380c342097aed57cfefc65f2476cc",
+      "subject": "docs: registrar PR e CI das etapas 027 e 028",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "430c1be207bee2d3177f3db842deb94971e28c50",
+      "subject": "docs: validar pacote e registrar limites das mÃ©tricas",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "92757b6dbe3d825aebbd6ef6a12b1924b8af320b",
+      "subject": "docs: registrar PR e CI do GDD e ensaio",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "6ac05a318d90e6b0741396216191639735de4003",
+      "subject": "docs: revisar GDD e preparar ensaio de recuperaÃ§Ã£o",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "447e7926c55f5126a8ae6ec3abf4e1e79487f920",
+      "subject": "docs: registrar PR, CI e pendÃªncias do MD 2",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "9da5cdbb934b80744db9d3a2402d5385e01eed08",
+      "subject": "feat: preparar rollback manual e mÃ©tricas DORA",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "b5e95e1cffbb6be2a8d718d2d3c479b2b894633a",
+      "subject": "docs: registrar PR e CI do MD de Miguel",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "6942e8242d225ac7ea85fa4b82f2bd01e6e63c44",
+      "subject": "fix: fortalecer recuperaÃ§Ã£o e preparar playtest",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "8bc8905e497e21196df128350d8e3d105a996d04",
+      "subject": "fix: registrar ator de reexecuÃ§Ã£o e provas do MD5",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "3ee8b5c3c5113b0fe14c240a140319ff64935ee4",
+      "subject": "ci: preparar produÃ§Ã£o com recuperaÃ§Ã£o e painel de disponibilidade",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "d6a72f6ce4d89a0ce4ca45845b82f645dc6a1b36",
+      "subject": "docs: registrar provas de CI e pendÃªncias das etapas 017 e 018",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "59b35f2b74b6e9a84157ac0e666dc6d21b774234",
+      "subject": "feat: preparar pitch e controle azul-verde com sessÃ£o segura",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "1d4f710b6d254b6fcc052cac7d0116cfee8223e3",
+      "subject": "fix: registrar tentativa do artefato e evidÃªncias do MD3",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "389b1b0da88432fc02e2689111785d6791964910",
+      "subject": "ci: preparar releases verificadas e alertas com recuperaÃ§Ã£o",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "8ae86cc1ab919fa406435b41ba54f592399186e3",
+      "subject": "docs: registrar CI e pendÃªncias validadas do MD2",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "909ac53a2f4d01c8d17493c9b2e27407a383bd8c",
+      "subject": "test: validar conteÃºdo educativo e preparar smoke de produÃ§Ã£o",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "9ce2522f876676be7db54ee8aeefc388983c6c14",
+      "subject": "docs: registrar CI e pendÃªncias das etapas 011 e 012",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "b3d5353b2110abf7703954ab919645943739a813",
+      "subject": "ci: implementar homologaÃ§Ã£o formal e sondas de observabilidade",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "e28fb1c243eb2d33ccecf77ee2b8cdc403b7a19e",
+      "subject": "docs: registrar respostas persistentes da ficha e RAs da equipe",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "6e2aa68b7d90dca91dee6318d5dc90df965fb680",
+      "subject": "docs: registrar cobertura e publicaÃ§Ã£o dos roteiros consolidados",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "8a3b7bbcdded8d88363ceb72a293a428968e575c",
+      "subject": "docs: consolidar roteiros em cinco MDs por integrante",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "a6824e8255c19781b9194111bf9dad272663862a",
+      "subject": "docs: registrar CI e PR da conferÃªncia offline",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "0f0104cec854a411a542952413724f8879fa42ac",
+      "subject": "docs: registrar integridade offline e passagem do bloco de Lucca",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "c56df79d58eda2a8ab6a518b7011ff6eaa21e8da",
+      "subject": "test: validar campanha e exportaÃ§Ã£o do ZIP sem rede",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "4f09ee0cae3bc05e0c0ac6aa65dbcb6db866e11a",
+      "subject": "docs: registrar validaÃ§Ãµes e publicaÃ§Ã£o do passo 009",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "bca6a71e0a5613b00714e794745946779b0f1c78",
+      "subject": "docs: produzir referÃªncias Stitch e conferir UX da oficina",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "b94469ee807093a4e64769f868c13143a0ff5b0c",
+      "subject": "docs: conferir crÃ©ditos e registrar publicaÃ§Ã£o do passo 008",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "7ffb58d4e410bd9ee2a95e21f1170a41d130828e",
+      "subject": "docs: inventariar licenÃ§as e rastrear usos de ia",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "43cf1b3036e89c4e0a5d3cf6c7966716b267c277",
+      "subject": "docs: atualizar contagem de checks apÃ³s revisÃ£o das actions",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "04c80c8f293539acadab03deb55d35eeeb975ce4",
+      "subject": "docs: registrar clone limpo e validaÃ§Ã£o da esteira",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "a2016fd635d55defc79d688958532537e711bf28",
+      "subject": "ci: preparar esteira formal e contratos de artefatos",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "7f0921bd6d9c8d0a99d60267490c8c2fb2a18159",
+      "subject": "docs: registrar CI e encaminhamentos da regressÃ£o",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "1e0b4b56464af2b3d762a8292f513449197ebc87",
+      "subject": "test: completar regressÃ£o de navegador exigida na hml",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "36095a05f510f007dc0a413599b8dcd6e564ea99",
+      "subject": "docs: registrar rastreamento e PDF validado na CI",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "7d532d4bc5c5712e178d791c613787b6dd3dc4d3",
+      "subject": "docs: registrar revisÃ£o e CI do GDD",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "214736a5aef2a693eedb690b2d39f414f2c02041",
+      "subject": "docs: revisar GDD e registrar identificaÃ§Ã£o disponÃ­vel",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "db4778bfa349a367cbd9fd8bfd0a9799fabd0243",
+      "subject": "docs: registrar ativaÃ§Ã£o e CI da seguranÃ§a inicial",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "ba7494b7e9737b7c8900c6592aa2c314cee9047b",
+      "subject": "docs: validar seguranÃ§a inicial e documentar privacidade",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "781af0f9627b453aab3c616577cd539d2b64257f",
+      "subject": "docs: ajustar encerramento do passo 003 e encaminhar deploys",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "48c6ad49eb498297bd9159abf6ff2ccceaaf33a2",
+      "subject": "docs: registrar publicaÃ§Ã£o e CI da configuraÃ§Ã£o GitHub",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "25ba5e7910c73d8550d732c21615a8aa6a0a3c07",
+      "subject": "docs: preparar acessos, revisÃ£o Git e configuraÃ§Ã£o Pages",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "4d9acf4cb7e70dc52d53d018446c891301c09aad",
+      "subject": "docs: registrar CI verde da baseline tÃ©cnica",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "6be4dd5ceca39a13dc9fda9e727a7ac388cee349",
+      "subject": "docs: conferir publicaÃ§Ã£o e normalizar registros do passo 002",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "b79828ca6dacb9e32f7995ad905ea0bff9705428",
+      "subject": "docs: verificar arquitetura e baseline de qualidade",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "776a0a9210b36bf501e7fc2dc20fe592cf9c06b5",
+      "subject": "docs: registrar publicaÃ§Ã£o e validaÃ§Ãµes do passo 001",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "72d2b6f8a743a6d52213948e9cda546964e61377",
+      "subject": "docs: registrar Aura 67 e executar a preparaÃ§Ã£o do passo 001",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+      "subject": "refactor: organizar projeto conforme o kit do professor",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "6f5c704665ee6c526571c5d66771f904d8627b59",
+      "subject": "docs: organizar os passos em quatro blocos sequenciais",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "8570bed891c157b44157c1024d782ac3a99e280e",
+      "subject": "docs: normalizar formataÃ§Ã£o dos prompts em Markdown",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "177c382599fe0e3b5804979e8fb9744e78893267",
+      "subject": "docs: distribuir quarenta passos e prompts entre os integrantes",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "299b45e76477920595e47032e2cc10dd1bbe5f8e",
+      "subject": "docs: criar checklist completo dos requisitos da avaliaÃ§Ã£o",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "76549dcb13ee91210746c0c2fff265c8f972817e",
+      "subject": "docs: alinhar monitoramento aos checkpoints G4 e G5",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "6230f98f5a45432cec7fcf30d1f825a969478ef1",
+      "subject": "docs: auditar enunciado e apresentar projeto em portuguÃªs",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "de16047e50d8238b856841de06e559f2e1e1eb44",
+      "subject": "docs(ci): registrar Python Pages publicado e artefatos conferidos",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "86390e0fa422974084b70095389faa857dd40737",
+      "subject": "feat(pages): publicar preview validado da oficina Python pela pipeline",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "5ebdc6430c359640d37a2960443bbbd0fcdaa3af",
+      "subject": "fix(python): mostrar download py imediatamente apos vencer",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "863e8667cdb541dc6d2572382087dd43ad230c6f",
+      "subject": "feat(python): converter desafios e exportar regras Python reais",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "364dc7790321912de07407230d22583a3fd8fe88",
+      "subject": "docs(design): planejar desafios Python e preview GitHub Pages",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "4db6f7cd903fdb3b91c789587ab3a97799f13868",
+      "subject": "docs(ci): registrar artefatos verificados da oficina de jogos",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "9a5a53c890b57a61145e6968025284749a86db36",
+      "subject": "docs(oficina): atualizar GDD e registrar testes capturas e regressao real",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "76b7797e5f305f9880021ba50f8cb344b44fa50c",
+      "subject": "feat(oficina): construir minijogo com JavaScript editavel e exportacao offline",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "9598ac1c78f7926da548cad3cf02124d4af8ce77",
+      "subject": "docs(design): planejar oficina de jogos aprovada com JavaScript e exportacao",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "6626be9e0c0cc55ad7a624fd13b55ae03c4205c1",
+      "subject": "docs(gdd): documentar bancada visual e validacao da candidata 0.4.0",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "42678cdd3442c35f0ed7dc18122a9abce1cefd41",
+      "subject": "feat(bancada): construir circuitos visuais com dados, sensores e memoria",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "4685b0fe8bdf16cfe7816f11dcca7dd8990d8ad6",
+      "subject": "docs(design): registrar bancada visual aprovada e plano de execucao",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "0e2e59625d5437bf958f2a1ebfbd4792c7b46d32",
+      "subject": "docs(gdd): atualizar laboratorio, mapas e evidencias da versao 0.3.0",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "b7789bbe0c40b689a4458cd0b8eadcad62f27597",
+      "subject": "feat(logica): criar cinco missoes, menus e desafio final por blocos",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "e35cc263b2dd15f25ef05a993d6b1fb43304286d",
+      "subject": "docs(design): registrar laboratorio de logica aprovado e plano",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "acf6eb133c181eb7b7674204d7a6d2c91c18abd6",
+      "subject": "docs(gdd): documentar quatro missoes e capturas reais da versao 0.2.0",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "97d22d21730275f5002806eaa269fef43c44e6dd",
+      "subject": "feat(game): criar quatro missoes de tecnologia e campanha guiada",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "c5d39ec66d3e2f6b6f17cbac9a68706a518c1f7c",
+      "subject": "docs(design): registrar evolucao aprovada das missoes",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "2fe826e6d33ff0c1f598f13ebc2ee91d36397280",
+      "subject": "docs(evidence): registrar CI real e conferencia parcial",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "e6d4ad6ebdd19249b744fc0415725dc9a0ab9b35",
+      "subject": "feat(game): criar ciclo educativo web com testes e CI",
+      "conventionalPrefix": true
+    },
+    {
+      "sha": "c04b8fa4e83ae0f7246b7c00bf64f6d3865bc6dc",
+      "subject": "chore: identify educational web game repository",
+      "conventionalPrefix": true
+    }
+  ]
+}

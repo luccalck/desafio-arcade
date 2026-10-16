@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-16T17:42:06.357619+00:00",
+  "scope": "Merges na primeira linha ancestral da main; não afirma revisão de todo merge local de branches históricas",
+  "mainSha": "1e3dd3be30c2ccb47ef60f4f8f668734c71843b0",
+  "merges": [
+    {
+      "sha": "1e3dd3be30c2ccb47ef60f4f8f668734c71843b0",
+      "subject": "Merge pull request #40 from luccalck/docs/resultados-ensaios-release",
+      "pr": 40,
+      "head": "a190215fbb048cd7b12d08da28e18ad8e2d5e121",
+      "mergedAt": "2026-10-16T17:28:08Z",
+      "approvalsBeforeMerge": [
+        {
+          "account": "6lucassilvaaa",
+          "at": "2026-10-16T05:55:14Z",
+          "url": "https://github.com/luccalck/desafio-arcade/pull/40#pullrequestreview-5543614682",
+          "head": "a190215fbb048cd7b12d08da28e18ad8e2d5e121"
+        }
+      ]
+    },
+    {
+      "sha": "acb03d8b018227cabbbeb47242cc5c097a3c0df1",
+      "subject": "feat: integrar ensaios revisados e fechamento operacional",
+      "pr": 34,
+      "head": "e9dd28ccee535e9b1259a710742482e44db47aed",
+      "mergedAt": "2026-10-16T04:35:57Z",
+      "approvalsBeforeMerge": [
+        {
+          "account": "6lucassilvaaa",
+          "at": "2026-10-16T04:31:02Z",
+          "url": "https://github.com/luccalck/desafio-arcade/pull/34#pullrequestreview-5543092743",
+          "head": "e9dd28ccee535e9b1259a710742482e44db47aed"
+        }
+      ]
+    },
+    {
+      "sha": "88d533e31452036092cd8edef3efa3c0775241dc",
+      "subject": "fix: integrar mediÃ§Ã£o verificÃ¡vel e fallback de homologaÃ§Ã£o",
+      "pr": 33,
+      "head": "f38f6d9de4275812c66d607612f82a7ca27c0956",
+      "mergedAt": "2026-10-16T00:26:22Z",
+      "approvalsBeforeMerge": [
+        {
+          "account": "6lucassilvaaa",
+          "at": "2026-10-16T00:21:28Z",
+          "url": "https://github.com/luccalck/desafio-arcade/pull/33#pullrequestreview-5541497036",
+          "head": "f38f6d9de4275812c66d607612f82a7ca27c0956"
+        }
+      ]
+    },
+    {
+      "sha": "773af17db29bb9fc46bfe438c0cb9c8304fbd5f5",
+      "subject": "Merge pull request #32 from luccalck/fix/fechamento-verificado",
+      "pr": 32,
+      "head": "59dc830f6129c6d7b6a062d4c4f490924a232b20",
+      "mergedAt": "2026-10-15T03:03:48Z",
+      "approvalsBeforeMerge": [
+        {
+          "account": "6lucassilvaaa",
+          "at": "2026-10-14T23:53:55Z",
+          "url": "https://github.com/luccalck/desafio-arcade/pull/32#pullrequestreview-5526236043",
+          "head": "59dc830f6129c6d7b6a062d4c4f490924a232b20"
+        }
+      ]
+    }
+  ]
+}

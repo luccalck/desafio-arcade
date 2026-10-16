@@ -64,7 +64,7 @@ Os caminhos locais originais são referências de contexto, não arquivos que o 
 - [ ] SQ-07 — Desenvolvimento assume arquitetura do jogo e pirâmide de testes.
 - [ ] SQ-08 — Plataforma assume workflows, releases, ambientes, entrega e rollback.
 - [ ] SQ-09 — SRE assume observabilidade, alertas, DORA, segurança, licenças e triagem.
-- [ ] SQ-10 — Registrar commits e PRs aprovados em pelo menos três INT diferentes para o integrante 1. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [x] SQ-10 — Lucca: commits próprios/arquivos em INT-02/04/03, PR32/33 aprovados porLucas no HEAD e integrados; doze provas individuais dos quatro em contribuicoes.md e snapshot16/10. Banca/F continuam pendentes.
 - [x] SQ-11 — Commits e PRs de Davi com escopo em pelo menos três INT: 03/04/06/07/08. PRs15–19 aprovados por luccalck noHEAD confirmado em14/10/2026; ver [revisões](../evidencias/revisoes-confirmadas-2026-10-14.md) e [contribuições](../contribuicoes.md). Banca e F continuam pendentes.
 - [x] SQ-12 — Commits e PRs de Miguel com escopo em pelo menos três INT: 02/06/07/08/09/10. PRs20–24 aprovados por luccalck noHEAD confirmado em14/10/2026; ver [revisões](../evidencias/revisoes-confirmadas-2026-10-14.md) e [contribuições](../contribuicoes.md). Banca e F continuam pendentes.
 - [x] SQ-13 — Commits e PRs de Lucas com escopo em pelo menos três INT: 01/06/09/10. PRs25–29 aprovados por luccalck noHEAD confirmado em14/10/2026; ver [revisões](../evidencias/revisoes-confirmadas-2026-10-14.md) e [contribuições](../contribuicoes.md). Banca e F continuam pendentes.
@@ -97,17 +97,17 @@ Não há mínimo textual de “três commits na mesma área”. A unidade da exi
 - [x] I01-02 — Quatro integrantes reais adicionados como colaboradores, com acesso testado. Verificado via GitHub REST API em 14/10/2026 por Lucas Souza: luccalck, DaviSouza78, miguelsenai2024 e 6lucassilvaaa todos com HTTP 204 No Content (colaborador ativo confirmado); repositório público com HTTP 200. [Evidência 034](../evidencias/aceite-candidata.md).
 - [x] I01-03 — Leitura pública pelo professor confirmada por Lucca em13/10/2026; consulta sem autenticação HTTP200/privatefalse. [Configuração003](../evidencias/configuracao-github.md). Não alegamos acesso pessoal executado pelo professor.
 - [x] I01-04 — main protegida, exigindo PR, uma aprovação e check ci verde; vale também para administradores. E1.
-- [ ] I01-05 — Revisão efetiva por pessoa diferente do autor antes de cada merge; não apenas configuração. PR #2 ainda sem revisão.
+- [x] I01-05 — Quatro merges na linha principal da main (PR32/33/34/40) com aprovação de outro autor no HEAD antes do merged_at, conferidos em merges-main-revisados.json. PR2 não foi integrado individualmente; sua consolidação32 foi revisada. Não atribui revisão retroativa a todo merge local de branches históricas.
 - [x] I01-06 — Estratégia GitHub Flow e branching documentadas no README. E1/README.
 - [ ] I01-07 — CONTÍNUO: branches curtas e merges somente após PR revisado/CI verde. Branch atual é longa e aguarda revisão.
 - [x] I01-08 — Commits atuais seguem Conventional Commits. Histórico em E1.
-- [x] I01-09 — CONTÍNUO/FINAL: conferir Conventional Commits no histórico completo da release final. 100% dos commits do repositório seguem Conventional Commits em língua portuguesa (feat, fix, docs, ci, test). [Auditoria docs/contribuicoes.md](../contribuicoes.md).
+- [x] I01-09 — Conferência atual:109/109 commits sem merge da main1e3dd3b têm prefixo Conventional Commits válido. Não é verificação automática de idioma ou qualidade semântica; conferir novamente na release acadêmica final. Fonte:conventional-commits.json no fechamento16/10.
 - [ ] I01-10 — Tag SemVer anotada v0.1.0 da prévia: comprovar a situação real, sem criar data/evidência retroativa.
 - [ ] I01-11 — Tag SemVer anotada v1.0.0 da entrega, criada sobre versão aprovada.
 - [x] I01-12 — SQUAD.md completo com quatro nomes, RAs, papéis e contas; dados fornecidos pelos integrantes e colaboradores confirmados na auditoria.
 - [x] I01-13 — .gitignore exclui builds e segredos; código/lockfile versionados. E1/E6.
-- [x] I01-14 — Pelo menos dez PRs revisados por outro autor:15 aprovações reais de luccalck nos HEADs dos PRs15–29 confirmadas pela API em14/10/2026. Ver [revisões](../evidencias/revisoes-confirmadas-2026-10-14.md). Não comprova merge ou revisão dos PRs próprios.
-- [ ] I01-15 — Conferir commits de cada pessoa em três ou mais INT e seus PRs aprovados (SQ-10 a SQ-13). Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [x] I01-14 — Vinte PRs revisados por outro autor no HEAD:15–29,32–35 e40; reviews/SHAs/ancestralidade conferidos em16/10. Evidências em fechamento-independente-2026-10-16/reviews-atuais.json.
+- [x] I01-15 — Quatro integrantes com commit próprio/arquivo e PR aprovado em ≥3INT, ancestralidade até main1e3dd3b verificada; doze provas em contribuicoes.md. Não comprova banca ou equilíbrio qualitativo.
 - [ ] I01-16 — `git log --oneline v0.1.0..v1.0.0` conta uma história legível, com tags existentes e autoria real. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [ ] I01-17 — AVANÇADO: histórico exemplar e contribuição equilibrada dos quatro, além de Conventional Commits. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [x] I01-18 — Restaurar main como branch padrão após merge revisado. Conciliação15/10: main restaurada como branch padrão, reconferida pela API nesta conciliação; PR32/33 integrados com revisão e CI.
@@ -209,7 +209,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I05-06 — Dependabot ativado/verificado em13/10/2026: alerts habilitados, APIHTTP200/0alerts, securityupdatesenabled e YAMLnpm/Actions na branchpadrão. [Segurança004](../evidencias/seguranca-inicial.md). Não alegamos PR ou job de atualização executado.
 - [x] I05-07 — SBOM CycloneDX/SPDX gerado com npm sbom. E2.
 - [x] I05-08 — SBOM disponível como artefato de build. E2.
-- [ ] I05-09 — SBOM anexado a cada GitHub Release. Nenhuma release existe.
+- [x] I05-09 — SBOM anexado à Release técnica pública v0.7.0; download anônimo/hash iguais ao bundle38852413982/2. Reconferir nas próximas releases.
 - [x] I05-10 — THIRD_PARTY.md inventaria componentes/ativos atuais e referências/licenças. E6.
 - [ ] I05-11 — CONTÍNUO/FINAL: conferir toda biblioteca, sprite, som, fonte e música, com autor, link e licença, incluindo vídeo.
 - [x] I05-12 — LICENSE do projeto versionada. E6.
@@ -233,18 +233,18 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I06-04 — build.zip gerado no CI. E2/E7.
 - [x] I06-05 — build.zip.sha256 gerado no CI. E2/E7.
 - [x] I06-06 — ZIP e checksum publicados como artefatos da execução. E2.
-- [ ] I06-07 — Cada tag vX.Y.Z dispara criação de GitHub Release.
-- [ ] I06-08 — Cada release anexa build.zip.
-- [ ] I06-09 — Cada release anexa checksum.
-- [ ] I06-10 — Cada release anexa SBOM.
-- [ ] I06-11 — Cada release anexa GDD.pdf.
-- [ ] I06-12 — Cada release possui notas de versão revisadas; se geradas por IA, registrar uso/revisão.
+- [x] I06-07 — Tag anotadav0.7.0 disparou publicador; após falhas preservadas, retomada38940532129 publicou em16/10,17:33:57UTC. Não é tag acadêmicav1.0.0.
+- [x] I06-08 — Release pública v0.7.0 anexa build.zip original;29.265bytes e hash iguais à origem homologada. Verificação pública16/10.
+- [x] I06-09 — Release pública v0.7.0 anexa build.zip.sha256; download anônimo e conteúdo conferidos.
+- [x] I06-10 — Release pública v0.7.0 anexa sbom.cdx.json; download/hash iguais ao bundle original.
+- [x] I06-11 — Release pública v0.7.0 anexa GDD.pdf; download/hash iguais ao bundle original e PDF18p da origem.
+- [x] I06-12 — Notas dos bytes do HEAD revisadoe9 foram conferidas por hash autorizado e revisão do PR34; Release publicada pela retomada revisada no PR40. Notas futuras exigem nova conferência.
 - [x] I06-13 — ZIP descompactado permite jogar abrindo index.html, ou método offline documentado. E3/E7.
 - [x] I06-14 — Dois builds do mesmo commit têm conteúdo igual, exceto data em version.json. E3/E7; revalidado localmente em14/10/2026 no SHA `92757b6` por `npm run reproducibility`; detalhes/limite de promoção em [release-integridade.md](../evidencias/release-integridade.md).
-- [ ] I06-15 — Hash do ZIP promovido à produção formal bate com o da GitHub Release.
+- [x] I06-15 — ZIP publicado na Releasev0.7.0 tem hash6517fa79749c4bea490acc36eb197ce19a95617a24a5cba56d2edb40c6fabe9f, idêntico ao bundle38852413982/2 e reciboPRD. Release-verificacao-publica.json preserva comparação.
 - [x] I06-16 — Build atual abaixo de 25 MB. E3; revalidado localmente em14/10/2026: ZIP de29.022 bytes no SHA `92757b6`, ver [release-integridade.md](../evidencias/release-integridade.md). PRD/release final ainda não conferidos em I06-15/17.
 - [ ] I06-17 — CONTÍNUO/FINAL: conferir offline, tamanho, versão, SHA, data e integridade da release final.
-- [ ] I06-18 — AVANÇADO: reunir reprodutibilidade comprovada, notas revisadas e SBOM/GDD anexados na mesma release.
+- [x] I06-18 — Escopo técnico v0.7.0:build reprodutível da CI, notas revisadas e SBOM/GDD anexados, seis downloads anônimos conferidos. Não encerra futura release acadêmica.
 
 ## INT-07: Ambientes, entrega e rollback · peso 12% de A
 
@@ -263,16 +263,16 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I07-13 — CONDICIONAL azul-verde aplicado: estavel passou para88d533e, anterior71933bf mantida, candidata sem tráfego durante preparação e canario retirado após promoção. [Ponteiro](../evidencias/operacao-2026-10-15/rollout-88-publico.json).
 - [x] I07-14 — Preview preserva versão do jogador durante a sessão quando ainda válida. E7/testes Pages.
 - [x] I07-15 — Versão preservada em sessão real durante promoções; versão retirada volta à baseline, sessão nova e storage indisponível escolhem e9dd28c. Evidência: operacao-release-2026-10-16/sessao-promocao.json e manual-verificacao.json.
-- [ ] I07-16 — Smoke de produção falhando dispara rollback automático pela pipeline. Contrato e testes locais reforçados no022 (`docs/evidencias/rollback-automatico.md`); falta execução formal observada.
+- [ ] I07-16 — Parte operacional executada:falha no observador de ensaio acionou recuperação real na run38851915984. O smoke normal anterior passou; falta o critério literal de smokePRD detectando versão defeituosa, inclusive demonstração na banca.
 - [x] I07-17 — Rollback real restaurou estavel para anterior, retirou candidata e conferiu sete hashes sem recompilar; runs38851754358 e38851915984. Estratégia azul-verde, não canário.
 - [x] I07-18 — rollback.yml executado por dispatch ensaio-controlado, com aprovação do environment, Pages e smoke; run38851754358 SUCCESS; 80,66 s do dispatch ao smoke.
 - [x] I07-19 — Histórico gh-pages registra ator/motivo/run da promoção: commit67ce33d, bot Actions, atorluccalck, motivo promover, execução38829484114/1. Fonte ligada no DORA real. [Evidência](../evidencias/operacao-2026-10-15/dora-38830013027.json).
-- [ ] I07-20 — Ensaio com versão defeituosa proposital, controlado e rastreável. Preflight/roteiro em `docs/evidencias/ensaio-recuperacao.md`; sem execução formal.
-- [ ] I07-21 — Detecção da falha por alerta ou smoke, com evidência real. Testes locais não substituem detecção operacional026.
+- [ ] I07-20 — Ensaio formal de observador com falha e rollback real executado em17,166s. A build do jogo não foi alterada para falhar; o pedido literal de versão defeituosa proposital na banca continua pendente.
+- [ ] I07-21 — Falha de carregamento foi observada e acionou recuperação real no ensaio. Falta vincular a demonstração literal de versão defeituosa a alerta ou smoke no contexto solicitado pelo professor; não chamar script de injeção de smokePRD falho.
 - [x] I07-22 — Recuperação automática medida em17,166 s, incluindo Pages, sete hashes e smoke; run38851915984. Manual80,66 s até smoke. Escopo ensaio, sem incidente espontâneo.
 - [x] I07-23 — Observação HTTP durante recuperação:65 amostras automáticas e171 manuais, todas200. Continuidade demonstrada na janela amostrada; não garante os intervalos entre consultas.
 - [ ] I07-24 — Executar a demonstração cronometrada pedida pelo professor na banca. Roteiro estruturado de 5 minutos (commit→produção, falha→alerta→rollback em < 5 min sem queda de URL e modo offline) documentado em docs/evidencias/entrega-banca.md Seção 3; demonstração ao vivo aguarda a banca presencial.
-- [ ] I07-25 — AVANÇADO: comprovar rollback automático e recuperação <5 minutos na banca, sem indisponibilidade (I07-16/22/23/24). Ensaio/banca reais pendentes026.
+- [ ] I07-25 — Parte técnica:recuperação automática17,166s incluindoPages/hashes/smoke e65HTTP200 observados. Demonstração cronometrada na banca ainda pendente(I07-24); não é aceite antecipado do professor.
 
 ## INT-08: Monitoramento, alertas e DORA · peso 10% de A
 
@@ -306,7 +306,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [ ] I08-28 — Tomar decisão de melhoria a partir dos dados reais.
 - [ ] I08-29 — Medir/documentar efeito da melhoria, sem fabricar ganho ou quantidade mínima de execuções.
 - [x] I08-30 — Relatório registra atrasos reais dos schedules: duas execuções agendadas15/10 separadas por cerca de5h19 apesar de cron*/15. Não promete pontualidade/CDN contínua por cron. [Fontes](../evidencias/operacao-2026-10-15.md).
-- [ ] I08-31 — AVANÇADO: alerta realmente disparado e tratado, com histórico e recuperação. Monitor/Issue/recuperação formais pendentes026.
+- [ ] I08-31 — Dois alertas reais em alvo temporário de ensaio, abertura/deduplicação/autocerramento e recuperação preservados(Issues38/39). Critério literal de alertas operacionais com labelalerta não foi fechado por labelensaio; não confundir escopos.
 - [ ] I08-32 — AVANÇADO: melhoria orientada por métrica com resultado verificável.
 - [ ] I08-33 — CONDICIONAL: contagem anônima de partidas/fases, se adotada; sem identificar jogador, finalidade documentada.
 
@@ -620,3 +620,5 @@ Conciliação das pendências15/10: atualizados itens específicos com prova ope
 16/10: ensaio de alertas real passou com Issues38/39 e dados separados; recuperaçãoPages não executada e playtest humano/pitch/tag/triagem/TXT não inventados. Não fechar I08-10–14/26/31 como incidente de produção pela demonstração em alvo temporário,labelensaio.
 
 Reconferência16/10 após PR34: aprovação externa5543092743 e mergeacb03d8 confirmados. Manual38851754358:80,66 s/171HTTP200; automático38851915984:17,166 s/65HTTP200, recuperaçãoPages/hashes/smoke. Falha injetada somente no observador, não numa build defeituosa; I07-16/20/21 e banca mantêm seus critérios literais. Tagv0.7.0 existe; tentativa1 bloqueada na sonda anterior; tentativa2 passouCI/HML/PRD/monitor e falhou no publicador de draft. Cinco anexos+manifesto iguais à CI e offline1/1, mas Release ainda não publicada. Correção/retomada protegida aguardam revisão/merge/execução. [Registro](../evidencias/operacao-release-2026-10-16.md).
+
+Reconferência independente16/10:PR40 aprovado porLucas5543614682/HEADa190215, merge1e3dd3b. Main38939899867:HML178,827s/318testes/36E2E, PRDskipped para preservar a origem. Retomada38940532129 SUCCESS publicouReleasev0.7.0 sem rebuild; cinco anexos+manifesto iguais à origem e seis downloads públicos conferidos. Contribuição em trêsINT por pessoa e20PRs revisados comprovados, sem atribuir F/banca. Fonte:../evidencias/fechamento-independente-2026-10-16.md.

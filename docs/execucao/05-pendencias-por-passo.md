@@ -1,6 +1,6 @@
 # Pendências vigentes por passo
 
-Conciliação em 15/10/2026 (America/Sao_Paulo). Este é o estado atual dos passos 001–040. Corrigimos checks históricos superados em vez de acrescentar outra lista contraditória. `[x]` indica escopo comprovado; `[ ]` indica trabalho/aceite ainda necessário. Uma etapa pode estar parcialmente concluída. O [checklist integral do HTML](../gestao/checklist-avaliacao.md) conserva todos os códigos e critérios; não considerar um INT inteiro aceito por um check parcial.
+Conciliação atualizada em 16/10/2026 (America/Sao_Paulo). Este é o estado atual dos passos 001–040. Corrigimos checks históricos superados em vez de acrescentar outra lista contraditória. `[x]` indica escopo comprovado; `[ ]` indica trabalho/aceite ainda necessário. Uma etapa pode estar parcialmente concluída. O [checklist integral do HTML](../gestao/checklist-avaliacao.md) conserva todos os códigos e critérios; não considerar um INT inteiro aceito por um check parcial.
 
 O [histórico anterior](../evidencias/pendencias-historico-2026-10-15.md) preserva integralmente diagnósticos, comandos, falhas, publicações e motivos originais. “RAs ausentes”, “acessos não aceitos”, “main bootstrap”, “produção não publicada” e “painel404” são situações antigas, não cobranças atuais. Não exigimos cada revisão planejada nominalmente quando já houve revisão real da consolidação; o PR34 foi aprovado porLucas no HEADe9dd28c e integrado; atualizações posteriores precisam de sua própria revisão.
 
@@ -13,7 +13,7 @@ O [histórico anterior](../evidencias/pendencias-historico-2026-10-15.md) preser
 
 ## Ordem restante do fechamento
 
-1. PR34 aprovado/integrado; revisar a atualização posterior aos ensaios, confirmar direitos/marcos/notificações. EquivalênciaPages tecnicamente documentada.
+1. PR34/40 aprovados e integrados; Release técnica v0.7.0 publicada e conferida. Revisar atualização documental posterior, confirmar direitos/marcos/notificações.
 2. Ensaios de recuperação/alertas/sessão executados; fechar critérios literais restantes de monitoramento/métricas e realizar playtest humano.
 3. Pitch real (mantido pendente), notas/GDD/PDF finais e tag/release/pacote/triagem/agendamento pela pipeline.
 4. FichaHTML/TXT, envioAVA/recibo e ensaio/banca dos quatro. Conferência histórica e prazo oficial dependem de informações verdadeiras; não criar datas fictícias.
@@ -36,7 +36,7 @@ INT-01/02/09.
 
 INT-04/06/03.
 
-- [x] Core separado da renderização; conteúdo/schema, editor Python e exportação documentados e testados. CI formal: 299 testes e 36 E2E; cobertura core acima de 70%.
+- [x] Core separado da renderização; conteúdo/schema, editor Python e exportação documentados e testados. CI atual da main1e3dd3b:318 testes e36E2E; cobertura core acima de 70%.
 - [x] Lint, build, JSON inválido bloqueante, clone limpo e reprodutibilidade verificados. Não repetir o passo por falta de deploy antigo.
 
 <a id="passo-003"></a>
@@ -161,9 +161,9 @@ INT-04/07/03.
 
 INT-06/01/07.
 
-- [x] Publicador por tag, validações de proveniência e anexos implementados e testados.
-- [ ] Executar release de tag anotada sobre SHA aprovado, notas revisadas e RELEASE_NOTES_SHA256; verificar políticas para tags e FORMAL_RELEASE_ENABLED sem retirar gates. Nenhuma tag ou GitHub Release existe na consulta atual.
-- [ ] Comprovar anexos ZIP/checksum/SBOM/GDD/PDF, hash igual à produção e procedimento de repetição por run/tentativa original. Responsável: Plataforma; etapa035.
+- [x] Tag anotada v0.7.0, notas/hash autorizados e cinco anexos+manifesto publicados pela retomada38940532129, após aprovação do PR40. As duas tentativas falhas da origem38852413982 permanecem no histórico.
+- [x] Seis downloads públicos sem autenticação, cinco hashes do inventário e bytes iguais ao bundle38852413982/2; ZIP29.265bytes/hash6517fa79…6fabe9f igual ao recibo de produção. Evidência:fechamento-independente-2026-10-16/release-verificacao-publica.json.
+- [ ] Repetir o fechamento para a tag acadêmica final em035/036; v0.7.0 não substitui v1.0.0, vídeo ou triagem.
 
 <a id="passo-016"></a>
 
@@ -172,7 +172,8 @@ INT-06/01/07.
 INT-08/05.
 
 - [x] JogoForaDoAr, LatenciaAlta, deduplicação e autocerramento implementados/testados; label e Watch registrados. Reconciliação saudável real executada com actions vazias.
-- [ ] I08-10–14/31: demonstrar os dois alertas com sondas de falha/latência reais num ensaio identificado, abertura/deduplicação/autocerramento de Issues e fontes verificáveis. Não inserir fixtures no CSV como incidentes reais. Responsável: SRE; ver026.
+- [x] Dois alertas por HTTP/latência reais em alvo temporário de ensaio, Issues38/39, deduplicação/autocerramento e tempos1s/3s; run38847296363, sem fixtures no CSV operacional.
+- [ ] I08-10–14/31:requisito literal de alertas operacionais com labelalerta não foi fechado pelo ensaio com labelensaio; preservar a distinção e não simular incidente espontâneo.
 
 <a id="passo-017"></a>
 
@@ -189,8 +190,8 @@ INT-10/05/02.
 
 INT-07/04.
 
-- [x] Loader, rollout.json e azul-verde integrados e executados; release imutável, estável/anterior e promoção por commit da pipeline comprovados.
-- [ ] I07-15/KIT-19: comprovar sessão mantida entre duas implantações formais, incluindo retirada de versão defeituosa e armazenamento indisponível. Testes de contrato existem; falta evidência operacional do ciclo completo.
+- [x] Loader, rollout e azul-verde formais executados. I07-15/KIT-19: sessão mantida entre promoções, versão retirada redirecionada à baseline e storage indisponível conferidos em navegador real; sessao-promocao.json e manual-verificacao.json no registro operacional16/10.
+- [ ] Reconferir estratégia/sessão/versão da entrega acadêmica final no freeze; não refazer os ensaios antigos por falta de registro.
 
 <a id="passo-019"></a>
 
@@ -200,7 +201,8 @@ INT-03/07/06.
 
 - [x] Aprovação real no environment producao, publicação imutável88d533e, promoção azul-verde e smoke; mesma build sem recompilação. Sete arquivos por ambiente, catorze hashes HTTP idênticos.
 - [x] Monitor pós-produção integrado e verde; não há publicação formal desta candidata pendente.
-- [ ] Tag/release finais, teste de sessão e recuperação permanecem em018/022/026/035; não confundir publicação do site com GitHub Release.
+- [x] Sessão, recuperações técnica manual/automática e Releasev0.7.0 verificadas em018/022/023/026/035.
+- [ ] Tag/release acadêmicas e demonstração literal na banca permanecem nos passos finais.
 
 <a id="passo-020"></a>
 
@@ -208,8 +210,9 @@ INT-03/07/06.
 
 INT-08/03.
 
-- [x] /status/ publicado HTTP200, desktop/celular/refresh e ausência de overflow/erros conferidos; disponibilidade, latência, versão, estratégia e DORA renderizados.
-- [ ] Atualizar/validar dados após ensaio e melhoria; MTTR deve continuar indisponível enquanto não existir alerta real aberto/fechado. Revisão humana de acessibilidade/teclado/leitor de tela ainda não comprovada.
+- [x] Painel público conferido após ensaios e Release:HTTP200, desktop1280px/celular390px, quatro cartões, skiplink/Enter/refresh, sem overflow/pageerrors;15amostras,80ms médios, produção0.7.0/e9. Fonte:painel-atual-verificacao.json no fechamento16/10.
+- [x] DORA atual:2deploys/14dias; frequência0,142857/dia; leadtime35min19s; CFR50% com rollback planejado. Mantivemos MTTRindisponível e limites da amostragem.
+- [ ] Leitor de tela/revisão humana de acessibilidade e clareza continuam sem registro; ligar ao playtest021. Não chamar checagem automatizada de acessibilidade100%.
 
 <a id="passo-021"></a>
 
@@ -226,8 +229,8 @@ INT-04/10/02.
 
 INT-07/04/03.
 
-- [x] Implementação, gates e regressões locais integrados e revisados; implantação saudável não acionou recuperar.
-- [ ] I07-16/17: demonstrar smoke falhando, recuperação automática do ponteiro, retirada da defeituosa, hashes/HTTP/smoke da versão restaurada, sem recompilar. Ensaiar falha parcial/propagação conforme risco real, preservar logs e tentativas. Responsável: Plataforma;026.
+- [x] Caminho automático executado na run38851915984:falha deliberada no observador, restauração real do ponteiro, Pages/sete hashes/smoke em17,166s e65HTTP200; candidata retirada sem recompilar. Run vermelha preservada pela injeção; recuperação passou.
+- [ ] I07-16/20/21: demonstrar o critério literal solicitado na banca com versão defeituosa e detecção por smoke/alerta; o smoke normal passou antes da injeção no observador. Ensaios técnicos não são banca realizada.
 
 <a id="passo-023"></a>
 
@@ -245,8 +248,9 @@ INT-07/03.
 
 INT-08/10.
 
-- [x] Cálculo real publicado e painel atualizado: uma implantação em14dias, frequência0,0714286/dia, lead time5min27s e CFR0% nessa amostra; comparação com referência11dias registrada.
-- [ ] I08-26: obter MTTR de abertura→fechamento de Issue de alerta real; hoje null, não zero. Continuar coleta com fontes e janelas; não há mínimo de dez execuções no HTML.
+- [x] Coleta/script/painel atuais com duas implantações em14dias, frequência0,142857/dia, leadtime médio35min19s, taxa de falha50% pelo rollback planejado. Fontes/janela/denominadores preservados em monitor-atual-dora.json no fechamento16/10.
+- [x] Comparação descritiva com11dias registrada. A média subiu em relação à amostra inicial5min27s; não ocultar variação ou atribuir ganho causal.
+- [ ] I08-26:MTTR operacional continua null, sem Issue elegível aberta/fechada; tempos1s/3s do ensaio ficam no seu escopo. Não há mínimo de dez execuções no HTML.
 
 <a id="passo-025"></a>
 
@@ -275,8 +279,8 @@ INT-07/04/08.
 
 INT-06/07/03.
 
-- [x] Mesmo ZIP0.7.0/SHA88 em HML/PRD, hash e tamanho/versão/offline confirmados; resultado não é mais preview.
-- [ ] I06-15/17,GDD-14: comparar download da GitHub Release final com ZIP aceito em HML/PRD; conferir UI/SemVer/SHA/data/GDD/tag/avisos. Draftv0.7.0 tem anexos iguais ao bundle original e offline testado; falta publicação e comparação pelo acesso público, seguida da release acadêmica final.
+- [x] I06-15:GitHub Release técnica v0.7.0 publicada, ZIP/checksum/SBOM/GDD/PDF/manifesto baixados sem autenticação e iguais ao bundle original38852413982/2. ZIP29.265bytes e hash iguais à produção; offline1/1 do mesmo ZIP preservado.
+- [ ] I06-17/GDD-14:conferir versão/SHA/data/UI/GDD/direitos e arquivos públicos da release acadêmica final; não chamar o fechamento técnico0.7.0 de entrega final.
 
 <a id="passo-028"></a>
 
@@ -328,9 +332,8 @@ INT-09/08.
 
 INT-10/02/08/04.
 
-- [x] Fonte profissional atualizada com produção/HML/smoke/ZIP/sondas/DORA e limites; PDF original da CI9494224 com10páginas baixado, renderizado e inspecionado. Runs 38831325010/38831330483 verdes.
-- [x] PR34 aprovado/integrado porLucas no HEADe9dd28c; PDF original da CI com10páginas.
-- [ ] Atualização posterior aos ensaios com10páginas e fontes reais precisa de revisão/CI/publicação própria. MTTR operacional/playtest/release/triagem só entram como concluídos após provas correspondentes.
+- [x] Relatório completo de10páginas do PR40 aprovado porLucas, gerado pelaCI e baixado/inspecionado; versão anterior da origem e9 publicada como anexo técnico sem sobrescrita.
+- [ ] Gerar/validar/revisar a atualização documental posterior à publicação, com20PRs revisados, matriz individual, Release real e DORA atual. O relatório acadêmico final deve receber resultados de vídeo/triagem/playtest quando existirem; não mudar os bytes da Release antiga.
 
 <a id="passo-034"></a>
 
@@ -348,8 +351,9 @@ INT-04/06/07.
 
 INT-01/03/06/07/09.
 
-- [x] Código integrado na main e produção0.7.0 aprovada; não resta bootstrap/main padrão a corrigir.
-- [ ] Publicar tag anotada e GitHub Release imutável por pipeline sobre SHA aprovado, SemVer/package/lock/GDD/notas coerentes, anexos e hashes. Candidata técnica pode existir sem pitch, mas v1.0.0 acadêmica exige vídeo/pacote/aceites. Não criar v0.1.0 retroativa; esclarecer o marco sem prova com o professor.
+- [x] PR40 aprovado porLucas5543614682 no HEADa190215 e merge1e3dd3b; main318testes/36E2E/HML178,827s, com PRDskipped intencionalmente para preservar e9.
+- [x] Release técnica v0.7.0 publicada pela retomada38940532129, aprovação real emproducao, sem build/deploy; seis anexos públicos e hashes conferidos.
+- [ ] Tag acadêmicav1.0.0:versão/package/lock/GDD/notas revisados, candidata filmada, pacote e triagem reais. Não criar v0.1.0 retroativa ou moverv0.7.0; o marco histórico sem prova continua001/037/040.
 
 <a id="passo-036"></a>
 
@@ -395,9 +399,10 @@ INT-10/09/07.
 
 INT-01/05/10.
 
-- [x] Quatro autores reais e pelo menos15 PRs de outros autores revisados por Lucca; PR32/33 aprovados porLucas e35porLucca. Conteúdo consolidado na main semsquash; RAs/acessos concluídos.
-- [ ] Consolidar matriz final de commits/PRs revisados em pelo menos3INT por pessoa, equilibrar contribuições reais e comprovar participação de todos na banca. PRs históricos empilhados ainda abertos são rastreabilidade; não reexecutar trabalho integrado nem fingir revisão individual inexistente.
-- [ ] Conferir direito/originalidade/IA/segredos em todo material final e resolver marcos históricos sem prova; professor atribui nota/F. Concurso é opcional, separado da nota, sem inscrição/termos/Drive/Instagram sem decisão e autorização expressas.
+- [x] Auditoria da main1e3dd3b:quatro autores reais,20PRs com aprovação de outro autor no HEAD,109/109 commits sem merge com prefixo Conventional Commits válido. Contagem de commits na main inclui merges e não mede esforço ou idioma.
+- [x] Matriz individual concluída:doze provas de commit próprio/arquivo/PR aprovado, cobrindo ≥3INT por pessoa; todos os SHAs ancestrais da main. Ver contribuicoes.md e autoria-resumo.json no fechamento16/10.
+- [ ] Avaliar equilíbrio qualitativo e comprovar participação/domínio dos quatro na banca; F e nota são atribuições do professor. PR aberto cujo HEAD já chegou por consolidação não ganha merge/revisão individual fictícia.
+- [ ] Conferir direitos/originalidade/IA/segredos finais e marcos sem prova, inclusive pitch. Concurso permanece opcional e separado da nota; nenhuma inscrição ou termo externo sem autorização.
 
 ## Checkpoints e códigos preservados
 
@@ -413,7 +418,8 @@ C01/C02, P01–P07, D01–D07, R01–R07 e S01–S06 continuam nos roteiros e ma
 - [ ] Alertas/MTTR de produção e critério literal labelalerta não são substituídos pelas Issueslabelensaio; resultados de teste têm escopo explícito.
 - [ ] Playtest humano continua sem participante; autorização para a IA executar testes não cria pessoa de outra turma, consentimento, aprendizado ou presença na banca.
 - [x] Tag anotadav0.7.0 do HEADe9 aprovado, CI/HML/PRD/monitor da tentativa2 passaram; draft414556376 tem cinco anexos+manifesto iguais à CI.
-- [ ] Finalizar publicação da Release pela pipeline após correção revisada do publicador; draft não é Release publicada. Pacote acadêmico/triagem exigem pitch e entradas verdadeiras; TXT permanece para o final.
+- [x] Publicação técnica finalizada pela retomada38940532129, com aprovação real do PR40/environment e anexos públicos verificados.
+- [ ] Pacote acadêmico/triagem exigem pitch e entradas verdadeiras; TXT permanece para o final.
 
 Provas: [ensaio operacional16/10](../evidencias/ensaio-operacional-2026-10-16.md). Estas linhas não fecham um INT inteiro nem apagam a primeira tentativa que falhou.
 
@@ -422,5 +428,13 @@ Provas: [ensaio operacional16/10](../evidencias/ensaio-operacional-2026-10-16.md
 - [x] Aprovação Lucas5543092743, mergeacb03d8,311testes/36E2E e HML182,361 s.
 - [x] Recuperação manual38851754358 e automática38851915984 realmente executadas, incluindo Pages/hashes/smoke; registro operacao-release-2026-10-16.md. Sessão persistente/nova e storage indisponível conferidos.
 - [x] Tentativa2:CI/HML/PRD/monitor passaram, HML745,303s desdepush original, ZIPoriginal/draft offline1/1,14hashesHTTP conferidos.
-- [ ] Release38852413982/2 bloqueada pelo endpoint publicado por tag que não retorna draft. Correção+workflow protegido de retomada preparados/testados; precisam de revisão/merge/execução real. Não usar rerun de tag com horário fictício, publicar manualmente ou alterar anexos homologados.
+- [x] Bloqueio da Release resolvido:PR40 aprovado/integrado e retomada38940532129 SUCCESS; origens/run/tentativa preservadas, sem rerun com horário fictício, publicação manual ou alteração de anexos.
 - [ ] Atualização documental posterior aos ensaios precisa de CI/revisão/publicação; pitch, playtest humano, TXT, triagemv1.0.0, AVA e banca preservados.
+
+## Fechamento independente e retomada —16/10/2026
+
+- [x] PR40/review5543614682/merge1e3dd3b, HML178,827s, retomada38940532129, seis anexos públicos iguais à origem;20PRs revisados e doze provas individuais.
+- [x] Painel após publicação, DORA atual e comandos registrados; roteiro da banca e procedimento produção→vídeo→tag→pacote corrigidos, sem executar atividades humanas futuras.
+- [ ] Atualização documental desta branch precisa de CI/revisão/integração; pitch/playtest/declarações/marcos/PRAZO/triagemfinal/TXT/AVA/banca continuam com suas dependências.
+
+Prova consolidada:../evidencias/fechamento-independente-2026-10-16.md. A publicação técnica está concluída; o pacote acadêmico continua dependente do vídeo real.

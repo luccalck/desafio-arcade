@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "mode": "retomada-sem-rebuild",
+  "at": "2026-10-16T17:33:58.130Z",
+  "source": {
+    "repo": "luccalck/desafio-arcade",
+    "run": "38852413982",
+    "attempt": "2",
+    "tag": "v0.7.0",
+    "sha": "e9dd28ccee535e9b1259a710742482e44db47aed"
+  },
+  "implementationSha": "1e3dd3be30c2ccb47ef60f4f8f668734c71843b0",
+  "resumeRun": "38940532129",
+  "resumeAttempt": "1",
+  "live": {
+    "data": "2026-10-16T17:33:55.253Z",
+    "alvo": "producao",
+    "url": "https://luccalck.github.io/desafio-arcade/",
+    "codigo": 200,
+    "tempo": 0.03026005000000009,
+    "versao": "0.7.0",
+    "sha": "e9dd28ccee535e9b1259a710742482e44db47aed",
+    "versionUrl": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/version.json",
+    "erro": null
+  },
+  "result": {
+    "tag": "v0.7.0",
+    "sha": "e9dd28ccee535e9b1259a710742482e44db47aed",
+    "assets": [
+      "build.zip",
+      "build.zip.sha256",
+      "sbom.cdx.json",
+      "GDD.pdf",
+      "RelatorioTecnico.pdf",
+      "release-manifest.json"
+    ],
+    "unchanged": false
+  }
+}

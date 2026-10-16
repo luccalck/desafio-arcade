@@ -36,7 +36,7 @@ Run38852413982/1 passou CI/HML/PRD, mas a sonda38852862300 leu HTTP200/0.6.0/SHA
 
 ## Métricas e limites
 
-Após o rollback planejado, o DORA bruto passou a100% de taxa de falha (1 deploy formal seguido de rollback); não é incidente espontâneo. Dispatch de ensaio e tag com pipeline falha não entram como deploy formal bem-sucedido na definição atual. A fonte38853203550 mantém janela, eventos e denominadores; não alteramos dados para melhorar métricas. MTTR operacional permanece N/D; média2s das Issues38/39 é exclusiva do ensaio. Comparação com11dias é descritiva, não causal.
+Após o rollback planejado, o DORA bruto passou a100% de taxa de falha (1 deploy formal seguido de rollback); não é incidente espontâneo. Dispatch de ensaio não entra como deploy formal dessa definição. Correção de interpretação16/10:tag com deploy-prd confirmado entra, mesmo se o publicador de anexos falhar; a coleta38940593792 registra2deploys eCFR50%. A conclusão global falha não desfaz um deploy real já confirmado. A fonte38853203550 mantém janela, eventos e denominadores; não alteramos dados para melhorar métricas. MTTR operacional permanece N/D; média2s das Issues38/39 é exclusiva do ensaio. Comparação com11dias é descritiva, não causal.
 
 Pitch e TXT permanecem para o final. Não há submissao completa, triagemv1.0.0, playtest humano de colega de outra turma, AVA/recibo ou banca. Direitos e marcos históricos não são fabricados. Atualização documental posterior aos ensaios requer sua própria revisão/CI/publicação; Release técnica não equivale à entrega acadêmica completa.
 
@@ -49,3 +49,7 @@ Reproduzimos o defeito no teste de publicação com endpoint por tag indisponív
 Baixamos cinco anexos mais manifesto do draft e comparamos cada byte com o bundle original38852413982/2:todos iguais. Bundle da tentativa2 validado:172arquivos; é independente dos173da tentativa1, sem mistura. ZIPoriginal do draft passou offline1/1 em14,7 s:cinco missões,23casos finais,700XP, downloadsPython/HTML e HTML exportado jogável; sem rede ou pageerrors. Catorze arquivos HTTP200 em HML/release imutável têm hashes iguais ao ZIP. [Anexos](operacao-release-2026-10-16/draft-assets-verificacao.json), [offline](operacao-release-2026-10-16/release-offline-integridade.json), [hashes públicos](operacao-release-2026-10-16/hashes-publicos-e9.json). Esses resultados não comprovam acesso público a uma Release ainda em draft.
 
 Próximo bloqueio:aprovação externa da correção/documentação e retomada formal do publicador com proveniência do bundle original, sem novo build entre ambientes. O artefato é válido; falta sua publicação pela pipeline.
+
+## Retomada concluída após revisão externa
+
+Lucas aprovouPR40 no HEADa190215, revisão5543614682; merge1e3dd3b. Main38939899867 passou CI/HML178,827s comPRDskipped intencionalmente. Retomada38940532129 SUCCESS publicouReleasev0.7.0 em16/10,17:33:57UTC, sem rebuild/deploy. Seis downloads públicos e hashes conferidos com o bundle original. Os trechos de falha e draft acima são o histórico preservado, não o estado vigente. Estado atual/provas em fechamento-independente-2026-10-16.md.

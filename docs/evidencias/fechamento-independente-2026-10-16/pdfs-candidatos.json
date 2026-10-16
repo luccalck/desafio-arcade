@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-16T17:46:45.286289+00:00",
+  "scope": "PDFs locais candidatos pós-publicação, separados dos anexos imutáveis da Release",
+  "report": {
+    "pages": 10,
+    "bytes": 599564,
+    "sha256": "923c392dd2a6cd784318d080d508febe307a9a567690ff505b885f31cbebaf94",
+    "sourceSha256": "7476312de8701af37c11073aa861e972f1d4362710a6fcad12b9a2bdc7edc2e0"
+  },
+  "gdd": {
+    "pages": 18,
+    "bytes": 1387638,
+    "sha256": "8069c08f83fd278f5e36181365a8f2224433cc2fdd71c671b1e80cca973ae46f",
+    "sourceSha256": "8dd41f0e4680f6fcd99d4ecf728e3cfe60f62cc273737aafbe8695968564a005"
+  }
+}

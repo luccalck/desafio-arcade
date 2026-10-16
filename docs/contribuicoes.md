@@ -1,71 +1,85 @@
-# Quadro de Contribuições e Auditoria de Pull Requests
+# Contribuições verificadas — Aura 67
 
-**Squad:** Aura 67
-**Projeto:** Rota do Código — Desafio Arcade
-**Atualização:** 14/10/2026 (reconferência de autoria; fechamento pendente)
+Conferência em 16/10/2026 sobre a main `1e3dd3be30c2ccb47ef60f4f8f668734c71843b0`. Conferimos a API de 35 PRs, seus commits, arquivos e revisões; cruzamos os SHAs com a ancestralidade e o histórico local atualizado. [Snapshot](evidencias/fechamento-independente-2026-10-16/autoria-resumo.json) e [reviews originais](evidencias/fechamento-independente-2026-10-16/reviews-atuais.json).
 
-Este documento consolida a autoria real, o histórico de Pull Requests, a distribuição de integráveis (INTs) e a governança de revisão cruzada exigida pelo regulamento acadêmico da disciplina.
+## Resultado técnico por integrante
 
----
+| Integrante / GitHub | Commits na main | INTs com prova individual nesta conferência | Situação |
+|---|---:|---|---|
+| Lucca Castilho Costa / luccalck | 78 | INT-02, INT-03, INT-04 | ≥3 INT com commit próprio e PR aprovado; banca pendente |
+| Davi Marcondes Paes de Souza / DaviSouza78 | 10 | INT-03, INT-04, INT-06 | ≥3 INT com commit próprio e PR aprovado; banca pendente |
+| Miguel Oliveira de Almeida / miguelsenai2024 | 13 | INT-07, INT-08, INT-09 | ≥3 INT com commit próprio e PR aprovado; banca pendente |
+| Lucas Souza da Silva / 6lucassilvaaa | 14 | INT-06, INT-09, INT-10 | ≥3 INT com commit próprio e PR aprovado; banca pendente |
 
-## 1. Resumo da Distribuição por Integrante
+As contagens incluem merges e não medem esforço, equilíbrio qualitativo ou aprendizagem. Não atribuímos conteúdo de outro autor ao responsável pelo PR. Cada prova abaixo liga um arquivo alterado por commit da própria conta a um PR aprovado no HEAD correspondente, integrado à main. O professor exige contribuição em pelo menos três integráveis e participação na banca; não exige três commits por área. F e nota continuam sem atestado.
 
-O regulamento exige que cada integrante tenha commits e Pull Requests aprovados em pelo menos **três integráveis diferentes** e participe da banca com domínio de sua contribuição, como requisitos para o fator individual máximo, que depende da avaliação do professor e da banca efetivamente realizada.
+## Doze provas de autoria, arquivo e aprovação
 
-| Integrante | Conta GitHub | Papel Oficial | Qtd. Commits | PRs Autorais | INTs de escopo autoral (aprovação a verificar) | Status Fator F |
-|---|---|---|---:|---|---|---|
-| **Lucca Castilho Costa** | `luccalck` | Produto e Game Design | 56 | #2, #3, #4, #5, #6, #7, #8, #9, #10, #11, #12, #13, #14 | INT-01, INT-02, INT-03, INT-04, INT-05, INT-06 | F não atestado; revisões e banca a conferir |
-| **Davi Marcondes Paes de Souza** | `DaviSouza78` | Desenvolvimento e Qualidade | 10 | #15, #16, #17, #18, #19 | INT-03, INT-04, INT-06, INT-07, INT-08 | F não atestado; reviews confirmados, banca pendente |
-| **Miguel Oliveira de Almeida** | `miguelsenai2024` | Plataforma e Release | 11 | #20, #21, #22, #23, #24 | INT-02, INT-06, INT-07, INT-08, INT-09, INT-10 | F não atestado; reviews confirmados, banca pendente |
-| **Lucas Souza da Silva** | `6lucassilvaaa` | SRE e Segurança | 10 | #25, #26, #27, #28, #29 | INT-01, INT-06, INT-09, INT-10 | F não atestado; revisões e banca a conferir |
-
----
-
-## 2. Inventário Completo de Pull Requests do Repositório
-
-Inventário de 28 PRs autorais (#2–#29), cuja consulta inicial de 14/10/2026 encontrou todos abertos e zero reviews registrados. Lucca informou depois que revisou o trabalho dos colegas; essa declaração permite registrar suas revisões efetivas nos PRs de outros autores, sem autoaprovar seus próprios PRs. A coluna de revisor abaixo representa a distribuição proposta, não uma aprovação. Atualizar contagens somente com eventos verificáveis da API. O mínimo não estava comprovado no snapshot inicial. Após autorização de Lucca,15 reviews APPROVED nos HEADs correspondentes dos PRs 15–29 foram confirmados pela API; [prova atual](evidencias/revisoes-confirmadas-2026-10-14.md). Os PRs de Lucca permanecem sem revisão de outro autor.
-
-| PR # | Título do Pull Request | Autor | Revisor Proposto/Ativo | INTs Vinculados | Status / Branch Base |
+| Conta | INT | PR | Commit próprio | Arquivo alterado nesse commit | Revisão real |
 |---|---|---|---|---|---|
-| **#2** | feat: oficina Python WEB e preview GitHub Pages automatizado | `luccalck` | `DaviSouza78` | INT-01, INT-02, INT-04 | Base: `main` |
-| **#3** | docs: registrar Aura 67 e preparação do passo 001 | `luccalck` | `DaviSouza78` | INT-01, INT-05 | Base: `feature/primeiro-ciclo` |
-| **#4** | docs: verificar arquitetura e baseline do passo 002 | `luccalck` | `DaviSouza78` | INT-04, INT-06 | Base: `feature/passo-001-equipe` |
-| **#5** | docs: preparar Git, acessos e Pages no passo 003 | `luccalck` | `DaviSouza78` | INT-01, INT-03 | Base: `feature/passo-002-baseline` |
-| **#6** | docs: validar segurança e privacidade no passo 004 | `luccalck` | `DaviSouza78` | INT-05 | Base: `feature/passo-003-git` |
-| **#7** | docs: revisar GDD e identificação no passo 005 | `luccalck` | `DaviSouza78` | INT-02 | Base: `feature/passo-004-seguranca` |
-| **#8** | docs: completar regressão de navegador exigida na HML | `luccalck` | `DaviSouza78` | INT-04 | Base: `feature/passo-005-gdd` |
-| **#9** | docs: preparar esteira formal e contratos de artefatos | `luccalck` | `DaviSouza78` | INT-03, INT-06 | Base: `feature/passo-006-hml` |
-| **#10** | docs: conferir licenças, autoria e revisão humana da IA | `luccalck` | `DaviSouza78` | INT-05 | Base: `feature/passo-007-esteira` |
-| **#11** | docs: referências Stitch e conferência de UX | `luccalck` | `DaviSouza78` | INT-02 | Base: `feature/passo-008-direitos` |
-| **#12** | docs: campanha offline, integridade e passagem de bloco | `luccalck` | `DaviSouza78` | INT-06 | Base: `feature/passo-009-ux` |
-| **#13** | docs: consolidar roteiros futuros e centralizar exports | `luccalck` | `DaviSouza78` | INT-01, INT-02 | Base: `feature/passo-010-offline` |
-| **#14** | docs: preservar respostas da ficha e identificação da equipe | `luccalck` | `DaviSouza78` | INT-01 | Base: `feature/passos-futuros` |
-| **#15** | ci: homologação formal e sondas de observabilidade (011–012) | `DaviSouza78` | `miguelsenai2024` | INT-03, INT-07, INT-08 | Base: `feature/primeiro-ciclo` |
-| **#16** | test: validar conteúdo educativo e smoke de produção (013–014) | `DaviSouza78` | `miguelsenai2024` | INT-04, INT-07 | Base: `feature/passos-011-012-hml-sondas` |
-| **#17** | ci: releases verificadas e alertas com recuperação (015–016) | `DaviSouza78` | `miguelsenai2024` | INT-06, INT-08 | Base: `feature/passos-013-014-conteudo-smoke` |
-| **#18** | feat: preparar pitch e controle azul-verde (017–018) | `DaviSouza78` | `miguelsenai2024` | INT-07, INT-10 | Base: `feature/passos-015-016-releases-alertas` |
-| **#19** | ci: preparar produção com recuperação e painel (019–020) | `DaviSouza78` | `miguelsenai2024` | INT-07, INT-08 | Base: `feature/passos-017-018-pitch-rollout` |
-| **#20** | feat: preparar playtest e fortalecer recuperação automática (021–022) | `miguelsenai2024` | `6lucassilvaaa` | INT-02, INT-07 | Base: `feature/passos-019-020-producao-painel` |
-| **#21** | feat: rollback manual e métricas DORA (023–024) | `miguelsenai2024` | `6lucassilvaaa` | INT-07, INT-08 | Base: `feature/miguel-md1-etapas-021-022` |
-| **#22** | docs: GDD da candidata e preparação do ensaio (025–026) | `miguelsenai2024` | `6lucassilvaaa` | INT-02, INT-07 | Base: `feature/passos-023-024-rollback-dora` |
-| **#23** | docs: validar integridade e registrar DORA (027–028) | `miguelsenai2024` | `6lucassilvaaa` | INT-06, INT-08 | Base: `feature/passos-025-026-gdd-ensaio` |
-| **#24** | feat: implementar triagem e registrar pitch pendente (029–030) | `miguelsenai2024` | `6lucassilvaaa` | INT-09, INT-10 | Base: `feature/passos-027-028-release-dora` |
-| **#25** | ci: automatizar pacote com entrada de vídeo e agendar triagem (031–032) | `6lucassilvaaa` | `luccalck` | INT-09, INT-10 | Base: `feature/miguel-md5-etapas-029-030` |
-| **#26** | docs: relatório técnico com evidências reais e aceite da candidata (033–034) | `6lucassilvaaa` | `luccalck` | INT-01, INT-10 | Base: `feature/passos-031-032-pacote-triagem-agendada` |
-| **#27** | ci: preparação de release v1.0.0, triagem final e auditoria eliminatória (035–036) | `6lucassilvaaa` | `luccalck` | INT-06, INT-09 | Base: `feature/passos-033-034-relatorio-candidata` |
-| **#28** | docs: ficha de entrega, roteiro de banca, URLs e congelamento (freeze) (037–038) | `6lucassilvaaa` | `luccalck` | INT-01, INT-07, INT-10 | Base: `feature/passos-035-036-release-triagem-final` |
-| **#29** | docs: entrega final da esteira, auditoria de contribuições e fechamento de bloco (039–040) | `6lucassilvaaa` | `luccalck` | INT-01, INT-05, INT-08, INT-09, INT-10 | Base: `feature/passos-037-038-ficha-banca-freeze` |
+| luccalck | INT-02 | [#32](https://github.com/luccalck/desafio-arcade/pull/32) | [59dc830](https://github.com/luccalck/desafio-arcade/commit/59dc830f6129c6d7b6a062d4c4f490924a232b20) | `docs/gdd.md` | [6lucassilvaaa](https://github.com/luccalck/desafio-arcade/pull/32#pullrequestreview-5526236043) |
+| luccalck | INT-04 | [#32](https://github.com/luccalck/desafio-arcade/pull/32) | [863e866](https://github.com/luccalck/desafio-arcade/commit/863e8667cdb541dc6d2572382087dd43ad230c6f) | `src/core/code-runtime.ts` | [6lucassilvaaa](https://github.com/luccalck/desafio-arcade/pull/32#pullrequestreview-5526236043) |
+| luccalck | INT-03 | [#33](https://github.com/luccalck/desafio-arcade/pull/33) | [770449b](https://github.com/luccalck/desafio-arcade/commit/770449bd7f1151a9dc36e3a84ab5fd6ae90c68ad) | `.github/workflows/esteira.yml` | [6lucassilvaaa](https://github.com/luccalck/desafio-arcade/pull/33#pullrequestreview-5541497036) |
+| DaviSouza78 | INT-03 | [#15](https://github.com/luccalck/desafio-arcade/pull/15) | [b3d5353](https://github.com/luccalck/desafio-arcade/commit/b3d5353b2110abf7703954ab919645943739a813) | `.github/workflows/esteira.yml` | [luccalck](https://github.com/luccalck/desafio-arcade/pull/15#pullrequestreview-5526019291) |
+| DaviSouza78 | INT-04 | [#16](https://github.com/luccalck/desafio-arcade/pull/16) | [909ac53](https://github.com/luccalck/desafio-arcade/commit/909ac53a2f4d01c8d17493c9b2e27407a383bd8c) | `tests/integration/content-generalization.test.mjs` | [luccalck](https://github.com/luccalck/desafio-arcade/pull/16#pullrequestreview-5526019464) |
+| DaviSouza78 | INT-06 | [#17](https://github.com/luccalck/desafio-arcade/pull/17) | [1d4f710](https://github.com/luccalck/desafio-arcade/commit/1d4f710b6d254b6fcc052cac7d0116cfee8223e3) | `scripts/release.mjs` | [luccalck](https://github.com/luccalck/desafio-arcade/pull/17#pullrequestreview-5526019688) |
+| miguelsenai2024 | INT-07 | [#20](https://github.com/luccalck/desafio-arcade/pull/20) | [6942e82](https://github.com/luccalck/desafio-arcade/commit/6942e8242d225ac7ea85fa4b82f2bd01e6e63c44) | `scripts/promover.mjs` | [luccalck](https://github.com/luccalck/desafio-arcade/pull/20#pullrequestreview-5526020274) |
+| miguelsenai2024 | INT-08 | [#21](https://github.com/luccalck/desafio-arcade/pull/21) | [9da5cdb](https://github.com/luccalck/desafio-arcade/commit/9da5cdbb934b80744db9d3a2402d5385e01eed08) | `scripts/dora.mjs` | [luccalck](https://github.com/luccalck/desafio-arcade/pull/21#pullrequestreview-5526020510) |
+| miguelsenai2024 | INT-09 | [#24](https://github.com/luccalck/desafio-arcade/pull/24) | [12e826b](https://github.com/luccalck/desafio-arcade/commit/12e826b290a2a81e7045f711fbac5874aed35a9d) | `scripts/triagem.mjs` | [luccalck](https://github.com/luccalck/desafio-arcade/pull/24#pullrequestreview-5526021109) |
+| 6lucassilvaaa | INT-09 | [#25](https://github.com/luccalck/desafio-arcade/pull/25) | [35b38f5](https://github.com/luccalck/desafio-arcade/commit/35b38f53601e867016a39c1e247fc7492d603f8b) | `scripts/submissao.mjs` | [luccalck](https://github.com/luccalck/desafio-arcade/pull/25#pullrequestreview-5526021265) |
+| 6lucassilvaaa | INT-10 | [#26](https://github.com/luccalck/desafio-arcade/pull/26) | [9c58791](https://github.com/luccalck/desafio-arcade/commit/9c58791eb58fc3fb594d71dfafd4e7c3efecaf3f) | `scripts/relatorio-pdf.mjs` | [luccalck](https://github.com/luccalck/desafio-arcade/pull/26#pullrequestreview-5526021438) |
+| 6lucassilvaaa | INT-06 | [#27](https://github.com/luccalck/desafio-arcade/pull/27) | [d97e8da](https://github.com/luccalck/desafio-arcade/commit/d97e8daec010d7312df8af3a72ff4d40d280a3fa) | `docs/notas-versao.md` | [luccalck](https://github.com/luccalck/desafio-arcade/pull/27#pullrequestreview-5526021613) |
 
----
+INT-06 de Lucas tem contribuição documental de preparação da release; não significa que ele implementou o publicador de Davi ou que publicou uma Release naquele PR. A aprovação de uma preparação não comprova sua execução operacional.
 
-## 3. Estado das revisões confirmado
+## Inventário atual dos PRs
 
-Os PRs 15–29 possuem aprovação real de Lucca; nenhum merge é inferido por isso. PRs 2–14 ainda precisam de outro revisor. Fatores individuais permanecem pendentes de avaliação/banca. Ver [revisões confirmadas](evidencias/revisoes-confirmadas-2026-10-14.md).
+**20 PRs** possuem aprovação de outro autor no HEAD auditado: 15–29, 32, 33, 34, 35 e 40. A revisão do PR40 por Lucas foi confirmada e o merge foi registrado; os números antigos de 15 reviews e de ausência de revisão de Lucca eram snapshots anteriores.
 
-## 4. Como verificar a contribuição
+| PR | Autor | Base | Estado na API | HEAD ancestral da main | Aprovação no HEAD |
+|---|---|---|---|---|---|
+| [#2](https://github.com/luccalck/desafio-arcade/pull/2) | luccalck | `main` | merged | Sim | Sem aprovação individual registrada |
+| [#3](https://github.com/luccalck/desafio-arcade/pull/3) | luccalck | `feature/primeiro-ciclo` | open | Sim | Sem aprovação individual registrada |
+| [#4](https://github.com/luccalck/desafio-arcade/pull/4) | luccalck | `feature/passo-001-equipe-contexto` | open | Sim | Sem aprovação individual registrada |
+| [#5](https://github.com/luccalck/desafio-arcade/pull/5) | luccalck | `feature/passo-002-arquitetura-baseline` | open | Sim | Sem aprovação individual registrada |
+| [#6](https://github.com/luccalck/desafio-arcade/pull/6) | luccalck | `feature/passo-003-acessos-git-pages` | open | Sim | Sem aprovação individual registrada |
+| [#7](https://github.com/luccalck/desafio-arcade/pull/7) | luccalck | `feature/passo-004-dependabot-privacidade` | open | Sim | Sem aprovação individual registrada |
+| [#8](https://github.com/luccalck/desafio-arcade/pull/8) | luccalck | `feature/passo-005-gdd-identificacao` | open | Sim | Sem aprovação individual registrada |
+| [#9](https://github.com/luccalck/desafio-arcade/pull/9) | luccalck | `feature/passo-006-regressao-hml` | open | Sim | Sem aprovação individual registrada |
+| [#10](https://github.com/luccalck/desafio-arcade/pull/10) | luccalck | `feature/passo-007-ci-formal` | open | Sim | Sem aprovação individual registrada |
+| [#11](https://github.com/luccalck/desafio-arcade/pull/11) | luccalck | `feature/passo-008-licencas-ia-direitos` | open | Sim | Sem aprovação individual registrada |
+| [#12](https://github.com/luccalck/desafio-arcade/pull/12) | luccalck | `feature/passo-009-stitch-ux` | open | Sim | Sem aprovação individual registrada |
+| [#13](https://github.com/luccalck/desafio-arcade/pull/13) | luccalck | `feature/passo-010-offline-integridade` | open | Sim | Sem aprovação individual registrada |
+| [#14](https://github.com/luccalck/desafio-arcade/pull/14) | luccalck | `docs/roteiros-cinco-por-integrante` | open | Sim | Sem aprovação individual registrada |
+| [#15](https://github.com/luccalck/desafio-arcade/pull/15) | DaviSouza78 | `docs/ficha-entrega-dados-equipe` | open | Sim | luccalck |
+| [#16](https://github.com/luccalck/desafio-arcade/pull/16) | DaviSouza78 | `feature/passos-011-012-hml-sondas` | open | Sim | luccalck |
+| [#17](https://github.com/luccalck/desafio-arcade/pull/17) | DaviSouza78 | `feature/passos-013-014-conteudo-smoke` | open | Sim | luccalck |
+| [#18](https://github.com/luccalck/desafio-arcade/pull/18) | DaviSouza78 | `feature/passos-015-016-releases-alertas` | open | Sim | luccalck |
+| [#19](https://github.com/luccalck/desafio-arcade/pull/19) | DaviSouza78 | `feature/passos-017-018-pitch-rollout` | open | Sim | luccalck |
+| [#20](https://github.com/luccalck/desafio-arcade/pull/20) | miguelsenai2024 | `feature/passos-019-020-producao-painel` | open | Sim | luccalck |
+| [#21](https://github.com/luccalck/desafio-arcade/pull/21) | miguelsenai2024 | `feature/passos-021-022-playtest-rollback-automatico` | open | Sim | luccalck |
+| [#22](https://github.com/luccalck/desafio-arcade/pull/22) | miguelsenai2024 | `feature/passos-023-024-rollback-manual-dora` | open | Sim | luccalck |
+| [#23](https://github.com/luccalck/desafio-arcade/pull/23) | miguelsenai2024 | `feature/passos-025-026-gdd-ensaio-falha` | open | Sim | luccalck |
+| [#24](https://github.com/luccalck/desafio-arcade/pull/24) | miguelsenai2024 | `feature/passos-027-028-integridade-melhoria` | open | Sim | luccalck |
+| [#25](https://github.com/luccalck/desafio-arcade/pull/25) | 6lucassilvaaa | `feature/passos-029-030-video-triagem` | open | Sim | luccalck |
+| [#26](https://github.com/luccalck/desafio-arcade/pull/26) | 6lucassilvaaa | `feature/passos-031-032-pacote-triagem-agendada` | open | Sim | luccalck |
+| [#27](https://github.com/luccalck/desafio-arcade/pull/27) | 6lucassilvaaa | `feature/passos-033-034-relatorio-aceite-candidata` | open | Sim | luccalck |
+| [#28](https://github.com/luccalck/desafio-arcade/pull/28) | 6lucassilvaaa | `feature/passos-035-036-release-triagem-final` | open | Sim | luccalck |
+| [#29](https://github.com/luccalck/desafio-arcade/pull/29) | 6lucassilvaaa | `feature/passos-037-038-ficha-banca-freeze` | open | Sim | luccalck |
+| [#30](https://github.com/luccalck/desafio-arcade/pull/30) | dependabot[bot] | `main` | open | Não | Sem aprovação individual registrada |
+| [#31](https://github.com/luccalck/desafio-arcade/pull/31) | dependabot[bot] | `docs/ficha-entrega-dados-equipe` | closed | Não | Sem aprovação individual registrada |
+| [#32](https://github.com/luccalck/desafio-arcade/pull/32) | luccalck | `main` | merged | Sim | 6lucassilvaaa |
+| [#33](https://github.com/luccalck/desafio-arcade/pull/33) | luccalck | `main` | merged | Sim | 6lucassilvaaa |
+| [#34](https://github.com/luccalck/desafio-arcade/pull/34) | luccalck | `main` | merged | Sim | 6lucassilvaaa |
+| [#35](https://github.com/luccalck/desafio-arcade/pull/35) | miguelsenai2024 | `fix/medicao-hml-verificavel` | merged | Sim | luccalck |
+| [#40](https://github.com/luccalck/desafio-arcade/pull/40) | luccalck | `main` | merged | Sim | 6lucassilvaaa |
 
-As contagens acima são o recorte do histórico usado na etapa 040, não uma contagem de assinaturas criptográficas ou revisão. Consultar `git log`, arquivos alterados e a API de cada PR para revalidar autoria, escopo, HEAD, review e merge. A associação de um PR a um INT indica conteúdo, não o aceite completo desse integrável.
+PR aberto com HEAD ancestral significa que seus commits chegaram pela consolidação; não significa merge individual. Os PRs antigos 2–14 não ganham revisão individual retroativa: a consolidação32 recebeu revisão própria de Lucas. Não são contados nos 20 PRs revisados.
 
-Commits preservam suas identidades originais; não atribuímos trabalho de um integrante a outro. O padrão adotado é Conventional Commits em português, sem afirmar auditoria de 100% das mensagens. A proteção de main exige CI e aprovação de outra pessoa. Não criamos revisões em nome dos colegas nem tratamos banca futura como realizada.
+## O que continua pendente
 
-Fonte do snapshot: [reconferência dos registros](evidencias/reconferencia-registros.md). O estado operacional posterior deve ser registrado com links de reviews/merges reais. A nota e o fator individual permanecem sob avaliação do professor.
+- Conferência qualitativa de colaboração equilibrada, domínio e participação dos quatro na banca.
+- Revisão das próximas mudanças, direitos/usos finais de IA e marcos históricos sem prova.
+- Não declarar F=1,0, nota máxima, banca realizada ou revisão inexistente.
+
+A proteção da main e as revisões efetivas dos merges32/33/34/40 permanecem verificáveis. A implantação de produção, os ensaios e a publicação dos anexos têm seus próprios recibos e não são inferidos desta matriz.
