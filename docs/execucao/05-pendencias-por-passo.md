@@ -47,7 +47,7 @@ INT-01/03/07.
 
 - [x] Acesso dos quatro e leitura pública; main restaurada como padrão, protegida com PR/revisão/CI. PR32/33 integrados após revisão real de Lucas.
 - [x] Environments homologacao/producao configurados; aprovação de produção efetivamente registrada.
-- [ ] I07-01/KIT-12: Pages usa build_type=workflow, alimentado pela branch gh-pages da pipeline. Justificar e obter validação da equivalência permitida no HTML, ou alinhar a origem literal sem quebrar a publicação. Responsável: Plataforma; antes do aceite final.
+- [x] I07-01/KIT-12: PagesActions com árvore gh-pages justificado e tecnicamente validado por implantação/hashes/smoke; diferença frente ao exemplo declarada em pages-equivalencia-2026-10-16.md. Não é afirmação de nota ou da configuração literal de Settings.
 
 <a id="passo-004"></a>
 
@@ -95,7 +95,7 @@ INT-03/06/05.
 INT-05/02/01.
 
 - [x] Inventário, THIRD_PARTY, LICENSE, AI-USAGE, scanners e fontes/ativos registrados; revisão do P2 de Miguel efetivamente concluída no PR35 e nova aprovação de Lucas no PR33.
-- [ ] Confirmar créditos na origem dos seis componentes apontados em direitos.md: @esbuild/win32-x64, @eslint/config-helpers, @rolldown/binding-win32-x64-msvc, argparse, lightningcss e lightningcss-win32-x64-msvc. Responsável: SRE.
+- [x] Créditos dos seis componentes reconferidos em16/10/2026, com fontes/cabeçalhos/licenças em creditos-reconferidos-2026-10-16.json: @esbuild/win32-x64, @eslint/config-helpers, @rolldown/binding-win32-x64-msvc, argparse, lightningcss e lightningcss-win32-x64-msvc. Conferência técnica assistida autorizada por Lucca; não substitui direitos coletivos.
 - [ ] Concluir confirmação coletiva de autoria/originalidade/direitos de uso, revisão por uso de IA e inventário final incluindo vídeo; preservar consentimentos privados. Responsável: quatro integrantes; GDD-15, I05-11/14–17/21/22 e DIR aplicáveis.
 
 <a id="passo-009"></a>
@@ -395,3 +395,15 @@ INT-01/05/10.
 ## Checkpoints e códigos preservados
 
 C01/C02, P01–P07, D01–D07, R01–R07 e S01–S06 continuam nos roteiros e mapa; não renumeramos tarefas. G0–G2 têm preparação/base técnica implementada, mas confirmação coletiva/histórica e direitos permanecem nos001/008/009; não atribuir aceite humano retroativo. G3 e G4 têm execução operacional comprovada da candidata88d533e. G5 permanece parcial por recuperação/alertas/MTTR/melhoria/playtest; G6 por pitch/documentos finais; G7 por tag/release/pacote/triagem; G8 por TXT/AVA/banca. Preparações disponíveis não exigem refazer o que já foi executado.
+
+## Avanço16/10/2026 — estado específico dos ensaios
+
+- [x] Créditos técnicos dos seis componentes reconferidos; inventário e THIRD_PARTY atualizados, sem declaração coletiva fictícia.
+- [x] Equivalência técnica PagesActions/árvore gh-pages justificada e validada por implantação/hashes/smoke; diferença de configuração declarada em pages-equivalencia-2026-10-16.md. A nota continua do professor.
+- [x] Dois alertas demonstrados em alvoHTTP real temporário do runner: run38847296363, Issues38/39 com deduplicação e autocerramento; tempos1s/3s, média2s do ensaio. Bug de listagem atrasada reproduzido, corrigido e repetição passou.
+- [x] Injeção de falha observada em navegador local contra release pública, com ponteiro preservado; preparo do caminho automático e motivo manual ensaio-controlado implementados/testados.
+- [ ] Executar recuperação completa incluindo Pages após revisão externa do novoHEAD/merge protegido. Alertas/MTTR de produção e critério literal labelalerta não são substituídos pelas Issueslabelensaio; resultados de teste têm escopo explícito.
+- [ ] Playtest humano continua sem participante; autorização para a IA executar testes não cria pessoa de outra turma, consentimento, aprendizado ou presença na banca.
+- [ ] Release técnica/tag pela pipeline aguarda versão integrada/revisada e notas/hash/políticas válidas. Pacote acadêmico completo/triagem final exige pitch real; não gerar pacote final incompleto nem TXT agora.
+
+Provas: [ensaio operacional16/10](../evidencias/ensaio-operacional-2026-10-16.md). Estas linhas não fecham um INT inteiro nem apagam a primeira tentativa que falhou.

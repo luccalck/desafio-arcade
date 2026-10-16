@@ -248,7 +248,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 
 ## INT-07: Ambientes, entrega e rollback · peso 12% de A
 
-- [ ] I07-01 — Pages configurado com gh-pages como origem, conforme HTML; atual build_type é workflow. Alinhar ou validar equivalência fundamentada antes do aceite.
+- [x] I07-01 — Publicação por equivalência técnica declarada: PagesActions publica a árvore gh-pages escrita pela pipeline, preservando mesmos bytes, ambientes e gates; configuração é build_type=workflow e não a opção literal Deploy from a branch. Justificativa e validação em [Pages](../evidencias/pages-equivalencia-2026-10-16.md).
 - [x] I07-02 — gh-pages escrito apenas pela pipeline nas publicações atuais. E2/E7.
 - [x] I07-03 — CONTÍNUO: histórico gh-pages consultado na auditoria contém apenas publicação pelo bot deActions, sem alteração manual observada. Preservar esse controle e reconferir publicações formais/recuperação; não equivale a execução dePRD.
 - [x] I07-04 — /hml/ contém a build0.7.0 da main773af17 aprovada no CI; os sete arquivos HTTP são idênticos ao ZIP38674290799/1. Isso não declara aceite integral do job HML. Conferência15/10. [Provas](../evidencias/operacao-2026-10-15.md).
@@ -374,7 +374,7 @@ Os esqueletos não passam como estão. Nomes/estrutura exemplificados não obrig
 - [x] KIT-09 — Actions revisadas em releases/refs/action.yml oficiais em13/10/2026, fixadas por SHA; CI38428808065 validou ferramentas ativas. [Revisão007](../evidencias/ci-formal.md); Pages ainda não executado neste passo.
 - [x] KIT-10 — Cache npm e checkout com histórico para scanner nos jobs atuais. E2.
 - [x] KIT-11 — Corrigir lacuna SemVer no version.json do exemplo. E5/E7: version 0.6.0 presente.
-- [ ] KIT-12 — Configurar Settings Pages com origem conforme requisito ou equivalência validada (I07-01).
+- [x] KIT-12 — Equivalência PagesActions/gh-pages fundamentada e tecnicamente validada; ver I07-01. Não pressupõe nota ou aceite antecipado do professor.
 - [x] KIT-13 — Integrar homologacao e producao nos jobs; producao com reviewer obrigatório (ARQ-07/08). Conciliação15/10: Environments integrados e usados na execução formal38829484114, com reviewer obrigatório e aprovação registrada em producao.
 - [x] KIT-14 — SITE_URL pública configurada em13/10/2026 com https://luccalck.github.io/desafio-arcade e destinos derivados documentados/verificados no [passo003](../evidencias/configuracao-github.md). Integração nos jobs formais/sondas/triagem permanece nos respectivos checks.
 - [x] KIT-15 — Esperar propagação do Pages com tentativa limitada antes dos E2E formais de HML. Conciliação15/10: Espera limitada de propagação executada no deploy-hml formal, seguida de quatro cenários públicos aprovados.
@@ -616,3 +616,5 @@ Registro histórico anterior à produção formal, superado pela reconferência 
 Reconferência após produção —15/10/2026: run38829484114/1 integralmente verde, HML216,414s, PRDazul-verde aprovada e smoke/14hashesHTTP, ZIPoriginal88offline1/1, monitorpósPRD38830013027 e painel reais. MTTR, alertas tratados, recuperação<5min, melhoria medida, tag/release/submissão e ações humanas seguem pendentes. Provas emoperacao-2026-10-15; não confundir essa implantação com entrega acadêmica final.
 
 Conciliação das pendências15/10: atualizados itens específicos com prova operacional e revisão/integração. Consulte [estado vigente dos40passos](../execucao/05-pendencias-por-passo.md) e [lacunas do HTML porINT](../evidencias/conciliacao-pendencias-2026-10-15.md). Condicionais não adotados não são trabalho obrigatório faltante; direitos, release final, recuperação/alertas e ações humanas mantêm seus critérios próprios.
+
+16/10: ensaio de alertas real passou com Issues38/39 e dados separados; recuperaçãoPages não executada e playtest humano/pitch/tag/triagem/TXT não inventados. Não fechar I08-10–14/26/31 como incidente de produção pela demonstração em alvo temporário,labelensaio.

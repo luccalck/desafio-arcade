@@ -4,7 +4,7 @@ Gerado do SBOM real e metadados/licenças instalados em13/10/2026;158componentes
 
 Ferramentas/transitivos não são copiados como node_modules para o site. MPL-2.0 e BlueOak-1.0.0 não foram substituídas pela MIT do projeto. SPDX sozinho não garante todos os direitos; reconferir as licenças e créditos na origem/release.
 
-Créditos ausentes nos campos inspecionados: @esbuild/win32-x64, @eslint/config-helpers, @rolldown/binding-win32-x64-msvc, argparse, lightningcss, lightningcss-win32-x64-msvc. Não inventamos pessoas para preencher esses campos. Cabeçalhos explícitos de código também foram usados quando a licença só contém condições.
+Situação histórica13/10, superada pela reconferência abaixo. Créditos ausentes nos campos inspecionados: @esbuild/win32-x64, @eslint/config-helpers, @rolldown/binding-win32-x64-msvc, argparse, lightningcss, lightningcss-win32-x64-msvc. Não inventamos pessoas para preencher esses campos. Cabeçalhos explícitos de código também foram usados quando a licença só contém condições.
 
 | Biblioteca | Versão | Autor/crédito declarado | Licença | Origem |
 |---|---|---|---|---|
@@ -166,3 +166,18 @@ Créditos ausentes nos campos inspecionados: @esbuild/win32-x64, @eslint/config-
 | why-is-node-running | 3.2.1 | Mathias Buus (@mafintosh) | MIT | [pacote](https://www.npmjs.com/package/why-is-node-running/v/3.2.1) |
 | word-wrap | 1.2.5 | Jon Schlinkert (https://github.com/jonschlinkert) | MIT | [pacote](https://www.npmjs.com/package/word-wrap/v/1.2.5) |
 | yocto-queue | 0.1.0 | Sindre Sorhus | MIT | [pacote](https://www.npmjs.com/package/yocto-queue/v/0.1.0) |
+
+## Reconferência dos seis créditos —16/10/2026
+
+Conferimos cabeçalhos/licenças dos pacotes instalados e fontes primárias. Os créditos estruturados foram atualizados; não substituímos PSF-2.0, Apache-2.0 ou MPL-2.0 pela MIT.
+
+| Componente | Crédito confirmado | Fonte |
+|---|---|---|
+| @esbuild/win32-x64 0.28.2 | Evan Wallace | [origem](https://github.com/evanw/esbuild/blob/main/LICENSE.md) |
+| @eslint/config-helpers 0.7.0 | Nicholas C. Zakas | [origem](https://github.com/eslint/rewrite/blob/main/packages/config-helpers/src/define-config.js) |
+| @rolldown/binding-win32-x64-msvc 1.2.12 | VoidZero Inc. & Contributors | [origem](https://github.com/rolldown/rolldown/blob/main/LICENSE) |
+| argparse 3.0.2 | Python Software Foundation; argparse.js authors | [origem](https://github.com/nodeca/argparse/blob/master/lib/argparse.js) |
+| lightningcss 1.33.0 | Devon Govett e Parcel Contributors (crédito do site oficial do projeto) | [origem](https://lightningcss.dev/) |
+| lightningcss-win32-x64-msvc 1.33.0 | Devon Govett e Parcel Contributors (crédito do projeto de origem) | [origem](https://lightningcss.dev/) |
+
+O crédito de Lightning CSS vem do site oficial, associado pelo repository do pacote; não é afirmação de titularidade exclusiva de todas as contribuições. A confirmação coletiva e os direitos do vídeo futuro continuam separados. [Provas técnicas](creditos-reconferidos-2026-10-16.json).

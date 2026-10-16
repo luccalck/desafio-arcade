@@ -1,6 +1,6 @@
 # Relatório Técnico — Desafio Arcade
 
-**Rota do Código · Squad Aura 67 · Candidata {{VERSION}} · 15/10/2026**
+**Rota do Código · Squad Aura 67 · Candidata {{VERSION}} · 16/10/2026**
 
 ## 1. Síntese, identificação e alcance
 
@@ -131,7 +131,7 @@ Qualidade, segurança, build e E2E executam em jobs independentes de ubuntu-late
 
 A consolidação corrigiu lacunas reais: relatório antes fora da CI, submissão concorrente com produção, proveniência insuficiente, seleção de vídeo pela última execução e triagem agendada sem recuperar pacote. Agora o vídeo é fixado por SHA/run/tentativa/digest, e o pacote depende de produção/release. Um HTTP 200 isolado não pode substituir a validação de ZIP, PDF, vídeo e manifesto.
 
-Azul-verde separa candidata e estável; o carregador preserva uma versão válida por sessão. Gh-pages é escrita pela pipeline, sem edição manual para contornar a falha. Environments mantêm aprovação/políticas de refs/tags. Uma aprovação de PR não substitui a de produção nem se transfere para HEAD alterado.
+Azul-verde separa candidata e estável; o carregador preserva uma versão válida por sessão. Gh-pages é escrita pela pipeline, sem edição manual para contornar a falha. Environments mantêm aprovação/políticas de refs/tags. PagesActions publica a árvore gh-pages preservada, sem recompilar: equivalência técnica justificada e validada por hashes/smoke, declarada frente à origem literal do exemplo. Uma aprovação de PR não substitui a de produção nem se transfere para HEAD alterado.
 
 O PR32 recebeu revisão externa de Lucas no HEAD 59dc830 e foi integrado. O PR35 incorporou dois commits autorais de Miguel, revisados por Lucca; Lucas aprovou a consolidação f38 no PR33 antes do merge 88. A aprovação do environment producao por Lucca foi registrada conforme a política existente. Não simulamos outro revisor, não autoaprovamos PRs de Lucca e não removemos as proteções.
 
@@ -213,9 +213,13 @@ O dora-38830013027.json usa a janela 02/10, 00:32:13 UTC a 16/10, 00:32:13 UTC, 
 
 O lead time equivale a 0,00378472 dias, frente à linha de base de 11 dias fornecida no enunciado. Essa diferença é descritiva: uma amostra não comprova causalidade, melhoria sustentada ou comparação estatisticamente equivalente. Falta medir o efeito de uma mudança com antes/depois verificáveis no projeto. Zero por cento com denominador 1 não significa ausência histórica ou futura de falhas.
 
-### Alertas e recuperação ainda pendentes
+### Ensaio real de alertas —16/10 e limite operacional
 
-O arquivo alertas-38830013027.json mantém actions=[]. Não foram observadas abertura e resolução reais de JogoForaDoAr/LatenciaAlta. Os 53 testes locais e 14 checagens de baselines antigas são provas de contratos, não ensaio de recuperação. Ainda falta modo de ensaio controlado, baseline saudável, relógio real, monitor HTTP contínuo e recuperação pelos workflows protegidos. Limites separados de deploy/propagação/smoke podem ultrapassar 5 min; MTTR e recuperação < 5 min não recebem aceite sem medição, mesmo com PRD saudável.
+No ensaio isolado 38847296363, Issues #38/#39 abriram e fecharam automaticamente: JogoForaDoAr em 1 s e LatenciaAlta em 3 s; média 2 s. O servidor temporário no runner respondeu 404 e atrasou 2,2 s, medidos por HTTP. Duas sondas por falha não duplicaram Issues. Labels/marcadores ensaio separam esses ciclos de incidentes e do MTTR de produção, ainda N/D.
+
+A primeira tentativa 38846941358 falhou: a listagem GitHub atrasada gerou duas Issues. Uma regressão reproduziu o problema; manter escrituras confirmadas no adaptador eliminou a duplicata na repetição (2 → 1 Issue por duas sondas, no ciclo HTTP). Isso é melhoria medida no ensaio, sem alegar ganho sustentado de DORA. Relatórios, Issues e limites: [ensaio operacional](https://github.com/luccalck/desafio-arcade/actions/runs/38847296363).
+
+O caminho de recuperação controlada está implementado/testado e a injeção foi observada num navegador local, com ponteiro público preservado. Falta revisão externa/integração e rollback real pela pipeline, cronômetro incluindo Pages e observações de continuidade. Testes locais, ensaio de alertas e preflight não substituem essa demonstração nem playtest humano.
 
 <div style="break-before: page;"></div>
 
@@ -232,7 +236,7 @@ Cada fonte identifica execução ou PR real. A matriz separa aceite técnico com
 |INT-05 /10%|[PR10](https://github.com/luccalck/desafio-arcade/pull/10), [CI](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114)|Scanners, SBOM, inventários, hook e revisão|Direitos/licenças finais e vídeo/tag/artefatos|
 |INT-06 /10%|[CI/bundle](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114)|ZIP 29.000 B, 172 arquivos no bundle; checksum comum HML/PRD; offline|Tag/GitHub Release com assets finais|
 |INT-07 /12%|[Produção](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301)|Aprovação, azul-verde, release por SHA e smoke públicos|Recuperação manual/automática < 5 min com URL contínua|
-|INT-08 /10%|[Sondas/DORA](https://github.com/luccalck/desafio-arcade/actions/runs/38830013027)|HML/PRD 200, mesmo SHA; status 200; três DORA com 1 amostra|Alertas/fechamento, MTTR, melhoria antes/depois|
+|INT-08 /10%|[Sondas/DORA](https://github.com/luccalck/desafio-arcade/actions/runs/38830013027)|HML/PRD 200, mesmo SHA; status 200; três DORA com 1 amostra|Incidentes/MTTR operacionais; ensaio e melhoria observados à parte|
 |INT-09 /8%|[PR25](https://github.com/luccalck/desafio-arcade/pull/25), [Esteira](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114)|Empacotador/triagem e origem imutável implementados|Pitch, pacote completo e TRIAGEM APROVADA na tag final|
 |INT-10 /5%|[PR34](https://github.com/luccalck/desafio-arcade/pull/34), [PR28](https://github.com/luccalck/desafio-arcade/pull/28)|Relatório candidato atualizado, prints atuais, roteiro/legendas|Revisão/publicação deste PDF, pitch, ensaio e banca|
 

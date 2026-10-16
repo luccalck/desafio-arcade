@@ -128,12 +128,13 @@
     "licenses": [
       "MIT"
     ],
-    "author": "Autor/titular não declarado nos campos inspecionados; conferir na origem",
-    "creditSource": "ausente nos metadados/créditos explícitos inspecionados",
+    "author": "Evan Wallace",
+    "creditSource": "Reconferência16/10/2026: node_modules/esbuild/LICENSE.md; https://github.com/evanw/esbuild/blob/main/LICENSE.md",
     "purl": "pkg:npm/%40esbuild/win32-x64@0.28.2",
     "url": "https://www.npmjs.com/package/@esbuild/win32-x64/v/0.28.2",
     "source": [
-      "git+https://github.com/evanw/esbuild.git"
+      "git+https://github.com/evanw/esbuild.git",
+      "https://github.com/evanw/esbuild/blob/main/LICENSE.md"
     ],
     "licenseFiles": []
   },
@@ -214,13 +215,14 @@
     "licenses": [
       "Apache-2.0"
     ],
-    "author": "Autor/titular não declarado nos campos inspecionados; conferir na origem",
-    "creditSource": "ausente nos metadados/créditos explícitos inspecionados",
+    "author": "Nicholas C. Zakas",
+    "creditSource": "Reconferência16/10/2026: node_modules/@eslint/config-helpers/dist/esm/index.js; https://github.com/eslint/rewrite/blob/main/packages/config-helpers/src/define-config.js",
     "purl": "pkg:npm/%40eslint/config-helpers@0.7.0",
     "url": "https://www.npmjs.com/package/@eslint/config-helpers/v/0.7.0",
     "source": [
       "git+https://github.com/eslint/rewrite.git",
-      "https://github.com/eslint/rewrite/tree/main/packages/config-helpers#readme"
+      "https://github.com/eslint/rewrite/tree/main/packages/config-helpers#readme",
+      "https://github.com/eslint/rewrite/blob/main/packages/config-helpers/src/define-config.js"
     ],
     "licenseFiles": [
       "node_modules/@eslint/config-helpers/LICENSE"
@@ -513,13 +515,14 @@
     "licenses": [
       "MIT"
     ],
-    "author": "Autor/titular não declarado nos campos inspecionados; conferir na origem",
-    "creditSource": "ausente nos metadados/créditos explícitos inspecionados",
+    "author": "VoidZero Inc. & Contributors",
+    "creditSource": "Reconferência16/10/2026: node_modules/rolldown/LICENSE; https://github.com/rolldown/rolldown/blob/main/LICENSE",
     "purl": "pkg:npm/%40rolldown/binding-win32-x64-msvc@1.2.12",
     "url": "https://www.npmjs.com/package/@rolldown/binding-win32-x64-msvc/v/1.2.12",
     "source": [
       "git+https://github.com/rolldown/rolldown.git",
-      "https://rolldown.rs/"
+      "https://rolldown.rs/",
+      "https://github.com/rolldown/rolldown/blob/main/LICENSE"
     ],
     "licenseFiles": []
   },
@@ -977,11 +980,13 @@
     "licenses": [
       "PSF-2.0"
     ],
-    "author": "Autor/titular não declarado nos campos inspecionados; conferir na origem",
-    "creditSource": "ausente nos metadados/créditos explícitos inspecionados",
+    "author": "Python Software Foundation; argparse.js authors",
+    "creditSource": "Reconferência16/10/2026: node_modules/argparse/lib/argparse.js; https://github.com/nodeca/argparse/blob/master/lib/argparse.js",
     "purl": "pkg:npm/argparse@3.0.2",
     "url": "https://www.npmjs.com/package/argparse/v/3.0.2",
-    "source": [],
+    "source": [
+      "https://github.com/nodeca/argparse/blob/master/lib/argparse.js"
+    ],
     "licenseFiles": [
       "node_modules/argparse/LICENSE"
     ]
@@ -1852,12 +1857,13 @@
     "licenses": [
       "MPL-2.0"
     ],
-    "author": "Autor/titular não declarado nos campos inspecionados; conferir na origem",
-    "creditSource": "ausente nos metadados/créditos explícitos inspecionados",
+    "author": "Devon Govett e Parcel Contributors (crédito do site oficial do projeto)",
+    "creditSource": "Reconferência16/10/2026: node_modules/lightningcss/LICENSE; https://lightningcss.dev/",
     "purl": "pkg:npm/lightningcss@1.33.0",
     "url": "https://www.npmjs.com/package/lightningcss/v/1.33.0",
     "source": [
-      "https://github.com/parcel-bundler/lightningcss.git"
+      "https://github.com/parcel-bundler/lightningcss.git",
+      "https://lightningcss.dev/"
     ],
     "licenseFiles": [
       "node_modules/lightningcss/LICENSE"
@@ -1869,12 +1875,13 @@
     "licenses": [
       "MPL-2.0"
     ],
-    "author": "Autor/titular não declarado nos campos inspecionados; conferir na origem",
-    "creditSource": "ausente nos metadados/créditos explícitos inspecionados",
+    "author": "Devon Govett e Parcel Contributors (crédito do projeto de origem)",
+    "creditSource": "Reconferência16/10/2026: node_modules/lightningcss-win32-x64-msvc/LICENSE; https://lightningcss.dev/",
     "purl": "pkg:npm/lightningcss-win32-x64-msvc@1.33.0",
     "url": "https://www.npmjs.com/package/lightningcss-win32-x64-msvc/v/1.33.0",
     "source": [
-      "https://github.com/parcel-bundler/lightningcss.git"
+      "https://github.com/parcel-bundler/lightningcss.git",
+      "https://lightningcss.dev/"
     ],
     "licenseFiles": [
       "node_modules/lightningcss-win32-x64-msvc/LICENSE"

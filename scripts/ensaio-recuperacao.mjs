@@ -15,6 +15,12 @@ export function summarizeRecovery({fault,receipt,observations}){
  const seconds=(end-start)/1000;if(seconds>=300)throw Error(`Recuperação excedeu limite estrito: ${seconds}s.`);
  return {schema:1,scope:'ensaio',seconds,withinLimit:true,baseline:receipt.sha,candidate:fault.sha,httpSamples:samples.length,observedHttpFailures:0,limitation:'Amostras HTTP não garantem disponibilidade entre observações; falha foi injetada apenas no navegador do ensaio.'};
 }
+export async function injectBrowserFault({site,sha,channel='chrome',screenshot}){
+ const base=new URL(site);if(base.protocol!=='https:'||base.username||base.password||base.search||base.hash||!/^[a-f0-9]{40}$/.test(sha))throw Error('Alvo de injeção inválido.');
+ const {chromium}=await import('playwright');const browser=await chromium.launch({channel});let aborted=0;
+ try{const page=await browser.newPage();await page.route('**/game.js',async route=>{const u=new URL(route.request().url());if(u.origin===base.origin&&u.pathname.startsWith(base.pathname+`releases/${sha}/`)){aborted++;await route.abort('failed');}else await route.continue();});await page.goto(site,{waitUntil:'networkidle',timeout:20000});if(screenshot)await page.screenshot({path:screenshot,fullPage:true});return {injectionObserved:aborted>0,blockedRequests:aborted,finalUrl:page.url(),observedAt:new Date().toISOString()};}
+ finally{await browser.close();}
+}
 async function save(path,value){await mkdir('reports',{recursive:true});await writeFile(path,JSON.stringify(value,null,2)+'\n');}
 async function main(){
  const mode=process.argv[2],site=validateExercise(process.env);
@@ -35,9 +41,8 @@ async function main(){
   if(tx.revalidation||tx.sha===tx.baseline||tx.sha!==process.env.GITHUB_SHA)throw Error('Ensaio exige candidata nova e baseline distinta.');
   const report={scope:'ensaio',run:process.env.GITHUB_RUN_ID,attempt:process.env.GITHUB_RUN_ATTEMPT,sha:tx.sha,baseline:tx.baseline,faultStartedAt:new Date().toISOString(),injection:'Bloqueio de game.js apenas no contexto Playwright deste ensaio',injectionObserved:false};
   await save('reports/ensaio-falha.json',report);
-  const {chromium}=await import('playwright');const browser=await chromium.launch({channel:process.env.PLAYWRIGHT_CHANNEL||'chromium'});let aborted=0;
-  try{const page=await browser.newPage();await page.route('**/game.js',async route=>{const u=new URL(route.request().url());if(u.origin===new URL(site).origin&&u.pathname.startsWith(new URL(site).pathname+`releases/${tx.sha}/`)){aborted++;await route.abort('failed');}else await route.continue();});await page.goto(site,{waitUntil:'networkidle',timeout:20000});await page.screenshot({path:'reports/ensaio-falha.png',fullPage:true});report.injectionObserved=aborted>0;report.blockedRequests=aborted;report.finalUrl=page.url();report.observedAt=new Date().toISOString();}
-  finally{await browser.close();await save('reports/ensaio-falha.json',report);}
+  try{Object.assign(report,await injectBrowserFault({site,sha:tx.sha,channel:process.env.PLAYWRIGHT_CHANNEL||'chromium',screenshot:'reports/ensaio-falha.png'}));}
+  finally{await save('reports/ensaio-falha.json',report);}
   throw Error(report.injectionObserved?'ENSAIO CONTROLADO: falha de recurso observada; acionar recuperação existente.':'Injeção não observada: ensaio não comprovado.');
  }
  if(mode==='concluir'){

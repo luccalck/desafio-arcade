@@ -1,0 +1,57 @@
+{
+  "scope": "Evidência de ensaio real isolado, não submissão final.",
+  "files": {
+    "alertas-ensaio-aprovado.json": {
+      "bytes": 7211,
+      "sha256": "c29dd46948c347d713c0f5e15d3e8561ffac2869c3098c7f17e160f18e96901b"
+    },
+    "alertas-tentativa-falhou.json": {
+      "bytes": 3356,
+      "sha256": "12a9e4ff8787f99bdcf7eca89ff81389840db5226704283410d29c768ec4880b"
+    },
+    "ci27-qualidade-junit.xml": {
+      "bytes": 59548,
+      "sha256": "692c1ad06606a8533e77f89ebeb6a52bc03ae3eee2fd9309d01e2c48e4bb3f78"
+    },
+    "deduplicacao-antes-junit.xml": {
+      "bytes": 2049,
+      "sha256": "7b6209e079586622119d50661ce699bf72f4e2b7840fec25fdf2a5d3eebc0660"
+    },
+    "injecao-navegador.json": {
+      "bytes": 828,
+      "sha256": "4c7e4623bf0f09b878b71c8954b10b8ea876b53a1666083fe9794c9c119b4005"
+    },
+    "injecao-navegador.png": {
+      "bytes": 125821,
+      "sha256": "d538bff3d658774500f16ec7e25cd16aff294a87eb86f451e22eac373987f934"
+    },
+    "issue-36.json": {
+      "bytes": 4544,
+      "sha256": "e0a535868f68cbda31e9196706802b0bf92f4e550907dc944c1c2ecc00f04726"
+    },
+    "issue-37.json": {
+      "bytes": 4554,
+      "sha256": "ee2a89df47847647d45fa0a44bc348805b8a2407eb094c20f670905c9c447ed2"
+    },
+    "issue-38.json": {
+      "bytes": 4426,
+      "sha256": "1d45d72f9b60ab1735a1c1522ed0c2ee8044a38fc5571253d3dd3a68c8a2535f"
+    },
+    "issue-39.json": {
+      "bytes": 4447,
+      "sha256": "06133d8f8f7ed69612c2ea9a954804232e8aface054b789a0aec19460c0ac0f4"
+    },
+    "monitor38847618003-alertas.json": {
+      "bytes": 65,
+      "sha256": "5672d5994211b059038b219e5bfc4f0ab9cc0ed2e384bcd0975af35e39c31774"
+    },
+    "monitor38847618003-dora.json": {
+      "bytes": 2078,
+      "sha256": "aebfff46a977e185324983b10f1080f9a2e532b930faeb43d4e3fbfbef9021d3"
+    },
+    "monitor38847618003-sondas.json": {
+      "bytes": 929,
+      "sha256": "559fe315f7476699fa1bd583068307ca754e22b314ec41a4811bdae6a6ff7c82"
+    }
+  }
+}
