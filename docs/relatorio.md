@@ -183,34 +183,34 @@ A primeira execução 773af17 continua registrada como falha do coletor: a regre
 
 O deploy-prd usou o mesmo ZIP aceito em HML, SHA-256 84105e76…d0d0f937. O recibo identifica ator luccalck, run 38829484114/1 e estado publicada às 21:31:47 de 15/10, horário de São Paulo. A URL imutável `/releases/ 88d533e31452036092cd8edef3efa3c0775241dc/` e a raiz foram testadas; `/status/` responde HTTP 200. Isso comprova produção técnica, não rollback, GitHub Release acadêmica, pitch ou triagem final.
 
-Lucas aprovou o PR34 no HEAD e9dd28c, revisão 5543092743. O merge acb03d8 e o HEAD aprovado têm árvore Git idêntica. A atualização posterior aos ensaios precisa de nova revisão/CI. Na tag38852413982/2, CI/HML/PRD/sondas passaram; HML745,303 s desde o push original. O publicador falhou ao buscar draft pelo endpoint de tags publicadas; seis anexos existem no draft, sem publicação. Regressão reproduziu o erro; correção e retomada protegida passaram318testes e12focais. O ZIP do draft passou offline1/1;14hashes públicos coincidem. A retomada exige revisão externa/merge, confere os gates da origem e publica seus bytes sem build/deploy. Não publicamos manualmente ou substituímos bytes da candidata.
+Lucas aprovou o PR34 no HEAD e9dd28c, revisão 5543092743. O merge acb03d8 tem a mesma árvore Git. A atualização posterior aos ensaios precisa de nova revisão/CI. Na execução 38852413982/2, CI, HML, PRD e sondas passaram; a HML concluiu em 745,303 s desde o push original. O publicador falhou ao buscar o draft pelo endpoint de tags publicadas. Os seis anexos existem no rascunho; a Release não foi publicada. Regressão reproduziu o erro; correção e retomada protegida passaram em 318 testes, sendo 12 focais. O ZIP original passou offline, e 14 hashes públicos coincidem. A retomada confere a origem e publica os mesmos bytes, sem build/deploy, após revisão externa e merge.
 
 <div style="break-before: page;"></div>
 
 ## 8. Sondas, alertas, recuperação e DORA
 
-A primeira coleta formal [38830013027](https://github.com/luccalck/desafio-arcade/actions/runs/38830013027) confirmou HML/PRD 0.7.0/SHA88, HTTP200 e latências0,0918/0,0336 s. O painel foi aberto em15/10,21:36:59 local: HTTP200, quatro cartões, sem erro ou overflow em390px. A latência mede o documento HTTP, incluindo corpo; não representa jornada ou percentis/SLA. O cron*/15 não garante pontualidade observada.
+A primeira coleta formal [38830013027](https://github.com/luccalck/desafio-arcade/actions/runs/38830013027) confirmou HML/PRD 0.7.0/SHA 88, HTTP 200 e latências de 0,0918/0,0336 s. O painel abriu em 15/10, às 21:36:59 local: HTTP 200, quatro cartões, sem erro ou overflow em 390 px. A latência mede o documento HTTP, incluindo corpo; não representa jornada ou percentis/SLA. O cron de 15 minutos não garante pontualidade observada.
 
-|DORA inicial / janela14dias|Valor e denominador|Limite de interpretação|
+|DORA inicial / janela de 14 dias|Valor e denominador|Limite de interpretação|
 |---|---|---|
-|Frequência|1/14 =0,0714286 deploy/dia|Somente deploy formal confirmado|
-|Lead time|5min27s, uma amostra|Commit até deploy-prd concluído|
-|Taxa de falha|Inicial0%; após ensaio manual100%|Rollback planejado correlacionado a88|
+|Frequência|1/14 = 0,0714286 deploy/dia|Somente deploy formal confirmado|
+|Lead time|5 min 27 s, uma amostra|Commit até deploy-prd concluído|
+|Taxa de falha|Inicial 0%; após ensaio manual 100%|Rollback planejado correlacionado a 88|
 |MTTR operacional|N/D; nenhuma Issue de incidente|Tempos do ensaio não são incidentes espontâneos|
 
-A fonte inicial está em dora-38830013027.json; a coleta38853203550 registra a mudança bruta da taxa de falha após o rollback planejado. Não removemos eventos para melhorar números. O lead time equivale a0,00378472dias diante da referência11dias do enunciado. Uma amostra não comprova causalidade, maturidade ou melhoria sustentada; comparação é descritiva.
+A fonte inicial está em dora-38830013027.json; a coleta 38853203550 registra a mudança bruta da taxa após o rollback planejado. Não removemos eventos para melhorar números. O lead time equivale a 0,00378472 dias diante da referência de 11 dias. Uma amostra não comprova causalidade, maturidade ou melhoria sustentada; a comparação é descritiva.
 
 ### Dois alertas reais em ensaio isolado
 
-[Run38847296363](https://github.com/luccalck/desafio-arcade/actions/runs/38847296363): servidor temporário no runner respondeu404 e atrasou2,2s por HTTP. Issues38/39 abriram e fecharam automaticamente em1s/3s, média2s do ensaio. Duas sondas por falha não duplicaram Issues. Labels/marcadores próprios separam esses ciclos do MTTR de produção.
+[Run 38847296363](https://github.com/luccalck/desafio-arcade/actions/runs/38847296363): servidor temporário no runner respondeu 404 e atrasou 2,2 s por HTTP. Issues 38/39 abriram e fecharam automaticamente em 1 s/3 s, média de 2 s do ensaio. Duas sondas por falha não duplicaram Issues. Labels/marcadores próprios separam esses ciclos do MTTR de produção.
 
-Na primeira tentativa38846941358, a listagem GitHub atrasada duplicou Issues. Regressão reproduziu o bug; preservar escritas confirmadas no adaptador reduziu2→1 Issue por duas sondas na repetição real. Melhoria medida no ensaio, sem alegar ganho sustentado de DORA ou esconder a tentativa falha.
+Na primeira tentativa, 38846941358, a listagem GitHub atrasada duplicou Issues. Regressão reproduziu o bug; preservar escritas confirmadas no adaptador reduziu 2 → 1 Issue por duas sondas na repetição real. Melhoria medida no ensaio, sem alegar ganho sustentado de DORA ou esconder a tentativa falha.
 
 ### Recuperação real e continuidade observada
 
-[Manual38851754358](https://github.com/luccalck/desafio-arcade/actions/runs/38851754358): aprovação, Pages, sete hashes e smoke; **80,66s** do dispatch ao smoke, incluindo fila/aprovação. Foram171HTTP200. [Automática38851915984](https://github.com/luccalck/desafio-arcade/actions/runs/38851915984): candidataacb aprovada, falha apenas no observador do ensaio, rollback real/Pages/sete hashes/smoke em **17,166s**;65HTTP200. A run ficou vermelha pela injeção; os steps de recuperação passaram. Amostras discretas não garantem disponibilidade entre consultas.
+[Manual 38851754358](https://github.com/luccalck/desafio-arcade/actions/runs/38851754358): aprovação, Pages, sete hashes e smoke; **80,66 s** do dispatch ao smoke, incluindo fila/aprovação. Foram 171 respostas HTTP 200. [Automática 38851915984](https://github.com/luccalck/desafio-arcade/actions/runs/38851915984): candidata acb aprovada, falha apenas no observador, rollback real/Pages/sete hashes/smoke em **17,166 s**; 65 respostas HTTP 200. A run ficou vermelha pela injeção; os steps de recuperação passaram. Amostras discretas não garantem os intervalos entre consultas.
 
-Sessão existente permaneceu na baseline nas promoções; sessão nova e storage indisponível abrirame9. A sonda pós-tag leu o ponteiro anterior e bloqueou a primeira Release; a reconferência38853203550 confirmoue9 em ambos os ambientes. Relatórios brutos e limites: docs/evidencias/operacao-release-2026-10-16/. Não é defeito espontâneo do jogo nem substitui playtest humano/banca.
+A sessão existente permaneceu na baseline nas promoções; sessão nova e storage indisponível abriram e9. A sonda pós-tag bloqueou a primeira Release; a reconferência 38853203550 confirmou e9 nos dois ambientes. Fontes: docs/evidencias/operacao-release-2026-10-16/. Esses ensaios não substituem playtest humano ou banca.
 
 <div style="break-before: page;"></div>
 
@@ -225,7 +225,7 @@ Cada fonte identifica execução ou PR real. A matriz separa aceite técnico com
 |INT-03 /15%|[Esteira verde](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114)|CI/HML/PRD aprovados; 216,414 s push→HML; aprovação registrada|Revalidar futuras alterações; pacote/triagem finais|
 |INT-04 /12%|[CI 299/36](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114), [PR8](https://github.com/luccalck/desafio-arcade/pull/8)|311 testes + 36 E2E na revisão atual; HML 4/4; smokes; offline histórico 1/1|Playtest humano e regressão de futuros HEADs|
 |INT-05 /10%|[PR10](https://github.com/luccalck/desafio-arcade/pull/10), [CI](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114)|Scanners, SBOM, inventários, hook e revisão|Direitos/licenças finais e vídeo/tag/artefatos|
-|INT-06 /10%|[CI/bundle](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114)|Tag técnica:ZIP29.265B,172arquivos no bundle; cinco anexos+manifesto do draft iguais à CI; offline1/1|Draft técnico conferido; publicar pela pipeline após correção revisada e depois release acadêmica final|
+|INT-06 /10%|[CI/bundle](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114)|Tag técnica: ZIP de 29.265 B; bundle com 172 arquivos; anexos do draft iguais à CI; offline 1/1|Draft técnico conferido; publicar pela pipeline após correção revisada e depois release acadêmica final|
 |INT-07 /12%|[Produção](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301)|Azul-verde, smoke, manual 80,66 s e automático 17,166 s; HTTP observado sem falhas|Demonstração literal na banca; ensaios manual/automático já executados|
 |INT-08 /10%|[Sondas/DORA](https://github.com/luccalck/desafio-arcade/actions/runs/38830013027)|HML/PRD 200, mesmo SHA; status 200; três DORA com 1 amostra|Incidentes/MTTR operacionais; ensaio e melhoria observados à parte|
 |INT-09 /8%|[PR25](https://github.com/luccalck/desafio-arcade/pull/25), [Esteira](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114)|Empacotador/triagem e origem imutável implementados|Pitch, pacote completo e TRIAGEM APROVADA na tag final|

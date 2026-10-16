@@ -1,11 +1,11 @@
 {
-  "at": "2026-10-16T05:12:12.523731+00:00",
+  "at": "2026-10-16T05:15:13.350395+00:00",
   "scope": "PDFs locais candidatos, sem substituir anexos imutáveis do draft e sem comprovar publicação",
   "report": {
     "pages": 10,
-    "bytes": 597698,
-    "sha256": "0108fabc4d0baac0848de2fcd7510a1a5637de0a69b5e451ba7c07fe9c616c6a",
-    "sourceSha256": "6b2f54123f9e51149dc7a8d8c93861ac865aad3eb2c9dea812e3b99e27a8af28"
+    "bytes": 597408,
+    "sha256": "d200c878ab694dcb97ba7a27221fe8de17721c7d3322f110e28106b844c6b4d3",
+    "sourceSha256": "be9f5d82af1e9bb3a41c2338da4744836a4c4c2721121297b0757d422fc499ce"
   },
   "gdd": {
     "pages": 18,
