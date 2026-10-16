@@ -344,3 +344,7 @@ Usamos Codex sob orientação de Lucca para verificar a aprovação de Lucas no 
 ## Conciliação do estado das pendências — 15/10/2026
 
 Lucca apontou checks desatualizados e pediu confronto com o HTML inteiro. Usamos Codex para reler conteúdo instrucional e JavaScript da ficha, reconferir colaboradores/main/Pages/reviews/tags/releases e CIs na API e comparar evidências preservadas. Reorganizamos as mesmas quarenta etapas com estado vigente e arquivamos integralmente o histórico anterior, sem apagar falhas ou criar revisões. Atualizamos dez checks específicos com provas existentes e corrigimos a ficha persistente; não marcamos recuperação, alertas, pitch, release, triagem, banca ou nota sem evidência. O HTML original permaneceu intacto. Esta atualização no PR34 altera o HEAD e exige revisão externa da versão nova.
+
+## 16/10/2026 — desenho aprovado e separação de ensaios
+
+Lucca autorizou ensaio isolado de recuperação/alertas, revisão técnica e publicação quando possível, mantendo pitch e TXT para o final. Codex preparou desenho/plano e seis regressões que falharam antes da implementação; depois sete testes focais e a suíte completa passaram localmente. Acrescentamos escopo/identificador e label ensaio para não misturar testes com incidentes de produção, filtragem DORA e executor com servidor HTTP temporário,404 e atraso medido. A revisão externa do PR34 permanece necessária; não substituímos participante humano, consentimento, professor ou conta de outro integrante. Resultados operacionais serão registrados somente após execução real.

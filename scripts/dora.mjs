@@ -22,7 +22,7 @@ export function calculateDora({repo,from,to,runs,jobs,commits,issues,rollbacks,p
  }
  const unique=[...new Map(deploys.map(d=>[`${d.run}:${d.sha}`,d])).values()].sort((a,b)=>a.at.localeCompare(b.at));
  const leads=unique.map(d=>({d,start:commits.get(d.sha)})).filter(x=>x.start&&Date.parse(x.start)<=Date.parse(x.d.at));
- const closed=issues.filter(i=>!i.pull_request&&inside(i.created_at,from,to)&&inside(i.closed_at,from,to)&&Date.parse(i.closed_at)>=Date.parse(i.created_at));
+ const closed=issues.filter(i=>!i.pull_request&&!String(i.body??'').includes('<!-- arcade-alert:ensaio:')&&inside(i.created_at,from,to)&&inside(i.closed_at,from,to)&&Date.parse(i.closed_at)>=Date.parse(i.created_at));
  const failed=rollbacks===null?null:unique.filter(d=>rollbacks.some(r=>r.sha===d.sha&&Date.parse(r.at)>=Date.parse(d.at)&&Date.parse(r.at)<Date.parse(to)));
  const metric=(key,value,samples,source,reason)=>({value,unit:keys[key][0],samples,source:source??null,reason:reason??null});
  const metrics={
