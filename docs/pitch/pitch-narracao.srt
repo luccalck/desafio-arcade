@@ -1,0 +1,68 @@
+1
+00:00:00,300 --> 00:00:04,700
+Rota do Código. Aprenda Python criando seu minijogo.
+
+2
+00:00:05,200 --> 00:00:10,800
+Cinco missões e um desafio final para começar a programar.
+
+3
+00:00:11,200 --> 00:00:13,600
+Os controles estão invertidos.
+
+4
+00:00:14,200 --> 00:00:19,800
+Teste a regra. Compare o esperado com o resultado.
+
+5
+00:00:20,400 --> 00:00:24,000
+Edite as decisões no código Python.
+
+6
+00:00:24,100 --> 00:00:30,200
+Teste novamente. A regra corrigida muda o movimento da nave.
+
+7
+00:00:30,760 --> 00:00:33,760
+Calcule o movimento da nave.
+
+8
+00:00:34,160 --> 00:00:37,160
+Compare distâncias para detectar colisões.
+
+9
+00:00:37,560 --> 00:00:40,560
+Crie a regra de pontuação.
+
+10
+00:00:40,960 --> 00:00:43,960
+Use repetições para montar uma onda.
+
+11
+00:00:44,400 --> 00:00:48,800
+Reúna as cinco funções no projeto final.
+
+12
+00:00:49,200 --> 00:00:55,600
+Agora, o seu código controla uma partida de verdade.
+
+13
+00:00:56,200 --> 00:00:59,000
+O desafio foi concluído.
+
+14
+00:00:59,100 --> 00:01:03,600
+Exporte suas funções Python e o jogo em HTML.
+
+15
+00:01:04,200 --> 00:01:10,200
+Abra o HTML exportado sem conexão. O minijogo continua
+funcionando.
+
+16
+00:01:10,800 --> 00:01:14,500
+Experimente. Teste. Construa.
+
+17
+00:01:15,000 --> 00:01:19,600
+Rota do Código. Equipe Aura sessenta e sete.

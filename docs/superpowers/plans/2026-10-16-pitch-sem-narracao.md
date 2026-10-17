@@ -16,3 +16,15 @@
 - [x] Validar MP4 por ffprobe/decodificação, revisar quadros reais, sincronização e duração; conferir proveniência/hashes.
 - [x] Atualizar registros/IA/terceiros/checklist/pendências sem declarar pacote completo ou triagem futura.
 - [x] Identidade GitHub luccalck conferida, fontes preparadas para Gitleaks/commit/push em branch própria. Conferir os resultados remotos no GitHub e no acompanhamento local após o envio, sem novo commit apenas para registrar sua própria CI; preservar HEAD PR41.
+
+
+## Adendo autorizado: narração
+
+Após entregar o pitch silencioso, Lucca solicitou prompt para Miguel aprovar oPR41 e narração sincronizada incorporada aoMP4.
+
+- [x] Preservar HEAD doPR41 e criar prompt de aprovação sem credenciais/impersonação.
+- [x] Roteirizar17falas dentro da timeline existente e gerarMD/JSON.
+- [x] Conferir fontes/licenças, baixar modelo pinado e gerar vozPortuguês local.
+- [x] Posicionar a48kHz, transcrever legendas, preservar edição silenciosa e montarAAC.
+- [x] Conferir17/17janelas,PTS/duração,decodificação/saturação e correlaçãoWAV/AAC; documentar limites.
+- [x] Preparar fontes/recibos para commit e CI; registrar a conclusão remota no acompanhamento local, sem gerar commit circular de CI.

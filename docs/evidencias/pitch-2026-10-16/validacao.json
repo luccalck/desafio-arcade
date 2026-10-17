@@ -19,5 +19,8 @@
   "finalXP": 700,
   "productionPointerUnchanged": true,
   "submissionVideoWorkflowExecuted": false,
-  "submissionBlocker": "Produção e9 foi publicada pela run38852413982/2, cuja conclusão global é failure; entrada-video exige SUCCESS. Não alterar o gate. Na candidata final aprovada, refazer a captura automatizada se o SHA mudar."
+  "submissionBlocker": "Produção e9 foi publicada pela run38852413982/2, cuja conclusão global é failure; entrada-video exige SUCCESS. Não alterar o gate. Na candidata final aprovada, refazer a captura automatizada se o SHA mudar.",
+  "scope": "Validação técnica da edição silenciosa original preservada",
+  "video": "docs/pitch/pitch-sem-narracao.mp4",
+  "videoSha256": "5bacea2b5180934e1afb7c652ac3e1da982daf5ed5007dfdcc2781c4bc733b5c"
 }

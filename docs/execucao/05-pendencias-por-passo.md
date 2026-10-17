@@ -24,7 +24,7 @@ Mantemos os mesmos oito tópicos da solicitação de fechamento de Lucca. Não s
 
 ### Atividades concluídas — fora da lista de pendências
 
-**Tópico5:** pitch sem narração produzido:79,96s,FullHD,H.264,legendas incorporadas,créditos e gameplay realv0.7.0/e9; fontes/recibos em ../evidencias/pitch.md. Arquivo final e gravações originais versionados. A vinculação/recaptura se mudar oSHA da candidata final faz parte exclusivamente do tópico6,não de outro vídeo ausente.
+**Tópico5:** pitch com voz sintética produzido:79,96s,FullHD,H.264,legendas incorporadas,créditos e gameplay realv0.7.0/e9; fontes/recibos em ../evidencias/pitch.md. Arquivo final e gravações originais versionados. A vinculação/recaptura se mudar oSHA da candidata final faz parte exclusivamente do tópico6,não de outro vídeo ausente.
 
 **Tópico3:** melhoria orientada pelo MTTR do ensaio implementada e medida:3s→2,5s,redução observada16,7%; consultas de labels12→2. Fontes/limites em ../evidencias/melhoria-mttr-2026-10-16.md; operação permanece sem amostra deMTTR. Integração da mudança pertence exclusivamente ao tópico1.
 
@@ -203,7 +203,7 @@ INT-08/05.
 INT-10/05/02.
 
 - [x] Proposta, conceito/diferencial, roteiro e planejamento de legendas/créditos disponíveis.
-- [x] MP4real produzido/validado em16/10,79,96s,sem narração ou música,sem rosto/voz; créditos dos quatro,legendas e inventário final. Fonte:../evidencias/pitch.md; vínculo com candidata acadêmica é tratado em029/035/036.
+- [x] MP4real produzido/validado em16/10,79,96s,com voz sintética,sem música/rosto/voz humana gravada; créditos dos quatro,legendas e inventário final. Fonte:../evidencias/pitch.md; vínculo com candidata acadêmica é tratado em029/035/036.
 
 <a id="passo-018"></a>
 
@@ -484,3 +484,6 @@ Confirmações do squad atualizadas16/10: declaração coletiva registrada, sem 
 
 
 Atualização16/10: a orientação anterior de adiar o pitch foi substituída pela solicitação expressa de produzi-lo sem narração. O arquivo e suas fontes estão disponíveis; não cobrar gravação inexistente novamente. A proveniência final/triagem pertence ao tópico6.
+
+
+Narração16/10: a solicitação posterior acrescentou17falas sintéticas aoMP4, mantendo79,96s. Roteiro e tempos medidos em../pitch/narracao.md; sincronia17/17conferida por amostras eAAC, sem alegar escuta humana. O vídeo silencioso foi preservado. Não é nova pendência de gravação; o vínculo da candidata continua no tópico6.

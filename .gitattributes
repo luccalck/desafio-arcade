@@ -19,3 +19,6 @@ docs/evidencias/melhoria-mttr-2026-10-16/* -text
 *.webm binary
 docs/evidencias/pitch-2026-10-16/* -text
 docs/pitch/* -text
+
+*.wav binary
+docs/evidencias/narracao-2026-10-16/* -text

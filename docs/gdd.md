@@ -235,4 +235,4 @@ Pipeline da tag final: submissao/GDD.pdf, LINK_DO_JOGO.txt, build.zip com LEIA-M
 Atualização técnica16/10/2026, sem mudança de mecânica: o PR34 acrescenta ensaio isolado de alertas e preparação de recuperação. Issues38/39 abriram/fecharam pelo Actions em alvo temporário do runner, separadas do MTTR de produção; produção88d533e preservada. Recuperação real incluindo Pages ainda requer integração/revisão e execução. [Provas e limites](evidencias/ensaio-operacional-2026-10-16.md).
 
 
-Atualização de comunicação16/10/2026: [pitch real sem narração](pitch/README.md) produzido com79,96s da produçãoe9/v0.7.0,legendas/créditos e fontes preservadas. Não é sessão humana ou comprovação de aprendizado; a futura submissão deve vincular vídeo eSHA da candidata aprovada sem misturar versões.
+Atualização de comunicação16/10/2026: [pitch real com voz sintética](pitch/README.md) produzido com79,96s da produçãoe9/v0.7.0,legendas/créditos e fontes preservadas. Não é sessão humana ou comprovação de aprendizado; a futura submissão deve vincular vídeo eSHA da candidata aprovada sem misturar versões.

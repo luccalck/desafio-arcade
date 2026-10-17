@@ -5,8 +5,8 @@
   "captureUrl": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/",
   "captureStartedAt": "2026-10-17T00:10:48.309466+00:00",
   "zipSha256": "6517fa79749c4bea490acc36eb197ce19a95617a24a5cba56d2edb40c6fabe9f",
-  "sha256": "5bacea2b5180934e1afb7c652ac3e1da982daf5ed5007dfdcc2781c4bc733b5c",
-  "bytes": 3312725,
+  "sha256": "2a53d5f0e532f7ba2adcbd530688aadb7f1f4669ebee016102eeebe9d37c9dab",
+  "bytes": 4249780,
   "durationPlanned": 79.96,
   "timeline": [
     {
@@ -118,12 +118,19 @@
       "source": "cartela editorial"
     }
   ],
-  "narration": false,
+  "narration": true,
   "music": false,
   "humanFacesOrVoices": false,
   "humanPlaytest": false,
-  "captions": "incorporadas nas faixas editoriais; SRT adicional",
+  "captions": "Transcrição da voz sintética,17cues incorporados eSRTcomplementar",
   "captureExecutor": "IA/Playwright",
   "requester": "Lucca Castilho Costa",
-  "scope": "Pitch da produção v0.7.0 filmada; validação acadêmica final pela entrada-video ainda não executada."
+  "scope": "Pitch da produção v0.7.0 filmada; validação acadêmica final pela entrada-video ainda não executada.",
+  "narrationEngine": "Piper1.8.0",
+  "narrationVoice": "pt_BR-faber-medium",
+  "narrationLanguage": "pt-BR",
+  "narrationScript": "narracao.md",
+  "narrationTiming": "narracao-sincronia.json",
+  "silentSourceSha256": "5bacea2b5180934e1afb7c652ac3e1da982daf5ed5007dfdcc2781c4bc733b5c",
+  "voiceCloningOfTeamMembers": false
 }

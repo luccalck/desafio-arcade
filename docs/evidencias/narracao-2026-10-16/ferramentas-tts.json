@@ -1,0 +1,44 @@
+[
+  {
+    "name": "piper-tts",
+    "version": "1.8.0",
+    "licenseExpression": null,
+    "declaredLicense": "GPL-3.0-or-later"
+  },
+  {
+    "name": "onnxruntime",
+    "version": "1.31.0",
+    "licenseExpression": null,
+    "declaredLicense": "MIT License"
+  },
+  {
+    "name": "numpy",
+    "version": "2.5.4",
+    "licenseExpression": "BSD-3-Clause AND 0BSD AND MIT AND Zlib AND CC0-1.0",
+    "declaredLicense": ""
+  },
+  {
+    "name": "pathvalidate",
+    "version": "3.3.1",
+    "licenseExpression": null,
+    "declaredLicense": "MIT License"
+  },
+  {
+    "name": "flatbuffers",
+    "version": "25.12.19",
+    "licenseExpression": null,
+    "declaredLicense": "Apache 2.0"
+  },
+  {
+    "name": "protobuf",
+    "version": "7.36.2",
+    "licenseExpression": null,
+    "declaredLicense": "3-Clause BSD License"
+  },
+  {
+    "name": "packaging",
+    "version": "26.3",
+    "licenseExpression": "Apache-2.0 OR BSD-2-Clause",
+    "declaredLicense": ""
+  }
+]

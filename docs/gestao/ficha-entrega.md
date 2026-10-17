@@ -34,7 +34,7 @@ Os campos finais ficam vazios até comprovação da versão efetivamente entregu
 | lkHml — URL de homologação | Não | https://luccalck.github.io/desafio-arcade/hml/ | HML atual0.7.0/SHA1e3dd3b, run38939899867,4/4 e178,827s; avanço da main, preservando produçãoe9. |
 | lkCI — Última execução verde da pipeline (link ou print) | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/38939899867 | CI/main318/36 eHML178,827s verdes;PRDskipped intencional. RetomadaRelease38940532129/monitor38940593792 verdes. Substituir pela run acadêmica final quando existir. |
 | lkGraf — Painel /status/ (link) | Sim | https://luccalck.github.io/desafio-arcade/status/ | HTTP200/desktop/celular/refresh porEnter; três DORA com2deploys, MTTRindisponível. Fonte:painel-atual-verificacao.json. |
-| lkVideo — Vídeo pitch (arquivo no AVA ou link) | Sim | https://github.com/luccalck/desafio-arcade/blob/docs/pitch-producao/docs/pitch/pitch.mp4 | MP4real79,96s da produçãoe9,v0.7.0; sem narração,legendas incorporadas. Vinculação à candidata acadêmica final ainda não executada. |
+| lkVideo — Vídeo pitch (arquivo no AVA ou link) | Sim | https://github.com/luccalck/desafio-arcade/blob/docs/pitch-producao/docs/pitch/pitch.mp4 | MP4real79,96s da produçãoe9,v0.7.0; voz sintética,legendas incorporadas. Vinculação à candidata acadêmica final ainda não executada. |
 | lkRel — Relatório técnico (PDF) | Sim | | Publicar PDF gerado pela CI e confirmar acesso; arquivo local não é link público. |
 | lkDrive — Pasta do Google Drive do concurso (se inscritos) | Não | | Concurso opcional, sem decisão coletiva/autorização comprovada. |
 

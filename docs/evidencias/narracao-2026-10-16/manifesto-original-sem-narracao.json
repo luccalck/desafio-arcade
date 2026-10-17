@@ -1,0 +1,86 @@
+{
+  "schema": 1,
+  "scope": "Pitch real v0.7.0/e9,edição silenciosa e fontes originais",
+  "files": {
+    "docs/evidencias/pitch-2026-10-16/captura.json": {
+      "bytes": 4930,
+      "sha256": "ca48045897e90ef885ca99d1c6f1187243e1e7a00900aa700882c1170e596e24"
+    },
+    "docs/evidencias/pitch-2026-10-16/casos-falha.png": {
+      "bytes": 87009,
+      "sha256": "dce180a1409fb12d128a5d71d3f30555de8e92704bb26b0c85fcda1d4c3d572f"
+    },
+    "docs/evidencias/pitch-2026-10-16/ferramentas.json": {
+      "bytes": 294,
+      "sha256": "f66790360c594bea452944dcab8e1626ed81f600be978c0db2cd3853b1ac5dac"
+    },
+    "docs/evidencias/pitch-2026-10-16/ffprobe.json": {
+      "bytes": 2280,
+      "sha256": "b58c798096bc542281cb5d49d13e2cf245413794a6832f8a4a77ec20f7264c09"
+    },
+    "docs/evidencias/pitch-2026-10-16/gravacao-offline.webm": {
+      "bytes": 675334,
+      "sha256": "8306ed92c8209372491533ba4f9af3dc48f9ab66069ae515040d0fdddb36cc00"
+    },
+    "docs/evidencias/pitch-2026-10-16/gravacao-producao.webm": {
+      "bytes": 5563566,
+      "sha256": "704d046b2d56df9ae7bfbdb4eaa3b9eaf66304225293602c9a484f45c536a45b"
+    },
+    "docs/evidencias/pitch-2026-10-16/menu.png": {
+      "bytes": 276480,
+      "sha256": "244834d0ef08fa423859d3150ec0f9b9ca21aed8f7d7a33c5983b08b9f471720"
+    },
+    "docs/evidencias/pitch-2026-10-16/meu-jogo.html": {
+      "bytes": 16887,
+      "sha256": "2b9a5adc71c686429046d84e94c669392e0d6edbc707138cbfe4911f6c81ceac"
+    },
+    "docs/evidencias/pitch-2026-10-16/meu-jogo.py": {
+      "bytes": 2019,
+      "sha256": "0749c1f65d8e0883faa30499f50079f7be9c341011c9d68505d9fd351aac0dbb"
+    },
+    "docs/evidencias/pitch-2026-10-16/offline-real.png": {
+      "bytes": 49035,
+      "sha256": "3ac8b476878f745800468b240ab313bfecffec6c4702d348744f3dbc71a27e7b"
+    },
+    "docs/evidencias/pitch-2026-10-16/projeto-validado.png": {
+      "bytes": 171913,
+      "sha256": "573504a30ac04949787ff2f6bcf09f137b6f0a555978ba7bae84f73e99c6958e"
+    },
+    "docs/evidencias/pitch-2026-10-16/qa-contato.jpg": {
+      "bytes": 388194,
+      "sha256": "91b3f3f2e5a6012de035afffc37686021e048651af1f3a99f37715a3f6f307eb"
+    },
+    "docs/evidencias/pitch-2026-10-16/regra-corrigida.png": {
+      "bytes": 166403,
+      "sha256": "f80472a680161e4394e7a1c1e80097cce0c72ea5f627c5a3665b1130673764e8"
+    },
+    "docs/evidencias/pitch-2026-10-16/rollout-apos-captura.json": {
+      "bytes": 315,
+      "sha256": "882aa6e5f32a380a75e69f61d2e2ea98a0df688f68a2db7fddbcb6dd9783d64c"
+    },
+    "docs/evidencias/pitch-2026-10-16/validacao.json": {
+      "bytes": 892,
+      "sha256": "0f542d1b3c2a9c84bc90ecceb58562cd45132068bafda3bc900aec9ee2df8ef3"
+    },
+    "docs/evidencias/pitch-2026-10-16/vitoria.png": {
+      "bytes": 203998,
+      "sha256": "6e4efb3d051e75db1acff09b6c9fe1989c71d8c68594607a112efc41325e06f4"
+    },
+    "docs/pitch/pitch-legendas.srt": {
+      "bytes": 1097,
+      "sha256": "a21295e7988048691245089d8ed55ebd5602abbe68fd381b0caed48e8c81c032"
+    },
+    "docs/pitch/pitch-producao.json": {
+      "bytes": 3929,
+      "sha256": "dbeb08476bb0c57918527299c94126fc041c9b944afe6eb95a266ee387e42cb5"
+    },
+    "docs/pitch/pitch.mp4": {
+      "bytes": 3312725,
+      "sha256": "5bacea2b5180934e1afb7c652ac3e1da982daf5ed5007dfdcc2781c4bc733b5c"
+    },
+    "docs/pitch/README.md": {
+      "bytes": 2454,
+      "sha256": "36922c761c118c1fcf2ed6cb73e854a026a9d186e88584515621421a67b9f836"
+    }
+  }
+}

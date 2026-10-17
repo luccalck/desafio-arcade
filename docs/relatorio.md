@@ -6,7 +6,7 @@
 
 Construímos uma oficina educativa WEB em que o jogador corrige cinco funções Python, testa diferentes entradas e usa suas regras num minijogo de nave. O produto é estático, responsivo, exportável e jogável offline pelo método documentado. A avaliação de DevOps exige que esse produto atravesse Git, testes, segurança, homologação, aprovação, produção e acompanhamento com rastreabilidade.
 
-**Repositório:** [luccalck/desafio-arcade](https://github.com/luccalck/desafio-arcade). **Estado desta revisão:** a Release técnica v0.7.0 foi publicada pela retomada 38940532129, após aprovação de Lucas no PR40 e merge 1e3dd3b. Os seis anexos públicos foram baixados sem autenticação e conferidos; o ZIP preserva os bytes homologados do SHA e9dd28c. CI da branch 9c22698: 322 testes e 37 E2E; HML da main 1e3dd3b em 178,827 s. Recuperações manual e automática foram medidas em 80,66 s e 17,166 s. O pitch silencioso da produção e9 foi produzido (79,96 s); sua vinculação à candidata final, playtest humano, pacote acadêmico, TXT, declarações históricas e banca continuam pendentes. O PR41 permanece bloqueado: o GitHub recusou autoaprovação pela conta autora. Esta revisão registra o fechamento operacional comprovado, sem declarar a submissão acadêmica concluída.
+**Repositório:** [luccalck/desafio-arcade](https://github.com/luccalck/desafio-arcade). **Estado desta revisão:** a Release técnica v0.7.0 foi publicada pela retomada 38940532129, após aprovação de Lucas no PR40 e merge 1e3dd3b. Os seis anexos públicos foram baixados sem autenticação e conferidos; o ZIP preserva os bytes homologados do SHA e9dd28c. CI da branch 9c22698: 322 testes e 37 E2E; HML da main 1e3dd3b em 178,827 s. Recuperações manual e automática foram medidas em 80,66 s e 17,166 s. O pitch narrado da produção e9 foi produzido (79,96 s); sua vinculação à candidata final, playtest humano, pacote acadêmico, TXT, declarações históricas e banca continuam pendentes. O PR41 permanece bloqueado: o GitHub recusou autoaprovação pela conta autora. Esta revisão registra o fechamento operacional comprovado, sem declarar a submissão acadêmica concluída.
 
 | Integrante | RA | Coordenação | GitHub |
 |---|---|---|---|
@@ -27,7 +27,7 @@ Os papéis coordenam o trabalho, sem exclusividade de área. Preservamos a autor
 |Entrega técnica formal|[Run 38829484114](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114),88d533e|299 testes/36 E2E; HML 4/4; 216,414 s; PRD aprovada e smoke verde|
 |Sondas pós-produção|[Run 38830013027](https://github.com/luccalck/desafio-arcade/actions/runs/38830013027)|HML/PRD 200, ambas 0.7.0/SHA 88; DORA com uma amostra|
 
-Datas deste relatório seguem America/Sao_Paulo: a produção foi observada em 15/10, 21:31:47 (16/10, 00:31:47 UTC). Lucca solicitou e produzimos o pitch sem narração: 79,96 s, Full HD, legendas e captura real de produção. Não há declaração de nota, F, playtest humano, AVA ou banca realizados. A entrega técnica atual não equivale ao pacote acadêmico completo.
+Datas deste relatório seguem America/Sao_Paulo: a produção foi observada em 15/10, 21:31:47 (16/10, 00:31:47 UTC). Lucca solicitou e produzimos o pitch com voz sintética: 79,96 s, Full HD, legendas e captura real de produção. Não há declaração de nota, F, playtest humano, AVA ou banca realizados. A entrega técnica atual não equivale ao pacote acadêmico completo.
 
 <div style="break-before: page;"></div>
 
@@ -272,4 +272,4 @@ Preservamos autoria, aprovações e recibos reais. A matriz comprova contribuiç
 |Tag/release/submissão|SemVer compatível, assets/manifestos, triagem real na tag final|
 |Ficha, AVA, banca|TXT verdadeiro pelo HTML, recibo, ensaio e defesa dos quatro|
 
-Pitch sem narração: 79,96 s, legendas e fontes em docs/evidencias/pitch.md. Lucca confirmou direitos e notificações em nome do squad. Vínculo do vídeo, TXT, pacote final e banca dos quatro (10 + 5 + 5 min) seguem pendentes; G8 não foi concluído e o concurso é opcional.
+Pitch com voz sintética: 79,96 s, legendas e fontes em docs/evidencias/pitch.md. Lucca confirmou direitos e notificações em nome do squad. Vínculo do vídeo, TXT, pacote final e banca dos quatro (10 + 5 + 5 min) seguem pendentes; G8 não foi concluído e o concurso é opcional.

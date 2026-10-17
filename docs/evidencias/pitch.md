@@ -1,6 +1,15 @@
 # Pitch real de produção — etapa029
 
-16/10/2026,America/Sao_Paulo (captura e edição em17/10UTC). A pedido deLucca, produzimos o [MP4](../pitch/pitch.mp4) sem narração, com79,96segundos,1920×1080,H.264/25fps,3.312.725bytes. SHA256:5bacea2b5180934e1afb7c652ac3e1da982daf5ed5007dfdcc2781c4bc733b5c.
+## Versão vigente — com narração sintética
+
+A pedido deLucca, acrescentamos17falas em português brasileiro ao [pitch](../pitch/pitch.mp4), mantendo79,96s e as mesmas cenas reais. O [MDda narração](../pitch/narracao.md) traz texto literal e tempos medidos. VozPiper/faber gerada localmente, sem clonagem de integrante; sem música. Legendas transcrevem as falas. MP4comH.264/AAC, ambos com iníciozero e duração79,960000s;17/17trechos dentro da cena, sem aceleração.
+
+SHA256atual:2a53d5f0e532f7ba2adcbd530688aadb7f1f4669ebee016102eeebe9d37c9dab. Tamanho4.249.780bytes. Decodificação integral passou, sem amostras saturadas; correlaçãoWAV/AAC não detectou deslocamento nos17trechos. [Recibos e origem da voz](narracao-2026-10-16/). Não afirmamos avaliação auditiva humana ou validaçãoacadêmica da entrada-video. O vínculo visual seguee9/v0.7.0, preservando o gate de proveniência final.
+
+## Edição silenciosa original — histórico preservado
+
+
+16/10/2026,America/Sao_Paulo (captura e edição em17/10UTC). A pedido deLucca, produzimos o [MP4 silencioso original](../pitch/pitch-sem-narracao.mp4) sem narração, com79,96segundos,1920×1080,H.264/25fps,3.312.725bytes. SHA256:5bacea2b5180934e1afb7c652ac3e1da982daf5ed5007dfdcc2781c4bc733b5c.
 
 O roteiro existente foi adaptado para cartelas e legendas:proposta/conceito/diferencial;menu;controle invertido;correção real deif/return;missões de movimento,colisão,pontuação e repetição;projeto final com23/23casos;partida real vencida com100pontos/700XP;exportação.py/HTML;HTMLexportado executado com rede desativada e zero requisiçõesHTTP. Não houve injeção de progresso,vitória,DOM ou alteração de relógio. Usamos soluções conhecidas para demonstrar o funcionamento; não medimos aprendizagem humana.
 
