@@ -1,9 +1,9 @@
 {
   "schema": 1,
   "strategy": "azul-verde",
-  "estavel": "e9dd28ccee535e9b1259a710742482e44db47aed",
-  "anterior": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
-  "canario": "4678830c59917803c0024b63b05695029e900bfe",
+  "estavel": "4678830c59917803c0024b63b05695029e900bfe",
+  "anterior": "e9dd28ccee535e9b1259a710742482e44db47aed",
+  "canario": null,
   "percentual": 0,
   "retiradas": [
     "88d533e31452036092cd8edef3efa3c0775241dc",
