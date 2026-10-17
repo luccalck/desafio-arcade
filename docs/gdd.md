@@ -206,7 +206,7 @@ Transitividade/versões no THIRD_PARTY/lockfile/SBOM. Nenhuma dependência nova.
 
 ### Originalidade e direitos
 
-Desenvolvemos o projeto para a atividade, com assistência de IA registrada em [AI-USAGE](../AI-USAGE.md) e componentes/ativos inventariados em [THIRD_PARTY](../THIRD_PARTY.md). O código próprio e o HTML exportado incluem a licença MIT. A confirmação coletiva de direitos e a revisão desta versão documental por outro integrante continuam pendentes antes do merge/entrega; não afirmamos que os quatro assinaram ou aprovaram esta versão.
+Desenvolvemos o projeto para a atividade, com assistência de IA registrada em [AI-USAGE](../AI-USAGE.md) e componentes/ativos inventariados em [THIRD_PARTY](../THIRD_PARTY.md). O código próprio e o HTML exportado incluem a licença MIT. Em16/10/2026, Lucca confirmou em nome dos quatro a autoria/originalidade/titularidade e os direitos de uso dos materiais e ferramentas atuais. [Registro e limites](evidencias/confirmacao-squad-2026-10-16.md). A revisão formal do HEAD por outro autor permanece separada; não afirmamos assinatura dos quatro.
 
 Não incluímos CPF ou assinaturas nos arquivos públicos. A entrega acadêmica não autoriza inscrição ou aceite dos termos do concurso opcional; eventual documento privado segue a orientação real do professor.
 
@@ -230,6 +230,9 @@ Na execução [38829484114](https://github.com/luccalck/desafio-arcade/actions/r
 
 O monitor [38830013027](https://github.com/luccalck/desafio-arcade/actions/runs/38830013027) confirmou HTTP 200, latência e SHA em HML/PRD; CSV foi preservado em observabilidade e o painel https://luccalck.github.io/desafio-arcade/status/ foi validado em desktop/celular. Cron configurado em quinze minutos não garante pontualidade observada. Nenhum alerta real abriu/fechou: ciclo JogoForaDoAr/LatenciaAlta e MTTR continuam pendentes. Uma implantação em janela de catorze dias produz frequência de 0,0714286/dia, lead time de 5min27s e CFR 0%; uma amostra não demonstra melhoria causal frente à referência de onze dias.
 
-Pipeline da tag final: submissao/GDD.pdf, LINK_DO_JOGO.txt, build.zip com LEIA-ME, pitch.mp4 humano e MANIFESTO.sha256, seguidos de triagem real. O pitch permanece pendente e impede chamar o pacote de final. Vídeo de produção entra antes da tag final; relatório recebe evidências de release/triagem depois dessas execuções. Data/versão/identificação/URLs devem ser reconciliadas com a release real. Prazo original 09/10/2026 até início da aula, horário não confirmado; prévia não retroagida. A publicação formal está validada; pacote final, nota e banca não são declarados aceitos.
+Pipeline da tag final: submissao/GDD.pdf, LINK_DO_JOGO.txt, build.zip com LEIA-ME, pitch.mp4 com captura real de produção e MANIFESTO.sha256, seguidos de triagem real. O pitch permanece pendente e impede chamar o pacote de final. Vídeo de produção entra antes da tag final; relatório recebe evidências de release/triagem depois dessas execuções. Data/versão/identificação/URLs devem ser reconciliadas com a release real. Prazo original 09/10/2026 até início da aula, horário não confirmado; prévia não retroagida. A publicação formal está validada; pacote final, nota e banca não são declarados aceitos.
 
 Atualização técnica16/10/2026, sem mudança de mecânica: o PR34 acrescenta ensaio isolado de alertas e preparação de recuperação. Issues38/39 abriram/fecharam pelo Actions em alvo temporário do runner, separadas do MTTR de produção; produção88d533e preservada. Recuperação real incluindo Pages ainda requer integração/revisão e execução. [Provas e limites](evidencias/ensaio-operacional-2026-10-16.md).
+
+
+Atualização de comunicação16/10/2026: [pitch real sem narração](pitch/README.md) produzido com79,96s da produçãoe9/v0.7.0,legendas/créditos e fontes preservadas. Não é sessão humana ou comprovação de aprendizado; a futura submissão deve vincular vídeo eSHA da candidata aprovada sem misturar versões.

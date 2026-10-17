@@ -1,0 +1,54 @@
+1
+00:00:00,000 --> 00:00:05,000
+Sua primeira oficina de jogos.
+
+2
+00:00:05,000 --> 00:00:11,000
+Cinco missões e um desafio final,
+para quem está começando a programar.
+
+3
+00:00:11,000 --> 00:00:20,160
+Teste sua hipótese e observe o resultado.
+Aqui, os controles estão invertidos.
+
+4
+00:00:20,160 --> 00:00:30,560
+Edite decisões com if e return.
+A nova regra muda o movimento da nave.
+
+5
+00:00:30,560 --> 00:00:33,960
+Calcule o movimento da nave.
+
+6
+00:00:33,960 --> 00:00:37,360
+Compare distâncias para detectar colisões.
+
+7
+00:00:37,360 --> 00:00:40,760
+Crie a regra de pontuação.
+
+8
+00:00:40,760 --> 00:00:44,160
+Use repetições para montar uma onda.
+
+9
+00:00:44,160 --> 00:00:55,960
+Combine as cinco funções no projeto final.
+O código é usado na partida de verdade.
+
+10
+00:00:55,960 --> 00:01:03,960
+Conclua o desafio e exporte suas funções .py
+junto com um HTML jogável.
+
+11
+00:01:03,960 --> 00:01:10,560
+Abra o HTML exportado sem conexão.
+Seu minijogo continua funcionando.
+
+12
+00:01:10,560 --> 00:01:19,960
+Experimente. Teste. Construa.
+Rota do Código — squad Aura 67.

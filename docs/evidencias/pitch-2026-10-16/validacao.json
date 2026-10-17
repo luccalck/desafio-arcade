@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-17T00:14:40.123781+00:00",
+  "duration": 79.96,
+  "width": 1920,
+  "height": 1080,
+  "codec": "h264",
+  "fps": "25/1",
+  "audioStreams": 0,
+  "fullDecode": {
+    "command": "ffmpeg -v error -i docs/pitch/pitch.mp4 -f null -",
+    "exitCode": 0
+  },
+  "sampledFrames": 12,
+  "visualInspection": "IA: quadros de todas as seções inspecionados; não é revisão humana.",
+  "captions": "incorporadas, no máximo duas linhas, faixa fora da captura",
+  "productionFilesCompared": 7,
+  "offlineNetworkRequests": 0,
+  "finalGameScore": 100,
+  "finalXP": 700,
+  "productionPointerUnchanged": true,
+  "submissionVideoWorkflowExecuted": false,
+  "submissionBlocker": "Produção e9 foi publicada pela run38852413982/2, cuja conclusão global é failure; entrada-video exige SUCCESS. Não alterar o gate. Na candidata final aprovada, refazer a captura automatizada se o SHA mudar."
+}

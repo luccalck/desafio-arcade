@@ -1,0 +1,53 @@
+# Órbita / regras Python da Oficina de Jogos
+# As funções recebem um dicionário entrada. Para jogar no navegador, abra meu-jogo.html.
+# O HTML inclui o interpretador educativo e o motor web; este arquivo contém suas regras.
+# MIT License
+# 
+# Copyright (c) 2026 contributors to Rota do Código
+# 
+# Permission is hereby granted, free of charge, to any person obtaining a copy
+# of this software and associated documentation files (the "Software"), to deal
+# in the Software without restriction, including without limitation the rights
+# to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the Software is
+# furnished to do so, subject to the following conditions:
+# 
+# The above copyright notice and this permission notice shall be included in all
+# copies or substantial portions of the Software.
+# 
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+# IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+# FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+# AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+# LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+# OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+# SOFTWARE.
+# 
+
+def controlar(entrada):
+    direcao = 0
+    if entrada["esquerda"]:
+        direcao = -1
+    if entrada["direita"]:
+        direcao = 1
+    return direcao
+
+def mover(entrada):
+    return entrada["posicao"] + entrada["direcao"] * entrada["velocidade"]
+
+def colidir(entrada):
+    return entrada["distancia"] <= entrada["raio"]
+
+def pontuar(entrada):
+    pontos = entrada["pontos"]
+    if entrada["tipo"] == "cristal":
+        pontos += 10
+    if entrada["tipo"] == "estrela":
+        pontos += 25
+    return pontos
+
+def criarOnda(entrada):
+    posicoes = []
+    for i in range(entrada["quantidade"]):
+        posicoes.append(40 + i * 80)
+    return posicoes

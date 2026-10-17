@@ -12,3 +12,10 @@
 Guardar concordâncias fora do Git, com responsável, data, escopo (gravação/voz/imagem, apresentação acadêmica e canais de publicação autorizados) e referência privada acessível ao revisor. Não versionar assinatura, CPF ou documento pessoal. Esta tabela não assina pelos participantes nem autoriza publicação. Os quatro precisam confirmar o uso efetivo antes de publicar; registrar somente a existência verificável da prova privada.
 
 I10-01/02: roteiro disponível. I10-05: ausência de trilha e inventário planejado documentados, reconferência obrigatória no vídeo final. I10-07/DIR-13: concordância e existência de registro confirmadas por Davi em 14/10; não afirmamos inspeção independente, data ou conteúdo do documento privado. Revisor deve conferir escopo/canais antes da publicação efetiva. Ensaio, gravação, produção e revisão constam no registro único 017; fontes externas P06/P04 indisponíveis neste computador. O HTML/JS original da avaliação e fontes comuns lidas nas etapas anteriores foram reutilizados sem alteração.
+
+
+## Vídeo efetivamente produzido —16/10/2026
+
+O [pitch real](../pitch/pitch.mp4) usa somente captura da produçãoe9,v0.7.0,cartelas/textos do projeto e fonte do sistema rasterizada. Não contém voz,rosto,música,efeito sonoro,imagem de banco ou logotipo externo. Os nomes dos quatro aparecem nos créditos; nenhuma fala foi atribuída a eles. Lucca autorizou nesta conversa a produção porIA sem narração e declarou a confirmação coletiva de autoria/direitos/ferramentas/notificações: [registro](confirmacao-squad-2026-10-16.md). Nenhum novo documento privado foi inventado ou publicado.
+
+A gravação,edição e inspeção técnica foram feitas com assistênciaIA. A conferência visual humana doMP4 não é declarada como realizada. Inventário de autoria/licenças noTHIRD_PARTY; manifesto e fontes em [pitch](pitch-2026-10-16/). Não há inscrição em concurso ou aceitação de novos termos.

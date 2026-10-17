@@ -1,0 +1,129 @@
+{
+  "schema": 1,
+  "productionSha": "e9dd28ccee535e9b1259a710742482e44db47aed",
+  "siteUrl": "https://luccalck.github.io/desafio-arcade/",
+  "captureUrl": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/",
+  "captureStartedAt": "2026-10-17T00:10:48.309466+00:00",
+  "zipSha256": "6517fa79749c4bea490acc36eb197ce19a95617a24a5cba56d2edb40c6fabe9f",
+  "sha256": "5bacea2b5180934e1afb7c652ac3e1da982daf5ed5007dfdcc2781c4bc733b5c",
+  "bytes": 3312725,
+  "durationPlanned": 79.96,
+  "timeline": [
+    {
+      "section": "intro",
+      "start": 0.0,
+      "end": 5.0,
+      "sourceStart": null,
+      "duration": 5,
+      "caption": "Sua primeira oficina de jogos.",
+      "source": "cartela editorial"
+    },
+    {
+      "section": "menu",
+      "start": 5.0,
+      "end": 11.0,
+      "sourceStart": 0.853,
+      "duration": 6.0,
+      "caption": "Cinco missões e um desafio final,\npara quem está começando a programar.",
+      "source": "produção capturada"
+    },
+    {
+      "section": "falha",
+      "start": 11.0,
+      "end": 20.16,
+      "sourceStart": 7.634,
+      "duration": 9.16,
+      "caption": "Teste sua hipótese e observe o resultado.\nAqui, os controles estão invertidos.",
+      "source": "produção capturada"
+    },
+    {
+      "section": "correcao",
+      "start": 20.16,
+      "end": 30.56,
+      "sourceStart": 17.587,
+      "duration": 10.4,
+      "caption": "Edite decisões com if e return.\nA nova regra muda o movimento da nave.",
+      "source": "produção capturada"
+    },
+    {
+      "section": "missao-2",
+      "start": 30.56,
+      "end": 33.96,
+      "sourceStart": 28.618,
+      "duration": 3.4,
+      "caption": "Calcule o movimento da nave.",
+      "source": "produção capturada"
+    },
+    {
+      "section": "missao-3",
+      "start": 33.96,
+      "end": 37.36,
+      "sourceStart": 32.353,
+      "duration": 3.4,
+      "caption": "Compare distâncias para detectar colisões.",
+      "source": "produção capturada"
+    },
+    {
+      "section": "missao-4",
+      "start": 37.36,
+      "end": 40.76,
+      "sourceStart": 36.086999999999996,
+      "duration": 3.4,
+      "caption": "Crie a regra de pontuação.",
+      "source": "produção capturada"
+    },
+    {
+      "section": "missao-5",
+      "start": 40.76,
+      "end": 44.16,
+      "sourceStart": 39.853,
+      "duration": 3.4,
+      "caption": "Use repetições para montar uma onda.",
+      "source": "produção capturada"
+    },
+    {
+      "section": "final",
+      "start": 44.16,
+      "end": 55.96,
+      "sourceStart": 44.312,
+      "duration": 11.8,
+      "caption": "Combine as cinco funções no projeto final.\nO código é usado na partida de verdade.",
+      "source": "produção capturada"
+    },
+    {
+      "section": "exportacao",
+      "start": 55.96,
+      "end": 63.96,
+      "sourceStart": 56.228,
+      "duration": 8.0,
+      "caption": "Conclua o desafio e exporte suas funções .py\njunto com um HTML jogável.",
+      "source": "produção capturada"
+    },
+    {
+      "section": "offline",
+      "start": 63.96,
+      "end": 70.56,
+      "sourceStart": 0.181,
+      "duration": 6.6,
+      "caption": "Abra o HTML exportado sem conexão.\nSeu minijogo continua funcionando.",
+      "source": "arquivo offline capturado"
+    },
+    {
+      "section": "outro",
+      "start": 70.56,
+      "end": 79.96,
+      "sourceStart": null,
+      "duration": 9.4,
+      "caption": "Experimente. Teste. Construa.\nRota do Código — squad Aura 67.",
+      "source": "cartela editorial"
+    }
+  ],
+  "narration": false,
+  "music": false,
+  "humanFacesOrVoices": false,
+  "humanPlaytest": false,
+  "captions": "incorporadas nas faixas editoriais; SRT adicional",
+  "captureExecutor": "IA/Playwright",
+  "requester": "Lucca Castilho Costa",
+  "scope": "Pitch da produção v0.7.0 filmada; validação acadêmica final pela entrada-video ainda não executada."
+}

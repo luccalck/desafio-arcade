@@ -394,3 +394,10 @@ Lucca solicitou melhoriaDORA e prompt para outro integrante validarPR41. A basel
 
 
 Resultado da melhoriaMTTR:run38953734834/9c22698 SUCCESS;Issues45/46 fecharam em1s/4s,média2,5s versus3s na baseline. Redução observada16,7%,duas amostras por execução; não é melhoria sustentada de produção. Contador real confirmou2consultas de labels; adaptador anterior reproduziu12no teste. Monitor38954187844 passou e manteveMTTR operacionalnull/0amostras,comHTTP200. Não repetimos o ensaio para selecionar resultado favorável. Atualizamos documentação/checks no escopo medido e prepararemos prompt para revisão humana de outro integrante no HEAD final.
+
+
+### Pitch sem narração e confirmação coletiva —16/10/2026
+
+Responsável solicitante:Lucca Castilho Costa. Instrução:registrar confirmação do squad e produzir pitch usando ferramentas de captura/edição,sem narração. Codex assistiu a adaptação do roteiro já existente,implementou scripts de capturaPlaywright/Chrome e ediçãoFFmpeg/Pillow,executou o jogo público real,validou artefatos e atualizou documentação. Não usamosRemotion,geração de voz,música,imagem artificial de gameplay ou identidade dos colegas. Fonte de confirmação coletiva:declaração humana deLucca,sem criar assinaturas ou prova histórica.
+
+Resultado efetivamente aceito tecnicamente:MP4H.26479,96s/1920×1080,legendas/cartelas,cinco missões,vitória real100pontos/700XP,download.py/HTML eHTMLexecutado offline. Fontes,ações,hashes,ffprobe,12quadros inspecionados e limitações em docs/evidencias/pitch.md. Captura automatizada não é playtest humano. A conferência visual humana deste novo vídeo e revisão do novo commit não são presumidas pela confirmação anterior. A entrada-video ainda depende da origem formalSUCCESS/candidata final correspondente; não foi relaxada. Commits reais ficam no histórico da branchdocs/pitch-producao; oHEADdoPR41 foi preservado.

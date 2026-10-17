@@ -17,13 +17,14 @@ Mantemos os mesmos oito tópicos da solicitação de fechamento de Lucca. Não s
 
 | Nº fixo | Tópico | Comprovado | O que impede o fechamento integral |
 |---|---|---|---|
-| 1 | Fechamento documental e revisões | PR32/33/34/35/40 revisados; PR40 integrado; matriz individual com três INT por integrante e vinte PRs revisados; documentação atualizada na branch | PR41 contém correções de interface/alertas e o fechamento documental,com CI no HEAD conferido pelo GitHub. A main exige uma aprovação de outro autor e do último push. Lucca solicitou agora um prompt para outro integrante validar o PR41; preparar conferência e aprovação real do HEAD final. Registrar bloqueio de integração sem remover a proteção ou inventar aprovação. Direitos coletivos, marcos e confirmações sem fonte continuam sem declaração final. |
-| 5 | Pitch | Roteiro e entrada automatizada preparados | **Adiado expressamente por Lucca:** vídeo real de produção, até90s, legendas e direitos/consentimentos aplicáveis. |
-| 6 | Release e pacote | **Release técnica v0.7.0 concluída**, seis anexos públicos conferidos, ZIP29.265bytes, mesmo artefato homologado e publicado, offline validado | Pacote acadêmico final/tag/triagem aguardam vídeo e entradas verdadeiras. Seguir docs/pacote-submissao.md; não gerar pacote manual ou pitch fictício. |
+| 1 | Fechamento documental e revisões | PR32/33/34/35/40 revisados; PR40 integrado; matriz individual com três INT por integrante e vinte PRs revisados; documentação atualizada na branch | PR41 contém correções de interface/alertas e o fechamento documental,com CI no HEAD conferido pelo GitHub. A main exige uma aprovação de outro autor e do último push. Lucca solicitou agora um prompt para outro integrante validar o PR41; preparar conferência e aprovação real do HEAD final. Registrar bloqueio de integração sem remover a proteção ou inventar aprovação. Confirmação coletiva de direitos/ferramentas e recebimento das notificações registrada em16/10 por declaração de Lucca; marcos históricos continuam sem prova documental nova. |
+| 6 | Release e pacote | **Release técnica v0.7.0 concluída**, seis anexos públicos conferidos, ZIP29.265bytes, mesmo artefato homologado e publicado, offline validado | Pacote acadêmico final/tag/triagem aguardam candidata aprovada e vínculo do vídeo já produzido à origem de produçãoSUCCESS correspondente,além das entradas finais verdadeiras. Seguir docs/pacote-submissao.md; não gerar pacote manual ou pitch fictício. |
 | 7 | Conferências e relatório | Relatório operacional de10páginas gerado/inspecionado na CI38948501087 e atualizado com o novo ensaio; GDD completo; segurança, autoria, smoke, hashes e responsividade verificados | Atualizar a conferência final somente depois do vídeo/pacote/triagem reais. O PDF posterior tem fonte documental própria; não sobrescrever anexos imutáveis da Release técnica. |
 | 8 | Ficha/TXT, envio e banca | MD persistente com49campos e dados conhecidos; roteiro de apresentação/demonstração/perguntas preparado | **Ficha/TXT por último**, conforme Lucca. Faltam entradas finais verdadeiras, envio/reciboAVA e apresentação dos quatro, incluindo demonstração pedida pelo professor. Datas históricas e prazo oficial não são inventados. |
 
 ### Atividades concluídas — fora da lista de pendências
+
+**Tópico5:** pitch sem narração produzido:79,96s,FullHD,H.264,legendas incorporadas,créditos e gameplay realv0.7.0/e9; fontes/recibos em ../evidencias/pitch.md. Arquivo final e gravações originais versionados. A vinculação/recaptura se mudar oSHA da candidata final faz parte exclusivamente do tópico6,não de outro vídeo ausente.
 
 **Tópico3:** melhoria orientada pelo MTTR do ensaio implementada e medida:3s→2,5s,redução observada16,7%; consultas de labels12→2. Fontes/limites em ../evidencias/melhoria-mttr-2026-10-16.md; operação permanece sem amostra deMTTR. Integração da mudança pertence exclusivamente ao tópico1.
 
@@ -105,7 +106,7 @@ INT-04/03.
 INT-03/06/05.
 
 - [x] Jobs paralelos, cache, permissões por job, gate ci, pacote por SHA/run/tentativa, HML e PRD integrados; cadeia 38829484114 integralmente verde.
-- [ ] I03-24: notificação executada no Actions; confirmar recebimento/consulta pelo squad. Não confundir Watch dos alertas com recebimento desta notificação.
+- [x] I03-24: recebimento/consulta pelo squad confirmado por Lucca em16/10; fonte humana e limites em ../evidencias/confirmacao-squad-2026-10-16.md, sem inspeção independente de dispositivos.
 - [ ] Aceite integral ainda depende de release/recuperação/triagem reais nos015/022/023/026/035/036; não reimplementar os jobs já funcionais.
 
 <a id="passo-008"></a>
@@ -116,7 +117,8 @@ INT-05/02/01.
 
 - [x] Inventário, THIRD_PARTY, LICENSE, AI-USAGE, scanners e fontes/ativos registrados; revisão do P2 de Miguel efetivamente concluída no PR35 e nova aprovação de Lucas no PR33.
 - [x] Créditos dos seis componentes reconferidos em16/10/2026, com fontes/cabeçalhos/licenças em creditos-reconferidos-2026-10-16.json: @esbuild/win32-x64, @eslint/config-helpers, @rolldown/binding-win32-x64-msvc, argparse, lightningcss e lightningcss-win32-x64-msvc. Conferência técnica assistida autorizada por Lucca; não substitui direitos coletivos.
-- [ ] Concluir confirmação coletiva de autoria/originalidade/direitos de uso, revisão por uso de IA e inventário final incluindo vídeo; preservar consentimentos privados. Responsável: quatro integrantes; GDD-15, I05-11/14–17/21/22 e DIR aplicáveis.
+- [x] Confirmação coletiva de autoria/originalidade/titularidade, ferramentas e direitos dos materiais atuais declarada por Lucca em nome do squad em16/10. GDD-15/I05-16/DIR-01/14; fonte em ../evidencias/confirmacao-squad-2026-10-16.md.
+- [ ] Inventário do vídeo final e rastreabilidade/revisão dos novos usos e alterações até a entrega (I05-11/14/15/17/21/22); a confirmação não substitui a aprovação formal do HEAD de outro autor.
 
 <a id="passo-009"></a>
 
@@ -201,7 +203,7 @@ INT-08/05.
 INT-10/05/02.
 
 - [x] Proposta, conceito/diferencial, roteiro e planejamento de legendas/créditos disponíveis.
-- [ ] Gravar/validar o MP4 final e reconferir consentimentos de quem aparece e direitos dos materiais efetivamente usados. Pitch mantido pendente por orientação de Lucca; ver029.
+- [x] MP4real produzido/validado em16/10,79,96s,sem narração ou música,sem rosto/voz; créditos dos quatro,legendas e inventário final. Fonte:../evidencias/pitch.md; vínculo com candidata acadêmica é tratado em029/035/036.
 
 <a id="passo-018"></a>
 
@@ -317,7 +319,8 @@ INT-08/03/09.
 
 INT-10/09/05.
 
-- [ ] Gravar gameplay da produção e produzir pitch.mp4 até90s; validar duração fracionária com ffprobe, legendas, proposta/conceito/diferencial, licenças/créditos e consentimentos. Fornecer entrada real ao entrada-video.yml antes da tag final. Pitch permanece pendente, sem placeholder.
+- [x] Gameplay real de produçãov0.7.0/e9 capturado e MP4produzido:79,96s,ffprobe/decodificação exit0,legendas,proposta/conceito/diferencial,créditos e ausência de rosto/voz/trilha. Fontes:../pitch/pitch.mp4 e../evidencias/pitch.md.
+- [ ] Validar entrada-video.yml contra a candidata acadêmica final com origemSUCCESS e mesmoSHA/ZIP filmados. A atual produçãoe9tem run globalfailure; não relaxar validador nem atribuir captura a outroSHA. Reexecutar o script de captura após nova candidata se necessário; dependência do tópico6.
 
 <a id="passo-030"></a>
 
@@ -475,3 +478,9 @@ Correção432eb57 e execução38950333359 concluídas:Issues43/44comalerta+ensai
 ## Melhoria orientada por MTTR —16/10/2026
 
 A comparação passou a existir no ensaio controlado:baseline38950333359,mudança9c22698,run38953734834,Issues45/46 e contador real de2consultas. O tópico3 saiu da lista ativa com resultado técnico e limites preservados. Aprovação/integração continuam exclusivamente no tópico1. O prompt será fornecido com o HEAD final; não presumimos revisão externa anterior nem pedimos revisão de SHA superado.
+
+
+Confirmações do squad atualizadas16/10: declaração coletiva registrada, sem transformar em prova de marcos históricos, aprovação formal do PR41 ou sessão humana de jogo.
+
+
+Atualização16/10: a orientação anterior de adiar o pitch foi substituída pela solicitação expressa de produzi-lo sem narração. O arquivo e suas fontes estão disponíveis; não cobrar gravação inexistente novamente. A proveniência final/triagem pertence ao tópico6.

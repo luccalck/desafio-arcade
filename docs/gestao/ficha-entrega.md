@@ -34,7 +34,7 @@ Os campos finais ficam vazios até comprovação da versão efetivamente entregu
 | lkHml — URL de homologação | Não | https://luccalck.github.io/desafio-arcade/hml/ | HML atual0.7.0/SHA1e3dd3b, run38939899867,4/4 e178,827s; avanço da main, preservando produçãoe9. |
 | lkCI — Última execução verde da pipeline (link ou print) | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/38939899867 | CI/main318/36 eHML178,827s verdes;PRDskipped intencional. RetomadaRelease38940532129/monitor38940593792 verdes. Substituir pela run acadêmica final quando existir. |
 | lkGraf — Painel /status/ (link) | Sim | https://luccalck.github.io/desafio-arcade/status/ | HTTP200/desktop/celular/refresh porEnter; três DORA com2deploys, MTTRindisponível. Fonte:painel-atual-verificacao.json. |
-| lkVideo — Vídeo pitch (arquivo no AVA ou link) | Sim | | Pendente por orientação de Lucca; não usar caminho inexistente como entrega. |
+| lkVideo — Vídeo pitch (arquivo no AVA ou link) | Sim | https://github.com/luccalck/desafio-arcade/blob/docs/pitch-producao/docs/pitch/pitch.mp4 | MP4real79,96s da produçãoe9,v0.7.0; sem narração,legendas incorporadas. Vinculação à candidata acadêmica final ainda não executada. |
 | lkRel — Relatório técnico (PDF) | Sim | | Publicar PDF gerado pela CI e confirmar acesso; arquivo local não é link público. |
 | lkDrive — Pasta do Google Drive do concurso (se inscritos) | Não | | Concurso opcional, sem decisão coletiva/autorização comprovada. |
 
@@ -151,3 +151,6 @@ Referências verificadas, sem confundir com respostas acadêmicas finais:
 Matriz individual:quatro integrantes com commit próprio/arquivo/PR aprovado em≥3INT;20PRs revisados no total. Não atesta presença/domínio na banca ou fatorF. DORA atual:2deploys/14dias,0,142857/dia,leadtime médio35min19s,CFR50% com rollback planejado,MTTRnull. Não copiar a primeira amostra histórica como se fosse a atual.
 
 Pitch e lkVideo continuam vazios; lkRel final aguarda o PDF acadêmico atualizado. As quatro declarações e os dez aceites continuam sem marca final até comprovação. Não preencher HTML ou gerarTXT nesta etapa. Procedimento final sem ciclo produção→gravação→tag→pacote em docs/pacote-submissao.md.
+
+
+Confirmação coletiva e pitch16/10: direitos/originalidade/ferramentas e recebimento de notificações confirmados porLucca em nome do squad,com fonte/limites em../evidencias/confirmacao-squad-2026-10-16.md. Vídeo real em../pitch/pitch.mp4; validação técnica e fontes em../evidencias/pitch.md. Mantemos HTMLoriginal/TXTsem preencher e declarações finais de marcos/triagem sem forçar aceite.

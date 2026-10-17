@@ -1,6 +1,6 @@
 # Pacote de submissão — procedimento de fechamento
 
-Atualização:16/10/2026. INT-03/06/09/10; R07; G6–G8. A automação existe, mas o pacote acadêmico ainda não foi gerado: falta o pitch real e as demais entradas finais. Não criar arquivos fictícios nem montar submissao manualmente.
+Atualização:16/10/2026. INT-03/06/09/10; R07; G6–G8. A automação existe, mas o pacote acadêmico ainda não foi gerado: o pitch real da produção0.7.0foi produzido,mas a vinculação à candidata final/origemSUCCESS e as demais entradas finais ainda precisam ser concluídas. Não criar arquivos fictícios nem montar submissao manualmente.
 
 ## Estrutura exata
 
@@ -64,4 +64,7 @@ A criação ocorre no job da tag, com variáveis de proveniência e recibos corr
 
 ## Aceite e arquivo de evidências
 
-Conservar logs de triagem, IDs/URLs de run e artefato, checksum, versão, recibo de produção e confirmação de cada arquivo abrindo. Não chamar um job skipped, teste com fixtures ou draft de entrega final. A ficha persistente é docs/gestao/ficha-entrega.md; o TXT continua para o último passo. Pitch e prazo ainda não são entradas resolvidas.
+Conservar logs de triagem, IDs/URLs de run e artefato, checksum, versão, recibo de produção e confirmação de cada arquivo abrindo. Não chamar um job skipped, teste com fixtures ou draft de entrega final. A ficha persistente é docs/gestao/ficha-entrega.md; o TXT continua para o último passo. O arquivo de pitch existe e foi validado tecnicamente; sua entrada com proveniênciaSUCCESS e o prazo aplicável ainda não são configurações finais resolvidas.
+
+
+Pitch disponível16/10: [arquivo/fontes](pitch/README.md),79,96s,sem narração. A produção capturada ée9/v0.7.0; não usar esseSHA como se fosse a futura candidata1.0.0. O script permite nova captura real depois da publicação aprovada,sem trabalho manual de edição repetido. Não modificar o validador para aceitar a run globalfailure38852413982/2.
