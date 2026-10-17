@@ -24,7 +24,7 @@ Mantemos os mesmos oito tópicos da solicitação de fechamento de Lucca. Não s
 
 ### Atividades concluídas — fora da lista de pendências
 
-**Tópico5:** pitch com voz sintética produzido:79,96s,FullHD,H.264,legendas incorporadas,créditos e gameplay realv0.7.0/e9; fontes/recibos em ../evidencias/pitch.md. Arquivo final e gravações originais versionados. A vinculação/recaptura se mudar oSHA da candidata final faz parte exclusivamente do tópico6,não de outro vídeo ausente.
+**Tópico5:** pitch corrente86s,FullHD,H.264/AAC,áudioElevenLabs fornecido,legendasBold52px,créditos e gameplay realv0.7.0/e9; fontes/recibos em ../evidencias/pitch.md. Arquivo final e gravações originais versionados. A vinculação/recaptura se mudar oSHA da candidata final faz parte exclusivamente do tópico6,não de outro vídeo ausente.
 
 **Tópico3:** melhoria orientada pelo MTTR do ensaio implementada e medida:3s→2,5s,redução observada16,7%; consultas de labels12→2. Fontes/limites em ../evidencias/melhoria-mttr-2026-10-16.md; operação permanece sem amostra deMTTR. Integração da mudança pertence exclusivamente ao tópico1.
 
@@ -487,3 +487,6 @@ Atualização16/10: a orientação anterior de adiar o pitch foi substituída pe
 
 
 Narração16/10: a solicitação posterior acrescentou17falas sintéticas aoMP4, mantendo79,96s. Roteiro e tempos medidos em../pitch/narracao.md; sincronia17/17conferida por amostras eAAC, sem alegar escuta humana. O vídeo silencioso foi preservado. Não é nova pendência de gravação; o vínculo da candidata continua no tópico6.
+
+
+Edição corrente16/10: pitch86s com áudioElevenLabs fornecido pelo solicitante,legendasbold52px,30blocos por palavra,mesma produçãoe9/v0.7.0. As referências anteriores a79,96s/Piperdescrevem edições históricas. [MP4/fontes atuais](../pitch/README.md). O vínculo da candidata final continua no fechamento do pacote,sem reabrir uma tarefa de vídeo ausente.

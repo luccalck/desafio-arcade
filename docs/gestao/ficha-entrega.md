@@ -154,3 +154,6 @@ Pitch e lkVideo continuam vazios; lkRel final aguarda o PDF acadêmico atualizad
 
 
 Confirmação coletiva e pitch16/10: direitos/originalidade/ferramentas e recebimento de notificações confirmados porLucca em nome do squad,com fonte/limites em../evidencias/confirmacao-squad-2026-10-16.md. Vídeo real em../pitch/pitch.mp4; validação técnica e fontes em../evidencias/pitch.md. Mantemos HTMLoriginal/TXTsem preencher e declarações finais de marcos/triagem sem forçar aceite.
+
+
+Edição corrente16/10: pitch86s com áudioElevenLabs fornecido pelo solicitante,legendasbold52px,30blocos por palavra,mesma produçãoe9/v0.7.0. As referências anteriores a79,96s/Piperdescrevem edições históricas. [MP4/fontes atuais](../pitch/README.md). O vínculo da candidata final continua no fechamento do pacote,sem reabrir uma tarefa de vídeo ausente.

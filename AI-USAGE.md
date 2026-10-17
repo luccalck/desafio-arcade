@@ -413,3 +413,12 @@ Validação executada:17/17janelas,nenhuma aceleração/corte;áudio/vídeoPTSze
 ### Roteiro fluido para ElevenLabs —16/10/2026
 
 A pedido de Lucca, redigimos docs/pitch/narracao-elevenlabs.md em texto corrido, seguindo a ordem das cenas: proposta, controles invertidos, teste/correção, quatro conceitos seguintes, desafio final, exportação, offline e encerramento. Não adicionamos promessa de aprendizagem medida ou recurso inexistente. O texto não foi enviado ao ElevenLabs, nem geramos novo áudio nessa ferramenta ou aceitamos termos. A duração e o alinhamento da futura voz precisam ser conferidos após sua geração; não atribuímos ao texto uma execução cronometrada inexistente. O pitch narrado atual e seus recibos permanecem preservados.
+
+
+### Edição com áudioElevenLabs fornecido —16/10/2026
+
+Lucca forneceuMP3dosDownloads e solicitou substituir narração/legendas anteriores,sincronizar cenas e usar legendasbold. Não acessamos contaElevenLabs,não geramos voz nova nessa plataforma,não aceitamos termos e não presumimos plano/licença privada. Fonte/autorizaçãodeuso informada pelo solicitante,hash e nome emdocs/evidencias/pitch-elevenlabs-2026-10-16/audio-origem.json. OriginalDownloads preservado.
+
+A assistência transcreveu localmente comfaster-whisper1.2.1/modelobase,confrontou193palavras (somente normalizações5/cinco e mini-jogo/minijogo),retomou capturaPlaywrightrealpara trechos mais longos e remontou86s sem acelerar jogo/voz. Criou30legendas52pxbold,≤2linhas/34caracteres efetivos;reconstruiu o vídeo sem áudio/texto anterior. Falha de API na decodificaçãoPyAV19(metadata_errors) foi resolvida porFFmpeg→arrayPCM,sem repetir caminho incompatível. ModelosASR ficam fora doGit e da build; nenhumbackend para jogador.
+
+Validações reais:MP4umáudioAAC,PTSzero/duração86s;fullDecodeexit0,zero saturação;correlação30/30sem deslocamento detectado,coeficientemínimo0,999978. TimestampsASRsão estimativas,não escuta humana. Quadros de correção e encerramento foram renderizados/inspecionados. Não afirmamos playtest humano,aprovação de direitos da conta ou validação acadêmica final. Fontes/manifestos preservam as edições anteriores por commit,sem adulterar sua proveniência.

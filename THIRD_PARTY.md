@@ -73,3 +73,10 @@ Ferramentas locais de autoria:Python3.12 (PSF),PlaywrightPython (Apache-2.0),Pil
 ## Narração sintética do pitch —16/10/2026
 
 Texto próprio e voz sintética local com[Piper](https://github.com/OHF-Voice/piper1-gpl), versão1.8.0, ferramentaGPL-3.0 (não distribuída no jogo). Modelo `pt_BR-faber-medium` do repositório público [piper-voices](https://huggingface.co/rhasspy/piper-voices/tree/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/faber/medium); modelcard informa datasetCC0 e22.050Hz. OREADMEdo repositório de vozes declaraMIT; fonte/revisão também preservadas em licenca-vozes.json, além doCC0declarado para o dataset. Fonte/modelcard/configuração/hash registrados em docs/evidencias/narracao-2026-10-16, sem distribuir modelo63MB ou executável. Não houve clonagem dos integrantes, música ou serviçoTTS emruntime. FFmpeg incorporouAAC/48kHz, normalização e legendas transcritas; SegoeUI rasterizada, semTTFdistribuído.
+
+
+## ÁudioElevenLabs fornecido e legendas —16/10/2026
+
+O solicitante forneceuMP3narrando o texto próprio do projeto e autorizou incorporá-lo. Arquivooriginal,hash,fonte declarada e limites emdocs/evidencias/pitch-elevenlabs-2026-10-16/audio-origem.json. Não acessamos contaElevenLabs,não inspecionamos assinatura/licença privada nem atribuímos a voz a integrante; a fonte é informada pelo usuário/nome doarquivo. Nenhuma música ou rosto novo. VozPiperanterior não usada nesta montagem.
+
+Autoria:capturas reais do projetoMIT,cartelas próprias,texto próprio e assistênciaIAregistrada. Reconhecimento localcom[faster-whisper](https://github.com/SYSTRAN/faster-whisper) (MIT),CTranslate2 e modeloWhisperbaseconvertido,pinado nos recibos. Esses pesos/ferramentas não são distribuídos ao jogador. SegoeUIBold rasterizada (fontes do sistema não distribuídas);FFmpegH.264/AACpara edição e codificação.

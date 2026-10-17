@@ -68,3 +68,6 @@ Conservar logs de triagem, IDs/URLs de run e artefato, checksum, versão, recibo
 
 
 Pitch disponível16/10: [arquivo/fontes](pitch/README.md),79,96s,com voz sintética. A produção capturada ée9/v0.7.0; não usar esseSHA como se fosse a futura candidata1.0.0. O script permite nova captura real depois da publicação aprovada,sem trabalho manual de edição repetido. Não modificar o validador para aceitar a run globalfailure38852413982/2.
+
+
+Edição corrente16/10: [pitch atual](pitch/README.md) tem86s,áudioElevenLabs fornecido porLucca e30blocos de legendaBold52px. A edição anterior79,96s permanece histórica. Origemvisuale9/v0.7.0e vínculo acadêmico final preservados.

@@ -22,3 +22,6 @@ docs/pitch/* -text
 
 *.wav binary
 docs/evidencias/narracao-2026-10-16/* -text
+
+*.mp3 binary
+docs/evidencias/pitch-elevenlabs-2026-10-16/* -text

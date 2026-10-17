@@ -1,0 +1,127 @@
+{
+  "schema": 1,
+  "language": "pt-BR",
+  "duration": 79.96,
+  "voice": "Piper pt_BR-faber-medium (voz sintética pública, não integrante)",
+  "cues": [
+    {
+      "id": 1,
+      "section": "intro",
+      "start": 0.3,
+      "end": 4.7,
+      "text": "Rota do Código. Aprenda Python criando seu minijogo."
+    },
+    {
+      "id": 2,
+      "section": "menu",
+      "start": 5.2,
+      "end": 10.8,
+      "text": "Cinco missões e um desafio final para começar a programar."
+    },
+    {
+      "id": 3,
+      "section": "falha",
+      "start": 11.2,
+      "end": 13.6,
+      "text": "Os controles estão invertidos."
+    },
+    {
+      "id": 4,
+      "section": "falha",
+      "start": 14.2,
+      "end": 19.8,
+      "text": "Teste a regra. Compare o esperado com o resultado."
+    },
+    {
+      "id": 5,
+      "section": "correcao",
+      "start": 20.4,
+      "end": 24.0,
+      "text": "Edite as decisões no código Python."
+    },
+    {
+      "id": 6,
+      "section": "correcao",
+      "start": 24.1,
+      "end": 30.2,
+      "text": "Teste novamente. A regra corrigida muda o movimento da nave."
+    },
+    {
+      "id": 7,
+      "section": "missao-2",
+      "start": 30.76,
+      "end": 33.76,
+      "text": "Calcule o movimento da nave."
+    },
+    {
+      "id": 8,
+      "section": "missao-3",
+      "start": 34.16,
+      "end": 37.16,
+      "text": "Compare distâncias para detectar colisões."
+    },
+    {
+      "id": 9,
+      "section": "missao-4",
+      "start": 37.56,
+      "end": 40.56,
+      "text": "Crie a regra de pontuação."
+    },
+    {
+      "id": 10,
+      "section": "missao-5",
+      "start": 40.96,
+      "end": 43.96,
+      "text": "Use repetições para montar uma onda."
+    },
+    {
+      "id": 11,
+      "section": "final",
+      "start": 44.4,
+      "end": 48.8,
+      "text": "Reúna as cinco funções no projeto final."
+    },
+    {
+      "id": 12,
+      "section": "final",
+      "start": 49.2,
+      "end": 55.6,
+      "text": "Agora, o seu código controla uma partida de verdade."
+    },
+    {
+      "id": 13,
+      "section": "exportacao",
+      "start": 56.2,
+      "end": 59.0,
+      "text": "O desafio foi concluído."
+    },
+    {
+      "id": 14,
+      "section": "exportacao",
+      "start": 59.1,
+      "end": 63.6,
+      "text": "Exporte suas funções Python e o jogo em HTML."
+    },
+    {
+      "id": 15,
+      "section": "offline",
+      "start": 64.2,
+      "end": 70.2,
+      "text": "Abra o HTML exportado sem conexão. O minijogo continua funcionando."
+    },
+    {
+      "id": 16,
+      "section": "outro",
+      "start": 70.8,
+      "end": 74.5,
+      "text": "Experimente. Teste. Construa."
+    },
+    {
+      "id": 17,
+      "section": "outro",
+      "start": 75.0,
+      "end": 79.6,
+      "text": "Rota do Código. Equipe Aura sessenta e sete."
+    }
+  ]
+}

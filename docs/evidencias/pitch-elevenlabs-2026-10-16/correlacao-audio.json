@@ -1,0 +1,164 @@
+{
+  "method": "MP3fornecido decodificadoFFmpeg/48kHz vs AACfinal decodificado; correlação em30blocos,subamostragem12kHz,busca±100ms.",
+  "sourceSamples": 4126512,
+  "outputSamples": 4128768,
+  "duration": 86.016,
+  "paddingAtEndSeconds": 0.047,
+  "allWithin2ms": true,
+  "maxAbsoluteLagMilliseconds": 0.0,
+  "minimumCorrelation": 0.999978,
+  "clippedSamples": 0,
+  "peakDbFS": -3.4771430842884996,
+  "results": [
+    {
+      "cue": 1,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999992
+    },
+    {
+      "cue": 2,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999993
+    },
+    {
+      "cue": 3,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999984
+    },
+    {
+      "cue": 4,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999992
+    },
+    {
+      "cue": 5,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999987
+    },
+    {
+      "cue": 6,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999986
+    },
+    {
+      "cue": 7,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999978
+    },
+    {
+      "cue": 8,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.99998
+    },
+    {
+      "cue": 9,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999988
+    },
+    {
+      "cue": 10,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999986
+    },
+    {
+      "cue": 11,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999982
+    },
+    {
+      "cue": 12,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999981
+    },
+    {
+      "cue": 13,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999983
+    },
+    {
+      "cue": 14,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.99998
+    },
+    {
+      "cue": 15,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999987
+    },
+    {
+      "cue": 16,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999986
+    },
+    {
+      "cue": 17,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999988
+    },
+    {
+      "cue": 18,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999985
+    },
+    {
+      "cue": 19,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999988
+    },
+    {
+      "cue": 20,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999987
+    },
+    {
+      "cue": 21,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999987
+    },
+    {
+      "cue": 22,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999983
+    },
+    {
+      "cue": 23,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999991
+    },
+    {
+      "cue": 24,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999987
+    },
+    {
+      "cue": 25,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999992
+    },
+    {
+      "cue": 26,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999987
+    },
+    {
+      "cue": 27,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999984
+    },
+    {
+      "cue": 28,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999981
+    },
+    {
+      "cue": 29,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999992
+    },
+    {
+      "cue": 30,
+      "lagMilliseconds": 0.0,
+      "correlationAtZero": 0.999979
+    }
+  ]
+}

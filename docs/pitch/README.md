@@ -1,34 +1,25 @@
 # Pitch — Rota do Código
 
-[Assistir ou baixar o MP4](pitch.mp4) · [Legendas SRT](pitch-legendas.srt) · [Proveniência e montagem](pitch-producao.json) · [Roteiro da narração](narracao.md) · [Áudio WAV](narracao.wav)
+[Assistir ou baixar o MP4](pitch.mp4) · [Legendas SRT](pitch-elevenlabs.srt) · [Texto da narração](narracao-elevenlabs.md) · [Proveniência](pitch-producao.json)
 
-Pitch com voz sintética em português brasileiro, sem música, com **79,96 segundos**, resolução 1920×1080 e vídeo H.264 a 25 fps. Mostra o conceito, o teste de uma regra incorreta, a edição de Python, cinco missões, o projeto final com vitória, a exportação de funções e o HTML exportado funcionando offline. As legendas incorporadas transcrevem as17falas; oSRT é complementar. O áudioAAC tem a mesma duração e início do vídeo. [Recibo temporal](narracao-sincronia.json). A [versão silenciosa original](pitch-sem-narracao.mp4) foi preservada.
+**Versão atual:86segundos,FullHD,H.264/AAC.** Usa o áudioElevenLabs fornecido porLucca, na velocidade original. A narraçãoPiper e as legendas da edição anterior foram retiradas da montagem corrente.
 
-Gravamos a produção pública **v0.7.0 / e9dd28c** com Playwright e Chrome, sem alterar DOM, regras, progresso ou relógio do jogo. O piloto automatizado usa eventos de teclado do navegador. Os cortes são declarados e não aceleram a simulação. Abertura e encerramento são cartelas editoriais. A gravação não é um playtest humano.
+As legendas são brancas,em negrito,com52px,até duas linhas e34caracteres efetivos porlinha. Trinta blocos acompanham193palavras,confrontadas com a transcrição real doMP3. O texto fica fora da área do jogo. [Sincronização e apresentação](narracao.md).
 
-As [fontes originais e os recibos](../evidencias/pitch-2026-10-16/) preservam as gravações WEBM, os arquivos exportados, as ações, os quadros e as verificações. Veja o [registro técnico](../evidencias/pitch.md). Não usamos rostos, voz humana gravada, trilha, marcas externas ou depoimentos. A voz públicaPiper/faber não representa integrante do squad.
+As cenas mostram a produção realv0.7.0/e9dd28c:problema nos controles,edição/testePython,movimento,colisão,pontuação,repetições,partida final,vitória,exportação eHTMLfuncionando offline. A montagem foi subordinada às falas,sem acelerar o jogo ou a voz. Menus/trechos longos foram recapturados em navegador real. As cartelas de abertura/encerramento são editoriais,não telas simuladas do jogo.
+
+[Fontes e recibos atuais](../evidencias/pitch-elevenlabs-2026-10-16/) preservam o áudio fornecido porhash,gravaçõesWEBM,transcrição/tempos,estiloASS,quadros e validações. A cópia doMP3está em[narracao-elevenlabs.mp3](narracao-elevenlabs.mp3); o original emDownloads não foi alterado. [Captura anterior e histórico](../evidencias/pitch.md).
 
 ## Reproduzir a edição
 
-Ferramentas de autoria: Python 3, Pillow, Playwright com Chrome e FFmpeg/ffprobe no PATH. Elas não são dependências do jogador nem da build estática. Na raiz do repositório:
+Ferramentas de autoria:Python3,Pillow,FFmpeg/ffprobe; transcrição local opcional comfaster-whisper/numpy e modelo público pinado. Não são dependências do jogador ou do site estático. Na raiz do repositório:
 
 ```powershell
-python scripts/pitch/editar.py --capture docs/evidencias/pitch-2026-10-16 --output .contexto/pitch-reeditado
+python scripts/pitch/editar-elevenlabs.py --capture docs/evidencias/pitch-elevenlabs-2026-10-16 --alignment docs/evidencias/pitch-elevenlabs-2026-10-16/alinhamento-palavras.json --audio docs/pitch/narracao-elevenlabs.mp3 --work .contexto/reedicao-elevenlabs --output .contexto/reedicao-elevenlabs/pitch.mp4
 ```
 
-A edição acima reproduz a fonte silenciosa. A narração é montada por `scripts/pitch/narrar.py`, com o roteiroJSON, Piper1.8.0 e modelo `pt_BR-faber-medium`; fonte/revisão/hash estão em `../evidencias/narracao-2026-10-16/origem-modelo.json`. O modelo fica fora da build e doGit.
+O script usa SegoeUI instalada noWindows; nenhumTTFé distribuído. Os vídeos de origem são reais. Versões,fontes ouencoders diferentes podem mudar os bytes da reedição; o manifesto comprova os arquivos entregues.
 
-O script usa Segoe UI instalada no Windows. Não redistribuímos arquivos de fonte. Versões, fontes e plataformas podem mudar os bytes da reedição; o manifesto comprova o arquivo entregue, sem prometer renderização idêntica em outra máquina.
+## Submissão acadêmica
 
-Para outra candidata aprovada e publicada, consulte `python scripts/pitch/capturar.py --help`, forneça seu SHA e ZIP originais e aguarde a conclusão real da sessão antes de editar. Não atribua o vídeo da v0.7.0 a outro SHA.
-
-## Vínculo com a submissão
-
-O arquivo existe e foi validado tecnicamente. A `entrada-video.yml` ainda não foi executada: a run que publicou e9 (`38852413982/2`) tem conclusão global `failure`, enquanto a validação exige `SUCCESS`. Esse gate foi preservado.
-
-Após publicar a candidata final aprovada, refaça a captura se o SHA mudar e vincule o vídeo à origem correspondente antes da tag e do pacote. Este diretório não comprova triagem, pacote acadêmico completo ou revisão humana do vídeo.
-
-
-## Sincronização conferida
-
-As17falas foram posicionadas por amostras a48kHz, sem aceleração ou corte e sem atravessar a cena correspondente. A comparação entre oWAVoriginal e oAACdecodificado não detectou deslocamento nos17trechos, na resolução da busca. As janelas doMDnão são uma transcrição de leitura humana. A inspeção auditiva humana não foi declarada; o arquivo está disponível para avaliação.
+Este vídeo continua vinculado à produçãoe9/v0.7.0filmada. A validaçãoentrada-video.yml exige uma origem globalmenteSUCCESS, enquanto a run que publicou e9tem conclusãofailure. O gate não foi alterado. A candidata final aprovada deverá usar vídeo do mesmoSHA/ZIP; recapturar se a versão mudar. Não declaramos pacote acadêmico completo ou triagem final por existir esteMP4.

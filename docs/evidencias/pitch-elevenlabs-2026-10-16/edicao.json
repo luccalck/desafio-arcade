@@ -1,0 +1,141 @@
+{
+  "schema": 1,
+  "duration": 86.0,
+  "audioOriginalDuration": 85.968938,
+  "audioOriginalSha256": "f55dbc422fc615659659f1af4387b25c422a11a4e852ca6a53ad9709cc113d37",
+  "videoSha256": "bd27a7a9ae040e1a84b2e2976e9ac097d9ca2f806386bd2ca46fb3f365408846",
+  "videoBytes": 5468118,
+  "productionSha": "e9dd28ccee535e9b1259a710742482e44db47aed",
+  "timeline": [
+    {
+      "section": "intro",
+      "start": 0,
+      "end": 2.88,
+      "duration": 2.88,
+      "sourceStart": null,
+      "source": "cartela editorial",
+      "playbackRate": 1.0
+    },
+    {
+      "section": "menu",
+      "start": 2.88,
+      "end": 12.6,
+      "duration": 9.72,
+      "sourceStart": 1.181,
+      "source": "captura real de produção",
+      "playbackRate": 1.0
+    },
+    {
+      "section": "falha",
+      "start": 12.6,
+      "end": 22.88,
+      "duration": 10.28,
+      "sourceStart": 11.758999999999999,
+      "source": "captura real de produção",
+      "playbackRate": 1.0
+    },
+    {
+      "section": "correcao",
+      "start": 22.88,
+      "end": 37.0,
+      "duration": 14.12,
+      "sourceStart": 22.102999999999998,
+      "source": "captura real de produção",
+      "playbackRate": 1.0
+    },
+    {
+      "section": "missao-2",
+      "start": 37.0,
+      "end": 40.16,
+      "duration": 3.16,
+      "sourceStart": 36.978,
+      "source": "captura real de produção",
+      "playbackRate": 1.0
+    },
+    {
+      "section": "missao-3",
+      "start": 40.16,
+      "end": 41.56,
+      "duration": 1.4,
+      "sourceStart": 42.899,
+      "source": "captura real de produção",
+      "playbackRate": 1.0
+    },
+    {
+      "section": "missao-4",
+      "start": 41.56,
+      "end": 43.08,
+      "duration": 1.52,
+      "sourceStart": 46.513999999999996,
+      "source": "captura real de produção",
+      "playbackRate": 1.0
+    },
+    {
+      "section": "missao-5",
+      "start": 43.08,
+      "end": 49.64,
+      "duration": 6.56,
+      "sourceStart": 48.165,
+      "source": "captura real de produção",
+      "playbackRate": 1.0
+    },
+    {
+      "section": "final",
+      "start": 49.64,
+      "end": 60.76,
+      "duration": 11.12,
+      "sourceStart": 56.788999999999994,
+      "source": "captura real de produção",
+      "playbackRate": 1.0
+    },
+    {
+      "section": "exportacao",
+      "start": 60.76,
+      "end": 68.04,
+      "duration": 7.28,
+      "sourceStart": 68.04,
+      "source": "captura real de produção",
+      "playbackRate": 1.0
+    },
+    {
+      "section": "offline",
+      "start": 68.04,
+      "end": 74.08,
+      "duration": 6.04,
+      "sourceStart": 0.165,
+      "source": "captura real offline",
+      "playbackRate": 1.0
+    },
+    {
+      "section": "outro",
+      "start": 74.08,
+      "end": 86.0,
+      "duration": 11.92,
+      "sourceStart": null,
+      "source": "cartela editorial",
+      "playbackRate": 1.0
+    }
+  ],
+  "audioRate": 1.0,
+  "videoRate": 1.0,
+  "subtitleStyle": {
+    "font": "Segoe UI",
+    "bold": true,
+    "sizeAt1080p": 52,
+    "maxLines": 2,
+    "maxCharactersPerLine": 36,
+    "playArea": {
+      "x": 192,
+      "y": 56,
+      "width": 1536,
+      "height": 864
+    },
+    "outsidePlayArea": true
+  },
+  "subtitleCues": 30,
+  "referenceWords": 193,
+  "oldNarrationUsed": false,
+  "oldSubtitleUsed": false,
+  "soleAudioSource": "MP3 fornecido pelo solicitante",
+  "humanReviewClaimed": false
+}

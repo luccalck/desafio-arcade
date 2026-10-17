@@ -24,3 +24,6 @@ A gravação,edição e inspeção técnica foram feitas com assistênciaIA. A c
 ## Narração autorizada —16/10/2026
 
 Lucca solicitou roteiro sincronizado, geração e incorporação da narração. UsamosPiper1.8.0 e modelo público `pt_BR-faber-medium`; o modelcard declara datasetCC0 e oREADMEdo repositório de vozes declaraMIT, com fonte preservada. Fonte/revisão/hash preservados em narracao-2026-10-16/origem-modelo.json e MODEL_CARD-faber.md. O motor, modelo e pesos não integram o jogo nem são redistribuídos; áudio gerado a partir de texto próprio. Não clonamos voz de integrante ou atribuímos a narração a uma pessoa real. Sem trilha ou nova imagem externa. A revisão auditiva humana não foi inventada; a confirmação coletiva anterior não foi ampliada para afirmar que assistiram a esta edição.
+
+
+Atualização16/10: nova edição usa MP3ElevenLabs fornecido porLucca, com autorização de incorporação declarada no pedido. Fonte/hash/limites em [audio-origem](pitch-elevenlabs-2026-10-16/audio-origem.json); não inspecionamos licença privada da conta ou aceitamos termos em nome do squad. Sem voz de integrante gravada ou nova imagem externa. A versão corrente não usaPiper.

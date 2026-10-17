@@ -1,6 +1,13 @@
 # Pitch real de produção — etapa029
 
-## Versão vigente — com narração sintética
+## Edição atual — áudio fornecido e legendas bold
+
+O [pitch corrente](../pitch/pitch.mp4) tem86s/5.468.118bytes/SHA256bd27a7a9ae040e1a84b2e2976e9ac097d9ca2f806386bd2ca46fb3f365408846. Usa exclusivamente oMP3ElevenLabs fornecido porLucca,sem acelerar a voz,e30blocos de legenda transcrita emSegoeUIBold52px. A montagem foi refeita das capturas brutas,sem legenda/áudio anteriores.
+
+193palavras conferidas textualmente,maior linha34caracteres,até2linhas;tempo por palavra extraído localmente. MP4H.264/AAC/FullHD,PTSzero/duração86s;fullDecodeexit0,zero saturação e correlaçãoMP3/AACsem deslocamento detectado em30/30blocos. [Fontes,quadros e limites](pitch-elevenlabs-2026-10-16/). O jogo e a voz não foram acelerados; fizemos nova captura real de trechos que precisavam durar mais. As versões abaixo são históricas,não os arquivos correntes.
+
+
+## Edição anterior — voz Piper (histórico)
 
 A pedido deLucca, acrescentamos17falas em português brasileiro ao [pitch](../pitch/pitch.mp4), mantendo79,96s e as mesmas cenas reais. O [MDda narração](../pitch/narracao.md) traz texto literal e tempos medidos. VozPiper/faber gerada localmente, sem clonagem de integrante; sem música. Legendas transcrevem as falas. MP4comH.264/AAC, ambos com iníciozero e duração79,960000s;17/17trechos dentro da cena, sem aceleração.
 

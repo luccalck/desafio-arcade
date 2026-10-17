@@ -1,6 +1,6 @@
 {
   "schema": 1,
-  "scope": "Pitch vigente narrado, fonte silenciosa preservada e recibos de captura/sincronia; manifesto anterior vinculado ao commit e224 nas evidências da narração.",
+  "scope": "Pitch vigente de86s comMP3fornecido,novas legendas e fontes reais;snapshots antigos identificados por commit.",
   "files": {
     "docs/evidencias/narracao-2026-10-16/correlacao-aac.json": {
       "bytes": 1669,
@@ -114,45 +114,145 @@
       "bytes": 203998,
       "sha256": "6e4efb3d051e75db1acff09b6c9fe1989c71d8c68594607a112efc41325e06f4"
     },
-    "docs/pitch/narracao-roteiro.json": {
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/alinhamento-palavras.json": {
+      "bytes": 37934,
+      "sha256": "9858c22d0fecfbc45cb4b9a0e3a19e982067450831c37adad966fda5c62b260f"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/audio-origem.json": {
+      "bytes": 638,
+      "sha256": "b39a5a088da0e3bce2138e03ec11b213a6f2dcc78a63166a99af7c37d41f1f2a"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/captura.json": {
+      "bytes": 4950,
+      "sha256": "cd91224cc43d089cfa5d065f1a953dd78ca70996745c270e48bd5f1338990f27"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/correlacao-audio.json": {
+      "bytes": 3289,
+      "sha256": "6969da1c0201fb249655a8c71954311fe5c8d457dc05a7b7815fca32afa6a347"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/edicao.json": {
+      "bytes": 3360,
+      "sha256": "63c7e8fe220588563671448d4e0c94a9efde3808d49e245ba686efa07e63e46c"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/ferramentas.json": {
+      "bytes": 231,
+      "sha256": "8948c67a2f8b741e1557067eb596b5a2722f695f81cd06e15e73146639ef2dd3"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/ffprobe.json": {
+      "bytes": 3682,
+      "sha256": "29d1c9e753110c9d0c1afcd0d0a633f5875acd8538e18627e7a58792fce48711"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/gravacao-offline.webm": {
+      "bytes": 653840,
+      "sha256": "b0d9487b9417268275cf7a8af22d0a53c23b44920750abf7e2f35d959e112813"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/gravacao-producao.webm": {
+      "bytes": 6080312,
+      "sha256": "b01634c5f53b55d0f0c5158d789fe30da0623aa0bf3314486d4eb3093c72259d"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/legendas-bold.ass": {
+      "bytes": 3294,
+      "sha256": "e77c8a91dbb73f5c65cc0987f7381007bcd2c31a4ae1b74fcc34f90db420bf85"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/legendas-texto.json": {
+      "bytes": 1415,
+      "sha256": "770a490df266a375a74c8f61f056d7820b0c3988eaf08776427ea25cff21b06e"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/manifesto-anterior-piper.json": {
+      "bytes": 6560,
+      "sha256": "e77e432552fd0458ccc2b45e3ca17f0932e0e95118edbdf4c7ff16b89ace57e7"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/modelo-asr.json": {
+      "bytes": 666,
+      "sha256": "cc182a4b5c63612eb5811c3a29ace19767db0e3b95d43457e071d8ea6e3922e8"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/origem-versao-anterior.json": {
+      "bytes": 183,
+      "sha256": "a595ebc656c1b124b621984aadc71ca08c95b4bca32a7939aa92f31e2bb77800"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/quadro-correcao.png": {
+      "bytes": 367055,
+      "sha256": "8a5e3d017c08113f217443baabf762e0f984f83571807a26d87eeeadc57bf6e8"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/quadro-legenda-longa.png": {
+      "bytes": 355521,
+      "sha256": "d33d5bc4f1331d8b013ff46f247b915e69ec240a5233b76ff67192def6f3e5f5"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/quadros-montagem.jpg": {
+      "bytes": 389128,
+      "sha256": "d2fe005094c1e810d721d81caf840b6c59263da6096edb9a5f804bdaf550874e"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/README.md": {
+      "bytes": 2008,
+      "sha256": "be47315bb54cbb30b8e39b12d3a3cb3c4df88a8c5a01cf2a43a9430f20dbdae6"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/roteiro-piper-anterior.json": {
       "bytes": 2827,
       "sha256": "5d091c07bd93cb446b4aefa2307a9b61e02d43f6f432386e546715e7cb1db2bf"
     },
-    "docs/pitch/narracao-sincronia.json": {
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/sincronia-piper-anterior.json": {
       "bytes": 10439,
       "sha256": "d7f90f48ae74b9f0fcb227c41562ddc4fc666ebe35936b85a299c67b1c0dad20"
     },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/transcricao-asr.json": {
+      "bytes": 53675,
+      "sha256": "36163ea2aef42389f145aec6d4be7c3fe28999349fb13afb9cfd1eff4b4537df"
+    },
+    "docs/evidencias/pitch-elevenlabs-2026-10-16/validacao.json": {
+      "bytes": 999,
+      "sha256": "565c867e33b19ac2418a7517e2e3dfb548a5c78c37402bd883b7b5e4e4068ad5"
+    },
+    "docs/pitch/narracao-elevenlabs.md": {
+      "bytes": 1250,
+      "sha256": "f5adf8c2ec6f41e1317be0580ee96c7662e118b206abc728de818b83103e1cac"
+    },
+    "docs/pitch/narracao-elevenlabs.mp3": {
+      "bytes": 1392440,
+      "sha256": "f55dbc422fc615659659f1af4387b25c422a11a4e852ca6a53ad9709cc113d37"
+    },
+    "docs/pitch/narracao-roteiro.json": {
+      "bytes": 6758,
+      "sha256": "7046f7850e8690a809f1e4600e7ea2f2d08f0e5f46c55f117850be62a63fb59a"
+    },
+    "docs/pitch/narracao-sincronia.json": {
+      "bytes": 37826,
+      "sha256": "deb1e68679b030f24204b6a51ea6055772c5efe2560fc4e493ab121d90404b8f"
+    },
     "docs/pitch/narracao.md": {
-      "bytes": 3707,
-      "sha256": "0f7727ab3d5460f0a577d288c6d79ac6af160157f52ee613a88d48eb5eff494f"
+      "bytes": 2225,
+      "sha256": "2b480cf4a2d046278ae6233ac96113d0ff790eeab2becf99a9a071feb39ae2c3"
     },
     "docs/pitch/narracao.wav": {
-      "bytes": 7676204,
-      "sha256": "7b3bc768c7881fa91181e293d64689ef6625cf1d78cacb48121807fc4941bfe1"
+      "bytes": 8256044,
+      "sha256": "96f7cba7b5c9ca3df8ed1d6a3c75dee039b54717d19f0e2735348828399fabfb"
+    },
+    "docs/pitch/pitch-elevenlabs.srt": {
+      "bytes": 2253,
+      "sha256": "b479f19c19b59a33352c32731fb9b9feb2bd1d00a1dd3cb9a20a9709fd6d4648"
     },
     "docs/pitch/pitch-legendas.srt": {
-      "bytes": 1324,
-      "sha256": "85e12d9832a61a369b5f388fbd9fd4c462537898a9bf22f4bd0f6a4fd6d5c2ad"
+      "bytes": 2253,
+      "sha256": "b479f19c19b59a33352c32731fb9b9feb2bd1d00a1dd3cb9a20a9709fd6d4648"
     },
     "docs/pitch/pitch-narracao.srt": {
-      "bytes": 1324,
-      "sha256": "85e12d9832a61a369b5f388fbd9fd4c462537898a9bf22f4bd0f6a4fd6d5c2ad"
+      "bytes": 2253,
+      "sha256": "b479f19c19b59a33352c32731fb9b9feb2bd1d00a1dd3cb9a20a9709fd6d4648"
     },
     "docs/pitch/pitch-producao.json": {
-      "bytes": 4270,
-      "sha256": "1b644f5392ed5b048ca0e27ad5d5a1c31a29698a06c86faf422667bfa49a862f"
+      "bytes": 4143,
+      "sha256": "710f8de8bb692151cd60b760295dde5e6fa4fe53ae614b2b16d81e5de12796cb"
     },
     "docs/pitch/pitch-sem-narracao.mp4": {
       "bytes": 3312725,
       "sha256": "5bacea2b5180934e1afb7c652ac3e1da982daf5ed5007dfdcc2781c4bc733b5c"
     },
     "docs/pitch/pitch.mp4": {
-      "bytes": 4249780,
-      "sha256": "2a53d5f0e532f7ba2adcbd530688aadb7f1f4669ebee016102eeebe9d37c9dab"
+      "bytes": 5468118,
+      "sha256": "bd27a7a9ae040e1a84b2e2976e9ac097d9ca2f806386bd2ca46fb3f365408846"
     },
     "docs/pitch/README.md": {
-      "bytes": 3526,
-      "sha256": "1fd6eb30a7a4b63061b7beef5cdc2151aafd890088ad4b64c8ccb9b637a7f615"
+      "bytes": 2624,
+      "sha256": "387358469336be1300a3993a0db4901ea3a89a0c1b8dfa6e486d27c8c3f48399"
     }
   }
 }

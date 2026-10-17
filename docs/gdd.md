@@ -236,3 +236,6 @@ Atualização técnica16/10/2026, sem mudança de mecânica: o PR34 acrescenta e
 
 
 Atualização de comunicação16/10/2026: [pitch real com voz sintética](pitch/README.md) produzido com79,96s da produçãoe9/v0.7.0,legendas/créditos e fontes preservadas. Não é sessão humana ou comprovação de aprendizado; a futura submissão deve vincular vídeo eSHA da candidata aprovada sem misturar versões.
+
+
+Edição corrente16/10: [pitch atual](pitch/README.md) tem86s,áudioElevenLabs fornecido porLucca e30blocos de legendaBold52px. A edição anterior79,96s permanece histórica. Origemvisuale9/v0.7.0e vínculo acadêmico final preservados.

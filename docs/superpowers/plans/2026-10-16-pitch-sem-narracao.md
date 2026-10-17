@@ -28,3 +28,13 @@ Após entregar o pitch silencioso, Lucca solicitou prompt para Miguel aprovar oP
 - [x] Posicionar a48kHz, transcrever legendas, preservar edição silenciosa e montarAAC.
 - [x] Conferir17/17janelas,PTS/duração,decodificação/saturação e correlaçãoWAV/AAC; documentar limites.
 - [x] Preparar fontes/recibos para commit e CI; registrar a conclusão remota no acompanhamento local, sem gerar commit circular de CI.
+
+
+## Edição solicitada com áudio fornecido
+
+- [x] Localizar originalDownloads,verificar duração85,968938s e preservarhash/arquivo.
+- [x] Transcrever localmente por palavra,confrontar193palavras,normalizar apenas5/cinco e mini-jogo/minijogo.
+- [x] Gravar trechos reais mais longos e ajustar cortes à voz,sem acelerar ou congelar partida.
+- [x] Retirar áudio/legenda anteriores pela reconstrução a partir dosWEBMs;montar30legendasBold52px,≤2linhas/34caracteres efetivos.
+- [x] Conferir86s,PTSzero,fullDecode,sem saturação,correlação30/30 e quadros reais.
+- [x] Preparar proveniência/licenças informadas,documentação e manifestos; resultados de commit/CI registrados noGitHub e acompanhamento local ao concluir o envio.
