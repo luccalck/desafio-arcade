@@ -1,0 +1,6 @@
+{
+  "continue_disabled_after_reload": true,
+  "draft_before_reload": "def controlar(entrada):\n    direcao = 0\n    if entrada[\"esquerda\"]:\n        direcao = 1\n    if entrada[\"direita\"]:\n        direcao = -1\n    return direcao\n# teste de persistencia",
+  "draft_after_reload": "def controlar(entrada):\n    direcao = 0\n    if entrada[\"esquerda\"]:\n        direcao = 1\n    if entrada[\"direita\"]:\n        direcao = -1\n    return direcao\n# teste de persistencia",
+  "persisted": true
+}

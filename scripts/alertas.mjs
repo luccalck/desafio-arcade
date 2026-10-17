@@ -23,11 +23,12 @@ export async function reconcileAlerts(report,api,{repo='luccalck/desafio-arcade'
  validate(report);
  const active=report.samples.filter(s=>report.scope==='ensaio'||(s.alvo==='hml'?report.formalHml:report.formalPrd)),actions=[];
  if(!active.length)return {actions,skipped:'Somente preview; sem recuperação/alerta formal.'};
- await api.ensureLabel(report.scope==='ensaio'?'ensaio':'alerta');const open=await api.listOpen(report.scope==='ensaio'?'ensaio':'alerta');
+ const labels=report.scope==='ensaio'?['alerta','ensaio']:['alerta'];
+ for(const label of labels)await api.ensureLabel(label);const open=await api.listOpen(report.scope==='ensaio'?'ensaio':'alerta');
  for(const s of active)for(const kind of kinds){
   const state=alertStates(s)[kind],key=marker(kind,s.alvo,report),matches=open.filter(i=>!i.pull_request&&!i.closed&&i.body?.includes(key));
   if(state==='open'&&!matches.length){
-   const issue=await api.create({title:`${report.scope==='ensaio'?`[Ensaio ${report.exerciseId}] `:''}${kind}: ${s.alvo}`,labels:[report.scope==='ensaio'?'ensaio':'alerta'],body:`${key}\n\n${report.scope==='ensaio'?'ENSAIO CONTROLADO: alvo temporário do runner; não é incidente da produção.\n\n':''}Sonda real em ${s.data}.\n\nAlvo: ${s.url}\nHTTP: ${s.codigo??'desconhecido'}; segundos: ${s.tempo??'desconhecido'}; versão: ${s.versao??'desconhecida'}; SHA: ${s.sha??'desconhecido'}; erro: ${s.erro??'nenhum'}.\n\nOrigem: https://github.com/${repo}/actions/runs/${report.run} (tentativa ${report.runAttempt}).\n\nSem resposta/timeout não é recuperação; este alerta fecha somente com amostra válida normalizada.`});
+   const issue=await api.create({title:`${report.scope==='ensaio'?`[Ensaio ${report.exerciseId}] `:''}${kind}: ${s.alvo}`,labels,body:`${key}\n\n${report.scope==='ensaio'?'ENSAIO CONTROLADO: alvo temporário do runner; não é incidente da produção.\n\n':''}Sonda real em ${s.data}.\n\nAlvo: ${s.url}\nHTTP: ${s.codigo??'desconhecido'}; segundos: ${s.tempo??'desconhecido'}; versão: ${s.versao??'desconhecida'}; SHA: ${s.sha??'desconhecido'}; erro: ${s.erro??'nenhum'}.\n\nOrigem: https://github.com/${repo}/actions/runs/${report.run} (tentativa ${report.runAttempt}).\n\nSem resposta/timeout não é recuperação; este alerta fecha somente com amostra válida normalizada.`});
    open.push(issue);actions.push({kind,target:s.alvo,action:'opened',issue:issue.html_url});
   }else if(state==='close')for(const issue of matches){await api.close(issue);issue.closed=true;actions.push({kind,target:s.alvo,action:'closed',issue:issue.html_url});}
   else actions.push({kind,target:s.alvo,action:state==='hold'?'unknown-preserved':'already-open',issues:matches.map(i=>i.html_url)});
@@ -36,15 +37,18 @@ export async function reconcileAlerts(report,api,{repo='luccalck/desafio-arcade'
 }
 export function github(repo,token){
  if(!/^[\w.-]+\/[\w.-]+$/.test(repo||'')||!token)throw Error('Configure GITHUB_REPOSITORY/GH_TOKEN.');
- const base=`https://api.github.com/repos/${repo}`,written=new Map(),closed=new Set();
+ const base=`https://api.github.com/repos/${repo}`,written=new Map(),closed=new Set(),confirmedLabels=new Set();
+ let labelMetadataRequests=0;
  async function request(path,{method='GET',body,missing=false}={}){
+  if(path==='/labels'||path.startsWith('/labels/'))labelMetadataRequests++;
   const response=await fetch(base+path,{method,headers:{Authorization:`Bearer ${token}`,Accept:'application/vnd.github+json','Content-Type':'application/json','X-GitHub-Api-Version':'2022-11-28'},body:body?JSON.stringify(body):undefined,signal:AbortSignal.timeout(10000)});
   if(missing&&response.status===404)return null;
   if(!response.ok)throw Error(`GitHub ${method}: HTTP${response.status}; credencial omitida.`);
   return response.status===204?null:response.json();
  }
  return {
-  ensureLabel:async(name='alerta')=>{if(!['alerta','ensaio'].includes(name))throw Error('Label inválida.');if(!await request(`/labels/${name}`,{missing:true}))await request('/labels',{method:'POST',body:{name,color:name==='ensaio'?'5319E7':'B60205',description:name==='ensaio'?'Ensaio controlado; não é incidente operacional':'Alertas operacionais do jogo, por alvo e incidente'}});},
+  ensureLabel:async(name='alerta')=>{if(!['alerta','ensaio'].includes(name))throw Error('Label inválida.');if(confirmedLabels.has(name))return;if(!await request(`/labels/${name}`,{missing:true}))await request('/labels',{method:'POST',body:{name,color:name==='ensaio'?'5319E7':'B60205',description:name==='ensaio'?'Ensaio controlado; não é incidente operacional':'Alertas operacionais do jogo, por alvo e incidente'}});confirmedLabels.add(name);},
+  diagnostics:()=>({labelMetadataRequests,confirmedLabels:confirmedLabels.size}),
   listOpen:async(label='alerta')=>{if(!['alerta','ensaio'].includes(label))throw Error('Label inválida.');const result=[];for(let p=1;p<=20;p++){const part=await request(`/issues?state=open&labels=${label}&per_page=100&page=${p}`);result.push(...part);if(part.length<100){const merged=new Map(result.map(i=>[i.number,i]));for(const [number,i] of written)if(i.labels?.some(l=>(typeof l==='string'?l:l.name)===label))merged.set(number,i);return [...merged.values()].filter(i=>!closed.has(i.number));}}throw Error('Paginação excedida; nenhum fechamento inferido.');},
   create:async body=>{const issue=await request('/issues',{method:'POST',body});written.set(issue.number,{...issue,labels:body.labels});return issue;},
   get:i=>request(`/issues/${i.number}`),

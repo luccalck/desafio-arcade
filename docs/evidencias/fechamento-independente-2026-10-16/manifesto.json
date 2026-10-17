@@ -1,0 +1,106 @@
+{
+  "schema": 1,
+  "scope": "Evidências reais, snapshots e PDFs candidatos identificados; não é submissão final",
+  "files": {
+    "aprovacao-pr40.json": {
+      "bytes": 3642,
+      "sha256": "8429a9c329dfe63e0df86906e2cdb2b321d09fedba19821eca46e8ede6818468"
+    },
+    "autoria-resumo.json": {
+      "bytes": 80881,
+      "sha256": "e9ca83be82023cd8e0c9c4de2baf35d5a9581eb345c7d6834177a4ff0e15fe3d"
+    },
+    "configuracao-atual.json": {
+      "bytes": 460,
+      "sha256": "596b5fec1a0406743c1016fc241334745268555901e5bc7c214e1e8f283cac6b"
+    },
+    "conventional-commits.json": {
+      "bytes": 20162,
+      "sha256": "769104b2224d751b47235535c694b11b8f9150ce6626d38cd428f2a833d21204"
+    },
+    "dora.json": {
+      "bytes": 2938,
+      "sha256": "a65079e8bccbba42b7ae5357e2ffc2de3578265d8a3bb7c4306d561d4707ce9a"
+    },
+    "hml-pr40-tempo.json": {
+      "bytes": 796,
+      "sha256": "98928a98712ed3b9f876f19426617611c3501c55384bb5576a2f281eade19d81"
+    },
+    "merge-pr40.json": {
+      "bytes": 19309,
+      "sha256": "36b1db0ee72b7c85064f8972071ffc922bbbedf699f6342bc5bf0847ecb8c2ac"
+    },
+    "merges-main-revisados.json": {
+      "bytes": 2530,
+      "sha256": "f928055430d0fab09996587892089a8a0a19ec47d67299786f5e4f3c4a6905ab"
+    },
+    "monitor-atual-alertas.json": {
+      "bytes": 65,
+      "sha256": "52233e6870a82bf14f178e0f2bbce1601b904f9552356be82afc06baf102f57a"
+    },
+    "monitor-atual-dora.json": {
+      "bytes": 2938,
+      "sha256": "cfc8d2bfbbcc6d8c82934031be36296f142a5b5d1bea2d44fd1519c2cb3e779d"
+    },
+    "monitor-atual-sondas.json": {
+      "bytes": 921,
+      "sha256": "3104abd5cf94f1c0e663c84b7307b756e0b31afeb6096c60b22ec8d7d96e00f8"
+    },
+    "painel-1280.png": {
+      "bytes": 117610,
+      "sha256": "cc987cc39f9724fbdb069cff9a00c03c8a981a2db59198f866d15ee10a82eedb"
+    },
+    "painel-390.png": {
+      "bytes": 129379,
+      "sha256": "a096164d5233e306e119387c75393f6a21fa4ba6e77d560ea00439bdaac5b251"
+    },
+    "painel-atual-1280.png": {
+      "bytes": 118312,
+      "sha256": "782c62e7f219615d2c2ca5ad2b7522e9b7a96049383212df8aa0575764c7a60a"
+    },
+    "painel-atual-390.png": {
+      "bytes": 130281,
+      "sha256": "4bb2ba6d16aed49303c4ed079d6e892a016b85aadbef1e4e6db0c9814e116dbd"
+    },
+    "painel-atual-verificacao.json": {
+      "bytes": 5753,
+      "sha256": "be5eef1f08c4698afaaf113446753e8276b296844962604a886bed9a023079c1"
+    },
+    "painel-verificacao.json": {
+      "bytes": 5741,
+      "sha256": "c43e1a9713202bc030b0eb9f365b1943a8079135ff1c058965585e47282a859e"
+    },
+    "pdfs-candidatos.json": {
+      "bytes": 596,
+      "sha256": "8641f948fff7a334f172286398cec723234a32fa0abe1f321711f2ceb8ee5978"
+    },
+    "release-publicada.json": {
+      "bytes": 3095,
+      "sha256": "dd8d54d88cec322c2f93a57457a51fb7e47b6d401522030ae5b33a2c8303d9d7"
+    },
+    "release-verificacao-publica.json": {
+      "bytes": 3530,
+      "sha256": "6edfdb5deae86bc44bc597c5b879dd599ca062f5d31f50bd2f6bd184051a04ee"
+    },
+    "retomada-aprovacao.json": {
+      "bytes": 3827,
+      "sha256": "f43c9da59cad7352c1c2d445da03ff7c6b0b6053cec69c30bff68e2e10eb13cc"
+    },
+    "retomada-release.json": {
+      "bytes": 1086,
+      "sha256": "b7db3a75491d2479be543415989b4bf862c286128532ba8a3855d81aaf1be7fe"
+    },
+    "reviews-atuais.json": {
+      "bytes": 65585,
+      "sha256": "f1b4881ef6ad47db28469853b3fe1efca202852884c25eb08cb8b07fed9ff975"
+    },
+    "sondas.csv": {
+      "bytes": 1675,
+      "sha256": "9f617ce564bbd9367bab7e7187fdf6a94a1443ff9f644930614ec10251fddfb4"
+    },
+    "ultima.json": {
+      "bytes": 922,
+      "sha256": "9835a20f549a6caa4c3c66c6fef1a69870e22ea201ebb84c0ec89b45429b6536"
+    }
+  }
+}

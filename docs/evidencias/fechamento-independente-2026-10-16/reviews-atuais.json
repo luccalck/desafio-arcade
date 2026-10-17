@@ -1,0 +1,1067 @@
+[
+  {
+    "pr": 2,
+    "head": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/2/reviews",
+    "collectedAt": "2026-10-16T17:33:53.052344+00:00",
+    "reviews": []
+  },
+  {
+    "pr": 3,
+    "head": "776a0a9210b36bf501e7fc2dc20fe592cf9c06b5",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/3/reviews",
+    "collectedAt": "2026-10-16T17:33:52.964621+00:00",
+    "reviews": []
+  },
+  {
+    "pr": 4,
+    "head": "4d9acf4cb7e70dc52d53d018446c891301c09aad",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/4/reviews",
+    "collectedAt": "2026-10-16T17:33:51.997048+00:00",
+    "reviews": []
+  },
+  {
+    "pr": 5,
+    "head": "781af0f9627b453aab3c616577cd539d2b64257f",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/5/reviews",
+    "collectedAt": "2026-10-16T17:33:51.833159+00:00",
+    "reviews": []
+  },
+  {
+    "pr": 6,
+    "head": "db4778bfa349a367cbd9fd8bfd0a9799fabd0243",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/6/reviews",
+    "collectedAt": "2026-10-16T17:33:51.814834+00:00",
+    "reviews": []
+  },
+  {
+    "pr": 7,
+    "head": "36095a05f510f007dc0a413599b8dcd6e564ea99",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/7/reviews",
+    "collectedAt": "2026-10-16T17:33:51.653864+00:00",
+    "reviews": []
+  },
+  {
+    "pr": 8,
+    "head": "7f0921bd6d9c8d0a99d60267490c8c2fb2a18159",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/8/reviews",
+    "collectedAt": "2026-10-16T17:33:51.174287+00:00",
+    "reviews": []
+  },
+  {
+    "pr": 9,
+    "head": "43cf1b3036e89c4e0a5d3cf6c7966716b267c277",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/9/reviews",
+    "collectedAt": "2026-10-16T17:33:51.094574+00:00",
+    "reviews": []
+  },
+  {
+    "pr": 10,
+    "head": "b94469ee807093a4e64769f868c13143a0ff5b0c",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/10/reviews",
+    "collectedAt": "2026-10-16T17:33:49.860391+00:00",
+    "reviews": []
+  },
+  {
+    "pr": 11,
+    "head": "4f09ee0cae3bc05e0c0ac6aa65dbcb6db866e11a",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/11/reviews",
+    "collectedAt": "2026-10-16T17:33:49.856554+00:00",
+    "reviews": []
+  },
+  {
+    "pr": 12,
+    "head": "a6824e8255c19781b9194111bf9dad272663862a",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/12/reviews",
+    "collectedAt": "2026-10-16T17:33:49.847618+00:00",
+    "reviews": []
+  },
+  {
+    "pr": 13,
+    "head": "6e2aa68b7d90dca91dee6318d5dc90df965fb680",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/13/reviews",
+    "collectedAt": "2026-10-16T17:33:49.563199+00:00",
+    "reviews": []
+  },
+  {
+    "pr": 14,
+    "head": "e28fb1c243eb2d33ccecf77ee2b8cdc403b7a19e",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/14/reviews",
+    "collectedAt": "2026-10-16T17:33:49.256746+00:00",
+    "reviews": []
+  },
+  {
+    "pr": 15,
+    "head": "9ce2522f876676be7db54ee8aeefc388983c6c14",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/15/reviews",
+    "collectedAt": "2026-10-16T17:33:49.061973+00:00",
+    "reviews": [
+      {
+        "id": 5526019291,
+        "node_id": "PRR_kwDOU_bdu88AAAABSWBc2w",
+        "user": {
+          "login": "luccalck",
+          "id": 256704169,
+          "node_id": "U_kgDOD0z-qQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/256704169?u=012250ca16d2ac406e1ddc70d91b19bca7a8755c&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/luccalck",
+          "html_url": "https://github.com/luccalck",
+          "followers_url": "https://api.github.com/users/luccalck/followers",
+          "following_url": "https://api.github.com/users/luccalck/following{/other_user}",
+          "gists_url": "https://api.github.com/users/luccalck/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/luccalck/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/luccalck/subscriptions",
+          "organizations_url": "https://api.github.com/users/luccalck/orgs",
+          "repos_url": "https://api.github.com/users/luccalck/repos",
+          "events_url": "https://api.github.com/users/luccalck/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/luccalck/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Revisei as alterações deste PR e aprovo sua integração, condicionada à CI e à preservação das proteções. Os aceites operacionais, a publicação e as entregas ainda pendentes devem continuar registrados como pendentes. Aprovação registrada a meu pedido após a revisão humana informada nesta sessão por Lucca Castilho Costa.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/15#pullrequestreview-5526019291",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/15",
+        "author_association": "OWNER",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/15#pullrequestreview-5526019291"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/15"
+          }
+        },
+        "submitted_at": "2026-10-14T23:23:34Z",
+        "commit_id": "9ce2522f876676be7db54ee8aeefc388983c6c14"
+      }
+    ]
+  },
+  {
+    "pr": 16,
+    "head": "8ae86cc1ab919fa406435b41ba54f592399186e3",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/16/reviews",
+    "collectedAt": "2026-10-16T17:33:47.834207+00:00",
+    "reviews": [
+      {
+        "id": 5526019464,
+        "node_id": "PRR_kwDOU_bdu88AAAABSWBdiA",
+        "user": {
+          "login": "luccalck",
+          "id": 256704169,
+          "node_id": "U_kgDOD0z-qQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/256704169?u=012250ca16d2ac406e1ddc70d91b19bca7a8755c&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/luccalck",
+          "html_url": "https://github.com/luccalck",
+          "followers_url": "https://api.github.com/users/luccalck/followers",
+          "following_url": "https://api.github.com/users/luccalck/following{/other_user}",
+          "gists_url": "https://api.github.com/users/luccalck/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/luccalck/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/luccalck/subscriptions",
+          "organizations_url": "https://api.github.com/users/luccalck/orgs",
+          "repos_url": "https://api.github.com/users/luccalck/repos",
+          "events_url": "https://api.github.com/users/luccalck/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/luccalck/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Revisei as alterações deste PR e aprovo sua integração, condicionada à CI e à preservação das proteções. Os aceites operacionais, a publicação e as entregas ainda pendentes devem continuar registrados como pendentes. Aprovação registrada a meu pedido após a revisão humana informada nesta sessão por Lucca Castilho Costa.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/16#pullrequestreview-5526019464",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/16",
+        "author_association": "OWNER",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/16#pullrequestreview-5526019464"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/16"
+          }
+        },
+        "submitted_at": "2026-10-14T23:23:35Z",
+        "commit_id": "8ae86cc1ab919fa406435b41ba54f592399186e3"
+      }
+    ]
+  },
+  {
+    "pr": 17,
+    "head": "1d4f710b6d254b6fcc052cac7d0116cfee8223e3",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/17/reviews",
+    "collectedAt": "2026-10-16T17:33:47.805506+00:00",
+    "reviews": [
+      {
+        "id": 5526019688,
+        "node_id": "PRR_kwDOU_bdu88AAAABSWBeaA",
+        "user": {
+          "login": "luccalck",
+          "id": 256704169,
+          "node_id": "U_kgDOD0z-qQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/256704169?u=012250ca16d2ac406e1ddc70d91b19bca7a8755c&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/luccalck",
+          "html_url": "https://github.com/luccalck",
+          "followers_url": "https://api.github.com/users/luccalck/followers",
+          "following_url": "https://api.github.com/users/luccalck/following{/other_user}",
+          "gists_url": "https://api.github.com/users/luccalck/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/luccalck/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/luccalck/subscriptions",
+          "organizations_url": "https://api.github.com/users/luccalck/orgs",
+          "repos_url": "https://api.github.com/users/luccalck/repos",
+          "events_url": "https://api.github.com/users/luccalck/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/luccalck/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Revisei as alterações deste PR e aprovo sua integração, condicionada à CI e à preservação das proteções. Os aceites operacionais, a publicação e as entregas ainda pendentes devem continuar registrados como pendentes. Aprovação registrada a meu pedido após a revisão humana informada nesta sessão por Lucca Castilho Costa.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/17#pullrequestreview-5526019688",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/17",
+        "author_association": "OWNER",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/17#pullrequestreview-5526019688"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/17"
+          }
+        },
+        "submitted_at": "2026-10-14T23:23:37Z",
+        "commit_id": "1d4f710b6d254b6fcc052cac7d0116cfee8223e3"
+      }
+    ]
+  },
+  {
+    "pr": 18,
+    "head": "d6a72f6ce4d89a0ce4ca45845b82f645dc6a1b36",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/18/reviews",
+    "collectedAt": "2026-10-16T17:33:47.725105+00:00",
+    "reviews": [
+      {
+        "id": 5526019875,
+        "node_id": "PRR_kwDOU_bdu88AAAABSWBfIw",
+        "user": {
+          "login": "luccalck",
+          "id": 256704169,
+          "node_id": "U_kgDOD0z-qQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/256704169?u=012250ca16d2ac406e1ddc70d91b19bca7a8755c&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/luccalck",
+          "html_url": "https://github.com/luccalck",
+          "followers_url": "https://api.github.com/users/luccalck/followers",
+          "following_url": "https://api.github.com/users/luccalck/following{/other_user}",
+          "gists_url": "https://api.github.com/users/luccalck/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/luccalck/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/luccalck/subscriptions",
+          "organizations_url": "https://api.github.com/users/luccalck/orgs",
+          "repos_url": "https://api.github.com/users/luccalck/repos",
+          "events_url": "https://api.github.com/users/luccalck/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/luccalck/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Revisei as alterações deste PR e aprovo sua integração, condicionada à CI e à preservação das proteções. Os aceites operacionais, a publicação e as entregas ainda pendentes devem continuar registrados como pendentes. Aprovação registrada a meu pedido após a revisão humana informada nesta sessão por Lucca Castilho Costa.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/18#pullrequestreview-5526019875",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/18",
+        "author_association": "OWNER",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/18#pullrequestreview-5526019875"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/18"
+          }
+        },
+        "submitted_at": "2026-10-14T23:23:39Z",
+        "commit_id": "d6a72f6ce4d89a0ce4ca45845b82f645dc6a1b36"
+      }
+    ]
+  },
+  {
+    "pr": 19,
+    "head": "8bc8905e497e21196df128350d8e3d105a996d04",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/19/reviews",
+    "collectedAt": "2026-10-16T17:33:47.361508+00:00",
+    "reviews": [
+      {
+        "id": 5526020082,
+        "node_id": "PRR_kwDOU_bdu88AAAABSWBf8g",
+        "user": {
+          "login": "luccalck",
+          "id": 256704169,
+          "node_id": "U_kgDOD0z-qQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/256704169?u=012250ca16d2ac406e1ddc70d91b19bca7a8755c&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/luccalck",
+          "html_url": "https://github.com/luccalck",
+          "followers_url": "https://api.github.com/users/luccalck/followers",
+          "following_url": "https://api.github.com/users/luccalck/following{/other_user}",
+          "gists_url": "https://api.github.com/users/luccalck/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/luccalck/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/luccalck/subscriptions",
+          "organizations_url": "https://api.github.com/users/luccalck/orgs",
+          "repos_url": "https://api.github.com/users/luccalck/repos",
+          "events_url": "https://api.github.com/users/luccalck/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/luccalck/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Revisei as alterações deste PR e aprovo sua integração, condicionada à CI e à preservação das proteções. Os aceites operacionais, a publicação e as entregas ainda pendentes devem continuar registrados como pendentes. Aprovação registrada a meu pedido após a revisão humana informada nesta sessão por Lucca Castilho Costa.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/19#pullrequestreview-5526020082",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/19",
+        "author_association": "OWNER",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/19#pullrequestreview-5526020082"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/19"
+          }
+        },
+        "submitted_at": "2026-10-14T23:23:40Z",
+        "commit_id": "8bc8905e497e21196df128350d8e3d105a996d04"
+      }
+    ]
+  },
+  {
+    "pr": 20,
+    "head": "b5e95e1cffbb6be2a8d718d2d3c479b2b894633a",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/20/reviews",
+    "collectedAt": "2026-10-16T17:33:47.233752+00:00",
+    "reviews": [
+      {
+        "id": 5526020274,
+        "node_id": "PRR_kwDOU_bdu88AAAABSWBgsg",
+        "user": {
+          "login": "luccalck",
+          "id": 256704169,
+          "node_id": "U_kgDOD0z-qQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/256704169?u=012250ca16d2ac406e1ddc70d91b19bca7a8755c&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/luccalck",
+          "html_url": "https://github.com/luccalck",
+          "followers_url": "https://api.github.com/users/luccalck/followers",
+          "following_url": "https://api.github.com/users/luccalck/following{/other_user}",
+          "gists_url": "https://api.github.com/users/luccalck/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/luccalck/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/luccalck/subscriptions",
+          "organizations_url": "https://api.github.com/users/luccalck/orgs",
+          "repos_url": "https://api.github.com/users/luccalck/repos",
+          "events_url": "https://api.github.com/users/luccalck/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/luccalck/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Revisei as alterações deste PR e aprovo sua integração, condicionada à CI e à preservação das proteções. Os aceites operacionais, a publicação e as entregas ainda pendentes devem continuar registrados como pendentes. Aprovação registrada a meu pedido após a revisão humana informada nesta sessão por Lucca Castilho Costa.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/20#pullrequestreview-5526020274",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/20",
+        "author_association": "OWNER",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/20#pullrequestreview-5526020274"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/20"
+          }
+        },
+        "submitted_at": "2026-10-14T23:23:42Z",
+        "commit_id": "b5e95e1cffbb6be2a8d718d2d3c479b2b894633a"
+      }
+    ]
+  },
+  {
+    "pr": 21,
+    "head": "447e7926c55f5126a8ae6ec3abf4e1e79487f920",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/21/reviews",
+    "collectedAt": "2026-10-16T17:33:46.974428+00:00",
+    "reviews": [
+      {
+        "id": 5526020510,
+        "node_id": "PRR_kwDOU_bdu88AAAABSWBhng",
+        "user": {
+          "login": "luccalck",
+          "id": 256704169,
+          "node_id": "U_kgDOD0z-qQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/256704169?u=012250ca16d2ac406e1ddc70d91b19bca7a8755c&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/luccalck",
+          "html_url": "https://github.com/luccalck",
+          "followers_url": "https://api.github.com/users/luccalck/followers",
+          "following_url": "https://api.github.com/users/luccalck/following{/other_user}",
+          "gists_url": "https://api.github.com/users/luccalck/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/luccalck/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/luccalck/subscriptions",
+          "organizations_url": "https://api.github.com/users/luccalck/orgs",
+          "repos_url": "https://api.github.com/users/luccalck/repos",
+          "events_url": "https://api.github.com/users/luccalck/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/luccalck/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Revisei as alterações deste PR e aprovo sua integração, condicionada à CI e à preservação das proteções. Os aceites operacionais, a publicação e as entregas ainda pendentes devem continuar registrados como pendentes. Aprovação registrada a meu pedido após a revisão humana informada nesta sessão por Lucca Castilho Costa.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/21#pullrequestreview-5526020510",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/21",
+        "author_association": "OWNER",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/21#pullrequestreview-5526020510"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/21"
+          }
+        },
+        "submitted_at": "2026-10-14T23:23:44Z",
+        "commit_id": "447e7926c55f5126a8ae6ec3abf4e1e79487f920"
+      }
+    ]
+  },
+  {
+    "pr": 22,
+    "head": "92757b6dbe3d825aebbd6ef6a12b1924b8af320b",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/22/reviews",
+    "collectedAt": "2026-10-16T17:33:45.848543+00:00",
+    "reviews": [
+      {
+        "id": 5526020747,
+        "node_id": "PRR_kwDOU_bdu88AAAABSWBiiw",
+        "user": {
+          "login": "luccalck",
+          "id": 256704169,
+          "node_id": "U_kgDOD0z-qQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/256704169?u=012250ca16d2ac406e1ddc70d91b19bca7a8755c&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/luccalck",
+          "html_url": "https://github.com/luccalck",
+          "followers_url": "https://api.github.com/users/luccalck/followers",
+          "following_url": "https://api.github.com/users/luccalck/following{/other_user}",
+          "gists_url": "https://api.github.com/users/luccalck/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/luccalck/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/luccalck/subscriptions",
+          "organizations_url": "https://api.github.com/users/luccalck/orgs",
+          "repos_url": "https://api.github.com/users/luccalck/repos",
+          "events_url": "https://api.github.com/users/luccalck/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/luccalck/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Revisei as alterações deste PR e aprovo sua integração, condicionada à CI e à preservação das proteções. Os aceites operacionais, a publicação e as entregas ainda pendentes devem continuar registrados como pendentes. Aprovação registrada a meu pedido após a revisão humana informada nesta sessão por Lucca Castilho Costa.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/22#pullrequestreview-5526020747",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/22",
+        "author_association": "OWNER",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/22#pullrequestreview-5526020747"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/22"
+          }
+        },
+        "submitted_at": "2026-10-14T23:23:46Z",
+        "commit_id": "92757b6dbe3d825aebbd6ef6a12b1924b8af320b"
+      }
+    ]
+  },
+  {
+    "pr": 23,
+    "head": "7c29f2a7b29380c342097aed57cfefc65f2476cc",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/23/reviews",
+    "collectedAt": "2026-10-16T17:33:45.776035+00:00",
+    "reviews": [
+      {
+        "id": 5526020908,
+        "node_id": "PRR_kwDOU_bdu88AAAABSWBjLA",
+        "user": {
+          "login": "luccalck",
+          "id": 256704169,
+          "node_id": "U_kgDOD0z-qQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/256704169?u=012250ca16d2ac406e1ddc70d91b19bca7a8755c&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/luccalck",
+          "html_url": "https://github.com/luccalck",
+          "followers_url": "https://api.github.com/users/luccalck/followers",
+          "following_url": "https://api.github.com/users/luccalck/following{/other_user}",
+          "gists_url": "https://api.github.com/users/luccalck/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/luccalck/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/luccalck/subscriptions",
+          "organizations_url": "https://api.github.com/users/luccalck/orgs",
+          "repos_url": "https://api.github.com/users/luccalck/repos",
+          "events_url": "https://api.github.com/users/luccalck/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/luccalck/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Revisei as alterações deste PR e aprovo sua integração, condicionada à CI e à preservação das proteções. Os aceites operacionais, a publicação e as entregas ainda pendentes devem continuar registrados como pendentes. Aprovação registrada a meu pedido após a revisão humana informada nesta sessão por Lucca Castilho Costa.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/23#pullrequestreview-5526020908",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/23",
+        "author_association": "OWNER",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/23#pullrequestreview-5526020908"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/23"
+          }
+        },
+        "submitted_at": "2026-10-14T23:23:47Z",
+        "commit_id": "7c29f2a7b29380c342097aed57cfefc65f2476cc"
+      }
+    ]
+  },
+  {
+    "pr": 24,
+    "head": "3f309ddebce450274c6db6787e724ae4306f86a0",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/24/reviews",
+    "collectedAt": "2026-10-16T17:33:45.715428+00:00",
+    "reviews": [
+      {
+        "id": 5526021109,
+        "node_id": "PRR_kwDOU_bdu88AAAABSWBj9Q",
+        "user": {
+          "login": "luccalck",
+          "id": 256704169,
+          "node_id": "U_kgDOD0z-qQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/256704169?u=012250ca16d2ac406e1ddc70d91b19bca7a8755c&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/luccalck",
+          "html_url": "https://github.com/luccalck",
+          "followers_url": "https://api.github.com/users/luccalck/followers",
+          "following_url": "https://api.github.com/users/luccalck/following{/other_user}",
+          "gists_url": "https://api.github.com/users/luccalck/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/luccalck/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/luccalck/subscriptions",
+          "organizations_url": "https://api.github.com/users/luccalck/orgs",
+          "repos_url": "https://api.github.com/users/luccalck/repos",
+          "events_url": "https://api.github.com/users/luccalck/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/luccalck/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Revisei as alterações deste PR e aprovo sua integração, condicionada à CI e à preservação das proteções. Os aceites operacionais, a publicação e as entregas ainda pendentes devem continuar registrados como pendentes. Aprovação registrada a meu pedido após a revisão humana informada nesta sessão por Lucca Castilho Costa.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/24#pullrequestreview-5526021109",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/24",
+        "author_association": "OWNER",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/24#pullrequestreview-5526021109"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/24"
+          }
+        },
+        "submitted_at": "2026-10-14T23:23:49Z",
+        "commit_id": "3f309ddebce450274c6db6787e724ae4306f86a0"
+      }
+    ]
+  },
+  {
+    "pr": 25,
+    "head": "77184d8c539440e0508d4a483bad4eb93d507701",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/25/reviews",
+    "collectedAt": "2026-10-16T17:33:45.433803+00:00",
+    "reviews": [
+      {
+        "id": 5526021265,
+        "node_id": "PRR_kwDOU_bdu88AAAABSWBkkQ",
+        "user": {
+          "login": "luccalck",
+          "id": 256704169,
+          "node_id": "U_kgDOD0z-qQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/256704169?u=012250ca16d2ac406e1ddc70d91b19bca7a8755c&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/luccalck",
+          "html_url": "https://github.com/luccalck",
+          "followers_url": "https://api.github.com/users/luccalck/followers",
+          "following_url": "https://api.github.com/users/luccalck/following{/other_user}",
+          "gists_url": "https://api.github.com/users/luccalck/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/luccalck/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/luccalck/subscriptions",
+          "organizations_url": "https://api.github.com/users/luccalck/orgs",
+          "repos_url": "https://api.github.com/users/luccalck/repos",
+          "events_url": "https://api.github.com/users/luccalck/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/luccalck/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Revisei as alterações deste PR e aprovo sua integração, condicionada à CI e à preservação das proteções. Os aceites operacionais, a publicação e as entregas ainda pendentes devem continuar registrados como pendentes. Aprovação registrada a meu pedido após a revisão humana informada nesta sessão por Lucca Castilho Costa.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/25#pullrequestreview-5526021265",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/25",
+        "author_association": "OWNER",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/25#pullrequestreview-5526021265"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/25"
+          }
+        },
+        "submitted_at": "2026-10-14T23:23:51Z",
+        "commit_id": "77184d8c539440e0508d4a483bad4eb93d507701"
+      }
+    ]
+  },
+  {
+    "pr": 26,
+    "head": "c0a017affd9b4a0b2791e14102cf4a659171bbe0",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/26/reviews",
+    "collectedAt": "2026-10-16T17:33:45.314137+00:00",
+    "reviews": [
+      {
+        "id": 5526021438,
+        "node_id": "PRR_kwDOU_bdu88AAAABSWBlPg",
+        "user": {
+          "login": "luccalck",
+          "id": 256704169,
+          "node_id": "U_kgDOD0z-qQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/256704169?u=012250ca16d2ac406e1ddc70d91b19bca7a8755c&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/luccalck",
+          "html_url": "https://github.com/luccalck",
+          "followers_url": "https://api.github.com/users/luccalck/followers",
+          "following_url": "https://api.github.com/users/luccalck/following{/other_user}",
+          "gists_url": "https://api.github.com/users/luccalck/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/luccalck/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/luccalck/subscriptions",
+          "organizations_url": "https://api.github.com/users/luccalck/orgs",
+          "repos_url": "https://api.github.com/users/luccalck/repos",
+          "events_url": "https://api.github.com/users/luccalck/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/luccalck/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Revisei as alterações deste PR e aprovo sua integração, condicionada à CI e à preservação das proteções. Os aceites operacionais, a publicação e as entregas ainda pendentes devem continuar registrados como pendentes. Aprovação registrada a meu pedido após a revisão humana informada nesta sessão por Lucca Castilho Costa.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/26#pullrequestreview-5526021438",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/26",
+        "author_association": "OWNER",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/26#pullrequestreview-5526021438"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/26"
+          }
+        },
+        "submitted_at": "2026-10-14T23:23:52Z",
+        "commit_id": "c0a017affd9b4a0b2791e14102cf4a659171bbe0"
+      }
+    ]
+  },
+  {
+    "pr": 27,
+    "head": "00116680a180a1c460b714323301684482f515ed",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/27/reviews",
+    "collectedAt": "2026-10-16T17:33:43.804369+00:00",
+    "reviews": [
+      {
+        "id": 5526021613,
+        "node_id": "PRR_kwDOU_bdu88AAAABSWBl7Q",
+        "user": {
+          "login": "luccalck",
+          "id": 256704169,
+          "node_id": "U_kgDOD0z-qQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/256704169?u=012250ca16d2ac406e1ddc70d91b19bca7a8755c&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/luccalck",
+          "html_url": "https://github.com/luccalck",
+          "followers_url": "https://api.github.com/users/luccalck/followers",
+          "following_url": "https://api.github.com/users/luccalck/following{/other_user}",
+          "gists_url": "https://api.github.com/users/luccalck/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/luccalck/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/luccalck/subscriptions",
+          "organizations_url": "https://api.github.com/users/luccalck/orgs",
+          "repos_url": "https://api.github.com/users/luccalck/repos",
+          "events_url": "https://api.github.com/users/luccalck/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/luccalck/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Revisei as alterações deste PR e aprovo sua integração, condicionada à CI e à preservação das proteções. Os aceites operacionais, a publicação e as entregas ainda pendentes devem continuar registrados como pendentes. Aprovação registrada a meu pedido após a revisão humana informada nesta sessão por Lucca Castilho Costa.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/27#pullrequestreview-5526021613",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/27",
+        "author_association": "OWNER",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/27#pullrequestreview-5526021613"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/27"
+          }
+        },
+        "submitted_at": "2026-10-14T23:23:54Z",
+        "commit_id": "00116680a180a1c460b714323301684482f515ed"
+      }
+    ]
+  },
+  {
+    "pr": 28,
+    "head": "b04300107e98523fbe528e9b265eb2186b84664f",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/28/reviews",
+    "collectedAt": "2026-10-16T17:33:43.774192+00:00",
+    "reviews": [
+      {
+        "id": 5526021776,
+        "node_id": "PRR_kwDOU_bdu88AAAABSWBmkA",
+        "user": {
+          "login": "luccalck",
+          "id": 256704169,
+          "node_id": "U_kgDOD0z-qQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/256704169?u=012250ca16d2ac406e1ddc70d91b19bca7a8755c&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/luccalck",
+          "html_url": "https://github.com/luccalck",
+          "followers_url": "https://api.github.com/users/luccalck/followers",
+          "following_url": "https://api.github.com/users/luccalck/following{/other_user}",
+          "gists_url": "https://api.github.com/users/luccalck/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/luccalck/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/luccalck/subscriptions",
+          "organizations_url": "https://api.github.com/users/luccalck/orgs",
+          "repos_url": "https://api.github.com/users/luccalck/repos",
+          "events_url": "https://api.github.com/users/luccalck/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/luccalck/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Revisei as alterações deste PR e aprovo sua integração, condicionada à CI e à preservação das proteções. Os aceites operacionais, a publicação e as entregas ainda pendentes devem continuar registrados como pendentes. Aprovação registrada a meu pedido após a revisão humana informada nesta sessão por Lucca Castilho Costa.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/28#pullrequestreview-5526021776",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/28",
+        "author_association": "OWNER",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/28#pullrequestreview-5526021776"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/28"
+          }
+        },
+        "submitted_at": "2026-10-14T23:23:55Z",
+        "commit_id": "b04300107e98523fbe528e9b265eb2186b84664f"
+      }
+    ]
+  },
+  {
+    "pr": 29,
+    "head": "e71de729219028ee314fb52949e1ee28ffeeb678",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/29/reviews",
+    "collectedAt": "2026-10-16T17:33:43.717942+00:00",
+    "reviews": [
+      {
+        "id": 5526021935,
+        "node_id": "PRR_kwDOU_bdu88AAAABSWBnLw",
+        "user": {
+          "login": "luccalck",
+          "id": 256704169,
+          "node_id": "U_kgDOD0z-qQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/256704169?u=012250ca16d2ac406e1ddc70d91b19bca7a8755c&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/luccalck",
+          "html_url": "https://github.com/luccalck",
+          "followers_url": "https://api.github.com/users/luccalck/followers",
+          "following_url": "https://api.github.com/users/luccalck/following{/other_user}",
+          "gists_url": "https://api.github.com/users/luccalck/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/luccalck/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/luccalck/subscriptions",
+          "organizations_url": "https://api.github.com/users/luccalck/orgs",
+          "repos_url": "https://api.github.com/users/luccalck/repos",
+          "events_url": "https://api.github.com/users/luccalck/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/luccalck/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Revisei as alterações deste PR e aprovo sua integração, condicionada à CI e à preservação das proteções. Os aceites operacionais, a publicação e as entregas ainda pendentes devem continuar registrados como pendentes. Aprovação registrada a meu pedido após a revisão humana informada nesta sessão por Lucca Castilho Costa.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/29#pullrequestreview-5526021935",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/29",
+        "author_association": "OWNER",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/29#pullrequestreview-5526021935"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/29"
+          }
+        },
+        "submitted_at": "2026-10-14T23:23:57Z",
+        "commit_id": "e71de729219028ee314fb52949e1ee28ffeeb678"
+      }
+    ]
+  },
+  {
+    "pr": 30,
+    "head": "ad5c738563db9df747eb6b4634bcb41c70d22774",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/30/reviews",
+    "collectedAt": "2026-10-16T17:33:43.717942+00:00",
+    "reviews": []
+  },
+  {
+    "pr": 31,
+    "head": "66f0e738a5768f600204e4d66e3d964c067bca4f",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/31/reviews",
+    "collectedAt": "2026-10-16T17:33:41.569402+00:00",
+    "reviews": []
+  },
+  {
+    "pr": 32,
+    "head": "59dc830f6129c6d7b6a062d4c4f490924a232b20",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/32/reviews",
+    "collectedAt": "2026-10-16T17:33:41.569402+00:00",
+    "reviews": [
+      {
+        "id": 5526236043,
+        "node_id": "PRR_kwDOU_bdu88AAAABSWOriw",
+        "user": {
+          "login": "6lucassilvaaa",
+          "id": 202195214,
+          "node_id": "U_kgDODA1BDg",
+          "avatar_url": "https://avatars.githubusercontent.com/u/202195214?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/6lucassilvaaa",
+          "html_url": "https://github.com/6lucassilvaaa",
+          "followers_url": "https://api.github.com/users/6lucassilvaaa/followers",
+          "following_url": "https://api.github.com/users/6lucassilvaaa/following{/other_user}",
+          "gists_url": "https://api.github.com/users/6lucassilvaaa/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/6lucassilvaaa/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/6lucassilvaaa/subscriptions",
+          "organizations_url": "https://api.github.com/users/6lucassilvaaa/orgs",
+          "repos_url": "https://api.github.com/users/6lucassilvaaa/repos",
+          "events_url": "https://api.github.com/users/6lucassilvaaa/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/6lucassilvaaa/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "## Revisão Humana de Integração — PR #32\n\n**Revisor:** Lucas Souza da Silva (`6lucassilvaaa`, RA 26179875, Squad Aura 67)  \n**HEAD SHA revisado:** `59dc830f6129c6d7b6a062d4c4f490924a232b20`  \n**Base:** `main` (`c04b8fa4e83ae0f7246b7c00bf64f6d3865bc6dc`)  \n**Decisão:** **APPROVE**\n\n---\n\n### Escopo Técnico Conferido e Validado\n\n1. **Consolidação do Histórico e Autoria:**\n   - Incorporação linear dos 70 commits do projeto (PRs #2 a #29), preservando integralmente os commits e a autoria dos quatro membros da squad (Lucca, Davi, Miguel e Lucas).\n   - Versão candidata estabilizada em `v0.7.0` em `package.json` e `dist/version.json`.\n\n2. **Esteira de Integração Contínua (`.github/workflows/esteira.yml`):**\n   - Inclusão formal do Relatório Técnico de 6 páginas no job `build` (`npm run relatorio:pdf`), inspecionado com `pdfinfo`, `pdftotext` e validado pela função `validateReportPages` (máximo 12 páginas).\n   - Sequenciamento estrito no job `submissao` (`needs: [ci, pacote-ci, deploy-prd, release]`), exigindo tag anotada remota (`refs/tags/v*`) e impedindo submissão antes do deploy formal de produção e da release.\n   - Proveniência do vídeo do pitch validada criptograficamente por SHA, run, attempt e digest no `entrada-video.yml`.\n\n3. **Triagem Agendada Imutável (`.github/workflows/triagem-agendada.yml`):**\n   - Recuperação do pacote final exclusivamente via digest SHA-256 (`SUBMISSION_ARTIFACT_DIGEST`), validação de tag anotada e verificação de arquivos via `fflate` e `scripts/triagem.mjs`.\n\n4. **Correções Operacionais e DORA (`scripts/dora.mjs`, `scripts/promover.mjs`):**\n   - Correção do acesso à propriedade `tx.version` no rollback manual; validação do baseline por HTTP e hash SHA-256; revalidação de tag sem inflar métricas DORA.\n\n5. **Testes e Qualidade de Código:**\n   - **270 testes de unidade e integração verdes** (Vitest) em 25 arquivos.\n   - **36 testes E2E verdes** (Playwright), incluindo pacote offline via protocolo `file://`.\n   - **Lint e tipagem limpos:** `eslint .` e `tsc --noEmit` sem qualquer erro ou aviso.\n\n6. **Saneamento Documental e Auditoria:**\n   - Atualização da identificação oficial de Lucca Castilho Costa (RA 26179873) em toda a documentação.\n   - Reabertura transparente de 27 checks antecipados em `docs/gestao/checklist-avaliacao.md`.\n   - Manutenção de pendências reais em `docs/execucao/05-pendencias-por-passo.md` (gravação do vídeo de pitch humano, envio no AVA institucional, participação e arguição na banca presencial).\n   - Decisão documentada de foco na Unidade Curricular e não participação no concurso externo opcional.\n\n---\n\n### Ressalvas de Governança\n- A CI verde remota deste HEAD (Runs 38654754208 e 38654689083) valida a correção dos contratos e da suíte de testes.\n- Esta aprovação técnica de integração não constitui publicação antecipada em produção, atribuição de nota da banca ou concessão de fator individual $F = 1{,}0$, os quais permanecem condicionados à apresentação presencial e aos procedimentos acadêmicos institucionais.\n- Proteções de branch e exigência de aprovação mantidas; nenhum merge ou bypass foi realizado.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/32#pullrequestreview-5526236043",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/32",
+        "author_association": "COLLABORATOR",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/32#pullrequestreview-5526236043"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/32"
+          }
+        },
+        "submitted_at": "2026-10-14T23:53:55Z",
+        "commit_id": "59dc830f6129c6d7b6a062d4c4f490924a232b20"
+      }
+    ]
+  },
+  {
+    "pr": 33,
+    "head": "f38f6d9de4275812c66d607612f82a7ca27c0956",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/33/reviews",
+    "collectedAt": "2026-10-16T17:33:41.568402+00:00",
+    "reviews": [
+      {
+        "id": 5541497036,
+        "node_id": "PRR_kwDOU_bdu88AAAABSkyIzA",
+        "user": {
+          "login": "6lucassilvaaa",
+          "id": 202195214,
+          "node_id": "U_kgDODA1BDg",
+          "avatar_url": "https://avatars.githubusercontent.com/u/202195214?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/6lucassilvaaa",
+          "html_url": "https://github.com/6lucassilvaaa",
+          "followers_url": "https://api.github.com/users/6lucassilvaaa/followers",
+          "following_url": "https://api.github.com/users/6lucassilvaaa/following{/other_user}",
+          "gists_url": "https://api.github.com/users/6lucassilvaaa/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/6lucassilvaaa/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/6lucassilvaaa/subscriptions",
+          "organizations_url": "https://api.github.com/users/6lucassilvaaa/orgs",
+          "repos_url": "https://api.github.com/users/6lucassilvaaa/repos",
+          "events_url": "https://api.github.com/users/6lucassilvaaa/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/6lucassilvaaa/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "## Parecer de Revisão Técnica — PR #33\n\n**Revisor:** Lucas Souza da Silva (`6lucassilvaaa`, RA 26179875, Squad Aura 67)  \n**HEAD SHA revisado:** `f38f6d9de4275812c66d607612f82a7ca27c0956`  \n**Base:** `main` (`773af17db29bb9fc46bfe438c0cb9c8304fbd5f5`)  \n**Decisão:** **APPROVE**\n\n---\n\n### Resumo da Aprovação Técnica\n\n1. **Fallback de Indisponibilidade da API de PRs:**\n   - A chamada à API de PRs em `scripts/ci-bundle.mjs` foi encapsulada em `try/catch`. Em caso de falha de transporte, timeout de rede, erro HTTP (ex.: 503) ou JSON inválido, o coletor não aborta a execução: captura o diagnóstico sanitizado em `prSourceError` e recorre com segurança às fontes alternativas (`pushPayload` e `events`), registrando `sourceWarnings` no relatório final.\n\n2. **Hierarquia de Fontes e Limite Bloqueante de 900 Segundos:**\n   - Prioridade concedida ao merge comprovado na `main` (`mergeProof` com `merged_at`, `merged === true`, `baseRef === 'main'` e `mergeCommitSha === sha`).\n   - Fallback sequencial para o payload do evento de push do Actions (`repository.pushed_at`) e feed público complementar.\n   - Limite estrito de 900 segundos validado: $\\le 900$s aprovado; $> 900$s (ex.: 901s) bloqueado com erro; cronologia futura rejeitada.\n\n3. **Validações de Integridade e Tags Anotadas:**\n   - Verificação estrita de SHA, ref e repositório.\n   - Para tags anotadas (`refs/tags/*`), consulta remota do objeto da tag confirmando que aponta exatamente ao commit em deploy antes de aceitar o payload.\n\n4. **Segurança de Credenciais e Bateria de Testes:**\n   - O segredo `GH_TOKEN` permanece estritamente confinado ao header de autorização, sem exposição em mensagens de erro ou no `reports/hml-run.json`.\n   - **26 testes focais adicionados** em `tests/integration/hml-timing-collector.test.mjs` simulando todas as condições de erro, timeout e limiares de tempo.\n   - Suíte completa de **299 testes unitários/integração verdes** (Vitest) e `npm run lint` (`eslint` e `tsc --noEmit`) 100% limpo.\n\n5. **Permissões Mínimas no Workflow:**\n   - A permissão `pull-requests: read` foi concedida pontualmente ao job `deploy-hml` no `.github/workflows/esteira.yml`, respeitando o princípio do menor privilégio.\n\n6. **Status das CIs do HEAD Atual (`f38f6d9`):**\n   - Push Run [38827261706](https://github.com/luccalck/desafio-arcade/actions/runs/38827261706): **SUCCESS**\n   - PR Run [38827265169](https://github.com/luccalck/desafio-arcade/actions/runs/38827265169): **SUCCESS**\n\n---\n\n### Governança\n- Esta aprovação técnica libera a integração do PR #33 na branch `main`.\n- Nenhum merge foi executado nesta revisão, nenhuma proteção de branch foi alterada e os requisitos institucionais (gravação de vídeo de pitch humano, submissão AVA e arguição presencial na banca) permanecem pendências conhecidas da squad.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/33#pullrequestreview-5541497036",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/33",
+        "author_association": "COLLABORATOR",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/33#pullrequestreview-5541497036"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/33"
+          }
+        },
+        "submitted_at": "2026-10-16T00:21:28Z",
+        "commit_id": "f38f6d9de4275812c66d607612f82a7ca27c0956"
+      }
+    ]
+  },
+  {
+    "pr": 34,
+    "head": "e9dd28ccee535e9b1259a710742482e44db47aed",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/34/reviews",
+    "collectedAt": "2026-10-16T17:33:41.568402+00:00",
+    "reviews": [
+      {
+        "id": 5543092743,
+        "node_id": "PRR_kwDOU_bdu88AAAABSmTiBw",
+        "user": {
+          "login": "6lucassilvaaa",
+          "id": 202195214,
+          "node_id": "U_kgDODA1BDg",
+          "avatar_url": "https://avatars.githubusercontent.com/u/202195214?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/6lucassilvaaa",
+          "html_url": "https://github.com/6lucassilvaaa",
+          "followers_url": "https://api.github.com/users/6lucassilvaaa/followers",
+          "following_url": "https://api.github.com/users/6lucassilvaaa/following{/other_user}",
+          "gists_url": "https://api.github.com/users/6lucassilvaaa/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/6lucassilvaaa/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/6lucassilvaaa/subscriptions",
+          "organizations_url": "https://api.github.com/users/6lucassilvaaa/orgs",
+          "repos_url": "https://api.github.com/users/6lucassilvaaa/repos",
+          "events_url": "https://api.github.com/users/6lucassilvaaa/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/6lucassilvaaa/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "## Aprovação Técnica — PR #34\n\n**Revisor:** Lucas Souza da Silva (@6lucassilvaaa, RA 26179875, Squad Aura 67)\n**HEAD SHA Revisado:** `e9dd28ccee535e9b1259a710742482e44db47aed`\n**Base:** `main` (`88d533e31452036092cd8edef3efa3c0775241dc`)\n**Diff:** 124 arquivos modificados/adicionados\n\n### Escopo e Validações Técnicas Conferidas\n1. **Isolamento de Alertas e Métricas DORA:** Alertas de ensaio rotulados com label `ensaio` e corpo com comentário oculto de ensaio. O script `scripts/dora.mjs` filtra e descarta expressamente esses alertas, prevenindo contaminação de MTTR/CFR.\n2. **Deduplicação e Autocerramento:** `scripts/alertas.mjs` implementa `writtenAlerts` em memória, contornando a consistência eventual da API de busca do GitHub. Evidenciado com sucesso na Run [38847296363](https://github.com/luccalck/desafio-arcade/actions/runs/38847296363) (SHA `27aab6d3baf7d1832c5cf5850a5babb6c8e619f7`), com abertura e fechamento das Issues #38 e #39.\n3. **Recuperação Controlada e Limite de 300s:** `scripts/ensaio-recuperacao.mjs` restringe a execução a `workflow_dispatch` exclusivo em `refs/heads/main` com `ENSAIO_SCOPE=recuperacao`. O preflight local foi executado com interceptação Playwright; registra-se expressamente que esse teste prévio local não comprova rollback real em produção Pages nem recuperação em 1,5 segundo no ambiente público.\n4. **Preservação do Limite de 900s no Push:** Mantida condicional `if: github.event_name == \"push\"` em `.github/workflows/esteira.yml` para a comprovação de push→HML.\n5. **Bateria de Testes:** 311 testes de unidade/integração (incluindo 8 testes em `tests/integration/ensaio-alertas.test.mjs` e 4 em `tests/integration/ensaio-recuperacao.test.mjs`) e 36 testes E2E aprovados localmente e na CI oficial (Runs [38847999417](https://github.com/luccalck/desafio-arcade/actions/runs/38847999417) e [38847994710](https://github.com/luccalck/desafio-arcade/actions/runs/38847994710)). Lint (`eslint . && tsc --noEmit`) e `content:check` zerados.\n6. **Documentação e PDF:** PDF técnico original da CI no HEAD `e9dd28c` conferido em 10 páginas (560.650 bytes).\n7. **Ressalvas e Pendências:** Pitch de até 90 segundos (Passo 029), playtest humano, envio AVA e banca final permanecem como pendências abertas, sem datas presumidas.\n\nConclusão: **APROVADO** para integração em `main`. Nenhum merge, deploy ou alteração de proteção de branch foi realizado.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/34#pullrequestreview-5543092743",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/34",
+        "author_association": "COLLABORATOR",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/34#pullrequestreview-5543092743"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/34"
+          }
+        },
+        "submitted_at": "2026-10-16T04:31:02Z",
+        "commit_id": "e9dd28ccee535e9b1259a710742482e44db47aed"
+      }
+    ]
+  },
+  {
+    "pr": 35,
+    "head": "1f641f0a1885f8ed1c74eaba31ffd2622006c649",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/35/reviews",
+    "collectedAt": "2026-10-16T17:33:41.568402+00:00",
+    "reviews": [
+      {
+        "id": 5541381443,
+        "node_id": "PRR_kwDOU_bdu88AAAABSkrFQw",
+        "user": {
+          "login": "luccalck",
+          "id": 256704169,
+          "node_id": "U_kgDOD0z-qQ",
+          "avatar_url": "https://avatars.githubusercontent.com/u/256704169?u=012250ca16d2ac406e1ddc70d91b19bca7a8755c&v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/luccalck",
+          "html_url": "https://github.com/luccalck",
+          "followers_url": "https://api.github.com/users/luccalck/followers",
+          "following_url": "https://api.github.com/users/luccalck/following{/other_user}",
+          "gists_url": "https://api.github.com/users/luccalck/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/luccalck/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/luccalck/subscriptions",
+          "organizations_url": "https://api.github.com/users/luccalck/orgs",
+          "repos_url": "https://api.github.com/users/luccalck/repos",
+          "events_url": "https://api.github.com/users/luccalck/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/luccalck/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "Revisão técnica assistida por IA, executada a pedido de Lucca Castilho Costa nesta sessão, usando a conta autenticada luccalck. Não atribui revisão a Miguel, Davi ou Lucas.\n\nHEAD revisado: 1f641f0a1885f8ed1c74eaba31ffd2622006c649. Sem achados bloqueantes no escopo da correção P2.\n\nConferidos diff completo de quatro arquivos, isolamento das falhas HTTP/transporte/JSON da fonte de PRs, retomada por payload/feed, preservação do merge comprovado e do limite900s, validações de identidade e sanitização dos diagnósticos. Testes adicionais exercitam o coletor completo com relógio/HTTP/arquivos simulados, sem fabricar execução operacional.\n\nValidação local independente:37/37 testes focais,299/299 testes de unidade/integração, cobertura do núcleo97,90% instruções/100% linhas/100% funções/95,23% ramos; lint/tipagem, content:check e diffcheck aprovados. CI38817915513 no mesmo HEAD: qualidade/segurança/build/E2E/pacote/ci verdes. Os36E2E foram conferidos na CI; não foram reexecutados localmente nesta revisão.\n\nEsta aprovação cobre o PR35. A integração atualiza a branch do PR33, que exige nova CI e revisão externa por Davi ou Lucas antes de merge na main. Não comprova deployHML/PRD, recuperação, release ou submissão final.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/35#pullrequestreview-5541381443",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/35",
+        "author_association": "OWNER",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/35#pullrequestreview-5541381443"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/35"
+          }
+        },
+        "submitted_at": "2026-10-16T00:03:29Z",
+        "commit_id": "1f641f0a1885f8ed1c74eaba31ffd2622006c649"
+      }
+    ]
+  },
+  {
+    "pr": 40,
+    "head": "a190215fbb048cd7b12d08da28e18ad8e2d5e121",
+    "source": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/40/reviews",
+    "collectedAt": "2026-10-16T17:33:41.567400+00:00",
+    "reviews": [
+      {
+        "id": 5543614682,
+        "node_id": "PRR_kwDOU_bdu88AAAABSmzY2g",
+        "user": {
+          "login": "6lucassilvaaa",
+          "id": 202195214,
+          "node_id": "U_kgDODA1BDg",
+          "avatar_url": "https://avatars.githubusercontent.com/u/202195214?v=4",
+          "gravatar_id": "",
+          "url": "https://api.github.com/users/6lucassilvaaa",
+          "html_url": "https://github.com/6lucassilvaaa",
+          "followers_url": "https://api.github.com/users/6lucassilvaaa/followers",
+          "following_url": "https://api.github.com/users/6lucassilvaaa/following{/other_user}",
+          "gists_url": "https://api.github.com/users/6lucassilvaaa/gists{/gist_id}",
+          "starred_url": "https://api.github.com/users/6lucassilvaaa/starred{/owner}{/repo}",
+          "subscriptions_url": "https://api.github.com/users/6lucassilvaaa/subscriptions",
+          "organizations_url": "https://api.github.com/users/6lucassilvaaa/orgs",
+          "repos_url": "https://api.github.com/users/6lucassilvaaa/repos",
+          "events_url": "https://api.github.com/users/6lucassilvaaa/events{/privacy}",
+          "received_events_url": "https://api.github.com/users/6lucassilvaaa/received_events",
+          "type": "User",
+          "user_view_type": "public",
+          "site_admin": false
+        },
+        "body": "## Aprovação Técnica — PR #40\n\n**Revisor:** Lucas Souza da Silva (@6lucassilvaaa, RA 26179875, Squad Aura 67)\n**HEAD SHA Revisado:** `a190215fbb048cd7b12d08da28e18ad8e2d5e121`\n**Base:** `main` (`acb03d8b018227cabbbeb47242cc5c097a3c0df1`)\n**Diff:** 71 arquivos modificados/adicionados (+4448 / -67 linhas)\n\n### Escopo e Validações Técnicas Conferidas\n1. **Correção de Consulta a Rascunhos (`scripts/release.mjs`):** Substituição da busca por tag pela checagem direta de rascunhos por ID (`getReleaseById`) e listagem autenticada com rejeição de ambiguidade, resolvendo o 404 da API do GitHub em releases do tipo draft.\n2. **Proveniência e Gates Obrigatórios (`scripts/retomar-release.mjs`):** Validação estrita de identidade por regex, exigência de conclusão com sucesso dos 9 gates da esteira homologada original (`qualidade`, `seguranca`, `build`, `e2e`, `pacote-ci`, `ci`, `deploy-hml`, `deploy-prd`, `monitor-pos-producao`) e sonda ativa de produção antes de publicar.\n3. **Publicação Sem Recompilar:** O workflow consome exclusivamente o bundle original baixado (`pacote-ci-${sha}-${run}-${attempt}`), garantindo imutabilidade e rastreabilidade total.\n4. **Concorrência Serializada (`retomar-release.yml`):** Configurado `concurrency.group = release-refs/tags/${{ inputs.source_tag }}` com `cancel-in-progress: false`, prevenindo race conditions e cancelamentos indevidos.\n5. **Bateria de Testes:** 318 testes de unidade e integração aprovados em 29 arquivos (incluindo 8 em `release.test.mjs` e 4 em `retomar-release.test.mjs`), 36 testes E2E Playwright aprovados, cobertura de 97,9% no core, e lint/types (`eslint . && tsc --noEmit`) zerados.\n6. **CIs Verdes no HEAD:** Runs [38854885519](https://github.com/luccalck/desafio-arcade/actions/runs/38854885519) (push) e [38854887404](https://github.com/luccalck/desafio-arcade/actions/runs/38854887404) (PR) com aprovação integral.\n\nConclusão: **APROVADO** para integração na `main`. Nenhum merge, deploy ou alteração de proteção de branch foi realizado.",
+        "state": "APPROVED",
+        "html_url": "https://github.com/luccalck/desafio-arcade/pull/40#pullrequestreview-5543614682",
+        "pull_request_url": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/40",
+        "author_association": "COLLABORATOR",
+        "_links": {
+          "html": {
+            "href": "https://github.com/luccalck/desafio-arcade/pull/40#pullrequestreview-5543614682"
+          },
+          "pull_request": {
+            "href": "https://api.github.com/repos/luccalck/desafio-arcade/pulls/40"
+          }
+        },
+        "submitted_at": "2026-10-16T05:55:14Z",
+        "commit_id": "a190215fbb048cd7b12d08da28e18ad8e2d5e121"
+      }
+    ]
+  }
+]

@@ -360,3 +360,37 @@ Codex conferiu créditos em fontes primárias, atualizou inventários/THIRD_PART
 Usamos Codex sob orientação de Lucca para verificar a aprovação real de Lucas5543092743 no HEADe9dd28c, integrar PR34, executar rollback manual e ensaio automático pela pipeline, observar sessões/HTTP e conferir a tag técnica. Fontes em docs/evidencias/operacao-release-2026-10-16/. Manual80,66s e automático17,166s são ensaios claramente identificados; não atribuímos incidente espontâneo, playtest humano, consentimento ou banca à automação. Preservamos a falha de monitor pós-tag na primeira tentativa e repetimos a esteira integral sem relaxar gates. Atualizamos relatório/checks com fatos observados; revisão da documentação posterior aos ensaios ainda será solicitada em PR próprio. Pitch, TXT e submissão acadêmica permanecem pendentes. Nenhuma revisão foi feita na identidade dos colegas ou pela conta autora de seu próprio PR.
 
 A tentativa2 confirmouCI/HML/PRD/monitor e falhou no publicador:consulta por tag não retorna draft. Reproduzimos o erro antes da correção; adapter corrigido por listagem autenticada e consultaID;318testes/12focais, lint/actionlint passaram. Implementamos retomada protegida por main/environment para consumir o bundle original, conferir todos os gates/SHA/notas/artefatos e finalizar publicação sem rebuild/deploy. Código ainda candidato, não executado em escrita. ZIP baixado do draft passou campanha offline; cinco anexos+manifesto iguais à CI e14hashesHTTP iguais. Preservamos as duas falhas da run; não houve publicação local/manual nem data/SHA fictícios.
+
+## 16/10/2026 — Retomada publicada e fechamento independente
+
+Usamos Codex sob orientação de Lucca para conferir a aprovação real de Lucas no PR40 (HEADa190215, review5543614682), integrar sem bypass e executar a retomada38940532129 pela main revisada. Preservamos produçãoe9 durante a HML178,827s e restauramos a flagPRD; aprovação do environment porLucca conforme autorização, explicitando assistência deIA. A Releasev0.7.0 foi publicada sem rebuild/deploy e teve seis anexos públicos conferidos com a origem38852413982/2. Não alteramos as falhas anteriores ou notas/anexos imutáveis.
+
+Conferimos API/histórico de35PRs,20PRs com aprovação de outro autor,109prefixos Conventional Commits sem merge e doze provas de commit próprio/arquivo/revisão em trêsINT por pessoa. Revisão técnica automatizada do painel em desktop/celular/teclado passou; não é playtest humano, domínio individual ou acessibilidade completa. Atualizamos contribuições, roteiro de banca, ordem produção→vídeo→tag→pacote, ficha persistente, GDD, relatório e pendências com fontes reais. Corrigimos interpretação deDORA:deploy-prd confirmado entra mesmo se publicador falhar depois; duas amostras eCFR50% incluem rollback planejado, MTTRoperacionalN/D.
+
+Esta atualização documental posterior à publicação ainda precisa de revisão/CI própria; Lucas aprovou o HEADa190215, não estes textos posteriores. Pitch/TXT e ações humanas não foram simulados. Direitos, consentimentos, marcos históricos e prazo não foram inventados. Dados brutos/metadados e capturas reais estão em docs/evidencias/fechamento-independente-2026-10-16/.
+
+
+### Reconferência pública e consolidação dos oito tópicos —16/10/2026
+
+Utilizamos IA para executar smoke/campanhas automatizadas por teclado e toque, reconferir downloads públicos e organizar as pendências nos oito tópicos solicitados. As soluções eram conhecidas; não houve participante humano, medida de aprendizagem, nova revisão por colega ou integração sem aprovação. Preservamos os limites operacionais, direitos e evidências ausentes. Provas em docs/evidencias/reconferencia-final-2026-10-16.md.
+
+
+### Três subagentes e correção de feedback —16/10/2026
+
+Lucca solicitou três subagentes para avaliação externa. Utilizamos avaliacao_ia_desktop,avaliacao_ia_toque e avaliacao_ia_acessibilidade em navegadores reais, identificados comoIA; não substituímos pessoas, revisãoGitHub de outro integrante ou banca. Sessões e falhas da automação preservadas em docs/evidencias/avaliacoes-ia-2026-10-16/. A avaliação desktop revelou aviso residual de derrota; a assistência implementou correção restrita em app.ts e regressãoE2E, que falhou antes e passou depois. Sem merge/deploy ou alteração de proteção. Reconciliamos documentos antigos e checks com escopos de ensaio, mantendo direitos/humanos/MTTR/efeitoDORA não comprovados. Revisão técnica assistida não é aprovação humana externa.
+
+
+### Compatibilidade de labels dos alertas de ensaio —16/10/2026
+
+A pedido de Lucca,corrigimos a classificação dos novos alertas do ensaio autorizado:alerta+ensaio, mantendo o marcador que separa DORA operacional e a listagem/recuperação por escopo. O teste da classificação falhou antes;20testes focais passaram depois,assim como lint/tipagem. A separação do MTTR não foi removida para produzir número operacional fictício. Execução real e proveniência serão registradas com seus resultados,sem revisão humana ou pitch inventados.
+
+
+Resultado do ensaio de classificação38950333359:Issues43/44 comalerta+ensaio,HTTP404 e atraso real,autocerramento2s/4s,média3s. Os valores são deensaio e não substituemMTTRoperacional. Lucca solicitou encerramento sem terceiros; tentativa de autoaprovação foi recusada peloGitHub,sem revisão fictícia ou alteração de proteção. A submissão acadêmica foi tentada semvídeo e corretamente recusada; artefatos originais daCI/Release e relatório são disponibilizados com escopo técnico explícito. Nenhuma sessão foi atribuída aLucca como jogador observado.
+
+
+### Melhoria de MTTR orientada pelo ensaio —16/10/2026
+
+Lucca solicitou melhoriaDORA e prompt para outro integrante validarPR41. A baseline do ensaio38950333359 temMTTRmédio3s. Identificamos consultas redundantes de metadados de labels antes do fechamento; a assistência implementou cache por instância apenas de confirmações bem-sucedidas,com regressões de falha503/criação403/404/isolamento. Acrescentamos contador não sensível de consultas no recibo de ensaio. Antes,quatro novos testes falharam;depois,24testes focais e lint passaram. O novo resultado real será preservado mesmo sem redução deMTTR; não trocar oMTTRoperacionalnull por amostras deensaio,nem afirmar melhoria de leadtime/CFR sem evento. Revisão externa continua com outro integrante,sem autoaprovação ou proteção removida.
+
+
+Resultado da melhoriaMTTR:run38953734834/9c22698 SUCCESS;Issues45/46 fecharam em1s/4s,média2,5s versus3s na baseline. Redução observada16,7%,duas amostras por execução; não é melhoria sustentada de produção. Contador real confirmou2consultas de labels; adaptador anterior reproduziu12no teste. Monitor38954187844 passou e manteveMTTR operacionalnull/0amostras,comHTTP200. Não repetimos o ensaio para selecionar resultado favorável. Atualizamos documentação/checks no escopo medido e prepararemos prompt para revisão humana de outro integrante no HEAD final.

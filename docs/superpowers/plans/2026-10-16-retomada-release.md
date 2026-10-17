@@ -8,3 +8,7 @@
 6. Atualizar relatório com resultado da retomada e manter pitch, playtest humano, TXT, triagemfinal, AVA/banca pendentes.
 
 O grupo de concorrência da retomada é release-refs/tags/<tag>, igual ao jobrelease original, impedindo duas escritas simultâneas no mesmo draft. A checagem da versão pública bloqueia a retomada caso outra produção tenha substituído oSHAoriginal; não fazer downgrade silencioso.
+
+## Execução comprovada16/10/2026
+
+PR40 aprovado porLucas5543614682 no HEADa190215 e integrado1e3dd3b. FlagPRD suspensa apenas durante main38939899867 (CI/HML178,827s verdes, PRDskipped) e restaurada. Retomada38940532129 SUCCESS, environment aprovado porLucca conforme autorização, Releasev0.7.0 publicada17:33:57UTC. Seis downloads públicos e hashes iguais ao bundleoriginal38852413982/2. Etapa5 concluída; etapa6 documental em andamento, com pitch/TXT/playtest/triagemfinal/AVA/banca ainda pendentes. Fontes:docs/evidencias/fechamento-independente-2026-10-16.md.

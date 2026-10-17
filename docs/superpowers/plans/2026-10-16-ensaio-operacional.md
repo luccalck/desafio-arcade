@@ -27,16 +27,21 @@ Arquivos: scripts/ensaio-recuperacao.mjs, scripts/promover.mjs, .github/workflow
 
 - [x] Validar ensaio somente workflow_dispatch/main e candidata distinta da estável; preservar aprovação/ref/SHA/run/tentativa e mesmoZIP. Dispatch não afirma intervalo push→HML; pushesnormais preservam gate900s.
 - [x] Observador HTTP começa antes da promoção e termina após confirmação; injeção Playwright bloqueia somente game.js no contexto de teste, registra falha real e devolve exit1 ao caminho recuperar existente.
-- [ ] Verificar recuperação por Pages/hash/smoke e relógio<300s; registrar resultado inclusive falha. Motivo manual ensaio-controlado identificado e validado.
-- [ ] Integrar/executar apenas após revisão externa e proteção; se a conta autora não pode aprovar, manter gate e pedir revisão do HEAD concreto.
+- [x] Verificar recuperação por Pages/hash/smoke e relógio<300s; registrar resultado inclusive falha. Motivo manual ensaio-controlado identificado e validado.
+- [x] Integrar/executar apenas após revisão externa e proteção; se a conta autora não pode aprovar, manter gate e pedir revisão do HEAD concreto.
 
 ## Tarefa4 — fechamento independente e comunicação
 
 - [x] Conferir créditos das seis dependências com fontes primárias; atualizar inventário/THIRD_PARTY e preservar provas.
 - [x] Fazer revisão técnica assistida dos documentos/diffs, sem registrar aprovação humana externa fictícia; reconferir CI e produção atual.
-- [ ] Preparar notas/release e validar proveniência; publicar somente tag aprovada e pipeline com políticas reais. Não montar pacote acadêmico final sempitch.
+- [x] Preparar notas/release e validar proveniência; publicar somente tag aprovada e pipeline com políticas reais. Não montar pacote acadêmico final sempitch.
 - [ ] Atualizar pendências, AI-USAGE, resultados e relatório mantendo≤12páginas; preservar HTML/TXT/pitchparaofinal e playtesthumano semsimulação.
 
 Não há aprovação de código externo, consentimento, participante humano, release, recuperação ou alerta comprovado por esta preparação. Registrar resultados conforme ocorrerem.
 
 Resultado16/10: alerta real em alvo temporário aprovado na run38847296363, Issues38/39 autoencerradas. Recovery foi preparado/testado e injeção local observada, mas Pages/rollback público ainda não executados por falta de integração revisada. Preparação de cronômetro não encerra a tarefa de verificação operacional. Pitch/TXT e playtest humano continuam sem execução.
+
+
+## Atualização de encerramento técnico —16/10/2026
+
+As tarefas de execução acima foram concluídas após PR34/review5543092743/mergeacb03d8. Manual38851754358:80,662735s; automática38851915984:17,166s,65+171HTTP200; Pages/setehashes/smoke confirmados. Release técnica v0.7.0 publicada pela retomada38940532129 após PR40 aprovado/integrado. A frase de preparação anterior a este registro fica preservada como histórico. Documentação/relatório/pendências já foram atualizados e testados em branch; a integração documental continua bloqueada no PR41 sem aprovação. Pitch, pacote acadêmico e critério humano da banca não são encerrados por este plano técnico. Fontes:docs/evidencias/operacao-release-2026-10-16.md e fechamento-independente-2026-10-16.md.

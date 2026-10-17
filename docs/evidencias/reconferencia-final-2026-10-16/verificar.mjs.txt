@@ -1,0 +1,32 @@
+import { chromium } from '@playwright/test';
+import { mkdir, writeFile } from 'node:fs/promises';
+import { resolve } from 'node:path';
+import { releaseSmoke } from '../../tests/e2e/release-smoke.mjs';
+import { campaignRegression } from '../../tests/e2e/regression.mjs';
+import { sondar } from '../../scripts/sondar.mjs';
+
+const out=resolve('.contexto/fechamento-sem-novas-revisoes/resultados');
+await mkdir(out,{recursive:true});
+const base='https://luccalck.github.io/desafio-arcade/';
+const sha='e9dd28ccee535e9b1259a710742482e44db47aed';
+const result={startedAt:new Date().toISOString(),scope:'Verificação automatizada com soluções conhecidas; não é playtest humano',sha,scenarios:[]};
+const browser=await chromium.launch({channel:'chrome',headless:true});
+try {
+ for(const [name,touch,run] of [
+  ['smoke-producao',false,async(page,info)=>releaseSmoke(page,info,{url:base,sha,reportPath:resolve(out,'smoke.json')})],
+  ['campanha-desktop',false,async(page,info)=>campaignRegression(page,info,{url:`${base}releases/${sha}/`,sha})],
+  ['campanha-toque',true,async(page,info)=>campaignRegression(page,info,{url:`${base}releases/${sha}/`,sha,touch:true})],
+ ]) {
+  const directory=resolve(out,name);await mkdir(directory,{recursive:true});
+  const context=await browser.newContext({viewport:touch?{width:390,height:844}:{width:1280,height:900},hasTouch:touch,acceptDownloads:true});
+  const page=await context.newPage();
+  const info={title:name,project:{name,use:{hasTouch:touch}},outputPath:file=>resolve(directory,file),attach:async(label,attachment)=>{if(attachment.body)await writeFile(resolve(directory,`${label}.json`),attachment.body);}};
+  const start=performance.now();
+  try{await run(page,info);result.scenarios.push({name,passed:true,seconds:(performance.now()-start)/1000,url:page.url()});}
+  catch(error){result.scenarios.push({name,passed:false,error:error.message});throw error;}
+  finally{await context.close();}
+ }
+ result.samples=await Promise.all([sondar({alvo:'hml',url:`${base}hml/`}),sondar({alvo:'producao',url:base,loader:true})]);
+ result.passed=result.scenarios.every(s=>s.passed)&&result.samples.every(s=>s.codigo===200&&s.erro===null)&&result.samples.find(s=>s.alvo==='producao').sha===sha;
+ if(!result.passed)throw Error('Sondas/identidade não confirmadas');
+}finally{await browser.close();result.finishedAt=new Date().toISOString();await writeFile(resolve(out,'verificacao.json'),JSON.stringify(result,null,2)+'\n');console.log(JSON.stringify(result,null,2));}

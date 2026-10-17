@@ -1,0 +1,93 @@
+{
+  "at": "2026-10-16T17:35:31.848Z",
+  "scope": "Conferência técnica automatizada; não é playtest humano nem auditoria completa de acessibilidade",
+  "url": "https://luccalck.github.io/desafio-arcade/status/",
+  "samples": [
+    {
+      "at": "2026-10-16T17:35:33.883Z",
+      "viewport": {
+        "width": 1280,
+        "height": 900
+      },
+      "http": 200,
+      "before": {
+        "state": "Dados de amostragem consultados; conferir limitações abaixo.",
+        "availability": "100.0%",
+        "samples": "15 amostras; 15 códigos conhecidos; 0 sem código.",
+        "latency": "80ms",
+        "version": "0.7.0",
+        "version-detail": "SHA e9dd28ccee535e9b1259a710742482e44db47aed",
+        "rollout": "Azul-verde; candidata ausente; 0% de novas sessões na candidata",
+        "updated": "Última amostra: 2026-10-16T17:33:40.392Z (UTC). Atraso máximo esperado:30 min.",
+        "source": "CSV público · commit 353315c64c46a66192def5b314a9356d11e8920d",
+        "errors": "",
+        "dora": "Frequência de implantação\n0.14285714285714285 deploys/dia\n2 observações · 2026-10-02T17:33:40Z até 2026-10-16T17:33:40Z (UTC)\nEvidência da métrica\nLead time de mudanças\n0.5886111111111111 horas\n2 observações · 2026-10-02T17:33:40Z até 2026-10-16T17:33:40Z (UTC)\nEvidência da métrica\nTaxa de falha em mudanças\n50 %\n2 observações · 2026-10-02T17:33:40Z até 2026-10-16T17:33:40Z (UTC)\nEvidência da métrica\nTempo de recuperação\nIndisponível\nSem Issue de alerta aberta e fechada na janela."
+      },
+      "afterRefresh": {
+        "state": "Dados de amostragem consultados; conferir limitações abaixo.",
+        "availability": "100.0%",
+        "samples": "15 amostras; 15 códigos conhecidos; 0 sem código.",
+        "latency": "80ms",
+        "version": "0.7.0",
+        "version-detail": "SHA e9dd28ccee535e9b1259a710742482e44db47aed",
+        "rollout": "Azul-verde; candidata ausente; 0% de novas sessões na candidata",
+        "updated": "Última amostra: 2026-10-16T17:33:40.392Z (UTC). Atraso máximo esperado:30 min.",
+        "source": "CSV público · commit 353315c64c46a66192def5b314a9356d11e8920d",
+        "errors": "",
+        "dora": "Frequência de implantação\n0.14285714285714285 deploys/dia\n2 observações · 2026-10-02T17:33:40Z até 2026-10-16T17:33:40Z (UTC)\nEvidência da métrica\nLead time de mudanças\n0.5886111111111111 horas\n2 observações · 2026-10-02T17:33:40Z até 2026-10-16T17:33:40Z (UTC)\nEvidência da métrica\nTaxa de falha em mudanças\n50 %\n2 observações · 2026-10-02T17:33:40Z até 2026-10-16T17:33:40Z (UTC)\nEvidência da métrica\nTempo de recuperação\nIndisponível\nSem Issue de alerta aberta e fechada na janela."
+      },
+      "keyboard": {
+        "firstFocus": "skip",
+        "skipFocused": "main",
+        "refreshEnter": true
+      },
+      "doraCards": 4,
+      "overflow": false,
+      "pageErrors": [],
+      "screenshot": "painel-atual-1280.png"
+    },
+    {
+      "at": "2026-10-16T17:35:35.078Z",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "http": 200,
+      "before": {
+        "state": "Dados de amostragem consultados; conferir limitações abaixo.",
+        "availability": "100.0%",
+        "samples": "15 amostras; 15 códigos conhecidos; 0 sem código.",
+        "latency": "80ms",
+        "version": "0.7.0",
+        "version-detail": "SHA e9dd28ccee535e9b1259a710742482e44db47aed",
+        "rollout": "Azul-verde; candidata ausente; 0% de novas sessões na candidata",
+        "updated": "Última amostra: 2026-10-16T17:33:40.392Z (UTC). Atraso máximo esperado:30 min.",
+        "source": "CSV público · commit 353315c64c46a66192def5b314a9356d11e8920d",
+        "errors": "",
+        "dora": "Frequência de implantação\n0.14285714285714285 deploys/dia\n2 observações · 2026-10-02T17:33:40Z até 2026-10-16T17:33:40Z (UTC)\nEvidência da métrica\nLead time de mudanças\n0.5886111111111111 horas\n2 observações · 2026-10-02T17:33:40Z até 2026-10-16T17:33:40Z (UTC)\nEvidência da métrica\nTaxa de falha em mudanças\n50 %\n2 observações · 2026-10-02T17:33:40Z até 2026-10-16T17:33:40Z (UTC)\nEvidência da métrica\nTempo de recuperação\nIndisponível\nSem Issue de alerta aberta e fechada na janela."
+      },
+      "afterRefresh": {
+        "state": "Dados de amostragem consultados; conferir limitações abaixo.",
+        "availability": "100.0%",
+        "samples": "15 amostras; 15 códigos conhecidos; 0 sem código.",
+        "latency": "80ms",
+        "version": "0.7.0",
+        "version-detail": "SHA e9dd28ccee535e9b1259a710742482e44db47aed",
+        "rollout": "Azul-verde; candidata ausente; 0% de novas sessões na candidata",
+        "updated": "Última amostra: 2026-10-16T17:33:40.392Z (UTC). Atraso máximo esperado:30 min.",
+        "source": "CSV público · commit 353315c64c46a66192def5b314a9356d11e8920d",
+        "errors": "",
+        "dora": "Frequência de implantação\n0.14285714285714285 deploys/dia\n2 observações · 2026-10-02T17:33:40Z até 2026-10-16T17:33:40Z (UTC)\nEvidência da métrica\nLead time de mudanças\n0.5886111111111111 horas\n2 observações · 2026-10-02T17:33:40Z até 2026-10-16T17:33:40Z (UTC)\nEvidência da métrica\nTaxa de falha em mudanças\n50 %\n2 observações · 2026-10-02T17:33:40Z até 2026-10-16T17:33:40Z (UTC)\nEvidência da métrica\nTempo de recuperação\nIndisponível\nSem Issue de alerta aberta e fechada na janela."
+      },
+      "keyboard": {
+        "firstFocus": "skip",
+        "skipFocused": "main",
+        "refreshEnter": true
+      },
+      "doraCards": 4,
+      "overflow": false,
+      "pageErrors": [],
+      "screenshot": "painel-atual-390.png"
+    }
+  ]
+}

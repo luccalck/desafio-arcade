@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "scope": "Reconferência real; não é submissão acadêmica final",
+  "files": {
+    "campanha-desktop.png": {
+      "bytes": 190747,
+      "sha256": "107ffb8a00000f0f0096257090554e100a99219b2d188afd7f5c94757bfc9bb7"
+    },
+    "campanha-toque.png": {
+      "bytes": 110439,
+      "sha256": "cdc6e614fb25f8a8f91e395e8e018789cce168d1a69274cdbb751b6e46b34393"
+    },
+    "pr41.json": {
+      "bytes": 163,
+      "sha256": "2b139a55c4f66bf11ccf6812dbdaafaad84b88718acb97c8fa9600aa9fdd42d6"
+    },
+    "protecao-main.json": {
+      "bytes": 287,
+      "sha256": "8ddbbf257c9cd1219ebf40686ac0c0f1f41297d3685c9373b952a03235f6ef4e"
+    },
+    "release-publica.json": {
+      "bytes": 3530,
+      "sha256": "6473427267f7cba659d71feab53a7b2fa2dda4ff45785ddd1f5d3e08834678f8"
+    },
+    "smoke.json": {
+      "bytes": 493,
+      "sha256": "8673be490928ebde7b7f4686246f9ebf9b7045fb191fd24a37280b65bf1df711"
+    },
+    "verificacao.json": {
+      "bytes": 1727,
+      "sha256": "dd8b05627767f652fb954aba17dbc3855adc083bbfdf5153abab843a7a206d48"
+    },
+    "verificar.mjs.txt": {
+      "bytes": 2500,
+      "sha256": "d57f6f47d1c3b8c29878ace142d88b4938378156638cd039744c30d6a28ba8ab"
+    }
+  }
+}

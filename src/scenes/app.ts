@@ -52,7 +52,7 @@ function action(button:HTMLElement){switch(button.dataset.action){
  case 'next':if(tested&&index<5)begin(index+1);break;
  case 'tab':tab=Number(button.dataset.index);render('code-editor');break;
  case 'test':test();break;
- case 'play':if(index===5&&(!tested||validated!==fingerprint())){summary='Teste o projeto antes de iniciar o desafio final.';document.getElementById('test-summary')!.textContent=summary;break;}setupPlayer();player?.play();document.getElementById('player-host')?.scrollIntoView({behavior:'instant',block:'start'});break;
+ case 'play':if(index===5&&(!tested||validated!==fingerprint())){summary='Teste o projeto antes de iniciar o desafio final.';document.getElementById('test-summary')!.textContent=summary;break;}setupPlayer();player?.play();if(player?.state().status==='playing')document.getElementById('run-message')!.textContent='Partida em andamento. Use as setas para mover a nave.';document.getElementById('player-host')?.scrollIntoView({behavior:'instant',block:'start'});break;
  case 'help':help();break;
  case 'tests':dialog(`<h2>Situações de teste</h2>${caseTable(results)}`);break;
  case 'reset-code':dialog('<h2>Restaurar esta função?</h2><p>Volta ao problema inicial desta missão. As outras funções ficam salvas.</p><button class="primary" data-action="confirm-code-reset">Restaurar função</button>');break;

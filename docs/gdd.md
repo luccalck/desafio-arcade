@@ -1,6 +1,6 @@
 # Rota do Código — Game Design Document
 
-Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do documento: **028 — 16/10/2026 (America/Sao_Paulo)**. Mantemos a oficina de jogos aprovada, com desafios Python e produção web validada. Este documento descreve a candidata do código-fonte; sua data de revisão não representa data de submissão, tag ou release final. A versão/SHA do pacote final serão reconferidos após a etapa 035.
+Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do documento: **029 — 16/10/2026 (America/Sao_Paulo)**. Mantemos a oficina de jogos aprovada, com desafios Python e produção web validada. Este documento descreve a candidata do código-fonte; sua data de revisão não representa data de submissão, tag ou release final. A versão/SHA do pacote final serão reconferidos após a etapa 035.
 
 | Identificação | Situação verdadeira |
 |---|---|
@@ -9,11 +9,12 @@ Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do doc
 | Coordenação de Produto | Lucca Castilho Costa; participação dos quatro em todas as áreas |
 | Data de submissão | Ainda não houve submissão final registrada; preencher na entrega real |
 | Repositório | https://github.com/luccalck/desafio-arcade |
-| PR do primeiro ciclo | https://github.com/luccalck/desafio-arcade/pull/2; histórico do primeiro ciclo, sucedido pelas integrações revisadas #32, #33 e #34 |
+| PR do primeiro ciclo | https://github.com/luccalck/desafio-arcade/pull/2; histórico do primeiro ciclo, sucedido pelas integrações revisadas #32, #33, #34 e #40 |
 | Produção pública do jogo | https://luccalck.github.io/desafio-arcade/ |
 | Homologação formal | https://luccalck.github.io/desafio-arcade/hml/ |
 | CI de referência conferida | https://github.com/luccalck/desafio-arcade/actions/runs/38829484114 — CI, HML, produção e sondas pós-produção concluídos com sucesso |
-| Produção / homologação / vídeo / release | Produção/HML técnicas 0.7.0 / e9dd28c; tag v0.7.0 publicada, Release em validação; vídeo e release acadêmica final pendentes |
+| Produção / homologação / vídeo / release | Produção0.7.0/e9dd28c; HML atual0.7.0/1e3dd3b; Release técnica v0.7.0 publicada e conferida; vídeo/release acadêmica final pendentes |
+| Release técnica pública | https://github.com/luccalck/desafio-arcade/releases/tag/v0.7.0 — SHAe9, bundle38852413982/2, publicado pela retomada38940532129 após aprovaçãoPR40 |
 | Plataforma | WEB estática responsiva, mesma experiência no computador e celular |
 
 ### Equipe

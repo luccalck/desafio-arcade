@@ -1,0 +1,326 @@
+{
+  "assessment": "IA técnica desktop/teclado; não é playtest humano",
+  "started_utc": "2026-10-16T18:25:21.341837+00:00",
+  "ended_utc": "2026-10-16T18:29:45.461065+00:00",
+  "duration_seconds": 264.125,
+  "automation_timeout_seconds": 30,
+  "active_keyboard_rounds_seconds": [
+    65,
+    30
+  ],
+  "key_inputs_rounds": [
+    137,
+    63
+  ],
+  "viewport": {
+    "width": 1440,
+    "height": 1000
+  },
+  "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html",
+  "version_visible": "v0.7.0 · e9dd28c",
+  "rollout_observed_at_end": {
+    "schema": 1,
+    "strategy": "azul-verde",
+    "estavel": "e9dd28ccee535e9b1259a710742482e44db47aed",
+    "anterior": "71933bfd4bd35f8c3ac8f5899a0e9af00db29f32",
+    "canario": null,
+    "percentual": 0,
+    "retiradas": [
+      "88d533e31452036092cd8edef3efa3c0775241dc",
+      "acb03d8b018227cabbbeb47242cc5c097a3c0df1"
+    ]
+  },
+  "actions": [
+    {
+      "utc": "2026-10-16T18:25:22.046972+00:00",
+      "elapsed_seconds": 0.7,
+      "action": "Abrir produção em contexto novo, desktop 1440x1000",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:25:34.166619+00:00",
+      "elapsed_seconds": 12.83,
+      "action": "Teclado: Tab para link pular, Tab para Começar oficina e Enter",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:25:39.203152+00:00",
+      "elapsed_seconds": 17.86,
+      "action": "Focar Começar oficina e ativar Enter",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:25:43.376724+00:00",
+      "elapsed_seconds": 22.03,
+      "action": "Ler editor e controles visíveis da missão 1",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:25:43.426978+00:00",
+      "elapsed_seconds": 22.08,
+      "action": "Testar regra inicial incorreta",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:25:47.091780+00:00",
+      "elapsed_seconds": 25.75,
+      "action": "Abrir resultados após falha inicial",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:25:51.433746+00:00",
+      "elapsed_seconds": 30.09,
+      "action": "Fechar testes com Escape e abrir explicação da missão",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:25:56.348074+00:00",
+      "elapsed_seconds": 35.0,
+      "action": "Corrigir sinais conforme explicação e testar com Enter",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:26:02.041634+00:00",
+      "elapsed_seconds": 40.7,
+      "action": "Iniciar partida e acionar setas direita/esquerda",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:26:02.072996+00:00",
+      "elapsed_seconds": 40.73,
+      "action": "Pausar partida",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:26:02.107586+00:00",
+      "elapsed_seconds": 40.77,
+      "action": "Avançar para missão 2 com Enter",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:26:07.370980+00:00",
+      "elapsed_seconds": 46.03,
+      "action": "Ler explicação de variáveis/operações",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:26:07.419178+00:00",
+      "elapsed_seconds": 46.08,
+      "action": "Expandir limites do editor Python",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:26:12.206651+00:00",
+      "elapsed_seconds": 50.86,
+      "action": "Provocar erro sintático: expressão incompleta na missão 2",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:26:24.699692+00:00",
+      "elapsed_seconds": 63.36,
+      "action": "Recuperar erro usando multiplicação conforme ajuda",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:26:24.741809+00:00",
+      "elapsed_seconds": 63.41,
+      "action": "Iniciar observação ativa de partida com teclado por 65 segundos",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:26:25.212230+00:00",
+      "elapsed_seconds": 63.88,
+      "action": "Partida ativa: alternar setas, amostra 0",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:26:34.705987+00:00",
+      "elapsed_seconds": 73.36,
+      "action": "Partida ativa: alternar setas, amostra 20",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:26:44.188575+00:00",
+      "elapsed_seconds": 82.84,
+      "action": "Partida ativa: alternar setas, amostra 40",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:26:53.672916+00:00",
+      "elapsed_seconds": 92.33,
+      "action": "Partida ativa: alternar setas, amostra 60",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:03.119190+00:00",
+      "elapsed_seconds": 101.78,
+      "action": "Partida ativa: alternar setas, amostra 80",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:12.830544+00:00",
+      "elapsed_seconds": 111.48,
+      "action": "Partida ativa: alternar setas, amostra 100",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:22.431668+00:00",
+      "elapsed_seconds": 121.09,
+      "action": "Partida ativa: alternar setas, amostra 120",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:30.158198+00:00",
+      "elapsed_seconds": 128.81,
+      "action": "Terminar observação ativa de partida",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:30.208924+00:00",
+      "elapsed_seconds": 128.88,
+      "action": "Reiniciar após derrota observada em 70 pontos",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:30.235576+00:00",
+      "elapsed_seconds": 128.89,
+      "action": "Pausar reinício com Enter",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:30.273684+00:00",
+      "elapsed_seconds": 128.94,
+      "action": "Abrir missão 3",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:30.322871+00:00",
+      "elapsed_seconds": 128.98,
+      "action": "Consultar explicação de colisão",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:37.376969+00:00",
+      "elapsed_seconds": 136.03,
+      "action": "Inspecionar casos de colisão antes da correção",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:37.482481+00:00",
+      "elapsed_seconds": 136.14,
+      "action": "Corrigir comparação de colisão e testar fronteira",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:37.520742+00:00",
+      "elapsed_seconds": 136.17,
+      "action": "Voltar ao menu preservando progresso",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:37.598696+00:00",
+      "elapsed_seconds": 136.25,
+      "action": "Inspecionar mapa de missões, desbloqueios e progresso",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:43.168157+00:00",
+      "elapsed_seconds": 141.83,
+      "action": "Abrir opções e inspecionar controles de acessibilidade",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:48.882438+00:00",
+      "elapsed_seconds": 147.55,
+      "action": "Continuar abre missão 4, próxima ainda não concluída",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:48.935631+00:00",
+      "elapsed_seconds": 147.59,
+      "action": "Continuar retorna última missão visitada",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:49.504462+00:00",
+      "elapsed_seconds": 148.16,
+      "action": "Recarregar página e verificar persistência",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:58.092385+00:00",
+      "elapsed_seconds": 156.75,
+      "action": "Confirmar persistência de preferências após reload",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:58.191715+00:00",
+      "elapsed_seconds": 156.84,
+      "action": "No editor: Tab insere indentação; Escape sai do campo",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:27:58.292698+00:00",
+      "elapsed_seconds": 156.95,
+      "action": "Restaurar editor após teste de indentação",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:28:37.939867+00:00",
+      "elapsed_seconds": 196.59,
+      "action": "Nota automação: timeout de 30s ao tentar Testar atrás de modal de confirmação; não é defeito do produto",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:28:37.977665+00:00",
+      "elapsed_seconds": 196.64,
+      "action": "Confirmar restauração no modal explícito",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:28:38.024109+00:00",
+      "elapsed_seconds": 196.69,
+      "action": "Testar regra inicial missão4 após restauração",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:28:45.204397+00:00",
+      "elapsed_seconds": 203.86,
+      "action": "Corrigir pontuação preservando acumulado conforme UI; 5/5 situações",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:29:14.790001+00:00",
+      "elapsed_seconds": 233.45,
+      "action": "Reiniciar após derrota na missão4",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:29:15.257804+00:00",
+      "elapsed_seconds": 233.92,
+      "action": "Encerrar segunda rodada ativa de 30s",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:29:44.851216+00:00",
+      "elapsed_seconds": 263.52,
+      "action": "Reproduzir mensagem residual após reinício: 3 vidas/0 pontos, aviso partida acabou persiste",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    },
+    {
+      "utc": "2026-10-16T18:29:45.020879+00:00",
+      "elapsed_seconds": 263.69,
+      "action": "Pausar e finalizar sessão",
+      "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html"
+    }
+  ],
+  "pageErrors": [],
+  "final_body": "Pular para o jogo\n↱\nROTA DO CÓDIGO\nOFICINA DE JOGOS\n400 XP\nv0.7.0 · e9dd28c\nMISSÃO 04 / Estado e pontuação\nCada coleta conta\n\nSome 10 por cristal e 25 por estrela, preservando os pontos.\n\n?\nÓRBITA / 0 pts\n♥ ♥ ♥\nONDA 01\nPausado\nRetome pelo botão Ⅱ\n←\nⅡ\n→\n◆ 10 pontos\n✦ 25 pontos\n☄ −1 vida\n\nA partida acabou. Você pode jogar novamente.\n\n● ● ●\npontuar.py\nPY / INICIANTE\n1\n2\n3\n4\n5\n6\n7\nAltere a regra. Observe o resultado.\n↶\n✓ Testar regra\n▶ Jogar\n\nTudo certo: 5/5 situações.\n\n↗ Ver testes\nPróxima missão →",
+  "limits": [
+    "Agente com conhecimento prévio de Python, não pessoa ou iniciante",
+    "30 segundos de timeout da automação excluídos como interação ativa",
+    "Parte da rodada de 65s manteve setas após derrota",
+    "Foco dirigido em alguns controles; não auditoria WCAG completa",
+    "Missão5/projeto final/exportação não cobertos nesta sessão"
+  ]
+}

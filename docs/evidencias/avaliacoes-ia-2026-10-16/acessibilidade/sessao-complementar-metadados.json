@@ -1,0 +1,102 @@
+{
+  "agent": "avaliacao_ia_acessibilidade",
+  "type": "IA técnica, não participante humano",
+  "url": "https://luccalck.github.io/desafio-arcade/",
+  "displayed_version": "0.7.0",
+  "displayed_sha": "e9dd28c",
+  "first_capture_utc": "2026-10-16T18:27:14.015310+00:00",
+  "last_capture_utc": "2026-10-16T18:30:17.717795+00:00",
+  "capture_span_seconds": 183.702,
+  "script_clock_policy": "time.monotonic(); while elapsed<182; interação por varredura Tab/Shift+Tab e tentativas registradas; não sleep isolado",
+  "lost_action_log": true,
+  "automation_errors": [
+    "Primeira tentativa interrompida por seletores visuais errados",
+    "Complementar chegou à serialização final e falhou: TypeError Object of type Response is not JSON serializable. Log em memória não preservado. Não é bug do jogo."
+  ],
+  "screenshots": [
+    {
+      "file": "complementar-01-opcoes.png",
+      "modified_utc": "2026-10-16T18:27:14.015310+00:00",
+      "bytes": 129517,
+      "sha256": "f6640adacf438ecce3350080cdc83442ef12078b4cff94304dfc019ce85c177a"
+    },
+    {
+      "file": "complementar-02-missoes.png",
+      "modified_utc": "2026-10-16T18:27:14.350062+00:00",
+      "bytes": 219545,
+      "sha256": "c693b3257657f2c48efc760777e50b23837a08c8d1819d0047f5e43e303ce073"
+    },
+    {
+      "file": "complementar-03-ajuda.png",
+      "modified_utc": "2026-10-16T18:27:16.778404+00:00",
+      "bytes": 161576,
+      "sha256": "e484f3e93e0ecf6d5433bc638d16fd0da28d4698b78521de4bec24aa4efb5211"
+    },
+    {
+      "file": "complementar-04-feedback.png",
+      "modified_utc": "2026-10-16T18:27:17.148418+00:00",
+      "bytes": 162299,
+      "sha256": "c1a973362a712c2dd0381b455b9421a0e0c206d1dbca148f601f9ae242d741c6"
+    },
+    {
+      "file": "complementar-05-erro-sintaxe.png",
+      "modified_utc": "2026-10-16T18:27:17.623917+00:00",
+      "bytes": 215508,
+      "sha256": "b07d65ae689773cc1231aa0a19e5edcdf21faaf4583de3d5b3e724bb533a92fa"
+    },
+    {
+      "file": "complementar-06-zoom-200.png",
+      "modified_utc": "2026-10-16T18:27:22.965379+00:00",
+      "bytes": 603691,
+      "sha256": "8b1c7d25390bb9dc5b88693174299bf228ab9473ee02b2db378af035bd343445"
+    },
+    {
+      "file": "complementar-ciclo-6.png",
+      "modified_utc": "2026-10-16T18:27:48.075176+00:00",
+      "bytes": 300849,
+      "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+    },
+    {
+      "file": "complementar-ciclo-12.png",
+      "modified_utc": "2026-10-16T18:28:10.498827+00:00",
+      "bytes": 300849,
+      "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+    },
+    {
+      "file": "complementar-ciclo-18.png",
+      "modified_utc": "2026-10-16T18:28:32.691931+00:00",
+      "bytes": 300849,
+      "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+    },
+    {
+      "file": "complementar-ciclo-24.png",
+      "modified_utc": "2026-10-16T18:28:55.046843+00:00",
+      "bytes": 300849,
+      "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+    },
+    {
+      "file": "complementar-ciclo-30.png",
+      "modified_utc": "2026-10-16T18:29:17.332977+00:00",
+      "bytes": 300849,
+      "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+    },
+    {
+      "file": "complementar-ciclo-36.png",
+      "modified_utc": "2026-10-16T18:29:39.711206+00:00",
+      "bytes": 300849,
+      "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+    },
+    {
+      "file": "complementar-ciclo-42.png",
+      "modified_utc": "2026-10-16T18:30:01.904157+00:00",
+      "bytes": 300849,
+      "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+    },
+    {
+      "file": "complementar-07-final.png",
+      "modified_utc": "2026-10-16T18:30:17.717795+00:00",
+      "bytes": 300849,
+      "sha256": "8b16c27e8d4e8539e240e4c53ed2d5c67e6315366a9dd15980403a53665a6686"
+    }
+  ]
+}

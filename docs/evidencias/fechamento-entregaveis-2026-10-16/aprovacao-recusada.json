@@ -1,0 +1,11 @@
+{
+  "recordedAt": "2026-10-16T18:50:38.500590+00:00",
+  "account": "luccalck",
+  "pr": 41,
+  "command": "gh pr review 41 --approve --body <conferência técnica assistida explícita>",
+  "exitCode": 1,
+  "observedError": "failed to create review: GraphQL: Review Can not approve your own pull request (addPullRequestReview)",
+  "reviewCreated": false,
+  "protectionChanged": false,
+  "mergeExecuted": false
+}

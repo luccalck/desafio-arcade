@@ -1,0 +1,81 @@
+{
+  "schema": 1,
+  "generatedAt": "2026-10-16T19:20:50.395Z",
+  "period": {
+    "from": "2026-10-02T19:20:38Z",
+    "to": "2026-10-16T19:20:38Z"
+  },
+  "metrics": {
+    "deploymentFrequency": {
+      "value": 0.14285714285714285,
+      "unit": "deploys/dia",
+      "samples": 2,
+      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
+      "reason": null
+    },
+    "leadTime": {
+      "value": 0.5886111111111111,
+      "unit": "horas",
+      "samples": 2,
+      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
+      "reason": null
+    },
+    "changeFailureRate": {
+      "value": 50,
+      "unit": "%",
+      "samples": 2,
+      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
+      "reason": null
+    },
+    "mttr": {
+      "value": null,
+      "unit": "minutos",
+      "samples": 0,
+      "source": null,
+      "reason": "Sem Issue de alerta aberta e fechada na janela."
+    }
+  },
+  "baseline": {
+    "carpartsDays": 11,
+    "leadTimeDays": 0.02452546296296296
+  },
+  "evidence": {
+    "deploys": [
+      {
+        "sha": "88d533e31452036092cd8edef3efa3c0775241dc",
+        "at": "2026-10-16T00:31:49Z",
+        "url": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
+        "run": 38829484114,
+        "promotionUrl": "https://github.com/luccalck/desafio-arcade/commit/67ce33d24e7dc073894b989cada0a9c590865580",
+        "timing": "deploy-prd-concluido-com-smoke"
+      },
+      {
+        "sha": "e9dd28ccee535e9b1259a710742482e44db47aed",
+        "at": "2026-10-16T05:01:10Z",
+        "url": "https://github.com/luccalck/desafio-arcade/actions/runs/38852413982/job/116819599076",
+        "run": 38852413982,
+        "promotionUrl": "https://github.com/luccalck/desafio-arcade/commit/e9d4b674f1e4deb7b29f33e1cfd6b36b51cc3481",
+        "timing": "deploy-prd-concluido-com-smoke"
+      }
+    ],
+    "issues": [],
+    "rollbacks": [
+      {
+        "sha": "acb03d8b018227cabbbeb47242cc5c097a3c0df1",
+        "at": "2026-10-16T04:46:36Z",
+        "url": "https://github.com/luccalck/desafio-arcade/commit/71ac80c51d417e0d5422ed1aea97e0c51c820d12"
+      },
+      {
+        "sha": "88d533e31452036092cd8edef3efa3c0775241dc",
+        "at": "2026-10-16T04:40:39Z",
+        "url": "https://github.com/luccalck/desafio-arcade/commit/4fd98eb49fdde749288d55d4da76471ba74b4a41"
+      }
+    ]
+  },
+  "definitions": {
+    "deploymentFrequency": "Implantações formais bem-sucedidas / dias da janela",
+    "leadTime": "Média entre data do commit e término do deploy-prd aprovado; virada seguida de falha usa horário do commit de controle, sem afirmar confirmação CDN",
+    "changeFailureRate": "Implantações formais seguidas de rollback correlacionado / implantações formais",
+    "mttr": "Média da abertura ao fechamento de Issues de alerta"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "url": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/index.html",
+  "text": "Pular para o jogo\n↱\nROTA DO CÓDIGO\nOFICINA DE JOGOS\n200 XP\nv0.7.0 · e9dd28c\nMISSÃO 01 / Eventos e decisões\nA nave obedece?\n\nCorrija os controles invertidos da nave.\n\n?\nÓRBITA / 0 pts\n♥ ♥ ♥\nONDA 01\nSeu jogo está aqui\nJogar para testar na prática\n←\nⅡ\n→\n◆ 10 pontos\n✦ 25 pontos\n☄ −1 vida\n\nTeste a regra no editor ou jogue para observar o problema.\n\n● ● ●\ncontrolar.py\nPY / INICIANTE\n1\n2\n3\n4\n5\n6\n7\nAltere a regra. Observe o resultado.\n↶\n✓ Testar regra\n▶ Jogar\n\nTudo certo: 4/4 situações.\n\n↗ Ver testes\nPróxima missão →",
+  "buttons": [
+    "↱ROTA DO CÓDIGOOFICINA DE JOGOS",
+    "?",
+    "←",
+    "Ⅱ",
+    "→",
+    "↶",
+    "✓ Testar regra",
+    "▶ Jogar",
+    "↗ Ver testes",
+    "Próxima missão →"
+  ],
+  "textareas": 1,
+  "overflow": false,
+  "elapsed": 187.31300000000192
+}
