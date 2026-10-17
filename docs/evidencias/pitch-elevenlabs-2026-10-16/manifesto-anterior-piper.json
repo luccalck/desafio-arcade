@@ -1,0 +1,158 @@
+{
+  "schema": 1,
+  "scope": "Pitch vigente narrado, fonte silenciosa preservada e recibos de captura/sincronia; manifesto anterior vinculado ao commit e224 nas evidências da narração.",
+  "files": {
+    "docs/evidencias/narracao-2026-10-16/correlacao-aac.json": {
+      "bytes": 1669,
+      "sha256": "4a40973b02d818ce22a2242c23be0d19ab8ef446df4555afa7ecc9cbbb0fcbc9"
+    },
+    "docs/evidencias/narracao-2026-10-16/ferramentas-tts.json": {
+      "bytes": 953,
+      "sha256": "477445134fc32b01a2da523f24f2ad515626b5dc8081d72a6eb198064a734d3a"
+    },
+    "docs/evidencias/narracao-2026-10-16/ffprobe.json": {
+      "bytes": 3637,
+      "sha256": "a4b1a118b649bfb5b58be5a5f21ad6c01f77d27542aeb2be9615ac4a2c99e85c"
+    },
+    "docs/evidencias/narracao-2026-10-16/licenca-vozes.json": {
+      "bytes": 359,
+      "sha256": "56c25583a5920edf7f89f920c58c7b4f54e2103013c11146f97687f6c92da864"
+    },
+    "docs/evidencias/narracao-2026-10-16/manifesto-original-sem-narracao.json": {
+      "bytes": 3422,
+      "sha256": "d91fdcf6cb2b26e6d6f8d4cecd4ece19c6ac1d5c38de0b5aff1635753287c1cc"
+    },
+    "docs/evidencias/narracao-2026-10-16/MODEL_CARD-faber.md": {
+      "bytes": 279,
+      "sha256": "01f1a5bcfd0538782726059ae407eae9c2dd1b5b35f7298fd53a68de91afe563"
+    },
+    "docs/evidencias/narracao-2026-10-16/origem-manifesto-anterior.json": {
+      "bytes": 265,
+      "sha256": "c6ad4e137ff24aad3fce413c518bdfb6b069710dfd9caf15cde6225661ec3cd9"
+    },
+    "docs/evidencias/narracao-2026-10-16/origem-modelo.json": {
+      "bytes": 1098,
+      "sha256": "626966d0c392ccc037a6e59603603ac3264824e810b75a48a59a6d8092a12a45"
+    },
+    "docs/evidencias/narracao-2026-10-16/quadro-abertura.png": {
+      "bytes": 283279,
+      "sha256": "104540ede2e13ff3104240beab5c1b5130b5cce52ea9cf58d3e3dc8694e576af"
+    },
+    "docs/evidencias/narracao-2026-10-16/quadro-correcao.png": {
+      "bytes": 351809,
+      "sha256": "f9331732b4b68f10402f63d194b200de64a61b7b6f3df41b758b7fde3d37bfca"
+    },
+    "docs/evidencias/narracao-2026-10-16/README-repositorio-vozes.md": {
+      "bytes": 497,
+      "sha256": "33e93643fce5180886300f9f0070eeeab8af148efb8e84361f8904def80fd9fb"
+    },
+    "docs/evidencias/narracao-2026-10-16/validacao.json": {
+      "bytes": 489,
+      "sha256": "16674350d210bed242d8a8c3eb3606522100a3a905d5447d5da6c729b941b1cb"
+    },
+    "docs/evidencias/pitch-2026-10-16/captura.json": {
+      "bytes": 4930,
+      "sha256": "ca48045897e90ef885ca99d1c6f1187243e1e7a00900aa700882c1170e596e24"
+    },
+    "docs/evidencias/pitch-2026-10-16/casos-falha.png": {
+      "bytes": 87009,
+      "sha256": "dce180a1409fb12d128a5d71d3f30555de8e92704bb26b0c85fcda1d4c3d572f"
+    },
+    "docs/evidencias/pitch-2026-10-16/ferramentas.json": {
+      "bytes": 294,
+      "sha256": "f66790360c594bea452944dcab8e1626ed81f600be978c0db2cd3853b1ac5dac"
+    },
+    "docs/evidencias/pitch-2026-10-16/ffprobe.json": {
+      "bytes": 2293,
+      "sha256": "dd8824d1c686b23781c338bf57f56a702fa34fbd5f579681eacb95b95e112a82"
+    },
+    "docs/evidencias/pitch-2026-10-16/gravacao-offline.webm": {
+      "bytes": 675334,
+      "sha256": "8306ed92c8209372491533ba4f9af3dc48f9ab66069ae515040d0fdddb36cc00"
+    },
+    "docs/evidencias/pitch-2026-10-16/gravacao-producao.webm": {
+      "bytes": 5563566,
+      "sha256": "704d046b2d56df9ae7bfbdb4eaa3b9eaf66304225293602c9a484f45c536a45b"
+    },
+    "docs/evidencias/pitch-2026-10-16/menu.png": {
+      "bytes": 276480,
+      "sha256": "244834d0ef08fa423859d3150ec0f9b9ca21aed8f7d7a33c5983b08b9f471720"
+    },
+    "docs/evidencias/pitch-2026-10-16/meu-jogo.html": {
+      "bytes": 16887,
+      "sha256": "2b9a5adc71c686429046d84e94c669392e0d6edbc707138cbfe4911f6c81ceac"
+    },
+    "docs/evidencias/pitch-2026-10-16/meu-jogo.py": {
+      "bytes": 2019,
+      "sha256": "0749c1f65d8e0883faa30499f50079f7be9c341011c9d68505d9fd351aac0dbb"
+    },
+    "docs/evidencias/pitch-2026-10-16/offline-real.png": {
+      "bytes": 49035,
+      "sha256": "3ac8b476878f745800468b240ab313bfecffec6c4702d348744f3dbc71a27e7b"
+    },
+    "docs/evidencias/pitch-2026-10-16/projeto-validado.png": {
+      "bytes": 171913,
+      "sha256": "573504a30ac04949787ff2f6bcf09f137b6f0a555978ba7bae84f73e99c6958e"
+    },
+    "docs/evidencias/pitch-2026-10-16/qa-contato.jpg": {
+      "bytes": 388194,
+      "sha256": "91b3f3f2e5a6012de035afffc37686021e048651af1f3a99f37715a3f6f307eb"
+    },
+    "docs/evidencias/pitch-2026-10-16/regra-corrigida.png": {
+      "bytes": 166403,
+      "sha256": "f80472a680161e4394e7a1c1e80097cce0c72ea5f627c5a3665b1130673764e8"
+    },
+    "docs/evidencias/pitch-2026-10-16/rollout-apos-captura.json": {
+      "bytes": 315,
+      "sha256": "882aa6e5f32a380a75e69f61d2e2ea98a0df688f68a2db7fddbcb6dd9783d64c"
+    },
+    "docs/evidencias/pitch-2026-10-16/validacao.json": {
+      "bytes": 1103,
+      "sha256": "43858cdd0b61e4213279890034a27b921648c397516cce097b5fef23a402e2d6"
+    },
+    "docs/evidencias/pitch-2026-10-16/vitoria.png": {
+      "bytes": 203998,
+      "sha256": "6e4efb3d051e75db1acff09b6c9fe1989c71d8c68594607a112efc41325e06f4"
+    },
+    "docs/pitch/narracao-roteiro.json": {
+      "bytes": 2827,
+      "sha256": "5d091c07bd93cb446b4aefa2307a9b61e02d43f6f432386e546715e7cb1db2bf"
+    },
+    "docs/pitch/narracao-sincronia.json": {
+      "bytes": 10439,
+      "sha256": "d7f90f48ae74b9f0fcb227c41562ddc4fc666ebe35936b85a299c67b1c0dad20"
+    },
+    "docs/pitch/narracao.md": {
+      "bytes": 3707,
+      "sha256": "0f7727ab3d5460f0a577d288c6d79ac6af160157f52ee613a88d48eb5eff494f"
+    },
+    "docs/pitch/narracao.wav": {
+      "bytes": 7676204,
+      "sha256": "7b3bc768c7881fa91181e293d64689ef6625cf1d78cacb48121807fc4941bfe1"
+    },
+    "docs/pitch/pitch-legendas.srt": {
+      "bytes": 1324,
+      "sha256": "85e12d9832a61a369b5f388fbd9fd4c462537898a9bf22f4bd0f6a4fd6d5c2ad"
+    },
+    "docs/pitch/pitch-narracao.srt": {
+      "bytes": 1324,
+      "sha256": "85e12d9832a61a369b5f388fbd9fd4c462537898a9bf22f4bd0f6a4fd6d5c2ad"
+    },
+    "docs/pitch/pitch-producao.json": {
+      "bytes": 4270,
+      "sha256": "1b644f5392ed5b048ca0e27ad5d5a1c31a29698a06c86faf422667bfa49a862f"
+    },
+    "docs/pitch/pitch-sem-narracao.mp4": {
+      "bytes": 3312725,
+      "sha256": "5bacea2b5180934e1afb7c652ac3e1da982daf5ed5007dfdcc2781c4bc733b5c"
+    },
+    "docs/pitch/pitch.mp4": {
+      "bytes": 4249780,
+      "sha256": "2a53d5f0e532f7ba2adcbd530688aadb7f1f4669ebee016102eeebe9d37c9dab"
+    },
+    "docs/pitch/README.md": {
+      "bytes": 3526,
+      "sha256": "1fd6eb30a7a4b63061b7beef5cdc2151aafd890088ad4b64c8ccb9b637a7f615"
+    }
+  }
+}

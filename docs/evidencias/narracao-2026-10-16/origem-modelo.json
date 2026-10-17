@@ -1,0 +1,23 @@
+{
+  "revision": "c10ece1aade47bb51c153c893d14e5bf8e5b7117",
+  "files": {
+    "MODEL_CARD": {
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/faber/medium/MODEL_CARD",
+      "bytes": 279,
+      "sha256": "01f1a5bcfd0538782726059ae407eae9c2dd1b5b35f7298fd53a68de91afe563",
+      "lfsSha256": null
+    },
+    "pt_BR-faber-medium.onnx.json": {
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx.json",
+      "bytes": 4855,
+      "sha256": "7e694de195ae3fc36dd732c445eb04fb49b649854893cb5506b978f0d50a1d6f",
+      "lfsSha256": null
+    },
+    "pt_BR-faber-medium.onnx": {
+      "url": "https://huggingface.co/rhasspy/piper-voices/resolve/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/faber/medium/pt_BR-faber-medium.onnx",
+      "bytes": 63201294,
+      "sha256": "858555e3a064209c57088fe6bd70c4c3dc54d03eaa00c45d5ecaf43a33f95aa7",
+      "lfsSha256": "858555e3a064209c57088fe6bd70c4c3dc54d03eaa00c45d5ecaf43a33f95aa7"
+    }
+  }
+}

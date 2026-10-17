@@ -1,0 +1,2446 @@
+{
+  "model": {
+    "repository": "Systran/faster-whisper-base",
+    "revision": "ebe41f70d5b6dfa9166e2c581c45c9c0cfc57b66"
+  },
+  "decoder": "FFmpeg PCM16kHz; array bypassa incompatibilidade metadata_errors dePyAV19/faster-whisper1.2.1",
+  "language": "pt",
+  "duration": 85.969,
+  "segments": [
+    {
+      "start": 0.0,
+      "end": 7.0,
+      "text": " Aprender Python criando um jogo de verdade. No rota do Código, uma oficina no navegador conecta 5",
+      "words": [
+        {
+          "word": " Aprender",
+          "start": 0.0,
+          "end": 0.44,
+          "probability": 0.6775347193082174
+        },
+        {
+          "word": " Python",
+          "start": 0.44,
+          "end": 0.86,
+          "probability": 0.6091521382331848
+        },
+        {
+          "word": " criando",
+          "start": 0.86,
+          "end": 1.46,
+          "probability": 0.9674630463123322
+        },
+        {
+          "word": " um",
+          "start": 1.46,
+          "end": 1.6,
+          "probability": 0.9942823648452759
+        },
+        {
+          "word": " jogo",
+          "start": 1.6,
+          "end": 1.88,
+          "probability": 0.9940874576568604
+        },
+        {
+          "word": " de",
+          "start": 1.88,
+          "end": 2.08,
+          "probability": 0.9992089867591858
+        },
+        {
+          "word": " verdade.",
+          "start": 2.08,
+          "end": 2.6,
+          "probability": 0.9938779473304749
+        },
+        {
+          "word": " No",
+          "start": 3.18,
+          "end": 3.46,
+          "probability": 0.9657424688339233
+        },
+        {
+          "word": " rota",
+          "start": 3.46,
+          "end": 3.76,
+          "probability": 0.7767606675624847
+        },
+        {
+          "word": " do",
+          "start": 3.76,
+          "end": 3.92,
+          "probability": 0.9942480325698853
+        },
+        {
+          "word": " Código,",
+          "start": 3.92,
+          "end": 4.4,
+          "probability": 0.6755068600177765
+        },
+        {
+          "word": " uma",
+          "start": 4.72,
+          "end": 4.86,
+          "probability": 0.9940443634986877
+        },
+        {
+          "word": " oficina",
+          "start": 4.86,
+          "end": 5.36,
+          "probability": 0.9909465710322062
+        },
+        {
+          "word": " no",
+          "start": 5.36,
+          "end": 5.52,
+          "probability": 0.9769829511642456
+        },
+        {
+          "word": " navegador",
+          "start": 5.52,
+          "end": 6.04,
+          "probability": 0.9988078077634176
+        },
+        {
+          "word": " conecta",
+          "start": 6.04,
+          "end": 6.62,
+          "probability": 0.9858224391937256
+        },
+        {
+          "word": " 5",
+          "start": 6.62,
+          "end": 7.0,
+          "probability": 0.6393996477127075
+        }
+      ]
+    },
+    {
+      "start": 7.0,
+      "end": 14.14,
+      "text": " missões e um desafio final a um objetivo. Construir seu próprio minijogo. Tudo começa com um",
+      "words": [
+        {
+          "word": " missões",
+          "start": 7.0,
+          "end": 7.5,
+          "probability": 0.8529891669750214
+        },
+        {
+          "word": " e",
+          "start": 7.5,
+          "end": 7.8,
+          "probability": 0.9308889508247375
+        },
+        {
+          "word": " um",
+          "start": 7.8,
+          "end": 7.92,
+          "probability": 0.9821502566337585
+        },
+        {
+          "word": " desafio",
+          "start": 7.92,
+          "end": 8.36,
+          "probability": 0.9978737831115723
+        },
+        {
+          "word": " final",
+          "start": 8.36,
+          "end": 8.74,
+          "probability": 0.980839729309082
+        },
+        {
+          "word": " a",
+          "start": 8.74,
+          "end": 9.12,
+          "probability": 0.945122241973877
+        },
+        {
+          "word": " um",
+          "start": 9.12,
+          "end": 9.32,
+          "probability": 0.8480017781257629
+        },
+        {
+          "word": " objetivo.",
+          "start": 9.32,
+          "end": 9.9,
+          "probability": 0.9766378402709961
+        },
+        {
+          "word": " Construir",
+          "start": 10.4,
+          "end": 11.08,
+          "probability": 0.9713821808497111
+        },
+        {
+          "word": " seu",
+          "start": 11.08,
+          "end": 11.34,
+          "probability": 0.9869173765182495
+        },
+        {
+          "word": " próprio",
+          "start": 11.34,
+          "end": 11.8,
+          "probability": 0.9983623623847961
+        },
+        {
+          "word": " minijogo.",
+          "start": 11.8,
+          "end": 12.44,
+          "probability": 0.48411938920617104
+        },
+        {
+          "word": " Tudo",
+          "start": 12.76,
+          "end": 13.28,
+          "probability": 0.9874958992004395
+        },
+        {
+          "word": " começa",
+          "start": 13.28,
+          "end": 13.7,
+          "probability": 0.9881842136383057
+        },
+        {
+          "word": " com",
+          "start": 13.7,
+          "end": 14.0,
+          "probability": 0.99662184715271
+        },
+        {
+          "word": " um",
+          "start": 14.0,
+          "end": 14.14,
+          "probability": 0.9792399406433105
+        }
+      ]
+    },
+    {
+      "start": 14.14,
+      "end": 20.96,
+      "text": " problema visível. Os controles estão invertidos. Você testa a regra, compara os resultados e",
+      "words": [
+        {
+          "word": " problema",
+          "start": 14.14,
+          "end": 14.48,
+          "probability": 0.993583619594574
+        },
+        {
+          "word": " visível.",
+          "start": 14.48,
+          "end": 15.16,
+          "probability": 0.9861093759536743
+        },
+        {
+          "word": " Os",
+          "start": 15.66,
+          "end": 15.78,
+          "probability": 0.9840190410614014
+        },
+        {
+          "word": " controles",
+          "start": 15.78,
+          "end": 16.28,
+          "probability": 0.9388830363750458
+        },
+        {
+          "word": " estão",
+          "start": 16.28,
+          "end": 16.66,
+          "probability": 0.9884405136108398
+        },
+        {
+          "word": " invertidos.",
+          "start": 16.66,
+          "end": 17.32,
+          "probability": 0.9803546071052551
+        },
+        {
+          "word": " Você",
+          "start": 17.86,
+          "end": 18.18,
+          "probability": 0.949749231338501
+        },
+        {
+          "word": " testa",
+          "start": 18.18,
+          "end": 18.68,
+          "probability": 0.9542332887649536
+        },
+        {
+          "word": " a",
+          "start": 18.68,
+          "end": 18.8,
+          "probability": 0.9924570322036743
+        },
+        {
+          "word": " regra,",
+          "start": 18.8,
+          "end": 19.16,
+          "probability": 0.7959803342819214
+        },
+        {
+          "word": " compara",
+          "start": 19.44,
+          "end": 19.84,
+          "probability": 0.6838202774524689
+        },
+        {
+          "word": " os",
+          "start": 19.84,
+          "end": 20.0,
+          "probability": 0.9907037615776062
+        },
+        {
+          "word": " resultados",
+          "start": 20.0,
+          "end": 20.42,
+          "probability": 0.9989608526229858
+        },
+        {
+          "word": " e",
+          "start": 20.42,
+          "end": 20.96,
+          "probability": 0.8463366031646729
+        }
+      ]
+    },
+    {
+      "start": 20.96,
+      "end": 28.06,
+      "text": " descobre o que precisa mudar. Ao corrigir o Código, o efeito aparece no jogo. As decisões ganham uma",
+      "words": [
+        {
+          "word": " descobre",
+          "start": 20.96,
+          "end": 21.54,
+          "probability": 0.9779875576496124
+        },
+        {
+          "word": " o",
+          "start": 21.54,
+          "end": 21.62,
+          "probability": 0.9981006979942322
+        },
+        {
+          "word": " que",
+          "start": 21.62,
+          "end": 21.78,
+          "probability": 0.9966057538986206
+        },
+        {
+          "word": " precisa",
+          "start": 21.78,
+          "end": 22.24,
+          "probability": 0.9934225678443909
+        },
+        {
+          "word": " mudar.",
+          "start": 22.24,
+          "end": 22.58,
+          "probability": 0.9960599541664124
+        },
+        {
+          "word": " Ao",
+          "start": 23.14,
+          "end": 23.34,
+          "probability": 0.9015729427337646
+        },
+        {
+          "word": " corrigir",
+          "start": 23.34,
+          "end": 23.78,
+          "probability": 0.9671611984570821
+        },
+        {
+          "word": " o",
+          "start": 23.78,
+          "end": 23.88,
+          "probability": 0.9926865100860596
+        },
+        {
+          "word": " Código,",
+          "start": 23.88,
+          "end": 24.32,
+          "probability": 0.8765389521916708
+        },
+        {
+          "word": " o",
+          "start": 24.6,
+          "end": 24.7,
+          "probability": 0.9985951781272888
+        },
+        {
+          "word": " efeito",
+          "start": 24.7,
+          "end": 25.08,
+          "probability": 0.9779700040817261
+        },
+        {
+          "word": " aparece",
+          "start": 25.08,
+          "end": 25.56,
+          "probability": 0.99396812915802
+        },
+        {
+          "word": " no",
+          "start": 25.56,
+          "end": 25.9,
+          "probability": 0.9921008944511414
+        },
+        {
+          "word": " jogo.",
+          "start": 25.9,
+          "end": 26.26,
+          "probability": 0.9959885478019714
+        },
+        {
+          "word": " As",
+          "start": 26.74,
+          "end": 26.94,
+          "probability": 0.9814850091934204
+        },
+        {
+          "word": " decisões",
+          "start": 26.94,
+          "end": 27.42,
+          "probability": 0.9769196212291718
+        },
+        {
+          "word": " ganham",
+          "start": 27.42,
+          "end": 27.84,
+          "probability": 0.944983720779419
+        },
+        {
+          "word": " uma",
+          "start": 27.84,
+          "end": 28.06,
+          "probability": 0.9984027743339539
+        }
+      ]
+    },
+    {
+      "start": 28.06,
+      "end": 31.26,
+      "text": " função concreta, controlar o movimento da nave.",
+      "words": [
+        {
+          "word": " função",
+          "start": 28.06,
+          "end": 28.42,
+          "probability": 0.02609267085790634
+        },
+        {
+          "word": " concreta,",
+          "start": 28.42,
+          "end": 29.14,
+          "probability": 0.9555482268333435
+        },
+        {
+          "word": " controlar",
+          "start": 29.58,
+          "end": 30.0,
+          "probability": 0.9477998614311218
+        },
+        {
+          "word": " o",
+          "start": 30.0,
+          "end": 30.28,
+          "probability": 0.9938534498214722
+        },
+        {
+          "word": " movimento",
+          "start": 30.28,
+          "end": 30.66,
+          "probability": 0.9944292306900024
+        },
+        {
+          "word": " da",
+          "start": 30.66,
+          "end": 30.96,
+          "probability": 0.9881028532981873
+        },
+        {
+          "word": " nave.",
+          "start": 30.96,
+          "end": 31.26,
+          "probability": 0.9449030160903931
+        }
+      ]
+    },
+    {
+      "start": 31.76,
+      "end": 36.7,
+      "text": " Cada tentativa ajuda a entender a relação entre o que você escreve e o que acontece.",
+      "words": [
+        {
+          "word": " Cada",
+          "start": 31.76,
+          "end": 32.06,
+          "probability": 0.954617440700531
+        },
+        {
+          "word": " tentativa",
+          "start": 32.06,
+          "end": 32.74,
+          "probability": 0.994342178106308
+        },
+        {
+          "word": " ajuda",
+          "start": 32.74,
+          "end": 33.14,
+          "probability": 0.9927055239677429
+        },
+        {
+          "word": " a",
+          "start": 33.14,
+          "end": 33.34,
+          "probability": 0.9813933968544006
+        },
+        {
+          "word": " entender",
+          "start": 33.34,
+          "end": 33.7,
+          "probability": 0.9924526810646057
+        },
+        {
+          "word": " a",
+          "start": 33.7,
+          "end": 33.86,
+          "probability": 0.9977909326553345
+        },
+        {
+          "word": " relação",
+          "start": 33.86,
+          "end": 34.26,
+          "probability": 0.9941670894622803
+        },
+        {
+          "word": " entre",
+          "start": 34.26,
+          "end": 34.58,
+          "probability": 0.9967343807220459
+        },
+        {
+          "word": " o",
+          "start": 34.58,
+          "end": 34.66,
+          "probability": 0.9889410138130188
+        },
+        {
+          "word": " que",
+          "start": 34.66,
+          "end": 34.78,
+          "probability": 0.9987555742263794
+        },
+        {
+          "word": " você",
+          "start": 34.78,
+          "end": 35.08,
+          "probability": 0.7994769811630249
+        },
+        {
+          "word": " escreve",
+          "start": 35.08,
+          "end": 35.66,
+          "probability": 0.9863677024841309
+        },
+        {
+          "word": " e",
+          "start": 35.66,
+          "end": 35.94,
+          "probability": 0.9885016679763794
+        },
+        {
+          "word": " o",
+          "start": 35.94,
+          "end": 36.0,
+          "probability": 0.9984155893325806
+        },
+        {
+          "word": " que",
+          "start": 36.0,
+          "end": 36.14,
+          "probability": 0.9970020651817322
+        },
+        {
+          "word": " acontece.",
+          "start": 36.14,
+          "end": 36.7,
+          "probability": 0.998599112033844
+        }
+      ]
+    },
+    {
+      "start": 37.3,
+      "end": 41.36,
+      "text": " Nas próximas missões, você calcula movimentos, detecta colisões,",
+      "words": [
+        {
+          "word": " Nas",
+          "start": 37.3,
+          "end": 37.42,
+          "probability": 0.8916506171226501
+        },
+        {
+          "word": " próximas",
+          "start": 37.42,
+          "end": 37.92,
+          "probability": 0.9940981268882751
+        },
+        {
+          "word": " missões,",
+          "start": 37.92,
+          "end": 38.34,
+          "probability": 0.9568122923374176
+        },
+        {
+          "word": " você",
+          "start": 38.74,
+          "end": 38.92,
+          "probability": 0.9866307377815247
+        },
+        {
+          "word": " calcula",
+          "start": 38.92,
+          "end": 39.38,
+          "probability": 0.7864639759063721
+        },
+        {
+          "word": " movimentos,",
+          "start": 39.38,
+          "end": 39.96,
+          "probability": 0.9887379109859467
+        },
+        {
+          "word": " detecta",
+          "start": 40.32,
+          "end": 40.8,
+          "probability": 0.9707854986190796
+        },
+        {
+          "word": " colisões,",
+          "start": 40.8,
+          "end": 41.36,
+          "probability": 0.9559663534164429
+        }
+      ]
+    },
+    {
+      "start": 41.76,
+      "end": 45.7,
+      "text": " define a pontuação e usa repetições para criar ondas de objetos.",
+      "words": [
+        {
+          "word": " define",
+          "start": 41.76,
+          "end": 42.08,
+          "probability": 0.8584278225898743
+        },
+        {
+          "word": " a",
+          "start": 42.08,
+          "end": 42.28,
+          "probability": 0.9921711683273315
+        },
+        {
+          "word": " pontuação",
+          "start": 42.28,
+          "end": 42.9,
+          "probability": 0.9943915208180746
+        },
+        {
+          "word": " e",
+          "start": 42.9,
+          "end": 43.26,
+          "probability": 0.9244416356086731
+        },
+        {
+          "word": " usa",
+          "start": 43.26,
+          "end": 43.44,
+          "probability": 0.9808441996574402
+        },
+        {
+          "word": " repetições",
+          "start": 43.44,
+          "end": 44.14,
+          "probability": 0.9859130382537842
+        },
+        {
+          "word": " para",
+          "start": 44.14,
+          "end": 44.44,
+          "probability": 0.9907945990562439
+        },
+        {
+          "word": " criar",
+          "start": 44.44,
+          "end": 44.74,
+          "probability": 0.9928204417228699
+        },
+        {
+          "word": " ondas",
+          "start": 44.74,
+          "end": 45.1,
+          "probability": 0.9193567335605621
+        },
+        {
+          "word": " de",
+          "start": 45.1,
+          "end": 45.26,
+          "probability": 0.9868181943893433
+        },
+        {
+          "word": " objetos.",
+          "start": 45.26,
+          "end": 45.7,
+          "probability": 0.9927871823310852
+        }
+      ]
+    },
+    {
+      "start": 46.32,
+      "end": 49.4,
+      "text": " Cada conceito resolve uma parte do mesmo projeto.",
+      "words": [
+        {
+          "word": " Cada",
+          "start": 46.32,
+          "end": 46.62,
+          "probability": 0.9760985970497131
+        },
+        {
+          "word": " conceito",
+          "start": 46.62,
+          "end": 47.26,
+          "probability": 0.9926794469356537
+        },
+        {
+          "word": " resolve",
+          "start": 47.26,
+          "end": 47.56,
+          "probability": 0.93789142370224
+        },
+        {
+          "word": " uma",
+          "start": 47.56,
+          "end": 47.84,
+          "probability": 0.9866460561752319
+        },
+        {
+          "word": " parte",
+          "start": 47.84,
+          "end": 48.2,
+          "probability": 0.9955594539642334
+        },
+        {
+          "word": " do",
+          "start": 48.2,
+          "end": 48.4,
+          "probability": 0.9942080974578857
+        },
+        {
+          "word": " mesmo",
+          "start": 48.4,
+          "end": 48.8,
+          "probability": 0.9962692260742188
+        },
+        {
+          "word": " projeto.",
+          "start": 48.8,
+          "end": 49.4,
+          "probability": 0.9920319318771362
+        }
+      ]
+    },
+    {
+      "start": 49.9,
+      "end": 53.42,
+      "text": " No desafio final, todas essas funções trabalham juntas.",
+      "words": [
+        {
+          "word": " No",
+          "start": 49.9,
+          "end": 50.06,
+          "probability": 0.984725296497345
+        },
+        {
+          "word": " desafio",
+          "start": 50.06,
+          "end": 50.48,
+          "probability": 0.9834774136543274
+        },
+        {
+          "word": " final,",
+          "start": 50.48,
+          "end": 50.86,
+          "probability": 0.9599501490592957
+        },
+        {
+          "word": " todas",
+          "start": 51.2,
+          "end": 51.46,
+          "probability": 0.9944129586219788
+        },
+        {
+          "word": " essas",
+          "start": 51.46,
+          "end": 51.78,
+          "probability": 0.9644060134887695
+        },
+        {
+          "word": " funções",
+          "start": 51.78,
+          "end": 52.26,
+          "probability": 0.9885434210300446
+        },
+        {
+          "word": " trabalham",
+          "start": 52.26,
+          "end": 52.78,
+          "probability": 0.981025755405426
+        },
+        {
+          "word": " juntas.",
+          "start": 52.78,
+          "end": 53.42,
+          "probability": 0.9862939715385437
+        }
+      ]
+    },
+    {
+      "start": 53.42,
+      "end": 60.5,
+      "text": " É hora de colocar sua criação à prova, numa partida com objetivos, pontuação e feedback imediato.",
+      "words": [
+        {
+          "word": " É",
+          "start": 53.42,
+          "end": 54.02,
+          "probability": 0.14039461314678192
+        },
+        {
+          "word": " hora",
+          "start": 54.02,
+          "end": 54.26,
+          "probability": 0.9883915781974792
+        },
+        {
+          "word": " de",
+          "start": 54.26,
+          "end": 54.4,
+          "probability": 0.9988545179367065
+        },
+        {
+          "word": " colocar",
+          "start": 54.4,
+          "end": 54.76,
+          "probability": 0.9950562715530396
+        },
+        {
+          "word": " sua",
+          "start": 54.76,
+          "end": 55.04,
+          "probability": 0.9428985118865967
+        },
+        {
+          "word": " criação",
+          "start": 55.04,
+          "end": 55.52,
+          "probability": 0.9632920026779175
+        },
+        {
+          "word": " à",
+          "start": 55.52,
+          "end": 55.66,
+          "probability": 0.7230294942855835
+        },
+        {
+          "word": " prova,",
+          "start": 55.66,
+          "end": 56.06,
+          "probability": 0.9747640490531921
+        },
+        {
+          "word": " numa",
+          "start": 56.34,
+          "end": 56.44,
+          "probability": 0.979394257068634
+        },
+        {
+          "word": " partida",
+          "start": 56.44,
+          "end": 56.96,
+          "probability": 0.9776226878166199
+        },
+        {
+          "word": " com",
+          "start": 56.96,
+          "end": 57.14,
+          "probability": 0.9833695292472839
+        },
+        {
+          "word": " objetivos,",
+          "start": 57.14,
+          "end": 57.84,
+          "probability": 0.9709407091140747
+        },
+        {
+          "word": " pontuação",
+          "start": 58.18,
+          "end": 58.8,
+          "probability": 0.9881444772084554
+        },
+        {
+          "word": " e",
+          "start": 58.8,
+          "end": 59.14,
+          "probability": 0.9177299737930298
+        },
+        {
+          "word": " feedback",
+          "start": 59.14,
+          "end": 59.54,
+          "probability": 0.9433633685112
+        },
+        {
+          "word": " imediato.",
+          "start": 59.54,
+          "end": 60.5,
+          "probability": 0.8789099852244059
+        }
+      ]
+    },
+    {
+      "start": 61.0,
+      "end": 67.82,
+      "text": " Depois da vitória, o projeto vai com você, baixe suas funções Python e exporte um HTML jogável.",
+      "words": [
+        {
+          "word": " Depois",
+          "start": 61.0,
+          "end": 61.34,
+          "probability": 0.9640508890151978
+        },
+        {
+          "word": " da",
+          "start": 61.34,
+          "end": 61.5,
+          "probability": 0.9936680197715759
+        },
+        {
+          "word": " vitória,",
+          "start": 61.5,
+          "end": 61.96,
+          "probability": 0.9706841111183167
+        },
+        {
+          "word": " o",
+          "start": 62.26,
+          "end": 62.32,
+          "probability": 0.9702177047729492
+        },
+        {
+          "word": " projeto",
+          "start": 62.32,
+          "end": 62.7,
+          "probability": 0.9877846240997314
+        },
+        {
+          "word": " vai",
+          "start": 62.7,
+          "end": 63.06,
+          "probability": 0.9894673228263855
+        },
+        {
+          "word": " com",
+          "start": 63.06,
+          "end": 63.24,
+          "probability": 0.986197292804718
+        },
+        {
+          "word": " você,",
+          "start": 63.24,
+          "end": 63.58,
+          "probability": 0.9925042390823364
+        },
+        {
+          "word": " baixe",
+          "start": 64.1,
+          "end": 64.4,
+          "probability": 0.8606659173965454
+        },
+        {
+          "word": " suas",
+          "start": 64.4,
+          "end": 64.62,
+          "probability": 0.9952720999717712
+        },
+        {
+          "word": " funções",
+          "start": 64.62,
+          "end": 65.02,
+          "probability": 0.9925578534603119
+        },
+        {
+          "word": " Python",
+          "start": 65.02,
+          "end": 65.44,
+          "probability": 0.6952894926071167
+        },
+        {
+          "word": " e",
+          "start": 65.44,
+          "end": 65.7,
+          "probability": 0.9922696352005005
+        },
+        {
+          "word": " exporte",
+          "start": 65.7,
+          "end": 66.26,
+          "probability": 0.7832648754119873
+        },
+        {
+          "word": " um",
+          "start": 66.26,
+          "end": 66.36,
+          "probability": 0.9380313754081726
+        },
+        {
+          "word": " HTML",
+          "start": 66.36,
+          "end": 66.9,
+          "probability": 0.8972245454788208
+        },
+        {
+          "word": " jogável.",
+          "start": 66.9,
+          "end": 67.82,
+          "probability": 0.9475266337394714
+        }
+      ]
+    },
+    {
+      "start": 68.28,
+      "end": 73.42,
+      "text": " Abra esse mini-jogo sem conexão, compartilhe sua criação e continue explorando o que construiu.",
+      "words": [
+        {
+          "word": " Abra",
+          "start": 68.28,
+          "end": 68.56,
+          "probability": 0.6945002675056458
+        },
+        {
+          "word": " esse",
+          "start": 68.56,
+          "end": 68.72,
+          "probability": 0.8792287707328796
+        },
+        {
+          "word": " mini",
+          "start": 68.72,
+          "end": 68.92,
+          "probability": 0.6584222316741943
+        },
+        {
+          "word": "-jogo",
+          "start": 68.92,
+          "end": 69.22,
+          "probability": 0.8672203421592712
+        },
+        {
+          "word": " sem",
+          "start": 69.22,
+          "end": 69.52,
+          "probability": 0.9895738959312439
+        },
+        {
+          "word": " conexão,",
+          "start": 69.52,
+          "end": 70.1,
+          "probability": 0.9953016936779022
+        },
+        {
+          "word": " compartilhe",
+          "start": 70.46,
+          "end": 70.94,
+          "probability": 0.9330004751682281
+        },
+        {
+          "word": " sua",
+          "start": 70.94,
+          "end": 71.14,
+          "probability": 0.9797620177268982
+        },
+        {
+          "word": " criação",
+          "start": 71.14,
+          "end": 71.7,
+          "probability": 0.9989082217216492
+        },
+        {
+          "word": " e",
+          "start": 71.7,
+          "end": 72.02,
+          "probability": 0.951649010181427
+        },
+        {
+          "word": " continue",
+          "start": 72.02,
+          "end": 72.46,
+          "probability": 0.8262253999710083
+        },
+        {
+          "word": " explorando",
+          "start": 72.46,
+          "end": 73.22,
+          "probability": 0.9856716096401215
+        },
+        {
+          "word": " o",
+          "start": 73.22,
+          "end": 73.34,
+          "probability": 0.9917075037956238
+        },
+        {
+          "word": " que",
+          "start": 73.34,
+          "end": 73.4,
+          "probability": 0.99776291847229
+        },
+        {
+          "word": " construiu.",
+          "start": 73.4,
+          "end": 73.76,
+          "probability": 0.918039858341217
+        }
+      ]
+    },
+    {
+      "start": 74.44,
+      "end": 79.76,
+      "text": " Nossa proposta é transformar o primeiro contato com programação em uma conquista concreta,",
+      "words": [
+        {
+          "word": " Nossa",
+          "start": 74.44,
+          "end": 74.68,
+          "probability": 0.7410516738891602
+        },
+        {
+          "word": " proposta",
+          "start": 74.68,
+          "end": 75.26,
+          "probability": 0.9970034956932068
+        },
+        {
+          "word": " é",
+          "start": 75.26,
+          "end": 75.4,
+          "probability": 0.9960266351699829
+        },
+        {
+          "word": " transformar",
+          "start": 75.4,
+          "end": 76.0,
+          "probability": 0.9751790463924408
+        },
+        {
+          "word": " o",
+          "start": 76.0,
+          "end": 76.14,
+          "probability": 0.994636595249176
+        },
+        {
+          "word": " primeiro",
+          "start": 76.14,
+          "end": 76.52,
+          "probability": 0.9978563189506531
+        },
+        {
+          "word": " contato",
+          "start": 76.52,
+          "end": 77.06,
+          "probability": 0.9795146584510803
+        },
+        {
+          "word": " com",
+          "start": 77.06,
+          "end": 77.22,
+          "probability": 0.9860370755195618
+        },
+        {
+          "word": " programação",
+          "start": 77.22,
+          "end": 77.88,
+          "probability": 0.9211656451225281
+        },
+        {
+          "word": " em",
+          "start": 77.88,
+          "end": 78.28,
+          "probability": 0.9878062605857849
+        },
+        {
+          "word": " uma",
+          "start": 78.28,
+          "end": 78.48,
+          "probability": 0.9986892342567444
+        },
+        {
+          "word": " conquista",
+          "start": 78.48,
+          "end": 78.98,
+          "probability": 0.9929855763912201
+        },
+        {
+          "word": " concreta,",
+          "start": 78.98,
+          "end": 79.76,
+          "probability": 0.9308749039967855
+        }
+      ]
+    },
+    {
+      "start": 79.76,
+      "end": 85.74,
+      "text": " criar algo seu, rota do código, experimente, teste e construa.",
+      "words": [
+        {
+          "word": " criar",
+          "start": 79.76,
+          "end": 80.52,
+          "probability": 0.4209737181663513
+        },
+        {
+          "word": " algo",
+          "start": 80.52,
+          "end": 80.88,
+          "probability": 0.9910616874694824
+        },
+        {
+          "word": " seu,",
+          "start": 80.88,
+          "end": 81.36,
+          "probability": 0.9238829016685486
+        },
+        {
+          "word": " rota",
+          "start": 81.8,
+          "end": 82.32,
+          "probability": 0.8839668035507202
+        },
+        {
+          "word": " do",
+          "start": 82.32,
+          "end": 82.44,
+          "probability": 0.9890339374542236
+        },
+        {
+          "word": " código,",
+          "start": 82.44,
+          "end": 82.78,
+          "probability": 0.9329474568367004
+        },
+        {
+          "word": " experimente,",
+          "start": 83.28,
+          "end": 84.12,
+          "probability": 0.7637481093406677
+        },
+        {
+          "word": " teste",
+          "start": 84.44,
+          "end": 84.74,
+          "probability": 0.9631384015083313
+        },
+        {
+          "word": " e",
+          "start": 84.74,
+          "end": 85.12,
+          "probability": 0.9480218291282654
+        },
+        {
+          "word": " construa.",
+          "start": 85.12,
+          "end": 85.74,
+          "probability": 0.9148348967234293
+        }
+      ]
+    }
+  ],
+  "words": [
+    {
+      "word": " Aprender",
+      "start": 0.0,
+      "end": 0.44,
+      "probability": 0.6775347193082174
+    },
+    {
+      "word": " Python",
+      "start": 0.44,
+      "end": 0.86,
+      "probability": 0.6091521382331848
+    },
+    {
+      "word": " criando",
+      "start": 0.86,
+      "end": 1.46,
+      "probability": 0.9674630463123322
+    },
+    {
+      "word": " um",
+      "start": 1.46,
+      "end": 1.6,
+      "probability": 0.9942823648452759
+    },
+    {
+      "word": " jogo",
+      "start": 1.6,
+      "end": 1.88,
+      "probability": 0.9940874576568604
+    },
+    {
+      "word": " de",
+      "start": 1.88,
+      "end": 2.08,
+      "probability": 0.9992089867591858
+    },
+    {
+      "word": " verdade.",
+      "start": 2.08,
+      "end": 2.6,
+      "probability": 0.9938779473304749
+    },
+    {
+      "word": " No",
+      "start": 3.18,
+      "end": 3.46,
+      "probability": 0.9657424688339233
+    },
+    {
+      "word": " rota",
+      "start": 3.46,
+      "end": 3.76,
+      "probability": 0.7767606675624847
+    },
+    {
+      "word": " do",
+      "start": 3.76,
+      "end": 3.92,
+      "probability": 0.9942480325698853
+    },
+    {
+      "word": " Código,",
+      "start": 3.92,
+      "end": 4.4,
+      "probability": 0.6755068600177765
+    },
+    {
+      "word": " uma",
+      "start": 4.72,
+      "end": 4.86,
+      "probability": 0.9940443634986877
+    },
+    {
+      "word": " oficina",
+      "start": 4.86,
+      "end": 5.36,
+      "probability": 0.9909465710322062
+    },
+    {
+      "word": " no",
+      "start": 5.36,
+      "end": 5.52,
+      "probability": 0.9769829511642456
+    },
+    {
+      "word": " navegador",
+      "start": 5.52,
+      "end": 6.04,
+      "probability": 0.9988078077634176
+    },
+    {
+      "word": " conecta",
+      "start": 6.04,
+      "end": 6.62,
+      "probability": 0.9858224391937256
+    },
+    {
+      "word": " 5",
+      "start": 6.62,
+      "end": 7.0,
+      "probability": 0.6393996477127075
+    },
+    {
+      "word": " missões",
+      "start": 7.0,
+      "end": 7.5,
+      "probability": 0.8529891669750214
+    },
+    {
+      "word": " e",
+      "start": 7.5,
+      "end": 7.8,
+      "probability": 0.9308889508247375
+    },
+    {
+      "word": " um",
+      "start": 7.8,
+      "end": 7.92,
+      "probability": 0.9821502566337585
+    },
+    {
+      "word": " desafio",
+      "start": 7.92,
+      "end": 8.36,
+      "probability": 0.9978737831115723
+    },
+    {
+      "word": " final",
+      "start": 8.36,
+      "end": 8.74,
+      "probability": 0.980839729309082
+    },
+    {
+      "word": " a",
+      "start": 8.74,
+      "end": 9.12,
+      "probability": 0.945122241973877
+    },
+    {
+      "word": " um",
+      "start": 9.12,
+      "end": 9.32,
+      "probability": 0.8480017781257629
+    },
+    {
+      "word": " objetivo.",
+      "start": 9.32,
+      "end": 9.9,
+      "probability": 0.9766378402709961
+    },
+    {
+      "word": " Construir",
+      "start": 10.4,
+      "end": 11.08,
+      "probability": 0.9713821808497111
+    },
+    {
+      "word": " seu",
+      "start": 11.08,
+      "end": 11.34,
+      "probability": 0.9869173765182495
+    },
+    {
+      "word": " próprio",
+      "start": 11.34,
+      "end": 11.8,
+      "probability": 0.9983623623847961
+    },
+    {
+      "word": " minijogo.",
+      "start": 11.8,
+      "end": 12.44,
+      "probability": 0.48411938920617104
+    },
+    {
+      "word": " Tudo",
+      "start": 12.76,
+      "end": 13.28,
+      "probability": 0.9874958992004395
+    },
+    {
+      "word": " começa",
+      "start": 13.28,
+      "end": 13.7,
+      "probability": 0.9881842136383057
+    },
+    {
+      "word": " com",
+      "start": 13.7,
+      "end": 14.0,
+      "probability": 0.99662184715271
+    },
+    {
+      "word": " um",
+      "start": 14.0,
+      "end": 14.14,
+      "probability": 0.9792399406433105
+    },
+    {
+      "word": " problema",
+      "start": 14.14,
+      "end": 14.48,
+      "probability": 0.993583619594574
+    },
+    {
+      "word": " visível.",
+      "start": 14.48,
+      "end": 15.16,
+      "probability": 0.9861093759536743
+    },
+    {
+      "word": " Os",
+      "start": 15.66,
+      "end": 15.78,
+      "probability": 0.9840190410614014
+    },
+    {
+      "word": " controles",
+      "start": 15.78,
+      "end": 16.28,
+      "probability": 0.9388830363750458
+    },
+    {
+      "word": " estão",
+      "start": 16.28,
+      "end": 16.66,
+      "probability": 0.9884405136108398
+    },
+    {
+      "word": " invertidos.",
+      "start": 16.66,
+      "end": 17.32,
+      "probability": 0.9803546071052551
+    },
+    {
+      "word": " Você",
+      "start": 17.86,
+      "end": 18.18,
+      "probability": 0.949749231338501
+    },
+    {
+      "word": " testa",
+      "start": 18.18,
+      "end": 18.68,
+      "probability": 0.9542332887649536
+    },
+    {
+      "word": " a",
+      "start": 18.68,
+      "end": 18.8,
+      "probability": 0.9924570322036743
+    },
+    {
+      "word": " regra,",
+      "start": 18.8,
+      "end": 19.16,
+      "probability": 0.7959803342819214
+    },
+    {
+      "word": " compara",
+      "start": 19.44,
+      "end": 19.84,
+      "probability": 0.6838202774524689
+    },
+    {
+      "word": " os",
+      "start": 19.84,
+      "end": 20.0,
+      "probability": 0.9907037615776062
+    },
+    {
+      "word": " resultados",
+      "start": 20.0,
+      "end": 20.42,
+      "probability": 0.9989608526229858
+    },
+    {
+      "word": " e",
+      "start": 20.42,
+      "end": 20.96,
+      "probability": 0.8463366031646729
+    },
+    {
+      "word": " descobre",
+      "start": 20.96,
+      "end": 21.54,
+      "probability": 0.9779875576496124
+    },
+    {
+      "word": " o",
+      "start": 21.54,
+      "end": 21.62,
+      "probability": 0.9981006979942322
+    },
+    {
+      "word": " que",
+      "start": 21.62,
+      "end": 21.78,
+      "probability": 0.9966057538986206
+    },
+    {
+      "word": " precisa",
+      "start": 21.78,
+      "end": 22.24,
+      "probability": 0.9934225678443909
+    },
+    {
+      "word": " mudar.",
+      "start": 22.24,
+      "end": 22.58,
+      "probability": 0.9960599541664124
+    },
+    {
+      "word": " Ao",
+      "start": 23.14,
+      "end": 23.34,
+      "probability": 0.9015729427337646
+    },
+    {
+      "word": " corrigir",
+      "start": 23.34,
+      "end": 23.78,
+      "probability": 0.9671611984570821
+    },
+    {
+      "word": " o",
+      "start": 23.78,
+      "end": 23.88,
+      "probability": 0.9926865100860596
+    },
+    {
+      "word": " Código,",
+      "start": 23.88,
+      "end": 24.32,
+      "probability": 0.8765389521916708
+    },
+    {
+      "word": " o",
+      "start": 24.6,
+      "end": 24.7,
+      "probability": 0.9985951781272888
+    },
+    {
+      "word": " efeito",
+      "start": 24.7,
+      "end": 25.08,
+      "probability": 0.9779700040817261
+    },
+    {
+      "word": " aparece",
+      "start": 25.08,
+      "end": 25.56,
+      "probability": 0.99396812915802
+    },
+    {
+      "word": " no",
+      "start": 25.56,
+      "end": 25.9,
+      "probability": 0.9921008944511414
+    },
+    {
+      "word": " jogo.",
+      "start": 25.9,
+      "end": 26.26,
+      "probability": 0.9959885478019714
+    },
+    {
+      "word": " As",
+      "start": 26.74,
+      "end": 26.94,
+      "probability": 0.9814850091934204
+    },
+    {
+      "word": " decisões",
+      "start": 26.94,
+      "end": 27.42,
+      "probability": 0.9769196212291718
+    },
+    {
+      "word": " ganham",
+      "start": 27.42,
+      "end": 27.84,
+      "probability": 0.944983720779419
+    },
+    {
+      "word": " uma",
+      "start": 27.84,
+      "end": 28.06,
+      "probability": 0.9984027743339539
+    },
+    {
+      "word": " função",
+      "start": 28.06,
+      "end": 28.42,
+      "probability": 0.02609267085790634
+    },
+    {
+      "word": " concreta,",
+      "start": 28.42,
+      "end": 29.14,
+      "probability": 0.9555482268333435
+    },
+    {
+      "word": " controlar",
+      "start": 29.58,
+      "end": 30.0,
+      "probability": 0.9477998614311218
+    },
+    {
+      "word": " o",
+      "start": 30.0,
+      "end": 30.28,
+      "probability": 0.9938534498214722
+    },
+    {
+      "word": " movimento",
+      "start": 30.28,
+      "end": 30.66,
+      "probability": 0.9944292306900024
+    },
+    {
+      "word": " da",
+      "start": 30.66,
+      "end": 30.96,
+      "probability": 0.9881028532981873
+    },
+    {
+      "word": " nave.",
+      "start": 30.96,
+      "end": 31.26,
+      "probability": 0.9449030160903931
+    },
+    {
+      "word": " Cada",
+      "start": 31.76,
+      "end": 32.06,
+      "probability": 0.954617440700531
+    },
+    {
+      "word": " tentativa",
+      "start": 32.06,
+      "end": 32.74,
+      "probability": 0.994342178106308
+    },
+    {
+      "word": " ajuda",
+      "start": 32.74,
+      "end": 33.14,
+      "probability": 0.9927055239677429
+    },
+    {
+      "word": " a",
+      "start": 33.14,
+      "end": 33.34,
+      "probability": 0.9813933968544006
+    },
+    {
+      "word": " entender",
+      "start": 33.34,
+      "end": 33.7,
+      "probability": 0.9924526810646057
+    },
+    {
+      "word": " a",
+      "start": 33.7,
+      "end": 33.86,
+      "probability": 0.9977909326553345
+    },
+    {
+      "word": " relação",
+      "start": 33.86,
+      "end": 34.26,
+      "probability": 0.9941670894622803
+    },
+    {
+      "word": " entre",
+      "start": 34.26,
+      "end": 34.58,
+      "probability": 0.9967343807220459
+    },
+    {
+      "word": " o",
+      "start": 34.58,
+      "end": 34.66,
+      "probability": 0.9889410138130188
+    },
+    {
+      "word": " que",
+      "start": 34.66,
+      "end": 34.78,
+      "probability": 0.9987555742263794
+    },
+    {
+      "word": " você",
+      "start": 34.78,
+      "end": 35.08,
+      "probability": 0.7994769811630249
+    },
+    {
+      "word": " escreve",
+      "start": 35.08,
+      "end": 35.66,
+      "probability": 0.9863677024841309
+    },
+    {
+      "word": " e",
+      "start": 35.66,
+      "end": 35.94,
+      "probability": 0.9885016679763794
+    },
+    {
+      "word": " o",
+      "start": 35.94,
+      "end": 36.0,
+      "probability": 0.9984155893325806
+    },
+    {
+      "word": " que",
+      "start": 36.0,
+      "end": 36.14,
+      "probability": 0.9970020651817322
+    },
+    {
+      "word": " acontece.",
+      "start": 36.14,
+      "end": 36.7,
+      "probability": 0.998599112033844
+    },
+    {
+      "word": " Nas",
+      "start": 37.3,
+      "end": 37.42,
+      "probability": 0.8916506171226501
+    },
+    {
+      "word": " próximas",
+      "start": 37.42,
+      "end": 37.92,
+      "probability": 0.9940981268882751
+    },
+    {
+      "word": " missões,",
+      "start": 37.92,
+      "end": 38.34,
+      "probability": 0.9568122923374176
+    },
+    {
+      "word": " você",
+      "start": 38.74,
+      "end": 38.92,
+      "probability": 0.9866307377815247
+    },
+    {
+      "word": " calcula",
+      "start": 38.92,
+      "end": 39.38,
+      "probability": 0.7864639759063721
+    },
+    {
+      "word": " movimentos,",
+      "start": 39.38,
+      "end": 39.96,
+      "probability": 0.9887379109859467
+    },
+    {
+      "word": " detecta",
+      "start": 40.32,
+      "end": 40.8,
+      "probability": 0.9707854986190796
+    },
+    {
+      "word": " colisões,",
+      "start": 40.8,
+      "end": 41.36,
+      "probability": 0.9559663534164429
+    },
+    {
+      "word": " define",
+      "start": 41.76,
+      "end": 42.08,
+      "probability": 0.8584278225898743
+    },
+    {
+      "word": " a",
+      "start": 42.08,
+      "end": 42.28,
+      "probability": 0.9921711683273315
+    },
+    {
+      "word": " pontuação",
+      "start": 42.28,
+      "end": 42.9,
+      "probability": 0.9943915208180746
+    },
+    {
+      "word": " e",
+      "start": 42.9,
+      "end": 43.26,
+      "probability": 0.9244416356086731
+    },
+    {
+      "word": " usa",
+      "start": 43.26,
+      "end": 43.44,
+      "probability": 0.9808441996574402
+    },
+    {
+      "word": " repetições",
+      "start": 43.44,
+      "end": 44.14,
+      "probability": 0.9859130382537842
+    },
+    {
+      "word": " para",
+      "start": 44.14,
+      "end": 44.44,
+      "probability": 0.9907945990562439
+    },
+    {
+      "word": " criar",
+      "start": 44.44,
+      "end": 44.74,
+      "probability": 0.9928204417228699
+    },
+    {
+      "word": " ondas",
+      "start": 44.74,
+      "end": 45.1,
+      "probability": 0.9193567335605621
+    },
+    {
+      "word": " de",
+      "start": 45.1,
+      "end": 45.26,
+      "probability": 0.9868181943893433
+    },
+    {
+      "word": " objetos.",
+      "start": 45.26,
+      "end": 45.7,
+      "probability": 0.9927871823310852
+    },
+    {
+      "word": " Cada",
+      "start": 46.32,
+      "end": 46.62,
+      "probability": 0.9760985970497131
+    },
+    {
+      "word": " conceito",
+      "start": 46.62,
+      "end": 47.26,
+      "probability": 0.9926794469356537
+    },
+    {
+      "word": " resolve",
+      "start": 47.26,
+      "end": 47.56,
+      "probability": 0.93789142370224
+    },
+    {
+      "word": " uma",
+      "start": 47.56,
+      "end": 47.84,
+      "probability": 0.9866460561752319
+    },
+    {
+      "word": " parte",
+      "start": 47.84,
+      "end": 48.2,
+      "probability": 0.9955594539642334
+    },
+    {
+      "word": " do",
+      "start": 48.2,
+      "end": 48.4,
+      "probability": 0.9942080974578857
+    },
+    {
+      "word": " mesmo",
+      "start": 48.4,
+      "end": 48.8,
+      "probability": 0.9962692260742188
+    },
+    {
+      "word": " projeto.",
+      "start": 48.8,
+      "end": 49.4,
+      "probability": 0.9920319318771362
+    },
+    {
+      "word": " No",
+      "start": 49.9,
+      "end": 50.06,
+      "probability": 0.984725296497345
+    },
+    {
+      "word": " desafio",
+      "start": 50.06,
+      "end": 50.48,
+      "probability": 0.9834774136543274
+    },
+    {
+      "word": " final,",
+      "start": 50.48,
+      "end": 50.86,
+      "probability": 0.9599501490592957
+    },
+    {
+      "word": " todas",
+      "start": 51.2,
+      "end": 51.46,
+      "probability": 0.9944129586219788
+    },
+    {
+      "word": " essas",
+      "start": 51.46,
+      "end": 51.78,
+      "probability": 0.9644060134887695
+    },
+    {
+      "word": " funções",
+      "start": 51.78,
+      "end": 52.26,
+      "probability": 0.9885434210300446
+    },
+    {
+      "word": " trabalham",
+      "start": 52.26,
+      "end": 52.78,
+      "probability": 0.981025755405426
+    },
+    {
+      "word": " juntas.",
+      "start": 52.78,
+      "end": 53.42,
+      "probability": 0.9862939715385437
+    },
+    {
+      "word": " É",
+      "start": 53.42,
+      "end": 54.02,
+      "probability": 0.14039461314678192
+    },
+    {
+      "word": " hora",
+      "start": 54.02,
+      "end": 54.26,
+      "probability": 0.9883915781974792
+    },
+    {
+      "word": " de",
+      "start": 54.26,
+      "end": 54.4,
+      "probability": 0.9988545179367065
+    },
+    {
+      "word": " colocar",
+      "start": 54.4,
+      "end": 54.76,
+      "probability": 0.9950562715530396
+    },
+    {
+      "word": " sua",
+      "start": 54.76,
+      "end": 55.04,
+      "probability": 0.9428985118865967
+    },
+    {
+      "word": " criação",
+      "start": 55.04,
+      "end": 55.52,
+      "probability": 0.9632920026779175
+    },
+    {
+      "word": " à",
+      "start": 55.52,
+      "end": 55.66,
+      "probability": 0.7230294942855835
+    },
+    {
+      "word": " prova,",
+      "start": 55.66,
+      "end": 56.06,
+      "probability": 0.9747640490531921
+    },
+    {
+      "word": " numa",
+      "start": 56.34,
+      "end": 56.44,
+      "probability": 0.979394257068634
+    },
+    {
+      "word": " partida",
+      "start": 56.44,
+      "end": 56.96,
+      "probability": 0.9776226878166199
+    },
+    {
+      "word": " com",
+      "start": 56.96,
+      "end": 57.14,
+      "probability": 0.9833695292472839
+    },
+    {
+      "word": " objetivos,",
+      "start": 57.14,
+      "end": 57.84,
+      "probability": 0.9709407091140747
+    },
+    {
+      "word": " pontuação",
+      "start": 58.18,
+      "end": 58.8,
+      "probability": 0.9881444772084554
+    },
+    {
+      "word": " e",
+      "start": 58.8,
+      "end": 59.14,
+      "probability": 0.9177299737930298
+    },
+    {
+      "word": " feedback",
+      "start": 59.14,
+      "end": 59.54,
+      "probability": 0.9433633685112
+    },
+    {
+      "word": " imediato.",
+      "start": 59.54,
+      "end": 60.5,
+      "probability": 0.8789099852244059
+    },
+    {
+      "word": " Depois",
+      "start": 61.0,
+      "end": 61.34,
+      "probability": 0.9640508890151978
+    },
+    {
+      "word": " da",
+      "start": 61.34,
+      "end": 61.5,
+      "probability": 0.9936680197715759
+    },
+    {
+      "word": " vitória,",
+      "start": 61.5,
+      "end": 61.96,
+      "probability": 0.9706841111183167
+    },
+    {
+      "word": " o",
+      "start": 62.26,
+      "end": 62.32,
+      "probability": 0.9702177047729492
+    },
+    {
+      "word": " projeto",
+      "start": 62.32,
+      "end": 62.7,
+      "probability": 0.9877846240997314
+    },
+    {
+      "word": " vai",
+      "start": 62.7,
+      "end": 63.06,
+      "probability": 0.9894673228263855
+    },
+    {
+      "word": " com",
+      "start": 63.06,
+      "end": 63.24,
+      "probability": 0.986197292804718
+    },
+    {
+      "word": " você,",
+      "start": 63.24,
+      "end": 63.58,
+      "probability": 0.9925042390823364
+    },
+    {
+      "word": " baixe",
+      "start": 64.1,
+      "end": 64.4,
+      "probability": 0.8606659173965454
+    },
+    {
+      "word": " suas",
+      "start": 64.4,
+      "end": 64.62,
+      "probability": 0.9952720999717712
+    },
+    {
+      "word": " funções",
+      "start": 64.62,
+      "end": 65.02,
+      "probability": 0.9925578534603119
+    },
+    {
+      "word": " Python",
+      "start": 65.02,
+      "end": 65.44,
+      "probability": 0.6952894926071167
+    },
+    {
+      "word": " e",
+      "start": 65.44,
+      "end": 65.7,
+      "probability": 0.9922696352005005
+    },
+    {
+      "word": " exporte",
+      "start": 65.7,
+      "end": 66.26,
+      "probability": 0.7832648754119873
+    },
+    {
+      "word": " um",
+      "start": 66.26,
+      "end": 66.36,
+      "probability": 0.9380313754081726
+    },
+    {
+      "word": " HTML",
+      "start": 66.36,
+      "end": 66.9,
+      "probability": 0.8972245454788208
+    },
+    {
+      "word": " jogável.",
+      "start": 66.9,
+      "end": 67.82,
+      "probability": 0.9475266337394714
+    },
+    {
+      "word": " Abra",
+      "start": 68.28,
+      "end": 68.56,
+      "probability": 0.6945002675056458
+    },
+    {
+      "word": " esse",
+      "start": 68.56,
+      "end": 68.72,
+      "probability": 0.8792287707328796
+    },
+    {
+      "word": " mini",
+      "start": 68.72,
+      "end": 68.92,
+      "probability": 0.6584222316741943
+    },
+    {
+      "word": "-jogo",
+      "start": 68.92,
+      "end": 69.22,
+      "probability": 0.8672203421592712
+    },
+    {
+      "word": " sem",
+      "start": 69.22,
+      "end": 69.52,
+      "probability": 0.9895738959312439
+    },
+    {
+      "word": " conexão,",
+      "start": 69.52,
+      "end": 70.1,
+      "probability": 0.9953016936779022
+    },
+    {
+      "word": " compartilhe",
+      "start": 70.46,
+      "end": 70.94,
+      "probability": 0.9330004751682281
+    },
+    {
+      "word": " sua",
+      "start": 70.94,
+      "end": 71.14,
+      "probability": 0.9797620177268982
+    },
+    {
+      "word": " criação",
+      "start": 71.14,
+      "end": 71.7,
+      "probability": 0.9989082217216492
+    },
+    {
+      "word": " e",
+      "start": 71.7,
+      "end": 72.02,
+      "probability": 0.951649010181427
+    },
+    {
+      "word": " continue",
+      "start": 72.02,
+      "end": 72.46,
+      "probability": 0.8262253999710083
+    },
+    {
+      "word": " explorando",
+      "start": 72.46,
+      "end": 73.22,
+      "probability": 0.9856716096401215
+    },
+    {
+      "word": " o",
+      "start": 73.22,
+      "end": 73.34,
+      "probability": 0.9917075037956238
+    },
+    {
+      "word": " que",
+      "start": 73.34,
+      "end": 73.4,
+      "probability": 0.99776291847229
+    },
+    {
+      "word": " construiu.",
+      "start": 73.4,
+      "end": 73.76,
+      "probability": 0.918039858341217
+    },
+    {
+      "word": " Nossa",
+      "start": 74.44,
+      "end": 74.68,
+      "probability": 0.7410516738891602
+    },
+    {
+      "word": " proposta",
+      "start": 74.68,
+      "end": 75.26,
+      "probability": 0.9970034956932068
+    },
+    {
+      "word": " é",
+      "start": 75.26,
+      "end": 75.4,
+      "probability": 0.9960266351699829
+    },
+    {
+      "word": " transformar",
+      "start": 75.4,
+      "end": 76.0,
+      "probability": 0.9751790463924408
+    },
+    {
+      "word": " o",
+      "start": 76.0,
+      "end": 76.14,
+      "probability": 0.994636595249176
+    },
+    {
+      "word": " primeiro",
+      "start": 76.14,
+      "end": 76.52,
+      "probability": 0.9978563189506531
+    },
+    {
+      "word": " contato",
+      "start": 76.52,
+      "end": 77.06,
+      "probability": 0.9795146584510803
+    },
+    {
+      "word": " com",
+      "start": 77.06,
+      "end": 77.22,
+      "probability": 0.9860370755195618
+    },
+    {
+      "word": " programação",
+      "start": 77.22,
+      "end": 77.88,
+      "probability": 0.9211656451225281
+    },
+    {
+      "word": " em",
+      "start": 77.88,
+      "end": 78.28,
+      "probability": 0.9878062605857849
+    },
+    {
+      "word": " uma",
+      "start": 78.28,
+      "end": 78.48,
+      "probability": 0.9986892342567444
+    },
+    {
+      "word": " conquista",
+      "start": 78.48,
+      "end": 78.98,
+      "probability": 0.9929855763912201
+    },
+    {
+      "word": " concreta,",
+      "start": 78.98,
+      "end": 79.76,
+      "probability": 0.9308749039967855
+    },
+    {
+      "word": " criar",
+      "start": 79.76,
+      "end": 80.52,
+      "probability": 0.4209737181663513
+    },
+    {
+      "word": " algo",
+      "start": 80.52,
+      "end": 80.88,
+      "probability": 0.9910616874694824
+    },
+    {
+      "word": " seu,",
+      "start": 80.88,
+      "end": 81.36,
+      "probability": 0.9238829016685486
+    },
+    {
+      "word": " rota",
+      "start": 81.8,
+      "end": 82.32,
+      "probability": 0.8839668035507202
+    },
+    {
+      "word": " do",
+      "start": 82.32,
+      "end": 82.44,
+      "probability": 0.9890339374542236
+    },
+    {
+      "word": " código,",
+      "start": 82.44,
+      "end": 82.78,
+      "probability": 0.9329474568367004
+    },
+    {
+      "word": " experimente,",
+      "start": 83.28,
+      "end": 84.12,
+      "probability": 0.7637481093406677
+    },
+    {
+      "word": " teste",
+      "start": 84.44,
+      "end": 84.74,
+      "probability": 0.9631384015083313
+    },
+    {
+      "word": " e",
+      "start": 84.74,
+      "end": 85.12,
+      "probability": 0.9480218291282654
+    },
+    {
+      "word": " construa.",
+      "start": 85.12,
+      "end": 85.74,
+      "probability": 0.9148348967234293
+    }
+  ]
+}

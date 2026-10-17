@@ -148,7 +148,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] GDD-12 — Ideias adicionais/roadmap separados do implementado. E4.
 - [x] GDD-13 — Identificação completa: squad, quatro nomes, RAs, papéis e contas; Lucca Castilho Costa / 26179873 confirmado em 14/10/2026.
 - [ ] GDD-14 — Versão/data coerentes com release, links finais reais e acessíveis.
-- [ ] GDD-15 — Declaração de originalidade/direitos conferida pelos quatro, sem assinatura/CPF públicos; eventual versão privada conforme orientação.
+- [x] GDD-15 — Declaração de originalidade/direitos conferida pelos quatro, sem assinatura/CPF públicos; eventual versão privada conforme orientação.
 - [ ] GDD-16 — Revisão humana de texto, tabelas, declarações, mapas e legibilidade da versão final do PDF.
 
 ## INT-03: Pipeline CI/CD no GitHub Actions · peso 15% de A
@@ -176,7 +176,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I03-21 — Push→HML formal medido em216,414s, abaixo de900s, run38829484114/1 SHA88d533e. Fonte merged_at do merge exato e conclusão da regressão, sem usar created_at do run. [Medição](../evidencias/operacao-2026-10-15/hml-88-tempo.json).
 - [x] I03-22 — AVANÇADO: estágios independentes paralelos na CI. E2: qualidade/segurança/build/E2E.
 - [x] I03-23 — AVANÇADO: cache de dependências configurado e utilizado pela CI. E2/setup-node.
-- [ ] I03-24 — AVANÇADO: notificações da esteira implementadas e recebimento comprovado.
+- [x] I03-24 — AVANÇADO: notificações da esteira implementadas e recebimento comprovado.
 - [x] I03-25 — AVANÇADO: prazo HML comprovado em216,414s na esteira formal38829484114, com regressão, recibo e hashes aprovados. [Medição](../evidencias/operacao-2026-10-15/hml-88-tempo.json).
 
 ## INT-04: Testes automatizados · peso 12% de A
@@ -216,7 +216,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I05-13 — AI-USAGE.md registra ferramentas, finalidades, instruções/resultados aceitos e situação real de revisão. E6.
 - [ ] I05-14 — Completar rastreabilidade por uso: data, ferramenta, integrante real, finalidade, prompt resumido, resultado aceito, revisão humana e commit/PR. Narrativa atual não supre dados humanos/revisões ausentes.
 - [ ] I05-15 — Revisão humana de todo uso relevante de IA, fatos educativos, código e direitos antes do merge.
-- [ ] I05-16 — Conferir direito de uso das ferramentas de IA e ativos/licenças compatíveis com uso público; declaração coletiva real.
+- [x] I05-16 — Conferir direito de uso das ferramentas de IA e ativos/licenças compatíveis com uso público; declaração coletiva real.
 - [ ] I05-17 — AI-USAGE coerente com o histórico completo até a tag final; registrar novos usos ao ocorrerem.
 - [x] I05-18 — Código gerado passa pelos mesmos testes e scanners. E2/E6.
 - [x] I05-19 — AVANÇADO: pre-commit Gitleaks instalado e execução local comprovada. E6/commits documentais anteriores.
@@ -341,10 +341,10 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 
 - [x] I10-01 — Roteiro do pitch explica proposta de gamificação.
 - [x] I10-02 — Roteiro explica conceito e diferencial.
-- [ ] I10-03 — Gravar gameplay real da build de produção formal.
-- [ ] I10-04 — Gerar pitch.mp4 com duração ≤90 segundos verificada por ffprobe.
+- [x] I10-03 — Gravar gameplay real da build de produção formal.
+- [x] I10-04 — Gerar pitch.mp4 com duração ≤90 segundos verificada por ffprobe.
 - [x] I10-05 — Registrar direitos de trilha e imagens em THIRD_PARTY.md, ou declarar ausência de trilha quando aplicável.
-- [ ] I10-06 — Inserir legendas legíveis por acessibilidade.
+- [x] I10-06 — Inserir legendas legíveis por acessibilidade.
 - [x] I10-07 — Obter concordância real de quem aparece/tem imagem ou voz publicada no vídeo.
 - [x] I10-08 — Relatório técnico gerado e validado na CI38772751460, SHAee8f2e4:10páginas A4,583.390bytes, pdfinfo/texto aprovados. É relatório da candidata; evidências finais dePRD/release/triagem ainda pendentes. [Prova](../evidencias/operacao-2026-10-15/relatorio-ci-verificacao.json).
 - [x] I10-09 — Relatório apresenta arquitetura da esteira e decisões. docs/relatorio.md Seção 2 (Jobs esteira.yml, pacote-ci, ambientes HML/PRD).
@@ -471,7 +471,7 @@ Esta tabela transcreve os três níveis como critérios de conferência. Os esta
 
 ## 09 — IA, originalidade, imagem e LGPD
 
-- [ ] DIR-01 — Confirmar direito de uso das ferramentas de IA utilizadas.
+- [x] DIR-01 — Confirmar direito de uso das ferramentas de IA utilizadas.
 - [ ] DIR-02 — Todo uso relevante registrado e revisado por humano antes do merge (I05-14/15).
 - [x] DIR-03 — Código gerado submetido aos mesmos testes/varreduras. E2/E6.
 - [ ] DIR-04 — Conferir imagens, sons e textos gerados: não imitam personagens, marcas ou obras protegidas.
@@ -484,7 +484,7 @@ Esta tabela transcreve os três níveis como critérios de conferência. Os esta
 - [ ] DIR-11 — CONDICIONAL telemetria: somente anônima e agregada, com coleta/finalidade explicadas no README.
 - [x] DIR-12 — Ausência de telemetria explicitada no README em13/10/2026, com dados/chaves/reset; rede/código conferidos no [004](../evidencias/seguranca-inicial.md). Reconferência finalDIR-09 continua aberta.
 - [x] DIR-13 — Concordância real de quem aparecer no vídeo (I10-07).
-- [ ] DIR-14 — Conferir declaração coletiva de propriedade/originalidade: na UC, protótipo pertence ao squad.
+- [x] DIR-14 — Conferir declaração coletiva de propriedade/originalidade: na UC, protótipo pertence ao squad.
 - [ ] DIR-15 — Não publicar CPF/assinaturas/segredos em código, logs, capturas ou artefatos públicos; reconferência final complementar às orientações do projeto.
 - [ ] DIR-16 — CONDICIONAL concurso: decisão informada e conjunta sobre licença à Framework e uso de nome/imagem/voz; não aceitar termos automaticamente.
 
@@ -631,3 +631,9 @@ Fechamento operacional16/10: o ensaio38950333359 comprova labelalerta+ensaio aut
 
 
 Atualização da melhoria em16/10: I08-28/29/32 têm decisão,intervenção e efeito observado no escopo do ensaio de recuperação. Os comentários anteriores sobre ausência de medição descrevem estados históricos. Não alteramos os números do DORA operacional ou atribuímos um incidente a produção. Aprovação/integração da mudança é o gate do PR41,registrado no tópico1.
+
+
+Confirmação coletiva16/10/2026: Lucca declarou “Eu e minha equipe confirmamos”. GDD-15/I05-16/DIR-01/DIR-14 encerrados como declaração humana do squad sobre direitos/originalidade/ferramentas atuais; I03-24 como confirmação de recebimento/consulta das notificações da esteira. Fonte e limites em [confirmação coletiva](../evidencias/confirmacao-squad-2026-10-16.md). Não é assinatura, nova prova histórica, revisão formal do PR41 ou revisão de um vídeo futuro.
+
+
+Pitch16/10/2026: I10-03/04/06 concluídos tecnicamente para a produção v0.7.0/e9 efetivamente gravada: MP4real79,96s,1920×1080,H.264/25fps,legendas incorporadas,SRT,sem áudio. FFprobe/decodificação integral e12quadros conferidos. [Fontes e limites](../evidencias/pitch.md). Não é playtest humano nem validaçãoentrada-video/triagemfinal: o vínculo da futura candidata acadêmica permanece no tópico6 e deve usar o mesmoSHA filmado.

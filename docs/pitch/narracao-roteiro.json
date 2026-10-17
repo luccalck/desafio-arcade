@@ -1,0 +1,278 @@
+{
+  "schema": 2,
+  "source": "narracao-elevenlabs.md",
+  "duration": 86,
+  "cues": [
+    {
+      "id": 1,
+      "start": 0,
+      "end": 2.72,
+      "text": "Aprender Python criando\num jogo de verdade.",
+      "wordStartIndex": 0,
+      "wordEndIndex": 7,
+      "charactersPerSecond": 15.81
+    },
+    {
+      "id": 2,
+      "start": 3.15,
+      "end": 6.01,
+      "text": "No Rota do Código,\numa oficina no navegador",
+      "wordStartIndex": 7,
+      "wordEndIndex": 15,
+      "charactersPerSecond": 15.03
+    },
+    {
+      "id": 3,
+      "start": 6.01,
+      "end": 8.71,
+      "text": "conecta cinco missões\ne um desafio final",
+      "wordStartIndex": 15,
+      "wordEndIndex": 22,
+      "charactersPerSecond": 14.81
+    },
+    {
+      "id": 4,
+      "start": 8.71,
+      "end": 12.56,
+      "text": "a um objetivo:\nconstruir seu próprio minijogo.",
+      "wordStartIndex": 22,
+      "wordEndIndex": 29,
+      "charactersPerSecond": 11.95
+    },
+    {
+      "id": 5,
+      "start": 12.73,
+      "end": 15.28,
+      "text": "Tudo começa\ncom um problema visível:",
+      "wordStartIndex": 29,
+      "wordEndIndex": 35,
+      "charactersPerSecond": 14.12
+    },
+    {
+      "id": 6,
+      "start": 15.63,
+      "end": 17.44,
+      "text": "os controles estão invertidos.",
+      "wordStartIndex": 35,
+      "wordEndIndex": 39,
+      "charactersPerSecond": 16.57
+    },
+    {
+      "id": 7,
+      "start": 17.83,
+      "end": 20.39,
+      "text": "Você testa a regra,\ncompara os resultados",
+      "wordStartIndex": 39,
+      "wordEndIndex": 46,
+      "charactersPerSecond": 16.02
+    },
+    {
+      "id": 8,
+      "start": 20.39,
+      "end": 22.7,
+      "text": "e descobre o que precisa mudar.",
+      "wordStartIndex": 46,
+      "wordEndIndex": 52,
+      "charactersPerSecond": 13.42
+    },
+    {
+      "id": 9,
+      "start": 23.11,
+      "end": 26.38,
+      "text": "Ao corrigir o código,\no efeito aparece no jogo.",
+      "wordStartIndex": 52,
+      "wordEndIndex": 61,
+      "charactersPerSecond": 14.37
+    },
+    {
+      "id": 10,
+      "start": 26.71,
+      "end": 29.26,
+      "text": "As decisões ganham\numa função concreta:",
+      "wordStartIndex": 61,
+      "wordEndIndex": 67,
+      "charactersPerSecond": 15.29
+    },
+    {
+      "id": 11,
+      "start": 29.55,
+      "end": 31.38,
+      "text": "controlar o movimento da nave.",
+      "wordStartIndex": 67,
+      "wordEndIndex": 72,
+      "charactersPerSecond": 16.39
+    },
+    {
+      "id": 12,
+      "start": 31.73,
+      "end": 33.67,
+      "text": "Cada tentativa ajuda a entender",
+      "wordStartIndex": 72,
+      "wordEndIndex": 77,
+      "charactersPerSecond": 15.98
+    },
+    {
+      "id": 13,
+      "start": 33.67,
+      "end": 36.82,
+      "text": "a relação entre o que você escreve\ne o que acontece.",
+      "wordStartIndex": 77,
+      "wordEndIndex": 88,
+      "charactersPerSecond": 16.51
+    },
+    {
+      "id": 14,
+      "start": 37.27,
+      "end": 40.08,
+      "text": "Nas próximas missões,\nvocê calcula movimentos,",
+      "wordStartIndex": 88,
+      "wordEndIndex": 94,
+      "charactersPerSecond": 16.37
+    },
+    {
+      "id": 15,
+      "start": 40.29,
+      "end": 42.87,
+      "text": "detecta colisões,\ndefine a pontuação",
+      "wordStartIndex": 94,
+      "wordEndIndex": 99,
+      "charactersPerSecond": 13.95
+    },
+    {
+      "id": 16,
+      "start": 42.87,
+      "end": 45.82,
+      "text": "e usa repetições\npara criar ondas de objetos.",
+      "wordStartIndex": 99,
+      "wordEndIndex": 107,
+      "charactersPerSecond": 15.25
+    },
+    {
+      "id": 17,
+      "start": 46.29,
+      "end": 49.52,
+      "text": "Cada conceito resolve\numa parte do mesmo projeto.",
+      "wordStartIndex": 107,
+      "wordEndIndex": 115,
+      "charactersPerSecond": 15.17
+    },
+    {
+      "id": 18,
+      "start": 49.87,
+      "end": 53.39,
+      "text": "No desafio final, todas essas\nfunções trabalham juntas.",
+      "wordStartIndex": 115,
+      "wordEndIndex": 123,
+      "charactersPerSecond": 15.62
+    },
+    {
+      "id": 19,
+      "start": 53.39,
+      "end": 56.18,
+      "text": "É hora de colocar\nsua criação à prova,",
+      "wordStartIndex": 123,
+      "wordEndIndex": 131,
+      "charactersPerSecond": 13.62
+    },
+    {
+      "id": 20,
+      "start": 56.31,
+      "end": 60.62,
+      "text": "numa partida com objetivos,\npontuação e feedback imediato.",
+      "wordStartIndex": 131,
+      "wordEndIndex": 139,
+      "charactersPerSecond": 13.46
+    },
+    {
+      "id": 21,
+      "start": 60.97,
+      "end": 63.7,
+      "text": "Depois da vitória,\no projeto vai com você.",
+      "wordStartIndex": 139,
+      "wordEndIndex": 147,
+      "charactersPerSecond": 15.38
+    },
+    {
+      "id": 22,
+      "start": 64.07,
+      "end": 67.94,
+      "text": "Baixe suas funções Python\ne exporte um HTML jogável.",
+      "wordStartIndex": 147,
+      "wordEndIndex": 156,
+      "charactersPerSecond": 13.44
+    },
+    {
+      "id": 23,
+      "start": 68.25,
+      "end": 70.22,
+      "text": "Abra esse minijogo sem conexão,",
+      "wordStartIndex": 156,
+      "wordEndIndex": 161,
+      "charactersPerSecond": 15.74
+    },
+    {
+      "id": 24,
+      "start": 70.43,
+      "end": 71.67,
+      "text": "compartilhe sua criação",
+      "wordStartIndex": 161,
+      "wordEndIndex": 164,
+      "charactersPerSecond": 18.55
+    },
+    {
+      "id": 25,
+      "start": 71.67,
+      "end": 73.88,
+      "text": "e continue explorando\no que construiu.",
+      "wordStartIndex": 164,
+      "wordEndIndex": 170,
+      "charactersPerSecond": 17.19
+    },
+    {
+      "id": 26,
+      "start": 74.41,
+      "end": 75.97,
+      "text": "Nossa proposta é transformar",
+      "wordStartIndex": 170,
+      "wordEndIndex": 174,
+      "charactersPerSecond": 17.95
+    },
+    {
+      "id": 27,
+      "start": 75.97,
+      "end": 79.73,
+      "text": "o primeiro contato com programação\nem uma conquista concreta:",
+      "wordStartIndex": 174,
+      "wordEndIndex": 183,
+      "charactersPerSecond": 16.22
+    },
+    {
+      "id": 28,
+      "start": 79.73,
+      "end": 81.48,
+      "text": "criar algo seu.",
+      "wordStartIndex": 183,
+      "wordEndIndex": 186,
+      "charactersPerSecond": 8.57
+    },
+    {
+      "id": 29,
+      "start": 81.77,
+      "end": 82.9,
+      "text": "Rota do Código.",
+      "wordStartIndex": 186,
+      "wordEndIndex": 189,
+      "charactersPerSecond": 13.27
+    },
+    {
+      "id": 30,
+      "start": 83.25,
+      "end": 85.86,
+      "text": "Experimente, teste e construa.",
+      "wordStartIndex": 189,
+      "wordEndIndex": 193,
+      "charactersPerSecond": 11.49
+    }
+  ],
+  "old17CueScript": "../evidencias/pitch-elevenlabs-2026-10-16/roteiro-piper-anterior.json"
+}

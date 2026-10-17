@@ -54,3 +54,8 @@ Corrigimos uma leitura com codificação padrãoWindows que havia deformado camp
 Tentativa real de solicitar revisãoDaviSouza78:GitHubCLI retornouexit0, mas nenhum request apareceu; API direta retornouHTTP422, informando que o usuário não é colaborador reconhecido para solicitar review. Consulta reviews/requested_reviewers permanece vazia. Não repetimos solicitações nem fabricamos aprovação. Regularizar acesso conforme pendência anterior003/034 e registrar revisão verdadeira antes do merge; não perguntar novamente pelosRAs ou convites já adiados.
 
 Branch padrão atualizada para008 apósCIverde para rastreamento, sem merge/deploy. Registros posteriores acionam CI própria a conferir peloHEAD.
+
+
+## Atualização vigente —16/10/2026
+
+Lucca confirmou em nome do squad a autoria/originalidade/titularidade e o direito de uso das ferramentas/ativos atuais. A pendência de obter essa declaração está encerrada; as tabelas acima descrevem o estado histórico de13/10. [Fonte e limites](confirmacao-squad-2026-10-16.md). Revisão formal do PR e novos materiais continuam sujeitos ao seu próprio escopo; não inventamos assinatura nem inspeção de documento privado.

@@ -1,0 +1,94 @@
+{
+  "method": "Correlação de onda PCM original contra AAC decodificado; amostragem a12kHz para busca±100ms.",
+  "results": [
+    {
+      "cue": 1,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    },
+    {
+      "cue": 2,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    },
+    {
+      "cue": 3,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    },
+    {
+      "cue": 4,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    },
+    {
+      "cue": 5,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    },
+    {
+      "cue": 6,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    },
+    {
+      "cue": 7,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    },
+    {
+      "cue": 8,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    },
+    {
+      "cue": 9,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    },
+    {
+      "cue": 10,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    },
+    {
+      "cue": 11,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    },
+    {
+      "cue": 12,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    },
+    {
+      "cue": 13,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    },
+    {
+      "cue": 14,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    },
+    {
+      "cue": 15,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    },
+    {
+      "cue": 16,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    },
+    {
+      "cue": 17,
+      "lagMilliseconds": 0.0,
+      "within2ms": true
+    }
+  ],
+  "allWithin2ms": true,
+  "maxAbsoluteLagMilliseconds": 0.0,
+  "decodedSamples": 3836928,
+  "sourceSamples": 3838080
+}

@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-17T01:17:12.561405+00:00",
+  "duration": 86,
+  "audioAndVideoStartAtZero": true,
+  "audioAndVideoContainerDuration": 86,
+  "subtitleCues": 30,
+  "referenceWords": 193,
+  "asrWords": 194,
+  "allReferenceWordsMatched": true,
+  "normalizations": [
+    "cinco reconhecido como5",
+    "mini-jogo agrupado como minijogo"
+  ],
+  "bold": true,
+  "fontSize": 52,
+  "maximumLines": 2,
+  "maximumCharactersOnActualLine": 34,
+  "maximumCharactersPerSecond": 18.55,
+  "oldAudioOrSubtitleUsed": false,
+  "audioTimeStretch": 1.0,
+  "gameplayRate": 1.0,
+  "fullDecodeExitCode": 0,
+  "sourceAudioUnaffectedAtDownloads": true,
+  "waveCorrelation": "correlacao-audio.json",
+  "humanReviewClaimed": false,
+  "timingScope": "Tempos por palavra estimados porASR, conferidos textualmente e por limites; não alegamos escuta humana.",
+  "outputEncoderPadding": "AACdecodificado pode incluir16msfinais de quadro; duração declarada de áudio/vídeo86s. A correlação não detectou atraso nos30blocos."
+}
