@@ -50,6 +50,8 @@ def main():
                 actual = response.read()
                 assert response.status == 200, name
             assert digest(actual) == digest(expected), name
+            if name == 'version.json':
+                (out/'versao-producao.json').write_bytes(actual)
             meta['publishedFiles'][name] = {'bytes': len(actual), 'sha256': digest(actual)}
     missions = json.loads(Path('src/content/missions.json').read_text(encoding='utf-8'))['missions']
 

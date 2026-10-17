@@ -17,7 +17,7 @@ Mantemos os mesmos oito tópicos da solicitação de fechamento de Lucca. Não s
 
 | Nº fixo | Tópico | Comprovado | O que impede o fechamento integral |
 |---|---|---|---|
-| 1 | Fechamento documental e revisões | PR32/33/34/35/40 revisados; PR40 integrado; matriz individual com três INT por integrante e vinte PRs revisados; documentação atualizada na branch | PR41 contém correções de interface/alertas e o fechamento documental,com CI no HEAD conferido pelo GitHub. A main exige uma aprovação de outro autor e do último push. Lucca solicitou agora um prompt para outro integrante validar o PR41; preparar conferência e aprovação real do HEAD final. Registrar bloqueio de integração sem remover a proteção ou inventar aprovação. Confirmação coletiva de direitos/ferramentas e recebimento das notificações registrada em16/10 por declaração de Lucca; marcos históricos continuam sem prova documental nova. |
+| 1 | Fechamento documental e revisões | PR32/33/34/35/40 revisados; PR40 integrado; matriz individual com três INT por integrante e vinte PRs revisados; documentação atualizada na branch | PR41 aprovado porDavi no HEADcea6745 e integrado como4678830 em16/10. A candidata1.0.0 consolida o pitch posterior e a versão/notas/GDD/ficha; precisa de CI e revisão próprias antes de integrar, sem reaproveitar a aprovação do41 para arquivos que não estavam no seu diff. Confirmação coletiva de direitos/ferramentas e recebimento das notificações registrada em16/10 por declaração de Lucca; marcos históricos continuam sem prova documental nova. |
 | 6 | Release e pacote | **Release técnica v0.7.0 concluída**, seis anexos públicos conferidos, ZIP29.265bytes, mesmo artefato homologado e publicado, offline validado | Pacote acadêmico final/tag/triagem aguardam candidata aprovada e vínculo do vídeo já produzido à origem de produçãoSUCCESS correspondente,além das entradas finais verdadeiras. Seguir docs/pacote-submissao.md; não gerar pacote manual ou pitch fictício. |
 | 7 | Conferências e relatório | Relatório operacional de10páginas gerado/inspecionado na CI38948501087 e atualizado com o novo ensaio; GDD completo; segurança, autoria, smoke, hashes e responsividade verificados | Atualizar a conferência final somente depois do vídeo/pacote/triagem reais. O PDF posterior tem fonte documental própria; não sobrescrever anexos imutáveis da Release técnica. |
 | 8 | Ficha/TXT, envio e banca | MD persistente com49campos e dados conhecidos; roteiro de apresentação/demonstração/perguntas preparado | **Ficha/TXT por último**, conforme Lucca. Faltam entradas finais verdadeiras, envio/reciboAVA e apresentação dos quatro, incluindo demonstração pedida pelo professor. Datas históricas e prazo oficial não são inventados. |
@@ -34,7 +34,7 @@ Solicitante das sessões:Lucca Castilho Costa. Executores:agentes deIA. Não foi
 
 ### Regra de encerramento
 
-Não chamamos o pacote acadêmico de completo enquanto faltarem vídeo e triagem, nem atribuímos nota ou fator individual. A ausência de nova solicitação de revisão não transforma PR41 em integrado. Quando houver uma evidência real nova, atualizamos o tópico correspondente e seus checks existentes, sem criar outra lista numerada no chat.
+Não chamamos o pacote acadêmico de completo enquanto faltarem vídeo e triagem, nem atribuímos nota ou fator individual. O PR41 está integrado; sua aprovação cobre somente seu diff/HEAD. Atualizações posteriores continuam sujeitas à política de revisão da main. Quando houver uma evidência real nova, atualizamos o tópico correspondente e seus checks existentes, sem criar outra lista numerada no chat.
 
 Reconferência executada em16/10/2026,18:15–18:16UTC: smoke público e campanhas desktop/toque passaram; HML1e3dd3b e produçãoe9dd28c responderamHTTP200. [Resultados e capturas](../evidencias/reconferencia-final-2026-10-16.md). Não houve novo build, promoção, rollback ou modificação de proteção.
 
@@ -48,7 +48,8 @@ INT-01/02/09.
 
 - [x] Aura 67, quatro nomes completos, RAs e papéis registrados em SQUAD/GDD/ficha; Lucca: 26179873.
 - [x] Quatro contas com acesso ativo, conferidas novamente na API; não cobrar convites já aceitos.
-- [ ] Comprovar, se existirem, registros do início informado em 03/10, Git anterior, composição desde 02/10 e prévia de 05/10; não retroagir documentos/tags. Responsável: squad; conferir também 035/037/040.
+- [x] Composição dos quatro desde02/10 confirmada explicitamente porLucca em16/10, como declaração humana atual.
+- [ ] Se existirem, anexar registros do início informado em03/10/Git anterior/prévia05/10; não retroagir commits/tags. Ausência de documento histórico não será mascarada pela confirmação atual.
 
 <a id="passo-002"></a>
 
@@ -137,7 +138,8 @@ INT-06/04.
 
 - [x] ZIP original da produção88d533e validado offline por file://: campanha, 23 casos, vitória, .py/HTML e HTML exportado, sem rede/erros. Tamanho29.000bytes e checksum confirmados.
 - [x] Tagv0.7.0:e9/2, ZIPoriginal baixado do draft passou offline1/1 e hashes14/14 emHML/PRD iguais.
-- [ ] Após publicar de fato a Release, conferir acesso/anexos públicos e novamente na release acadêmica final; sem rebuild entre ambientes.
+- [x] Release técnica v0.7.0 pública e seis anexos conferidos sem autenticação, conforme015/027.
+- [ ] Reconferir anexos/mesmos bytes na release acadêmica1.0.0, sem rebuild entre ambientes.
 
 <a id="passo-011"></a>
 
@@ -311,7 +313,7 @@ INT-08/03/09.
 
 - [x] Dados operacionais agora existem e têm limites documentados; três números DORA não são mais N/D.
 - [x] ARQ-09/I08-28/29/32:baseline deMTTR3s,hipótese de consultas redundantes,cache por instância9c22698,regressões e novo ensaio38953734834:MTTR2,5s/−16,7%,consultas12→2. Comparação e limitações explícitas em melhoria-mttr-2026-10-16.md; sem afirmar melhoria causal sustentada ou MTTR de incidente da produção.
-- [ ] Integrar/publicar a mudança somente após revisão válida do HEAD final do PR41. Esta é a dependência já listada no tópico1,não uma nova tarefa de melhoria.
+- [x] PR41 aprovado porDavi no HEADcea6745 e integrado como4678830. Publicação pela esteira da main em andamento na run38991328634; não confundir merge com deploy concluído.
 
 <a id="passo-029"></a>
 
@@ -490,3 +492,10 @@ Narração16/10: a solicitação posterior acrescentou17falas sintéticas aoMP4,
 
 
 Edição corrente16/10: pitch86s com áudioElevenLabs fornecido pelo solicitante,legendasbold52px,30blocos por palavra,mesma produçãoe9/v0.7.0. As referências anteriores a79,96s/Piperdescrevem edições históricas. [MP4/fontes atuais](../pitch/README.md). O vínculo da candidata final continua no fechamento do pacote,sem reabrir uma tarefa de vídeo ausente.
+
+
+## Atualização de fechamento —16/10/2026
+
+PR41 aprovado porDaviSouza78 em17/10UTC (16/10Brasília), no HEADcea67450b812a179b1db5c85c93c73302739cfb1, integrado como4678830c59917803c0024b63b05695029e900bfe. CI de publicação38991328634 em acompanhamento. A candidata1.0.0 reúne as alterações posteriores do pitch, notas/SemVer e documentação; revisão dessa candidata não é pendência reaparecida do41. O quadro mantém os tópicos1/6/7/8.
+
+Lucca confirmou composição inalterada desde02/10 e solicitou usar o instante atual como PRAZO:2026-10-16T22:35:43-03:00. Configuramos a variable conforme solicitado. Execuções posteriores a esse limite serão corretamente reprovadas pelo validador temporal; não retroagir relógio, não trocar por futuro presumido e não marcar TRIAGEM APROVADA sem execução. Registrar um prazo-limite passado não comprova a entrega.

@@ -36,7 +36,7 @@ def font(size, bold=False):
     return ImageFont.truetype('C:/Windows/Fonts/segoeuib.ttf' if bold else 'C:/Windows/Fonts/segoeui.ttf',size)
 
 
-def frame(path, title, offline=False):
+def frame(path, title, offline=False, production_label=""):
     im = Image.new('RGBA',(1920,1080),BG)
     d = ImageDraw.Draw(im)
     d.rectangle((192,56,1727,919),fill=(0,0,0,0))
@@ -44,7 +44,7 @@ def frame(path, title, offline=False):
     d.line((192,924,1728,924),fill='#244054',width=2)
     d.text((192,10),title.upper(),font=font(26,True),fill=CYAN)
     d.text((1728,12),'ROTA DO CÓDIGO / AURA 67',font=font(21),fill=MUTED,anchor='ra')
-    label = 'HTML EXPORTADO · REDE DESATIVADA' if offline else 'PRODUÇÃO v0.7.0 · e9dd28c'
+    label = 'HTML EXPORTADO · REDE DESATIVADA' if offline else production_label
     d.text((192,1058),label,font=font(15),fill=MUTED)
     d.text((1728,1058),'CAPTURA REAL · VOZ SINTÉTICA FORNECIDA PELO SQUAD',font=font(15),fill=MUTED,anchor='ra')
     im.save(path)
@@ -62,6 +62,13 @@ def main():
     capture = json.loads((capture_dir/'captura.json').read_text(encoding='utf-8'))
     alignment = json.loads(Path(args.alignment).read_text(encoding='utf-8'))
     assert capture['completed'] and not capture['errors'] and alignment['allReferenceWordsMatched']
+    version = json.loads((capture_dir/'versao-producao.json').read_text(encoding='utf-8')) if (capture_dir/'versao-producao.json').exists() else None
+    if version is None:
+        from urllib.request import urlopen
+        with urlopen(capture['captureUrl']+'version.json',timeout=30) as response:
+            version = json.load(response)
+    assert version['sha']==capture['productionSha'], 'Versão não corresponde à captura.'
+    production_label = f"PRODUÇÃO v{version['version']} · {version['sha'][:7]}"
     words = alignment['words']
     audio_info = json.loads(run(['ffprobe','-v','error','-show_format','-show_streams','-of','json',args.audio]).stdout)
     seconds = float(audio_info['format']['duration'])
@@ -114,7 +121,7 @@ def main():
             source = capture['offlineVideo'] if name=='offline' else capture['mainVideo']
             source_duration=float(json.loads(run(['ffprobe','-v','error','-show_entries','format=duration','-of','json',source]).stdout)['format']['duration'])
             assert source_start>=0 and source_start+length<=source_duration
-            frame(image,titles[i],name=='offline')
+            frame(image,titles[i],name=='offline',production_label)
             inputs=['-ss',str(source_start),'-i',source,'-loop','1','-framerate','25','-i',str(image)]
             filters=['-filter_complex','[0:v]setpts=PTS-STARTPTS,fps=25,scale=1536:864:flags=lanczos,pad=1920:1080:192:56:color=0x07111e[game];[game][1:v]overlay=0:0:format=auto,format=yuv420p[v]','-map','[v]']
         print(f'Montando {name}: {start:.2f}–{end:.2f}s',flush=True)
@@ -150,10 +157,10 @@ def main():
          '-c:v','libx264','-preset','fast','-crf','19','-threads','4','-pix_fmt','yuv420p',
          '-c:a','aac','-b:a','192k','-ar','48000','-ac','1','-t',str(duration),'-movflags','+faststart',
          '-metadata','title=Rota do Código — pitch com narração fornecida',
-         '-metadata','comment=Áudio ElevenLabs fornecido pelo squad; legendas bold sincronizadas por palavras; gameplay real v0.7.0/e9dd28c; sem áudio ou legendas das edições anteriores.',args.output])
+         '-metadata',f"comment=Áudio ElevenLabs fornecido pelo squad; legendas bold sincronizadas por palavras; gameplay real v{version['version']}/{version['sha'][:7]}; sem áudio ou legendas das edições anteriores.",args.output])
     report={'schema':1,'duration':duration,'audioOriginalDuration':seconds,'audioOriginalSha256':digest(args.audio),
             'videoSha256':digest(args.output),'videoBytes':Path(args.output).stat().st_size,
-            'productionSha':capture['productionSha'],'timeline':timeline,'audioRate':1.0,'videoRate':1.0,
+            'productionSha':capture['productionSha'],'productionVersion':version['version'],'timeline':timeline,'audioRate':1.0,'videoRate':1.0,
             'subtitleStyle':{'font':'Segoe UI','bold':True,'sizeAt1080p':52,'maxLines':2,'maxCharactersPerLine':36,'playArea':{'x':192,'y':56,'width':1536,'height':864},'outsidePlayArea':True},
             'subtitleCues':len(alignment['cues']),'referenceWords':alignment['referenceWords'],
             'oldNarrationUsed':False,'oldSubtitleUsed':False,'soleAudioSource':'MP3 fornecido pelo solicitante',

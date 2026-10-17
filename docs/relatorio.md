@@ -6,7 +6,7 @@
 
 Construímos uma oficina educativa WEB em que o jogador corrige cinco funções Python, testa diferentes entradas e usa suas regras num minijogo de nave. O produto é estático, responsivo, exportável e jogável offline pelo método documentado. A avaliação de DevOps exige que esse produto atravesse Git, testes, segurança, homologação, aprovação, produção e acompanhamento com rastreabilidade.
 
-**Repositório:** [luccalck/desafio-arcade](https://github.com/luccalck/desafio-arcade). **Estado desta revisão:** a Release técnica v0.7.0 foi publicada pela retomada 38940532129, após aprovação de Lucas no PR40 e merge 1e3dd3b. Os seis anexos públicos foram baixados sem autenticação e conferidos; o ZIP preserva os bytes homologados do SHA e9dd28c. CI da branch 9c22698: 322 testes e 37 E2E; HML da main 1e3dd3b em 178,827 s. Recuperações manual e automática foram medidas em 80,66 s e 17,166 s. O pitch narrado da produção e9 foi produzido (86 s); sua vinculação à candidata final, playtest humano, pacote acadêmico, TXT, declarações históricas e banca continuam pendentes. O PR41 permanece bloqueado: o GitHub recusou autoaprovação pela conta autora. Esta revisão registra o fechamento operacional comprovado, sem declarar a submissão acadêmica concluída.
+**Repositório:** [luccalck/desafio-arcade](https://github.com/luccalck/desafio-arcade). **Estado desta revisão:** a Release técnica v0.7.0 foi publicada pela retomada 38940532129, após aprovação de Lucas no PR40 e merge 1e3dd3b. Os seis anexos públicos foram baixados sem autenticação e conferidos; o ZIP preserva os bytes homologados do SHA e9dd28c. CI da branch 9c22698: 322 testes e 37 E2E; HML da main 1e3dd3b em 178,827 s. Recuperações manual e automática foram medidas em 80,66 s e 17,166 s. O pitch narrado da produção e9 foi produzido (86 s); sua vinculação à candidata final, playtest humano, pacote acadêmico, TXT e banca continuam pendentes; composição desde02/10 confirmada porLucca. Davi aprovou o PR41 no HEADcea6745; integramos o merge4678830 em16/10. Esta atualização prepara a candidata1.0.0, ainda sem tag ou triagem final. Esta revisão registra o fechamento operacional comprovado, sem declarar a submissão acadêmica concluída.
 
 | Integrante | RA | Coordenação | GitHub |
 |---|---|---|---|
@@ -267,7 +267,7 @@ Preservamos autoria, aprovações e recibos reais. A matriz comprova contribuiç
 |---|---|
 |Documentação posterior à publicação|PR34/40 aprovados e integrados; revisar esta atualização e gerar PDF correspondente|
 |Recuperação|Ensaio técnico concluído; demonstração presencial permanece na banca|
-|Melhoria MTTR|Ensaio medido 3 s→2,5 s; integração do PR41 pendente, sem amostra operacional|
+|Melhoria MTTR|Ensaio medido 3 s→2,5 s; PR41 aprovado por Davi e integrado, sem amostra operacional|
 |Vídeo e banca|MP4 real86s/legendas pronto; vínculo à candidata final e critério humano da banca pendentes|
 |Tag/release/submissão|SemVer compatível, assets/manifestos, triagem real na tag final|
 |Ficha, AVA, banca|TXT verdadeiro pelo HTML, recibo, ensaio e defesa dos quatro|

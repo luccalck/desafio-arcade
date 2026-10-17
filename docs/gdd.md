@@ -1,6 +1,6 @@
 # Rota do Código — Game Design Document
 
-Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do documento: **029 — 16/10/2026 (America/Sao_Paulo)**. Mantemos a oficina de jogos aprovada, com desafios Python e produção web validada. Este documento descreve a candidata do código-fonte; sua data de revisão não representa data de submissão, tag ou release final. A versão/SHA do pacote final serão reconferidos após a etapa 035.
+Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do documento: **030 — 16/10/2026 (America/Sao_Paulo)**. Mantemos a oficina de jogos aprovada, com desafios Python e produção web validada. Este documento descreve a candidata do código-fonte; sua data de revisão não representa data de submissão, tag ou release final. A versão/SHA do pacote final serão reconferidos após a etapa 035.
 
 | Identificação | Situação verdadeira |
 |---|---|
@@ -9,11 +9,11 @@ Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do doc
 | Coordenação de Produto | Lucca Castilho Costa; participação dos quatro em todas as áreas |
 | Data de submissão | Ainda não houve submissão final registrada; preencher na entrega real |
 | Repositório | https://github.com/luccalck/desafio-arcade |
-| PR do primeiro ciclo | https://github.com/luccalck/desafio-arcade/pull/2; histórico do primeiro ciclo, sucedido pelas integrações revisadas #32, #33, #34 e #40 |
+| PR do primeiro ciclo | https://github.com/luccalck/desafio-arcade/pull/2; histórico do primeiro ciclo, sucedido pelas integrações revisadas #32, #33, #34, #40 e #41 |
 | Produção pública do jogo | https://luccalck.github.io/desafio-arcade/ |
 | Homologação formal | https://luccalck.github.io/desafio-arcade/hml/ |
 | CI de referência conferida | https://github.com/luccalck/desafio-arcade/actions/runs/38829484114 — CI, HML, produção e sondas pós-produção concluídos com sucesso |
-| Produção / homologação / vídeo / release | Produção0.7.0/e9dd28c; HML atual0.7.0/1e3dd3b; Release técnica v0.7.0 publicada e conferida; vídeo/release acadêmica final pendentes |
+| Produção / homologação / vídeo / release | Produção0.7.0/e9dd28c; HML atual0.7.0/1e3dd3b; Release técnica v0.7.0 publicada e conferida; pitch86s produzido; candidata1.0.0 preparada, publicação/tag/triagem finais ainda não executadas |
 | Release técnica pública | https://github.com/luccalck/desafio-arcade/releases/tag/v0.7.0 — SHAe9, bundle38852413982/2, publicado pela retomada38940532129 após aprovaçãoPR40 |
 | Plataforma | WEB estática responsiva, mesma experiência no computador e celular |
 
@@ -216,7 +216,7 @@ Não incluímos CPF ou assinaturas nos arquivos públicos. A entrega acadêmica 
 
 Implementado e mantido na versão 0.7.0: cinco missões Python/final, editor limitado/diagnósticos, testes públicos, minijogo real, menus/pausa/opções, 700 XP, fontes/vitórias persistentes, HTML exportável. Evidências em [jogo e testes](evidencias/python-pages.md), [baseline técnico](evidencias/baseline-tecnico.md) e [privacidade/segurança](evidencias/seguranca-inicial.md). Uma campanha ativa; versões anteriores recuperáveis no Git.
 
-Restam consolidação da participação verificável dos quatro, revisão deste documento, playtest educativo/acessibilidade humana, ensaio de recuperação incluindo Pages em menos de cinco minutos, ciclo real de alertas, MTTR e melhoria medida, pitch, release, pacote e triagem. Produção, sondas e painel já foram executados e conferidos; três métricas DORA têm uma amostra, enquanto MTTR permanece sem amostra. Novas funções, editor mais amplo, níveis e áudio são **roadmap futuro**. Nenhum resultado educativo ou incidente foi simulado como evidência. Esta revisão não altera a mecânica.
+A participação dos quatro em pelo menos três INT está mapeada em contribuições e PRs revisados. Recuperação real incluindo Pages foi medida: manual80,66s e automática17,166s. Alertas e melhoria de MTTR foram demonstrados em ensaio isolado, mantendo o MTTR operacional sem amostra; não alegamos incidente espontâneo. Pitch86s com narração fornecida e legendas está produzido. A candidata1.0.0 precisa atravessar revisão, publicação, captura correspondente e triagem final. Avaliação educativa humana, demonstração ao vivo e banca permanecem ações presenciais; os testes por IA não as substituem. Novas funções, editor mais amplo, níveis e áudio são **roadmap futuro**. Nenhum resultado educativo ou incidente foi simulado como evidência. Esta revisão não altera a mecânica.
 
 ## Esteira
 
@@ -226,16 +226,19 @@ Repositório: https://github.com/luccalck/desafio-arcade . Main é a branch padr
 
 Na execução [38829484114](https://github.com/luccalck/desafio-arcade/actions/runs/38829484114), a cadeia ci → deploy-hml → aprovação em producao → deploy-prd → monitor-pos-producao terminou com sucesso. Publicamos o mesmo ZIP em `/hml/` e `/releases/88d533e31452036092cd8edef3efa3c0775241dc/`, sem recompilar entre ambientes. O aceite HML registrou 216,414 s desde o merge comprovado; sete hashes HTTP por ambiente coincidiram com o ZIP original. A pipeline escreveu gh-pages e promoveu o ponteiro azul-verde após smoke da candidata; o smoke da raiz também passou. URL: https://luccalck.github.io/desafio-arcade/ . SHA-256 do ZIP: `84105e76a4bd55b5064d466340cb377ea27d49092bae984f65ebdeb7d0d0f937`.
 
-[Configuração GitHub e ambientes](evidencias/configuracao-github.md): homologacao/producao estão limitados à main; produção exige reviewer e não permite bypass administrativo. Aprovação da implantação e revisão do PR são registros distintos. Sessão fixada é coberta por testes; sua preservação entre duas implantações reais ainda exige evidência. Recuperação automática/manual existe no código, mas o ensaio completo com relógio e disponibilidade pública em menos de cinco minutos permanece pendente.
+[Configuração GitHub e ambientes](evidencias/configuracao-github.md): homologacao/producao estão limitados à main; produção exige reviewer e não permite bypass administrativo. Aprovação da implantação e revisão do PR são registros distintos. Sessão entre promoções, versão retirada e storage indisponível foram conferidos em navegador real. Os ensaios de recuperação manual38851754358 e automática38851915984 passaram em80,66s/17,166s, incluindo Pages, hashes, smoke e observação HTTP sem indisponibilidade na janela amostrada. A demonstração presencial na banca é distinta desses ensaios.
 
-O monitor [38830013027](https://github.com/luccalck/desafio-arcade/actions/runs/38830013027) confirmou HTTP 200, latência e SHA em HML/PRD; CSV foi preservado em observabilidade e o painel https://luccalck.github.io/desafio-arcade/status/ foi validado em desktop/celular. Cron configurado em quinze minutos não garante pontualidade observada. Nenhum alerta real abriu/fechou: ciclo JogoForaDoAr/LatenciaAlta e MTTR continuam pendentes. Uma implantação em janela de catorze dias produz frequência de 0,0714286/dia, lead time de 5min27s e CFR 0%; uma amostra não demonstra melhoria causal frente à referência de onze dias.
+O monitor [38830013027](https://github.com/luccalck/desafio-arcade/actions/runs/38830013027) confirmou HTTP 200, latência e SHA em HML/PRD; CSV foi preservado em observabilidade e o painel https://luccalck.github.io/desafio-arcade/status/ foi validado em desktop/celular. Cron configurado em quinze minutos não garante pontualidade observada. Issues de alerta abriram e fecharam em alvo real temporário de ensaio (38/39 e45/46); não são incidentes espontâneos de produção. O MTTR operacional permanece sem amostra. Uma implantação em janela de catorze dias produz frequência de 0,0714286/dia, lead time de 5min27s e CFR 0%; uma amostra não demonstra melhoria causal frente à referência de onze dias.
 
 Pipeline da tag final: submissao/GDD.pdf, LINK_DO_JOGO.txt, build.zip com LEIA-ME, pitch.mp4 com captura real de produção e MANIFESTO.sha256, seguidos de triagem real. O pitch permanece pendente e impede chamar o pacote de final. Vídeo de produção entra antes da tag final; relatório recebe evidências de release/triagem depois dessas execuções. Data/versão/identificação/URLs devem ser reconciliadas com a release real. Prazo original 09/10/2026 até início da aula, horário não confirmado; prévia não retroagida. A publicação formal está validada; pacote final, nota e banca não são declarados aceitos.
 
-Atualização técnica16/10/2026, sem mudança de mecânica: o PR34 acrescenta ensaio isolado de alertas e preparação de recuperação. Issues38/39 abriram/fecharam pelo Actions em alvo temporário do runner, separadas do MTTR de produção; produção88d533e preservada. Recuperação real incluindo Pages ainda requer integração/revisão e execução. [Provas e limites](evidencias/ensaio-operacional-2026-10-16.md).
+Atualização técnica16/10/2026, sem mudança de mecânica: o PR34 acrescenta ensaio isolado de alertas e preparação de recuperação. Issues38/39 abriram/fecharam pelo Actions em alvo temporário do runner, separadas do MTTR de produção; produção88d533e preservada. As execuções posteriores de recuperação constam no registro operacional de16/10; esta preparação não é a evidência da execução. [Provas e limites](evidencias/ensaio-operacional-2026-10-16.md).
 
 
 Atualização de comunicação16/10/2026: [pitch real com voz sintética](pitch/README.md) produzido com79,96s da produçãoe9/v0.7.0,legendas/créditos e fontes preservadas. Não é sessão humana ou comprovação de aprendizado; a futura submissão deve vincular vídeo eSHA da candidata aprovada sem misturar versões.
 
 
 Edição corrente16/10: [pitch atual](pitch/README.md) tem86s,áudioElevenLabs fornecido porLucca e30blocos de legendaBold52px. A edição anterior79,96s permanece histórica. Origemvisuale9/v0.7.0e vínculo acadêmico final preservados.
+
+
+Atualização da candidata1.0.0 em16/10: Davi aprovou o PR41 no HEADcea6745 e o merge4678830 integrou correções de reinício/alertas e melhoria medida. Lucca confirmou que os quatro integrantes atuais permanecem no squad sem alterações desde02/10; fonte e limites no registro de confirmação coletiva. Esta revisão do GDD/pitch e a mudança SemVer compõem uma candidata nova, sujeita à revisão e CI próprias. A gravação e9 permanece identificada como0.7.0, sem atribuição falsa à futura produção1.0.0.
