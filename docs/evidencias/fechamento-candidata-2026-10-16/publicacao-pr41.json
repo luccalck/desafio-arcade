@@ -1,0 +1,78 @@
+{
+  "at": "2026-10-17T01:44:27.822Z",
+  "sha": "4678830c59917803c0024b63b05695029e900bfe",
+  "run": "38991328634",
+  "attempt": "1",
+  "version": "0.7.0",
+  "bundleFiles": 173,
+  "zipBytes": 29312,
+  "zipSha256": "9070a6005df5014df7ece4196eb50e769d0eafd234e51a0b7efab232a5f8cc29",
+  "productionReceiptValid": true,
+  "productionStableAndSevenHashes": true,
+  "hmlHashes": [
+    {
+      "name": "index.html",
+      "sha256": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282",
+      "http": 200
+    },
+    {
+      "name": "style.css",
+      "sha256": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da",
+      "http": 200
+    },
+    {
+      "name": "game.js",
+      "sha256": "3498b1a1996bc0ab8537e5109341f050b1401b94c498272e9ff79353827ec764",
+      "http": 200
+    },
+    {
+      "name": "version.json",
+      "sha256": "1571450f5482398ed7dd5a5eea197bfac43cf2251c07a5722599ecc352eb423e",
+      "http": 200
+    },
+    {
+      "name": "LEIA-ME.txt",
+      "sha256": "81ec550271c1dc9ae2ab7574e4ffdb2a11780eb26ca9579846d8325ae7f102fc",
+      "http": 200
+    },
+    {
+      "name": "LICENSE.txt",
+      "sha256": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb",
+      "http": 200
+    },
+    {
+      "name": "THIRD_PARTY.txt",
+      "sha256": "145cf8fb0b570dba74b1792dedfbc920e557b2bb242c087a22754161ac52fc62",
+      "http": 200
+    }
+  ],
+  "hmlTiming": {
+    "schema": 1,
+    "sha": "4678830c59917803c0024b63b05695029e900bfe",
+    "ref": "refs/heads/main",
+    "run": "38991328634",
+    "runAttempt": "1",
+    "pushReceivedAt": "2026-10-17T01:32:49Z",
+    "e2eFinishedAt": "2026-10-17T01:35:44.423Z",
+    "pushToHmlSeconds": 175.423,
+    "limitSeconds": 900,
+    "withinLimit": true,
+    "eventType": "PullRequestMerge",
+    "proof": {
+      "number": 41,
+      "baseRef": "main",
+      "merged": true,
+      "mergeCommitSha": "4678830c59917803c0024b63b05695029e900bfe",
+      "mergedAt": "2026-10-17T01:32:49Z",
+      "url": "https://github.com/luccalck/desafio-arcade/pull/41"
+    },
+    "source": "GitHub Pull Requests API merged_at; merge_commit_sha/base main conferidos",
+    "apiUrl": "https://github.com/luccalck/desafio-arcade/pull/41",
+    "collectedAt": "2026-10-17T01:35:44.812Z"
+  },
+  "deadlineCheck": {
+    "approved": false,
+    "reason": "Prazo de submissão encerrado."
+  },
+  "academicPackageCreated": false
+}

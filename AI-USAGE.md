@@ -422,3 +422,12 @@ Lucca forneceuMP3dosDownloads e solicitou substituir narração/legendas anterio
 A assistência transcreveu localmente comfaster-whisper1.2.1/modelobase,confrontou193palavras (somente normalizações5/cinco e mini-jogo/minijogo),retomou capturaPlaywrightrealpara trechos mais longos e remontou86s sem acelerar jogo/voz. Criou30legendas52pxbold,≤2linhas/34caracteres efetivos;reconstruiu o vídeo sem áudio/texto anterior. Falha de API na decodificaçãoPyAV19(metadata_errors) foi resolvida porFFmpeg→arrayPCM,sem repetir caminho incompatível. ModelosASR ficam fora doGit e da build; nenhumbackend para jogador.
 
 Validações reais:MP4umáudioAAC,PTSzero/duração86s;fullDecodeexit0,zero saturação;correlação30/30sem deslocamento detectado,coeficientemínimo0,999978. TimestampsASRsão estimativas,não escuta humana. Quadros de correção e encerramento foram renderizados/inspecionados. Não afirmamos playtest humano,aprovação de direitos da conta ou validação acadêmica final. Fontes/manifestos preservam as edições anteriores por commit,sem adulterar sua proveniência.
+
+
+## 16/10/2026 — consolidação da candidata de entrega
+
+A pedido de Lucca, usamos Codex para conferir a aprovação real de Davi no PR41/HEADcea6745, integrar o merge4678830, acompanhar CI/HML/PRD e aprovar o environment com a conta autorizada luccalck. Nenhuma identidade externa foi simulada. Conferimos o bundle original (173 arquivos),14hashesHTTP, recibo de produção, smoke e sondas/DORA. Fontes preservadas em docs/evidencias/fechamento-candidata-2026-10-16.
+
+Consolidamos o pitch posterior e SemVer1.0.0/lockfile/notas/GDD/ficha no PR47. Ajustamos apenas os scripts de autoria para conservar version.json da captura e derivar o rodapé do SHA/versão real em nova edição; não alteramos regras do jogo. A edição existente de86s continua identificada com produção0.7.0/e9. A candidata aguarda revisão humana do seu próprio HEAD antes do merge. Lint/322testes/PDFs/compilação dos scripts passaram localmente, com CI própria do PR.
+
+Conferimos os49controles da ficha original em navegador e preservamos o HTML/hash. O preenchimento é parcial: notas10 são estimativas solicitadas, composição do squad foi confirmada pelo usuário e não fabricamos TRIAGEM APROVADA/tag/TXT. O PRAZO foi configurado com o instante expressamente solicitado, sem alterar relógio ou inventar data futura. Avaliação assistida porIA não é playtest humano/banca. Sem serviço pago novo, dependência em produção ou envio de dados a outro provedor nesta consolidação.

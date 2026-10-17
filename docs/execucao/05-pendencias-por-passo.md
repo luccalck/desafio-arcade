@@ -313,7 +313,7 @@ INT-08/03/09.
 
 - [x] Dados operacionais agora existem e têm limites documentados; três números DORA não são mais N/D.
 - [x] ARQ-09/I08-28/29/32:baseline deMTTR3s,hipótese de consultas redundantes,cache por instância9c22698,regressões e novo ensaio38953734834:MTTR2,5s/−16,7%,consultas12→2. Comparação e limitações explícitas em melhoria-mttr-2026-10-16.md; sem afirmar melhoria causal sustentada ou MTTR de incidente da produção.
-- [x] PR41 aprovado porDavi no HEADcea6745 e integrado como4678830. Publicação pela esteira da main em andamento na run38991328634; não confundir merge com deploy concluído.
+- [x] PR41 aprovado porDavi no HEADcea6745 e integrado como4678830. Publicação pela esteira da main38991328634 SUCCESS, aprovação legítima do environment e smoke/sondas no SHA4678830, com recibos arquivados.
 
 <a id="passo-029"></a>
 
@@ -496,6 +496,6 @@ Edição corrente16/10: pitch86s com áudioElevenLabs fornecido pelo solicitante
 
 ## Atualização de fechamento —16/10/2026
 
-PR41 aprovado porDaviSouza78 em17/10UTC (16/10Brasília), no HEADcea67450b812a179b1db5c85c93c73302739cfb1, integrado como4678830c59917803c0024b63b05695029e900bfe. CI de publicação38991328634 em acompanhamento. A candidata1.0.0 reúne as alterações posteriores do pitch, notas/SemVer e documentação; revisão dessa candidata não é pendência reaparecida do41. O quadro mantém os tópicos1/6/7/8.
+PR41 aprovado porDaviSouza78 em17/10UTC (16/10Brasília), no HEADcea67450b812a179b1db5c85c93c73302739cfb1, integrado como4678830c59917803c0024b63b05695029e900bfe. CI de publicação38991328634 SUCCESS:322testes/37E2E, HML175,423s, PRD/smoke/monitor verdes; ZIP29.312bytes e14hashesHTTP conferidos. A candidata1.0.0 reúne as alterações posteriores do pitch, notas/SemVer e documentação; revisão dessa candidata não é pendência reaparecida do41. O quadro mantém os tópicos1/6/7/8.
 
 Lucca confirmou composição inalterada desde02/10 e solicitou usar o instante atual como PRAZO:2026-10-16T22:35:43-03:00. Configuramos a variable conforme solicitado. Execuções posteriores a esse limite serão corretamente reprovadas pelo validador temporal; não retroagir relógio, não trocar por futuro presumido e não marcar TRIAGEM APROVADA sem execução. Registrar um prazo-limite passado não comprova a entrega.

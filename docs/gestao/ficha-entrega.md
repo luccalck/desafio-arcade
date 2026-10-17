@@ -28,10 +28,10 @@ Links abaixo são reais; conferir SHA/versão da entrega antes do TXT. Não usar
 
 | Campo | Obrigatório | Resposta conhecida | Situação da resposta final |
 |---|---|---|---|
-| lkBuild | Sim | https://luccalck.github.io/desafio-arcade/ | Reconferir versão1.0.0 após publicação |
-| lkHml | Não | https://luccalck.github.io/desafio-arcade/hml/ | Reconferir candidata |
-| lkCI | Sim | | Aguardar execução final verde de produção/tag/triagem; PR41 foi integrado como4678830, run38991328634 em acompanhamento |
-| lkGraf | Sim | https://luccalck.github.io/desafio-arcade/status/ | Revalidar HTTP/versão/DORA na entrega |
+| lkBuild | Sim | https://luccalck.github.io/desafio-arcade/ | Atual0.7.0/4678830, HTTP200 e sete hashes iguais ao ZIP; reconferir1.0.0 após publicação |
+| lkHml | Não | https://luccalck.github.io/desafio-arcade/hml/ | Atual4678830, HML4/4; reconferir candidata1.0.0 |
+| lkCI | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/38991328634 | Publicação4678830 verde, CI322/37, HML175,423s, PRD/smoke/monitor aprovados; substituir pela tag final quando concluída |
+| lkGraf | Sim | https://luccalck.github.io/desafio-arcade/status/ | Sondas38991747764: HML/PRD200; DORA3deploys/14dias, lead time25min29s, CFR33,33%, MTTRnull. Revalidar na entrega |
 | lkVideo | Sim | https://raw.githubusercontent.com/luccalck/desafio-arcade/d497f9a25ce897624ec68dd9bf79aa5763e2a22b/docs/pitch/pitch.mp4 | Edição86s/ElevenLabs, áudio fornecido e30legendas bold; produção filmadae9/0.7.0. Substituir pelo vídeo validado da candidata1.0.0 |
 | lkRel | Sim | https://github.com/luccalck/desafio-arcade/releases/download/v0.7.0/RelatorioTecnico.pdf | PDF técnico anterior, real e público. Substituir pelo relatório acadêmico pós-triagem, sem sobrescrever este asset |
 | lkDrive | Não | | Concurso opcional; sem inscrição autorizada |

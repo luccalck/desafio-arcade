@@ -13,7 +13,7 @@ Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do doc
 | Produção pública do jogo | https://luccalck.github.io/desafio-arcade/ |
 | Homologação formal | https://luccalck.github.io/desafio-arcade/hml/ |
 | CI de referência conferida | https://github.com/luccalck/desafio-arcade/actions/runs/38829484114 — CI, HML, produção e sondas pós-produção concluídos com sucesso |
-| Produção / homologação / vídeo / release | Produção0.7.0/e9dd28c; HML atual0.7.0/1e3dd3b; Release técnica v0.7.0 publicada e conferida; pitch86s produzido; candidata1.0.0 preparada, publicação/tag/triagem finais ainda não executadas |
+| Produção / homologação / vídeo / release | Produção/HML0.7.0/4678830, run38991328634 verde; Release técnica v0.7.0 publicada e conferida; pitch86s produzido; candidata1.0.0 preparada, publicação/tag/triagem finais ainda não executadas |
 | Release técnica pública | https://github.com/luccalck/desafio-arcade/releases/tag/v0.7.0 — SHAe9, bundle38852413982/2, publicado pela retomada38940532129 após aprovaçãoPR40 |
 | Plataforma | WEB estática responsiva, mesma experiência no computador e celular |
 
