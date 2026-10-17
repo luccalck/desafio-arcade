@@ -272,4 +272,4 @@ Preservamos autoria, aprovações e recibos reais. A matriz comprova contribuiç
 |Tag/release/submissão|SemVer compatível, assets/manifestos, triagem real na tag final|
 |Ficha, AVA, banca|TXT verdadeiro pelo HTML, recibo, ensaio e defesa dos quatro|
 
-A ficha TXT segue para o final. O pitch sem voz/rosto/trilha está em docs/pitch/pitch.mp4; ffprobe e decodificação passaram. Lucca confirmou coletivamente direitos/ferramentas/notificações; revisão formal do PR permanece separada. A banca de 10 + 5 + 5 min não ocorreu nesta automação; concurso é opcional. G8 e submissão acadêmica não estão concluídos.
+Pitch sem narração: 79,96 s, legendas e fontes em docs/evidencias/pitch.md. Lucca confirmou direitos e notificações em nome do squad. Vínculo do vídeo, TXT, pacote final e banca dos quatro (10 + 5 + 5 min) seguem pendentes; G8 não foi concluído e o concurso é opcional.
