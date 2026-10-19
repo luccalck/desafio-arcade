@@ -1,6 +1,6 @@
 # Respostas persistentes — ficha de entrega do professor
 
-Atualização:16/10/2026, America/Sao_Paulo. Registro dos49 controles da seção10 do HTML original, sem alterar seus validadores. Não é a fichaTXT. Respostas vazias aguardam evidência final; não copiar como aceites concluídos. Notas10 são a autoavaliação solicitada pelo squad, não nota oficial nem fator individual comprovado.
+Atualização:19/10/2026, America/Sao_Paulo. Registro dos49 controles da seção10 do HTML original, sem alterar seus validadores. Não é a fichaTXT. Respostas vazias aguardam evidência final; não copiar como aceites concluídos. Notas10 são a autoavaliação solicitada pelo squad, não nota oficial nem fator individual comprovado.
 
 Fonte preservada: `C:/Users/user/Downloads/jogo/Avaliação.html`. Dados/papéis em [SQUAD](../../SQUAD.md); pendências atuais em [registro por passo](../execucao/05-pendencias-por-passo.md). Projeto: Rota do Código, jogo WEB estático/offline; o HTML não tem campo próprio para o nome do jogo.
 

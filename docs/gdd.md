@@ -1,6 +1,6 @@
 # Rota do Código — Game Design Document
 
-Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do documento: **030 — 16/10/2026 (America/Sao_Paulo)**. Mantemos a oficina de jogos aprovada, com desafios Python e produção web validada. Este documento descreve a candidata do código-fonte; sua data de revisão não representa data de submissão, tag ou release final. A versão/SHA do pacote final serão reconferidos após a etapa 035.
+Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do documento: **031 — 19/10/2026 (America/Sao_Paulo)**. Mantemos a oficina de jogos aprovada, com desafios Python e produção web validada. Este documento descreve a candidata do código-fonte; sua data de revisão não representa data de submissão, tag ou release final. A versão/SHA do pacote final serão reconferidos após a etapa 035.
 
 | Identificação | Situação verdadeira |
 |---|---|

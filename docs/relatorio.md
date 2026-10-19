@@ -1,6 +1,6 @@
 # Relatório Técnico — Desafio Arcade
 
-**Rota do Código · Squad Aura 67 · Fechamento operacional {{VERSION}} · 16/10/2026**
+**Rota do Código · Squad Aura 67 · Fechamento operacional {{VERSION}} · 19/10/2026**
 
 ## 1. Síntese, identificação e alcance
 

@@ -431,3 +431,8 @@ A pedido de Lucca, usamos Codex para conferir a aprovação real de Davi no PR41
 Consolidamos o pitch posterior e SemVer1.0.0/lockfile/notas/GDD/ficha no PR47. Ajustamos apenas os scripts de autoria para conservar version.json da captura e derivar o rodapé do SHA/versão real em nova edição; não alteramos regras do jogo. A edição existente de86s continua identificada com produção0.7.0/e9. A candidata aguarda revisão humana do seu próprio HEAD antes do merge. Lint/322testes/PDFs/compilação dos scripts passaram localmente, com CI própria do PR.
 
 Conferimos os49controles da ficha original em navegador e preservamos o HTML/hash. O preenchimento é parcial: notas10 são estimativas solicitadas, composição do squad foi confirmada pelo usuário e não fabricamos TRIAGEM APROVADA/tag/TXT. O PRAZO foi configurado com o instante expressamente solicitado, sem alterar relógio ou inventar data futura. Avaliação assistida porIA não é playtest humano/banca. Sem serviço pago novo, dependência em produção ou envio de dados a outro provedor nesta consolidação.
+
+
+## 19/10/2026 — conferência de integridade dos recibos
+
+Na retomada do fechamento, Codex conferiu os manifestos contra os blobs commitados: os63arquivos do pitch estavam íntegros; dois dos13recibos da candidata tiveram CRLF convertido emLF peloGit. Acrescentamos a regra de preservação de bytes dessa pasta em.gitattributes e readicionamos os dois recibos originais, sem editar respostas, horários, resultados ou o manifesto para esconder a divergência. A conferência do índice deve corresponder aos13hashes já registrados. Nenhuma mudança de regra do jogo, vídeo, produção ou relógio. O PR47 continua exigindo revisão real do HEAD atualizado; a aprovação do41 não foi reutilizada.

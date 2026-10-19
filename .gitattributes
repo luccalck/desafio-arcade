@@ -25,3 +25,6 @@ docs/evidencias/narracao-2026-10-16/* -text
 
 *.mp3 binary
 docs/evidencias/pitch-elevenlabs-2026-10-16/* -text
+
+# Recibos do fechamento: preservar os bytes auditados, inclusive CRLF de origem.
+docs/evidencias/fechamento-candidata-2026-10-16/* -text
