@@ -271,4 +271,3 @@ Preservamos autoria, aprovações e recibos reais. A matriz comprova contribuiç
 |Vídeo e banca|MP4 real86s/legendas pronto; vínculo à candidata final e critério humano da banca pendentes|
 |Tag/release/submissão|SemVer compatível, assets/manifestos, triagem real na tag final|
 |Ficha, AVA, banca|TXT verdadeiro pelo HTML, recibo, ensaio e defesa dos quatro|
-
