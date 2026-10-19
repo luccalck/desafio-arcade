@@ -272,4 +272,3 @@ Preservamos autoria, aprovações e recibos reais. A matriz comprova contribuiç
 |Tag/release/submissão|SemVer compatível, assets/manifestos, triagem real na tag final|
 |Ficha, AVA, banca|TXT verdadeiro pelo HTML, recibo, ensaio e defesa dos quatro|
 
-Pitch com voz sintética: 86 s, legendas e fontes em docs/evidencias/pitch.md. Lucca confirmou direitos e notificações em nome do squad. Vínculo do vídeo, TXT, pacote final e banca dos quatro (10 + 5 + 5 min) seguem pendentes; G8 não foi concluído e o concurso é opcional.
