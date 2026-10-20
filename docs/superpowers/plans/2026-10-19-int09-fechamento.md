@@ -15,7 +15,7 @@
 - [x] Reutilizar o artefato12231549745, digest1c3d83df, tagv1.0.0/SHAbe28149; verificar todos os gates originais e a identidade do produto.
 - [x] Executar `scripts/triagem.sh` com ferramentas reais, registrar versão do validador separadamente da versão do produto e arquivar resultado, logs e manifesto.
 - [ ] Integrar com CI verde, dispensa de revisão já autorizada e política restaurada; congelar produção durante mudanças da esteira/documentação.
-- [ ] Atualizar INT-09, pendências, relatório e ficha apenas após resultado real; não gerar TXT.
+- [x] Atualizar fontes de INT-09, pendências, relatório e ficha após resultado real; publicação do PDF e preenchimento visível conferidos no fechamento, sem gerar TXT.
 
 ## Limites
 

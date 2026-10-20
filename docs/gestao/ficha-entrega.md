@@ -33,7 +33,7 @@ Links abaixo são reais; conferir SHA/versão da entrega antes do TXT. Não usar
 | lkCI | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/39346940628 | Main1.0.0 integralmenteverde,325/37,HML173,519s,PRD/smoke/monitor. Tag39348283211:release passou;jobsubmissao falhou no prazo,sem sucesso global |
 | lkGraf | Sim | https://luccalck.github.io/desafio-arcade/status/ | Sondas39348785870:HML/PRD200,1.0.0;4deploys/14dias,lead20min21s,CFR25%,MTTRnull |
 | lkVideo | Sim | https://github.com/luccalck/desafio-arcade/releases/download/midia-pitch-v1.0.0/pitch.mp4 | Edição86s/ElevenLabs,30legendas bold,produção filmada1.0.0/be28149;entrada-video39348162168SUCCESS |
-| lkRel | Sim | https://github.com/luccalck/desafio-arcade/releases/download/midia-pitch-v1.0.0/RelatorioTecnico-pos-execucao.pdf | PDF pós-execução separado dos assets imutáveis; cópia original daCI e proveniência próprias na release de mídia |
+| lkRel | Sim | https://github.com/luccalck/desafio-arcade/releases/download/midia-pitch-v1.0.0/RelatorioTecnico-final.pdf | PDF pós-execução separado dos assets imutáveis; cópia original daCI e proveniência próprias na release de mídia |
 | lkDrive | Não | | Concurso opcional; sem inscrição autorizada |
 
 ## 4. Integráveis —20 controles
@@ -84,7 +84,7 @@ Lucca solicitou expressamente usar o instante atual como limite; configuramos `P
 - [x] Squad/repositório reais disponíveis; URLHTTP/HTTPS.
 - [x] Quatro nomes completos/RAs reais disponíveis.
 - [x] Quatro papéis oficiais distintos disponíveis.
-- [x] Links finais obrigatórios acessíveis:produção/HML/status1.0.0,mainCIverde,pitchvalidado ePDFpós-execução daCI39350798673 com10p/568.292B/hash07198130,HTTP200conferido.
+- [x] Links finais obrigatórios acessíveis:produção/HML/status1.0.0,mainCIverde,pitchvalidado ePDF final atualizado após a retriagem; conferir proveniência da CI e download público antes de gerar TXT.
 - [ ] Dez integráveis efetivamente entregues/evidenciados, confrontados com o checklist integral.
 - [x] Dez autoavaliaçõesA/quatro estimativasB:10, por solicitação; faixa0–10, passo0,5.
 - [x] Declarações conferidas com ressalva expressa da quarta:execução nova do validador sobre o pacote original da tag,não o código antigo nem a execução original.
