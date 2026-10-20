@@ -1,6 +1,6 @@
 # Checklist completo — Desafio Arcade
 
-Referência: `Avaliação.html` do professor, incluindo as dez seções, todas as abas dos integráveis, kit, cronograma, rubrica e campos/validações gerados por JavaScript. Atualização inicial: **12/10/2026**. Este é o checklist principal de acompanhamento; a [auditoria](auditoria-avaliacao.md) explica o diagnóstico. Nenhum INT está integralmente encerrado.
+Referência: `Avaliação.html` do professor, incluindo as dez seções, todas as abas dos integráveis, kit, cronograma, rubrica e campos/validações gerados por JavaScript. Atualização inicial: **12/10/2026**. Este é o checklist principal de acompanhamento; a [auditoria](auditoria-avaliacao.md) explica o diagnóstico. Atualização de fechamento19/10/2026: produto/Release1.0.0 e pacote gerados; revisão final dispensada e triagem temporal reprovada são limites explícitos, sem afirmar encerramento integral dos dezINT.
 
 Execução distribuída em [25MDs — quarenta etapas preservadas](../execucao/00-indice-geral.md), com [mapa dos 313 checks inicialmente abertos](../execucao/02-mapa-checks.md). O mapa conserva o snapshot de planejamento; o estado atualizado permanece neste checklist. Quatro estimativas B foram preenchidas nesta etapa, sem fechar qualquer entrega/INT.
 
@@ -126,7 +126,7 @@ Não há mínimo textual de “três commits na mesma área”. A unidade da exi
 - [x] I02-10 — Estágio da pipeline converte Markdown em GDD.pdf com ferramenta equivalente documentada. E2/E4.
 - [x] I02-11 — PDF arquivado como artefato do build. E2.
 - [x] I02-12 — PDF abre sem erro: pdfinfo passou e páginas foram inspecionadas. E3/E4.
-- [ ] I02-13 — Versão e data do GDD coerentes com a tag de release final. Não existe tag final.
+- [x] I02-13 — Versão1.0.0 e data19/10Brasília coerentes com a tag e PDFs daCI. Revisão documental posterior identificada separadamente. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
 - [ ] I02-14 — AVANÇADO: GDD vivo, atualizado por PR revisado a cada mudança de mecânica. Revisão025 proposta sem mudança de mecânica; PR/aceite humano e mudanças futuras precisam de prova.
 - [x] I02-15 — AVANÇADO: telas do Stitch comprovadas. Desenhos próprios cumprem a alternativa mínima; não declarar que foram feitos no Stitch. Se propor equivalência, validar com professor.
 
@@ -170,7 +170,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I03-15 — deploy-hml formal passou na run38829484114, SHA88d533e, após ci verde, publicando o mesmo ZIP verificado e recibo de sete hashes. [Recibo](../evidencias/operacao-2026-10-15/hml-88-aceite.json).
 - [x] I03-16 — Regressão E2E executada contra HML da main773af17 na run38674290799 (4/4), reconferida em15/10/2026 (4/4 desktop/toque). O job HML completo continuou vermelho na coleta de tempo. [Provas](../evidencias/operacao-2026-10-15.md).
 - [x] I03-17 — deploy-prd executou após HML bem-sucedida e aprovação real do environmentproducao, mantendo reviewer e proteção. [Prova](../evidencias/operacao-2026-10-15/prd-88-recibo.json).
-- [ ] I03-18 — Produção integra publicação de release, estratégia progressiva, smoke e rollback.
+- [x] I03-18 — Produção integra publicação de release, estratégia progressiva, smoke e rollback. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
 - [x] I03-19 — Aprovação real de luccalck no environmentproducao da run38829484114/1 registrada, conforme política existente; sem bypass ou mudança de regras. [API](../evidencias/operacao-2026-10-15/aprovacoes-38829484114.json).
 - [x] I03-20 — Push do merge33 na main disparou CI→HML→PRD→monitor automaticamente; única aprovação manual prevista emproducao. Run38829484114 integralmente verde; release por tag e submissão final continuam separadas. [Jobs](../evidencias/operacao-2026-10-15/jobs-38829484114.json).
 - [x] I03-21 — Push→HML formal medido em216,414s, abaixo de900s, run38829484114/1 SHA88d533e. Fonte merged_at do merge exato e conclusão da regressão, sem usar created_at do run. [Medição](../evidencias/operacao-2026-10-15/hml-88-tempo.json).
@@ -211,13 +211,13 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I05-08 — SBOM disponível como artefato de build. E2.
 - [x] I05-09 — SBOM anexado à Release técnica pública v0.7.0; download anônimo/hash iguais ao bundle38852413982/2. Reconferir nas próximas releases.
 - [x] I05-10 — THIRD_PARTY.md inventaria componentes/ativos atuais e referências/licenças. E6.
-- [ ] I05-11 — CONTÍNUO/FINAL: conferir toda biblioteca, sprite, som, fonte e música, com autor, link e licença, incluindo vídeo.
+- [x] I05-11 — CONTÍNUO/FINAL: conferir toda biblioteca, sprite, som, fonte e música, com autor, link e licença, incluindo vídeo. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
 - [x] I05-12 — LICENSE do projeto versionada. E6.
 - [x] I05-13 — AI-USAGE.md registra ferramentas, finalidades, instruções/resultados aceitos e situação real de revisão. E6.
 - [ ] I05-14 — Completar rastreabilidade por uso: data, ferramenta, integrante real, finalidade, prompt resumido, resultado aceito, revisão humana e commit/PR. Narrativa atual não supre dados humanos/revisões ausentes.
 - [ ] I05-15 — Revisão humana de todo uso relevante de IA, fatos educativos, código e direitos antes do merge.
 - [x] I05-16 — Conferir direito de uso das ferramentas de IA e ativos/licenças compatíveis com uso público; declaração coletiva real.
-- [ ] I05-17 — AI-USAGE coerente com o histórico completo até a tag final; registrar novos usos ao ocorrerem.
+- [x] I05-17 — AI-USAGE coerente com o histórico completo até a tag final; registrar novos usos ao ocorrerem. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
 - [x] I05-18 — Código gerado passa pelos mesmos testes e scanners. E2/E6.
 - [x] I05-19 — AVANÇADO: pre-commit Gitleaks instalado e execução local comprovada. E6/commits documentais anteriores.
 - [x] I05-20 — AVANÇADO: política de vulnerabilidade/segredos documentada em SECURITY.md. E6; revisão coletiva ainda pendente.
@@ -243,7 +243,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I06-14 — Dois builds do mesmo commit têm conteúdo igual, exceto data em version.json. E3/E7; revalidado localmente em14/10/2026 no SHA `92757b6` por `npm run reproducibility`; detalhes/limite de promoção em [release-integridade.md](../evidencias/release-integridade.md).
 - [x] I06-15 — ZIP publicado na Releasev0.7.0 tem hash6517fa79749c4bea490acc36eb197ce19a95617a24a5cba56d2edb40c6fabe9f, idêntico ao bundle38852413982/2 e reciboPRD. Release-verificacao-publica.json preserva comparação.
 - [x] I06-16 — Build atual abaixo de 25 MB. E3; revalidado localmente em14/10/2026: ZIP de29.022 bytes no SHA `92757b6`, ver [release-integridade.md](../evidencias/release-integridade.md). PRD/release final ainda não conferidos em I06-15/17.
-- [ ] I06-17 — CONTÍNUO/FINAL: conferir offline, tamanho, versão, SHA, data e integridade da release final.
+- [x] I06-17 — CONTÍNUO/FINAL: conferir offline, tamanho, versão, SHA, data e integridade da release final. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
 - [x] I06-18 — Escopo técnico v0.7.0:build reprodutível da CI, notas revisadas e SBOM/GDD anexados, seis downloads anônimos conferidos. Não encerra futura release acadêmica.
 
 ## INT-07: Ambientes, entrega e rollback · peso 12% de A
@@ -312,27 +312,27 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 
 ## INT-09: Build pública, pacote e triagem · peso 8% de A
 
-- [ ] I09-01 — Pipeline gera pasta submissao, sem montar pacote final manualmente.
-- [ ] I09-02 — submissao/GDD.pdf gerado pela pipeline e válido.
-- [ ] I09-03 — submissao/LINK_DO_JOGO.txt aponta à URL pública da produção formal.
-- [ ] I09-04 — submissao/build.zip contém o site dist da mesma release promovida.
+- [x] I09-01 — Pipeline gera pasta submissao, sem montar pacote final manualmente. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [x] I09-02 — submissao/GDD.pdf gerado pela pipeline e válido. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [x] I09-03 — submissao/LINK_DO_JOGO.txt aponta à URL pública da produção formal. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [x] I09-04 — submissao/build.zip contém o site dist da mesma release promovida. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
 - [x] I09-05 — Build ZIP atual inclui LEIA-ME.txt com execução offline. E3/E7.
-- [ ] I09-06 — submissao/pitch.mp4 é entrada humana real validada, não gameplay simulado.
-- [ ] I09-07 — submissao/MANIFESTO.sha256 contém hash de cada arquivo do pacote, inclusive GDD, link, ZIP e vídeo.
+- [x] I09-06 — Pitch real da produção1.0.0,86s,áudio fornecido porLucca e captura porIA identificada; entrada-video39348162168 SUCCESS. Não é sessão humana fictícia. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [x] I09-07 — submissao/MANIFESTO.sha256 contém hash de cada arquivo do pacote, inclusive GDD, link, ZIP e vídeo. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
 - [x] I09-08 — Implementar scripts/triagem.sh/job equivalente justificado, integrado à pipeline. 14/10/2026: scripts/triagem.sh suporta argumentos de triagem e está integrado ao job submissao de .github/workflows/esteira.yml e scripts/submissao.mjs; validado em testes unitários/integração.
-- [ ] I09-09 — Triagem confere HTTP 200 da URL pública.
-- [ ] I09-10 — Triagem executa smoke Playwright na URL pública.
-- [ ] I09-11 — Triagem confere PDF abre por pdfinfo.
-- [ ] I09-12 — Triagem confere presença das quatro seções mínimas obrigatórias do GDD.
-- [ ] I09-13 — Triagem mede vídeo com ffprobe e bloqueia duração >90 s.
-- [ ] I09-14 — Triagem descompacta build.zip e confere index.html.
-- [ ] I09-15 — Triagem valida exatamente quatro integrantes reais em SQUAD.md; não contar cabeçalhos como integrantes.
-- [ ] I09-16 — Triagem valida data atual contra prazo corretamente configurado, sem assumir horário 19:00 do exemplo.
-- [ ] I09-17 — Triagem gera/confere manifesto SHA-256 e falha se os arquivos/hash não corresponderem.
-- [ ] I09-18 — Falha em qualquer checagem reprova o job e impede entrega considerada aprovada.
+- [x] I09-09 — Triagem confere HTTP 200 da URL pública. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [x] I09-10 — Triagem executa smoke Playwright na URL pública. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [x] I09-11 — Triagem confere PDF abre por pdfinfo. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [x] I09-12 — Triagem confere presença das quatro seções mínimas obrigatórias do GDD. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [x] I09-13 — Triagem mede vídeo com ffprobe e bloqueia duração >90 s. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [x] I09-14 — Triagem descompacta build.zip e confere index.html. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [x] I09-15 — Triagem valida exatamente quatro integrantes reais em SQUAD.md; não contar cabeçalhos como integrantes. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [x] I09-16 — Validador temporal executado na tag: REPROVOU corretamente oPRAZO antigo mantido por solicitação. Check comprova funcionamento do bloqueio, não entrega dentro do prazo. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [x] I09-17 — Triagem gera/confere manifesto SHA-256 e falha se os arquivos/hash não corresponderem. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [x] I09-18 — Falha em qualquer checagem reprova o job e impede entrega considerada aprovada. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
 - [ ] I09-19 — Rodar triagem na tag v1.0.0 e arquivar resultado TRIAGEM APROVADA verdadeiro.
-- [ ] I09-20 — Arquivar pacote e logs da triagem junto da release/execução correspondente.
-- [ ] I09-21 — AVANÇADO: triagem agendada até a banca. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [x] I09-20 — Pacote original arquivado noActions; log original dojob preservado após detectar falha de arquivamento. Pasta/captura destderr corrigidas no workflow posterior. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [ ] I09-21 — AVANÇADO/CONTÍNUO: cron diário habilitado,origem imutável fixada e dispatch39350305105SUCCESS. Acompanhar horários/atrasos reais até banca;execução manual não comprova recorrência futura.
 - [ ] I09-22 — AVANÇADO: triagem agendada avisa se a URL cair até a banca, com notificação real. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [ ] I09-23 — CONDICIONAL concurso: enviar o mesmo pacote ao Drive do responsável e conferir acesso total ao e-mail do regulamento.
 - [ ] I09-24 — CONDICIONAL concurso: testar compartilhamento em janela anônima com outra conta.
@@ -349,15 +349,15 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I10-08 — Relatório técnico gerado e validado na CI38772751460, SHAee8f2e4:10páginas A4,583.390bytes, pdfinfo/texto aprovados. É relatório da candidata; evidências finais dePRD/release/triagem ainda pendentes. [Prova](../evidencias/operacao-2026-10-15/relatorio-ci-verificacao.json).
 - [x] I10-09 — Relatório apresenta arquitetura da esteira e decisões. docs/relatorio.md Seção 2 (Jobs esteira.yml, pacote-ci, ambientes HML/PRD).
 - [x] I10-10 — Relatório apresenta alternativas descartadas e justificativas. docs/relatorio.md Seção 3 (Descarte de Pyodide, engines pesadas, backend com RCE, nuvem paga).
-- [ ] I10-11 — Relatório contém prints reais com data e links de build/evidência de cada um dos dez INT. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [x] I10-11 — Relatório contém prints reais com data e links de build/evidência de cada um dos dez INT. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md). 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
 - [ ] I10-12 — Relatório contém quatro DORA reais e comparação com a linha de base. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [x] I10-13 — Retrospectiva registra o que funcionou. docs/relatorio.md Seção7.
 - [x] I10-14 — Retrospectiva registra o que não funcionou. docs/relatorio.md Seção7: antecipação de aceites e acúmulo dePRs semintegração.
 - [x] I10-15 — Retrospectiva registra o que mudariam, sustentado por dados. docs/relatorio.md Seção7: revisão de registros/proveniência, com base nos27checkscontestados e bundleauditado; efeitoDORAa medir.
 - [x] I10-16 — Contribuição de cada integrante com links dos PRs reais. docs/relatorio.md Seção7 e docs/contribuicoes.md mapeiam os28PRsautorais e os respectivos estados de revisão.
 - [x] I10-17 — PDF da CI38772751460 baixado, aberto e com10páginas renderizadas/inspecionadas;3imagens e58links. Artefato build acessível no Actions; preservar PDF final na release quando aprovada. [Prova](../evidencias/operacao-2026-10-15/relatorio-ci-verificacao.json).
-- [ ] I10-18 — Acrescentar evidências reais de release/triagem após as execuções; não declarar sucesso antecipado. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
-- [ ] I10-19 — AVANÇADO: narrativa clara do pitch, legendas e retrospectiva honesta com dados.
+- [x] I10-18 — Relatório pós-execução atualizado com Releasev1.0.0/pacote/triagem temporalREPROVADA/vigilância39350305105SUCCESS,sem antecipar aceite acadêmico. PDF original daCI publicado separadamente.
+- [x] I10-19 — AVANÇADO: narrativa clara do pitch, legendas e retrospectiva honesta com dados. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
 
 ## 06 — Kit de partida: fechar as lacunas dos exemplos
 
@@ -380,12 +380,12 @@ Os esqueletos não passam como estão. Nomes/estrutura exemplificados não obrig
 - [x] KIT-15 — Esperar propagação do Pages com tentativa limitada antes dos E2E formais de HML. Conciliação15/10: Espera limitada de propagação executada no deploy-hml formal, seguida de quatro cenários públicos aprovados.
 - [x] KIT-16 — Publicação atual não cancela um deploy em andamento: grupo pages-preview cancel-in-progress false. E2.
 - [x] KIT-17 — Preservar essa proteção de concorrência no deploy/rollout formal; serializar mudanças de ponteiro. Conciliação15/10: Concorrência de publicação/rollout serializada no workflow integrado e usada no deploy formal; ensaio de colisão/falha parcial ainda pertence à recuperação.
-- [ ] KIT-18 — Implementar ações canario/promover/rollback ou equivalentes da estratégia escolhida, com commit ator/motivo (I07).
+- [x] KIT-18 — Implementar ações canario/promover/rollback ou equivalentes da estratégia escolhida, com commit ator/motivo (I07). 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
 - [x] KIT-19 — Carregador formal observado em sessões reais nas promoções/retirada e storage indisponível; sessão-promocao.json e manual-verificacao.json no registro16/10.
-- [ ] KIT-20 — Completar promoção após observação e notificação de falha: TODO do workflow (I03-24/I07).
-- [ ] KIT-21 — Ajustar validação SQUAD ao formato real; corrigir contagem de cabeçalho do exemplo (I09-15).
-- [ ] KIT-22 — Completar validação das seções do PDF que o exemplo triagem não implementa (I09-12).
-- [ ] KIT-23 — Medir duração real, sem truncar segundos para aceitar vídeo acima de 90 s (I09-13).
+- [x] KIT-20 — Completar promoção após observação e notificação de falha: TODO do workflow (I03-24/I07). 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [x] KIT-21 — Ajustar validação SQUAD ao formato real; corrigir contagem de cabeçalho do exemplo (I09-15). 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [x] KIT-22 — Completar validação das seções do PDF que o exemplo triagem não implementa (I09-12). 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
+- [x] KIT-23 — Medir duração real, sem truncar segundos para aceitar vídeo acima de 90 s (I09-13). 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
 - [ ] KIT-24 — Prazo configurado de forma verdadeira; 19:00 é exemplo, não horário confirmado (I09-16).
 - [x] KIT-25 — observabilidade/status/sondas.csv acumulou seis registros reais com cabeçalho data,alvo,codigo,tempo,versao. [Cópia verificada](../evidencias/operacao-2026-10-15/sondas.csv).
 - [x] KIT-26 — Funcionalidades implementadas e executadas em ensaioHTTP real38847296363:latência e autocerramento dasIssues38/39. Limite literal de label do ensaio permanece emI08-31.
@@ -637,3 +637,7 @@ Confirmação coletiva16/10/2026: Lucca declarou “Eu e minha equipe confirmamo
 
 
 Pitch16/10/2026: I10-03/04/06 concluídos tecnicamente para a produção v0.7.0/e9 efetivamente gravada: MP4real79,96s,1920×1080,H.264/25fps,legendas incorporadas,SRT,sem áudio. FFprobe/decodificação integral e12quadros conferidos. [Fontes e limites](../evidencias/pitch.md). Não é playtest humano nem validaçãoentrada-video/triagemfinal: o vínculo da futura candidata acadêmica permanece no tópico6 e deve usar o mesmoSHA filmado.
+
+## Reconciliação de fechamento —19/10/2026
+
+Releasev1.0.0 publicada e seis assets públicos verificados,mesmoZIP30.469B/SHAbe28149. PacoteActions original arquivado,6.712.350B/digest1c3d83df; auditoria técnica emmodo vigilância passou com ressalvas locais de ferramentas documentadas. Triagem formal da tagREPROVADA pelo prazo antigo;I09-19 e declaração4 da ficha permanecem sem aceite. Revisão externa final dispensada pelo proprietário,não realizada;isso não atende retroativamenteI01-11/I05-15 nem criaAPPROVE. Critérios humanos de banca/aprendizagem,histórico sem prova,cronatébanca eMTTRoperacionalnull continuam descritos como limites. Não somar novamente os checks técnicos já concluídos à lista de trabalho.

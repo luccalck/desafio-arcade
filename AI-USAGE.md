@@ -443,3 +443,12 @@ Na retomada do fechamento, Codex conferiu os manifestos contra os blobs commitad
 Lucca determinou reiteradamente dispensar a revisão doPR47 e prosseguir com a entrega. Registramos uma exceção operacional de revisão, sem atribuir aprovação aDavi/Miguel/Lucas. A autorização daRelease exige oSHAexato configurado pelo proprietário, ator proprietário, tagv1.0.0 ePR47 efetivamente integrado; o manifesto conserva approved:false/humanReview:false. As regras normais continuam para qualquer outra versão ouSHA.
 
 A integração administrativa mantémCIobrigatório e restaura os requisitos originais de revisão logo após o merge. A dispensa e seus testes são assistência deIA autorizada pelo responsável, não revisão humana fabricada. O pacote gerado pela pipeline fica disponível mesmo em caso de falha posterior da triagem; a falha não vira sucesso. Mantemos o prazo antigo solicitado e o relógio real. Não prometemos atendimento integral da rubrica nem nota máxima com essa exceção.
+
+
+## 19/10/2026 — entrega 1.0.0 e pitch da produção
+
+Lucca solicitou concluir a publicação sem novas revisões. Codex corrigiu a instabilidade temporal da fixtureZIP, executou a esteira e conferiu seus artefatos originais; a main39346940628/1 passou325testes/37E2E. Capturamos a produçãobe28149 porPlaywright, resolvendo cinco funções Python e validando23casos, vitória e exportações. Não atribuímos essa sessão automatizada a uma pessoa.
+
+Reutilizamos somente o áudioElevenLabs fornecido porLucca e o alinhamento por palavras já documentado. FFmpeg/Pillow montaram86s com30legendas bold; PCMdecodificado idêntico à edição alinhada anterior, sem mudança de velocidade. Nova mídia validada pela entrada-video39348162168/1. Fontes, gravações e recibos estão emdocs/evidencias/entrega-1.0.0-2026-10-19. Atualizamos GDD/README/relatório/ficha/checks com resultados reais, preservando documentos antigos e materiais originais. A dispensa de revisão continua uma exceção, não revisão humana deIA; não declaramos aprendizagem, consentimentos ou nota não observados.
+
+A primeira vigilância39350063593 recuperou e validou o pacote,mas oCLI terminouexit13 com await pendente. Preservamos a falha e ajustamos o runner: execução direta doCLIPlaywright,HTTPcomtimeout,limite240s e mensagens por etapa. Nenhuma checagem foi removida nem houve aceite temporal deentrega.

@@ -4,7 +4,7 @@
 *.mp4 binary
 *.zip binary
 
-# Preservar os bytes dos logs e capturas usados no manifesto de evidências.
+# Preservar os bytes dos logs e capturas usados no manifesto de evidÃªncias.
 docs/evidencias/operacao-2026-10-15/* -text
 
 docs/evidencias/ensaio-2026-10-16/* -text
@@ -28,3 +28,6 @@ docs/evidencias/pitch-elevenlabs-2026-10-16/* -text
 
 # Recibos do fechamento: preservar os bytes auditados, inclusive CRLF de origem.
 docs/evidencias/fechamento-candidata-2026-10-16/* -text
+
+# Evidências da produção 1.0.0: bytes preservados.
+docs/evidencias/entrega-1.0.0-2026-10-19/** -text

@@ -17,14 +17,14 @@ Mantemos os mesmos oito tópicos da solicitação de fechamento de Lucca. Não s
 
 | Nº fixo | Tópico | Comprovado | O que impede o fechamento integral |
 |---|---|---|---|
-| 1 | Fechamento documental e revisões | PR32/33/34/35/40 revisados; PR40 integrado; matriz individual com três INT por integrante e vinte PRs revisados; documentação atualizada na branch | PR41 aprovado porDavi no HEADcea6745 e integrado como4678830 em16/10. A candidata1.0.0 consolida o pitch posterior e a versão/notas/GDD/ficha; precisa de CI e revisão próprias antes de integrar, sem reaproveitar a aprovação do41 para arquivos que não estavam no seu diff. Confirmação coletiva de direitos/ferramentas e recebimento das notificações registrada em16/10 por declaração de Lucca; marcos históricos continuam sem prova documental nova. |
-| 6 | Release e pacote | **Release técnica v0.7.0 concluída**, seis anexos públicos conferidos, ZIP29.265bytes, mesmo artefato homologado e publicado, offline validado | Pacote acadêmico final/tag/triagem aguardam candidata aprovada e vínculo do vídeo já produzido à origem de produçãoSUCCESS correspondente,além das entradas finais verdadeiras. Seguir docs/pacote-submissao.md; não gerar pacote manual ou pitch fictício. |
-| 7 | Conferências e relatório | Relatório operacional de10páginas gerado/inspecionado na CI38948501087 e atualizado com o novo ensaio; GDD completo; segurança, autoria, smoke, hashes e responsividade verificados | Atualizar a conferência final somente depois do vídeo/pacote/triagem reais. O PDF posterior tem fonte documental própria; não sobrescrever anexos imutáveis da Release técnica. |
+| 1 | Fechamento documental e revisões | PR32/33/34/35/40 revisados; PR40 integrado; matriz individual com três INT por integrante e vinte PRs revisados; documentação atualizada na branch | PR47 integrado como be28149 após dispensa expressa de revisão pelo proprietário. Política restaurada; approved:false. CI/HML/PRD/monitor e vídeo atuais concluídos. Não é pendência de revisão a cobrar nem aprovação humana realizada. Confirmação coletiva de direitos/ferramentas e recebimento das notificações registrada em16/10 por declaração de Lucca; marcos históricos continuam sem prova documental nova. |
+| 6 | Release e pacote | **Release técnica v0.7.0 concluída**, seis anexos públicos conferidos, ZIP29.265bytes, mesmo artefato homologado e publicado, offline validado | Tag/Releasev1.0.0 e pacote original concluídos. Entrada-video39348162168 SUCCESS. Triagem formal39348283211 reprovou pelo prazo antigo mantido; auditoria técnica passou e não substitui o aceite temporal. Seguir docs/pacote-submissao.md; não gerar pacote manual ou pitch fictício. |
+| 7 | Conferências e relatório | Relatório operacional de10páginas gerado/inspecionado na CI38948501087 e atualizado com o novo ensaio; GDD completo; segurança, autoria, smoke, hashes e responsividade verificados | Vídeo/pacote/tag/release e triagem real conferidos;relatório pós-execução inclui resultados e ressalvas. PDF original daCI será disponibilizado separadamente dos anexos imutáveis;sem nova revisão externa por ordem do responsável. |
 | 8 | Ficha/TXT, envio e banca | MD persistente com49campos e dados conhecidos; roteiro de apresentação/demonstração/perguntas preparado | **Ficha/TXT por último**, conforme Lucca. Faltam entradas finais verdadeiras, envio/reciboAVA e apresentação dos quatro, incluindo demonstração pedida pelo professor. Datas históricas e prazo oficial não são inventados. |
 
 ### Atividades concluídas — fora da lista de pendências
 
-**Tópico5:** pitch corrente86s,FullHD,H.264/AAC,áudioElevenLabs fornecido,legendasBold52px,créditos e gameplay realv0.7.0/e9; fontes/recibos em ../evidencias/pitch.md. Arquivo final e gravações originais versionados. A vinculação/recaptura se mudar oSHA da candidata final faz parte exclusivamente do tópico6,não de outro vídeo ausente.
+**Tópico5:** pitch corrente86s,FullHD,H.264/AAC,áudioElevenLabs fornecido,legendasBold52px,créditos e gameplay real1.0.0/be28149; fontes/recibos em ../evidencias/pitch.md. Arquivo final e gravações originais versionados. A vinculação/recaptura se mudar oSHA da candidata final faz parte exclusivamente do tópico6,não de outro vídeo ausente.
 
 **Tópico3:** melhoria orientada pelo MTTR do ensaio implementada e medida:3s→2,5s,redução observada16,7%; consultas de labels12→2. Fontes/limites em ../evidencias/melhoria-mttr-2026-10-16.md; operação permanece sem amostra deMTTR. Integração da mudança pertence exclusivamente ao tópico1.
 
@@ -78,7 +78,7 @@ INT-05/08/03.
 
 - [x] Dependabot, Gitleaks bloqueante/pre-commit, audit de produção, SBOM e política de vulnerabilidades implementados e executados; relatórios reais disponíveis.
 - [x] Ausência de coleta pessoal/telemetria documentada e verificada no escopo testado.
-- [ ] Reconferir scanners, licenças e dados privados no material final, incluindo pitch. Responsável: SRE/squad; completar em 008/035/036, sem confundir scanner limpo com garantia de direitos.
+- [x] Conferência técnica final executada: Gitleaks/audit/SBOM da tag, áudio fornecido e inventários conferidos; revisão humana final foi dispensada, sem alegar sua realização. Fontes: entrega-1.0.0-2026-10-19.
 
 <a id="passo-005"></a>
 
@@ -89,7 +89,7 @@ INT-02/01.
 - [x] Quatro RAs completos; todas as doze seções do modelo, identificação, declarações e Esteira presentes. High concept: 804 caracteres.
 - [x] GDD revisão027 convertido automaticamente; PDF de 18 páginas validado por pdfinfo e renderização. O limite de 12 páginas é do relatório técnico.
 - [x] Revisão externa do PR34:Lucas aprovou HEADe9dd28c; mergeacb03d8.
-- [ ] Alinhar GDD à release acadêmica final e rever mudanças posteriores. Responsável: outro integrante/Plataforma; ver 025/035.
+- [x] GDD1.0.0/19p da tag conferido; fonte documental pós-execução atualizada, revisão final dispensada pelo proprietário e registrada como exceção.
 
 <a id="passo-006"></a>
 
@@ -119,7 +119,7 @@ INT-05/02/01.
 - [x] Inventário, THIRD_PARTY, LICENSE, AI-USAGE, scanners e fontes/ativos registrados; revisão do P2 de Miguel efetivamente concluída no PR35 e nova aprovação de Lucas no PR33.
 - [x] Créditos dos seis componentes reconferidos em16/10/2026, com fontes/cabeçalhos/licenças em creditos-reconferidos-2026-10-16.json: @esbuild/win32-x64, @eslint/config-helpers, @rolldown/binding-win32-x64-msvc, argparse, lightningcss e lightningcss-win32-x64-msvc. Conferência técnica assistida autorizada por Lucca; não substitui direitos coletivos.
 - [x] Confirmação coletiva de autoria/originalidade/titularidade, ferramentas e direitos dos materiais atuais declarada por Lucca em nome do squad em16/10. GDD-15/I05-16/DIR-01/14; fonte em ../evidencias/confirmacao-squad-2026-10-16.md.
-- [ ] Inventário do vídeo final e rastreabilidade/revisão dos novos usos e alterações até a entrega (I05-11/14/15/17/21/22); a confirmação não substitui a aprovação formal do HEAD de outro autor.
+- [x] Inventário final/MP3/IA/rastreabilidade atualizados e conferidos. A revisão humana final foi dispensada pelo proprietário; não foi marcada como realizada ou como atendimento integral desse critério.
 
 <a id="passo-009"></a>
 
@@ -139,7 +139,7 @@ INT-06/04.
 - [x] ZIP original da produção88d533e validado offline por file://: campanha, 23 casos, vitória, .py/HTML e HTML exportado, sem rede/erros. Tamanho29.000bytes e checksum confirmados.
 - [x] Tagv0.7.0:e9/2, ZIPoriginal baixado do draft passou offline1/1 e hashes14/14 emHML/PRD iguais.
 - [x] Release técnica v0.7.0 pública e seis anexos conferidos sem autenticação, conforme015/027.
-- [ ] Reconferir anexos/mesmos bytes na release acadêmica1.0.0, sem rebuild entre ambientes.
+- [x] Releasev1.0.0: seis anexos públicosHTTP200,cincohashes do inventário iguais ao bundle173arquivos; mesmoZIPbbb63fde entreHML/PRD/tag/main.
 
 <a id="passo-011"></a>
 
@@ -186,7 +186,7 @@ INT-06/01/07.
 
 - [x] Tag anotada v0.7.0, notas/hash autorizados e cinco anexos+manifesto publicados pela retomada38940532129, após aprovação do PR40. As duas tentativas falhas da origem38852413982 permanecem no histórico.
 - [x] Seis downloads públicos sem autenticação, cinco hashes do inventário e bytes iguais ao bundle38852413982/2; ZIP29.265bytes/hash6517fa79…6fabe9f igual ao recibo de produção. Evidência:fechamento-independente-2026-10-16/release-verificacao-publica.json.
-- [ ] Repetir o fechamento para a tag acadêmica final em035/036; v0.7.0 não substitui v1.0.0, vídeo ou triagem.
+- [x] Tagv1.0.0 eRelease públicas concluídas pela run39348283211/1,com mesmos bytes. Pacote gerado; triagem temporal reprovada registrada separadamente em036.
 
 <a id="passo-016"></a>
 
@@ -214,7 +214,7 @@ INT-10/05/02.
 INT-07/04.
 
 - [x] Loader, rollout e azul-verde formais executados. I07-15/KIT-19: sessão mantida entre promoções, versão retirada redirecionada à baseline e storage indisponível conferidos em navegador real; sessao-promocao.json e manual-verificacao.json no registro operacional16/10.
-- [ ] Reconferir estratégia/sessão/versão da entrega acadêmica final no freeze; não refazer os ensaios antigos por falta de registro.
+- [x] Freeze1.0.0/be28149,azul-verde/loader/imutabilidade e smokes da candidata/raiz conferidos; histórico dos ensaios de sessão preservado.
 
 <a id="passo-019"></a>
 
@@ -283,7 +283,7 @@ INT-02/10/06.
 
 - [x] GDD completo revisado, RAs preenchidos, fontes originais disponíveis no fechamento e PDF automático validado. Não cobrar originais indisponíveis nos computadores antigos.
 - [x] Lucas aprovou atualização do PR34 no HEADe9dd28c, incluindo GDD/PDF; mergeacb03d8.
-- [ ] Reconciliar versão/data/URLs e direitos na release acadêmica final; revisar documentos alterados depois da aprovação.
+- [x] Versão/data/URLs/fontes da entrega1.0.0 reconciliadas após execução; GDD e relatório mantêm resultados e limites. Revisão externa final dispensada, semAPPROVE fictício.
 
 <a id="passo-026"></a>
 
@@ -303,7 +303,7 @@ INT-07/04/08.
 INT-06/07/03.
 
 - [x] I06-15:GitHub Release técnica v0.7.0 publicada, ZIP/checksum/SBOM/GDD/PDF/manifesto baixados sem autenticação e iguais ao bundle original38852413982/2. ZIP29.265bytes e hash iguais à produção; offline1/1 do mesmo ZIP preservado.
-- [ ] I06-17/GDD-14:conferir versão/SHA/data/UI/GDD/direitos e arquivos públicos da release acadêmica final; não chamar o fechamento técnico0.7.0 de entrega final.
+- [x] I06-17/GDD-14:versão1.0.0/SHAbe28149/dataUTC20-local19/UI/GDD19p/arquivos públicos conferidos;vídeo e licenças com origem registrada. Sem declaração de revisão humana fictícia.
 
 <a id="passo-028"></a>
 
@@ -322,7 +322,7 @@ INT-08/03/09.
 INT-10/09/05.
 
 - [x] Gameplay real de produçãov0.7.0/e9 capturado e MP4produzido:79,96s,ffprobe/decodificação exit0,legendas,proposta/conceito/diferencial,créditos e ausência de rosto/voz/trilha. Fontes:../pitch/pitch.mp4 e../evidencias/pitch.md.
-- [ ] Validar entrada-video.yml contra a candidata acadêmica final com origemSUCCESS e mesmoSHA/ZIP filmados. A atual produçãoe9tem run globalfailure; não relaxar validador nem atribuir captura a outroSHA. Reexecutar o script de captura após nova candidata se necessário; dependência do tópico6.
+- [x] Entrada-video39348162168/1 SUCCESS: captura real be28149, origem39346940628/1 SUCCESS,mesmoZIPbbb63fde,MP4de86s/SHA643425bd; não há mais dependência de recaptura.
 
 <a id="passo-030"></a>
 
@@ -340,7 +340,7 @@ INT-09/04.
 INT-09/06/03.
 
 - [x] Empacotador e proveniência implementados e testados.
-- [ ] Gerar submissao/ pela pipeline com GDD.pdf, LINK_DO_JOGO.txt, build.zip contendoLEIA-ME.txt, pitch.mp4 e MANIFESTO.sha256. Depende de vídeo real/tag/produção e prazo verificados. Nenhum pacote final manual ou recompile entre ambientes.
+- [x] submissao/ gerada pela run39348283211/1,artefato12231549745: GDD.pdf,LINK_DO_JOGO.txt,build.zip comLEIA-ME.txt,pitch.mp4,MANIFESTO.sha256 e proveniência. OriginalActionsZIP6.712.350bytes,digest1c3d83df conferido; sem montagem manual.
 
 <a id="passo-032"></a>
 
@@ -349,7 +349,8 @@ INT-09/06/03.
 INT-09/08.
 
 - [x] Workflow de vigilância/agendamento e notificação implementado e testado na main.
-- [ ] I09-21/22: habilitar quando pacote real existir e comprovar execução recorrente até banca, relatório/atrasos e notificação real em falha controlada ou efetiva. Flags finais continuam desabilitadas; cron versionado não comprova vigilância executada.
+- [x] Vigilância habilitada comSHA/run/tentativa/tag/ID/digest fixados;dispatch39350305105 SUCCESS conferiu pacote/seções/vídeo/manifesto/smoke,formalDeliveryApproved:false. Cron diário e alerta em falha configurados. Tentativa39350063593 falhou e foi preservada;runner corrigido.
+- [ ] CONTÍNUO I09-21/22: arquivar execuções agendadas futuras até a banca e recepção real de notificação de vigilância;dispatch aprovado não comprova cron futuro ou alerta que não foi emitido. Sem inventar incidente para obter medição.
 
 <a id="passo-033"></a>
 
@@ -358,7 +359,7 @@ INT-09/08.
 INT-10/02/08/04.
 
 - [x] Relatório completo de10páginas do PR40 aprovado porLucas, gerado pelaCI e baixado/inspecionado; versão anterior da origem e9 publicada como anexo técnico sem sobrescrita.
-- [ ] Gerar/validar/revisar a atualização documental posterior à publicação, com20PRs revisados, matriz individual, Release real e DORA atual. O relatório acadêmico final deve receber resultados de vídeo/triagem/playtest quando existirem; não mudar os bytes da Release antiga.
+- [x] Relatório pós-execução com dez seções,20PRs revisados/matriz real,Releasev1.0.0,DORA atual,pitch e triagem temporalreprovada. Geração automática final naCI39350798673/1 SUCCESS,SHA945e0b3,10p/568.292B,PDF públicoSHA07198130. Fonte inclui vigilância39350305105;proveniência própria preservada. Revisão final dispensada,semAPPROVE;assets antigos preservados.
 
 <a id="passo-034"></a>
 
@@ -368,7 +369,7 @@ INT-04/06/07.
 
 - [x] Candidata formal:299 testes/36E2E, cobertura acima da meta, HML4/4,smoke/ZIPoffline e acessos verificados; revisão32/33 e integrações feitas.
 - [x] PR34 aprovado porLucas no HEADe9dd28c com CIverde; integradoacb03d8.
-- [ ] Revalidar novas alterações/falhas e aceite da versão final; playtest humano/direitos permanecem independentes.
+- [x] Versão final1.0.0 revalidada:325testes/37E2E,HML4/4,smokes,monitores,scanners e173arquivos. Avaliação humana/banca segue distinta.
 
 <a id="passo-035"></a>
 
@@ -378,7 +379,7 @@ INT-01/03/06/07/09.
 
 - [x] PR40 aprovado porLucas5543614682 no HEADa190215 e merge1e3dd3b; main318testes/36E2E/HML178,827s, com PRDskipped intencionalmente para preservar e9.
 - [x] Release técnica v0.7.0 publicada pela retomada38940532129, aprovação real emproducao, sem build/deploy; seis anexos públicos e hashes conferidos.
-- [ ] Tag acadêmicav1.0.0:versão/package/lock/GDD/notas revisados, candidata filmada, pacote e triagem reais. Não criar v0.1.0 retroativa ou moverv0.7.0; o marco histórico sem prova continua001/037/040.
+- [x] Tag anotadav1.0.0/Release/pacote gerados pela pipeline,versão1.0.0/SHAbe28149,data e vídeo conferidos. Triagem foi executada eREPROVADA temporalmente,registrada em036;sem moverv0.7.0 ou criar marco histórico retroativo.
 
 <a id="passo-036"></a>
 
@@ -387,7 +388,7 @@ INT-01/03/06/07/09.
 INT-09/05/07/03.
 
 - [x] RAs completos e produção disponível; scanners sem achados no escopo executado, publicação formal somente pela pipeline.
-- [ ] Executar triagem real na tag v1.0.0 e arquivar TRIAGEM APROVADA/logs/pacote/manifesto. Conferir PRAZO verdadeiro, todos os arquivos abrindo, integridade e licenças; nenhum aceite final enquanto pitch e entradas reais faltarem.
+- [ ] Obter aceite temporal verdadeiro da entrega: triagem na tag1.0.0 já executada eREPROVADA peloPRAZO antigo mantido. Pacote,manifesto,vídeo e logs existem e a auditoria técnica passou. Não háTRIAGEMAPROVADA deentrega a declarar.
 
 <a id="passo-037"></a>
 
@@ -406,7 +407,7 @@ INT-10/09/01.
 INT-04/06/07/01.
 
 - [x] Produção/HML/painel públicos e funcionais; painel não está mais404.
-- [ ] Após tag final, conferir URLs e arquivos da versão entregue, aplicar freeze com apenasfix por PR/CI e manter acesso. Smoke operacional atual não prova uma tag ainda inexistente; manter roteiro de contingência/offline e ensaio da banca.
+- [x] Tagv1.0.0 conferida com seis downloads públicos/mesmos bytes; jogo,HML,painel e freezebe28149 reais. Atualizações documentais não promovem outra build. Demonstração ao vivo continua039.
 
 <a id="passo-039"></a>
 
@@ -504,3 +505,15 @@ Lucca confirmou composição inalterada desde02/10 e solicitou usar o instante a
 ## Orientação posterior — dispensa de revisão do fechamento
 
 Em19/10, o proprietário determinou expressamente prosseguir sem a revisão doPR47. Essa tarefa deixou de ser cobrada como ação humana pendente a pedido do responsável, mas não foi marcada como revisão realizada nem como atendimento integral ao critério do professor. Preparamos exceção de proveniência restrita aoSHAautorizado/tagv1.0.0/PR47, comapproved:false e humanReview:false. Testes/CI/proteção restaurada após integração/aprovação doenvironment/hashes permanecem. O pacote será preservado mesmo se a triagem falhar; o prazo antigo e a data real não foram alterados. Atualizar aceites técnicos após execução, sem afirmar TRIAGEMAPROVADA se houver reprovação temporal.
+
+## Fechamento executado —19/10/2026
+
+Releasev1.0.0 pública pela pipeline39348283211/1;pacote gerado e recuperado doActions,artefato12231549745/digest1c3d83df. Todos os hashes daRelease/ZIP/vídeo conferidos, bundle173arquivos e auditoria técnica do pacote passaram. Main39346940628/1 SUCCESS,325testes/37E2E;HML173,519s,tagHML200,367s;PRD/smoke/monitor aprovados. Pitch validado39348162168.
+
+A triagem formal da tag foi executada e REPROVADA peloPRAZO antigo. O log original preserva também erro de pasta reports/ausente; corrigimos seu arquivamento posterior sem alterar a conclusão histórica. O pacote existe e é íntegro,mas não existe TRIAGEMAPROVADA deentrega. A revisão final foi dispensada pelo proprietário,sem criarAPPROVE. Não reabrir essas duas decisões como novas solicitações no chat nem marcar os critérios acadêmicos como se fossem cumpridos.
+
+Tópicos ativos preservados:6(aceite temporal) e8(fichaTXT/AVA/banca). Tópico7 documental foi preparado/validado para publicação;proveniênciaPDF acompanha o arquivo. Coleta futura contínua permanece identificada como tal. Os checks humanos e históricos que continuam abertos abaixo indicam limites reais,não tarefas automatizadas concluídas. O vídeo e os anexos daRelease não estão ausentes.
+
+Vigilância39350305105 concluídaSUCCESS em19/10,com pacote original e smoke público. Não altera o resultado formal deentrega. Relatório pós-execução e ficha persistente recebem essa distinção;semTXTgerado.
+
+Relatório pós-execução final:CI39350798673/1 SUCCESS,fonte945e0b3,10p/568.292bytes,SHA-25607198130b2526101293260822671663ab7e769d4a64b89a6b3bdf04573d5e701. Download públicoHTTP200 conferido;anexos imutáveis daReleasev1.0.0 preservados. Links finais disponíveis;declaração4 temporal continua falsa.

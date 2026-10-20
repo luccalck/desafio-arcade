@@ -1,0 +1,94 @@
+{
+  "schema": 2,
+  "sourceSha": "be281493c7699468f991a2333df074ec76691b3d",
+  "runId": "39348283211",
+  "runAttempt": "1",
+  "version": "1.0.0",
+  "build": "2026-10-20T00:19:17.000Z",
+  "zipSha256": "bbb63fde0a8808e7b9765b76fd5900b955534d5e6083202d0a1cfe85c27f5b9d",
+  "siteUrl": "https://luccalck.github.io/desafio-arcade/",
+  "createdAt": "2026-10-20T00:40:24.328Z",
+  "ciManifestSha256": "9348ab7a3d54bda202971d1549b939c4d6114961088c9caa6c5965fe2e25e978",
+  "video": {
+    "schema": 1,
+    "productionSha": "be281493c7699468f991a2333df074ec76691b3d",
+    "version": "1.0.0",
+    "build": "2026-10-20T00:19:17.000Z",
+    "zipSha256": "bbb63fde0a8808e7b9765b76fd5900b955534d5e6083202d0a1cfe85c27f5b9d",
+    "siteUrl": "https://luccalck.github.io/desafio-arcade/",
+    "sha256": "643425bde35e1da9ed594a54e05b3d63ff637f7fada446798d58f9fad72c5c90",
+    "bytes": 5502923,
+    "duration": 86,
+    "rightsConfirmed": true,
+    "captionsConfirmed": true,
+    "origin": {
+      "type": "asset",
+      "id": "657824292"
+    },
+    "production": {
+      "run": "39346940628",
+      "runAttempt": "1"
+    },
+    "validation": {
+      "repository": "luccalck/desafio-arcade",
+      "workflow": "entrada-video.yml",
+      "run": "39348162168",
+      "runAttempt": "1",
+      "headSha": "be281493c7699468f991a2333df074ec76691b3d",
+      "actor": "luccalck",
+      "at": "2026-10-20T00:32:21.080Z"
+    }
+  },
+  "production": {
+    "schema": 1,
+    "sha": "be281493c7699468f991a2333df074ec76691b3d",
+    "sourceSha": "be281493c7699468f991a2333df074ec76691b3d",
+    "actor": "luccalck",
+    "run": "39348283211",
+    "runAttempt": "1",
+    "zipSha256": "bbb63fde0a8808e7b9765b76fd5900b955534d5e6083202d0a1cfe85c27f5b9d",
+    "revalidation": true,
+    "state": "publicada",
+    "approval": {
+      "environment": "producao",
+      "environmentId": 23679240392,
+      "reviewer": "luccalck",
+      "state": "approved"
+    },
+    "observedAt": "2026-10-20T00:37:39.216Z"
+  },
+  "smoke": {
+    "date": "2026-10-20T00:37:38.799Z",
+    "run": "39348283211",
+    "runAttempt": "1",
+    "mode": "root",
+    "url": "https://luccalck.github.io/desafio-arcade/",
+    "release": "https://luccalck.github.io/desafio-arcade/releases/be281493c7699468f991a2333df074ec76691b3d/",
+    "expectedSha": "be281493c7699468f991a2333df074ec76691b3d",
+    "version": {
+      "version": "1.0.0",
+      "sha": "be281493c7699468f991a2333df074ec76691b3d",
+      "build": "2026-10-20T00:19:17.000Z"
+    },
+    "passed": true,
+    "errors": []
+  },
+  "files": {
+    "GDD.pdf": {
+      "sha256": "f9240dcdeccaca35f4aca9a48bdc879cf0bd301987b2d8173a5a2bcdec653494",
+      "bytes": 1351004
+    },
+    "LINK_DO_JOGO.txt": {
+      "sha256": "7a8d721d92709da5f115f844c236aad7e6f1e3d72841f9aecaac6883d4ba0f88",
+      "bytes": 43
+    },
+    "build.zip": {
+      "sha256": "bbb63fde0a8808e7b9765b76fd5900b955534d5e6083202d0a1cfe85c27f5b9d",
+      "bytes": 30469
+    },
+    "pitch.mp4": {
+      "sha256": "643425bde35e1da9ed594a54e05b3d63ff637f7fada446798d58f9fad72c5c90",
+      "bytes": 5502923
+    }
+  }
+}

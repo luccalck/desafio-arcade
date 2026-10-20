@@ -1,8 +1,12 @@
 # Pitch — Rota do Código
 
+**Edição de entrega 1.0.0:** [MP4](pitch-v1.0.0.mp4), [SRT](pitch-v1.0.0.srt) e [proveniência validada](../evidencias/entrega-1.0.0-2026-10-19/video-provenance.json). Captura real de be28149, produção39346940628/1; entrada-video39348162168/1 SUCCESS. Vídeo86s,5.502.923bytes,SHA643425bd. A edição anterior abaixo permanece como histórico identificado.
+
+## Histórico da edição 0.7.0
+
 [Assistir ou baixar o MP4](pitch.mp4) · [Legendas SRT](pitch-elevenlabs.srt) · [Texto da narração](narracao-elevenlabs.md) · [Proveniência](pitch-producao.json)
 
-**Versão atual:86segundos,FullHD,H.264/AAC.** Usa o áudioElevenLabs fornecido porLucca, na velocidade original. A narraçãoPiper e as legendas da edição anterior foram retiradas da montagem corrente.
+**Edição histórica:86segundos,FullHD,H.264/AAC.** Usa o áudioElevenLabs fornecido porLucca, na velocidade original. A narraçãoPiper e as legendas da edição anterior foram retiradas da montagem corrente.
 
 As legendas são brancas,em negrito,com52px,até duas linhas e34caracteres efetivos porlinha. Trinta blocos acompanham193palavras,confrontadas com a transcrição real doMP3. O texto fica fora da área do jogo. [Sincronização e apresentação](narracao.md).
 
@@ -20,6 +24,6 @@ python scripts/pitch/editar-elevenlabs.py --capture docs/evidencias/pitch-eleven
 
 O script usa SegoeUI instalada noWindows; nenhumTTFé distribuído. Os vídeos de origem são reais. Versões,fontes ouencoders diferentes podem mudar os bytes da reedição; o manifesto comprova os arquivos entregues.
 
-## Submissão acadêmica
+## Situação histórica antes da recaptura 1.0.0
 
 Este vídeo continua vinculado à produçãoe9/v0.7.0filmada. A validaçãoentrada-video.yml exige uma origem globalmenteSUCCESS, enquanto a run que publicou e9tem conclusãofailure. O gate não foi alterado. A candidata final aprovada deverá usar vídeo do mesmoSHA/ZIP; recapturar se a versão mudar. Não declaramos pacote acadêmico completo ou triagem final por existir esteMP4.

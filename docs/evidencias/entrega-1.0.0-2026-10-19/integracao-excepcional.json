@@ -1,0 +1,28 @@
+{
+  "startedAt": "2026-10-20T00:19:14.421826+00:00",
+  "head": "a562e8cad201b49fde5e4627294a32a15c4a4282",
+  "reason": "Dispensa expressa de revisão pelo proprietário; não equivale a aprovação humana.",
+  "originalReviewPolicy": {
+    "dismiss_stale_reviews": true,
+    "require_code_owner_reviews": false,
+    "require_last_push_approval": true,
+    "required_approving_review_count": 1
+  },
+  "humanApproved": false,
+  "mergeOutput": "",
+  "restoredPolicy": {
+    "dismiss_stale_reviews": true,
+    "require_code_owner_reviews": false,
+    "require_last_push_approval": true,
+    "required_approving_review_count": 1
+  },
+  "policyRestored": true,
+  "finishedAt": "2026-10-20T00:19:20.629288+00:00",
+  "merged": {
+    "mergeCommit": {
+      "oid": "be281493c7699468f991a2333df074ec76691b3d"
+    },
+    "mergedAt": "2026-10-20T00:19:18Z",
+    "state": "MERGED"
+  }
+}

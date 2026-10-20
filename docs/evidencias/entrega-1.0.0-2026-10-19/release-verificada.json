@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-20T00:40:04.711544+00:00",
+  "release": "v1.0.0",
+  "publicWithoutAuthentication": true,
+  "assets": [
+    {
+      "name": "build.zip",
+      "http": 200,
+      "bytes": 30469,
+      "sha256": "bbb63fde0a8808e7b9765b76fd5900b955534d5e6083202d0a1cfe85c27f5b9d",
+      "url": "https://github.com/luccalck/desafio-arcade/releases/download/v1.0.0/build.zip"
+    },
+    {
+      "name": "build.zip.sha256",
+      "http": 200,
+      "bytes": 76,
+      "sha256": "0a0d6fe5e86799cd731b7be5cc70b27b6a5e47cc13466a9f93a5378ab433f0b5",
+      "url": "https://github.com/luccalck/desafio-arcade/releases/download/v1.0.0/build.zip.sha256"
+    },
+    {
+      "name": "GDD.pdf",
+      "http": 200,
+      "bytes": 1351004,
+      "sha256": "f9240dcdeccaca35f4aca9a48bdc879cf0bd301987b2d8173a5a2bcdec653494",
+      "url": "https://github.com/luccalck/desafio-arcade/releases/download/v1.0.0/GDD.pdf"
+    },
+    {
+      "name": "RelatorioTecnico.pdf",
+      "http": 200,
+      "bytes": 565174,
+      "sha256": "b68ebb80e8cd1f4649ef8f58baa52c90053b16bc67e68694ce20f42793a5098b",
+      "url": "https://github.com/luccalck/desafio-arcade/releases/download/v1.0.0/RelatorioTecnico.pdf"
+    },
+    {
+      "name": "release-manifest.json",
+      "http": 200,
+      "bytes": 1419,
+      "sha256": "81954458c7d71d23b06dd9aa7e0567ea895216191bf08f9b273dd65ed93e7e1e",
+      "url": "https://github.com/luccalck/desafio-arcade/releases/download/v1.0.0/release-manifest.json"
+    },
+    {
+      "name": "sbom.cdx.json",
+      "http": 200,
+      "bytes": 206452,
+      "sha256": "12ce82f7fae2e7088276f9fff2c80a607f5e0753d2a575ada3283a5db4a6c85f",
+      "url": "https://github.com/luccalck/desafio-arcade/releases/download/v1.0.0/sbom.cdx.json"
+    }
+  ],
+  "allInventoryHashesMatch": true,
+  "sameBytesAsTagBundle": true,
+  "review": {
+    "approved": false,
+    "approvals": [],
+    "exception": {
+      "kind": "owner-waiver",
+      "authorized": true,
+      "humanReview": false,
+      "owner": "luccalck",
+      "actor": "luccalck",
+      "sha": "be281493c7699468f991a2333df074ec76691b3d",
+      "tag": "v1.0.0",
+      "pullRequest": 47,
+      "reason": "Dispensa expressa de revisão pelo proprietário em19/10/2026; não equivale a revisão humana."
+    }
+  }
+}
