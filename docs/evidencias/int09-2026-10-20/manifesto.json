@@ -1,0 +1,130 @@
+{
+  "schema": 1,
+  "files": [
+    {
+      "path": "agendamento-real/pages-e2e/data/532ca64893dcf233dd1994a044d24fa7b43bb346.json",
+      "bytes": 480,
+      "sha256": "2a3f427e0a436e9db7246c47d824b394ab5afe899fa9892cfade43d8b07530fe"
+    },
+    {
+      "path": "agendamento-real/pages-e2e/data/9c937e8b077e03339d3d19c292198075cb81c804.png",
+      "bytes": 185633,
+      "sha256": "9d977b6f0c132a4d175b7454d93e167834595448c3919b0c6514dc3fdf42cfe9"
+    },
+    {
+      "path": "agendamento-real/pages-e2e/index.html",
+      "bytes": 524091,
+      "sha256": "d02b3827786bfc4b586d61bcc31c109ab70c2301dc9efa14344987a3991a72e5"
+    },
+    {
+      "path": "agendamento-real/pages-smoke.xml",
+      "bytes": 809,
+      "sha256": "b4468e28478abbe2fb3aec97eb3c1800754903851722c03a4ae1f8d1b74d4605"
+    },
+    {
+      "path": "agendamento-real/submissao-artefato.json",
+      "bytes": 741,
+      "sha256": "e986c8f2eee33560aa18fe7081c864c96c358e5872531946bc73d4473cfddcf8"
+    },
+    {
+      "path": "agendamento-real/submissao-run.json",
+      "bytes": 12590,
+      "sha256": "172b8642924e0ac3fd87b1820a3cfe82316e8b52a231558bc7abbca51b1f640b"
+    },
+    {
+      "path": "agendamento-real/submissao-tag.json",
+      "bytes": 341,
+      "sha256": "f1414b05c134c5ca4d734be17bf9fd6170f50d169305199ab3eaa301f4478711"
+    },
+    {
+      "path": "agendamento-real/triagem-agendada-execucao.json",
+      "bytes": 526,
+      "sha256": "53e3d46e20d260867d66f705bf6df5907f78bb9f35600304a4b8a83aa40dc968"
+    },
+    {
+      "path": "agendamento-real/triagem-agendada-run.json",
+      "bytes": 168,
+      "sha256": "3bcbb2e2c560683cad4563b737463bb517a31cd70eff93759d0a0440a7122c06"
+    },
+    {
+      "path": "agendamento-real/triagem-agendada.log",
+      "bytes": 594,
+      "sha256": "8a301050cb460b9588abe191c3907570cdf6a86067ac259f8738300388262ae4"
+    },
+    {
+      "path": "entrega-aprovada/pages-e2e/data/761a4c865884a840db450d492712d0965f9c6880.json",
+      "bytes": 480,
+      "sha256": "556994e3faab6ef16a38d2adab26a184c7fbdbb61b5939a0194a2e3a62198762"
+    },
+    {
+      "path": "entrega-aprovada/pages-e2e/data/93bb94941e36858d46997d5e543f42eaf40a7b5b.png",
+      "bytes": 184096,
+      "sha256": "cca2179b2cc9678fba2639cf2e6beff59b1e91009a8d166f5696baf92096cf5b"
+    },
+    {
+      "path": "entrega-aprovada/pages-e2e/index.html",
+      "bytes": 523979,
+      "sha256": "020d43fc7a7a60820a0c07ca08411c04cef425eb3ac007f613fd700903f801bc"
+    },
+    {
+      "path": "entrega-aprovada/pages-smoke.xml",
+      "bytes": 799,
+      "sha256": "62cb336d3100f5c9968be8ae9731df9bf3168e1a7ab58d3220e62b6d949f8677"
+    },
+    {
+      "path": "entrega-aprovada/squad-origem.md",
+      "bytes": 2414,
+      "sha256": "0431ca5ed97fd883b62f7b36c294a8dfd4dc6d72201d6ed5714475a0a7ea0bdc"
+    },
+    {
+      "path": "entrega-aprovada/submissao-artefato.json",
+      "bytes": 741,
+      "sha256": "e986c8f2eee33560aa18fe7081c864c96c358e5872531946bc73d4473cfddcf8"
+    },
+    {
+      "path": "entrega-aprovada/submissao-run.json",
+      "bytes": 12590,
+      "sha256": "172b8642924e0ac3fd87b1820a3cfe82316e8b52a231558bc7abbca51b1f640b"
+    },
+    {
+      "path": "entrega-aprovada/submissao-tag.json",
+      "bytes": 341,
+      "sha256": "f1414b05c134c5ca4d734be17bf9fd6170f50d169305199ab3eaa301f4478711"
+    },
+    {
+      "path": "entrega-aprovada/triagem-agendada-execucao.json",
+      "bytes": 535,
+      "sha256": "79dd117df63f21616da37a96666044c9f1b2c5b92964447140035e7cd17a8e31"
+    },
+    {
+      "path": "entrega-aprovada/triagem-agendada-run.json",
+      "bytes": 177,
+      "sha256": "f10521a7fc81c6c3070c081e3d7c1b45ff880cfd776092a4231f0f8eeb3abf9c"
+    },
+    {
+      "path": "entrega-aprovada/triagem-agendada.log",
+      "bytes": 548,
+      "sha256": "ccbe51412176376361a1ad088e82a1742238fa2e16f3a41220bdac347c398931"
+    },
+    {
+      "path": "entrega-aprovada/triagem-resultado.json",
+      "bytes": 1169,
+      "sha256": "639121b8b23be73075b9801d445d38569f7c23c810ddd0ae273f192d25f42d81"
+    },
+    {
+      "path": "local-coverage-summary.json",
+      "bytes": 3201,
+      "sha256": "406ec7b320d9a9129a56e21f2e6bcb9e6117ef184a7a0a9cd46608ad04f09d7f"
+    },
+    {
+      "path": "local-junit.xml",
+      "bytes": 64634,
+      "sha256": "9e893493cbad65eccaf21f344f12b3a50ce30af2b743c7f7503420615ae057cb"
+    },
+    {
+      "path": "README.md",
+      "bytes": 2366,
+      "sha256": "f8b44047265bf338543c7ea963ba9d61ffae6c979474d7bddb8ceb4b1cfd90ab"
+    }
+  ]
+}

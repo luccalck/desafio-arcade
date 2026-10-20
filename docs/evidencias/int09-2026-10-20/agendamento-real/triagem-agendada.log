@@ -1,0 +1,12 @@
+VALIDAR pdfinfo submissao/GDD.pdf
+VALIDADO pdfinfo
+VALIDAR pdftotext submissao/GDD.pdf -
+VALIDADO pdftotext
+VALIDAR ffprobe -v error -show_entries format=duration -of default=noprint_wrappers=1:nokey=1 submissao/pitch.mp4
+VALIDADO ffprobe
+HTTP https://luccalck.github.io/desafio-arcade/
+HTTP status 200
+VALIDAR npx playwright test --config playwright.public.config.mjs --project=prd-smoke
+VALIDADO npx
+{"approved":true,"url":"https://luccalck.github.io/desafio-arcade/","assets":4,"mode":"vigilancia","formalDeliveryApproved":false}
+VIGILÂNCIA TÉCNICA APROVADA; NÃO APROVA PRAZO DE ENTREGA.

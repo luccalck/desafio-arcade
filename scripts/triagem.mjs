@@ -1,22 +1,14 @@
-import {createHash} from 'node:crypto';
 import {readFile,readdir,writeFile} from 'node:fs/promises';
 import {spawn} from 'node:child_process';
 import {join,resolve} from 'node:path';
 import {pathToFileURL} from 'node:url';
-import {unzipSync} from 'fflate';
+import {requiredAssets,checkDuration,checkZip,makeManifest,verifyManifest} from './pacote-validacao.mjs';
+export {requiredAssets,checkDuration,checkZip,makeManifest,verifyManifest};
+import {parseDeadline,evaluateDeliveryDeadline} from './prazo-triagem.mjs';
+export {parseDeadline,validateDeadline} from './prazo-triagem.mjs';
 
-export const requiredAssets=['GDD.pdf','LINK_DO_JOGO.txt','build.zip','pitch.mp4'];
-const digest=bytes=>createHash('sha256').update(bytes).digest('hex');
 const fail=message=>{throw new Error(message);};
 
-export function parseDeadline(value){
- if(!value||!/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d+)?(?:Z|[+-]\d{2}:\d{2})$/.test(value))fail('PRAZO deve ser uma data ISO 8601 completa com fuso horário.');
- const day=new Date(`${value.slice(0,10)}T00:00:00Z`);if(!Number.isFinite(day.valueOf())||day.toISOString().slice(0,10)!==value.slice(0,10))fail('PRAZO contém uma data de calendário inválida.');
- const date=new Date(value);if(!Number.isFinite(date.valueOf()))fail('PRAZO não é uma data válida.');return date;
-}
-export function validateDeadline(value,now=new Date()){
- const deadline=parseDeadline(value);if(now>deadline)fail('Prazo de submissão encerrado.');return true;
-}
 export function parseSquad(markdown){
  const rows=markdown.split(/\r?\n/).filter(line=>/^\|/.test(line)).map(line=>line.trim().replace(/^\||\|$/g,'').split('|').map(cell=>cell.trim()));
  const data=rows.slice(2).filter(row=>row.length>=4&&row.slice(0,4).some(Boolean));
@@ -33,25 +25,6 @@ export function checkGddSections(text){
  const headings=[...text.matchAll(/^\s*(?:\d+[.)]\s*)?(Premissa e problema endereçado|High concept|Gênero e plataforma|Mecânicas-core)\s*$/gim)].map(m=>m[1].toLocaleLowerCase('pt-BR'));
  const expected=['premissa e problema endereçado','high concept','gênero e plataforma','mecânicas-core'];
  if(expected.some(section=>!headings.includes(section)))fail('GDD não contém as quatro seções obrigatórias.');return true;
-}
-export function checkDuration(seconds){
- const n=Number(seconds);if(!Number.isFinite(n)||n<=0)fail('ffprobe retornou duração inválida.');if(n>90)fail(`Vídeo excede 90 segundos (${n}).`);return true;
-}
-export function checkZip(bytes){
- let files;try{files=unzipSync(bytes);}catch{fail('build.zip corrompido ou ilegível.');}
- const names=Object.keys(files).map(name=>name.replaceAll('\\','/'));
- if(!names.some(name=>/(^|\/)index\.html$/i.test(name)))fail('build.zip não contém index.html.');
- if(!names.some(name=>/(^|\/)LEIA-ME\.txt$/i.test(name)))fail('build.zip não contém LEIA-ME.txt.');return true;
-}
-export function verifyManifest(fileBytes,manifestText){
- const entries=new Map();for(const line of manifestText.split(/\r?\n/).filter(Boolean)){const match=/^([a-f0-9]{64})\x20{2}([A-Za-z0-9_.-]+)$/.exec(line);if(!match||entries.has(match[2]))fail('MANIFESTO.sha256 tem linha inválida ou duplicada.');entries.set(match[2],match[1]);}
- const keys=[...entries.keys()].sort(),expected=[...requiredAssets].sort();
- if(keys.length!==expected.length||keys.some((key,index)=>key!==expected[index]))fail('Manifesto deve conter exatamente os quatro arquivos exigidos.');
- for(const name of requiredAssets){const entry=entries.get(name),bytes=fileBytes[name];if(!bytes)fail(`Arquivo ausente: ${name}.`);if(!entry||entry!==digest(bytes))fail(`SHA-256 divergente: ${name}.`);}
- return true;
-}
-export function makeManifest(fileBytes){
- return requiredAssets.map(name=>{if(!fileBytes[name])fail(`Arquivo ausente: ${name}.`);return `${digest(fileBytes[name])}  ${name}`;}).join('\n')+'\n';
 }
 export async function run(command,args,options={}){
  return await new Promise((resolve,reject)=>{const child=spawn(command,args,{stdio:['ignore','pipe','pipe'],...options});let stdout='',stderr='';child.stdout.on('data',b=>stdout+=b);child.stderr.on('data',b=>stderr+=b);child.on('error',reject);child.on('close',code=>code===0?resolve(stdout.trim()):reject(new Error(`${command} falhou (${code}): ${stderr.trim()}`)));});
@@ -88,10 +61,12 @@ export async function notifyAlert({kind='TriagemIndisponivel',url,reason,repo=pr
 }
 
 export async function validateSubmission({directory,env=process.env,now=new Date(),fetchImpl=fetch,runCommand=run,squadText,generateManifest=false,mode='entrega',alertApi=null,alertOnFailure=false,verifyPackage=async(directory,options)=>(await import('./submissao.mjs')).verifySubmissionPackage(directory,options)}){
+ let deliveryWindow;
  if(mode==='vigilancia'){
-  if(env.PRAZO)parseDeadline(env.PRAZO);
+  const deadline=env.PRAZO?parseDeadline(env.PRAZO):null;
+  deliveryWindow={deadline:env.PRAZO??null,checkedAt:now.toISOString(),withinDeadline:deadline?now<=deadline:null,exceptionApplied:false,status:'not-enforced-monitoring'};
  }else{
-  validateDeadline(env.PRAZO,now);
+  deliveryWindow=evaluateDeliveryDeadline(env,now);
  }
  parseSquad(squadText??await readFile('SQUAD.md','utf8'));
  const names=await readdir(directory);for(const name of requiredAssets)if(!names.includes(name))fail(`Arquivo ausente: ${name}.`);
@@ -132,7 +107,7 @@ export async function validateSubmission({directory,env=process.env,now=new Date
  if(generateManifest)await writeFile(manifestPath,makeManifest(files),{flag:'wx'});
  const manifest=await readFile(manifestPath,'utf8');verifyManifest(files,manifest);
  await verifyPackage(directory,{expectedSha,runId:env.SUBMISSION_RUN_ID??env.GITHUB_RUN_ID,runAttempt:env.SUBMISSION_RUN_ATTEMPT??env.GITHUB_RUN_ATTEMPT});
- return {approved:true,url:publicRoot.href,assets:requiredAssets.length,mode};
+ return {approved:true,url:publicRoot.href,assets:requiredAssets.length,mode,formalDeliveryApproved:mode==='entrega',deliveryWindow};
 }
 
 if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).href){
@@ -150,7 +125,7 @@ if(process.argv[1]&&import.meta.url===pathToFileURL(resolve(process.argv[1])).hr
    alertOnFailure:alertar
   });
   console.log(JSON.stringify(result));
-  console.log('TRIAGEM APROVADA');
+  console.log(vigilancia?'VIGILÂNCIA TÉCNICA APROVADA':'TRIAGEM APROVADA');
  }
  catch(error){console.error(`TRIAGEM REPROVADA: ${error.message}`);process.exitCode=1;}
 }

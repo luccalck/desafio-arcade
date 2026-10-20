@@ -1,6 +1,6 @@
 # Pendências vigentes por passo
 
-Conciliação atualizada em 16/10/2026 (America/Sao_Paulo). Este é o estado atual dos passos 001–040. Corrigimos checks históricos superados em vez de acrescentar outra lista contraditória. `[x]` indica escopo comprovado; `[ ]` indica trabalho/aceite ainda necessário. Uma etapa pode estar parcialmente concluída. O [checklist integral do HTML](../gestao/checklist-avaliacao.md) conserva todos os códigos e critérios; não considerar um INT inteiro aceito por um check parcial.
+Conciliação atualizada em 20/10/2026 (America/Sao_Paulo). Este é o estado atual dos passos 001–040. Corrigimos checks históricos superados em vez de acrescentar outra lista contraditória. `[x]` indica escopo comprovado; `[ ]` indica trabalho/aceite ainda necessário. Uma etapa pode estar parcialmente concluída. O [checklist integral do HTML](../gestao/checklist-avaliacao.md) conserva todos os códigos e critérios; não considerar um INT inteiro aceito por um check parcial.
 
 O [histórico anterior](../evidencias/pendencias-historico-2026-10-15.md) preserva integralmente diagnósticos, comandos, falhas, publicações e motivos originais. “RAs ausentes”, “acessos não aceitos”, “main bootstrap”, “produção não publicada” e “painel404” são situações antigas, não cobranças atuais. Não exigimos cada revisão planejada nominalmente quando já houve revisão real da consolidação; o PR34 foi aprovado porLucas no HEADe9dd28c e integrado; atualizações posteriores precisam de sua própria revisão.
 
@@ -18,7 +18,7 @@ Mantemos os mesmos oito tópicos da solicitação de fechamento de Lucca. Não s
 | Nº fixo | Tópico | Comprovado | O que impede o fechamento integral |
 |---|---|---|---|
 | 1 | Fechamento documental e revisões | PR32/33/34/35/40 revisados; PR40 integrado; matriz individual com três INT por integrante e vinte PRs revisados; documentação atualizada na branch | PR47 integrado como be28149 após dispensa expressa de revisão pelo proprietário. Política restaurada; approved:false. CI/HML/PRD/monitor e vídeo atuais concluídos. Não é pendência de revisão a cobrar nem aprovação humana realizada. Confirmação coletiva de direitos/ferramentas e recebimento das notificações registrada em16/10 por declaração de Lucca; marcos históricos continuam sem prova documental nova. |
-| 6 | Release e pacote | **Release técnica v0.7.0 concluída**, seis anexos públicos conferidos, ZIP29.265bytes, mesmo artefato homologado e publicado, offline validado | Tag/Releasev1.0.0 e pacote original concluídos. Entrada-video39348162168 SUCCESS. Triagem formal39348283211 reprovou pelo prazo antigo mantido; auditoria técnica passou e não substitui o aceite temporal. Seguir docs/pacote-submissao.md; não gerar pacote manual ou pitch fictício. |
+| 6 | Release e pacote | **Release técnica v0.7.0 concluída**, seis anexos públicos conferidos, ZIP29.265bytes, mesmo artefato homologado e publicado, offline validado | Tag/Releasev1.0.0 e pacote original concluídos. Entrada-video39348162168 SUCCESS. A falha original39348283211 foi preservada; a retriagem39483855023 APROVOU o pacote original por política temporal limitada, com withinDeadline:false. Evidências em docs/evidencias/int09-2026-10-20/. Seguir docs/pacote-submissao.md; não gerar pacote manual ou pitch fictício. |
 | 7 | Conferências e relatório | Relatório operacional de10páginas gerado/inspecionado na CI38948501087 e atualizado com o novo ensaio; GDD completo; segurança, autoria, smoke, hashes e responsividade verificados | Vídeo/pacote/tag/release e triagem real conferidos;relatório pós-execução inclui resultados e ressalvas. PDF original daCI será disponibilizado separadamente dos anexos imutáveis;sem nova revisão externa por ordem do responsável. |
 | 8 | Ficha/TXT, envio e banca | MD persistente com49campos e dados conhecidos; roteiro de apresentação/demonstração/perguntas preparado | **Ficha/TXT por último**, conforme Lucca. Faltam entradas finais verdadeiras, envio/reciboAVA e apresentação dos quatro, incluindo demonstração pedida pelo professor. Datas históricas e prazo oficial não são inventados. |
 
@@ -388,7 +388,7 @@ INT-01/03/06/07/09.
 INT-09/05/07/03.
 
 - [x] RAs completos e produção disponível; scanners sem achados no escopo executado, publicação formal somente pela pipeline.
-- [ ] Obter aceite temporal verdadeiro da entrega: triagem na tag1.0.0 já executada eREPROVADA peloPRAZO antigo mantido. Pacote,manifesto,vídeo e logs existem e a auditoria técnica passou. Não háTRIAGEMAPROVADA deentrega a declarar.
+- [x] Retriagem formal39483855023/1 APROVADA sobre pacote original da tagv1.0.0,com validador5f3833d e exceção temporal limitada. PRAZO preservado;withinDeadline:false. [recibo e logs](../evidencias/int09-2026-10-20/)
 
 <a id="passo-037"></a>
 
@@ -517,3 +517,15 @@ Tópicos ativos preservados:6(aceite temporal) e8(fichaTXT/AVA/banca). Tópico7 
 Vigilância39350305105 concluídaSUCCESS em19/10,com pacote original e smoke público. Não altera o resultado formal deentrega. Relatório pós-execução e ficha persistente recebem essa distinção;semTXTgerado.
 
 Relatório pós-execução final:CI39350798673/1 SUCCESS,fonte945e0b3,10p/568.292bytes,SHA-25607198130b2526101293260822671663ab7e769d4a64b89a6b3bdf04573d5e701. Download públicoHTTP200 conferido;anexos imutáveis daReleasev1.0.0 preservados. Links finais disponíveis;declaração4 temporal continua falsa.
+
+## Estado corrente do INT-09 —20/10/2026
+
+- [x] Pacote original da tagv1.0.0 recuperado e validado integralmente por scripts/triagem.sh na run39483855023/1:TRIAGEM APROVADA,formalDeliveryApproved:true.
+- [x] Exceção temporal limitada aplicada com relógio real e PRAZO antigo:withinDeadline:false,exceptionApplied:true. A falha original não foi apagada nem transformada em sucesso.
+- [x] Ciclo de imports do CLI corrigido com regressão;337 testes e37E2E nas CIs39483791481/39483868561.
+- [x] Agendamento real39457086815SUCCESS arquivado,com atraso4h24m01s explicitado.
+- [ ] CONTÍNUO: observar agendamentos até a banca; notificação de queda somente se ocorrer falha real. Não houve queda neste ciclo.
+- [ ] Integrar/publicar a atualização documental do PR49 e seu relatório daCI; preservar software/pacote originais.
+- [ ] Ficha final para revisão,TXT por ação posterior do responsável,AVA/recibo e banca.
+
+Os parágrafos datados anteriores documentam estados históricos; o quadro acima substitui exclusivamente o bloqueio atual do INT-09. [recibo e logs](../evidencias/int09-2026-10-20/)

@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-20T19:30:01.873Z",
+  "url": "https://luccalck.github.io/desafio-arcade/releases/be281493c7699468f991a2333df074ec76691b3d/index.html",
+  "version": {
+    "version": "1.0.0",
+    "sha": "be281493c7699468f991a2333df074ec76691b3d",
+    "build": "2026-10-20T00:19:17.000Z"
+  },
+  "scenario": "@prd smoke reduzido: release do mesmo SHA, editor e movimento",
+  "project": "prd-smoke",
+  "input": "teclado",
+  "viewport": {
+    "width": 1280,
+    "height": 900
+  }
+}

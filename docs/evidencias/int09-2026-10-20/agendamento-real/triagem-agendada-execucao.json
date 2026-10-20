@@ -1,0 +1,12 @@
+{
+  "created_at": "2026-10-20T16:24:01Z",
+  "event": "schedule",
+  "head_sha": "a49837d2ef2bad3bee546a9874274e5b8cc47c54",
+  "id": 39457086815,
+  "run_started_at": "2026-10-20T16:24:01Z",
+  "observedAt": "2026-10-20T16:25:25.458Z",
+  "cron": "0 12 * * *",
+  "submissionRun": "39348283211",
+  "submissionArtifact": "12231549745",
+  "delayNote": "created_at e run_started_at são horários reais da API; não representam o instante prometido pelo scheduler. Compare a janela nominal de 12:00 UTC com a data desta execução."
+}

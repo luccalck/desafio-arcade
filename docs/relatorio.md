@@ -1,6 +1,6 @@
 # Relatório Técnico — Desafio Arcade
 
-**Rota do Código · Squad Aura 67 · Fechamento operacional {{VERSION}} · 19/10/2026**
+**Rota do Código · Squad Aura 67 · Fechamento operacional {{VERSION}} · 20/10/2026**
 
 ## 1. Síntese, identificação e alcance
 
@@ -237,7 +237,7 @@ Cada fonte identifica execução ou PR real. A matriz separa aceite técnico com
 |INT-06 /10%|[Release v1.0.0](https://github.com/luccalck/desafio-arcade/releases/tag/v1.0.0)|Seisassets públicos HTTP 200, cincohashes iguais à CI; ZIP 30.469 B, offline, SemVer/SHA/data|Nenhum impedimento técnico de release identificado na conferência|
 |INT-07 /12%|Recibosmain/tag e ensaios16/10|Azul-verde, ZIP imutável, smoke; recuperação80,66 s/17,166 s; URLobservada sem falhas|Demonstração literal e versão defeituosa na banca não foram realizadas|
 |INT-08 /10%|[Sondas39348785870](https://github.com/luccalck/desafio-arcade/actions/runs/39348785870)|HML/PRD 200;4 deploys,0,285714/dia, lead20min21 s, CFR 25%; alertas/MTTR deensaio separados|MTTR operacionalnull, sem incidente elegível; sem inferir melhoria causal|
-|INT-09 /8%|[Artefato12231549745](https://github.com/luccalck/desafio-arcade/actions/runs/39348283211/artifacts/12231549745)|Pacote gerado pela CI, manifesto/proveniência/hash e auditoria técnica passaram|Triagem formal REPROVADA pelo PRAZO antigo; não háTRIAGEMAPROVADA de entrega|
+|INT-09 /8%|[Artefato12231549745](https://github.com/luccalck/desafio-arcade/actions/runs/39348283211/artifacts/12231549745)|Pacote gerado pela CI, manifesto/proveniência/hash e auditoria técnica passaram|Retriagem39483855023 APROVADA por política temporal limitada;withinDeadline:false;validador5f3833d,mesmo pacote|
 |INT-10 /5%|[Pitch](https://github.com/luccalck/desafio-arcade/releases/download/midia-pitch-v1.0.0/pitch.mp4), fonte deste PDF|Pitchreal86 s/legendas/narração; relatório10 p comprints,10 INT e retrospectiva|FichaTXT, envio AVA e banca dependem de ações reais posteriores|
 
 ### Segurança, direitos e origens
@@ -263,7 +263,7 @@ Preservamos autoria, aprovações e recibos reais. A matriz comprova contribuiç
 
 **Funcionou:** separar regras da UI, testar campanha pública/offline e promover os mesmos bytes. A execução do SHA 88 comprovou HML ≤ 15 min, smoke da candidata, promoção e smoke da raiz, com aprovação real. A primeira amostra pós-produção habilitou frequência, lead time e taxa de falha calculados de eventos verificáveis.
 
-**Falhou e foi corrigido:** reabrimos 27 checks antecipados. A dependência de Events falhou na HML; correções com fallback permitiram uma nova execução válida. Também corrigimos duplicação de Issues, publicação de draft e uma fixture de ZIP cujo horário tornava o teste instável. Regressões e execuções anteriores foram preservadas. Na entrega1.0.0, o prazo antigo reprovou a triagem; o pacote foi mantido. Corrigimos o arquivamento do log e o executor da vigilância, sem transformar falhas em aprovações. MTTR operacional continua sem amostra, e ensaio não substitui banca ou playtest humano.
+**Falhou e foi corrigido:** reabrimos 27 checks antecipados. A dependência de Events falhou na HML; correções com fallback permitiram uma nova execução válida. Também corrigimos duplicação de Issues, publicação de draft e uma fixture de ZIP cujo horário tornava o teste instável. Regressões e execuções anteriores foram preservadas. Na entrega1.0.0, o prazo antigo reprovou a triagem; o pacote foi mantido. Corrigimos o arquivamento do log e o executor da vigilância; nova retriagem39483855023 aprovou o pacote com exceção temporal limitada,sem transformar a falha original em sucesso. MTTR operacional continua sem amostra, e ensaio não substitui banca ou playtest humano.
 
 **Conferência do pacote:** a Release 0.7.0 foi preservada. Na 1.0.0,173 arquivos do bundle, cincohashes dos assets e os arquivos publicados foram reconferidos; ZIP 30.469 B igual na main/tag/HML/PRD. O novo pitch filmoube28149 e passou na entrada-video39348162168, com origem 39346940628 SUCCESS.
 
@@ -277,7 +277,7 @@ Preservamos autoria, aprovações e recibos reais. A matriz comprova contribuiç
 |Recuperação|Ensaio técnico concluído; demonstração presencial permanece na banca|
 |Melhoria MTTR|Ensaio medido 3 s→2,5 s; PR 41 aprovado por Davi e integrado, sem amostra operacional|
 |Vídeo e banca|MP4 real86 s, mesmo SHA, entrada-video SUCCESS; defesa dos quatro não realizada|
-|Tag/release/submissão|v1.0.0 publicada; pacote original6.712.350 B, digest1c3d83df; triagem temporal REPROVADA|
+|Tag/release/submissão|v1.0.0 publicada; pacote original6.712.350 B, digest1c3d83df; retriagem39483855023 APROVADA;exceção temporal limitada|
 |Ficha, AVA, banca|Rascunho preenchido; TXT não gerado antes da revisão; recibo AVA e sessão real não inventados|
 
-Pacote original: run 39348283211/1, artefato 12231549745, criado em 19/10 às 21:40:24, Brasília. Manifesto, proveniência, ZIP/PDF/vídeo e smoke passaram na auditoria técnica. A triagem formal reprovou o prazo antigo mantido. Preservamos o log do Actions e corrigimos seu arquivamento posterior. Este PDF é separado do anexo imutável da Release.
+Pacote original: run 39348283211/1, artefato 12231549745, criado em 19/10 às 21:40:24, Brasília. A retriagem [39483855023](https://github.com/luccalck/desafio-arcade/actions/runs/39483855023) aprovou o mesmo pacote em 20/10, com exceção temporal limitada (`withinDeadline:false`), sem apagar a falha anterior. Validador 5f3833d: 337 testes e 37 E2E passaram. Schedule 39457086815: atraso real de 4h24m01s. Este PDF é separado do anexo imutável da Release.
