@@ -1,0 +1,9 @@
+{
+  "at": "2026-10-20T00:43:46.443Z",
+  "checks": 8,
+  "passed": 8,
+  "actualSourceRun": 39348283211,
+  "actualSourceConclusion": "failure",
+  "formalDeliveryStillRejected": true,
+  "scope": "Verificação do gate real do workflow com API real e controles negativos locais; não é execução do cron."
+}

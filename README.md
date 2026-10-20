@@ -12,11 +12,11 @@ O jogo é estático, responsivo e funciona offline. O jogador não precisa insta
 
 ## Estado do projeto
 
-A candidata atual é a versão **0.6.0**. O GitHub Pages é um preview publicado e testado pela pipeline. Produção formal, recuperação, monitoramento, DORA, vídeo e pacote acadêmico final ainda estão pendentes.
+A versão publicada é **1.0.0**, SHA `be281493c7699468f991a2333df074ec76691b3d`. [Jogar](https://luccalck.github.io/desafio-arcade/) · [Homologação](https://luccalck.github.io/desafio-arcade/hml/) · [Painel](https://luccalck.github.io/desafio-arcade/status/) · [Release](https://github.com/luccalck/desafio-arcade/releases/tag/v1.0.0).
 
-A branch padrão acompanha temporariamente a candidata mais recente publicada com CI verde, para mostrar o rastreamento atualizado de cada passo. O [PR #2](https://github.com/luccalck/desafio-arcade/pull/2) aguarda integração em main sob revisão obrigatória; main continua protegida. Atualizar a branch padrão não faz merge nem deploy. Após a integração revisada, main deve voltar a ser o destino padrão definitivo.
+A main é a branch padrão protegida. A [publicação39346940628/1](https://github.com/luccalck/desafio-arcade/actions/runs/39346940628) passou com **325 testes e 37 E2E**, HML em173,519s, aprovação real de produção, smoke e monitor. Promovemos o mesmo ZIP de30.469bytes, sem recompilar entre ambientes. O [pitch atual](docs/pitch/pitch-v1.0.0.mp4) tem86s, áudioElevenLabs fornecido pelo squad e legendas sincronizadas; foi validado contra essa produção.
 
-As evidências disponíveis incluem 152 testes de unidade, 26 de integração, 15 cenários E2E, cobertura de instruções de `src/core` de 97,90%, bugs corrigidos com regressão, PDF gerado, build reproduzível e publicação com smoke. Consulte [testes e limites](docs/evidencias/python-pages.md), [CI e publicação](docs/evidencias/ci-python-pages.md) e a [auditoria do enunciado](docs/gestao/auditoria-avaliacao.md). Esses resultados não encerram os dez integráveis nem comprovam participação coletiva.
+A revisão externa do fechamento foi expressamente dispensada pelo proprietário. O registro preserva `approved:false`, com restauração da política da main após integrar; não é uma aprovação acadêmica. O pacote e o resultado real da triagem estão nas [evidências da entrega](docs/evidencias/entrega-1.0.0-2026-10-19/). Prazo antigo mantido, sem retroagir execução ou declarar triagem aprovada indevidamente. [Pendências e limites](docs/execucao/05-pendencias-por-passo.md) · [Ficha persistente](docs/gestao/ficha-entrega.md).
 
 ## Como jogar
 

@@ -28,12 +28,12 @@ Links abaixo são reais; conferir SHA/versão da entrega antes do TXT. Não usar
 
 | Campo | Obrigatório | Resposta conhecida | Situação da resposta final |
 |---|---|---|---|
-| lkBuild | Sim | https://luccalck.github.io/desafio-arcade/ | Atual0.7.0/4678830, HTTP200 e sete hashes iguais ao ZIP; reconferir1.0.0 após publicação |
-| lkHml | Não | https://luccalck.github.io/desafio-arcade/hml/ | Atual4678830, HML4/4; reconferir candidata1.0.0 |
-| lkCI | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/38991328634 | Publicação4678830 verde, CI322/37, HML175,423s, PRD/smoke/monitor aprovados; substituir pela tag final quando concluída |
-| lkGraf | Sim | https://luccalck.github.io/desafio-arcade/status/ | Sondas38991747764: HML/PRD200; DORA3deploys/14dias, lead time25min29s, CFR33,33%, MTTRnull. Revalidar na entrega |
-| lkVideo | Sim | https://raw.githubusercontent.com/luccalck/desafio-arcade/d497f9a25ce897624ec68dd9bf79aa5763e2a22b/docs/pitch/pitch.mp4 | Edição86s/ElevenLabs, áudio fornecido e30legendas bold; produção filmadae9/0.7.0. Substituir pelo vídeo validado da candidata1.0.0 |
-| lkRel | Sim | https://github.com/luccalck/desafio-arcade/releases/download/v0.7.0/RelatorioTecnico.pdf | PDF técnico anterior, real e público. Substituir pelo relatório acadêmico pós-triagem, sem sobrescrever este asset |
+| lkBuild | Sim | https://luccalck.github.io/desafio-arcade/ | Atual1.0.0/be28149;HTTP200,sete hashes iguais ao ZIPbbb63fde da tag |
+| lkHml | Não | https://luccalck.github.io/desafio-arcade/hml/ | Atual1.0.0/be28149,HML4/4;main173,519s/tag200,367s |
+| lkCI | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/39346940628 | Main1.0.0 integralmenteverde,325/37,HML173,519s,PRD/smoke/monitor. Tag39348283211:release passou;jobsubmissao falhou no prazo,sem sucesso global |
+| lkGraf | Sim | https://luccalck.github.io/desafio-arcade/status/ | Sondas39348785870:HML/PRD200,1.0.0;4deploys/14dias,lead20min21s,CFR25%,MTTRnull |
+| lkVideo | Sim | https://github.com/luccalck/desafio-arcade/releases/download/midia-pitch-v1.0.0/pitch.mp4 | Edição86s/ElevenLabs,30legendas bold,produção filmada1.0.0/be28149;entrada-video39348162168SUCCESS |
+| lkRel | Sim | https://raw.githubusercontent.com/luccalck/desafio-arcade/main/docs/entrega/1.0.0/RelatorioTecnico.pdf | PDF pós-execução separado dos assets imutáveis;publicar com proveniência deCI antes de usar este link na ficha |
 | lkDrive | Não | | Concurso opcional; sem inscrição autorizada |
 
 ## 4. Integráveis —20 controles
@@ -42,16 +42,16 @@ Cada linha corresponde a `.iChk` e `.iNota`. Campo final vazio significa que nã
 
 | INT literal | Peso A | Entregue/evidenciado: resposta final | Autoavaliação | Conferência de fechamento |
 |---|---:|---|---:|---|
-| INT-01 Repositório e fluxo Git | 10% | | 10 | PR41 aprovado porDavi no HEADcea6745 e integrado; candidata posterior exige sua revisão. Matriz comprova trêsINT por integrante, sem atestar banca |
-| INT-02 GDD como código | 8% | | 10 | Doze seções/modelo, imagens ePDF automático. Reconferir versão/data/PR da candidata |
-| INT-03 Pipeline CI/CD no GitHub Actions | 15% | | 10 | CI/HML/PRD/monitor formais anteriores comprovados; aguardar candidata final |
-| INT-04 Testes automatizados | 12% | | 10 | Última CI do pitch:322 testes/37E2E; cobertura core superior a70%, regressões reais; conferir CI final |
-| INT-05 Segurança, licenças e uso de IA | 10% | | 10 | Gitleaks/audit/SBOM/inventários e confirmação coletiva; revisão e varredura dos materiais posteriores |
-| INT-06 Release versionada e empacotada | 10% | | 10 | Técnica0.7.0 pública;1.0.0 e anexos ainda não publicados |
-| INT-07 Ambientes, entrega progressiva e rollback | 12% | | 10 | Azul-verde/recuperação real manual80,66s/automática17,166s; demonstração ao vivo continua na banca |
-| INT-08 Monitoramento, alertas e métricas DORA | 10% | | 10 | Sondas/painel/DORA; alertas e melhoria medidos em ensaio. MTTR operacional sem amostra, sem inventar incidente |
-| INT-09 Build pública e pacote de submissão | 8% | | 10 | Pacote/triagem na tag1.0.0/vigilância ainda não executados |
-| INT-10 Vídeo pitch e relatório técnico | 5% | | 10 | Pitch86s pronto ePDF10p da CI; vincular vídeo/relatório aos resultados finais |
+| INT-01 Repositório e fluxo Git | 10% | Sim | 10 | Repositório/fluxo entregues;20PRs revisados e contribuição real. Exceção finalPR47 registrada semAPPROVE;critério de revisão não integral. |
+| INT-02 GDD como código | 8% | Sim | 10 | GDD1.0.0/19p,12seções/Esteira gerado naCI;revisão documental posterior identificada. |
+| INT-03 Pipeline CI/CD no GitHub Actions | 15% | Sim | 10 | Main39346940628SUCCESS;tagHML200,367s,PRD/smoke/monitor/release passaram;submissao falhou no prazo. |
+| INT-04 Testes automatizados | 12% | Sim | 10 | 325testes/37E2E,HML4/4,core>70%,regressões reais;sem atribuir sessão humana. |
+| INT-05 Segurança, licenças e uso de IA | 10% | Sim | 10 | Scanners/tag/SBOM/inventários/MP3 verificados;dispensa de revisão não é revisão humana integral. |
+| INT-06 Release versionada e empacotada | 10% | Sim | 10 | Releasev1.0.0 gerada pela pipeline,seisassets públicos/hash iguais àCI,ZIP30.469B/offline. |
+| INT-07 Ambientes, entrega progressiva e rollback | 12% | Sim | 10 | Azul-verde/imutabilidade/smokes e recuperações80,66s/17,166s;demonstração presencial continua na banca. |
+| INT-08 Monitoramento, alertas e métricas DORA | 10% | Sim | 10 | Sondas/painel/CSV,DORA4deploys;MTTRoperacionalnull e ensaios separados. |
+| INT-09 Build pública e pacote de submissão | 8% | | 10 | Pacote gerado e íntegro;triagem formalREPROVADA pelo prazo antigo. Não aceitar comoentrega integral aprovada. |
+| INT-10 Vídeo pitch e relatório técnico | 5% | Sim | 10 | Pitch1.0.0 de86s validado e relatório pós-execução de10p;TXT/AVA/banca não realizados. |
 
 ## 5. Estimativa da banca —4 controles
 
@@ -71,9 +71,9 @@ Classes `.dChk`, índices0–3. Não reescrever o texto do professor para contor
 | Nº | Texto literal | Resposta disponível | Base/condição |
 |---|---|---|---|
 | 1 | O squad tem 4 integrantes registrados em SQUAD.md, sem alterações desde 02/10. | Sim | Lucca confirmou explicitamente em16/10: “Sim, confirmo”. Declaração humana atual, sem retroagir documentos |
-| 2 | Todo ativo de terceiros e todo uso de IA estão registrados em THIRD_PARTY.md e AI-USAGE.md. | | Inventários atualizados, inclusive MP3 fornecido. Reconferir candidata final e revisão antes do merge |
-| 3 | Nenhuma credencial real está no repositório e a produção só foi alterada pela pipeline. | | Revalidar scanner/histórico/artefatos finais e registro de publicação |
-| 4 | O scripts/triagem.sh foi executado na tag v1.0.0 e terminou com TRIAGEM APROVADA. | | Só aceitar após execução real aprovada na tag; hoje ainda não ocorreu |
+| 2 | Todo ativo de terceiros e todo uso de IA estão registrados em THIRD_PARTY.md e AI-USAGE.md. | Sim | Inventários/tag/MP3/usos atualizados e declaração do squad;dispensa de revisão final explicitamente registrada |
+| 3 | Nenhuma credencial real está no repositório e a produção só foi alterada pela pipeline. | Sim | Gitleaks/tag semachados,no escopo;publicação do jogo somente pela pipeline;sem garantia absoluta fora do escopo |
+| 4 | O scripts/triagem.sh foi executado na tag v1.0.0 e terminou com TRIAGEM APROVADA. | | Executada39348283211/1:REPROVADA pelo prazo antigo;sem aceite desta declaração |
 
 ## 7. Prazo e geração
 
@@ -93,10 +93,14 @@ Os três cálculos `vA`, `vB` e `vF` são resultados do JavaScript. Com todas as
 
 ## 9. Procedimento final
 
-1. Fechar candidata revisada/publicada, captura do mesmoSHA, tag1.0.0/pacote/triagem verdadeiros e relatório pós-execução. Conferir [procedimento do pacote](../pacote-submissao.md).
+1. Conferir a entrega1.0.0 já publicada, captura do mesmoSHA e pacote original;triagem temporalreprovada permanece registrada,sem alterarvalidadores. Conferir [procedimento do pacote](../pacote-submissao.md).
 2. Substituir links do quadro3 por fontes finais verificadas. Preencher os dez checks e quatro declarações apenas conforme as provas reais. Manter limites da banca/humanos na documentação.
 3. Abrir o HTML original por servidor local, preencher seus49 controles por sua própriaUI e verificar sete validadores/cálculos sem modificar o arquivo/JS ou habilitar botão à força.
 4. Gerar pelo botão “Gerar ficha(.txt)” e conferir o arquivo `DevOps_Avaliacao_Arcade_Aura_67.txt`: data/hora real, quatro nomes/RAs, links e declarações literais.
 5. Entregar TXT com pacote e relatório pelo responsável noAVA; registrar recibo real. Não enviar e-mail, inscrever no concurso ou declarar banca concluída automaticamente.
 
 Preservamos o histórico anterior peloGit. Este documento contém as respostas correntes; referências a pendências já encerradas foram reconciliadas, sem transformar limitações ainda existentes em aceites.
+
+## Estado final para revisão
+
+PacoteActions12231549745/digest1c3d83df gerado na tag1.0.0. Auditoria técnica passou;triagemformal reprovou pelo prazo antigo mantido. Não marcar a declaração4 nem habilitar o botãoTXT àforça. A ficha segue rascunho;Lucca pediu revisar antes de gerarTXT. Revisão final dispensada não será cobrada como nova ação de integrante nem registrada comoAPPROVE. Links finais serão conferidos após publicação documental.

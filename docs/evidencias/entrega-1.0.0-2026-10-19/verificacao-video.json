@@ -1,0 +1,9 @@
+{
+  "schema": 1,
+  "duration": 86,
+  "fullDecodePassed": true,
+  "audioPcmIdenticalToAlignedEdition": true,
+  "audioPcmSha256": "17678742f43716b09838d9584c1b54c6969648b4d9fe18627117687969116e9f",
+  "videoSha256": "643425bde35e1da9ed594a54e05b3d63ff637f7fada446798d58f9fad72c5c90",
+  "humanReviewClaimed": false
+}

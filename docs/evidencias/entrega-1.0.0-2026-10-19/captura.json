@@ -1,0 +1,210 @@
+{
+  "schema": 1,
+  "startedAt": "2026-10-20T00:24:20.044798+00:00",
+  "productionSha": "be281493c7699468f991a2333df074ec76691b3d",
+  "siteUrl": "https://luccalck.github.io/desafio-arcade/",
+  "captureUrl": "https://luccalck.github.io/desafio-arcade/releases/be281493c7699468f991a2333df074ec76691b3d/",
+  "executor": "IA/Playwright",
+  "requester": "Lucca Castilho Costa",
+  "humanPlaytest": false,
+  "viewport": {
+    "width": 1600,
+    "height": 900
+  },
+  "actions": [
+    {
+      "offset": 1.921,
+      "action": "start-clip",
+      "clip": "menu"
+    },
+    {
+      "offset": 12.625,
+      "action": "start-clip",
+      "clip": "falha"
+    },
+    {
+      "offset": 14.359,
+      "action": "controle-invertido",
+      "before": 240.0,
+      "after": 104.0
+    },
+    {
+      "offset": 22.562,
+      "action": "start-clip",
+      "clip": "correcao"
+    },
+    {
+      "offset": 24.546,
+      "action": "corrigir-controles-pelo-editor"
+    },
+    {
+      "offset": 26.312,
+      "action": "testar-missao",
+      "mission": 1,
+      "summary": "Tudo certo: 4/4 situaÃ§Ãµes."
+    },
+    {
+      "offset": 29.078,
+      "action": "controle-corrigido",
+      "before": 240.0,
+      "after": 376.0
+    },
+    {
+      "offset": 37.765,
+      "action": "start-clip",
+      "clip": "missao-2"
+    },
+    {
+      "offset": 39.078,
+      "action": "testar-missao",
+      "mission": 2,
+      "summary": "Tudo certo: 5/5 situaÃ§Ãµes."
+    },
+    {
+      "offset": 41.5,
+      "action": "start-clip",
+      "clip": "missao-3"
+    },
+    {
+      "offset": 42.796,
+      "action": "testar-missao",
+      "mission": 3,
+      "summary": "Tudo certo: 5/5 situaÃ§Ãµes."
+    },
+    {
+      "offset": 45.234,
+      "action": "start-clip",
+      "clip": "missao-4"
+    },
+    {
+      "offset": 46.531,
+      "action": "testar-missao",
+      "mission": 4,
+      "summary": "Tudo certo: 5/5 situaÃ§Ãµes."
+    },
+    {
+      "offset": 48.968,
+      "action": "start-clip",
+      "clip": "missao-5"
+    },
+    {
+      "offset": 50.265,
+      "action": "testar-missao",
+      "mission": 5,
+      "summary": "Tudo certo: 4/4 situaÃ§Ãµes."
+    },
+    {
+      "offset": 56.39,
+      "action": "start-clip",
+      "clip": "final"
+    },
+    {
+      "offset": 68.828,
+      "action": "vitoria-real",
+      "xp": "700 XP",
+      "score": "100"
+    },
+    {
+      "offset": 68.828,
+      "action": "start-clip",
+      "clip": "exportacao"
+    },
+    {
+      "offset": 72.781,
+      "action": "download-real",
+      "filename": "meu-jogo.py",
+      "bytes": 2019,
+      "sha256": "0749c1f65d8e0883faa30499f50079f7be9c341011c9d68505d9fd351aac0dbb"
+    },
+    {
+      "offset": 74.984,
+      "action": "download-real",
+      "filename": "meu-jogo.html",
+      "bytes": 16887,
+      "sha256": "2b9a5adc71c686429046d84e94c669392e0d6edbc707138cbfe4911f6c81ceac"
+    }
+  ],
+  "clips": {
+    "menu": {
+      "start": 1.921,
+      "end": 12.546
+    },
+    "falha": {
+      "start": 12.625,
+      "end": 22.546
+    },
+    "correcao": {
+      "start": 22.562,
+      "end": 37.734
+    },
+    "missao-2": {
+      "start": 37.765,
+      "end": 41.484
+    },
+    "missao-3": {
+      "start": 41.5,
+      "end": 45.203
+    },
+    "missao-4": {
+      "start": 45.234,
+      "end": 48.937
+    },
+    "missao-5": {
+      "start": 48.968,
+      "end": 56.296
+    },
+    "final": {
+      "start": 56.39,
+      "end": 68.796
+    },
+    "exportacao": {
+      "start": 68.828,
+      "end": 79.0
+    },
+    "offline": {
+      "start": 0.125,
+      "end": 7.312
+    }
+  },
+  "errors": [],
+  "publishedFiles": {
+    "index.html": {
+      "bytes": 567,
+      "sha256": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282"
+    },
+    "style.css": {
+      "bytes": 9033,
+      "sha256": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da"
+    },
+    "game.js": {
+      "bytes": 54095,
+      "sha256": "7c685c2ec6c25602fd115f61936227b5e3eda2acb6bccebc96dba9ba91f5dbdd"
+    },
+    "version.json": {
+      "bytes": 117,
+      "sha256": "88a08e48c074ca15fb066f95b3d89644dd3d9a880dd1836b4f1bf861d9bc0aeb"
+    },
+    "LEIA-ME.txt": {
+      "bytes": 1552,
+      "sha256": "0a389a88a1af575e61539e770892d63547bf79087c91ce5cdd1a95624915e225"
+    },
+    "LICENSE.txt": {
+      "bytes": 1088,
+      "sha256": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb"
+    },
+    "THIRD_PARTY.txt": {
+      "bytes": 12221,
+      "sha256": "1c15d2a6c944ec51340b7f6999a5a8e815cd2d603e486243878f0bad5eca97b1"
+    }
+  },
+  "completed": true,
+  "zipSha256": "bbb63fde0a8808e7b9765b76fd5900b955534d5e6083202d0a1cfe85c27f5b9d",
+  "mainVideo": "docs/evidencias/entrega-1.0.0-2026-10-19/raw/page@73bec58c73fec13f6d549f06c4018f71.webm",
+  "offline": {
+    "url": "file:///C:/dev/studies/senai/semester-2/devops/desafio-arcade/jogo-arcade/.contexto/pitch/.contexto/fechamento-final/captura-v1/meu-jogo.html",
+    "offline": true,
+    "externalRequests": []
+  },
+  "offlineVideo": "docs/evidencias/entrega-1.0.0-2026-10-19/raw-offline/page@18bd0be660142c6f5b36dffd354164c9.webm",
+  "completedAt": "2026-10-20T00:25:54.901149+00:00"
+}

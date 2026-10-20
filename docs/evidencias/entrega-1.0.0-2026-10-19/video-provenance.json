@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "productionSha": "be281493c7699468f991a2333df074ec76691b3d",
+  "version": "1.0.0",
+  "build": "2026-10-20T00:19:17.000Z",
+  "zipSha256": "bbb63fde0a8808e7b9765b76fd5900b955534d5e6083202d0a1cfe85c27f5b9d",
+  "siteUrl": "https://luccalck.github.io/desafio-arcade/",
+  "sha256": "643425bde35e1da9ed594a54e05b3d63ff637f7fada446798d58f9fad72c5c90",
+  "bytes": 5502923,
+  "duration": 86,
+  "rightsConfirmed": true,
+  "captionsConfirmed": true,
+  "origin": {
+    "type": "asset",
+    "id": "657824292"
+  },
+  "production": {
+    "run": "39346940628",
+    "runAttempt": "1"
+  },
+  "validation": {
+    "repository": "luccalck/desafio-arcade",
+    "workflow": "entrada-video.yml",
+    "run": "39348162168",
+    "runAttempt": "1",
+    "headSha": "be281493c7699468f991a2333df074ec76691b3d",
+    "actor": "luccalck",
+    "at": "2026-10-20T00:32:21.080Z"
+  }
+}

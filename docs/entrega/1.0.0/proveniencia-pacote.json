@@ -1,0 +1,14 @@
+{
+  "schema": 1,
+  "sourceRun": "39348283211",
+  "sourceAttempt": "1",
+  "artifactId": "12231549745",
+  "artifactDigest": "sha256:1c3d83df20426005fd17e4c4361f71b7b91c7873bfa26540ae767cede62eac98",
+  "productSha": "be281493c7699468f991a2333df074ec76691b3d",
+  "version": "1.0.0",
+  "formalDeliveryTriage": "failure",
+  "reason": "Prazo de submissão encerrado; PRAZO antigo mantido por solicitação.",
+  "technicalAudit": true,
+  "manuallyAssembled": false,
+  "teacherTxtGenerated": false
+}

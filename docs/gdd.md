@@ -1,6 +1,6 @@
 # Rota do Código — Game Design Document
 
-Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do documento: **031 — 19/10/2026 (America/Sao_Paulo)**. Mantemos a oficina de jogos aprovada, com desafios Python e produção web validada. Este documento descreve a candidata do código-fonte; sua data de revisão não representa data de submissão, tag ou release final. A versão/SHA do pacote final serão reconferidos após a etapa 035.
+Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do documento: **032 — 19/10/2026 (America/Sao_Paulo)**. Mantemos a oficina de jogos aprovada, com desafios Python e produção web validada. Esta revisão documental registra a produção1.0.0/be28149 e o vídeo validado; sua data não representa reciboAVA. Preservamos a revisão anterior no PDF imutável gerado para a tag e registramos separadamente este fechamento pós-execução.
 
 | Identificação | Situação verdadeira |
 |---|---|
@@ -12,8 +12,8 @@ Versão do software: **{{VERSION}}** (gerada de `package.json`). Revisão do doc
 | PR do primeiro ciclo | https://github.com/luccalck/desafio-arcade/pull/2; histórico do primeiro ciclo, sucedido pelas integrações revisadas #32, #33, #34, #40 e #41 |
 | Produção pública do jogo | https://luccalck.github.io/desafio-arcade/ |
 | Homologação formal | https://luccalck.github.io/desafio-arcade/hml/ |
-| CI de referência conferida | https://github.com/luccalck/desafio-arcade/actions/runs/38829484114 — CI, HML, produção e sondas pós-produção concluídos com sucesso |
-| Produção / homologação / vídeo / release | Produção/HML0.7.0/4678830, run38991328634 verde; Release técnica v0.7.0 publicada e conferida; pitch86s produzido; candidata1.0.0 preparada, publicação/tag/triagem finais ainda não executadas |
+| CI de referência conferida | https://github.com/luccalck/desafio-arcade/actions/runs/39346940628 — main1.0.0;325testes/37E2E;HML/PRD/monitorSUCCESS |
+| Produção / homologação / vídeo / release | Produção/HML1.0.0/be28149, run39346940628 verde; tagv1.0.0 anotada; pitch86s validado na entrada-video39348162168; resultado da publicação/pacote/triagem na evidência de entrega. Revisão final dispensada pelo proprietário, semAPPROVEfictício |
 | Release técnica pública | https://github.com/luccalck/desafio-arcade/releases/tag/v0.7.0 — SHAe9, bundle38852413982/2, publicado pela retomada38940532129 após aprovaçãoPR40 |
 | Plataforma | WEB estática responsiva, mesma experiência no computador e celular |
 
@@ -30,7 +30,7 @@ Papéis coordenam, sem exclusividade. Os nomes completos e RAs de três integran
 
 Registro histórico, superado pela implantação formal abaixo. Consulta pública em 14/10/2026: raiz e `/hml/` responderam HTTP 200, mas a HML servia a versão 0.6.0 do SHA `71933bfd4bd35f8c3ac8f5899a0e9af00db29f32`, anterior a este MD. `/status/` respondeu HTTP 404. Essas URLs não comprovam a candidata atual, produção formal ou painel publicado. O PR técnico mais recente antes desta revisão é [#21](https://github.com/luccalck/desafio-arcade/pull/21), com CI verde e revisão humana ainda pendente.
 
-Em 15/10/2026, após aprovação real de Lucas no PR33, integramos o SHA `88d533e31452036092cd8edef3efa3c0775241dc`. A execução 38829484114 validou 299 testes, 36 E2E, quatro cenários HML e promoção azul-verde com aprovação registrada em `producao`. HML ficou pronta em 216,414 segundos. ZIP original de 29.000 bytes validado offline; catorze comparações HTTP de sete arquivos em HML e produção confirmaram os mesmos bytes. `/status/` respondeu 200. [Evidências operacionais e limites](evidencias/operacao-2026-10-15.md). Esta revisão documental ainda depende de revisão externa no PR34.
+Em 15/10/2026, após aprovação real de Lucas no PR33, integramos o SHA `88d533e31452036092cd8edef3efa3c0775241dc`. A execução 38829484114 validou 299 testes, 36 E2E, quatro cenários HML e promoção azul-verde com aprovação registrada em `producao`. HML ficou pronta em 216,414 segundos. ZIP original de 29.000 bytes validado offline; catorze comparações HTTP de sete arquivos em HML e produção confirmaram os mesmos bytes. `/status/` respondeu 200. [Evidências operacionais e limites](evidencias/operacao-2026-10-15.md). Essa revisão histórica foi aprovada porLucas noPR34. A dispensa expressa da revisão do fechamento1.0.0 não foi registrada comoAPPROVE.
 
 A aprovação de concepção não substitui revisão por outro integrante. CPF e assinaturas não integram Git ou artefatos públicos; eventual versão privada depende de orientação do professor. Declaração coletiva e links de release continuam pendentes. Capturas históricas locais não representam produção. Capturas atuais de HML/produção estão identificadas nas evidências; testes automatizados não substituem playtest humano.
 

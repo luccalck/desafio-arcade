@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "tag": "v1.0.0",
+  "sha": "be281493c7699468f991a2333df074ec76691b3d",
+  "run": "39348283211",
+  "runAttempt": "1",
+  "version": "1.0.0",
+  "build": "2026-10-20T00:19:17.000Z",
+  "notesSha256": "0e3e2c9e306922b2d4cbec4951f219ed16ffd283c3773958c9377fa5eee20c9a",
+  "review": {
+    "approved": false,
+    "approvals": [],
+    "exception": {
+      "kind": "owner-waiver",
+      "authorized": true,
+      "humanReview": false,
+      "owner": "luccalck",
+      "actor": "luccalck",
+      "sha": "be281493c7699468f991a2333df074ec76691b3d",
+      "tag": "v1.0.0",
+      "pullRequest": 47,
+      "reason": "Dispensa expressa de revisão pelo proprietário em19/10/2026; não equivale a revisão humana."
+    }
+  },
+  "files": {
+    "build.zip": {
+      "sha256": "bbb63fde0a8808e7b9765b76fd5900b955534d5e6083202d0a1cfe85c27f5b9d",
+      "bytes": 30469
+    },
+    "build.zip.sha256": {
+      "sha256": "0a0d6fe5e86799cd731b7be5cc70b27b6a5e47cc13466a9f93a5378ab433f0b5",
+      "bytes": 76
+    },
+    "sbom.cdx.json": {
+      "sha256": "12ce82f7fae2e7088276f9fff2c80a607f5e0753d2a575ada3283a5db4a6c85f",
+      "bytes": 206452
+    },
+    "GDD.pdf": {
+      "sha256": "f9240dcdeccaca35f4aca9a48bdc879cf0bd301987b2d8173a5a2bcdec653494",
+      "bytes": 1351004
+    },
+    "RelatorioTecnico.pdf": {
+      "sha256": "b68ebb80e8cd1f4649ef8f58baa52c90053b16bc67e68694ce20f42793a5098b",
+      "bytes": 565174
+    }
+  }
+}

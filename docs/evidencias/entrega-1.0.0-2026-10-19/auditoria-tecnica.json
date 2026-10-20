@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-20T00:42:49.350Z",
+  "result": {
+    "approved": true,
+    "url": "https://luccalck.github.io/desafio-arcade/",
+    "assets": 4,
+    "mode": "vigilancia"
+  },
+  "technicalAuditOnly": true,
+  "formalDeadlineApproved": false,
+  "formalTagRun": "39348283211",
+  "localAdaptation": "Windows: CLI Playwright por node; extração textual PyMuPDF porque pdftotext não está instalado. pdfinfo/ffprobe reais preservados.",
+  "note": "Revalidação técnica do pacote original; modo vigilância não aprova a entrega temporal."
+}

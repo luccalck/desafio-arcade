@@ -1,0 +1,157 @@
+{
+  "schema": 1,
+  "files": {
+    "auditoria-smoke.xml": {
+      "bytes": 799,
+      "sha256": "161aab07e18390b6a8b6e7c1bd34860632250c5f565b53b5c27293c81d3dafb5"
+    },
+    "auditoria-tecnica.json": {
+      "bytes": 541,
+      "sha256": "2fad882ce7397c3d53b5217f573363cd6bc9ffc2677251b77a42445ea481d2f1"
+    },
+    "captura.json": {
+      "bytes": 5313,
+      "sha256": "c53f89fcdf76430f85e4dcf1d5cad0a6f0589911b02ae40e9102eac2b22f5c61"
+    },
+    "casos-falha.png": {
+      "bytes": 86910,
+      "sha256": "acee522ad82aa988a68e5c6ef8e0975400315d801c02cc8f240afc8c69dce359"
+    },
+    "ci-main-manifest.json": {
+      "bytes": 36267,
+      "sha256": "8bca0636bc3c62fbeadfc5fb22280ba4d3be65b0073fde4ce25708bdddc54596"
+    },
+    "ci-tag-manifest.json": {
+      "bytes": 36267,
+      "sha256": "9348ab7a3d54bda202971d1549b939c4d6114961088c9caa6c5965fe2e25e978"
+    },
+    "dora.json": {
+      "bytes": 3767,
+      "sha256": "cf79bdc266d365a296b8954ae53a48f8b7fb559c2243b23516cb3d32ab144715"
+    },
+    "edicao-pitch.json": {
+      "bytes": 3378,
+      "sha256": "5bcd87527e4002e0158ef62e94fb366bfe64826410a9e21b79cc18206cbf2f80"
+    },
+    "gitleaks.json": {
+      "bytes": 3,
+      "sha256": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570"
+    },
+    "integracao-excepcional.json": {
+      "bytes": 873,
+      "sha256": "b86c0b1a3731da2d65506956f8941e7197934869b90fef7c0f0e4895305bd398"
+    },
+    "main-candidata-smoke.json": {
+      "bytes": 554,
+      "sha256": "18639603d8fe6e491e01d080610f8c638aedebba46f5da880ad84dc29fae9dd3"
+    },
+    "main-hml-aceite.json": {
+      "bytes": 927,
+      "sha256": "e2563936e05068dfc830a95ac810ada0da5acc43dbdab06718bda79f0e9d67f6"
+    },
+    "main-hml-run.json": {
+      "bytes": 796,
+      "sha256": "9f54cb109e6a964886c68aeb6f321b98be9ce3b96fe12892ce3cbfd02297a9e6"
+    },
+    "main-producao-smoke.json": {
+      "bytes": 501,
+      "sha256": "850f8d20444ae7eb8a9dcf392729f03bd36ceae2428d4bdaf875ff2f642fac2b"
+    },
+    "main-producao.json": {
+      "bytes": 512,
+      "sha256": "65e5cecb85a92a623b2e4170cb69dd2081d342b1d9d89d1e1afbdf92d92b360c"
+    },
+    "menu.png": {
+      "bytes": 276424,
+      "sha256": "6f6c08bdfbb138edbd32fd1796729012088820a5ef7c68105ee57f1380980468"
+    },
+    "npm-audit.json": {
+      "bytes": 364,
+      "sha256": "bb48b38b6510a6e99b7240ae7d9393d505cedcf102e4849772180fdf853a0242"
+    },
+    "offline-real.png": {
+      "bytes": 49261,
+      "sha256": "972894d5ec03be3928c7fd0f87cddd4b3a6d94c9f3c2535b2ef857cb9a6b6757"
+    },
+    "projeto-validado.png": {
+      "bytes": 171851,
+      "sha256": "30b29b9d8a99f0f3d16f1d18e189f30f2c294adfbbfb1dcf2a7f28a89abced23"
+    },
+    "raw/page@73bec58c73fec13f6d549f06c4018f71.webm": {
+      "bytes": 6174286,
+      "sha256": "c3cbf31feecbeda5b43182cc1014af293de06036432ac870e2f636f9508c9ad1"
+    },
+    "raw-offline/page@18bd0be660142c6f5b36dffd354164c9.webm": {
+      "bytes": 655961,
+      "sha256": "f7b252b73452d96b2988cf7973d50f31e94c15e5686713e304532e5777ee908b"
+    },
+    "README.md": {
+      "bytes": 2551,
+      "sha256": "5ad1c5704ec42c84d63e13e0938df765c7682008b66027d402bf53075cbe8cc5"
+    },
+    "regra-corrigida.png": {
+      "bytes": 166413,
+      "sha256": "604705df9f06d9ba22655f79e1d89d0a73531f2de22c0fd7934ef6437758c995"
+    },
+    "release-manifest.json": {
+      "bytes": 1419,
+      "sha256": "81954458c7d71d23b06dd9aa7e0567ea895216191bf08f9b273dd65ed93e7e1e"
+    },
+    "release-verificada.json": {
+      "bytes": 2317,
+      "sha256": "5a8b8b6128c9dd93c6c7ec932c26475aaf117fde55bc7ee61f0337dbe0f8490c"
+    },
+    "reproducibility.json": {
+      "bytes": 2816,
+      "sha256": "f247c0daad7979314909ff6db2584ce343b2df97ecf834e442d1fc1d5af61bf2"
+    },
+    "sondas.csv": {
+      "bytes": 5539,
+      "sha256": "e4b953f69f29eab61e354c7992b4a026fc4e14024b78bdeab2e498d26711cc7b"
+    },
+    "sondas.json": {
+      "bytes": 921,
+      "sha256": "33e78638edc9c4a2332849e14cf1b3d4e378f31d6ec75ae6ba5fc9d312d204eb"
+    },
+    "submissao-artefato.json": {
+      "bytes": 844,
+      "sha256": "5e8b00e0c22b56858be280ec9ac3fbaa49b6ddfd2ad23bfd22017f5303d55eb5"
+    },
+    "submissao-manifest.json": {
+      "bytes": 3049,
+      "sha256": "7ec2d01a388eea6059f5416c7f477e5a7d1a2ee8a14df93479c11f3da15d76a1"
+    },
+    "tag-hml-aceite.json": {
+      "bytes": 927,
+      "sha256": "f09cbdbe5100af1cdbcba8c50ea82627d499f26db1ce084e749aa7f7b8ee54a7"
+    },
+    "tag-hml-run.json": {
+      "bytes": 723,
+      "sha256": "55033729e64a078317d3f420ff27ebd73b53fd86ed87db6f6e617307fd621566"
+    },
+    "triagem-original-job.log": {
+      "bytes": 151079,
+      "sha256": "c2931457624cac64fd18eefd681f12f10e2d1b42b149a8463b85d2fd8c5a2d55"
+    },
+    "verificacao-video.json": {
+      "bytes": 322,
+      "sha256": "788da52c5e2f6773bc621d5d3a6fbfced6c6078efe906cdb907355f90913c969"
+    },
+    "versao-producao.json": {
+      "bytes": 117,
+      "sha256": "88a08e48c074ca15fb066f95b3d89644dd3d9a880dd1836b4f1bf861d9bc0aeb"
+    },
+    "video-provenance.json": {
+      "bytes": 866,
+      "sha256": "9b633111c642c23eb8f12294a4fda5502785b262fe1be9699c03a3e2797bcb28"
+    },
+    "vigilancia-gate.json": {
+      "bytes": 305,
+      "sha256": "3047f7f60c7510763c1017b90a10ed08d296f325bca90e22c260e21704e34d26"
+    },
+    "vitoria.png": {
+      "bytes": 203836,
+      "sha256": "a2ead232d3d6fa491b64412d8954756676ca1e2232101fb38af59afed38dc533"
+    }
+  }
+}

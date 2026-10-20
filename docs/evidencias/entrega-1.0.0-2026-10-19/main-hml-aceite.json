@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "sha": "be281493c7699468f991a2333df074ec76691b3d",
+  "run": "39346940628",
+  "runAttempt": "1",
+  "siteUrl": "https://luccalck.github.io/desafio-arcade/",
+  "zipSha256": "bbb63fde0a8808e7b9765b76fd5900b955534d5e6083202d0a1cfe85c27f5b9d",
+  "files": {
+    "index.html": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282",
+    "style.css": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da",
+    "game.js": "7c685c2ec6c25602fd115f61936227b5e3eda2acb6bccebc96dba9ba91f5dbdd",
+    "version.json": "88a08e48c074ca15fb066f95b3d89644dd3d9a880dd1836b4f1bf861d9bc0aeb",
+    "LEIA-ME.txt": "0a389a88a1af575e61539e770892d63547bf79087c91ce5cdd1a95624915e225",
+    "LICENSE.txt": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb",
+    "THIRD_PARTY.txt": "1c15d2a6c944ec51340b7f6999a5a8e815cd2d603e486243878f0bad5eca97b1"
+  },
+  "collectedAt": "2026-10-20T00:22:12.310Z"
+}

@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
     inputs:
       modo:
-        description: 'Entrega aplica PRAZO; vigilância revalida o pacote já entregue'
+        description: 'Entrega aplica PRAZO; vigilância revalida o pacote sem aprovar o prazo'
         required: false
         default: vigilancia
         type: choice
@@ -65,7 +65,18 @@ jobs:
           import {readFile} from 'node:fs/promises';
           import {execFileSync} from 'node:child_process';
           const e=process.env,r=JSON.parse(await readFile('reports/submissao-run.json','utf8')),a=JSON.parse(await readFile('reports/submissao-artefato.json','utf8')),t=JSON.parse(await readFile('reports/submissao-tag.json','utf8'));
-          if(r.path!=='.github/workflows/esteira.yml'||r.event!=='push'||r.conclusion!=='success'||r.head_sha!==e.EXPECTED_SHA||String(r.id)!==e.SUBMISSION_RUN_ID||String(r.run_attempt)!==e.SUBMISSION_RUN_ATTEMPT)throw Error('Run final não corresponde à origem fixada.');
+          if(r.path!=='.github/workflows/esteira.yml'||r.event!=='push'||r.head_branch!==e.SUBMISSION_TAG||r.head_sha!==e.EXPECTED_SHA||String(r.id)!==e.SUBMISSION_RUN_ID||String(r.run_attempt)!==e.SUBMISSION_RUN_ATTEMPT)throw Error('Run final não corresponde à origem fixada.');
+          if(r.conclusion!=='success'){
+            if(e.MODO!=='vigilancia'||r.conclusion!=='failure')throw Error('Entrega exige origem aprovada; vigilância não altera a conclusão original.');
+            const jobs=JSON.parse(execFileSync('gh',['api',`repos/${e.GITHUB_REPOSITORY}/actions/runs/${r.id}/attempts/${e.SUBMISSION_RUN_ATTEMPT}/jobs?per_page=100`],{encoding:'utf8'})).jobs;
+            const gates=['ci','pacote-ci','deploy-hml','deploy-prd','monitor-pos-producao','release'];
+            if(gates.some(name=>!jobs.some(j=>j.name===name&&j.conclusion==='success')))throw Error('Gates de publicação da origem não foram concluídos.');
+            const submission=jobs.find(j=>j.name==='submissao');
+            const failures=jobs.filter(j=>j.conclusion==='failure');
+            const failedSteps=submission?.steps?.filter(s=>s.conclusion==='failure')??[];
+            if(failures.length!==1||failures[0].name!=='submissao'||failedSteps.length!==1||failedSteps[0].name!=='Executar e arquivar triagem formal na tag final'||!submission.steps.some(s=>s.name==='Gerar submissão só dos bytes homologados, publicados e verificados'&&s.conclusion==='success'))throw Error('Origem falhou fora da triagem de entrega.');
+            console.warn('VIGILÂNCIA TÉCNICA: origem mantém triagem de entrega reprovada; pacote será revalidado sem aprovar prazo ou submissão.');
+          }
           if(a.expired||a.workflow_run?.id!==r.id||a.workflow_run?.head_sha!==e.EXPECTED_SHA||a.name!==`submissao-${e.EXPECTED_SHA}-${e.SUBMISSION_RUN_ID}-${e.SUBMISSION_RUN_ATTEMPT}`||a.digest!==e.SUBMISSION_ARTIFACT_DIGEST)throw Error('Artefato expirado, digest ou origem divergente.');
           if(t.object?.type!=='tag')throw Error('Tag final deve ser anotada.');
           const tag=JSON.parse(execFileSync('gh',['api',`repos/${e.GITHUB_REPOSITORY}/git/tags/${t.object.sha}`],{encoding:'utf8'}));
