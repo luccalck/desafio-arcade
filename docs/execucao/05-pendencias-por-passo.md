@@ -119,7 +119,7 @@ INT-05/02/01.
 - [x] Inventário, THIRD_PARTY, LICENSE, AI-USAGE, scanners e fontes/ativos registrados; revisão do P2 de Miguel efetivamente concluída no PR35 e nova aprovação de Lucas no PR33.
 - [x] Créditos dos seis componentes reconferidos em16/10/2026, com fontes/cabeçalhos/licenças em creditos-reconferidos-2026-10-16.json: @esbuild/win32-x64, @eslint/config-helpers, @rolldown/binding-win32-x64-msvc, argparse, lightningcss e lightningcss-win32-x64-msvc. Conferência técnica assistida autorizada por Lucca; não substitui direitos coletivos.
 - [x] Confirmação coletiva de autoria/originalidade/titularidade, ferramentas e direitos dos materiais atuais declarada por Lucca em nome do squad em16/10. GDD-15/I05-16/DIR-01/14; fonte em ../evidencias/confirmacao-squad-2026-10-16.md.
-- [ ] Inventário do vídeo final e rastreabilidade/revisão dos novos usos e alterações até a entrega (I05-11/14/15/17/21/22); a confirmação não substitui a aprovação formal do HEAD de outro autor.
+- [x] Inventário final/MP3/IA/rastreabilidade atualizados e conferidos. A revisão humana final foi dispensada pelo proprietário; não foi marcada como realizada ou como atendimento integral desse critério.
 
 <a id="passo-009"></a>
 
@@ -283,7 +283,7 @@ INT-02/10/06.
 
 - [x] GDD completo revisado, RAs preenchidos, fontes originais disponíveis no fechamento e PDF automático validado. Não cobrar originais indisponíveis nos computadores antigos.
 - [x] Lucas aprovou atualização do PR34 no HEADe9dd28c, incluindo GDD/PDF; mergeacb03d8.
-- [ ] Reconciliar versão/data/URLs e direitos na release acadêmica final; revisar documentos alterados depois da aprovação.
+- [x] Versão/data/URLs/fontes da entrega1.0.0 reconciliadas após execução; GDD e relatório mantêm resultados e limites. Revisão externa final dispensada, semAPPROVE fictício.
 
 <a id="passo-026"></a>
 
@@ -379,7 +379,7 @@ INT-01/03/06/07/09.
 
 - [x] PR40 aprovado porLucas5543614682 no HEADa190215 e merge1e3dd3b; main318testes/36E2E/HML178,827s, com PRDskipped intencionalmente para preservar e9.
 - [x] Release técnica v0.7.0 publicada pela retomada38940532129, aprovação real emproducao, sem build/deploy; seis anexos públicos e hashes conferidos.
-- [ ] Tag acadêmicav1.0.0:versão/package/lock/GDD/notas revisados, candidata filmada, pacote e triagem reais. Não criar v0.1.0 retroativa ou moverv0.7.0; o marco histórico sem prova continua001/037/040.
+- [x] Tag anotadav1.0.0/Release/pacote gerados pela pipeline,versão1.0.0/SHAbe28149,data e vídeo conferidos. Triagem foi executada eREPROVADA temporalmente,registrada em036;sem moverv0.7.0 ou criar marco histórico retroativo.
 
 <a id="passo-036"></a>
 
@@ -388,7 +388,7 @@ INT-01/03/06/07/09.
 INT-09/05/07/03.
 
 - [x] RAs completos e produção disponível; scanners sem achados no escopo executado, publicação formal somente pela pipeline.
-- [ ] Executar triagem real na tag v1.0.0 e arquivar TRIAGEM APROVADA/logs/pacote/manifesto. Conferir PRAZO verdadeiro, todos os arquivos abrindo, integridade e licenças; nenhum aceite final enquanto pitch e entradas reais faltarem.
+- [ ] Obter aceite temporal verdadeiro da entrega: triagem na tag1.0.0 já executada eREPROVADA peloPRAZO antigo mantido. Pacote,manifesto,vídeo e logs existem e a auditoria técnica passou. Não háTRIAGEMAPROVADA deentrega a declarar.
 
 <a id="passo-037"></a>
 
