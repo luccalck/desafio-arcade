@@ -33,7 +33,7 @@ Links abaixo são reais; conferir SHA/versão da entrega antes do TXT. Não usar
 | lkCI | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/39346940628 | Main1.0.0 integralmenteverde,325/37,HML173,519s,PRD/smoke/monitor. Tag39348283211:release passou;jobsubmissao falhou no prazo,sem sucesso global |
 | lkGraf | Sim | https://luccalck.github.io/desafio-arcade/status/ | Sondas39348785870:HML/PRD200,1.0.0;4deploys/14dias,lead20min21s,CFR25%,MTTRnull |
 | lkVideo | Sim | https://github.com/luccalck/desafio-arcade/releases/download/midia-pitch-v1.0.0/pitch.mp4 | Edição86s/ElevenLabs,30legendas bold,produção filmada1.0.0/be28149;entrada-video39348162168SUCCESS |
-| lkRel | Sim | https://raw.githubusercontent.com/luccalck/desafio-arcade/main/docs/entrega/1.0.0/RelatorioTecnico.pdf | PDF pós-execução separado dos assets imutáveis;publicar com proveniência deCI antes de usar este link na ficha |
+| lkRel | Sim | https://github.com/luccalck/desafio-arcade/releases/download/midia-pitch-v1.0.0/RelatorioTecnico-pos-execucao.pdf | PDF pós-execução separado dos assets imutáveis; cópia original daCI e proveniência próprias na release de mídia |
 | lkDrive | Não | | Concurso opcional; sem inscrição autorizada |
 
 ## 4. Integráveis —20 controles

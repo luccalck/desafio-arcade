@@ -99,7 +99,30 @@ jobs:
         run: |
           set -o pipefail
           node scripts/submissao.mjs verify submissao
-          node scripts/triagem.mjs submissao --modo="$MODO" | tee reports/triagem-agendada.log
+          node --input-type=module 2>&1 <<'NODE' | tee reports/triagem-agendada.log
+          import {validateSubmission,run} from './scripts/triagem.mjs';
+          import {createRequire} from 'node:module';
+          import {dirname,join} from 'node:path';
+          const require=createRequire(import.meta.url);
+          const cli=join(dirname(require.resolve('playwright/package.json')),'cli.js');
+          // Manter o processo ativo durante promises de I/O, com limite explícito.
+          // Não omitir checagens ou converter falha de entrega em aprovação temporal.
+          const active=setInterval(()=>{},1000);
+          let timeout;
+          const limit=new Promise((_,reject)=>{timeout=setTimeout(()=>reject(Error('Auditoria excedeu 240 segundos.')),240000);});
+          try{
+            const result=await Promise.race([validateSubmission({directory:'submissao',mode:process.env.MODO,
+              fetchImpl:async(url,options)=>{console.log('HTTP',url);const r=await fetch(url,{...options,signal:AbortSignal.timeout(15000)});console.log('HTTP status',r.status);return r;},
+              runCommand:async(command,args,options)=>{
+                console.log('VALIDAR',command,args.join(' '));
+                const value=await run(command==='npx'?process.execPath:command,command==='npx'?[cli,...args.slice(1)]:args,options);
+                console.log('VALIDADO',command);return value;
+              }
+            }),limit]);
+            console.log(JSON.stringify({...result,formalDeliveryApproved:process.env.MODO==='entrega'}));
+            console.log(process.env.MODO==='vigilancia'?'VIGILÂNCIA TÉCNICA APROVADA; NÃO APROVA PRAZO DE ENTREGA.':'TRIAGEM APROVADA');
+          }finally{clearInterval(active);clearTimeout(timeout);}
+          NODE
       - name: Notificar falha real de recuperação ou validação
         if: failure() && (github.event_name == 'schedule' || inputs.alertar)
         run: |
