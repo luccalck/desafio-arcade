@@ -86,8 +86,8 @@
       "sha256": "f7b252b73452d96b2988cf7973d50f31e94c15e5686713e304532e5777ee908b"
     },
     "README.md": {
-      "bytes": 2551,
-      "sha256": "5ad1c5704ec42c84d63e13e0938df765c7682008b66027d402bf53075cbe8cc5"
+      "bytes": 2846,
+      "sha256": "d91f6156e7282c6f6001981a6f46e2db78988ff3b6a3558e6a16aec821c7914a"
     },
     "regra-corrigida.png": {
       "bytes": 166413,
@@ -145,9 +145,45 @@
       "bytes": 866,
       "sha256": "9b633111c642c23eb8f12294a4fda5502785b262fe1be9699c03a3e2797bcb28"
     },
+    "vigilancia-ea1ed0610ab15c2533fa167ade9b18a70805e5d8.json": {
+      "bytes": 480,
+      "sha256": "3871f59169838e3a699a948b821eb673e8d6e7b65b73bee66daf68a1a996e6ef"
+    },
     "vigilancia-gate.json": {
       "bytes": 305,
       "sha256": "3047f7f60c7510763c1017b90a10ed08d296f325bca90e22c260e21704e34d26"
+    },
+    "vigilancia-pages-smoke.xml": {
+      "bytes": 798,
+      "sha256": "88e5aa2b5c225d26b016437f46dd443aa0c0d8ac9114e51874b56732cdcec28b"
+    },
+    "vigilancia-primeira-falha.log": {
+      "bytes": 6523,
+      "sha256": "d70a90cfb2c03169a25a93a3c2e3194c9922f913c022cca9db8f1ecba38882ef"
+    },
+    "vigilancia-submissao-artefato.json": {
+      "bytes": 741,
+      "sha256": "e986c8f2eee33560aa18fe7081c864c96c358e5872531946bc73d4473cfddcf8"
+    },
+    "vigilancia-submissao-run.json": {
+      "bytes": 12590,
+      "sha256": "172b8642924e0ac3fd87b1820a3cfe82316e8b52a231558bc7abbca51b1f640b"
+    },
+    "vigilancia-submissao-tag.json": {
+      "bytes": 341,
+      "sha256": "f1414b05c134c5ca4d734be17bf9fd6170f50d169305199ab3eaa301f4478711"
+    },
+    "vigilancia-triagem-agendada-execucao.json": {
+      "bytes": 535,
+      "sha256": "e15297d024ea03cfd13ea61e0dba576507ea8797ffe819afbc481897b1060ad4"
+    },
+    "vigilancia-triagem-agendada-run.json": {
+      "bytes": 177,
+      "sha256": "58d45b98259382498f7250b8ddaab08ff35667fd0d6111d24521bbc1e42b6a37"
+    },
+    "vigilancia-triagem-agendada.log": {
+      "bytes": 594,
+      "sha256": "8a301050cb460b9588abe191c3907570cdf6a86067ac259f8738300388262ae4"
     },
     "vitoria.png": {
       "bytes": 203836,

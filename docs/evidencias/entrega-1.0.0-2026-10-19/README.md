@@ -22,3 +22,5 @@ Mudança de encoder/fonte pode alterar os bytes de uma reedição. O vídeo entr
 ## Resultado da entrega
 
 Releasev1.0.0 publicada com seisassets públicos conferidos. Pacote originalActions:artefato12231549745,6.712.350bytes,SHA-2561c3d83df20426005fd17e4c4361f71b7b91c7873bfa26540ae767cede62eac98. Cópia pública permanente emdocs/entrega/1.0.0/submissao.zip. A triagem formalREPROVOU o prazo antigo mantido. Auditoria técnica posterior passou emmodo vigilância,sem aprovar prazo. Logoriginalsubmissao-job preservado; reports/ausente e captura destderr corrigidos no workflow posterior.
+
+Vigilância real39350305105/1 SUCCESS:origem fixada,PDF/texto/vídeo/manifesto/HTTP/smoke;resultadoformalDeliveryApproved:false. Primeira tentativa39350063593 falhou noexecutor e foi preservada;runner corrigido,sem afrouxar o prazo. Cron configurado;acompanhar execuções futuras atébanca.

@@ -332,7 +332,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I09-18 — Falha em qualquer checagem reprova o job e impede entrega considerada aprovada. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
 - [ ] I09-19 — Rodar triagem na tag v1.0.0 e arquivar resultado TRIAGEM APROVADA verdadeiro.
 - [x] I09-20 — Pacote original arquivado noActions; log original dojob preservado após detectar falha de arquivamento. Pasta/captura destderr corrigidas no workflow posterior. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
-- [ ] I09-21 — AVANÇADO: triagem agendada até a banca. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [ ] I09-21 — AVANÇADO/CONTÍNUO: cron diário habilitado,origem imutável fixada e dispatch39350305105SUCCESS. Acompanhar horários/atrasos reais até banca;execução manual não comprova recorrência futura.
 - [ ] I09-22 — AVANÇADO: triagem agendada avisa se a URL cair até a banca, com notificação real. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
 - [ ] I09-23 — CONDICIONAL concurso: enviar o mesmo pacote ao Drive do responsável e conferir acesso total ao e-mail do regulamento.
 - [ ] I09-24 — CONDICIONAL concurso: testar compartilhamento em janela anônima com outra conta.
@@ -356,7 +356,7 @@ Esta subseção mantém o documento completo solicitado, além das quatro seçõ
 - [x] I10-15 — Retrospectiva registra o que mudariam, sustentado por dados. docs/relatorio.md Seção7: revisão de registros/proveniência, com base nos27checkscontestados e bundleauditado; efeitoDORAa medir.
 - [x] I10-16 — Contribuição de cada integrante com links dos PRs reais. docs/relatorio.md Seção7 e docs/contribuicoes.md mapeiam os28PRsautorais e os respectivos estados de revisão.
 - [x] I10-17 — PDF da CI38772751460 baixado, aberto e com10páginas renderizadas/inspecionadas;3imagens e58links. Artefato build acessível no Actions; preservar PDF final na release quando aprovada. [Prova](../evidencias/operacao-2026-10-15/relatorio-ci-verificacao.json).
-- [ ] I10-18 — Acrescentar evidências reais de release/triagem após as execuções; não declarar sucesso antecipado. Reconferência de 14/10/2026: marca anterior reaberta; requer evidência correspondente, conforme [registros corrigidos](../evidencias/reconferencia-registros.md).
+- [x] I10-18 — Relatório pós-execução atualizado com Releasev1.0.0/pacote/triagem temporalREPROVADA/vigilância39350305105SUCCESS,sem antecipar aceite acadêmico. PDF original daCI publicado separadamente.
 - [x] I10-19 — AVANÇADO: narrativa clara do pitch, legendas e retrospectiva honesta com dados. 19/10: run39348283211/1, artefato12231549745, verificação de hashes/proveniência e auditoria técnica; [fontes](../evidencias/entrega-1.0.0-2026-10-19/). Não equivale a aprovação temporal da entrega.
 
 ## 06 — Kit de partida: fechar as lacunas dos exemplos

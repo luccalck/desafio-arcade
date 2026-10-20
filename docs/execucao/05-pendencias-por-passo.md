@@ -19,7 +19,7 @@ Mantemos os mesmos oito tópicos da solicitação de fechamento de Lucca. Não s
 |---|---|---|---|
 | 1 | Fechamento documental e revisões | PR32/33/34/35/40 revisados; PR40 integrado; matriz individual com três INT por integrante e vinte PRs revisados; documentação atualizada na branch | PR47 integrado como be28149 após dispensa expressa de revisão pelo proprietário. Política restaurada; approved:false. CI/HML/PRD/monitor e vídeo atuais concluídos. Não é pendência de revisão a cobrar nem aprovação humana realizada. Confirmação coletiva de direitos/ferramentas e recebimento das notificações registrada em16/10 por declaração de Lucca; marcos históricos continuam sem prova documental nova. |
 | 6 | Release e pacote | **Release técnica v0.7.0 concluída**, seis anexos públicos conferidos, ZIP29.265bytes, mesmo artefato homologado e publicado, offline validado | Tag/Releasev1.0.0 e pacote original concluídos. Entrada-video39348162168 SUCCESS. Triagem formal39348283211 reprovou pelo prazo antigo mantido; auditoria técnica passou e não substitui o aceite temporal. Seguir docs/pacote-submissao.md; não gerar pacote manual ou pitch fictício. |
-| 7 | Conferências e relatório | Relatório operacional de10páginas gerado/inspecionado na CI38948501087 e atualizado com o novo ensaio; GDD completo; segurança, autoria, smoke, hashes e responsividade verificados | Atualizar a conferência final somente depois do vídeo/pacote/triagem reais. O PDF posterior tem fonte documental própria; não sobrescrever anexos imutáveis da Release técnica. |
+| 7 | Conferências e relatório | Relatório operacional de10páginas gerado/inspecionado na CI38948501087 e atualizado com o novo ensaio; GDD completo; segurança, autoria, smoke, hashes e responsividade verificados | Vídeo/pacote/tag/release e triagem real conferidos;relatório pós-execução inclui resultados e ressalvas. PDF original daCI será disponibilizado separadamente dos anexos imutáveis;sem nova revisão externa por ordem do responsável. |
 | 8 | Ficha/TXT, envio e banca | MD persistente com49campos e dados conhecidos; roteiro de apresentação/demonstração/perguntas preparado | **Ficha/TXT por último**, conforme Lucca. Faltam entradas finais verdadeiras, envio/reciboAVA e apresentação dos quatro, incluindo demonstração pedida pelo professor. Datas históricas e prazo oficial não são inventados. |
 
 ### Atividades concluídas — fora da lista de pendências
@@ -349,7 +349,8 @@ INT-09/06/03.
 INT-09/08.
 
 - [x] Workflow de vigilância/agendamento e notificação implementado e testado na main.
-- [ ] I09-21/22: habilitar quando pacote real existir e comprovar execução recorrente até banca, relatório/atrasos e notificação real em falha controlada ou efetiva. Flags finais continuam desabilitadas; cron versionado não comprova vigilância executada.
+- [x] Vigilância habilitada comSHA/run/tentativa/tag/ID/digest fixados;dispatch39350305105 SUCCESS conferiu pacote/seções/vídeo/manifesto/smoke,formalDeliveryApproved:false. Cron diário e alerta em falha configurados. Tentativa39350063593 falhou e foi preservada;runner corrigido.
+- [ ] CONTÍNUO I09-21/22: arquivar execuções agendadas futuras até a banca e recepção real de notificação de vigilância;dispatch aprovado não comprova cron futuro ou alerta que não foi emitido. Sem inventar incidente para obter medição.
 
 <a id="passo-033"></a>
 
@@ -358,7 +359,7 @@ INT-09/08.
 INT-10/02/08/04.
 
 - [x] Relatório completo de10páginas do PR40 aprovado porLucas, gerado pelaCI e baixado/inspecionado; versão anterior da origem e9 publicada como anexo técnico sem sobrescrita.
-- [ ] Gerar/validar/revisar a atualização documental posterior à publicação, com20PRs revisados, matriz individual, Release real e DORA atual. O relatório acadêmico final deve receber resultados de vídeo/triagem/playtest quando existirem; não mudar os bytes da Release antiga.
+- [x] Relatório pós-execução com dez seções,20PRs revisados/matriz real,Releasev1.0.0,DORA atual,pitch e triagem temporalreprovada. Geração automática/10p validada no build39350303793;fonte final inclui vigilância39350305105 e será publicada emPDForiginal daCI. Revisão final dispensada,semAPPROVE;assets antigos preservados.
 
 <a id="passo-034"></a>
 
@@ -511,4 +512,6 @@ Releasev1.0.0 pública pela pipeline39348283211/1;pacote gerado e recuperado doA
 
 A triagem formal da tag foi executada e REPROVADA peloPRAZO antigo. O log original preserva também erro de pasta reports/ausente; corrigimos seu arquivamento posterior sem alterar a conclusão histórica. O pacote existe e é íntegro,mas não existe TRIAGEMAPROVADA deentrega. A revisão final foi dispensada pelo proprietário,sem criarAPPROVE. Não reabrir essas duas decisões como novas solicitações no chat nem marcar os critérios acadêmicos como se fossem cumpridos.
 
-Tópicos ativos preservados:6(aceite temporal),7(relatório pós-execução e publicação documental),8(fichaTXT/AVA/banca). Os checks humanos e históricos que continuam abertos abaixo indicam limites reais,não tarefas automatizadas concluídas. O vídeo e os anexos daRelease não estão ausentes.
+Tópicos ativos preservados:6(aceite temporal) e8(fichaTXT/AVA/banca). Tópico7 documental foi preparado/validado para publicação;proveniênciaPDF acompanha o arquivo. Coleta futura contínua permanece identificada como tal. Os checks humanos e históricos que continuam abertos abaixo indicam limites reais,não tarefas automatizadas concluídas. O vídeo e os anexos daRelease não estão ausentes.
+
+Vigilância39350305105 concluídaSUCCESS em19/10,com pacote original e smoke público. Não altera o resultado formal deentrega. Relatório pós-execução e ficha persistente recebem essa distinção;semTXTgerado.
