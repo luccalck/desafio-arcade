@@ -388,7 +388,7 @@ INT-01/03/06/07/09.
 INT-09/05/07/03.
 
 - [x] RAs completos e produção disponível; scanners sem achados no escopo executado, publicação formal somente pela pipeline.
-- [ ] Obter aceite temporal verdadeiro da entrega: triagem na tag1.0.0 já executada eREPROVADA peloPRAZO antigo mantido. Pacote,manifesto,vídeo e logs existem e a auditoria técnica passou. Não háTRIAGEMAPROVADA deentrega a declarar.
+- [x] Retriagem formal39483855023/1 APROVADA sobre pacote original da tagv1.0.0,com validador5f3833d e exceção temporal limitada. PRAZO preservado;withinDeadline:false. [recibo e logs](../evidencias/int09-2026-10-20/)
 
 <a id="passo-037"></a>
 
@@ -517,3 +517,15 @@ Tópicos ativos preservados:6(aceite temporal) e8(fichaTXT/AVA/banca). Tópico7 
 Vigilância39350305105 concluídaSUCCESS em19/10,com pacote original e smoke público. Não altera o resultado formal deentrega. Relatório pós-execução e ficha persistente recebem essa distinção;semTXTgerado.
 
 Relatório pós-execução final:CI39350798673/1 SUCCESS,fonte945e0b3,10p/568.292bytes,SHA-25607198130b2526101293260822671663ab7e769d4a64b89a6b3bdf04573d5e701. Download públicoHTTP200 conferido;anexos imutáveis daReleasev1.0.0 preservados. Links finais disponíveis;declaração4 temporal continua falsa.
+
+## Estado corrente do INT-09 —20/10/2026
+
+- [x] Pacote original da tagv1.0.0 recuperado e validado integralmente por scripts/triagem.sh na run39483855023/1:TRIAGEM APROVADA,formalDeliveryApproved:true.
+- [x] Exceção temporal limitada aplicada com relógio real e PRAZO antigo:withinDeadline:false,exceptionApplied:true. A falha original não foi apagada nem transformada em sucesso.
+- [x] Ciclo de imports do CLI corrigido com regressão;337 testes e37E2E nas CIs39483791481/39483868561.
+- [x] Agendamento real39457086815SUCCESS arquivado,com atraso4h24m01s explicitado.
+- [ ] CONTÍNUO: observar agendamentos até a banca; notificação de queda somente se ocorrer falha real. Não houve queda neste ciclo.
+- [ ] Integrar/publicar a atualização documental do PR49 e seu relatório daCI; preservar software/pacote originais.
+- [ ] Ficha final para revisão,TXT por ação posterior do responsável,AVA/recibo e banca.
+
+Os parágrafos datados anteriores documentam estados históricos; o quadro acima substitui exclusivamente o bloqueio atual do INT-09. [recibo e logs](../evidencias/int09-2026-10-20/)

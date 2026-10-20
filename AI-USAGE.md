@@ -461,3 +461,7 @@ Lucca solicitou concluir o INT-09 mantendo o prazo configurado. Codex reproduziu
 Acrescentamos política temporal explícita, vinculada a repositório/ator proprietário/tag/SHA/digest/prazo. O recibo distingue withinDeadline de exceptionApplied e conserva a data real; outras validações continuam bloqueantes. Não alterar o relógio, a tag, o pacote ou os anexos imutáveis. Onze testes cobrem a política; a suíte local com dois workers passou337testes,core97,90%. A primeira execução paralela local apresentou timeout/workerWindows e foi preservada como falha, sem alterar os limites do jogo.
 
 O workflow passa a executar scripts/triagem.sh diretamente com o validador corrigido, identificado porSHA separado do produto. Conferirá o pacote original, os gates da origem e SQUAD idêntico à tag. Aprovação só será registrada após execução real. Revisão final dispensada pelo responsável,sematribuirAPPROVE a outra pessoa.
+
+### 20/10/2026 — evidências da retriagem
+
+Conferimos os artefatos reais da run39483855023: scripts/triagem.sh terminou TRIAGEM APROVADA sobre o pacote original da v1.0.0, com exceção temporal limitada registrada e relógio real. A execução original continua reprovada. As CIs39483791481/39483868561 passaram (337 testes e37E2E). Arquivamos schedule real39457086815 com atraso4h24m01s. A IA reconciliou documentos e gerou o relatório pela ferramenta versionada; sem fabricar revisão humana, queda, entrega no prazo ou nota.
