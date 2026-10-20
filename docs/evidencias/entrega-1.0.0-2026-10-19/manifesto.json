@@ -93,6 +93,14 @@
       "bytes": 166413,
       "sha256": "604705df9f06d9ba22655f79e1d89d0a73531f2de22c0fd7934ef6437758c995"
     },
+    "relatorio-proveniencia.json": {
+      "bytes": 923,
+      "sha256": "1b5a18f7fc5f54ca7c4ea1623b5647df1fd961926b16c1ebb9c5d899b249fa06"
+    },
+    "relatorio-publico.json": {
+      "bytes": 356,
+      "sha256": "60435c95654cc3f84446fa9c2829c11aca7b3e05aaf3663b9aa7f58901949421"
+    },
     "release-manifest.json": {
       "bytes": 1419,
       "sha256": "81954458c7d71d23b06dd9aa7e0567ea895216191bf08f9b273dd65ed93e7e1e"

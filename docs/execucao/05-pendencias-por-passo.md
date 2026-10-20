@@ -359,7 +359,7 @@ INT-09/08.
 INT-10/02/08/04.
 
 - [x] Relatório completo de10páginas do PR40 aprovado porLucas, gerado pelaCI e baixado/inspecionado; versão anterior da origem e9 publicada como anexo técnico sem sobrescrita.
-- [x] Relatório pós-execução com dez seções,20PRs revisados/matriz real,Releasev1.0.0,DORA atual,pitch e triagem temporalreprovada. Geração automática/10p validada no build39350303793;fonte final inclui vigilância39350305105 e será publicada emPDForiginal daCI. Revisão final dispensada,semAPPROVE;assets antigos preservados.
+- [x] Relatório pós-execução com dez seções,20PRs revisados/matriz real,Releasev1.0.0,DORA atual,pitch e triagem temporalreprovada. Geração automática final naCI39350798673/1 SUCCESS,SHA945e0b3,10p/568.292B,PDF públicoSHA07198130. Fonte inclui vigilância39350305105;proveniência própria preservada. Revisão final dispensada,semAPPROVE;assets antigos preservados.
 
 <a id="passo-034"></a>
 
@@ -515,3 +515,5 @@ A triagem formal da tag foi executada e REPROVADA peloPRAZO antigo. O log origin
 Tópicos ativos preservados:6(aceite temporal) e8(fichaTXT/AVA/banca). Tópico7 documental foi preparado/validado para publicação;proveniênciaPDF acompanha o arquivo. Coleta futura contínua permanece identificada como tal. Os checks humanos e históricos que continuam abertos abaixo indicam limites reais,não tarefas automatizadas concluídas. O vídeo e os anexos daRelease não estão ausentes.
 
 Vigilância39350305105 concluídaSUCCESS em19/10,com pacote original e smoke público. Não altera o resultado formal deentrega. Relatório pós-execução e ficha persistente recebem essa distinção;semTXTgerado.
+
+Relatório pós-execução final:CI39350798673/1 SUCCESS,fonte945e0b3,10p/568.292bytes,SHA-25607198130b2526101293260822671663ab7e769d4a64b89a6b3bdf04573d5e701. Download públicoHTTP200 conferido;anexos imutáveis daReleasev1.0.0 preservados. Links finais disponíveis;declaração4 temporal continua falsa.

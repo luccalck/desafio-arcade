@@ -1,0 +1,27 @@
+{
+  "schema": 1,
+  "document": "RelatorioTecnico-pos-execucao.pdf",
+  "softwareVersion": "1.0.0",
+  "productionSha": "be281493c7699468f991a2333df074ec76691b3d",
+  "documentSourceSha": "945e0b33a52b66d5f63c4f1d4cd92c2079f5a893",
+  "ci": {
+    "repository": "luccalck/desafio-arcade",
+    "workflow": "esteira.yml",
+    "event": "push",
+    "run": "39350798673",
+    "attempt": "1",
+    "job": "build",
+    "jobConclusion": "success",
+    "artifactId": 12233376815,
+    "artifactDigest": "sha256:493a8e010ebe9332fcef4615e8339a15c171205800c9d5454867e3fe44bbd86c",
+    "path": "artifacts/RelatorioTecnico.pdf"
+  },
+  "pdf": {
+    "sha256": "07198130b2526101293260822671663ab7e769d4a64b89a6b3bdf04573d5e701",
+    "bytes": 568292,
+    "pages": 10
+  },
+  "generatedManually": false,
+  "modifiedAfterCI": false,
+  "scope": "Relatório pós-execução distinto do PDF imutável da Release do software."
+}

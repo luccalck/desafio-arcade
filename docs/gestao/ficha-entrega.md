@@ -84,7 +84,7 @@ Lucca solicitou expressamente usar o instante atual como limite; configuramos `P
 - [x] Squad/repositório reais disponíveis; URLHTTP/HTTPS.
 - [x] Quatro nomes completos/RAs reais disponíveis.
 - [x] Quatro papéis oficiais distintos disponíveis.
-- [ ] Links finais obrigatórios acessíveis e coerentes com a versão entregue.
+- [x] Links finais obrigatórios acessíveis:produção/HML/status1.0.0,mainCIverde,pitchvalidado ePDFpós-execução daCI39350798673 com10p/568.292B/hash07198130,HTTP200conferido.
 - [ ] Dez integráveis efetivamente entregues/evidenciados, confrontados com o checklist integral.
 - [x] Dez autoavaliaçõesA/quatro estimativasB:10, por solicitação; faixa0–10, passo0,5.
 - [ ] Quatro declarações verdadeiras aceitas após conferência; primeira já confirmada.
@@ -103,4 +103,4 @@ Preservamos o histórico anterior peloGit. Este documento contém as respostas c
 
 ## Estado final para revisão
 
-PacoteActions12231549745/digest1c3d83df gerado na tag1.0.0. Auditoria técnica passou;triagemformal reprovou pelo prazo antigo mantido. Não marcar a declaração4 nem habilitar o botãoTXT àforça. A ficha segue rascunho;Lucca pediu revisar antes de gerarTXT. Revisão final dispensada não será cobrada como nova ação de integrante nem registrada comoAPPROVE. Links finais serão conferidos após publicação documental.
+PacoteActions12231549745/digest1c3d83df gerado na tag1.0.0. Auditoria técnica passou;triagemformal reprovou pelo prazo antigo mantido. Não marcar a declaração4 nem habilitar o botãoTXT àforça. A ficha segue rascunho;Lucca pediu revisar antes de gerarTXT. Revisão final dispensada não será cobrada como nova ação de integrante nem registrada comoAPPROVE. Links finais conferidos;PDF público comproveniência própria. HTML permanece rascunho para revisão,semTXTgerado.
