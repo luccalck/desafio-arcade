@@ -1,5 +1,7 @@
 # Revisão humana da candidata final — PR #47
 
+**Estado19/10:** o proprietário dispensou esta revisão. O roteiro abaixo fica como histórico; nenhuma aprovação de colega foi fabricada. A exceção é registrada na proveniência daRelease.
+
 Este roteiro prepara a aprovação real da candidata; não é uma aprovação, um log de testes ou autorização para usar a identidade de outra pessoa. A aprovação de Davi no PR #41 já foi usada na integração daquele diff. O pitch posterior e a preparação da versão 1.0.0 estão no PR #47.
 
 ## Prompt para o integrante revisor

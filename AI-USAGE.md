@@ -436,3 +436,10 @@ Conferimos os49controles da ficha original em navegador e preservamos o HTML/has
 ## 19/10/2026 — conferência de integridade dos recibos
 
 Na retomada do fechamento, Codex conferiu os manifestos contra os blobs commitados: os63arquivos do pitch estavam íntegros; dois dos13recibos da candidata tiveram CRLF convertido emLF peloGit. Acrescentamos a regra de preservação de bytes dessa pasta em.gitattributes e readicionamos os dois recibos originais, sem editar respostas, horários, resultados ou o manifesto para esconder a divergência. A conferência do índice deve corresponder aos13hashes já registrados. Nenhuma mudança de regra do jogo, vídeo, produção ou relógio. O PR47 continua exigindo revisão real do HEAD atualizado; a aprovação do41 não foi reutilizada.
+
+
+## 19/10/2026 — dispensa expressa da revisão de fechamento
+
+Lucca determinou reiteradamente dispensar a revisão doPR47 e prosseguir com a entrega. Registramos uma exceção operacional de revisão, sem atribuir aprovação aDavi/Miguel/Lucas. A autorização daRelease exige oSHAexato configurado pelo proprietário, ator proprietário, tagv1.0.0 ePR47 efetivamente integrado; o manifesto conserva approved:false/humanReview:false. As regras normais continuam para qualquer outra versão ouSHA.
+
+A integração administrativa mantémCIobrigatório e restaura os requisitos originais de revisão logo após o merge. A dispensa e seus testes são assistência deIA autorizada pelo responsável, não revisão humana fabricada. O pacote gerado pela pipeline fica disponível mesmo em caso de falha posterior da triagem; a falha não vira sucesso. Mantemos o prazo antigo solicitado e o relógio real. Não prometemos atendimento integral da rubrica nem nota máxima com essa exceção.

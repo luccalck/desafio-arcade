@@ -133,7 +133,7 @@ A consolidação corrigiu lacunas reais: relatório antes fora da CI, submissão
 
 Azul-verde separa candidata e estável; o carregador preserva uma versão válida por sessão. Gh-pages é escrita pela pipeline, sem edição manual para contornar a falha. Environments mantêm aprovação/políticas de refs/tags. PagesActions publica a árvore gh-pages preservada, sem recompilar: equivalência técnica justificada e validada por hashes/smoke, declarada frente à origem literal do exemplo. Uma aprovação de PR não substitui a de produção nem se transfere para HEAD alterado.
 
-O PR32 recebeu revisão externa de Lucas no HEAD 59dc830 e foi integrado. O PR35 incorporou dois commits autorais de Miguel, revisados por Lucca; Lucas aprovou a consolidação f38 no PR33 antes do merge 88. A aprovação do environment producao por Lucca foi registrada conforme a política existente. Não simulamos outro revisor, não autoaprovamos PRs de Lucca e não removemos as proteções.
+O PR32 recebeu revisão externa de Lucas no HEAD 59dc830 e foi integrado. O PR35 incorporou dois commits autorais de Miguel, revisados por Lucca; Lucas aprovou a consolidação f38 no PR33 antes do merge 88. A aprovação do environment producao por Lucca foi registrada conforme a política existente. Não simulamos outro revisor ou autoaprovação. No fechamento doPR47, o proprietário dispensou a revisão externa; a exceção registra approved:false, mantémCI e restaura a política de revisão após integrar. Essa exceção não comprova o critério acadêmico de revisão.
 
 <div style="break-before: page;"></div>
 
@@ -265,7 +265,7 @@ Preservamos autoria, aprovações e recibos reais. A matriz comprova contribuiç
 
 |Ação necessária|Evidência para concluir|
 |---|---|
-|Documentação posterior à publicação|PR34/40 aprovados e integrados; revisar esta atualização e gerar PDF correspondente|
+|Documentação posterior à publicação|PR34/40 revisados; revisão final dispensada pelo responsável; PDF da CI correspondente|
 |Recuperação|Ensaio técnico concluído; demonstração presencial permanece na banca|
 |Melhoria MTTR|Ensaio medido 3 s→2,5 s; PR41 aprovado por Davi e integrado, sem amostra operacional|
 |Vídeo e banca|MP4 real86s/legendas pronto; vínculo à candidata final e critério humano da banca pendentes|

@@ -2,6 +2,8 @@
 
 ## 1.0.0
 
+**Exceção de revisão:** por determinação expressa do proprietário em19/10/2026, a revisão externa doPR47 foi dispensada. O manifesto registra `approved:false` e a autorização excepcional limitada aoSHA desta versão; isso não comprova atendimento ao critério acadêmico de revisão. Os testes, proteção da main após integração, aprovação do environment, hashes e demais gates permanecem.
+
 Candidata de entrega da oficina educativa WEB: cinco missões de funções Python, testes públicos com 23 casos e um projeto final que integra as regras escritas pelo jogador. Exportações .py/HTML e execução offline pelo LEIA-ME do ZIP.
 
 - Consolidamos correções revisadas de homologação, publicação de Release e feedback ao reiniciar a partida. O PR41 foi aprovado por Davi no HEADcea6745 e integrado em16/10/2026, merge4678830.

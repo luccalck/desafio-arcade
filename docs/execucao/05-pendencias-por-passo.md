@@ -499,3 +499,8 @@ Edição corrente16/10: pitch86s com áudioElevenLabs fornecido pelo solicitante
 PR41 aprovado porDaviSouza78 em17/10UTC (16/10Brasília), no HEADcea67450b812a179b1db5c85c93c73302739cfb1, integrado como4678830c59917803c0024b63b05695029e900bfe. CI de publicação38991328634 SUCCESS:322testes/37E2E, HML175,423s, PRD/smoke/monitor verdes; ZIP29.312bytes e14hashesHTTP conferidos. A candidata1.0.0 reúne as alterações posteriores do pitch, notas/SemVer e documentação; revisão dessa candidata não é pendência reaparecida do41. O quadro mantém os tópicos1/6/7/8.
 
 Lucca confirmou composição inalterada desde02/10 e solicitou usar o instante atual como PRAZO:2026-10-16T22:35:43-03:00. Configuramos a variable conforme solicitado. Execuções posteriores a esse limite serão corretamente reprovadas pelo validador temporal; não retroagir relógio, não trocar por futuro presumido e não marcar TRIAGEM APROVADA sem execução. Registrar um prazo-limite passado não comprova a entrega.
+
+
+## Orientação posterior — dispensa de revisão do fechamento
+
+Em19/10, o proprietário determinou expressamente prosseguir sem a revisão doPR47. Essa tarefa deixou de ser cobrada como ação humana pendente a pedido do responsável, mas não foi marcada como revisão realizada nem como atendimento integral ao critério do professor. Preparamos exceção de proveniência restrita aoSHAautorizado/tagv1.0.0/PR47, comapproved:false e humanReview:false. Testes/CI/proteção restaurada após integração/aprovação doenvironment/hashes permanecem. O pacote será preservado mesmo se a triagem falhar; o prazo antigo e a data real não foram alterados. Atualizar aceites técnicos após execução, sem afirmar TRIAGEMAPROVADA se houver reprovação temporal.

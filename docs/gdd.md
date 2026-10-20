@@ -242,3 +242,6 @@ Edição corrente16/10: [pitch atual](pitch/README.md) tem86s,áudioElevenLabs f
 
 
 Atualização da candidata1.0.0 em16/10: Davi aprovou o PR41 no HEADcea6745 e o merge4678830 integrou correções de reinício/alertas e melhoria medida. Lucca confirmou que os quatro integrantes atuais permanecem no squad sem alterações desde02/10; fonte e limites no registro de confirmação coletiva. Esta revisão do GDD/pitch e a mudança SemVer compõem uma candidata nova, sujeita à revisão e CI próprias. A gravação e9 permanece identificada como0.7.0, sem atribuição falsa à futura produção1.0.0.
+
+
+Exceção operacional de19/10: dispensamos a revisão externa doPR47 por orientação expressa do proprietário. A autorização técnica daRelease fica limitada aov1.0.0/SHAconfigurado e conserva approved:false no manifesto; não é aprovação humana ou garantia de nota. Os testes, hashes, origem da produção, aprovação doenvironment e demais controles permanecem. A triagem mantém o prazo antigo e a data real, podendo reprovar temporalmente sem impedir o arquivamento do pacote efetivamente gerado.
