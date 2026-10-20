@@ -1,0 +1,40 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1920
+PlayResY: 1080
+WrapStyle: 2
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, SecondaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Default,Segoe UI,52,&H00FFFFFF,&H00FFFFFF,&H00000000,&H00000000,-1,0,0,0,100,100,0,0,1,1.6,1,2,192,192,36,1
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+Dialogue: 0,0:00:00.00,0:00:02.72,Default,,0,0,0,,Aprender Python criando\Num jogo de verdade.
+Dialogue: 0,0:00:03.15,0:00:06.01,Default,,0,0,0,,No Rota do Código,\Numa oficina no navegador
+Dialogue: 0,0:00:06.01,0:00:08.71,Default,,0,0,0,,conecta cinco missões\Ne um desafio final
+Dialogue: 0,0:00:08.71,0:00:12.56,Default,,0,0,0,,a um objetivo:\Nconstruir seu próprio minijogo.
+Dialogue: 0,0:00:12.73,0:00:15.28,Default,,0,0,0,,Tudo começa\Ncom um problema visível:
+Dialogue: 0,0:00:15.63,0:00:17.44,Default,,0,0,0,,os controles estão invertidos.
+Dialogue: 0,0:00:17.83,0:00:20.39,Default,,0,0,0,,Você testa a regra,\Ncompara os resultados
+Dialogue: 0,0:00:20.39,0:00:22.70,Default,,0,0,0,,e descobre o que precisa mudar.
+Dialogue: 0,0:00:23.11,0:00:26.38,Default,,0,0,0,,Ao corrigir o código,\No efeito aparece no jogo.
+Dialogue: 0,0:00:26.71,0:00:29.26,Default,,0,0,0,,As decisões ganham\Numa função concreta:
+Dialogue: 0,0:00:29.55,0:00:31.38,Default,,0,0,0,,controlar o movimento da nave.
+Dialogue: 0,0:00:31.73,0:00:33.67,Default,,0,0,0,,Cada tentativa ajuda a entender
+Dialogue: 0,0:00:33.67,0:00:36.82,Default,,0,0,0,,a relação entre o que você escreve\Ne o que acontece.
+Dialogue: 0,0:00:37.27,0:00:40.08,Default,,0,0,0,,Nas próximas missões,\Nvocê calcula movimentos,
+Dialogue: 0,0:00:40.29,0:00:42.87,Default,,0,0,0,,detecta colisões,\Ndefine a pontuação
+Dialogue: 0,0:00:42.87,0:00:45.82,Default,,0,0,0,,e usa repetições\Npara criar ondas de objetos.
+Dialogue: 0,0:00:46.29,0:00:49.52,Default,,0,0,0,,Cada conceito resolve\Numa parte do mesmo projeto.
+Dialogue: 0,0:00:49.87,0:00:53.39,Default,,0,0,0,,No desafio final, todas essas\Nfunções trabalham juntas.
+Dialogue: 0,0:00:53.39,0:00:56.18,Default,,0,0,0,,É hora de colocar\Nsua criação à prova,
+Dialogue: 0,0:00:56.31,0:01:00.62,Default,,0,0,0,,numa partida com objetivos,\Npontuação e feedback imediato.
+Dialogue: 0,0:01:00.97,0:01:03.70,Default,,0,0,0,,Depois da vitória,\No projeto vai com você.
+Dialogue: 0,0:01:04.07,0:01:07.94,Default,,0,0,0,,Baixe suas funções Python\Ne exporte um HTML jogável.
+Dialogue: 0,0:01:08.25,0:01:10.22,Default,,0,0,0,,Abra esse minijogo sem conexão,
+Dialogue: 0,0:01:10.43,0:01:11.67,Default,,0,0,0,,compartilhe sua criação
+Dialogue: 0,0:01:11.67,0:01:13.88,Default,,0,0,0,,e continue explorando\No que construiu.
+Dialogue: 0,0:01:14.41,0:01:15.97,Default,,0,0,0,,Nossa proposta é transformar
+Dialogue: 0,0:01:15.97,0:01:19.73,Default,,0,0,0,,o primeiro contato com programação\Nem uma conquista concreta:
+Dialogue: 0,0:01:19.73,0:01:21.48,Default,,0,0,0,,criar algo seu.
+Dialogue: 0,0:01:21.77,0:01:22.90,Default,,0,0,0,,Rota do Código.
+Dialogue: 0,0:01:23.25,0:01:25.86,Default,,0,0,0,,Experimente, teste e construa.

@@ -394,3 +394,52 @@ Lucca solicitou melhoriaDORA e prompt para outro integrante validarPR41. A basel
 
 
 Resultado da melhoriaMTTR:run38953734834/9c22698 SUCCESS;Issues45/46 fecharam em1s/4s,média2,5s versus3s na baseline. Redução observada16,7%,duas amostras por execução; não é melhoria sustentada de produção. Contador real confirmou2consultas de labels; adaptador anterior reproduziu12no teste. Monitor38954187844 passou e manteveMTTR operacionalnull/0amostras,comHTTP200. Não repetimos o ensaio para selecionar resultado favorável. Atualizamos documentação/checks no escopo medido e prepararemos prompt para revisão humana de outro integrante no HEAD final.
+
+
+### Pitch sem narração e confirmação coletiva —16/10/2026
+
+Responsável solicitante:Lucca Castilho Costa. Instrução:registrar confirmação do squad e produzir pitch usando ferramentas de captura/edição,sem narração. Codex assistiu a adaptação do roteiro já existente,implementou scripts de capturaPlaywright/Chrome e ediçãoFFmpeg/Pillow,executou o jogo público real,validou artefatos e atualizou documentação. Não usamosRemotion,geração de voz,música,imagem artificial de gameplay ou identidade dos colegas. Fonte de confirmação coletiva:declaração humana deLucca,sem criar assinaturas ou prova histórica.
+
+Resultado efetivamente aceito tecnicamente:MP4H.26479,96s/1920×1080,legendas/cartelas,cinco missões,vitória real100pontos/700XP,download.py/HTML eHTMLexecutado offline. Fontes,ações,hashes,ffprobe,12quadros inspecionados e limitações em docs/evidencias/pitch.md. Captura automatizada não é playtest humano. A conferência visual humana deste novo vídeo e revisão do novo commit não são presumidas pela confirmação anterior. A entrada-video ainda depende da origem formalSUCCESS/candidata final correspondente; não foi relaxada. Commits reais ficam no histórico da branchdocs/pitch-producao; oHEADdoPR41 foi preservado.
+
+
+### Narração sincronizada —16/10/2026
+
+Responsável solicitante:Lucca Castilho Costa. Pedido:prompt para Miguel registrar aprovação já revisada eMDcom narração baseada no pitch,gerar a voz e incorporá-la. A assistência redigiu17falas com timecodes,gerou áudio localPiper1.8.0/pt_BR-faber-medium,alinhou cada trecho por amostras e adicionouAAC/legendas literais aoMP4de79,96s. Não clonou ou atribuiu voz aos integrantes; não alterou resultados ou cenas do jogo. Windows tinha apenas vozesinglesas; escolhemos modelo públicoPortuguêsCC0 conforme modelcard e verificamoshashLFSpinado. Download inicial teve resetTLS;curl completou e oSHAfoiconferido,sem repetir erro indefinidamente.
+
+Validação executada:17/17janelas,nenhuma aceleração/corte;áudio/vídeoPTSzero e79,960000s;decodificaçãointegralexit0;sem saturação;correlaçãoWAV/AAC sem deslocamento observado na resolução utilizada. Quadros de abertura/correção renderizados e inspecionados. O canal destaIA não suporta entrada deáudio: não declaramos escuta humana ou percepção auditiva perfeita. Arquivos estão disponíveis para avaliação. O prompt não contém credenciais e preserva a aprovação na conta real deMiguel e oHEADcea6745,sem merge ou impersonação. Fontes e recibos em docs/evidencias/narracao-2026-10-16.
+
+
+### Roteiro fluido para ElevenLabs —16/10/2026
+
+A pedido de Lucca, redigimos docs/pitch/narracao-elevenlabs.md em texto corrido, seguindo a ordem das cenas: proposta, controles invertidos, teste/correção, quatro conceitos seguintes, desafio final, exportação, offline e encerramento. Não adicionamos promessa de aprendizagem medida ou recurso inexistente. O texto não foi enviado ao ElevenLabs, nem geramos novo áudio nessa ferramenta ou aceitamos termos. A duração e o alinhamento da futura voz precisam ser conferidos após sua geração; não atribuímos ao texto uma execução cronometrada inexistente. O pitch narrado atual e seus recibos permanecem preservados.
+
+
+### Edição com áudioElevenLabs fornecido —16/10/2026
+
+Lucca forneceuMP3dosDownloads e solicitou substituir narração/legendas anteriores,sincronizar cenas e usar legendasbold. Não acessamos contaElevenLabs,não geramos voz nova nessa plataforma,não aceitamos termos e não presumimos plano/licença privada. Fonte/autorizaçãodeuso informada pelo solicitante,hash e nome emdocs/evidencias/pitch-elevenlabs-2026-10-16/audio-origem.json. OriginalDownloads preservado.
+
+A assistência transcreveu localmente comfaster-whisper1.2.1/modelobase,confrontou193palavras (somente normalizações5/cinco e mini-jogo/minijogo),retomou capturaPlaywrightrealpara trechos mais longos e remontou86s sem acelerar jogo/voz. Criou30legendas52pxbold,≤2linhas/34caracteres efetivos;reconstruiu o vídeo sem áudio/texto anterior. Falha de API na decodificaçãoPyAV19(metadata_errors) foi resolvida porFFmpeg→arrayPCM,sem repetir caminho incompatível. ModelosASR ficam fora doGit e da build; nenhumbackend para jogador.
+
+Validações reais:MP4umáudioAAC,PTSzero/duração86s;fullDecodeexit0,zero saturação;correlação30/30sem deslocamento detectado,coeficientemínimo0,999978. TimestampsASRsão estimativas,não escuta humana. Quadros de correção e encerramento foram renderizados/inspecionados. Não afirmamos playtest humano,aprovação de direitos da conta ou validação acadêmica final. Fontes/manifestos preservam as edições anteriores por commit,sem adulterar sua proveniência.
+
+
+## 16/10/2026 — consolidação da candidata de entrega
+
+A pedido de Lucca, usamos Codex para conferir a aprovação real de Davi no PR41/HEADcea6745, integrar o merge4678830, acompanhar CI/HML/PRD e aprovar o environment com a conta autorizada luccalck. Nenhuma identidade externa foi simulada. Conferimos o bundle original (173 arquivos),14hashesHTTP, recibo de produção, smoke e sondas/DORA. Fontes preservadas em docs/evidencias/fechamento-candidata-2026-10-16.
+
+Consolidamos o pitch posterior e SemVer1.0.0/lockfile/notas/GDD/ficha no PR47. Ajustamos apenas os scripts de autoria para conservar version.json da captura e derivar o rodapé do SHA/versão real em nova edição; não alteramos regras do jogo. A edição existente de86s continua identificada com produção0.7.0/e9. A candidata aguarda revisão humana do seu próprio HEAD antes do merge. Lint/322testes/PDFs/compilação dos scripts passaram localmente, com CI própria do PR.
+
+Conferimos os49controles da ficha original em navegador e preservamos o HTML/hash. O preenchimento é parcial: notas10 são estimativas solicitadas, composição do squad foi confirmada pelo usuário e não fabricamos TRIAGEM APROVADA/tag/TXT. O PRAZO foi configurado com o instante expressamente solicitado, sem alterar relógio ou inventar data futura. Avaliação assistida porIA não é playtest humano/banca. Sem serviço pago novo, dependência em produção ou envio de dados a outro provedor nesta consolidação.
+
+
+## 19/10/2026 — conferência de integridade dos recibos
+
+Na retomada do fechamento, Codex conferiu os manifestos contra os blobs commitados: os63arquivos do pitch estavam íntegros; dois dos13recibos da candidata tiveram CRLF convertido emLF peloGit. Acrescentamos a regra de preservação de bytes dessa pasta em.gitattributes e readicionamos os dois recibos originais, sem editar respostas, horários, resultados ou o manifesto para esconder a divergência. A conferência do índice deve corresponder aos13hashes já registrados. Nenhuma mudança de regra do jogo, vídeo, produção ou relógio. O PR47 continua exigindo revisão real do HEAD atualizado; a aprovação do41 não foi reutilizada.
+
+
+## 19/10/2026 — dispensa expressa da revisão de fechamento
+
+Lucca determinou reiteradamente dispensar a revisão doPR47 e prosseguir com a entrega. Registramos uma exceção operacional de revisão, sem atribuir aprovação aDavi/Miguel/Lucas. A autorização daRelease exige oSHAexato configurado pelo proprietário, ator proprietário, tagv1.0.0 ePR47 efetivamente integrado; o manifesto conserva approved:false/humanReview:false. As regras normais continuam para qualquer outra versão ouSHA.
+
+A integração administrativa mantémCIobrigatório e restaura os requisitos originais de revisão logo após o merge. A dispensa e seus testes são assistência deIA autorizada pelo responsável, não revisão humana fabricada. O pacote gerado pela pipeline fica disponível mesmo em caso de falha posterior da triagem; a falha não vira sucesso. Mantemos o prazo antigo solicitado e o relógio real. Não prometemos atendimento integral da rubrica nem nota máxima com essa exceção.

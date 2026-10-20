@@ -1,0 +1,7 @@
+{
+  "python": "Python 3.12.10",
+  "playwright": "1.59.0",
+  "pillow": "12.2.0",
+  "ffmpeg": "ffmpeg version 8.1.2-full_build-www.gyan.dev Copyright (c) 2000-2026 the FFmpeg developers",
+  "ffprobe": "ffprobe version 8.1.2-full_build-www.gyan.dev Copyright (c) 2007-2026 the FFmpeg developers"
+}

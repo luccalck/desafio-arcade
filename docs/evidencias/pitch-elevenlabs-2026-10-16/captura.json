@@ -1,0 +1,210 @@
+{
+  "schema": 1,
+  "startedAt": "2026-10-17T01:03:53.006287+00:00",
+  "productionSha": "e9dd28ccee535e9b1259a710742482e44db47aed",
+  "siteUrl": "https://luccalck.github.io/desafio-arcade/",
+  "captureUrl": "https://luccalck.github.io/desafio-arcade/releases/e9dd28ccee535e9b1259a710742482e44db47aed/",
+  "executor": "IA/Playwright",
+  "requester": "Lucca Castilho Costa",
+  "humanPlaytest": false,
+  "viewport": {
+    "width": 1600,
+    "height": 900
+  },
+  "actions": [
+    {
+      "offset": 1.141,
+      "action": "start-clip",
+      "clip": "menu"
+    },
+    {
+      "offset": 11.719,
+      "action": "start-clip",
+      "clip": "falha"
+    },
+    {
+      "offset": 13.453,
+      "action": "controle-invertido",
+      "before": 240.0,
+      "after": 108.0
+    },
+    {
+      "offset": 21.703,
+      "action": "start-clip",
+      "clip": "correcao"
+    },
+    {
+      "offset": 23.641,
+      "action": "corrigir-controles-pelo-editor"
+    },
+    {
+      "offset": 25.422,
+      "action": "testar-missao",
+      "mission": 1,
+      "summary": "Tudo certo: 4/4 situações."
+    },
+    {
+      "offset": 28.234,
+      "action": "controle-corrigido",
+      "before": 240.0,
+      "after": 372.0
+    },
+    {
+      "offset": 36.938,
+      "action": "start-clip",
+      "clip": "missao-2"
+    },
+    {
+      "offset": 38.219,
+      "action": "testar-missao",
+      "mission": 2,
+      "summary": "Tudo certo: 5/5 situações."
+    },
+    {
+      "offset": 40.656,
+      "action": "start-clip",
+      "clip": "missao-3"
+    },
+    {
+      "offset": 41.953,
+      "action": "testar-missao",
+      "mission": 3,
+      "summary": "Tudo certo: 5/5 situações."
+    },
+    {
+      "offset": 44.375,
+      "action": "start-clip",
+      "clip": "missao-4"
+    },
+    {
+      "offset": 45.672,
+      "action": "testar-missao",
+      "mission": 4,
+      "summary": "Tudo certo: 5/5 situações."
+    },
+    {
+      "offset": 48.125,
+      "action": "start-clip",
+      "clip": "missao-5"
+    },
+    {
+      "offset": 49.422,
+      "action": "testar-missao",
+      "mission": 5,
+      "summary": "Tudo certo: 4/4 situações."
+    },
+    {
+      "offset": 55.516,
+      "action": "start-clip",
+      "clip": "final"
+    },
+    {
+      "offset": 68.0,
+      "action": "vitoria-real",
+      "xp": "700 XP",
+      "score": "100"
+    },
+    {
+      "offset": 68.0,
+      "action": "start-clip",
+      "clip": "exportacao"
+    },
+    {
+      "offset": 71.984,
+      "action": "download-real",
+      "filename": "meu-jogo.py",
+      "bytes": 2019,
+      "sha256": "0749c1f65d8e0883faa30499f50079f7be9c341011c9d68505d9fd351aac0dbb"
+    },
+    {
+      "offset": 74.141,
+      "action": "download-real",
+      "filename": "meu-jogo.html",
+      "bytes": 16887,
+      "sha256": "2b9a5adc71c686429046d84e94c669392e0d6edbc707138cbfe4911f6c81ceac"
+    }
+  ],
+  "clips": {
+    "menu": {
+      "start": 1.141,
+      "end": 11.656
+    },
+    "falha": {
+      "start": 11.719,
+      "end": 21.688
+    },
+    "correcao": {
+      "start": 21.703,
+      "end": 36.906
+    },
+    "missao-2": {
+      "start": 36.938,
+      "end": 40.625
+    },
+    "missao-3": {
+      "start": 40.656,
+      "end": 44.359
+    },
+    "missao-4": {
+      "start": 44.375,
+      "end": 48.094
+    },
+    "missao-5": {
+      "start": 48.125,
+      "end": 55.438
+    },
+    "final": {
+      "start": 55.516,
+      "end": 67.969
+    },
+    "exportacao": {
+      "start": 68.0,
+      "end": 78.172
+    },
+    "offline": {
+      "start": 0.125,
+      "end": 7.297
+    }
+  },
+  "errors": [],
+  "publishedFiles": {
+    "index.html": {
+      "bytes": 567,
+      "sha256": "8b49ef5ec67a419bca802e193a446b2bfae8bf11f2f1673ef68e02fe00653282"
+    },
+    "style.css": {
+      "bytes": 9033,
+      "sha256": "8ab313c1fc975eb5f073dd214313013c7d8156000e36ca36a72a91c41a2d55da"
+    },
+    "game.js": {
+      "bytes": 53955,
+      "sha256": "eef974b268fa8c9c02a59c182211521c5764f27cf037f9f0b6973b5ecf2e1027"
+    },
+    "version.json": {
+      "bytes": 117,
+      "sha256": "4f52f37dbe647fa8157c94f87ba67ab76467f427af7f8f589627b9c8755548e0"
+    },
+    "LEIA-ME.txt": {
+      "bytes": 1552,
+      "sha256": "97c578d2ff1479929eb5486a5b55f84b8f80e8a03312d2ab6ffe84b3bb0ff0de"
+    },
+    "LICENSE.txt": {
+      "bytes": 1088,
+      "sha256": "fb1db4fef02dee4d0b3eaa89abcacef02100a22fd71df12d106ba203fdf2aacb"
+    },
+    "THIRD_PARTY.txt": {
+      "bytes": 9452,
+      "sha256": "145cf8fb0b570dba74b1792dedfbc920e557b2bb242c087a22754161ac52fc62"
+    }
+  },
+  "completed": true,
+  "zipSha256": "6517fa79749c4bea490acc36eb197ce19a95617a24a5cba56d2edb40c6fabe9f",
+  "mainVideo": "docs/evidencias/pitch-elevenlabs-2026-10-16/gravacao-producao.webm",
+  "offline": {
+    "url": "file:///.../meu-jogo.html (exportação real desta sessão)",
+    "offline": true,
+    "externalRequests": []
+  },
+  "offlineVideo": "docs/evidencias/pitch-elevenlabs-2026-10-16/gravacao-offline.webm",
+  "completedAt": "2026-10-17T01:05:24.012939+00:00"
+}

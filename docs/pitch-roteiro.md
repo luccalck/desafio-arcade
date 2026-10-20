@@ -1,6 +1,6 @@
 # Rota do Código — roteiro de pitch (017)
 
-Rascunho para ensaio humano, 14/10/2026. Duração planejada: **80 segundos**, com margem de 10 segundos até o limite de 90. Não há leitura humana cronometrada, gravação ou produção formal comprovada. Falas propostas, sujeitas à concordância dos quatro. Fontes: GDD, conteúdo implementado, aprendizagem-conteudo.md e direitos008. Não anunciar ganho de aprendizagem sem playtest021.
+Roteiro original de14/10/2026, com adaptação executada em16/10/2026: [pitch real sem narração](evidencias/pitch.md),79,96s. As falas abaixo preservam a proposta anterior; não foram gravadas nem atribuídas aos integrantes. Duração planejada: **80 segundos**, com margem de 10 segundos até o limite de 90. Não há leitura humana cronometrada, gravação ou produção formal comprovada. Falas propostas, sujeitas à concordância dos quatro. Fontes: GDD, conteúdo implementado, aprendizagem-conteudo.md e direitos008. Não anunciar ganho de aprendizagem sem playtest021.
 
 | Tempo | Pessoa / fala proposta | Captura real planejada |
 |---|---|---|
@@ -19,3 +19,8 @@ Rascunho para ensaio humano, 14/10/2026. Duração planejada: **80 segundos**, c
 6. Exportar MP4 real e SRT final; conferir duração, áudio, legendas, créditos e direitos com outro integrante. Arquivar hash/tamanho/URL restrita ou pública conforme concordância. Entrada humana para o pacote **antes** da tag final035; nenhum MP4 fictício criado. Relatório033/037 recebe depois as URLs/provas reais de release e triagem036. Vídeo não declara release/triagem futura como concluída.
 
 Aceites restantes: ensaio cronometrado, consentimentos, capturas de produção, gravação e revisão humana. Ver registro único, Passo017. Não executar029/035/037 neste MD.
+
+
+## Montagem executada sem narração
+
+A pedido deLucca, substituímos as falas por cartelas/legendas sobre captura real de produção. A [timeline final](pitch/pitch-producao.json) informa os intervalos reais; oSRTatual está sincronizado à edição silenciosa, não a vozes inexistentes. Preservamos acima o orçamento/roteiro original como histórico. [Arquivo final e fontes](pitch/README.md).

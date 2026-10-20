@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-17T01:46:09.874301+00:00",
+  "originalSha256": "19362485b3ec9534bdf31303ca0b92b6fe96de21bb87867977d37a7393565275",
+  "entryControls": 49,
+  "members": [
+    "Lucca Castilho Costa",
+    "Davi Marcondes Paes de Souza",
+    "Miguel Oliveira de Almeida",
+    "Lucas Souza da Silva"
+  ],
+  "ras": [
+    "26179873",
+    "26180842",
+    "26179933",
+    "26179875"
+  ],
+  "links": {
+    "lkBuild": "https://luccalck.github.io/desafio-arcade/",
+    "lkHml": "https://luccalck.github.io/desafio-arcade/hml/",
+    "lkCI": "https://github.com/luccalck/desafio-arcade/actions/runs/38991328634",
+    "lkGraf": "https://luccalck.github.io/desafio-arcade/status/",
+    "lkVideo": "https://raw.githubusercontent.com/luccalck/desafio-arcade/d497f9a25ce897624ec68dd9bf79aa5763e2a22b/docs/pitch/pitch.mp4",
+    "lkRel": "https://github.com/luccalck/desafio-arcade/releases/download/v0.7.0/RelatorioTecnico.pdf",
+    "lkDrive": ""
+  },
+  "checks": [
+    "Nome do squad e repositório",
+    "4 integrantes com nome e RA",
+    "Papéis distintos",
+    "Links obrigatórios",
+    "10 integráveis marcados",
+    "Autoavaliação completa",
+    "Declarações aceitas"
+  ],
+  "message": "Faltam 2 item(ns) para liberar a ficha.",
+  "txtButtonDisabled": true,
+  "txtGenerated": false,
+  "intDelivered": [
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false,
+    false
+  ],
+  "declarations": [
+    true,
+    false,
+    false,
+    false
+  ],
+  "scoresAreEstimates": true,
+  "scores": [
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10,
+    10
+  ],
+  "note": "Preenchimento parcial de conferência, não ficha final nem sessão humana."
+}

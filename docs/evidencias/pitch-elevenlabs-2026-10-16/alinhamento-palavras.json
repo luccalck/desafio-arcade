@@ -1,0 +1,2024 @@
+{
+  "schema": 1,
+  "referenceWords": 193,
+  "asrWords": 194,
+  "allReferenceWordsMatched": true,
+  "normalizations": [
+    "cinco reconhecido como5",
+    "mini-jogo agrupado como minijogo"
+  ],
+  "timingMethod": "Tempos por palavra de faster-whisper-base, confronto textual integral e margens de30/120ms limitadas pelo próximo bloco.",
+  "words": [
+    {
+      "text": "Aprender",
+      "start": 0.0,
+      "end": 0.44,
+      "probability": 0.6775347193082174,
+      "asrIndices": [
+        0
+      ]
+    },
+    {
+      "text": "Python",
+      "start": 0.44,
+      "end": 0.86,
+      "probability": 0.6091521382331848,
+      "asrIndices": [
+        1
+      ]
+    },
+    {
+      "text": "criando",
+      "start": 0.86,
+      "end": 1.46,
+      "probability": 0.9674630463123322,
+      "asrIndices": [
+        2
+      ]
+    },
+    {
+      "text": "um",
+      "start": 1.46,
+      "end": 1.6,
+      "probability": 0.9942823648452759,
+      "asrIndices": [
+        3
+      ]
+    },
+    {
+      "text": "jogo",
+      "start": 1.6,
+      "end": 1.88,
+      "probability": 0.9940874576568604,
+      "asrIndices": [
+        4
+      ]
+    },
+    {
+      "text": "de",
+      "start": 1.88,
+      "end": 2.08,
+      "probability": 0.9992089867591858,
+      "asrIndices": [
+        5
+      ]
+    },
+    {
+      "text": "verdade.",
+      "start": 2.08,
+      "end": 2.6,
+      "probability": 0.9938779473304749,
+      "asrIndices": [
+        6
+      ]
+    },
+    {
+      "text": "No",
+      "start": 3.18,
+      "end": 3.46,
+      "probability": 0.9657424688339233,
+      "asrIndices": [
+        7
+      ]
+    },
+    {
+      "text": "Rota",
+      "start": 3.46,
+      "end": 3.76,
+      "probability": 0.7767606675624847,
+      "asrIndices": [
+        8
+      ]
+    },
+    {
+      "text": "do",
+      "start": 3.76,
+      "end": 3.92,
+      "probability": 0.9942480325698853,
+      "asrIndices": [
+        9
+      ]
+    },
+    {
+      "text": "Código,",
+      "start": 3.92,
+      "end": 4.4,
+      "probability": 0.6755068600177765,
+      "asrIndices": [
+        10
+      ]
+    },
+    {
+      "text": "uma",
+      "start": 4.72,
+      "end": 4.86,
+      "probability": 0.9940443634986877,
+      "asrIndices": [
+        11
+      ]
+    },
+    {
+      "text": "oficina",
+      "start": 4.86,
+      "end": 5.36,
+      "probability": 0.9909465710322062,
+      "asrIndices": [
+        12
+      ]
+    },
+    {
+      "text": "no",
+      "start": 5.36,
+      "end": 5.52,
+      "probability": 0.9769829511642456,
+      "asrIndices": [
+        13
+      ]
+    },
+    {
+      "text": "navegador",
+      "start": 5.52,
+      "end": 6.04,
+      "probability": 0.9988078077634176,
+      "asrIndices": [
+        14
+      ]
+    },
+    {
+      "text": "conecta",
+      "start": 6.04,
+      "end": 6.62,
+      "probability": 0.9858224391937256,
+      "asrIndices": [
+        15
+      ]
+    },
+    {
+      "text": "cinco",
+      "start": 6.62,
+      "end": 7.0,
+      "probability": 0.6393996477127075,
+      "asrIndices": [
+        16
+      ]
+    },
+    {
+      "text": "missões",
+      "start": 7.0,
+      "end": 7.5,
+      "probability": 0.8529891669750214,
+      "asrIndices": [
+        17
+      ]
+    },
+    {
+      "text": "e",
+      "start": 7.5,
+      "end": 7.8,
+      "probability": 0.9308889508247375,
+      "asrIndices": [
+        18
+      ]
+    },
+    {
+      "text": "um",
+      "start": 7.8,
+      "end": 7.92,
+      "probability": 0.9821502566337585,
+      "asrIndices": [
+        19
+      ]
+    },
+    {
+      "text": "desafio",
+      "start": 7.92,
+      "end": 8.36,
+      "probability": 0.9978737831115723,
+      "asrIndices": [
+        20
+      ]
+    },
+    {
+      "text": "final",
+      "start": 8.36,
+      "end": 8.74,
+      "probability": 0.980839729309082,
+      "asrIndices": [
+        21
+      ]
+    },
+    {
+      "text": "a",
+      "start": 8.74,
+      "end": 9.12,
+      "probability": 0.945122241973877,
+      "asrIndices": [
+        22
+      ]
+    },
+    {
+      "text": "um",
+      "start": 9.12,
+      "end": 9.32,
+      "probability": 0.8480017781257629,
+      "asrIndices": [
+        23
+      ]
+    },
+    {
+      "text": "objetivo:",
+      "start": 9.32,
+      "end": 9.9,
+      "probability": 0.9766378402709961,
+      "asrIndices": [
+        24
+      ]
+    },
+    {
+      "text": "construir",
+      "start": 10.4,
+      "end": 11.08,
+      "probability": 0.9713821808497111,
+      "asrIndices": [
+        25
+      ]
+    },
+    {
+      "text": "seu",
+      "start": 11.08,
+      "end": 11.34,
+      "probability": 0.9869173765182495,
+      "asrIndices": [
+        26
+      ]
+    },
+    {
+      "text": "próprio",
+      "start": 11.34,
+      "end": 11.8,
+      "probability": 0.9983623623847961,
+      "asrIndices": [
+        27
+      ]
+    },
+    {
+      "text": "minijogo.",
+      "start": 11.8,
+      "end": 12.44,
+      "probability": 0.48411938920617104,
+      "asrIndices": [
+        28
+      ]
+    },
+    {
+      "text": "Tudo",
+      "start": 12.76,
+      "end": 13.28,
+      "probability": 0.9874958992004395,
+      "asrIndices": [
+        29
+      ]
+    },
+    {
+      "text": "começa",
+      "start": 13.28,
+      "end": 13.7,
+      "probability": 0.9881842136383057,
+      "asrIndices": [
+        30
+      ]
+    },
+    {
+      "text": "com",
+      "start": 13.7,
+      "end": 14.0,
+      "probability": 0.99662184715271,
+      "asrIndices": [
+        31
+      ]
+    },
+    {
+      "text": "um",
+      "start": 14.0,
+      "end": 14.14,
+      "probability": 0.9792399406433105,
+      "asrIndices": [
+        32
+      ]
+    },
+    {
+      "text": "problema",
+      "start": 14.14,
+      "end": 14.48,
+      "probability": 0.993583619594574,
+      "asrIndices": [
+        33
+      ]
+    },
+    {
+      "text": "visível:",
+      "start": 14.48,
+      "end": 15.16,
+      "probability": 0.9861093759536743,
+      "asrIndices": [
+        34
+      ]
+    },
+    {
+      "text": "os",
+      "start": 15.66,
+      "end": 15.78,
+      "probability": 0.9840190410614014,
+      "asrIndices": [
+        35
+      ]
+    },
+    {
+      "text": "controles",
+      "start": 15.78,
+      "end": 16.28,
+      "probability": 0.9388830363750458,
+      "asrIndices": [
+        36
+      ]
+    },
+    {
+      "text": "estão",
+      "start": 16.28,
+      "end": 16.66,
+      "probability": 0.9884405136108398,
+      "asrIndices": [
+        37
+      ]
+    },
+    {
+      "text": "invertidos.",
+      "start": 16.66,
+      "end": 17.32,
+      "probability": 0.9803546071052551,
+      "asrIndices": [
+        38
+      ]
+    },
+    {
+      "text": "Você",
+      "start": 17.86,
+      "end": 18.18,
+      "probability": 0.949749231338501,
+      "asrIndices": [
+        39
+      ]
+    },
+    {
+      "text": "testa",
+      "start": 18.18,
+      "end": 18.68,
+      "probability": 0.9542332887649536,
+      "asrIndices": [
+        40
+      ]
+    },
+    {
+      "text": "a",
+      "start": 18.68,
+      "end": 18.8,
+      "probability": 0.9924570322036743,
+      "asrIndices": [
+        41
+      ]
+    },
+    {
+      "text": "regra,",
+      "start": 18.8,
+      "end": 19.16,
+      "probability": 0.7959803342819214,
+      "asrIndices": [
+        42
+      ]
+    },
+    {
+      "text": "compara",
+      "start": 19.44,
+      "end": 19.84,
+      "probability": 0.6838202774524689,
+      "asrIndices": [
+        43
+      ]
+    },
+    {
+      "text": "os",
+      "start": 19.84,
+      "end": 20.0,
+      "probability": 0.9907037615776062,
+      "asrIndices": [
+        44
+      ]
+    },
+    {
+      "text": "resultados",
+      "start": 20.0,
+      "end": 20.42,
+      "probability": 0.9989608526229858,
+      "asrIndices": [
+        45
+      ]
+    },
+    {
+      "text": "e",
+      "start": 20.42,
+      "end": 20.96,
+      "probability": 0.8463366031646729,
+      "asrIndices": [
+        46
+      ]
+    },
+    {
+      "text": "descobre",
+      "start": 20.96,
+      "end": 21.54,
+      "probability": 0.9779875576496124,
+      "asrIndices": [
+        47
+      ]
+    },
+    {
+      "text": "o",
+      "start": 21.54,
+      "end": 21.62,
+      "probability": 0.9981006979942322,
+      "asrIndices": [
+        48
+      ]
+    },
+    {
+      "text": "que",
+      "start": 21.62,
+      "end": 21.78,
+      "probability": 0.9966057538986206,
+      "asrIndices": [
+        49
+      ]
+    },
+    {
+      "text": "precisa",
+      "start": 21.78,
+      "end": 22.24,
+      "probability": 0.9934225678443909,
+      "asrIndices": [
+        50
+      ]
+    },
+    {
+      "text": "mudar.",
+      "start": 22.24,
+      "end": 22.58,
+      "probability": 0.9960599541664124,
+      "asrIndices": [
+        51
+      ]
+    },
+    {
+      "text": "Ao",
+      "start": 23.14,
+      "end": 23.34,
+      "probability": 0.9015729427337646,
+      "asrIndices": [
+        52
+      ]
+    },
+    {
+      "text": "corrigir",
+      "start": 23.34,
+      "end": 23.78,
+      "probability": 0.9671611984570821,
+      "asrIndices": [
+        53
+      ]
+    },
+    {
+      "text": "o",
+      "start": 23.78,
+      "end": 23.88,
+      "probability": 0.9926865100860596,
+      "asrIndices": [
+        54
+      ]
+    },
+    {
+      "text": "código,",
+      "start": 23.88,
+      "end": 24.32,
+      "probability": 0.8765389521916708,
+      "asrIndices": [
+        55
+      ]
+    },
+    {
+      "text": "o",
+      "start": 24.6,
+      "end": 24.7,
+      "probability": 0.9985951781272888,
+      "asrIndices": [
+        56
+      ]
+    },
+    {
+      "text": "efeito",
+      "start": 24.7,
+      "end": 25.08,
+      "probability": 0.9779700040817261,
+      "asrIndices": [
+        57
+      ]
+    },
+    {
+      "text": "aparece",
+      "start": 25.08,
+      "end": 25.56,
+      "probability": 0.99396812915802,
+      "asrIndices": [
+        58
+      ]
+    },
+    {
+      "text": "no",
+      "start": 25.56,
+      "end": 25.9,
+      "probability": 0.9921008944511414,
+      "asrIndices": [
+        59
+      ]
+    },
+    {
+      "text": "jogo.",
+      "start": 25.9,
+      "end": 26.26,
+      "probability": 0.9959885478019714,
+      "asrIndices": [
+        60
+      ]
+    },
+    {
+      "text": "As",
+      "start": 26.74,
+      "end": 26.94,
+      "probability": 0.9814850091934204,
+      "asrIndices": [
+        61
+      ]
+    },
+    {
+      "text": "decisões",
+      "start": 26.94,
+      "end": 27.42,
+      "probability": 0.9769196212291718,
+      "asrIndices": [
+        62
+      ]
+    },
+    {
+      "text": "ganham",
+      "start": 27.42,
+      "end": 27.84,
+      "probability": 0.944983720779419,
+      "asrIndices": [
+        63
+      ]
+    },
+    {
+      "text": "uma",
+      "start": 27.84,
+      "end": 28.06,
+      "probability": 0.9984027743339539,
+      "asrIndices": [
+        64
+      ]
+    },
+    {
+      "text": "função",
+      "start": 28.06,
+      "end": 28.42,
+      "probability": 0.02609267085790634,
+      "asrIndices": [
+        65
+      ]
+    },
+    {
+      "text": "concreta:",
+      "start": 28.42,
+      "end": 29.14,
+      "probability": 0.9555482268333435,
+      "asrIndices": [
+        66
+      ]
+    },
+    {
+      "text": "controlar",
+      "start": 29.58,
+      "end": 30.0,
+      "probability": 0.9477998614311218,
+      "asrIndices": [
+        67
+      ]
+    },
+    {
+      "text": "o",
+      "start": 30.0,
+      "end": 30.28,
+      "probability": 0.9938534498214722,
+      "asrIndices": [
+        68
+      ]
+    },
+    {
+      "text": "movimento",
+      "start": 30.28,
+      "end": 30.66,
+      "probability": 0.9944292306900024,
+      "asrIndices": [
+        69
+      ]
+    },
+    {
+      "text": "da",
+      "start": 30.66,
+      "end": 30.96,
+      "probability": 0.9881028532981873,
+      "asrIndices": [
+        70
+      ]
+    },
+    {
+      "text": "nave.",
+      "start": 30.96,
+      "end": 31.26,
+      "probability": 0.9449030160903931,
+      "asrIndices": [
+        71
+      ]
+    },
+    {
+      "text": "Cada",
+      "start": 31.76,
+      "end": 32.06,
+      "probability": 0.954617440700531,
+      "asrIndices": [
+        72
+      ]
+    },
+    {
+      "text": "tentativa",
+      "start": 32.06,
+      "end": 32.74,
+      "probability": 0.994342178106308,
+      "asrIndices": [
+        73
+      ]
+    },
+    {
+      "text": "ajuda",
+      "start": 32.74,
+      "end": 33.14,
+      "probability": 0.9927055239677429,
+      "asrIndices": [
+        74
+      ]
+    },
+    {
+      "text": "a",
+      "start": 33.14,
+      "end": 33.34,
+      "probability": 0.9813933968544006,
+      "asrIndices": [
+        75
+      ]
+    },
+    {
+      "text": "entender",
+      "start": 33.34,
+      "end": 33.7,
+      "probability": 0.9924526810646057,
+      "asrIndices": [
+        76
+      ]
+    },
+    {
+      "text": "a",
+      "start": 33.7,
+      "end": 33.86,
+      "probability": 0.9977909326553345,
+      "asrIndices": [
+        77
+      ]
+    },
+    {
+      "text": "relação",
+      "start": 33.86,
+      "end": 34.26,
+      "probability": 0.9941670894622803,
+      "asrIndices": [
+        78
+      ]
+    },
+    {
+      "text": "entre",
+      "start": 34.26,
+      "end": 34.58,
+      "probability": 0.9967343807220459,
+      "asrIndices": [
+        79
+      ]
+    },
+    {
+      "text": "o",
+      "start": 34.58,
+      "end": 34.66,
+      "probability": 0.9889410138130188,
+      "asrIndices": [
+        80
+      ]
+    },
+    {
+      "text": "que",
+      "start": 34.66,
+      "end": 34.78,
+      "probability": 0.9987555742263794,
+      "asrIndices": [
+        81
+      ]
+    },
+    {
+      "text": "você",
+      "start": 34.78,
+      "end": 35.08,
+      "probability": 0.7994769811630249,
+      "asrIndices": [
+        82
+      ]
+    },
+    {
+      "text": "escreve",
+      "start": 35.08,
+      "end": 35.66,
+      "probability": 0.9863677024841309,
+      "asrIndices": [
+        83
+      ]
+    },
+    {
+      "text": "e",
+      "start": 35.66,
+      "end": 35.94,
+      "probability": 0.9885016679763794,
+      "asrIndices": [
+        84
+      ]
+    },
+    {
+      "text": "o",
+      "start": 35.94,
+      "end": 36.0,
+      "probability": 0.9984155893325806,
+      "asrIndices": [
+        85
+      ]
+    },
+    {
+      "text": "que",
+      "start": 36.0,
+      "end": 36.14,
+      "probability": 0.9970020651817322,
+      "asrIndices": [
+        86
+      ]
+    },
+    {
+      "text": "acontece.",
+      "start": 36.14,
+      "end": 36.7,
+      "probability": 0.998599112033844,
+      "asrIndices": [
+        87
+      ]
+    },
+    {
+      "text": "Nas",
+      "start": 37.3,
+      "end": 37.42,
+      "probability": 0.8916506171226501,
+      "asrIndices": [
+        88
+      ]
+    },
+    {
+      "text": "próximas",
+      "start": 37.42,
+      "end": 37.92,
+      "probability": 0.9940981268882751,
+      "asrIndices": [
+        89
+      ]
+    },
+    {
+      "text": "missões,",
+      "start": 37.92,
+      "end": 38.34,
+      "probability": 0.9568122923374176,
+      "asrIndices": [
+        90
+      ]
+    },
+    {
+      "text": "você",
+      "start": 38.74,
+      "end": 38.92,
+      "probability": 0.9866307377815247,
+      "asrIndices": [
+        91
+      ]
+    },
+    {
+      "text": "calcula",
+      "start": 38.92,
+      "end": 39.38,
+      "probability": 0.7864639759063721,
+      "asrIndices": [
+        92
+      ]
+    },
+    {
+      "text": "movimentos,",
+      "start": 39.38,
+      "end": 39.96,
+      "probability": 0.9887379109859467,
+      "asrIndices": [
+        93
+      ]
+    },
+    {
+      "text": "detecta",
+      "start": 40.32,
+      "end": 40.8,
+      "probability": 0.9707854986190796,
+      "asrIndices": [
+        94
+      ]
+    },
+    {
+      "text": "colisões,",
+      "start": 40.8,
+      "end": 41.36,
+      "probability": 0.9559663534164429,
+      "asrIndices": [
+        95
+      ]
+    },
+    {
+      "text": "define",
+      "start": 41.76,
+      "end": 42.08,
+      "probability": 0.8584278225898743,
+      "asrIndices": [
+        96
+      ]
+    },
+    {
+      "text": "a",
+      "start": 42.08,
+      "end": 42.28,
+      "probability": 0.9921711683273315,
+      "asrIndices": [
+        97
+      ]
+    },
+    {
+      "text": "pontuação",
+      "start": 42.28,
+      "end": 42.9,
+      "probability": 0.9943915208180746,
+      "asrIndices": [
+        98
+      ]
+    },
+    {
+      "text": "e",
+      "start": 42.9,
+      "end": 43.26,
+      "probability": 0.9244416356086731,
+      "asrIndices": [
+        99
+      ]
+    },
+    {
+      "text": "usa",
+      "start": 43.26,
+      "end": 43.44,
+      "probability": 0.9808441996574402,
+      "asrIndices": [
+        100
+      ]
+    },
+    {
+      "text": "repetições",
+      "start": 43.44,
+      "end": 44.14,
+      "probability": 0.9859130382537842,
+      "asrIndices": [
+        101
+      ]
+    },
+    {
+      "text": "para",
+      "start": 44.14,
+      "end": 44.44,
+      "probability": 0.9907945990562439,
+      "asrIndices": [
+        102
+      ]
+    },
+    {
+      "text": "criar",
+      "start": 44.44,
+      "end": 44.74,
+      "probability": 0.9928204417228699,
+      "asrIndices": [
+        103
+      ]
+    },
+    {
+      "text": "ondas",
+      "start": 44.74,
+      "end": 45.1,
+      "probability": 0.9193567335605621,
+      "asrIndices": [
+        104
+      ]
+    },
+    {
+      "text": "de",
+      "start": 45.1,
+      "end": 45.26,
+      "probability": 0.9868181943893433,
+      "asrIndices": [
+        105
+      ]
+    },
+    {
+      "text": "objetos.",
+      "start": 45.26,
+      "end": 45.7,
+      "probability": 0.9927871823310852,
+      "asrIndices": [
+        106
+      ]
+    },
+    {
+      "text": "Cada",
+      "start": 46.32,
+      "end": 46.62,
+      "probability": 0.9760985970497131,
+      "asrIndices": [
+        107
+      ]
+    },
+    {
+      "text": "conceito",
+      "start": 46.62,
+      "end": 47.26,
+      "probability": 0.9926794469356537,
+      "asrIndices": [
+        108
+      ]
+    },
+    {
+      "text": "resolve",
+      "start": 47.26,
+      "end": 47.56,
+      "probability": 0.93789142370224,
+      "asrIndices": [
+        109
+      ]
+    },
+    {
+      "text": "uma",
+      "start": 47.56,
+      "end": 47.84,
+      "probability": 0.9866460561752319,
+      "asrIndices": [
+        110
+      ]
+    },
+    {
+      "text": "parte",
+      "start": 47.84,
+      "end": 48.2,
+      "probability": 0.9955594539642334,
+      "asrIndices": [
+        111
+      ]
+    },
+    {
+      "text": "do",
+      "start": 48.2,
+      "end": 48.4,
+      "probability": 0.9942080974578857,
+      "asrIndices": [
+        112
+      ]
+    },
+    {
+      "text": "mesmo",
+      "start": 48.4,
+      "end": 48.8,
+      "probability": 0.9962692260742188,
+      "asrIndices": [
+        113
+      ]
+    },
+    {
+      "text": "projeto.",
+      "start": 48.8,
+      "end": 49.4,
+      "probability": 0.9920319318771362,
+      "asrIndices": [
+        114
+      ]
+    },
+    {
+      "text": "No",
+      "start": 49.9,
+      "end": 50.06,
+      "probability": 0.984725296497345,
+      "asrIndices": [
+        115
+      ]
+    },
+    {
+      "text": "desafio",
+      "start": 50.06,
+      "end": 50.48,
+      "probability": 0.9834774136543274,
+      "asrIndices": [
+        116
+      ]
+    },
+    {
+      "text": "final,",
+      "start": 50.48,
+      "end": 50.86,
+      "probability": 0.9599501490592957,
+      "asrIndices": [
+        117
+      ]
+    },
+    {
+      "text": "todas",
+      "start": 51.2,
+      "end": 51.46,
+      "probability": 0.9944129586219788,
+      "asrIndices": [
+        118
+      ]
+    },
+    {
+      "text": "essas",
+      "start": 51.46,
+      "end": 51.78,
+      "probability": 0.9644060134887695,
+      "asrIndices": [
+        119
+      ]
+    },
+    {
+      "text": "funções",
+      "start": 51.78,
+      "end": 52.26,
+      "probability": 0.9885434210300446,
+      "asrIndices": [
+        120
+      ]
+    },
+    {
+      "text": "trabalham",
+      "start": 52.26,
+      "end": 52.78,
+      "probability": 0.981025755405426,
+      "asrIndices": [
+        121
+      ]
+    },
+    {
+      "text": "juntas.",
+      "start": 52.78,
+      "end": 53.42,
+      "probability": 0.9862939715385437,
+      "asrIndices": [
+        122
+      ]
+    },
+    {
+      "text": "É",
+      "start": 53.42,
+      "end": 54.02,
+      "probability": 0.14039461314678192,
+      "asrIndices": [
+        123
+      ]
+    },
+    {
+      "text": "hora",
+      "start": 54.02,
+      "end": 54.26,
+      "probability": 0.9883915781974792,
+      "asrIndices": [
+        124
+      ]
+    },
+    {
+      "text": "de",
+      "start": 54.26,
+      "end": 54.4,
+      "probability": 0.9988545179367065,
+      "asrIndices": [
+        125
+      ]
+    },
+    {
+      "text": "colocar",
+      "start": 54.4,
+      "end": 54.76,
+      "probability": 0.9950562715530396,
+      "asrIndices": [
+        126
+      ]
+    },
+    {
+      "text": "sua",
+      "start": 54.76,
+      "end": 55.04,
+      "probability": 0.9428985118865967,
+      "asrIndices": [
+        127
+      ]
+    },
+    {
+      "text": "criação",
+      "start": 55.04,
+      "end": 55.52,
+      "probability": 0.9632920026779175,
+      "asrIndices": [
+        128
+      ]
+    },
+    {
+      "text": "à",
+      "start": 55.52,
+      "end": 55.66,
+      "probability": 0.7230294942855835,
+      "asrIndices": [
+        129
+      ]
+    },
+    {
+      "text": "prova,",
+      "start": 55.66,
+      "end": 56.06,
+      "probability": 0.9747640490531921,
+      "asrIndices": [
+        130
+      ]
+    },
+    {
+      "text": "numa",
+      "start": 56.34,
+      "end": 56.44,
+      "probability": 0.979394257068634,
+      "asrIndices": [
+        131
+      ]
+    },
+    {
+      "text": "partida",
+      "start": 56.44,
+      "end": 56.96,
+      "probability": 0.9776226878166199,
+      "asrIndices": [
+        132
+      ]
+    },
+    {
+      "text": "com",
+      "start": 56.96,
+      "end": 57.14,
+      "probability": 0.9833695292472839,
+      "asrIndices": [
+        133
+      ]
+    },
+    {
+      "text": "objetivos,",
+      "start": 57.14,
+      "end": 57.84,
+      "probability": 0.9709407091140747,
+      "asrIndices": [
+        134
+      ]
+    },
+    {
+      "text": "pontuação",
+      "start": 58.18,
+      "end": 58.8,
+      "probability": 0.9881444772084554,
+      "asrIndices": [
+        135
+      ]
+    },
+    {
+      "text": "e",
+      "start": 58.8,
+      "end": 59.14,
+      "probability": 0.9177299737930298,
+      "asrIndices": [
+        136
+      ]
+    },
+    {
+      "text": "feedback",
+      "start": 59.14,
+      "end": 59.54,
+      "probability": 0.9433633685112,
+      "asrIndices": [
+        137
+      ]
+    },
+    {
+      "text": "imediato.",
+      "start": 59.54,
+      "end": 60.5,
+      "probability": 0.8789099852244059,
+      "asrIndices": [
+        138
+      ]
+    },
+    {
+      "text": "Depois",
+      "start": 61.0,
+      "end": 61.34,
+      "probability": 0.9640508890151978,
+      "asrIndices": [
+        139
+      ]
+    },
+    {
+      "text": "da",
+      "start": 61.34,
+      "end": 61.5,
+      "probability": 0.9936680197715759,
+      "asrIndices": [
+        140
+      ]
+    },
+    {
+      "text": "vitória,",
+      "start": 61.5,
+      "end": 61.96,
+      "probability": 0.9706841111183167,
+      "asrIndices": [
+        141
+      ]
+    },
+    {
+      "text": "o",
+      "start": 62.26,
+      "end": 62.32,
+      "probability": 0.9702177047729492,
+      "asrIndices": [
+        142
+      ]
+    },
+    {
+      "text": "projeto",
+      "start": 62.32,
+      "end": 62.7,
+      "probability": 0.9877846240997314,
+      "asrIndices": [
+        143
+      ]
+    },
+    {
+      "text": "vai",
+      "start": 62.7,
+      "end": 63.06,
+      "probability": 0.9894673228263855,
+      "asrIndices": [
+        144
+      ]
+    },
+    {
+      "text": "com",
+      "start": 63.06,
+      "end": 63.24,
+      "probability": 0.986197292804718,
+      "asrIndices": [
+        145
+      ]
+    },
+    {
+      "text": "você.",
+      "start": 63.24,
+      "end": 63.58,
+      "probability": 0.9925042390823364,
+      "asrIndices": [
+        146
+      ]
+    },
+    {
+      "text": "Baixe",
+      "start": 64.1,
+      "end": 64.4,
+      "probability": 0.8606659173965454,
+      "asrIndices": [
+        147
+      ]
+    },
+    {
+      "text": "suas",
+      "start": 64.4,
+      "end": 64.62,
+      "probability": 0.9952720999717712,
+      "asrIndices": [
+        148
+      ]
+    },
+    {
+      "text": "funções",
+      "start": 64.62,
+      "end": 65.02,
+      "probability": 0.9925578534603119,
+      "asrIndices": [
+        149
+      ]
+    },
+    {
+      "text": "Python",
+      "start": 65.02,
+      "end": 65.44,
+      "probability": 0.6952894926071167,
+      "asrIndices": [
+        150
+      ]
+    },
+    {
+      "text": "e",
+      "start": 65.44,
+      "end": 65.7,
+      "probability": 0.9922696352005005,
+      "asrIndices": [
+        151
+      ]
+    },
+    {
+      "text": "exporte",
+      "start": 65.7,
+      "end": 66.26,
+      "probability": 0.7832648754119873,
+      "asrIndices": [
+        152
+      ]
+    },
+    {
+      "text": "um",
+      "start": 66.26,
+      "end": 66.36,
+      "probability": 0.9380313754081726,
+      "asrIndices": [
+        153
+      ]
+    },
+    {
+      "text": "HTML",
+      "start": 66.36,
+      "end": 66.9,
+      "probability": 0.8972245454788208,
+      "asrIndices": [
+        154
+      ]
+    },
+    {
+      "text": "jogável.",
+      "start": 66.9,
+      "end": 67.82,
+      "probability": 0.9475266337394714,
+      "asrIndices": [
+        155
+      ]
+    },
+    {
+      "text": "Abra",
+      "start": 68.28,
+      "end": 68.56,
+      "probability": 0.6945002675056458,
+      "asrIndices": [
+        156
+      ]
+    },
+    {
+      "text": "esse",
+      "start": 68.56,
+      "end": 68.72,
+      "probability": 0.8792287707328796,
+      "asrIndices": [
+        157
+      ]
+    },
+    {
+      "text": "minijogo",
+      "start": 68.72,
+      "end": 69.22,
+      "probability": 0.6584222316741943,
+      "asrIndices": [
+        158,
+        159
+      ],
+      "normalization": "Agrupamento ortográfico de mini-jogo para minijogo."
+    },
+    {
+      "text": "sem",
+      "start": 69.22,
+      "end": 69.52,
+      "probability": 0.9895738959312439,
+      "asrIndices": [
+        160
+      ]
+    },
+    {
+      "text": "conexão,",
+      "start": 69.52,
+      "end": 70.1,
+      "probability": 0.9953016936779022,
+      "asrIndices": [
+        161
+      ]
+    },
+    {
+      "text": "compartilhe",
+      "start": 70.46,
+      "end": 70.94,
+      "probability": 0.9330004751682281,
+      "asrIndices": [
+        162
+      ]
+    },
+    {
+      "text": "sua",
+      "start": 70.94,
+      "end": 71.14,
+      "probability": 0.9797620177268982,
+      "asrIndices": [
+        163
+      ]
+    },
+    {
+      "text": "criação",
+      "start": 71.14,
+      "end": 71.7,
+      "probability": 0.9989082217216492,
+      "asrIndices": [
+        164
+      ]
+    },
+    {
+      "text": "e",
+      "start": 71.7,
+      "end": 72.02,
+      "probability": 0.951649010181427,
+      "asrIndices": [
+        165
+      ]
+    },
+    {
+      "text": "continue",
+      "start": 72.02,
+      "end": 72.46,
+      "probability": 0.8262253999710083,
+      "asrIndices": [
+        166
+      ]
+    },
+    {
+      "text": "explorando",
+      "start": 72.46,
+      "end": 73.22,
+      "probability": 0.9856716096401215,
+      "asrIndices": [
+        167
+      ]
+    },
+    {
+      "text": "o",
+      "start": 73.22,
+      "end": 73.34,
+      "probability": 0.9917075037956238,
+      "asrIndices": [
+        168
+      ]
+    },
+    {
+      "text": "que",
+      "start": 73.34,
+      "end": 73.4,
+      "probability": 0.99776291847229,
+      "asrIndices": [
+        169
+      ]
+    },
+    {
+      "text": "construiu.",
+      "start": 73.4,
+      "end": 73.76,
+      "probability": 0.918039858341217,
+      "asrIndices": [
+        170
+      ]
+    },
+    {
+      "text": "Nossa",
+      "start": 74.44,
+      "end": 74.68,
+      "probability": 0.7410516738891602,
+      "asrIndices": [
+        171
+      ]
+    },
+    {
+      "text": "proposta",
+      "start": 74.68,
+      "end": 75.26,
+      "probability": 0.9970034956932068,
+      "asrIndices": [
+        172
+      ]
+    },
+    {
+      "text": "é",
+      "start": 75.26,
+      "end": 75.4,
+      "probability": 0.9960266351699829,
+      "asrIndices": [
+        173
+      ]
+    },
+    {
+      "text": "transformar",
+      "start": 75.4,
+      "end": 76.0,
+      "probability": 0.9751790463924408,
+      "asrIndices": [
+        174
+      ]
+    },
+    {
+      "text": "o",
+      "start": 76.0,
+      "end": 76.14,
+      "probability": 0.994636595249176,
+      "asrIndices": [
+        175
+      ]
+    },
+    {
+      "text": "primeiro",
+      "start": 76.14,
+      "end": 76.52,
+      "probability": 0.9978563189506531,
+      "asrIndices": [
+        176
+      ]
+    },
+    {
+      "text": "contato",
+      "start": 76.52,
+      "end": 77.06,
+      "probability": 0.9795146584510803,
+      "asrIndices": [
+        177
+      ]
+    },
+    {
+      "text": "com",
+      "start": 77.06,
+      "end": 77.22,
+      "probability": 0.9860370755195618,
+      "asrIndices": [
+        178
+      ]
+    },
+    {
+      "text": "programação",
+      "start": 77.22,
+      "end": 77.88,
+      "probability": 0.9211656451225281,
+      "asrIndices": [
+        179
+      ]
+    },
+    {
+      "text": "em",
+      "start": 77.88,
+      "end": 78.28,
+      "probability": 0.9878062605857849,
+      "asrIndices": [
+        180
+      ]
+    },
+    {
+      "text": "uma",
+      "start": 78.28,
+      "end": 78.48,
+      "probability": 0.9986892342567444,
+      "asrIndices": [
+        181
+      ]
+    },
+    {
+      "text": "conquista",
+      "start": 78.48,
+      "end": 78.98,
+      "probability": 0.9929855763912201,
+      "asrIndices": [
+        182
+      ]
+    },
+    {
+      "text": "concreta:",
+      "start": 78.98,
+      "end": 79.76,
+      "probability": 0.9308749039967855,
+      "asrIndices": [
+        183
+      ]
+    },
+    {
+      "text": "criar",
+      "start": 79.76,
+      "end": 80.52,
+      "probability": 0.4209737181663513,
+      "asrIndices": [
+        184
+      ]
+    },
+    {
+      "text": "algo",
+      "start": 80.52,
+      "end": 80.88,
+      "probability": 0.9910616874694824,
+      "asrIndices": [
+        185
+      ]
+    },
+    {
+      "text": "seu.",
+      "start": 80.88,
+      "end": 81.36,
+      "probability": 0.9238829016685486,
+      "asrIndices": [
+        186
+      ]
+    },
+    {
+      "text": "Rota",
+      "start": 81.8,
+      "end": 82.32,
+      "probability": 0.8839668035507202,
+      "asrIndices": [
+        187
+      ]
+    },
+    {
+      "text": "do",
+      "start": 82.32,
+      "end": 82.44,
+      "probability": 0.9890339374542236,
+      "asrIndices": [
+        188
+      ]
+    },
+    {
+      "text": "Código.",
+      "start": 82.44,
+      "end": 82.78,
+      "probability": 0.9329474568367004,
+      "asrIndices": [
+        189
+      ]
+    },
+    {
+      "text": "Experimente,",
+      "start": 83.28,
+      "end": 84.12,
+      "probability": 0.7637481093406677,
+      "asrIndices": [
+        190
+      ]
+    },
+    {
+      "text": "teste",
+      "start": 84.44,
+      "end": 84.74,
+      "probability": 0.9631384015083313,
+      "asrIndices": [
+        191
+      ]
+    },
+    {
+      "text": "e",
+      "start": 84.74,
+      "end": 85.12,
+      "probability": 0.9480218291282654,
+      "asrIndices": [
+        192
+      ]
+    },
+    {
+      "text": "construa.",
+      "start": 85.12,
+      "end": 85.74,
+      "probability": 0.9148348967234293,
+      "asrIndices": [
+        193
+      ]
+    }
+  ],
+  "cues": [
+    {
+      "id": 1,
+      "start": 0,
+      "end": 2.72,
+      "text": "Aprender Python criando\num jogo de verdade.",
+      "wordStartIndex": 0,
+      "wordEndIndex": 7,
+      "charactersPerSecond": 15.81
+    },
+    {
+      "id": 2,
+      "start": 3.15,
+      "end": 6.01,
+      "text": "No Rota do Código,\numa oficina no navegador",
+      "wordStartIndex": 7,
+      "wordEndIndex": 15,
+      "charactersPerSecond": 15.03
+    },
+    {
+      "id": 3,
+      "start": 6.01,
+      "end": 8.71,
+      "text": "conecta cinco missões\ne um desafio final",
+      "wordStartIndex": 15,
+      "wordEndIndex": 22,
+      "charactersPerSecond": 14.81
+    },
+    {
+      "id": 4,
+      "start": 8.71,
+      "end": 12.56,
+      "text": "a um objetivo:\nconstruir seu próprio minijogo.",
+      "wordStartIndex": 22,
+      "wordEndIndex": 29,
+      "charactersPerSecond": 11.95
+    },
+    {
+      "id": 5,
+      "start": 12.73,
+      "end": 15.28,
+      "text": "Tudo começa\ncom um problema visível:",
+      "wordStartIndex": 29,
+      "wordEndIndex": 35,
+      "charactersPerSecond": 14.12
+    },
+    {
+      "id": 6,
+      "start": 15.63,
+      "end": 17.44,
+      "text": "os controles estão invertidos.",
+      "wordStartIndex": 35,
+      "wordEndIndex": 39,
+      "charactersPerSecond": 16.57
+    },
+    {
+      "id": 7,
+      "start": 17.83,
+      "end": 20.39,
+      "text": "Você testa a regra,\ncompara os resultados",
+      "wordStartIndex": 39,
+      "wordEndIndex": 46,
+      "charactersPerSecond": 16.02
+    },
+    {
+      "id": 8,
+      "start": 20.39,
+      "end": 22.7,
+      "text": "e descobre o que precisa mudar.",
+      "wordStartIndex": 46,
+      "wordEndIndex": 52,
+      "charactersPerSecond": 13.42
+    },
+    {
+      "id": 9,
+      "start": 23.11,
+      "end": 26.38,
+      "text": "Ao corrigir o código,\no efeito aparece no jogo.",
+      "wordStartIndex": 52,
+      "wordEndIndex": 61,
+      "charactersPerSecond": 14.37
+    },
+    {
+      "id": 10,
+      "start": 26.71,
+      "end": 29.26,
+      "text": "As decisões ganham\numa função concreta:",
+      "wordStartIndex": 61,
+      "wordEndIndex": 67,
+      "charactersPerSecond": 15.29
+    },
+    {
+      "id": 11,
+      "start": 29.55,
+      "end": 31.38,
+      "text": "controlar o movimento da nave.",
+      "wordStartIndex": 67,
+      "wordEndIndex": 72,
+      "charactersPerSecond": 16.39
+    },
+    {
+      "id": 12,
+      "start": 31.73,
+      "end": 33.67,
+      "text": "Cada tentativa ajuda a entender",
+      "wordStartIndex": 72,
+      "wordEndIndex": 77,
+      "charactersPerSecond": 15.98
+    },
+    {
+      "id": 13,
+      "start": 33.67,
+      "end": 36.82,
+      "text": "a relação entre o que você escreve\ne o que acontece.",
+      "wordStartIndex": 77,
+      "wordEndIndex": 88,
+      "charactersPerSecond": 16.51
+    },
+    {
+      "id": 14,
+      "start": 37.27,
+      "end": 40.08,
+      "text": "Nas próximas missões,\nvocê calcula movimentos,",
+      "wordStartIndex": 88,
+      "wordEndIndex": 94,
+      "charactersPerSecond": 16.37
+    },
+    {
+      "id": 15,
+      "start": 40.29,
+      "end": 42.87,
+      "text": "detecta colisões,\ndefine a pontuação",
+      "wordStartIndex": 94,
+      "wordEndIndex": 99,
+      "charactersPerSecond": 13.95
+    },
+    {
+      "id": 16,
+      "start": 42.87,
+      "end": 45.82,
+      "text": "e usa repetições\npara criar ondas de objetos.",
+      "wordStartIndex": 99,
+      "wordEndIndex": 107,
+      "charactersPerSecond": 15.25
+    },
+    {
+      "id": 17,
+      "start": 46.29,
+      "end": 49.52,
+      "text": "Cada conceito resolve\numa parte do mesmo projeto.",
+      "wordStartIndex": 107,
+      "wordEndIndex": 115,
+      "charactersPerSecond": 15.17
+    },
+    {
+      "id": 18,
+      "start": 49.87,
+      "end": 53.39,
+      "text": "No desafio final, todas essas\nfunções trabalham juntas.",
+      "wordStartIndex": 115,
+      "wordEndIndex": 123,
+      "charactersPerSecond": 15.62
+    },
+    {
+      "id": 19,
+      "start": 53.39,
+      "end": 56.18,
+      "text": "É hora de colocar\nsua criação à prova,",
+      "wordStartIndex": 123,
+      "wordEndIndex": 131,
+      "charactersPerSecond": 13.62
+    },
+    {
+      "id": 20,
+      "start": 56.31,
+      "end": 60.62,
+      "text": "numa partida com objetivos,\npontuação e feedback imediato.",
+      "wordStartIndex": 131,
+      "wordEndIndex": 139,
+      "charactersPerSecond": 13.46
+    },
+    {
+      "id": 21,
+      "start": 60.97,
+      "end": 63.7,
+      "text": "Depois da vitória,\no projeto vai com você.",
+      "wordStartIndex": 139,
+      "wordEndIndex": 147,
+      "charactersPerSecond": 15.38
+    },
+    {
+      "id": 22,
+      "start": 64.07,
+      "end": 67.94,
+      "text": "Baixe suas funções Python\ne exporte um HTML jogável.",
+      "wordStartIndex": 147,
+      "wordEndIndex": 156,
+      "charactersPerSecond": 13.44
+    },
+    {
+      "id": 23,
+      "start": 68.25,
+      "end": 70.22,
+      "text": "Abra esse minijogo sem conexão,",
+      "wordStartIndex": 156,
+      "wordEndIndex": 161,
+      "charactersPerSecond": 15.74
+    },
+    {
+      "id": 24,
+      "start": 70.43,
+      "end": 71.67,
+      "text": "compartilhe sua criação",
+      "wordStartIndex": 161,
+      "wordEndIndex": 164,
+      "charactersPerSecond": 18.55
+    },
+    {
+      "id": 25,
+      "start": 71.67,
+      "end": 73.88,
+      "text": "e continue explorando\no que construiu.",
+      "wordStartIndex": 164,
+      "wordEndIndex": 170,
+      "charactersPerSecond": 17.19
+    },
+    {
+      "id": 26,
+      "start": 74.41,
+      "end": 75.97,
+      "text": "Nossa proposta é transformar",
+      "wordStartIndex": 170,
+      "wordEndIndex": 174,
+      "charactersPerSecond": 17.95
+    },
+    {
+      "id": 27,
+      "start": 75.97,
+      "end": 79.73,
+      "text": "o primeiro contato com programação\nem uma conquista concreta:",
+      "wordStartIndex": 174,
+      "wordEndIndex": 183,
+      "charactersPerSecond": 16.22
+    },
+    {
+      "id": 28,
+      "start": 79.73,
+      "end": 81.48,
+      "text": "criar algo seu.",
+      "wordStartIndex": 183,
+      "wordEndIndex": 186,
+      "charactersPerSecond": 8.57
+    },
+    {
+      "id": 29,
+      "start": 81.77,
+      "end": 82.9,
+      "text": "Rota do Código.",
+      "wordStartIndex": 186,
+      "wordEndIndex": 189,
+      "charactersPerSecond": 13.27
+    },
+    {
+      "id": 30,
+      "start": 83.25,
+      "end": 85.86,
+      "text": "Experimente, teste e construa.",
+      "wordStartIndex": 189,
+      "wordEndIndex": 193,
+      "charactersPerSecond": 11.49
+    }
+  ]
+}

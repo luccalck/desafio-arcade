@@ -38,6 +38,7 @@ jobs:
       - name: Validar proveniência antes de aceitar tags
         env:
           GH_TOKEN: ${{ github.token }}
+          REVIEW_WAIVER_SHA: ${{ vars.REVIEW_WAIVER_SHA }}
         run: node scripts/release.mjs provenance
       - run: npm run lint
       - run: npm run test:ci
@@ -580,6 +581,7 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
           RELEASE_NOTES_SHA256: ${{ vars.RELEASE_NOTES_SHA256 }}
+          REVIEW_WAIVER_SHA: ${{ vars.REVIEW_WAIVER_SHA }}
         run: node scripts/release.mjs publish pacote-ci docs/notas-versao.md
 
   submissao:
@@ -634,6 +636,7 @@ jobs:
           NODE
           gh run download "$VIDEO_VALIDATION_RUN" --name "video-validado-${VIDEO_VALIDATION_RUN}-${VIDEO_VALIDATION_ATTEMPT}" --dir inputs-video
       - name: Gerar submissão só dos bytes homologados, publicados e verificados
+        id: criar-submissao
         run: node scripts/submissao.mjs create pacote-ci inputs-video/pitch.mp4 "$SITE_URL" submissao
       - name: Executar e arquivar triagem formal na tag final
         env:
@@ -643,6 +646,7 @@ jobs:
           set -o pipefail
           bash scripts/triagem.sh submissao | tee reports/triagem-final.log
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        if: always() && steps.criar-submissao.outcome == 'success'
         with:
           name: submissao-${{ github.sha }}-${{ github.run_id }}-${{ github.run_attempt }}
           path: submissao/

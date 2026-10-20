@@ -8,7 +8,7 @@ const proof={annotated:true,integrated:true,protectedMain:true,approved:true};
 function bundle(){
  const site=Object.fromEntries(['index.html','game.js','style.css','LEIA-ME.txt','LICENSE.txt','THIRD_PARTY.txt'].map(n=>[n,strToU8('fixture')]));
  site['version.json']=strToU8(JSON.stringify({sha,version:'0.6.0',build:'2026-10-13T00:00:00Z'}));
- const zip=zipSync(site),files={'build.zip':zip,'build.zip.sha256':strToU8(hash(zip)),'GDD.pdf':strToU8('%PDF-fixture'),'RelatorioTecnico.pdf':strToU8('%PDF-report-fixture'),'version.json':site['version.json'],'sbom.cdx.json':strToU8('{"bomFormat":"CycloneDX"}')};
+ const zip=zipSync(site,{mtime:new Date('2026-10-13T00:00:00Z')}),files={'build.zip':zip,'build.zip.sha256':strToU8(hash(zip)),'GDD.pdf':strToU8('%PDF-fixture'),'RelatorioTecnico.pdf':strToU8('%PDF-report-fixture'),'version.json':site['version.json'],'sbom.cdx.json':strToU8('{"bomFormat":"CycloneDX"}')};
  for(const n of ['reports/seguranca/gitleaks.json','reports/seguranca/npm-audit.json','reports/qualidade/junit.xml','reports/qualidade/coverage/coverage-summary.json','reports/e2e/reports/e2e-junit.xml','reports/construcao/pdfinfo.txt','reports/construcao/relatorio-pdfinfo.txt','reports/construcao/reproducibility.json'])files[n]=strToU8('fixture');
  files['reports/construcao/relatorio-pdfinfo.txt']=strToU8('Pages: 1\n');
  files['ci-manifest.json']=strToU8(JSON.stringify({schema:1,sha,run,runAttempt:'1',version:'0.6.0',build:'2026-10-13T00:00:00Z',files:Object.fromEntries(Object.entries(files).map(([n,b])=>[n,{sha256:hash(b),bytes:b.length}]))}));return files;
@@ -80,4 +80,16 @@ it('adaptador recusa drafts ambíguos e não lista quando a release já está pu
  let count=0;const published={...draft,draft:false};
  const api=github('squad/jogo','credencial-sintetica',{fetchImpl:async()=>{count++;return new Response(JSON.stringify(published));}});
  expect(await api.getRelease('v0.6.0')).toEqual(published);expect(count).toBe(1);
+});
+
+it('dispensa auditável não dispensa tag anotada, main protegida, integração ou identidade exata',()=>{
+ const reviewException={kind:'owner-waiver',authorized:true,humanReview:false,sha,tag:'v1.0.0',pullRequest:47,owner:'responsavel',actor:'responsavel'};
+ const waived={...proof,approved:false,reviewException};
+ expect(validateTag({tag:'v1.0.0',sha,version:'1.0.0',proof:waived})).toBe(true);
+ for(const key of ['annotated','integrated','protectedMain'])expect(()=>validateTag({tag:'v1.0.0',sha,version:'1.0.0',proof:{...waived,[key]:false}})).toThrow();
+ for(const changed of [{authorized:false},{humanReview:true},{sha:'b'.repeat(40)},{actor:'outro'},{owner:''},{pullRequest:48},{tag:'v0.6.0'}])expect(()=>validateTag({tag:'v1.0.0',sha,version:'1.0.0',proof:{...waived,reviewException:{...reviewException,...changed}}})).toThrow(/approved/);
+});
+it('manifesto da release conserva o estado real da revisão',()=>{
+ const manifest=JSON.parse(Buffer.from(plan().assets['release-manifest.json']).toString());
+ expect(manifest.review).toEqual({approved:true,approvals:[],exception:null});
 });

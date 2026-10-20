@@ -61,3 +61,22 @@ ExportStitch original passou a estar versionado em docs/evidencias/stitch-009-or
 ## Créditos reconferidos —16/10/2026
 
 Conferimos os seis componentes antes sem crédito nos campos inspecionados. Mantemos as licenças próprias e agora registramos crédito de fonte primária no [inventário](docs/evidencias/inventario-npm-008.md) e [dados de conferência](docs/evidencias/creditos-reconferidos-2026-10-16.json). Créditos: Evan Wallace (esbuild), Nicholas C. Zakas (config-helpers), VoidZero Inc. e colaboradores (rolldown), Python Software Foundation e autores argparse.js, e Devon Govett/Parcel Contributors conforme site oficial de Lightning CSS. A conferência técnica não inventa aceite coletivo ou transfere titularidade. Nenhum vídeo novo foi adicionado.
+
+
+## Pitch silencioso —16/10/2026
+
+Capturas reais do jogo próprioMIT (produçãoe9,v0.7.0),textos/cartelas originais assistidos porIA e créditos do squad. Sem trilha,sons,voz,rosto,logotipos externos ou banco de imagens. SegoeUI instalada noWindows foi usada para rasterizar texto das cartelas/legendas; nenhum arquivoTTF/WOFF foi copiado ao repositório ou distribuído. O vídeo é saída de renderização, não pacote de fontes. [Fonte Microsoft já consultada](https://learn.microsoft.com/en-us/typography/fonts/font-faq).
+
+Ferramentas locais de autoria:Python3.12 (PSF),PlaywrightPython (Apache-2.0),Pillow (HPND) eFFmpeg8.1.2/ffprobe (buildGPLv3 do sistema, não redistribuída). O uso dessas ferramentas não adicionou biblioteca ou serviço ao runtime estático. Não redistribuímos o executávelChrome nem sua interface/marca; apenas a área de conteúdo do jogo. Metadados,versões de ferramenta,gravações originais e hashes preservados no registro do pitch.
+
+
+## Narração sintética do pitch —16/10/2026
+
+Texto próprio e voz sintética local com[Piper](https://github.com/OHF-Voice/piper1-gpl), versão1.8.0, ferramentaGPL-3.0 (não distribuída no jogo). Modelo `pt_BR-faber-medium` do repositório público [piper-voices](https://huggingface.co/rhasspy/piper-voices/tree/c10ece1aade47bb51c153c893d14e5bf8e5b7117/pt/pt_BR/faber/medium); modelcard informa datasetCC0 e22.050Hz. OREADMEdo repositório de vozes declaraMIT; fonte/revisão também preservadas em licenca-vozes.json, além doCC0declarado para o dataset. Fonte/modelcard/configuração/hash registrados em docs/evidencias/narracao-2026-10-16, sem distribuir modelo63MB ou executável. Não houve clonagem dos integrantes, música ou serviçoTTS emruntime. FFmpeg incorporouAAC/48kHz, normalização e legendas transcritas; SegoeUI rasterizada, semTTFdistribuído.
+
+
+## ÁudioElevenLabs fornecido e legendas —16/10/2026
+
+O solicitante forneceuMP3narrando o texto próprio do projeto e autorizou incorporá-lo. Arquivooriginal,hash,fonte declarada e limites emdocs/evidencias/pitch-elevenlabs-2026-10-16/audio-origem.json. Não acessamos contaElevenLabs,não inspecionamos assinatura/licença privada nem atribuímos a voz a integrante; a fonte é informada pelo usuário/nome doarquivo. Nenhuma música ou rosto novo. VozPiperanterior não usada nesta montagem.
+
+Autoria:capturas reais do projetoMIT,cartelas próprias,texto próprio e assistênciaIAregistrada. Reconhecimento localcom[faster-whisper](https://github.com/SYSTRAN/faster-whisper) (MIT),CTranslate2 e modeloWhisperbaseconvertido,pinado nos recibos. Esses pesos/ferramentas não são distribuídos ao jogador. SegoeUIBold rasterizada (fontes do sistema não distribuídas);FFmpegH.264/AACpara edição e codificação.

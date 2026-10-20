@@ -1,0 +1,139 @@
+1
+00:00:00,000 --> 00:00:02,720
+Aprender Python criando
+um jogo de verdade.
+
+2
+00:00:03,150 --> 00:00:06,010
+No Rota do Código,
+uma oficina no navegador
+
+3
+00:00:06,010 --> 00:00:08,710
+conecta cinco missões
+e um desafio final
+
+4
+00:00:08,710 --> 00:00:12,560
+a um objetivo:
+construir seu próprio minijogo.
+
+5
+00:00:12,730 --> 00:00:15,280
+Tudo começa
+com um problema visível:
+
+6
+00:00:15,630 --> 00:00:17,440
+os controles estão invertidos.
+
+7
+00:00:17,830 --> 00:00:20,390
+Você testa a regra,
+compara os resultados
+
+8
+00:00:20,390 --> 00:00:22,700
+e descobre o que precisa mudar.
+
+9
+00:00:23,110 --> 00:00:26,380
+Ao corrigir o código,
+o efeito aparece no jogo.
+
+10
+00:00:26,710 --> 00:00:29,260
+As decisões ganham
+uma função concreta:
+
+11
+00:00:29,550 --> 00:00:31,380
+controlar o movimento da nave.
+
+12
+00:00:31,730 --> 00:00:33,670
+Cada tentativa ajuda a entender
+
+13
+00:00:33,670 --> 00:00:36,820
+a relação entre o que você escreve
+e o que acontece.
+
+14
+00:00:37,270 --> 00:00:40,080
+Nas próximas missões,
+você calcula movimentos,
+
+15
+00:00:40,290 --> 00:00:42,870
+detecta colisões,
+define a pontuação
+
+16
+00:00:42,870 --> 00:00:45,820
+e usa repetições
+para criar ondas de objetos.
+
+17
+00:00:46,290 --> 00:00:49,520
+Cada conceito resolve
+uma parte do mesmo projeto.
+
+18
+00:00:49,870 --> 00:00:53,390
+No desafio final, todas essas
+funções trabalham juntas.
+
+19
+00:00:53,390 --> 00:00:56,180
+É hora de colocar
+sua criação à prova,
+
+20
+00:00:56,310 --> 00:01:00,620
+numa partida com objetivos,
+pontuação e feedback imediato.
+
+21
+00:01:00,970 --> 00:01:03,700
+Depois da vitória,
+o projeto vai com você.
+
+22
+00:01:04,070 --> 00:01:07,940
+Baixe suas funções Python
+e exporte um HTML jogável.
+
+23
+00:01:08,250 --> 00:01:10,220
+Abra esse minijogo sem conexão,
+
+24
+00:01:10,430 --> 00:01:11,670
+compartilhe sua criação
+
+25
+00:01:11,670 --> 00:01:13,880
+e continue explorando
+o que construiu.
+
+26
+00:01:14,410 --> 00:01:15,970
+Nossa proposta é transformar
+
+27
+00:01:15,970 --> 00:01:19,730
+o primeiro contato com programação
+em uma conquista concreta:
+
+28
+00:01:19,730 --> 00:01:21,480
+criar algo seu.
+
+29
+00:01:21,770 --> 00:01:22,900
+Rota do Código.
+
+30
+00:01:23,250 --> 00:01:25,860
+Experimente, teste e construa.

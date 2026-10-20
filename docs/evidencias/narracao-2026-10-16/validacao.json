@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-17T00:34:55.785504+00:00",
+  "duration": 79.96,
+  "audioAndVideoStartAtZero": true,
+  "audioAndVideoSameDuration": true,
+  "cues": 17,
+  "allCuesWithinScene": true,
+  "allSpeechRatesUnchanged": true,
+  "fullDecodeExitCode": 0,
+  "aacDriftComparison": "correlacao-aac.json",
+  "auditoryHumanReview": false,
+  "modelFilesNotDistributed": true,
+  "speechGeneration": "local,semenviodetextoaoprovedorremoto",
+  "decodedPeakDbFS": -1.9998490310736532,
+  "clippedSamples": 0
+}

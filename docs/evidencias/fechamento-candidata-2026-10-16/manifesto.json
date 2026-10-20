@@ -1,0 +1,58 @@
+{
+  "schema": 1,
+  "scope": "Evidências da publicação do PR41 e preparação da candidata; não é manifesto da submissão acadêmica.",
+  "files": {
+    "alertas.json": {
+      "bytes": 65,
+      "sha256": "39f98abe8d78c8266fdb57a44bbcf4886fc9be8710ebd2e22fdf83323f2b560e"
+    },
+    "candidata-smoke.json": {
+      "bytes": 554,
+      "sha256": "07765de76d8169bcbbd788009fdb61f2c6fb9225f31b5fc4e7efb3f80e85e5c5"
+    },
+    "dora.json": {
+      "bytes": 3368,
+      "sha256": "13f10c0abfaadc3f5e0e043a0720fc9308573d6114eb2b2fbc728ab9b35f1af7"
+    },
+    "ficha-conferencia-parcial.json": {
+      "bytes": 1803,
+      "sha256": "16cc4ec75e13b2c5b83db310a7543bd7da60bb6fb2f3d8f9200c7dffc182f456"
+    },
+    "fonte-html.json": {
+      "bytes": 258,
+      "sha256": "f4cbf1758e56544e2ce14913e353b6ffef5e8b4a6110a9b1fb9563a7d03777f8"
+    },
+    "hml-aceite.json": {
+      "bytes": 927,
+      "sha256": "9f1f999c51071d276804392d2551fa093c85f8d45ea6bdc56b2d6e150cef1a95"
+    },
+    "hml-run.json": {
+      "bytes": 796,
+      "sha256": "e9f0fe6f7d6313aebf9ef54d30eb15b773feef4f4454a6cf4af618dd6d7a95c4"
+    },
+    "producao-smoke.json": {
+      "bytes": 501,
+      "sha256": "6f827f4a91315e03b93b7b3d4cd52003f96dba9a7de558897cf32dbc59134cec"
+    },
+    "producao.json": {
+      "bytes": 512,
+      "sha256": "9b55e8340204e69c9dbd455d7e080c63570db1e20e00355b79ef430452efc22b"
+    },
+    "publicacao-pr41.json": {
+      "bytes": 2374,
+      "sha256": "dae05a1730dd8133195f1a878283b11f714399000d1046458215bb2a71a244c4"
+    },
+    "README.md": {
+      "bytes": 3071,
+      "sha256": "12a8a30919d72e1872bbe32f5b54113a1793b70b106ed5b9b6e07a6be9a94491"
+    },
+    "revisoes-pr41.json": {
+      "bytes": 284,
+      "sha256": "f646a9611c87499421d5c6833349066373a9ae43f0ca44fa16bf675a2f519d1f"
+    },
+    "sondas.json": {
+      "bytes": 913,
+      "sha256": "76aa88ffa7bc38d72eb175543cdab252458f017de9523bae2cfec34ec2a29596"
+    }
+  }
+}

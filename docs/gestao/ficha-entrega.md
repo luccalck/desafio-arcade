@@ -1,153 +1,102 @@
-# Respostas para a ficha de entrega do professor
+# Respostas persistentes — ficha de entrega do professor
 
-Atualização: 16/10/2026. Este é o registro persistente para preencher o HTML original de uma vez, no fechamento. Não é a ficha TXT gerada pelo professor nem comprova entrega. Campos de resposta vazios ainda precisam ser completados; não substituir por dados fictícios. Os dados de Davi, Miguel e Lucas foram informados por Lucca em 13/10; Lucca confirmou seu nome completo e RA em 14/10/2026.
+Atualização:19/10/2026, America/Sao_Paulo. Registro dos49 controles da seção10 do HTML original, sem alterar seus validadores. Não é a fichaTXT. Respostas vazias aguardam evidência final; não copiar como aceites concluídos. Notas10 são a autoavaliação solicitada pelo squad, não nota oficial nem fator individual comprovado.
 
-Fonte: `C:/Users/user/Downloads/jogo/Avaliação.html`, barra superior e seção 10, incluindo os campos e validadores gerados por JavaScript. Mantemos o original sem alterações. Os papéis/contas estão em [SQUAD](../../SQUAD.md). Nome do jogo para referência: Rota do Código; o formulário não tem campo separado para esse título.
+Fonte preservada: `C:/Users/user/Downloads/jogo/Avaliação.html`. Dados/papéis em [SQUAD](../../SQUAD.md); pendências atuais em [registro por passo](../execucao/05-pendencias-por-passo.md). Projeto: Rota do Código, jogo WEB estático/offline; o HTML não tem campo próprio para o nome do jogo.
 
-## 1. Barra superior — squad e repositório
+## 1. Squad e repositório —2 controles
 
-| Campo HTML | Resposta para copiar |
+| Campo | Resposta |
 |---|---|
-| squadNome — Squad | Aura 67 |
-| squadRepo — Repositório | https://github.com/luccalck/desafio-arcade |
+| squadNome | Aura 67 |
+| squadRepo | https://github.com/luccalck/desafio-arcade |
 
-## 2. Integrantes — nomes, RAs e papéis
+## 2. Integrantes —12 controles
 
-Copiar nas quatro linhas da seção 10, na ordem abaixo. As classes .mNome/.mRA/.mPapel e o índice data-i 0–3 identificam as linhas no HTML.
+Classes `.mNome`, `.mRA`, `.mPapel`, índices0–3. Papéis oficiais distintos; coordenações não impedem participação de todos nas demais áreas.
 
-| Linha | Nome completo | RA | Papel |
+| Linha | Nome completo | RA | Papel literal |
 |---|---|---|---|
 | 1 | Lucca Castilho Costa | 26179873 | Produto e Game Design |
 | 2 | Davi Marcondes Paes de Souza | 26180842 | Desenvolvimento e Qualidade |
 | 3 | Miguel Oliveira de Almeida | 26179933 | Plataforma e Release |
 | 4 | Lucas Souza da Silva | 26179875 | SRE e Segurança |
 
-Os quatro nomes completos e RAs estão preenchidos com dados fornecidos pelos integrantes. As pastas de execução mantêm os nomes abreviados históricos; isso não muda as pessoas nem as contas. Não inserir CPF, assinatura, senha ou token neste registro.
+## 3. Evidências —7 controles
 
-## 3. Links das evidências
+Links abaixo são reais; conferir SHA/versão da entrega antes do TXT. Não usar link local como URL pública do relatório.
 
-Os campos finais ficam vazios até comprovação da versão efetivamente entregue. O run abaixo é uma referência histórica auditada; deve ser substituído pela execução final aplicável.
-
-| Campo HTML / rótulo literal | Obrigatório no formulário? | Resposta para copiar | Conferência antes de gerar |
+| Campo | Obrigatório | Resposta conhecida | Situação da resposta final |
 |---|---|---|---|
-| lkBuild — URL pública do jogo (produção) | Sim | https://luccalck.github.io/desafio-arcade/ | Produção0.7.0/SHAe9dd28c; recibo38852413982/2, smoke e monitor atuais confirmados. Reconferir na tag acadêmica final. |
-| lkHml — URL de homologação | Não | https://luccalck.github.io/desafio-arcade/hml/ | HML atual0.7.0/SHA1e3dd3b, run38939899867,4/4 e178,827s; avanço da main, preservando produçãoe9. |
-| lkCI — Última execução verde da pipeline (link ou print) | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/38939899867 | CI/main318/36 eHML178,827s verdes;PRDskipped intencional. RetomadaRelease38940532129/monitor38940593792 verdes. Substituir pela run acadêmica final quando existir. |
-| lkGraf — Painel /status/ (link) | Sim | https://luccalck.github.io/desafio-arcade/status/ | HTTP200/desktop/celular/refresh porEnter; três DORA com2deploys, MTTRindisponível. Fonte:painel-atual-verificacao.json. |
-| lkVideo — Vídeo pitch (arquivo no AVA ou link) | Sim | | Pendente por orientação de Lucca; não usar caminho inexistente como entrega. |
-| lkRel — Relatório técnico (PDF) | Sim | | Publicar PDF gerado pela CI e confirmar acesso; arquivo local não é link público. |
-| lkDrive — Pasta do Google Drive do concurso (se inscritos) | Não | | Concurso opcional, sem decisão coletiva/autorização comprovada. |
+| lkBuild | Sim | https://luccalck.github.io/desafio-arcade/ | Atual0.7.0/4678830, HTTP200 e sete hashes iguais ao ZIP; reconferir1.0.0 após publicação |
+| lkHml | Não | https://luccalck.github.io/desafio-arcade/hml/ | Atual4678830, HML4/4; reconferir candidata1.0.0 |
+| lkCI | Sim | https://github.com/luccalck/desafio-arcade/actions/runs/38991328634 | Publicação4678830 verde, CI322/37, HML175,423s, PRD/smoke/monitor aprovados; substituir pela tag final quando concluída |
+| lkGraf | Sim | https://luccalck.github.io/desafio-arcade/status/ | Sondas38991747764: HML/PRD200; DORA3deploys/14dias, lead time25min29s, CFR33,33%, MTTRnull. Revalidar na entrega |
+| lkVideo | Sim | https://raw.githubusercontent.com/luccalck/desafio-arcade/d497f9a25ce897624ec68dd9bf79aa5763e2a22b/docs/pitch/pitch.mp4 | Edição86s/ElevenLabs, áudio fornecido e30legendas bold; produção filmadae9/0.7.0. Substituir pelo vídeo validado da candidata1.0.0 |
+| lkRel | Sim | https://github.com/luccalck/desafio-arcade/releases/download/v0.7.0/RelatorioTecnico.pdf | PDF técnico anterior, real e público. Substituir pelo relatório acadêmico pós-triagem, sem sobrescrever este asset |
+| lkDrive | Não | | Concurso opcional; sem inscrição autorizada |
 
-## 4. Dez integráveis — entrega e autoavaliação A
+## 4. Integráveis —20 controles
 
-As notas 10 são estimativas solicitadas por Lucca, não resultados medidos ou nota oficial. Os dez campos de entrega foram reabertos após confronto com as evidências; preencher apenas no fechamento real de cada INT.
+Cada linha corresponde a `.iChk` e `.iNota`. Campo final vazio significa que não atestamos entrega integral ainda. As estimativas10 ficam mantidas por solicitação do squad; limites de evidência permanecem explícitos.
 
-| INT e título literal | Peso em A | Entregue e evidenciado — resposta final | Autoavaliação 0–10 | Evidência final/observação |
+| INT literal | Peso A | Entregue/evidenciado: resposta final | Autoavaliação | Conferência de fechamento |
 |---|---:|---|---:|---|
-| INT-01 — Repositório e fluxo Git | 10% | | 10 | Registrar revisões reais, integrações e tags; autoria não equivale a aprovação. |
-| INT-02 — GDD como código | 8% | | 10 | 12 seções; PDF da CI auditada tem 18 páginas. Conferir revisão e versão final. |
-| INT-03 — Pipeline CI/CD no GitHub Actions | 15% | | 10 | Histórico CI/HML/PRD confirmado; main atual318/36,HML178,827s; Release técnica/recuperação executadas. Revalidar versão acadêmica final. |
-| INT-04 — Testes automatizados | 12% | | 10 | CI atual318unidade/integração e36E2E, core97,90%; HML4/4 e smokePRD de origem preservados. Playtest humano pendente. |
-| INT-05 — Segurança, licenças e uso de IA | 10% | | 10 | Scanners CI sem achados; conferir inventários/revisão e materiais finais. |
-| INT-06 — Release versionada e empacotada | 10% | | 10 | Release técnica pública v0.7.0/e9:ZIP29.265bytes, seis anexos iguais à origem38852413982/2, offline do mesmo ZIP aprovado. Release acadêmica final ainda pendente. |
-| INT-07 — Ambientes, entrega progressiva e rollback | 12% | | 10 | Rollout azul-verde formal e smoke comprovados. Recuperação automática/manual<5min e continuidade ainda sem ensaio completo. |
-| INT-08 — Monitoramento, alertas e métricas DORA | 10% | | 10 | Sondas formais e painel publicados/testados. Três métricas DORA com uma implantação; MTTR, alerta tratado e melhoria medida pendentes. |
-| INT-09 — Build pública e pacote de submissão | 8% | | 10 | Pacote final/triagem dependem de produção, vídeo real e prazo oficial. |
-| INT-10 — Vídeo pitch e relatório técnico | 5% | | 10 | PDF10p da origeme9 publicado na Release técnica; PR34/40 já revisados. Atualização documental pós-publicação precisa de revisão/CI própria. Pitch, evidências finais e banca pendentes. |
+| INT-01 Repositório e fluxo Git | 10% | | 10 | PR41 aprovado porDavi no HEADcea6745 e integrado; candidata posterior exige sua revisão. Matriz comprova trêsINT por integrante, sem atestar banca |
+| INT-02 GDD como código | 8% | | 10 | Doze seções/modelo, imagens ePDF automático. Reconferir versão/data/PR da candidata |
+| INT-03 Pipeline CI/CD no GitHub Actions | 15% | | 10 | CI/HML/PRD/monitor formais anteriores comprovados; aguardar candidata final |
+| INT-04 Testes automatizados | 12% | | 10 | Última CI do pitch:322 testes/37E2E; cobertura core superior a70%, regressões reais; conferir CI final |
+| INT-05 Segurança, licenças e uso de IA | 10% | | 10 | Gitleaks/audit/SBOM/inventários e confirmação coletiva; revisão e varredura dos materiais posteriores |
+| INT-06 Release versionada e empacotada | 10% | | 10 | Técnica0.7.0 pública;1.0.0 e anexos ainda não publicados |
+| INT-07 Ambientes, entrega progressiva e rollback | 12% | | 10 | Azul-verde/recuperação real manual80,66s/automática17,166s; demonstração ao vivo continua na banca |
+| INT-08 Monitoramento, alertas e métricas DORA | 10% | | 10 | Sondas/painel/DORA; alertas e melhoria medidos em ensaio. MTTR operacional sem amostra, sem inventar incidente |
+| INT-09 Build pública e pacote de submissão | 8% | | 10 | Pacote/triagem na tag1.0.0/vigilância ainda não executados |
+| INT-10 Vídeo pitch e relatório técnico | 5% | | 10 | Pitch86s pronto ePDF10p da CI; vincular vídeo/relatório aos resultados finais |
 
-## 5. Banca — estimativa B
+## 5. Estimativa da banca —4 controles
 
-Estimativas solicitadas anteriormente; não declaram playtest, banca realizada ou aprovação do professor.
+Classes `.bNota`. Não é avaliação realizada ou eficácia educativa medida.
 
-| Critério literal | Peso em B | Estimativa 0–10 |
+| Critério | Peso B | Autoavaliação |
 |---|---:|---:|
 | Inovação e originalidade | 25% | 10 |
 | Viabilidade técnica e execução | 25% | 10 |
 | Qualidade do protótipo (jogabilidade) | 30% | 10 |
 | Apresentação | 20% | 10 |
 
-## 6. Quatro declarações — responder somente após conferir
+## 6. Declarações literais —4 controles
 
-Os textos abaixo são os do JavaScript original, sem reescrever para aparentar atendimento. A resposta fica vazia até ser possível atestar a declaração verdadeira. A IA não aceita estas declarações pelos integrantes.
+Classes `.dChk`, índices0–3. Não reescrever o texto do professor para contornar uma condição. “Sim” registra fonte indicada, não uma assinatura fabricada.
 
-| Nº | Declaração literal | Aceitar — resposta final | O que conferir |
+| Nº | Texto literal | Resposta disponível | Base/condição |
 |---|---|---|---|
-| 1 | O squad tem 4 integrantes registrados em SQUAD.md, sem alterações desde 02/10. | | Registro/composição desde 02/10 com provas; completar os dados agora não comprova o marco histórico. |
-| 2 | Todo ativo de terceiros e todo uso de IA estão registrados em THIRD_PARTY.md e AI-USAGE.md. | | Inventário final de ativos/usos de IA, direitos e revisão humana antes do merge, incluindo vídeo e novos componentes. |
-| 3 | Nenhuma credencial real está no repositório e a produção só foi alterada pela pipeline. | | Scanners/histórico/artefatos finais e histórico de publicação somente pela pipeline. |
-| 4 | O scripts/triagem.sh foi executado na tag v1.0.0 e terminou com TRIAGEM APROVADA. | | Execução real na tag v1.0.0, log aprovado e correspondência com pacote/versão. |
+| 1 | O squad tem 4 integrantes registrados em SQUAD.md, sem alterações desde 02/10. | Sim | Lucca confirmou explicitamente em16/10: “Sim, confirmo”. Declaração humana atual, sem retroagir documentos |
+| 2 | Todo ativo de terceiros e todo uso de IA estão registrados em THIRD_PARTY.md e AI-USAGE.md. | | Inventários atualizados, inclusive MP3 fornecido. Reconferir candidata final e revisão antes do merge |
+| 3 | Nenhuma credencial real está no repositório e a produção só foi alterada pela pipeline. | | Revalidar scanner/histórico/artefatos finais e registro de publicação |
+| 4 | O scripts/triagem.sh foi executado na tag v1.0.0 e terminou com TRIAGEM APROVADA. | | Só aceitar após execução real aprovada na tag; hoje ainda não ocorreu |
 
-## 7. Resultados automáticos — conferir, não preencher manualmente
+## 7. Prazo e geração
 
-| Resultado mostrado/gerado pelo HTML | Valor na conferência final |
-|---|---|
-| Componente A estimado — vA | |
-| Componente B estimado — vB | |
-| Nota do squad estimada com F=1,0 — vF | |
-| Data/hora real em “Gerada em” no TXT | |
+Lucca solicitou expressamente usar o instante atual como limite; configuramos `PRAZO=2026-10-16T22:35:43-03:00`. Uma triagem executada depois desse horário será corretamente reprovada. Não alterar relógio nem inventar data futura para liberar a declaração4. A hora “Gerada em” deve ser a hora real do botãoTXT; não é substituta do prazo ou reciboAVA.
 
-O HTML calcula A com os pesos dos dez INT, B com os quatro critérios e 0,7×A+0,3×B. O F=1,0 mostrado no formulário é uma hipótese do cálculo, não comprovação do fator individual. A nota oficial e o fator individual são do professor. Nenhum valor automático é evidência de entrega.
+## 8. Sete validadores originais
 
-## 8. Sete validadores do formulário
+- [x] Squad/repositório reais disponíveis; URLHTTP/HTTPS.
+- [x] Quatro nomes completos/RAs reais disponíveis.
+- [x] Quatro papéis oficiais distintos disponíveis.
+- [ ] Links finais obrigatórios acessíveis e coerentes com a versão entregue.
+- [ ] Dez integráveis efetivamente entregues/evidenciados, confrontados com o checklist integral.
+- [x] Dez autoavaliaçõesA/quatro estimativasB:10, por solicitação; faixa0–10, passo0,5.
+- [ ] Quatro declarações verdadeiras aceitas após conferência; primeira já confirmada.
 
-Checklist de conferência do JavaScript, ainda sem aceitar a ficha final:
+Os três cálculos `vA`, `vB` e `vF` são resultados do JavaScript. Com todas as estimativas10, a simulação resultaA10/B10/nota10 com hipóteseF1; isso não comprova a nota, a banca ou o fator individual.
 
-- [ ] Nome do squad e repositório preenchidos; URL HTTP/HTTPS real.
-- [ ] Quatro integrantes com nome e RA. O JS exige pelo menos duas palavras no nome e três caracteres no RA; usar os dados reais, sem máscaras ou preenchimento fictício.
-- [ ] Quatro papéis oficiais distintos.
-- [ ] Links obrigatórios preenchidos e, além do teste simples de comprimento do JS, acessíveis e correspondentes à versão entregue.
-- [ ] Dez integráveis efetivamente entregues e evidenciados, marcados após confronto com o checklist completo.
-- [ ] Dez autoavaliações A e quatro estimativas B completas, na faixa 0–10; campo numérico usa passo 0,5.
-- [ ] Quatro declarações verdadeiras aceitas pelo squad.
+## 9. Procedimento final
 
-## 9. Preencher de uma vez e gerar o TXT
+1. Fechar candidata revisada/publicada, captura do mesmoSHA, tag1.0.0/pacote/triagem verdadeiros e relatório pós-execução. Conferir [procedimento do pacote](../pacote-submissao.md).
+2. Substituir links do quadro3 por fontes finais verificadas. Preencher os dez checks e quatro declarações apenas conforme as provas reais. Manter limites da banca/humanos na documentação.
+3. Abrir o HTML original por servidor local, preencher seus49 controles por sua própriaUI e verificar sete validadores/cálculos sem modificar o arquivo/JS ou habilitar botão à força.
+4. Gerar pelo botão “Gerar ficha(.txt)” e conferir o arquivo `DevOps_Avaliacao_Arcade_Aura_67.txt`: data/hora real, quatro nomes/RAs, links e declarações literais.
+5. Entregar TXT com pacote e relatório pelo responsável noAVA; registrar recibo real. Não enviar e-mail, inscrever no concurso ou declarar banca concluída automaticamente.
 
-1. Completar as respostas vazias deste MD conforme o trabalho e as evidências reais forem concluídos. Conferir [pendências por passo](../execucao/05-pendencias-por-passo.md) e [checklist do professor](checklist-avaliacao.md).
-2. Na etapa 037, revisar este MD com os quatro e escolher links de release/produção/CI/painel/vídeo/relatório finais. Não usar provas de outro SHA como se fossem desta versão.
-3. Abrir o HTML original pelo Live Server, sem editar o arquivo ou seu JavaScript. Copiar squad/repositório, quatro integrantes, sete links aplicáveis, dez INT e notas, quatro estimativas B e declarações na ordem deste documento.
-4. Conferir os sete validadores e os cálculos. Gerar pelo botão “Gerar ficha (.txt)” somente quando tudo for verdadeiro. Se houver declaração sem comprovação, manter em aberto e obter orientação humana; não burlar o botão.
-5. O nome esperado pelo script para o squad “Aura 67” é `DevOps_Avaliacao_Arcade_Aura_67.txt`. Abrir o TXT efetivamente gerado e conferir todos os campos, data/hora real, nomes/RAs, links, notas e declarações antes de anexar ao AVA com pacote e relatório. O TXT, e não este MD, é a ficha exigida.
-6. “Enviar por e-mail” é opcional e depende de autorização; o corpo pode ser truncado. Não enviar por e-mail/AVA ou aceitar concurso automaticamente. Registrar o recibo real quando o responsável fizer a entrega.
-
-## 10. Referências atuais que ainda não são respostas finais
-
-- Produção formal do jogo: https://luccalck.github.io/desafio-arcade/ .
-- Homologação formal: https://luccalck.github.io/desafio-arcade/hml/ .
-- Nome do squad: Aura 67.
-- Produção/HML/painel estão comprovados; vídeo, relatório final publicado na Release, tag e triagem ainda sujeitos às etapas responsáveis. Não inventar links finais.
-
-Este MD reúne os 49 controles de entrada da ficha: 2 do squad/repositório, 12 dos integrantes, 7 links, 20 dos INT (check + nota), 4 notas B e 4 declarações. Os 3 cálculos e 7 validadores são saídas automáticas/conferências, não novos campos. A preservação deste arquivo no Git permite recuperar as respostas mesmo que a aba do professor perca o preenchimento.
-
-
-## 11. Produção formal confirmada — 15/10/2026
-
-A aprovação de Lucas no PR33 foi conferida no HEADf38f6d9; merge88d533e. Run38829484114/1 concluiu com CI299/36, HML4/4 em216,414s, aprovação real no environmentproducao, promoção azul-verde e smoke da candidata/raiz. Bundle172arquivos, ZIP29.000bytes/hash84105e76a4bd55b5064d466340cb377ea27d49092bae984f65ebdeb7d0d0f937, sete arquivos idênticos emHML/PRD, offline1/1 semrede/erros. Sondas38830013027 confirmam0.7.0/SHA88emambos. Atualizamos somente links agora conhecidos; não marcamos dez integráveis ou declarações finais como atendidos.
-
-DORA: uma implantação em14dias; frequência0,0714286/dia, leadtime5min27s, taxa de falha0% nessa amostra; MTTRsemvalor. Pacote final, pitch, relatório final publicado emrelease, triagem, melhoria/recuperação e ações humanas continuam pendentes. O HTML original e o TXT não foram preenchidos ou gerados.
-
-## 12. O que falta para gerar a ficha verdadeira
-
-Dados de squad, integrantes/RAs/papéis, URLs de produção/HML/CI/painel e estimativas já estão disponíveis neste MD. Faltam o vídeo e o link acessível do relatório final, a conclusão/evidência dos dezINT, a conferência coletiva das quatro declarações (incluindo composição desde02/10 e TRIAGEM APROVADA na v1.0.0) e, por último, transcrição/validação/geração doTXT no HTML. Drive é opcional e só se houver inscrição autorizada.
-
-Relatório candidato mais recente: CI38831325010, SHA9494224, dez páginas,558.832bytes,SHA256d6c866a2c2ef6e9387e0e835e4448180f1c1747d54ef58f7d2809be196a491ae. Arquivado no Actions, ainda não é o link público da versão final da Release. Atualizar oSHA/CI após novas alterações e revisão; não considerar estimativas10 como comprovação dosINT.
-
-## 13. Atualização operacional —16/10/2026
-
-PR34 aprovado porLucas, revisão5543092743 no HEADe9dd28c; mergeacb03d8. Main:311testes/36E2E, HML182,361s. Recuperação manual38851754358:80,66s e171HTTP200. Automática38851915984:17,166s e65HTTP200, com Pages/hashes/smoke; run vermelha pela injeção deliberada, recuperação passou. Alertas38/39 são ensaio isolado e não incidentes espontâneos. Fontes em docs/evidencias/operacao-release-2026-10-16.md.
-
-Tag técnica v0.7.0/SHAe9 existe; a primeira tentativa38852413982/1 bloqueou Release por sonda recebendo versão anterior, apesar de smoke correto. Reconferência38853203550 passou; tentativa2 confirmouCI/HML/PRD/monitor mas falhou ao reencontrar draft pelo endpoint por tag. Draft414556376 contém cinco anexos+manifesto iguais à CI; correção e retomada protegida aguardam revisão/merge/execução. Não é Release publicada. Não preencher HTML/TXT agora nem declarações finais. Relatório atualizado com ensaios tem10páginas localmente, ainda candidato a revisão/publicação. Pitch, playtest humano, pacote acadêmico/triagemv1.0.0, AVA e banca continuam pendentes.
-
-## 14. Publicação técnica concluída —16/10/2026
-
-Lucas aprovou PR40 no HEADa190215, revisão5543614682; merge1e3dd3b. A main38939899867 passou318testes/36E2E/HML178,827s, com PRDskipped intencionalmente. A retomada38940532129 publicouv0.7.0 em16/10,14:33:57America/Sao_Paulo, sem build/deploy ou mudança da produçãoe9. Seis anexos públicos foram baixados sem autenticação e comparados à origem38852413982/2.
-
-Referências verificadas, sem confundir com respostas acadêmicas finais:
-
-- Release técnica:https://github.com/luccalck/desafio-arcade/releases/tag/v0.7.0 .
-- PDF técnico dessa origem:https://github.com/luccalck/desafio-arcade/releases/download/v0.7.0/RelatorioTecnico.pdf . Esse PDF10p é anterior ao fechamento operacional; o PDF acadêmico posterior terá fonte/CI própria. Não sobrescrever o anexo imutável.
-- Retomada:https://github.com/luccalck/desafio-arcade/actions/runs/38940532129 .
-- Monitor:https://github.com/luccalck/desafio-arcade/actions/runs/38940593792 .
-
-Matriz individual:quatro integrantes com commit próprio/arquivo/PR aprovado em≥3INT;20PRs revisados no total. Não atesta presença/domínio na banca ou fatorF. DORA atual:2deploys/14dias,0,142857/dia,leadtime médio35min19s,CFR50% com rollback planejado,MTTRnull. Não copiar a primeira amostra histórica como se fosse a atual.
-
-Pitch e lkVideo continuam vazios; lkRel final aguarda o PDF acadêmico atualizado. As quatro declarações e os dez aceites continuam sem marca final até comprovação. Não preencher HTML ou gerarTXT nesta etapa. Procedimento final sem ciclo produção→gravação→tag→pacote em docs/pacote-submissao.md.
+Preservamos o histórico anterior peloGit. Este documento contém as respostas correntes; referências a pendências já encerradas foram reconciliadas, sem transformar limitações ainda existentes em aceites.

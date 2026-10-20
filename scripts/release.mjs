@@ -7,17 +7,20 @@ import {verifyBundle} from './ci-bundle.mjs';
 const hash=b=>createHash('sha256').update(b).digest('hex');
 export function validateTag({tag,sha,version,proof}){
  if(!/^v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/.test(tag)||tag!==`v${version}`||!/^[a-f0-9]{40}$/.test(sha))throw Error('Tag/SemVer/SHA divergentes.');
- for(const key of ['annotated','integrated','protectedMain','approved'])if(proof?.[key]!==true)throw Error(`Proveniência recusada: ${key}.`);
+ for(const key of ['annotated','integrated','protectedMain'])if(proof?.[key]!==true)throw Error(`Proveniência recusada: ${key}.`);
+ const e=proof?.reviewException;
+ const exception=e?.kind==='owner-waiver'&&e.authorized===true&&e.humanReview===false&&e.sha===sha&&e.tag===tag&&tag==='v1.0.0'&&e.pullRequest===47&&typeof e.owner==='string'&&e.owner.length>0&&e.actor===e.owner;
+ if(proof?.approved!==true&&!exception)throw Error('Proveniência recusada: approved.');
  return true;
 }
 export function planRelease({bundle,sha,run,attempt='1',tag,version,proof,notes,notesHash}){
  validateTag({tag,sha,version,proof});const manifest=verifyBundle(bundle,{sha,run});
  if(!/^[1-9]\d*$/.test(String(attempt))||String(manifest.runAttempt)!==String(attempt))throw Error('Tentativa do artefato inválida/divergente.');
  if(manifest.version!==version)throw Error('Versão do artefato diverge da tag/package.json.');
- if(!notes?.includes(`## ${version}\n`)||hash(notes)!==notesHash)throw Error('Notas ausentes ou hash das notas não autorizado por revisão humana.');
+ if(!notes?.includes(`## ${version}\n`)||hash(notes)!==notesHash)throw Error('Notas ausentes ou hash das notas não autorizado.');
  const assets=Object.fromEntries(['build.zip','build.zip.sha256','sbom.cdx.json','GDD.pdf','RelatorioTecnico.pdf'].map(n=>[n,bundle[n]]));
  const inventory=Object.fromEntries(Object.entries(assets).map(([n,b])=>[n,{sha256:hash(b),bytes:b.length}]));
- assets['release-manifest.json']=Buffer.from(JSON.stringify({schema:1,tag,sha,run:String(run),runAttempt:String(attempt),version,build:manifest.build,notesSha256:notesHash,files:inventory},null,2)+'\n');
+ assets['release-manifest.json']=Buffer.from(JSON.stringify({schema:1,tag,sha,run:String(run),runAttempt:String(attempt),version,build:manifest.build,notesSha256:notesHash,review:{approved:proof.approved===true,approvals:proof.approvals??[],exception:proof.reviewException??null},files:inventory},null,2)+'\n');
  return {tag,sha,notes,assets};
 }
 export async function publishRelease(plan,api){
@@ -72,7 +75,7 @@ export function github(repo,token,{fetchImpl=fetch}={}){
   publish:r=>request(`${base}/releases/${r.id}`,{method:'PATCH',body:{draft:false,make_latest:'false'}}),
  };
 }
-export async function proveTag({tag,sha,version,api}){
+export async function proveTag({tag,sha,version,api,waiverSha,actor}){
  const git=(...args)=>execFileSync('git',args,{encoding:'utf8'}).trim();
  const annotated=git('cat-file','-t',`refs/tags/${tag}`)==='tag';
  if(git('rev-parse',`refs/tags/${tag}^{}`)!==sha||git('rev-parse','HEAD')!==sha)throw Error('Tag/checkout não apontam ao SHA esperado.');
@@ -80,13 +83,21 @@ export async function proveTag({tag,sha,version,api}){
  if(remote.object.sha!==git('rev-parse',`refs/tags/${tag}`))throw Error('Tag remota diverge do checkout.');
  const integrated=spawnSync('git',['merge-base','--is-ancestor',sha,'origin/main']).status===0;
  const main=await api.get('/branches/main');let approved=false;const approvals=[];
- for(const pr of await api.all(`/commits/${sha}/pulls`)){
+ const associated=await api.all(`/commits/${sha}/pulls`);
+ for(const pr of associated){
   if(pr.base.ref!=='main'||!pr.merged_at)continue;
   const votes=new Map();
   for(const review of await api.all(`/pulls/${pr.number}/reviews`))if(['APPROVED','CHANGES_REQUESTED','DISMISSED'].includes(review.state))votes.set(review.user.login,review);
   for(const [login,r] of votes)if(login!==pr.user.login&&r.state==='APPROVED'&&r.commit_id===pr.head.sha){approved=true;approvals.push({pr:pr.number,review:r.html_url});}
  }
- const proof={annotated,integrated,protectedMain:main.protected===true,approved,approvals};
+ let reviewException=null;
+ if(!approved&&waiverSha===sha&&tag==='v1.0.0'){
+  const repository=await api.get('');
+  const owner=repository.owner?.login;
+  const pr=associated.find(p=>p.number===47&&p.base?.ref==='main'&&p.merged_at&&p.user?.login===owner);
+  if(owner&&actor===owner&&pr)reviewException={kind:'owner-waiver',authorized:true,humanReview:false,owner,actor,sha,tag,pullRequest:47,reason:'Dispensa expressa de revisão pelo proprietário em19/10/2026; não equivale a revisão humana.'};
+ }
+ const proof={annotated,integrated,protectedMain:main.protected===true,approved,approvals,reviewException};
  validateTag({tag,sha,version,proof});return proof;
 }
 async function tree(root,prefix=''){
@@ -106,7 +117,7 @@ async function main(){
  if(!/^v(0|[1-9]\d*)\.(0|[1-9]\d*)\.(0|[1-9]\d*)$/.test(tag))throw Error('Tag não é vX.Y.Z estável.');
  const version=JSON.parse(await readFile('package.json','utf8')).version;
  const api=github(process.env.GITHUB_REPOSITORY,process.env.GH_TOKEN);
- const proof=await proveTag({tag,sha,version,api});
+ const proof=await proveTag({tag,sha,version,api,waiverSha:process.env.REVIEW_WAIVER_SHA,actor:process.env.GITHUB_ACTOR});
  console.log(JSON.stringify({tag,sha,proof}));
  if(mode==='publish'){
   if(!/^[1-9]\d*$/.test(process.env.GITHUB_RUN_ATTEMPT||''))throw Error('Tentativa da execução ausente/inválida.');
