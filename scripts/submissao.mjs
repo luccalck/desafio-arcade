@@ -3,7 +3,7 @@ import {readFile,writeFile,mkdir,readdir,stat} from 'node:fs/promises';
 import {join,resolve} from 'node:path';
 import {pathToFileURL} from 'node:url';
 import {unzipSync} from 'fflate';
-import {checkDuration,checkZip,makeManifest,verifyManifest,requiredAssets} from './triagem.mjs';
+import {checkDuration,checkZip,makeManifest,verifyManifest,requiredAssets} from './pacote-validacao.mjs';
 import {verifyBundle,readBundleTree} from './ci-bundle.mjs';
 import {preparePages} from './prepare-pages.mjs';
 

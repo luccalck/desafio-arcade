@@ -452,3 +452,12 @@ Lucca solicitou concluir a publicação sem novas revisões. Codex corrigiu a in
 Reutilizamos somente o áudioElevenLabs fornecido porLucca e o alinhamento por palavras já documentado. FFmpeg/Pillow montaram86s com30legendas bold; PCMdecodificado idêntico à edição alinhada anterior, sem mudança de velocidade. Nova mídia validada pela entrada-video39348162168/1. Fontes, gravações e recibos estão emdocs/evidencias/entrega-1.0.0-2026-10-19. Atualizamos GDD/README/relatório/ficha/checks com resultados reais, preservando documentos antigos e materiais originais. A dispensa de revisão continua uma exceção, não revisão humana deIA; não declaramos aprendizagem, consentimentos ou nota não observados.
 
 A primeira vigilância39350063593 recuperou e validou o pacote,mas oCLI terminouexit13 com await pendente. Preservamos a falha e ajustamos o runner: execução direta doCLIPlaywright,HTTPcomtimeout,limite240s e mensagens por etapa. Nenhuma checagem foi removida nem houve aceite temporal deentrega.
+
+
+## 20/10/2026 — fechamento INT-09
+
+Lucca solicitou concluir o INT-09 mantendo o prazo configurado. Codex reproduziu exit13 no CLI de triagem, causado pela importação circular triagem→submissão→triagem durante top-level await. Separou validações compartilhadas, preservando APIs e a regra estrita padrão. Regressão de subprocesso falhou antes e passou depois; seus adaptadores externos são fixtures de teste, não evidência de operação.
+
+Acrescentamos política temporal explícita, vinculada a repositório/ator proprietário/tag/SHA/digest/prazo. O recibo distingue withinDeadline de exceptionApplied e conserva a data real; outras validações continuam bloqueantes. Não alterar o relógio, a tag, o pacote ou os anexos imutáveis. Onze testes cobrem a política; a suíte local com dois workers passou337testes,core97,90%. A primeira execução paralela local apresentou timeout/workerWindows e foi preservada como falha, sem alterar os limites do jogo.
+
+O workflow passa a executar scripts/triagem.sh diretamente com o validador corrigido, identificado porSHA separado do produto. Conferirá o pacote original, os gates da origem e SQUAD idêntico à tag. Aprovação só será registrada após execução real. Revisão final dispensada pelo responsável,sematribuirAPPROVE a outra pessoa.
