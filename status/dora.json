@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "generatedAt": "2026-10-25T06:55:48.288Z",
+  "generatedAt": "2026-10-25T12:21:24.849Z",
   "period": {
-    "from": "2026-10-11T06:55:25Z",
-    "to": "2026-10-25T06:55:25Z"
+    "from": "2026-10-11T12:20:59Z",
+    "to": "2026-10-25T12:20:59Z"
   },
   "metrics": {
     "deploymentFrequency": {
