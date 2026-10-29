@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "generatedAt": "2026-10-28T23:24:16.992Z",
+  "generatedAt": "2026-10-29T02:38:57.782Z",
   "period": {
-    "from": "2026-10-14T23:23:52Z",
-    "to": "2026-10-28T23:23:53Z"
+    "from": "2026-10-15T02:38:33Z",
+    "to": "2026-10-29T02:38:33Z"
   },
   "metrics": {
     "deploymentFrequency": {
-      "value": 0.2857140495088876,
+      "value": 0.2857142857142857,
       "unit": "deploys/dia",
       "samples": 4,
       "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
