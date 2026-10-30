@@ -1,30 +1,30 @@
 {
   "schema": 1,
-  "generatedAt": "2026-10-29T20:52:56.086Z",
+  "generatedAt": "2026-10-30T00:37:29.810Z",
   "period": {
-    "from": "2026-10-15T20:52:33Z",
-    "to": "2026-10-29T20:52:33Z"
+    "from": "2026-10-16T00:37:07Z",
+    "to": "2026-10-30T00:37:07Z"
   },
   "metrics": {
     "deploymentFrequency": {
-      "value": 0.2857142857142857,
+      "value": 0.21428571428571427,
       "unit": "deploys/dia",
-      "samples": 4,
-      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
+      "samples": 3,
+      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38852413982/job/116819599076",
       "reason": null
     },
     "leadTime": {
-      "value": 0.33916666666666667,
+      "value": 0.42194444444444446,
       "unit": "horas",
-      "samples": 4,
-      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
+      "samples": 3,
+      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38852413982/job/116819599076",
       "reason": null
     },
     "changeFailureRate": {
-      "value": 25,
+      "value": 0,
       "unit": "%",
-      "samples": 4,
-      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
+      "samples": 3,
+      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38852413982/job/116819599076",
       "reason": null
     },
     "mttr": {
@@ -37,18 +37,10 @@
   },
   "baseline": {
     "carpartsDays": 11,
-    "leadTimeDays": 0.014131944444444445
+    "leadTimeDays": 0.01758101851851852
   },
   "evidence": {
     "deploys": [
-      {
-        "sha": "88d533e31452036092cd8edef3efa3c0775241dc",
-        "at": "2026-10-16T00:31:49Z",
-        "url": "https://github.com/luccalck/desafio-arcade/actions/runs/38829484114/job/116745759301",
-        "run": 38829484114,
-        "promotionUrl": "https://github.com/luccalck/desafio-arcade/commit/67ce33d24e7dc073894b989cada0a9c590865580",
-        "timing": "deploy-prd-concluido-com-smoke"
-      },
       {
         "sha": "e9dd28ccee535e9b1259a710742482e44db47aed",
         "at": "2026-10-16T05:01:10Z",
