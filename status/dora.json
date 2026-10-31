@@ -1,30 +1,30 @@
 {
   "schema": 1,
-  "generatedAt": "2026-10-30T22:40:51.727Z",
+  "generatedAt": "2026-10-31T01:50:36.466Z",
   "period": {
-    "from": "2026-10-16T22:40:34Z",
-    "to": "2026-10-30T22:40:34Z"
+    "from": "2026-10-17T01:50:17Z",
+    "to": "2026-10-31T01:50:17Z"
   },
   "metrics": {
     "deploymentFrequency": {
-      "value": 0.14285714285714285,
+      "value": 0.07142857142857142,
       "unit": "deploys/dia",
-      "samples": 2,
-      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38991328634/job/117274791334",
+      "samples": 1,
+      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/39346940628/job/118382660351",
       "reason": null
     },
     "leadTime": {
-      "value": 0.08972222222222223,
+      "value": 0.08222222222222222,
       "unit": "horas",
-      "samples": 2,
-      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38991328634/job/117274791334",
+      "samples": 1,
+      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/39346940628/job/118382660351",
       "reason": null
     },
     "changeFailureRate": {
       "value": 0,
       "unit": "%",
-      "samples": 2,
-      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/38991328634/job/117274791334",
+      "samples": 1,
+      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/39346940628/job/118382660351",
       "reason": null
     },
     "mttr": {
@@ -37,18 +37,10 @@
   },
   "baseline": {
     "carpartsDays": 11,
-    "leadTimeDays": 0.0037384259259259263
+    "leadTimeDays": 0.003425925925925926
   },
   "evidence": {
     "deploys": [
-      {
-        "sha": "4678830c59917803c0024b63b05695029e900bfe",
-        "at": "2026-10-17T01:38:38Z",
-        "url": "https://github.com/luccalck/desafio-arcade/actions/runs/38991328634/job/117274791334",
-        "run": 38991328634,
-        "promotionUrl": "https://github.com/luccalck/desafio-arcade/commit/bc402897db3879ba74135b81320fd1d2b6b3766d",
-        "timing": "deploy-prd-concluido-com-smoke"
-      },
       {
         "sha": "be281493c7699468f991a2333df074ec76691b3d",
         "at": "2026-10-20T00:24:13Z",
