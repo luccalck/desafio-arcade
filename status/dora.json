@@ -1,31 +1,31 @@
 {
   "schema": 1,
-  "generatedAt": "2026-11-02T19:12:25.230Z",
+  "generatedAt": "2026-11-03T01:36:24.131Z",
   "period": {
-    "from": "2026-10-19T19:12:15Z",
-    "to": "2026-11-02T19:12:16Z"
+    "from": "2026-10-20T01:36:14Z",
+    "to": "2026-11-03T01:36:14Z"
   },
   "metrics": {
     "deploymentFrequency": {
-      "value": 0.0714285123772219,
+      "value": null,
       "unit": "deploys/dia",
-      "samples": 1,
-      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/39346940628/job/118382660351",
-      "reason": null
+      "samples": 0,
+      "source": null,
+      "reason": "Nenhum deploy-prd formal bem-sucedido na janela."
     },
     "leadTime": {
-      "value": 0.08222222222222222,
+      "value": null,
       "unit": "horas",
-      "samples": 1,
-      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/39346940628/job/118382660351",
-      "reason": null
+      "samples": 0,
+      "source": null,
+      "reason": "Sem vínculo completo commit → deploy-prd."
     },
     "changeFailureRate": {
-      "value": 0,
+      "value": null,
       "unit": "%",
-      "samples": 1,
-      "source": "https://github.com/luccalck/desafio-arcade/actions/runs/39346940628/job/118382660351",
-      "reason": null
+      "samples": 0,
+      "source": null,
+      "reason": "Sem deploy formal como denominador."
     },
     "mttr": {
       "value": null,
@@ -37,19 +37,10 @@
   },
   "baseline": {
     "carpartsDays": 11,
-    "leadTimeDays": 0.003425925925925926
+    "leadTimeDays": null
   },
   "evidence": {
-    "deploys": [
-      {
-        "sha": "be281493c7699468f991a2333df074ec76691b3d",
-        "at": "2026-10-20T00:24:13Z",
-        "url": "https://github.com/luccalck/desafio-arcade/actions/runs/39346940628/job/118382660351",
-        "run": 39346940628,
-        "promotionUrl": "https://github.com/luccalck/desafio-arcade/commit/efded5280d31fb8876165644af782b71e9b3c31a",
-        "timing": "deploy-prd-concluido-com-smoke"
-      }
-    ],
+    "deploys": [],
     "issues": [],
     "rollbacks": []
   },
