@@ -1,27 +1,27 @@
 {
   "schema": 1,
-  "run": "41560776912",
+  "run": "41604356011",
   "runAttempt": "1",
   "formalHml": true,
   "formalPrd": true,
   "samples": [
     {
-      "data": "2026-11-03T01:36:13.748Z",
+      "data": "2026-11-03T08:35:17.072Z",
       "alvo": "hml",
       "url": "https://luccalck.github.io/desafio-arcade/hml/",
       "codigo": 200,
-      "tempo": 0.19677293199999998,
+      "tempo": 0.180471045,
       "versao": "1.0.0",
       "sha": "be281493c7699468f991a2333df074ec76691b3d",
       "versionUrl": "https://luccalck.github.io/desafio-arcade/hml/version.json",
       "erro": null
     },
     {
-      "data": "2026-11-03T01:36:14.047Z",
+      "data": "2026-11-03T08:35:17.340Z",
       "alvo": "producao",
       "url": "https://luccalck.github.io/desafio-arcade/",
       "codigo": 200,
-      "tempo": 0.23199120800000003,
+      "tempo": 0.05314091100000002,
       "versao": "1.0.0",
       "sha": "be281493c7699468f991a2333df074ec76691b3d",
       "versionUrl": "https://luccalck.github.io/desafio-arcade/releases/be281493c7699468f991a2333df074ec76691b3d/version.json",
